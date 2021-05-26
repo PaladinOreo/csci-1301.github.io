@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Type Casting</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 26, 2021 (09:09:58 PM)</p>
+<p class="date">May 26, 2021 (09:32:24 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -372,6 +372,16 @@ Check the actual type!
 <li><p>Your IDE is suggesting that we use a “cast” to “force” C# to store the value of the variable <code class="sourceCode cs">floatVar</code> into the variable <code class="sourceCode cs">intVar</code>. To do so, replace the previous statement with the following:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> intVar <span class="op">=</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span>floatVar<span class="op">;</span> <span class="co">// This statement will compile</span></span></code></pre></div></li>
 <li><p>Using a <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code> statement, observe the value stored in <code class="sourceCode cs">intVar</code>. Can you tell if the value stored in <code class="sourceCode cs">floatVar</code> was rounded or truncated before being stored in the variable <code class="sourceCode cs">intVar</code>? Conduct further experiments if needed to answer this question.</p></li>
+<li><p>Look back at the warning given by the IDE. It uses the term “implicitly convert” before introducing the cast operator.</p></li>
+<li><p>While you needed a cast to convert a float to an int, do you need one to convert an int to a float? Try the following:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> intVar <span class="op">=</span> <span class="dv">21</span><span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> floatVar <span class="op">=</span> intVar<span class="op">;</span> <span class="co">// Does this need a cast?</span></span></code></pre></div></li>
+<li><p>Generally, you need an explicit cast if an implicit conversion would lead to data loss. Since all possible int values are also valid float values, no explicit cast is needed.</p></li>
+<li><p>Do these cases need an explicit cast, or will an explicit conversion work? Try them in your IDE to check your answers!</p></li>
+</ol>
+<p>-double to int -int to double -float to double -double to float -int to decimal -decimal to float -float to decimal</p>
+<ol>
+<li>That last result may have been surprising. While decimal is higher precision than float and double, it requires an explicit cast from either of those types.</li>
 </ol>
 </section>
 </section>
