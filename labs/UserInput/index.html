@@ -247,11 +247,12 @@
 <header id="title-block-header">
 <h1 class="title">User Input</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 26, 2021 (08:39:40 PM)</p>
+<p class="date">May 26, 2021 (09:09:58 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
 <li><a href="#reading-from-the-user">Reading From the User</a></li>
+<li><a href="#parsing-numeric-types">Parsing Numeric Types</a></li>
 </ul>
 </nav>
 <section id="reading-from-the-user" class="level1">
@@ -270,6 +271,26 @@
 <p>Enter your first name, followed by <kbd>Enter ↵</kbd>. You just witnessed an interaction between a program and the user!</p></li>
 <li><p>Read the source code carefully and make sure you understand all of it.</p></li>
 <li><p>Change the code so that the program would also ask for the user’s last name and print both their first and last names.</p></li>
+</ol>
+</section>
+<section id="parsing-numeric-types" class="level1">
+<h1>Parsing Numeric Types</h1>
+<ol>
+<li><p>So far, our user input has always returned a specific type. What type is it?</p></li>
+<li><p>Without making changes to the code, execute it again but give a number as your first name. Does the type returned change if the user enters only numeric values?</p></li>
+<li><p>What if you ask the user directly for an integer? How can you store it in an int variable?</p></li>
+<li><p>Add the following to the code:</p>
+<p>Console.WriteLine(“Please enter your age in years as an integer.”);</p>
+<p>string ageInput = Console.ReadLine(); int age = int.Parse(ageInput);</p>
+<p>Console.WriteLine($"Your age in months is {age*12}");</p></li>
+<li><p>Re-compile and execute your code. Be sure to enter a whole number for your age.</p></li>
+<li><p>Are the results what you expect?</p></li>
+<li><p>Run the code again, this time with a negative number for your age. Then try again with 0. Does the code still work?</p></li>
+<li><p>What if you were to enter a floating point number when asked for an integer? What if you entered the word “twenty”?</p></li>
+<li><p>Here you are purposely ignoring the prompt, but know that your user may purposely or accidentally give the wrong input type.</p></li>
+<li><p>Later in the course you will learn how to handle untrustworthy user input</p></li>
+<li><p>Can you think of a change you can make to the code to accept ages of type float instead of int? Try making that change!</p></li>
+<li><p>If you were to ask a user to enter an age without specifying its type, what .Parse should you use?</p></li>
 </ol>
 </section>
 </main>
