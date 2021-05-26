@@ -248,7 +248,7 @@
 <header id="title-block-header">
 <h1 class="title">User Guide</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 26, 2021 (11:36:51 AM)</p>
+<p class="date">May 26, 2021 (12:03:11 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -447,7 +447,7 @@
 <ul>
 <li>Follow the existing pattern for naming convention which is lowercase and separation by underscores.</li>
 <li>The numbers <code class="sourceCode cs">NNN</code> tell pandoc how to order book content. Use leading zero and increments of 10.</li>
-<li>Choose this number number based on where in the book the new lecture should appear.</li>
+<li>Choose this number based on where in the book the new lecture should appear.</li>
 </ul></li>
 <li><p>under the new directory, create a file <code class="sourceCode cs">readme<span class="op">.</span><span class="fu">md</span></code> (lowercase). Write lecture notes in this file using markdown.</p>
 <ul>
@@ -458,7 +458,7 @@
 <p>If the lecture does not appear, here are the steps for troubleshooting the issue:</p>
 <ol>
 <li>Check that after committing changes, the automated build has completed successfully</li>
-<li>The lecture directory is immediately under lectures directory</li>
+<li>The newly created lecture is immediately under <code class="sourceCode cs">lectures<span class="op">/</span></code> directory</li>
 <li>The <code class="sourceCode cs">readme<span class="op">.</span><span class="fu">md</span></code> exists</li>
 <li>In <code class="sourceCode cs">gh<span class="op">-</span>pages</code> branch, ensure the book is generated</li>
 <li>Hard refresh the browser page if viewing the resources website</li>
@@ -482,7 +482,7 @@
 <li>write lab instructions in this file. You should include meta data, at minimum a title</li>
 <li>make the lab standalone to support alternative ordering (avoid assumptions about what was done “last time”)</li>
 <li>do not make assumptions about student using specific OS, include instructions for all supported options (Windows, MacOS, Linux)</li>
-<li>do not make assumptions about student using Visual Studio, use the term IDE instead</li>
+<li>do not make assumptions about student using Visual Studio, refer to IDE instead</li>
 </ul></li>
 <li>(optional) if you want to include starter code with the lab,
 <ul>
@@ -600,10 +600,10 @@
 </section>
 <section id="building-the-resource-locally" class="level2">
 <h2>Building the resource locally</h2>
-<p>It is generally not necessary to build this resource locally unless the intent is to preview templating changes or to make changes to build scripts. For the purposes of editing content, it is sufficient to make edits to markdown files and committing those changes.</p>
+<p>It is generally not necessary to build this resource locally unless the intent is to preview templating changes or to make changes to build scripts. For the purposes of editing content, it is sufficient to make edits to markdown files and commit those changes.</p>
 <section id="installing-required-dependencies" class="level3">
 <h3>Installing required dependencies</h3>
-<p>To find the current list of dependencies needed to build this resource, refer to the <a href="https://github.com/csci-1301/csci-1301.github.io/blob/f80f8f6b0dab450441e43ad09db2cda0b1fba6e1/.github/workflows/build.yaml#L27-L30">build script install section</a> which lists all required packages need to build the resource. The exact installation steps vary depending on your local operating system.</p>
+<p>To find the current list of dependencies needed to build this resource, refer to the <a href="https://github.com/csci-1301/csci-1301.github.io/blob/f80f8f6b0dab450441e43ad09db2cda0b1fba6e1/.github/workflows/build.yaml#L27-L30">build script install section</a>, which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.</p>
 <p>In general the following dependencies are needed:</p>
 <ul>
 <li><a href="https://pandoc.org/installing.html">pandoc</a></li>
@@ -624,20 +624,20 @@
 <section id="maintaining-repository-feedback" class="level2">
 <h2>Maintaining repository feedback</h2>
 <p>Resource users can submit feedback about the resource through various means, one of which is leaving comments on the website. This feature is enabled by <a href="https://utteranc.es/">utteranc.es</a>.</p>
-<p>To manage the comments over time, we will create a semester-specific repository for issues only. This must be a public repository and located under the same organization as the resources repository. The utteranc.es widget it configured to point to this repository. After the semester is over, we will archive this feedback repository and create a new one for the next semester. This simultaneously archive all older comments and reset the feedback across pages.</p>
+<p>To manage user feedback over time, a semester-specific repository is created for issues only. This must be a public repository and located under the same organization as the resources repository. utteranc.es widget is configured to point to this repository. After a semester is over, this feedback repository will be archived, and a new one created for the next semester. This will simultaneously archive all older issues and reset the feedback across website pages.</p>
 <section id="migrating-feedback-repository" class="level3">
 <h3>Migrating feedback repository</h3>
 <p>The steps for migrating feedback target repository are as follows:</p>
 <ol>
-<li>Create a new <strong>public</strong> repository under <code class="sourceCode cs">csci<span class="dv">-1301</span></code> github org. Follow the established naming convention.</li>
+<li>Create a new <strong>public</strong> repository under <code class="sourceCode cs">csci<span class="dv">-1301</span></code> github organization. Follow the established naming convention.</li>
 <li>Go to repository Issues (make sure issues is enabled in repository settings)</li>
-<li>Create a new label whose Label name is <code class="sourceCode cs">comment</code></li>
+<li>Create a new label whose <em>label name</em> is <code class="sourceCode cs">comment</code> (to match <a href="https://github.com/csci-1301/csci-1301.github.io/blob/main/templates/web/template.html#L87-L94">widget configuration</a>)</li>
 <li>Go to <a href="https://github.com/organizations/csci-1301/settings/installations"><code class="sourceCode cs">Organization Settings <span class="op">&gt;</span> Installed GitHub Apps</code></a></li>
 <li>Choose configure</li>
 <li>Under “Repository access”, select the repository created in step 1.</li>
 <li>Save</li>
 <li>In <code class="sourceCode cs">csci<span class="fl">-1301.</span>github<span class="op">.</span><span class="fu">io</span></code> repository open <code class="sourceCode cs"><span class="op">/</span>templates<span class="op">/</span>web<span class="op">/</span>template<span class="op">.</span><span class="fu">html</span></code></li>
-<li>Update the utteranc.es widget code to point to the new feedback repository created in step 1.</li>
+<li>Update utteranc.es widget code to point to the new feedback repository created in step 1.</li>
 <li>Commit change to template.html</li>
 <li>Make sure the feedback works after migration. If it does not, retrace your steps.</li>
 <li>Archive the earlier feedback repository in its settings.</li>
