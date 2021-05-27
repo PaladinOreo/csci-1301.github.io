@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 27, 2021 (08:06:26 PM)</p>
+<p class="date">May 27, 2021 (08:47:31 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -389,7 +389,7 @@
 - The difference between roles (user, tester, programmer)
 - How complex piece of software _reuse_ previous pieces.
 - The importance of security :lock:
-    - Types of attack (malware, phishing, social engineering, zero-day) 
+    - Types of attack (malware, phishing, social engineering, zero-day)
     - Types of loss (loss of integrity / availability / confidentiality)
 
 ## Writing and Compiling Programs
@@ -406,7 +406,7 @@
     - Editing
     - Reusing
 - Using an IDE to
-    - Create a project, 
+    - Create a project,
     - Perform some of the steps of the "flow of development",
     - Correctly save and re-open projects,
     - Understand basic features of break points and debugging. :question:
@@ -432,13 +432,12 @@
 <li>Improved programming language implementations</li>
 <li>New languages are created - old ones updated</li>
 </ul></li>
-<li>There are hundreds of programming languaes, why?
+<li>There are hundreds of programming languages, why?
 <ul>
 <li>Different tools for different jobs
 <ul>
-<li>Some langauges are better suited for certain jobs</li>
-<li>Python for scripting, Javascript for web pages<br />
-</li>
+<li>Some languages are better suited for certain jobs</li>
+<li>Python for scripting, Javascript for web pages</li>
 </ul></li>
 <li>Personnel preference and popularity</li>
 </ul></li>
@@ -808,8 +807,8 @@
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>will display the following output in the terminal:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Hello</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>World<span class="op">!</span></span></code></pre></div></li>
+<pre class="text"><code>Hello
+World!</code></pre></li>
 </ul></li>
 <li><p>Methods with multiple statements</p>
 <ul>
@@ -835,7 +834,7 @@
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>will display the following output in the terminal:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>HelloWorld<span class="op">!</span></span></code></pre></div></li>
+<pre class="text"><code>HelloWorld!</code></pre></li>
 <li><p>Note that there is no space between “Hello” and “World!” because we didn’t type one in the argument to <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">Write</span></code></p></li>
 </ul></li>
 <li><p>Combining <code class="sourceCode cs">Write</code> and <code class="sourceCode cs">WriteLine</code></p>
@@ -856,8 +855,8 @@
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>will display the following output in the terminal:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Hello world<span class="op">!</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Welcome to CSCI <span class="dv">1301</span><span class="op">!</span></span></code></pre></div></li>
+<pre class="text"><code>Hello world!
+Welcome to CSCI 1301!</code></pre></li>
 </ul></li>
 </ul>
 </section>
@@ -1471,7 +1470,7 @@
 <li><p>You <em>cannot</em> implicitly convert a <code class="sourceCode cs"><span class="dt">float</span></code> to an <code class="sourceCode cs"><span class="dt">int</span></code> because an <code class="sourceCode cs"><span class="dt">int</span></code> stores fewer values than a <code class="sourceCode cs"><span class="dt">float</span></code> – it can’t store fractions – so converting a <code class="sourceCode cs"><span class="dt">float</span></code> to an <code class="sourceCode cs"><span class="dt">int</span></code> will <strong>lose data</strong></p></li>
 <li><p>Note that all integer data types can be implicitly converted to <code class="sourceCode cs"><span class="dt">float</span></code> or <code class="sourceCode cs"><span class="dt">double</span></code></p></li>
 <li><p>Each integer data type can be implicitly converted to a larger integer type: <code class="sourceCode cs"><span class="dt">short</span></code> <span class="math inline">→</span> <code class="sourceCode cs"><span class="dt">int</span></code> <span class="math inline">→</span> <code class="sourceCode cs"><span class="dt">long</span></code></p></li>
-<li><p>Unsigned integer data types can be implicitly converted to a <em>larger</em> signed integer type, but not the <em>same</em> signed integer type: <code class="sourceCode cs"><span class="dt">uint</span></code> <span class="math inline">→</span> <code class="sourceCode cs"><span class="dt">long</span></code>, but <strong>not</strong> <code class="sourceCode cs"><span class="dt">uint</span></code> <span class="math inline"><em>r</em><em>i</em><em>g</em><em>h</em><em>t</em><em>a</em><em>r</em><em>r</em><em>o</em><em>w</em></span> <code class="sourceCode cs"><span class="dt">int</span></code></p>
+<li><p>Unsigned integer data types can be implicitly converted to a <em>larger</em> signed integer type, but not the <em>same</em> signed integer type: <code class="sourceCode cs"><span class="dt">uint</span></code> <span class="math inline">→</span> <code class="sourceCode cs"><span class="dt">long</span></code>, but <strong>not</strong> <code class="sourceCode cs"><span class="dt">uint</span></code> <span class="math inline">→</span> <code class="sourceCode cs"><span class="dt">int</span></code></p>
 <ul>
 <li>This is because of the “sign bit”: a <code class="sourceCode cs"><span class="dt">uint</span></code> can store larger values than an <code class="sourceCode cs"><span class="dt">int</span></code> because it doesn’t use a sign bit, so converting a large <code class="sourceCode cs"><span class="dt">uint</span></code> to an <code class="sourceCode cs"><span class="dt">int</span></code> might lose data</li>
 </ul></li>
@@ -1632,8 +1631,8 @@
 <div class="sourceCode" id="cb29"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{x} divided by {y} is {(double) x / y}&quot;</span><span class="op">);</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{x} plus 7 is {x + 7}&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>This will display the following output:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="dv">47</span> divided by <span class="dv">6</span> <span class="kw">is</span> <span class="fl">7.8333333</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="dv">47</span> plus <span class="dv">7</span> <span class="kw">is</span> <span class="dv">54</span></span></code></pre></div>
+<pre class="text"><code>47 divided by 6 is 7.8333333
+47 plus 7 is 54</code></pre>
 <p>Note that writing a math expression inside a string interpolation statement does not change the values of any variables. After executing this code, <code class="sourceCode cs">x</code> is still 47, and <code class="sourceCode cs">y</code> is still 6.</p></li>
 </ul></li>
 <li><p>The <code class="sourceCode cs"><span class="fu">ToString</span><span class="op">()</span></code> method</p>
