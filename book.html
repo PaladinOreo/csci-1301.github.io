@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 27, 2021 (08:47:31 PM)</p>
+<p class="date">May 27, 2021 (08:49:33 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -2086,7 +2086,7 @@ Welcome to CSCI 1301!</code></pre></li>
 <section id="default-values" class="level2">
 <h2>Default Values</h2>
 <p>What if we display the values of the instance variables before setting them?</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>ClassRoom english <span class="op">=</span> <span class="kw">new</span> <span class="fu">ClassRoom</span><span class="op">();</span> </span>
+<div class="sourceCode" id="cb47"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>ClassRoom english <span class="op">=</span> <span class="kw">new</span> <span class="fu">ClassRoom</span><span class="op">();</span> </span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>english<span class="op">.</span><span class="fu">GetName</span><span class="op">());</span> <span class="co">// Nothing!</span></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>english<span class="op">.</span><span class="fu">GetNumber</span><span class="op">());</span> <span class="co">// 0</span></span></code></pre></div>
 <p>Indeed, instance variables are different from “usual” variables in that sense that they receive a “default” value when created. This value depends of the variable datatype:</p>
@@ -2127,7 +2127,7 @@ Welcome to CSCI 1301!</code></pre></li>
 <li>Note how different it is from the variables we have been using so far, that could not be for instance displayed if their value had not been set.</li>
 <li>We can set a different default value, using, in the class declaration,</li>
 </ul>
-<div class="sourceCode" id="cb48"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="dt">string</span> name <span class="op">=</span> <span class="st">&quot;Unknown&quot;</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb48"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="dt">string</span> name <span class="op">=</span> <span class="st">&quot;Unknown&quot;</span><span class="op">;</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="dt">int</span> number <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span></code></pre></div>
 </section>
 <section id="constructors" class="level2">
@@ -2135,13 +2135,13 @@ Welcome to CSCI 1301!</code></pre></li>
 <section id="custom" class="level3">
 <h3>Custom</h3>
 <p>A constructor is a method used to create an object. It has to have the same name as the class, and doesn’t have a return type.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="fu">ClassRoom</span><span class="op">(</span><span class="dt">string</span> nameParameter<span class="op">,</span> <span class="dt">int</span> numberParameter<span class="op">)</span></span>
+<div class="sourceCode" id="cb49"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="fu">ClassRoom</span><span class="op">(</span><span class="dt">string</span> nameParameter<span class="op">,</span> <span class="dt">int</span> numberParameter<span class="op">)</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> nameParameter<span class="op">;</span></span>
 <span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    number <span class="op">=</span> numberParameter<span class="op">;</span></span>
 <span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>We use it as follows:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>ClassRoom math <span class="op">=</span> <span class="kw">new</span> <span class="fu">ClassRoom</span><span class="op">(</span><span class="st">&quot;Bertrand&quot;</span><span class="op">,</span> <span class="dv">5</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>ClassRoom math <span class="op">=</span> <span class="kw">new</span> <span class="fu">ClassRoom</span><span class="op">(</span><span class="st">&quot;Bertrand&quot;</span><span class="op">,</span> <span class="dv">5</span><span class="op">);</span></span></code></pre></div>
 <p>Note:</p>
 <ul>
 <li>the order of the arguments matter,</li>
@@ -2155,9 +2155,9 @@ Welcome to CSCI 1301!</code></pre></li>
 <section id="default" class="level3">
 <h3>Default</h3>
 <p>If we implement this constructor, then we lose the “No args”, default constructor</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="fu">ClassRoom</span><span class="op">()</span> <span class="op">{</span> <span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="fu">ClassRoom</span><span class="op">()</span> <span class="op">{</span> <span class="op">}</span></span></code></pre></div>
 <p>We can re-define it, using something like:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="fu">ClassRoom</span><span class="op">()</span> <span class="op">{</span></span>
+<div class="sourceCode" id="cb52"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="fu">ClassRoom</span><span class="op">()</span> <span class="op">{</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">&quot;Unknown&quot;</span><span class="op">;</span></span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
 <span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
@@ -2169,14 +2169,14 @@ Welcome to CSCI 1301!</code></pre></li>
 <p>Every method has a signature made of - its name, - its parameters types (but not the parameter names).</p>
 <p>Note that the return type is not part of the method signature in C#.</p>
 <p>In a class, all the methods need to have a different signature. You cannot, for example, have these two methods in the same class:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> <span class="fu">DoSomething</span><span class="op">(</span><span class="dt">int</span> a<span class="op">,</span> <span class="dt">int</span> b<span class="op">);</span></span>
+<div class="sourceCode" id="cb53"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> <span class="fu">DoSomething</span><span class="op">(</span><span class="dt">int</span> a<span class="op">,</span> <span class="dt">int</span> b<span class="op">);</span></span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> <span class="fu">DoSomething</span><span class="op">(</span><span class="dt">int</span> c<span class="op">,</span> <span class="dt">int</span> d<span class="op">);</span></span></code></pre></div>
 <p>It is possible, however, to have two methods with the same name, as long as they have different signatures. If we are in such a situation, then we say that we are <em>overloading</em>. We will look at examples of overloading in lab.</p>
 </section>
 <section id="tostring" class="level1">
 <h1>ToString</h1>
 <p>A particular method can be used to display information about our objects. It is called <code class="sourceCode cs">ToString</code>, and can be defined as follows:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">override</span> <span class="dt">string</span> <span class="fu">ToString</span><span class="op">()</span></span>
+<div class="sourceCode" id="cb54"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">override</span> <span class="dt">string</span> <span class="fu">ToString</span><span class="op">()</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> <span class="st">&quot;Person: &quot;</span> <span class="op">+</span> Name <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> Age<span class="op">;</span></span>
 <span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
@@ -2630,14 +2630,14 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 <h1>Definition and First Example of while loops</h1>
 <section id="formal-syntax" class="level2">
 <h2>Formal Syntax</h2>
-<div class="sourceCode" id="cb77"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(&lt;</span>condition<span class="op">&gt;)</span></span>
+<div class="sourceCode" id="cb77"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(&lt;</span>condition<span class="op">&gt;)</span></span>
 <span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>statement block<span class="op">&gt;</span></span>
 <span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="example-2" class="level2">
 <h2>Example</h2>
-<div class="sourceCode" id="cb78"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb78"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
 <span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!);</span></span>
@@ -2657,7 +2657,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 <p>It is easy to write <em>wrong</em> <code class="sourceCode cs">loop</code> statements. Let us review some of the “classic” blunders.</p>
 <section id="failing-to-update-the-variable-occurring-in-the-condition" class="level2">
 <h2>Failing to update the variable occurring in the condition</h2>
-<div class="sourceCode" id="cb79"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb79"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
 <span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!);</span></span>
@@ -2667,7 +2667,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 </section>
 <section id="updating-the-wrong-value" class="level2">
 <h2>Updating the “wrong” value</h2>
-<div class="sourceCode" id="cb80"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number1<span class="op">,</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb80"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number1<span class="op">,</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
 <span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!);</span></span>
@@ -2677,7 +2677,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 </section>
 <section id="having-an-empty-body" class="level2">
 <h2>Having an empty body</h2>
-<div class="sourceCode" id="cb81"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> </span>
+<div class="sourceCode" id="cb81"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> </span>
 <span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">);</span> <span class="co">// Note the semi-colon here!</span></span>
 <span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!&quot;</span><span class="op">);</span></span>
@@ -2687,7 +2687,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 </section>
 <section id="having-an-empty-body-variation" class="level2">
 <h2>Having an empty body (variation)</h2>
-<div class="sourceCode" id="cb82"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb82"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
 <span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!);</span></span>
 <span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span>number<span class="op">);</span></span>
@@ -2695,7 +2695,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 </section>
 <section id="going-in-the-wrong-direction" class="level2">
 <h2>Going in the wrong direction</h2>
-<div class="sourceCode" id="cb83"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb83"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&gt;=</span><span class="dv">5</span><span class="op">)</span></span>
 <span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!);</span></span>
@@ -2708,7 +2708,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 <section id="user-input-validation" class="level1">
 <h1>User-Input Validation</h1>
 <p>We can use loops to test what was entered by the user, and ask again if the value does not fit our needs:</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please enter a positive number&quot;</span><span class="op">);</span></span>
+<div class="sourceCode" id="cb84"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please enter a positive number&quot;</span><span class="op">);</span></span>
 <span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
 <span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>n <span class="op">&lt;</span> <span class="dv">0</span><span class="op">)</span></span>
 <span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -2724,7 +2724,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 <dd><p>Variable that is incremented every time a given event occurs.</p>
 </dd>
 </dl>
-<div class="sourceCode" id="cb85"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> <span class="co">// i is a counter</span></span>
+<div class="sourceCode" id="cb85"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> <span class="co">// i is a counter</span></span>
 <span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">){</span></span>
 <span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
 <span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
@@ -2734,7 +2734,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 <dd><p>A special value that signals that the loop needs to end.</p>
 </dd>
 </dl>
-<div class="sourceCode" id="cb86"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Give me a string.&quot;</span><span class="op">);</span></span>
+<div class="sourceCode" id="cb86"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Give me a string.&quot;</span><span class="op">);</span></span>
 <span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> ans <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
 <span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>ans <span class="op">!=</span> <span class="st">&quot;Quit&quot;</span><span class="op">)</span> <span class="co">// The sentinel value is &quot;Quit&quot;.</span></span>
 <span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -2747,7 +2747,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 <dd><p>Variable used to keep the total of several values.</p>
 </dd>
 </dl>
-<div class="sourceCode" id="cb87"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> total <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb87"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> total <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">){</span></span>
 <span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> i<span class="op">;</span> <span class="co">// total is the accumulator.</span></span>
 <span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
@@ -2755,7 +2755,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 <span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The sum from 0 to {i} is {total}.&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>We can have an accumulator and a sentinel value at the same time:</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a number to sum, or </span><span class="sc">\&quot;</span><span class="st">Done</span><span class="sc">\&quot;</span><span class="st"> to stop and print the total.&quot;</span><span class="op">);</span></span>
+<div class="sourceCode" id="cb88"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a number to sum, or </span><span class="sc">\&quot;</span><span class="st">Done</span><span class="sc">\&quot;</span><span class="st"> to stop and print the total.&quot;</span><span class="op">);</span></span>
 <span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> enter <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
 <span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>enter <span class="op">!=</span> <span class="st">&quot;Done&quot;</span><span class="op">)</span></span>
@@ -2766,7 +2766,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 <span id="cb88-9"><a href="#cb88-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb88-10"><a href="#cb88-10" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Your total is {sum}.&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>You can have counter, accumulator and sentinel values at the same time!</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb89"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> counter <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter an integer, or N to quit.&quot;</span><span class="op">);</span></span>
@@ -2797,7 +2797,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 <section id="more-input-validation-using-tryparse" class="level1">
 <h1>More Input Validation, Using TryParse</h1>
 <p>The <code class="sourceCode cs">TryParse</code> method is a complex method that will allow us to parse strings, and to “extract” a number out of them if they contain one, or to be given a way to recover if they don’t.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please, enter an integer.&quot;</span><span class="op">);</span></span>
+<div class="sourceCode" id="cb90"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please, enter an integer.&quot;</span><span class="op">);</span></span>
 <span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> message <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
 <span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a<span class="op">;</span></span>
 <span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> res <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>message<span class="op">,</span> <span class="kw">out</span> a<span class="op">);</span></span>
@@ -2814,7 +2814,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 </section>
 <section id="while-loop-with-complex-conditions" class="level1">
 <h1>While Loop With Complex Conditions</h1>
-<div class="sourceCode" id="cb91"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> c<span class="op">;</span></span>
+<div class="sourceCode" id="cb91"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> c<span class="op">;</span></span>
 <span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> message<span class="op">;</span></span>
 <span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> count<span class="op">;</span></span>
 <span id="cb91-4"><a href="#cb91-4" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> res<span class="op">;</span></span>
