@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">User Input</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 27, 2021 (02:50:44 AM)</p>
+<p class="date">May 27, 2021 (05:36:50 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -272,7 +272,7 @@
 <p>You may have to perform this operation for every solution where the user is supposed to enter values.</p></li>
 <li><p>Compile and execute it.</p></li>
 <li><p>The user of your program (in this case, you!) will be prompted with the message:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> Please<span class="op">,</span> enter your first name<span class="op">,</span> followed by <span class="st">&quot;Enter&quot;</span><span class="op">:</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Please,</span> enter your first name, followed by <span class="st">&quot;Enter&quot;</span>:</span></code></pre></div>
 <p>Enter your first name, followed by <kbd>Enter ↵</kbd>. You just witnessed an interaction between a program and the user!</p></li>
 <li><p>Read the source code carefully and make sure you understand all of it.</p></li>
 <li><p>Change the code so that the program would also ask for the user’s last name and print both their first and last names.</p></li>
@@ -296,7 +296,7 @@
 <li><p>Display the values of <code class="sourceCode cs">intVar</code> and <code class="sourceCode cs">stringVar</code>.</p></li>
 <li><p>Write a statement that assigns the value of <code class="sourceCode cs">stringVar</code> to <code class="sourceCode cs">intVar</code>. Why is the compiler complaining? Comment out the statement you just added (that is, add <code class="sourceCode cs"><span class="co">//</span></code> in front of it, so that the compiler will not try to execute it).</p></li>
 <li><p>Copy the following statement to “convert” the string value of <code class="sourceCode cs">stringVar</code> into an integer value and assign it to <code class="sourceCode cs">intVar</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>intVar <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>stringVar<span class="op">);</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>intVar <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>stringVar<span class="op">);</span></span></code></pre></div></li>
 <li><p>Using <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-convert-a-string-to-a-number" class="uri">https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-convert-a-string-to-a-number</a>, try to understand what just happened.</p></li>
 <li><p>Change the value of <code class="sourceCode cs">stringVar</code> to be <code class="sourceCode cs"><span class="st">&quot;Train&quot;</span></code> and assign it to <code class="sourceCode cs">intVar</code> using <code class="sourceCode cs"><span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span></code> as previously shown. What happened?</p></li>
 </ol>
@@ -305,24 +305,21 @@
 <section id="reading-numeric-datatypes-from-the-user" class="level1">
 <h1>Reading Numeric Datatypes From the User</h1>
 <ol>
-<li>Looking back at the <a href="PersonalizedWelcomeMessage_Solution.zip">PersonalizedWelcomeMessage solution</a>, what if you ask the user directly for an integer? How can you store it in an int variable?</li>
-<li>Add the following to the code:</li>
-</ol>
+<li><p>Looking back at the <a href="PersonalizedWelcomeMessage_Solution.zip">PersonalizedWelcomeMessage solution</a>, what if you ask the user directly for an integer? How can you store it in an int variable?</p></li>
+<li><p>Add the following to the code:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please enter your age in years as an integer.&quot;</span><span class="op">);</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> ageInput <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> age <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>ageInput<span class="op">);</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Your age in months is {age*12}&quot;</span><span class="op">);</span></span></code></pre></div>
-<ol>
-<li>Re-compile and execute your code. Be sure to enter a whole number for your age.</li>
-<li>Are the results what you expect?</li>
-<li>Run the code again, this time with a negative number for your age. Then try again with <code class="sourceCode cs"><span class="dv">0</span></code>. Does the code still work?</li>
-<li>What if you were to enter a floating point number when asked for an integer? What if you entered the word “twenty”?</li>
-<li>Here you are purposely ignoring the prompt, but know that your user may purposely or accidentally give the wrong input type.</li>
-<li>Later in the course you will learn how to handle untrustworthy user input</li>
-<li>Can you think of a change you can make to the code to accept ages of type float instead of int? Try making that change!</li>
-<li>If you were to ask a user to enter an age without specifying its type, what .Parse should you use?</li>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Your age in months is {age*12}&quot;</span><span class="op">);</span></span></code></pre></div></li>
+<li><p>Re-compile and execute your code. Be sure to enter a whole number for your age.</p></li>
+<li><p>Are the results what you expect?</p></li>
+<li><p>Run the code again, this time with a negative number for your age. Then try again with <code class="sourceCode cs"><span class="dv">0</span></code>. Does the code still work?</p></li>
+<li><p>What if you were to enter a floating point number when asked for an integer? What if you entered the word “twenty”?</p>
+<p>Here you are purposely ignoring the prompt, but know that your user may purposely or accidentally give the wrong input type. Later in the course you will learn how to handle untrustworthy user input</p></li>
+<li><p>Can you think of a change you can make to the code to accept ages of type <code class="sourceCode cs"><span class="dt">float</span></code> instead of <code class="sourceCode cs"><span class="dt">int</span></code>? Try making that change!</p></li>
+<li><p>If you were to ask a user to enter an age without specifying its type, what <code class="sourceCode cs"><span class="op">.</span><span class="fu">Parse</span></code> should you use?</p></li>
 </ol>
 </section>
 </main>
