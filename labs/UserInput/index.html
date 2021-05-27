@@ -247,12 +247,17 @@
 <header id="title-block-header">
 <h1 class="title">User Input</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 26, 2021 (11:00:35 PM)</p>
+<p class="date">May 27, 2021 (02:29:48 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
 <li><a href="#reading-from-the-user">Reading From the User</a></li>
-<li><a href="#parsing-numeric-types">Parsing Numeric Types</a></li>
+<li><a href="#parsing-numeric-types">Parsing Numeric Types</a>
+<ul>
+<li><a href="#warm-up">Warm-Up</a></li>
+<li><a href="#variable-types-from-string-to-integer">Variable Types: From String to Integer</a></li>
+</ul></li>
+<li><a href="#reading-numeric-datatypes-from-the-user">Reading Numeric Datatypes From the User</a></li>
 </ul>
 </nav>
 <section id="reading-from-the-user" class="level1">
@@ -275,22 +280,49 @@
 </section>
 <section id="parsing-numeric-types" class="level1">
 <h1>Parsing Numeric Types</h1>
+<section id="warm-up" class="level2">
+<h2>Warm-Up</h2>
 <ol>
-<li><p>So far, our user input has always returned a specific type. What type is it?</p></li>
-<li><p>Without making changes to the code, execute it again but give a number as your first name. Does the type returned change if the user enters only numeric values?</p></li>
-<li><p>What if you ask the user directly for an integer? How can you store it in an int variable?</p></li>
-<li><p>Add the following to the code:</p>
-<p>Console.WriteLine(“Please enter your age in years as an integer.”);</p>
-<p>string ageInput = Console.ReadLine(); int age = int.Parse(ageInput);</p>
-<p>Console.WriteLine($"Your age in months is {age*12}");</p></li>
-<li><p>Re-compile and execute your code. Be sure to enter a whole number for your age.</p></li>
-<li><p>Are the results what you expect?</p></li>
-<li><p>Run the code again, this time with a negative number for your age. Then try again with 0. Does the code still work?</p></li>
-<li><p>What if you were to enter a floating point number when asked for an integer? What if you entered the word “twenty”?</p></li>
-<li><p>Here you are purposely ignoring the prompt, but know that your user may purposely or accidentally give the wrong input type.</p></li>
-<li><p>Later in the course you will learn how to handle untrustworthy user input</p></li>
-<li><p>Can you think of a change you can make to the code to accept ages of type float instead of int? Try making that change!</p></li>
-<li><p>If you were to ask a user to enter an age without specifying its type, what .Parse should you use?</p></li>
+<li>So far, our user input has always returned a specific type. What type is it?</li>
+<li>Without making changes to the code, execute it again but give a number as your first name. Does the type returned change if the user enters only numeric values?</li>
+</ol>
+</section>
+<section id="variable-types-from-string-to-integer" class="level2">
+<h2>Variable Types: From String to Integer</h2>
+<ol>
+<li><p>Create a new project.</p></li>
+<li><p>Write two statements, one that declares a variable of type <code class="sourceCode cs"><span class="dt">int</span></code> named <code class="sourceCode cs">intVar</code> and one that declares a variable of type <code class="sourceCode cs"><span class="dt">string</span></code> named <code class="sourceCode cs">stringVar</code>.</p></li>
+<li><p>Assign the value <code class="sourceCode cs"><span class="dv">3</span></code> to <code class="sourceCode cs">intVar</code> and <code class="sourceCode cs"><span class="st">&quot;4&quot;</span></code> to <code class="sourceCode cs">stringVar</code>.</p></li>
+<li><p>Display the values of <code class="sourceCode cs">intVar</code> and <code class="sourceCode cs">stringVar</code>.</p></li>
+<li><p>Write a statement that assigns the value of <code class="sourceCode cs">stringVar</code> to <code class="sourceCode cs">intVar</code>. Why is the compiler complaining? Comment out the statement you just added (that is, add <code class="sourceCode cs"><span class="co">//</span></code> in front of it, so that the compiler will not try to execute it).</p></li>
+<li><p>Copy the following statement to “convert” the string value of <code class="sourceCode cs">stringVar</code> into an integer value and assign it to <code class="sourceCode cs">intVar</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>intVar <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>stringVar<span class="op">);</span></span></code></pre></div></li>
+<li><p>Using <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-convert-a-string-to-a-number" class="uri">https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-convert-a-string-to-a-number</a>, try to understand what just happened.</p></li>
+<li><p>Change the value of <code class="sourceCode cs">stringVar</code> to be <code class="sourceCode cs"><span class="st">&quot;Train&quot;</span></code> and assign it to <code class="sourceCode cs">intVar</code> using <code class="sourceCode cs"><span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span></code> as previously shown. What happened?</p></li>
+</ol>
+</section>
+</section>
+<section id="reading-numeric-datatypes-from-the-user" class="level1">
+<h1>Reading Numeric Datatypes From the User</h1>
+<ol>
+<li>Looking back at the <a href="PersonalizedWelcomeMessage_Solution.zip">PersonalizedWelcomeMessage solution</a>, what if you ask the user directly for an integer? How can you store it in an int variable?</li>
+<li>Add the following to the code:</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please enter your age in years as an integer.&quot;</span><span class="op">);</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> ageInput <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> age <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>ageInput<span class="op">);</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Your age in months is {age*12}&quot;</span><span class="op">);</span></span></code></pre></div>
+<ol>
+<li>Re-compile and execute your code. Be sure to enter a whole number for your age.</li>
+<li>Are the results what you expect?</li>
+<li>Run the code again, this time with a negative number for your age. Then try again with <code class="sourceCode cs"><span class="dv">0</span></code>. Does the code still work?</li>
+<li>What if you were to enter a floating point number when asked for an integer? What if you entered the word “twenty”?</li>
+<li>Here you are purposely ignoring the prompt, but know that your user may purposely or accidentally give the wrong input type.</li>
+<li>Later in the course you will learn how to handle untrustworthy user input</li>
+<li>Can you think of a change you can make to the code to accept ages of type float instead of int? Try making that change!</li>
+<li>If you were to ask a user to enter an age without specifying its type, what .Parse should you use?</li>
 </ol>
 </section>
 </main>

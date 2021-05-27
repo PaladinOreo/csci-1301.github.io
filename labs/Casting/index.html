@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Type Casting</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 26, 2021 (11:00:35 PM)</p>
+<p class="date">May 27, 2021 (02:29:48 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -255,7 +255,11 @@
 <ul>
 <li><a href="#literals-and-variables">Literals and Variables</a></li>
 <li><a href="#operations">Operations</a></li>
+</ul></li>
+<li><a href="#casting">Casting</a>
+<ul>
 <li><a href="#cast-operator">Cast Operator</a></li>
+<li><a href="#implicit-and-explicit-casting">Implicit and Explicit Casting</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -266,7 +270,7 @@
 <h2>Literals and Variables</h2>
 <p>This part should be first carried out without using an IDE, but with pen and paper.</p>
 <p>Assume we have the following statements:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">21</span><span class="op">,</span> b <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">21</span><span class="op">,</span> b <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> f <span class="op">=</span> <span class="fl">2.5000000f</span><span class="op">;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> d <span class="op">=</span> <span class="op">-</span><span class="fl">1.3</span><span class="op">;</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">decimal</span> m <span class="op">=</span> <span class="fl">2.5m</span><span class="op">;</span></span></code></pre></div>
@@ -350,7 +354,7 @@
 </tbody>
 </table>
 <p>You can check your answers using an IDE: create a new project, copy the variable declarations and assignments, and write your own statements to perform the calculations in the <code class="sourceCode cs">Main</code> method. For instance, if you want to check that the result of <code class="sourceCode cs">a <span class="op">+</span> d</code> is of type <code class="sourceCode cs"><span class="dt">double</span></code>, write something like:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> tempVariable1 <span class="op">=</span> a <span class="op">+</span> d<span class="op">;</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> tempVariable1 <span class="op">=</span> a <span class="op">+</span> d<span class="op">;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The value of d+f is {tempVariable1}&quot;</span><span class="op">);</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> tempVariable2 <span class="op">=</span> a <span class="op">+</span> d<span class="op">;</span> <span class="co">// This line should give you an error.</span></span></code></pre></div>
 <!-- 
@@ -359,38 +363,44 @@ https://stackoverflow.com/questions/11634079/how-can-i-get-the-data-type-of-a-va
 Check the actual type!
 -->
 </section>
+</section>
+<section id="casting" class="level1">
+<h1>Casting</h1>
 <section id="cast-operator" class="level2">
 <h2>Cast Operator</h2>
 <p>Create a new project, and then do the following.</p>
 <ol>
 <li><p>Add in your program the following:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> floatVar <span class="op">=</span> <span class="fl">4.3f</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> floatVar <span class="op">=</span> <span class="fl">4.3f</span><span class="op">;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> intVar <span class="op">=</span> floatVar<span class="op">;</span> <span class="co">// This statement will give you an error</span></span></code></pre></div>
 <p>You will get an error that reads</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Cannot</span> implicitly convert type <span class="st">&#39;float&#39;</span> to <span class="st">&#39;int&#39;</span>. An explicit conversion exists <span class="er">(</span><span class="ex">are</span> you missing a cast<span class="pp">?</span><span class="kw">)</span></span></code></pre></div>
 <p>Can you explain it?</p></li>
 <li><p>Your IDE is suggesting that we use a “cast” to “force” C# to store the value of the variable <code class="sourceCode cs">floatVar</code> into the variable <code class="sourceCode cs">intVar</code>. To do so, replace the previous statement with the following:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> intVar <span class="op">=</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span>floatVar<span class="op">;</span> <span class="co">// This statement will compile</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> intVar <span class="op">=</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span>floatVar<span class="op">;</span> <span class="co">// This statement will compile</span></span></code></pre></div></li>
 <li><p>Using a <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code> statement, observe the value stored in <code class="sourceCode cs">intVar</code>. Can you tell if the value stored in <code class="sourceCode cs">floatVar</code> was rounded or truncated before being stored in the variable <code class="sourceCode cs">intVar</code>? Conduct further experiments if needed to answer this question.</p></li>
+</ol>
+</section>
+<section id="implicit-and-explicit-casting" class="level2">
+<h2>Implicit and Explicit Casting</h2>
+<ol>
 <li><p>Look back at the warning given by the IDE. It uses the term “implicitly convert” before introducing the cast operator.</p></li>
-<li><p>While you needed a cast to convert a float to an int, do you need one to convert an int to a float? Try the following:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> intVar <span class="op">=</span> <span class="dv">21</span><span class="op">;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> floatVar <span class="op">=</span> intVar<span class="op">;</span> <span class="co">// Does this need a cast?</span></span></code></pre></div></li>
-<li><p>Generally, you need an explicit cast if an implicit conversion would lead to data loss. Since all possible int values are also valid float values, no explicit cast is needed.</p></li>
+<li><p>While you needed a cast to convert a <code class="sourceCode cs"><span class="dt">float</span></code> to an <code class="sourceCode cs"><span class="dt">int</span></code>, do you need one to convert an <code class="sourceCode cs"><span class="dt">int</span></code> to a <code class="sourceCode cs"><span class="dt">float</span></code>? Try the following:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> intVar <span class="op">=</span> <span class="dv">21</span><span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> floatVar <span class="op">=</span> intVar<span class="op">;</span> <span class="co">// Does this need a cast?</span></span></code></pre></div>
+<p>Generally, you need an explicit cast if an implicit conversion would lead to data loss. Since all possible <code class="sourceCode cs"><span class="dt">int</span></code> values are also valid <code class="sourceCode cs"><span class="dt">float</span></code> values, no explicit cast is needed!</p></li>
 <li><p>Do these cases need an explicit cast, or will an explicit conversion work? Try them in your IDE to check your answers!</p></li>
 </ol>
 <ul>
-<li>double to int</li>
-<li>int to double</li>
-<li>float to double</li>
-<li>double to float</li>
-<li>int to decimal</li>
-<li>decimal to float</li>
-<li>float to decimal</li>
+<li><code class="sourceCode cs"><span class="dt">double</span></code> to <code class="sourceCode cs"><span class="dt">int</span></code></li>
+<li><code class="sourceCode cs"><span class="dt">int</span></code> to <code class="sourceCode cs"><span class="dt">double</span></code></li>
+<li><code class="sourceCode cs"><span class="dt">float</span></code> to <code class="sourceCode cs"><span class="dt">double</span></code></li>
+<li><code class="sourceCode cs"><span class="dt">double</span></code> to <code class="sourceCode cs"><span class="dt">float</span></code></li>
+<li><code class="sourceCode cs"><span class="dt">int</span></code> to <code class="sourceCode cs"><span class="dt">decimal</span></code></li>
+<li><code class="sourceCode cs"><span class="dt">decimal</span></code> to <code class="sourceCode cs"><span class="dt">float</span></code></li>
+<li><code class="sourceCode cs"><span class="dt">float</span></code> to <code class="sourceCode cs"><span class="dt">decimal</span></code></li>
 </ul>
-<ol>
-<li>That last result may have been surprising. While decimal is higher precision than float and double, it requires an explicit cast from either of those types.</li>
-</ol>
+<p>That last result may have been surprising. While <code class="sourceCode cs"><span class="dt">decimal</span></code> is higher precision than <code class="sourceCode cs"><span class="dt">float</span></code> and <code class="sourceCode cs"><span class="dt">double</span></code>, it requires an explicit cast from either of those types, as you want to “force” imprecise data into a datatype that is supposedly extremely precise. Think about measuring wood with an inaccurate tape measurer and then cutting it with laser precision: that is what storing a <code class="sourceCode cs"><span class="dt">float</span></code> into a <code class="sourceCode cs"><span class="dt">decimal</span></code> is!</p>
 </section>
 </section>
 </main>
