@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Precise Rectangle and Circle Class</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 31, 2021 (06:10:12 PM)</p>
+<p class="date">May 31, 2021 (06:38:26 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -271,7 +271,7 @@
 <section id="writing-your-own-preciserectangle-class" class="level1">
 <h1>Writing Your Own PreciseRectangle Class</h1>
 <p>In this exercise, you will create your own first class instead of using and expanding one that was written for you. The idea is to take inspiration from the class you already know (<code class="sourceCode cs">Rectangle</code>) to create a new class, called <code class="sourceCode cs">PreciseRectangle</code>, that will manipulate rectangles whose width and length are floating-point values, instead of integers (as in <code class="sourceCode cs">Rectangle</code>).</p>
-<p>This should be a fairly straightforward exercise, that mostly re-enforce what you should know already (except for the UML part, and for how to create a class in Visual Studio).</p>
+<p>This should be a fairly straightforward exercise, that mostly re-enforce what you should know already (except for the UML part, and how to create a class in your IDE).</p>
 <section id="conception" class="level2">
 <h2>Conception</h2>
 <p>Draw the UML diagram of this class: it should have two attributes, of type <code class="sourceCode cs"><span class="dt">double</span></code>, and eight methods:</p>
@@ -293,6 +293,7 @@
 <li>Within your IDE, re-name the project to “PreciseRectangle”, and rename the “Rectangle.cs” file to “PreciseRectangle.cs”</li>
 <li>In the “PreciseRectangle.cs” file, replace <code class="sourceCode cs"><span class="kw">class</span> Rectangle</code> with <code class="sourceCode cs"><span class="kw">class</span> PreciseRectangle</code>.</li>
 <li>Comment out the body of the <code class="sourceCode cs">Main</code> method in “Program.cs”.</li>
+<li>It is important that you re-name the files within your IDE. If you try to rename your files, or their folders, outside of the IDE then it will break your solution. The solution will still be looking for the original file/folder names, and will not recognize the changed names. If such an error occurs, restore the previous names and then rename your files through the IDE as instructed.</li>
 <li>Your program should compile as it is, but you have to edit <code class="sourceCode cs">PreciseRectangle<span class="op">.</span><span class="fu">cs</span></code> to now store the <code class="sourceCode cs">width</code> and the <code class="sourceCode cs">length</code> with <code class="sourceCode cs"><span class="dt">double</span></code>, and to propagate this change accordingly. What should be the return type of <code class="sourceCode cs">GetWidth</code>, for instance?</li>
 <li>Declare and manipulate precise rectangles (i.e., with floating-point values for the width and the length) in the <code class="sourceCode cs">Main</code> method, and make sure they behave as expected (can you compute the area, for instance?).</li>
 <li>Add the missing methods (<code class="sourceCode cs">ComputePerimeter</code>, <code class="sourceCode cs">Swap</code>, <code class="sourceCode cs">MultiplyRectangle</code>).</li>
