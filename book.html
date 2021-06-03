@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 3, 2021 (03:32:20 PM)</p>
+<p class="date">June 3, 2021 (05:24:07 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -477,11 +477,11 @@
 <li>Easier way for humans to write machine-language instructions</li>
 <li>Use a sequence of letters/symbols to represent an instruction, instead of 1s and 0s.
 <ul>
-<li>Example x86 instruction: <code class="sourceCode cs">movq <span class="op">%</span>rdx<span class="op">,</span> <span class="op">%</span>rbx</code></li>
+<li>Example x86 instruction: <code class="sourceCode cs">MOV AX<span class="op">,</span> BX</code> which makes a copy of the data in component called BX and places it in one called AX</li>
 </ul></li>
 <li><strong>Assembler</strong>: Translates assembly language code to machine instructions
 <ul>
-<li>For example: movq %rdx, %rbx becomes 001011001010110</li>
+<li>For example: MOV AX, BX becomes 001011001010110</li>
 <li>One assembly instruction = one machine-language instruction</li>
 <li>x86 assembly produces x86 machine code</li>
 </ul></li>
