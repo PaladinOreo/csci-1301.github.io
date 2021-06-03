@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 3, 2021 (05:57:56 PM)</p>
+<p class="date">June 3, 2021 (06:01:07 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -3281,6 +3281,10 @@ Room number is 356</code></pre></li>
 <p>We can also compare <code class="sourceCode cs"><span class="dt">char</span></code>, but the order is a bit complex (you can find it, for instance, at <a href="https://stackoverflow.com/a/14967721/" class="uri">https://stackoverflow.com/a/14967721/</a>).</p>
 <p>The precedence, that we will study in lab, is as follows:</p>
 <p><code class="sourceCode cs"><span class="op">!</span> <span class="op">(*</span> <span class="op">/</span> <span class="op">%)</span> <span class="op">(+</span> <span class="op">-)</span> <span class="op">(&lt;</span> <span class="op">&gt;</span> <span class="op">&lt;=</span> <span class="op">&gt;=)</span> <span class="op">(==</span> <span class="op">!=)</span> <span class="op">&amp;&amp;</span> <span class="op">||</span></code></p>
+<ul>
+<li>Operators with higher precedence are on the left and operators with lower precedence are on the right (ex: <code class="sourceCode cs"><span class="dv">1</span><span class="op">*</span><span class="dv">2</span><span class="op">+</span><span class="dv">3</span></code> = <code class="sourceCode cs"><span class="dv">1</span><span class="op">*</span><span class="dv">2</span></code> will have higher precedence than <code class="sourceCode cs"><span class="dv">2</span><span class="op">+</span><span class="dv">3</span></code>)</li>
+<li>Operators in parenthesis have equal precedence and are evaluated in the order they appear, from left to right (ex: <code class="sourceCode cs"><span class="dv">1</span><span class="op">+</span><span class="dv">2-3</span></code> = <code class="sourceCode cs"><span class="dv">1</span><span class="op">+</span><span class="dv">2</span></code> be evaluated before <code class="sourceCode cs"><span class="dv">2-3</span></code>)</li>
+</ul>
 </section>
 <section id="if-statement" class="level1">
 <h1>if Statement</h1>
