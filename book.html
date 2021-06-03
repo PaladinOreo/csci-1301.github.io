@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 3, 2021 (03:46:48 AM)</p>
+<p class="date">June 3, 2021 (12:45:48 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -1105,9 +1105,9 @@ Welcome to CSCI 1301!</code></pre></li>
 </ul></li>
 <li>Amount of memory needed for a floating-point data type depends on the precision (significant figures) of the number
 <ul>
-<li><code class="sourceCode cs"><span class="dt">float</span></code> uses 4 bytes of memory, can store positive or negative numbers in a range of approximately <span class="math inline">[10<sup> − 45</sup>,10<sup>38</sup>]</span>, with 7 significant figures of precision</li>
-<li><code class="sourceCode cs"><span class="dt">double</span></code> uses 8 bytes of memory, and has both a wider range (<span class="math inline">10<sup> − 324</sup></span> to <span class="math inline">10<sup>308</sup></span>) and more significant figures (15 or 16)</li>
-<li><code class="sourceCode cs"><span class="dt">decimal</span></code> uses 16 bytes of memory, and has 28 or 29 significant figures of precision, but it actually has the smallest range (<span class="math inline">10<sup> − 28</sup></span> to <span class="math inline">10<sup>28</sup></span>) because it stores decimal fractions exactly</li>
+<li><code class="sourceCode cs"><span class="dt">float</span></code> uses 4 bytes of memory, can store positive or negative numbers in a range of approximately <span class="math inline">[10<sup>−45</sup>,10<sup>38</sup>]</span>, with 7 significant figures of precision</li>
+<li><code class="sourceCode cs"><span class="dt">double</span></code> uses 8 bytes of memory, and has both a wider range (<span class="math inline">10<sup>−324</sup></span> to <span class="math inline">10<sup>308</sup></span>) and more significant figures (15 or 16)</li>
+<li><code class="sourceCode cs"><span class="dt">decimal</span></code> uses 16 bytes of memory, and has 28 or 29 significant figures of precision, but it actually has the smallest range (<span class="math inline">10<sup>−28</sup></span> to <span class="math inline">10<sup>28</sup></span>) because it stores decimal fractions exactly</li>
 </ul></li>
 <li>Difference between binary fractions and decimal fractions
 <ul>
@@ -1117,7 +1117,7 @@ Welcome to CSCI 1301!</code></pre></li>
 </ul></li>
 <li>More specifically, they use binary scientific notation: A mantissa (a binary integer), followed by an exponent assumed to be a power of 2, which is applied to the mantissa
 <ul>
-<li>10101e-10 means a mantissa of 10101 (i.e. 21 in base 10) with an exponent of -10 (i.e. <span class="math inline">2<sup> − 2</sup></span> in base 10), which also produces the value 101.01 or 5.25 in base 10</li>
+<li>10101e-10 means a mantissa of 10101 (i.e. 21 in base 10) with an exponent of -10 (i.e. <span class="math inline">2<sup>−2</sup></span> in base 10), which also produces the value 101.01 or 5.25 in base 10</li>
 </ul></li>
 <li>Binary fractions can’t represent all base-10 fractions, because they can only represent fractions that are negative powers of 2. <span class="math inline">1/10</span> is not a negative power of 2 and can’t be represented as a sum of <span class="math inline">1/16</span>, <span class="math inline">1/32</span>, <span class="math inline">1/64</span>, etc.</li>
 <li>This means some base-10 fractions will get “rounded” to the nearest finite binary fraction, and this will cause errors when they are used in arithmetic</li>
@@ -1195,19 +1195,19 @@ Welcome to CSCI 1301!</code></pre></li>
 <tr class="odd">
 <td><code class="sourceCode cs"><span class="dt">float</span></code></td>
 <td>4 bytes</td>
-<td><span class="math inline"> ± 1.5 ⋅ 10<sup> − 45</sup>… ± 3.4 ⋅ 10<sup>38</sup></span></td>
+<td><span class="math inline"> ± 1.5 ⋅ 10<sup>−45</sup>… ± 3.4 ⋅ 10<sup>38</sup></span></td>
 <td>7 digits</td>
 </tr>
 <tr class="even">
 <td><code class="sourceCode cs"><span class="dt">double</span></code></td>
 <td>8 bytes</td>
-<td><span class="math inline"> ± 5.0 ⋅ 10<sup> − 324</sup>… ± 1.7 ⋅ 10<sup>308</sup></span></td>
+<td><span class="math inline"> ± 5.0 ⋅ 10<sup>−324</sup>… ± 1.7 ⋅ 10<sup>308</sup></span></td>
 <td>15-16 digits</td>
 </tr>
 <tr class="odd">
 <td><code class="sourceCode cs"><span class="dt">decimal</span></code></td>
 <td>16 bytes</td>
-<td><span class="math inline"> ± 1.0 ⋅ 10<sup> − 28</sup>… ± 7.9 ⋅ 10<sup>28</sup></span></td>
+<td><span class="math inline"> ± 1.0 ⋅ 10<sup>−28</sup>… ± 7.9 ⋅ 10<sup>28</sup></span></td>
 <td>28-29 digits</td>
 </tr>
 </tbody>
@@ -4203,6 +4203,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
             <a href="book.docx" title="Download this ressource in docx.">↓ docx</a>
                             <a href="https://github.com/csci-1301/csci-1301.github.io/tree/main/lectures/" title="Access the source code of this ressource.">Source code</a>
                 <a href="about.html" title="Learn more about this website.">About</a>
+        <a href="about.html#licence-1" title="Licence">CC BY 4.0</a>
         </div> 
 </footer>
 <script>
