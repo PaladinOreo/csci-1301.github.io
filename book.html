@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 3, 2021 (05:24:07 PM)</p>
+<p class="date">June 3, 2021 (05:30:44 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -468,7 +468,7 @@
 <li>Instructions are settings on these control signals
 <ul>
 <li>A setting is represented as a 0 or 1</li>
-<li>A machine language instruction is a group of settings - For example: 001011001010110</li>
+<li>A machine language instruction is a group of settings - For example: 1000100111011000</li>
 </ul></li>
 <li>Most CPUs use one of two languages: x86 or ARM</li>
 </ul></li>
@@ -477,11 +477,11 @@
 <li>Easier way for humans to write machine-language instructions</li>
 <li>Use a sequence of letters/symbols to represent an instruction, instead of 1s and 0s.
 <ul>
-<li>Example x86 instruction: <code class="sourceCode cs">MOV AX<span class="op">,</span> BX</code> which makes a copy of the data in component called BX and places it in one called AX</li>
+<li>Example x86 instruction: <code class="sourceCode cs">MOV BX<span class="op">,</span> AX</code> which makes a copy of data stored in a component called AX and places it in one called BX</li>
 </ul></li>
-<li><strong>Assembler</strong>: Translates assembly language code to machine instructions
+<li><strong>Assembler</strong>: Translates assembly language instructions to machine language instructions
 <ul>
-<li>For example: MOV AX, BX becomes 001011001010110</li>
+<li>For example: <code class="sourceCode cs">MOV BX<span class="op">,</span> AX</code> translates into <code class="sourceCode cs"><span class="dv">1000100111011000</span></code></li>
 <li>One assembly instruction = one machine-language instruction</li>
 <li>x86 assembly produces x86 machine code</li>
 </ul></li>
