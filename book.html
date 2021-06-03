@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 3, 2021 (05:30:44 PM)</p>
+<p class="date">June 3, 2021 (05:56:33 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -2699,9 +2699,10 @@ Room number is 356</code></pre></li>
 <span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 <li><p>The first parameter has type <code class="sourceCode cs"><span class="dt">int</span></code> and is named lengthFactor. The second parameter has type <code class="sourceCode cs"><span class="dt">int</span></code> and is named <code class="sourceCode cs">widthFactor</code></p></li>
 <li><p>You can call this method by providing two arguments, separated by a comma:</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>myRect<span class="op">.</span><span class="fu">SetLength</span><span class="op">(</span><span class="dv">5</span><span class="op">);</span></span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>myRect<span class="op">.</span><span class="fu">SetWidth</span><span class="op">(</span><span class="dv">10</span><span class="op">);</span></span>
-<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>myRect<span class="op">.</span><span class="fu">MultiplyBoth</span><span class="op">(</span><span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>Rectangle myRect <span class="op">=</span> <span class="kw">new</span> <span class="fu">Rectangle</span><span class="op">();</span></span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>myRect<span class="op">.</span><span class="fu">SetLength</span><span class="op">(</span><span class="dv">5</span><span class="op">);</span></span>
+<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>myRect<span class="op">.</span><span class="fu">SetWidth</span><span class="op">(</span><span class="dv">10</span><span class="op">);</span></span>
+<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a>myRect<span class="op">.</span><span class="fu">MultiplyBoth</span><span class="op">(</span><span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">);</span></span></code></pre></div>
 <p>The first argument, 3, will be assigned to the first parameter, <code class="sourceCode cs">lengthFactor</code>. The second argument, 5, will be assigned to the second parameter, <code class="sourceCode cs">widthFactor</code></p></li>
 <li><p>The order of the arguments matters when calling a multi-parameter method. If you write <code class="sourceCode cs">myRect<span class="op">.</span><span class="fu">MultiplyBoth</span><span class="op">(</span><span class="dv">5</span><span class="op">,</span> <span class="dv">3</span><span class="op">)</span></code>, then <code class="sourceCode cs">lengthFactor</code> will be 5 and <code class="sourceCode cs">widthFactor</code> will be 3.</p></li>
 <li><p>The type of each argument must match the type of the corresponding parameter. For example, when you call the <code class="sourceCode cs">ClassRoom</code> constructor we just wrote, the first argument must be a <code class="sourceCode cs"><span class="dt">string</span></code> and the second argument must be an <code class="sourceCode cs"><span class="dt">int</span></code></p></li>
@@ -2743,7 +2744,7 @@ Room number is 356</code></pre></li>
 <span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>ClassRoom english <span class="op">=</span> <span class="kw">new</span> <span class="fu">ClassRoom</span><span class="op">();</span></span></code></pre></div>
 <p>The first statement calls the two-parameter constructor we wrote, since it has a <code class="sourceCode cs"><span class="dt">string</span></code> argument and an <code class="sourceCode cs"><span class="dt">int</span></code> argument (in that order), and those match the parameters <code class="sourceCode cs"><span class="op">(</span><span class="dt">string</span> buildingParam<span class="op">,</span> <span class="dt">int</span> numberParam<span class="op">)</span></code>. The second statement calls the zero-parameter constructor since it has no arguments.</p></li>
 <li><p>If the arguments don’t match any constructor, it’s still an error:</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>ClassRoom csci <span class="op">=</span> <span class="kw">new</span> <span class="fu">ClassRoom</span><span class="op">(</span><span class="dv">356</span><span class="op">,</span> <span class="st">&quot;Allgood East&quot;</span><span class="op">);</span>`</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>ClassRoom csci <span class="op">=</span> <span class="kw">new</span> <span class="fu">ClassRoom</span><span class="op">(</span><span class="dv">356</span><span class="op">,</span> <span class="st">&quot;Allgood East&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>This will produce a compile error, because the instantiation statement has two arguments in the order <code class="sourceCode cs"><span class="dt">int</span></code>, <code class="sourceCode cs"><span class="dt">string</span></code>, but the only constructor with two parameters needs the first parameter to be a <code class="sourceCode cs"><span class="dt">string</span></code>.</p></li>
 </ul></li>
 </ul></li>
