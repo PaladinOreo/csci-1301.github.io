@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 3, 2021 (05:56:33 PM)</p>
+<p class="date">June 3, 2021 (05:57:03 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -3066,15 +3066,18 @@ Room number is 356</code></pre></li>
 <li><p>A complete example, where the “length” attribute is implemented the “old” way with a getter and setter, and the “width” attribute is implemented with a property:</p>
 <div class="sourceCode" id="cb98"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
 <span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a><span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">(</span><span class="dt">string</span><span class="op">[]</span> args<span class="op">)</span></span>
+<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Program</span>
 <span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a>    Rectangle myRectangle <span class="op">=</span> <span class="kw">new</span> <span class="fu">Rectangle</span><span class="op">();</span></span>
-<span id="cb98-6"><a href="#cb98-6" aria-hidden="true" tabindex="-1"></a>    myRectangle<span class="op">.</span><span class="fu">SetLength</span><span class="op">(</span><span class="dv">6</span><span class="op">);</span></span>
-<span id="cb98-7"><a href="#cb98-7" aria-hidden="true" tabindex="-1"></a>    myRectangle<span class="op">.</span><span class="fu">Width</span> <span class="op">=</span> <span class="dv">15</span><span class="op">;</span></span>
-<span id="cb98-8"><a href="#cb98-8" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Your rectangle&#39;s length is&quot;</span> <span class="op">+</span></span>
-<span id="cb98-9"><a href="#cb98-9" aria-hidden="true" tabindex="-1"></a>        $<span class="st">&quot;{myRectangle.GetLength()}, and &quot;</span> <span class="op">+</span></span>
-<span id="cb98-10"><a href="#cb98-10" aria-hidden="true" tabindex="-1"></a>        $<span class="st">&quot;its width is {myRectangle.Width}&quot;</span><span class="op">);</span></span>
-<span id="cb98-11"><a href="#cb98-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">(</span><span class="dt">string</span><span class="op">[]</span> args<span class="op">)</span></span>
+<span id="cb98-6"><a href="#cb98-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb98-7"><a href="#cb98-7" aria-hidden="true" tabindex="-1"></a>        Rectangle myRectangle <span class="op">=</span> <span class="kw">new</span> <span class="fu">Rectangle</span><span class="op">();</span></span>
+<span id="cb98-8"><a href="#cb98-8" aria-hidden="true" tabindex="-1"></a>        myRectangle<span class="op">.</span><span class="fu">SetLength</span><span class="op">(</span><span class="dv">6</span><span class="op">);</span></span>
+<span id="cb98-9"><a href="#cb98-9" aria-hidden="true" tabindex="-1"></a>        myRectangle<span class="op">.</span><span class="fu">Width</span> <span class="op">=</span> <span class="dv">15</span><span class="op">;</span></span>
+<span id="cb98-10"><a href="#cb98-10" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Your rectangle&#39;s length is &quot;</span> <span class="op">+</span></span>
+<span id="cb98-11"><a href="#cb98-11" aria-hidden="true" tabindex="-1"></a>            $<span class="st">&quot;{myRectangle.GetLength()}, and &quot;</span> <span class="op">+</span></span>
+<span id="cb98-12"><a href="#cb98-12" aria-hidden="true" tabindex="-1"></a>            $<span class="st">&quot;its width is {myRectangle.Width}&quot;</span><span class="op">);</span></span>
+<span id="cb98-13"><a href="#cb98-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb98-14"><a href="#cb98-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 <li><p>Properties “act like” variables: you can assign to them and read from them</p></li>
 <li><p>Reading from a property will <em>automatically</em> call the <code class="sourceCode cs">get</code> method for that property</p>
 <ul>
