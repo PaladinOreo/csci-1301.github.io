@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 3, 2021 (02:59:05 AM)</p>
+<p class="date">June 3, 2021 (02:59:58 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -2412,18 +2412,21 @@ Welcome to CSCI 1301!</code></pre></li>
 <li><p>When you have a variable for a reference type, or “reference variable,” you need to be careful with the assignment operation</p></li>
 <li><p>Consider this code:</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">(</span><span class="dt">string</span><span class="op">[]</span> args<span class="op">)</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Program</span>
 <span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>    Rectangle rect1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Rectangle</span><span class="op">();</span></span>
-<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>    rect1<span class="op">.</span><span class="fu">SetLength</span><span class="op">(</span><span class="dv">8</span><span class="op">);</span></span>
-<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>    rect1<span class="op">.</span><span class="fu">SetWidth</span><span class="op">(</span><span class="dv">10</span><span class="op">);</span></span>
-<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a>    Rectangle rect2 <span class="op">=</span> rect1<span class="op">;</span></span>
-<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a>    rect2<span class="op">.</span><span class="fu">SetLength</span><span class="op">(</span><span class="dv">4</span><span class="op">);</span></span>
-<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Rectangle 1: {rect1.GetLength()} &quot;</span></span>
-<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> $<span class="st">&quot;by {rect1.GetWidth()}&quot;</span><span class="op">);</span></span>
-<span id="cb67-11"><a href="#cb67-11" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Rectangle 2: {rect2.GetLength()} &quot;</span></span>
-<span id="cb67-12"><a href="#cb67-12" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> $<span class="st">&quot;by {rect2.GetWidth()}&quot;</span><span class="op">);</span></span>
-<span id="cb67-13"><a href="#cb67-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">(</span><span class="dt">string</span><span class="op">[]</span> args<span class="op">)</span></span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>        Rectangle rect1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Rectangle</span><span class="op">();</span></span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a>        rect1<span class="op">.</span><span class="fu">SetLength</span><span class="op">(</span><span class="dv">8</span><span class="op">);</span></span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a>        rect1<span class="op">.</span><span class="fu">SetWidth</span><span class="op">(</span><span class="dv">10</span><span class="op">);</span></span>
+<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a>        Rectangle rect2 <span class="op">=</span> rect1<span class="op">;</span></span>
+<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a>        rect2<span class="op">.</span><span class="fu">SetLength</span><span class="op">(</span><span class="dv">4</span><span class="op">);</span></span>
+<span id="cb67-11"><a href="#cb67-11" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Rectangle 1: {rect1.GetLength()} &quot;</span></span>
+<span id="cb67-12"><a href="#cb67-12" aria-hidden="true" tabindex="-1"></a>           <span class="op">+</span> $<span class="st">&quot;by {rect1.GetWidth()}&quot;</span><span class="op">);</span></span>
+<span id="cb67-13"><a href="#cb67-13" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Rectangle 2: {rect2.GetLength()} &quot;</span></span>
+<span id="cb67-14"><a href="#cb67-14" aria-hidden="true" tabindex="-1"></a>           <span class="op">+</span> $<span class="st">&quot;by {rect2.GetWidth()}&quot;</span><span class="op">);</span></span>
+<span id="cb67-15"><a href="#cb67-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb67-16"><a href="#cb67-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 <li><p>The output is:</p>
 <pre class="text"><code>Rectangle 1: 4 by 10
 Rectangle 2: 4 by 10</code></pre></li>
