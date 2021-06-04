@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Boolean and Basic Conditional Statements</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 4, 2021 (07:39:15 AM)</p>
+<p class="date">June 4, 2021 (07:52:20 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -284,8 +284,8 @@
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n\t</span><span class="st">&quot;</span> <span class="op">+</span> <span class="op">(!</span>t<span class="op">)+</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span> <span class="op">+</span> <span class="op">(!</span>f<span class="op">)</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>Compile and execute it.</p>
-<p>Then, write the code that will display on the screen the truth tables for the binary operators disjunction (or, <code class="sourceCode cs"><span class="op">||</span></code>), identity (equality, <code class="sourceCode cs"><span class="op">==</span></code>) and difference (inequality, <code class="sourceCode cs"><span class="op">!=</span></code>).</p>
-<p>Normally, using the find-and-replace feature of VS should make this task easy and fast.</p>
+<p>This should display to the screen truth tables for conjection (and, <code class="sourceCode cs"><span class="op">&amp;&amp;</span></code>) and negation (not, <code class="sourceCode cs"><span class="op">!</span></code>). Next, write code that will display truth tables for the binary operators disjunction (or, <code class="sourceCode cs"><span class="op">||</span></code>), identity (equality, <code class="sourceCode cs"><span class="op">==</span></code>) and difference (inequality, <code class="sourceCode cs"><span class="op">!=</span></code>).</p>
+<p>Normally, using the find-and-replace feature of your IDE should make this a quick and easy task.</p>
 </section>
 <section id="precedence-and-order-of-evaluation" class="level1">
 <h1>Precedence and Order of Evaluation</h1>
@@ -355,7 +355,7 @@
 </tr>
 </tbody>
 </table>
-<p>Note that an expression like <code class="sourceCode cs"><span class="op">!</span><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">2</span></code> doesn’t make any sense: C# would try to take the negation of <code class="sourceCode cs"><span class="dv">3</span></code>, but you can’t negate an integer! Along the same lines, an expression like <code class="sourceCode cs"><span class="kw">false</span> <span class="op">*</span> <span class="kw">true</span></code> doesn’t make any sense: you can’t multiply booleans! Similarly, <code class="sourceCode cs"><span class="dv">3</span> <span class="op">%</span> <span class="kw">false</span></code> will cause an error: can you see why?</p>
+<p>Note that an expression like <code class="sourceCode cs"><span class="op">!</span><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">2</span></code> doesn’t make any sense: C# would try to take the negation of <code class="sourceCode cs"><span class="dv">3</span></code>, but you can’t negate the truth value of an integer! Along the same lines, an expression like <code class="sourceCode cs"><span class="kw">false</span> <span class="op">*</span> <span class="kw">true</span></code> doesn’t make any sense: you can’t multiply booleans! Similarly, <code class="sourceCode cs"><span class="dv">3</span> <span class="op">%</span> <span class="kw">false</span></code> will cause an error: can you see why? These are all examples of “illegal” expressions.</p>
 </section>
 <section id="computing-simple-boolean-expressions" class="level2">
 <h2>Computing Simple Boolean Expressions</h2>
@@ -373,7 +373,7 @@
 </section>
 <section id="computing-expressions-involving-booleans-and-numerical-values" class="level2">
 <h2>Computing Expressions Involving Booleans and Numerical Values</h2>
-<p>For each of the following expression, decide if they are “legal” or not. If they are, give the result of their evaluation.</p>
+<p>For each of the following expressions, decide if it is “legal” or not. If it is, give the result of its evaluation.</p>
 <ul>
 <li><code class="sourceCode cs"><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">2</span></code></li>
 <li><code class="sourceCode cs"><span class="dv">2</span> <span class="op">==</span> <span class="dv">4</span></code></li>
@@ -395,7 +395,7 @@
 <li>Ask the user for an integer, and display on the screen “Negative” if the integer is negative, “Positive” if the integer in positive, and nothing if the integer is <span class="math inline">0</span>.</li>
 <li>Ask the user for an integer, and display on the screen “positive and odd” if the number is positive and odd, “positive and even” if the number is positive and even, “negative and odd” if the number is negative and odd, “negative and even” if the number is negative and even, and “You picked <span class="math inline">0</span>” if the number is <span class="math inline">0</span>.</li>
 </ol>
-<p>For each of those questions, write <em>on paper</em> whenever you should use <code class="sourceCode cs"><span class="kw">if</span></code>, <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code>, <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span><span class="op">-</span><span class="kw">if</span></code> or nested conditional structures, and what the condition(s) should be. Once you feel confident, write the code in VS, and then test it intensively: enter all kind of values (positive and odd, negative and even, <span class="math inline">0</span>, and remember that <a href="https://en.wikipedia.org/wiki/Parity_of_zero"><span class="math inline">0</span> is even</a>, etc.) and make sure that what is displayed on the screen is always correct.</p>
+<p>For each of those questions, write <em>on paper</em> whenever you should use <code class="sourceCode cs"><span class="kw">if</span></code>, <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code>, <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span><span class="op">-</span><span class="kw">if</span></code> or nested conditional structures, and what the condition(s) should be. Once you feel confident, write the code in your IDE, and then test it intensively: enter all kinds of values (positive and odd, negative and even, <span class="math inline">0</span>, and remember that <a href="https://en.wikipedia.org/wiki/Parity_of_zero"><span class="math inline">0</span> is even</a>, etc.) and make sure that what is displayed on the screen is always correct.</p>
 </section>
 </main>
 <footer id="footer">
