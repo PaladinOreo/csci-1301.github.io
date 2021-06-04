@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 4, 2021 (06:46:12 AM)</p>
+<p class="date">June 4, 2021 (07:22:53 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -475,7 +475,7 @@
 <li>Assembly language
 <ul>
 <li>Easier way for humans to write machine-language instructions</li>
-<li>Use a sequence of letters/symbols to represent an instruction, instead of 1s and 0s.
+<li>Use a sequence of letters/symbols to represent an instruction instead of 1s and 0s.
 <ul>
 <li>Example x86 instruction: <code class="sourceCode cs">MOV BX<span class="op">,</span> AX</code> which makes a copy of data stored in a component called AX and places it in one called BX</li>
 </ul></li>
@@ -487,8 +487,9 @@
 </ul></li>
 <li>Computers can only execute the machine code</li>
 </ul></li>
-<li>High-level language such as C#, C++, Java, Lisp, Python
+<li>High-level language
 <ul>
+<li>Hundreds including C#, C++, Java, Python, etc.</li>
 <li>Most programs are written in a high-level language since:
 <ul>
 <li>More human-readable than assembly language</li>
@@ -509,7 +510,7 @@
 <li>Not all high-level languages use a compiler - some use an interpreter</li>
 <li><strong>Interpreter</strong>: Lets a computer “execute” high-level code by translating one statement at a time to machine code</li>
 <li>Advantage: Less waiting time before you can run the program (no separate “compile” step)</li>
-<li>Disadvantage: Program runs slower, since you wait for each high-level statement to be translated before the program can continue</li>
+<li>Disadvantage: Program runs slower since you wait for the high-level statements to be translated then the program is run</li>
 </ul></li>
 <li>Managed high-level languages (like C#)
 <ul>
@@ -518,12 +519,17 @@
 <ul>
 <li>Intermediate language: Looks like assembly language, but not specific to any CPU</li>
 </ul></li>
-<li><strong>Runtime</strong> executes compiled program by <em>interpreting</em> the intermediate language instructions - translates one at a time to machine code</li>
+<li><strong>Runtime</strong> executes compiled program by <em>interpreting</em> the intermediate language instructions - translates one at a time to machine code
+<ul>
+<li>faster since translation step is partially done and only its last step is done when running the program<br />
+</li>
+</ul></li>
 <li>Advantages of managed languages:
 <ul>
 <li>In a “non-managed” language, a compiled program only works on one OS + CPU combination (<strong>platform</strong>) because it is machine code</li>
 <li>Managed-language programs can be reused on a different platform without recompiling - intermediate language is not machine code and not CPU-specific</li>
-<li>Still need to write an intermediate language interpreter for each platform (so it produces the right machine code), but in a non-managed language you must write a compiler for each platform</li>
+<li>Still need to write an intermediate language interpreter for each platform (so it produces the right machine code), but, for a non-managed language, you must write a compiler for each platform</li>
+<li>Writing a compiler is more complicated and more work than writing an interpreter thus an interpreter is a quicker (and cheaper) way to put your language on different platforms</li>
 <li>Intermediate-language interpreter is much faster than a high-level language interpreter, so programs run faster than an “interpreted language” like Python</li>
 </ul></li>
 <li>This still runs slower than a non-managed language (due to the interpreter), so performance-minded programmers use non-managed compiled languages (e.g. for video games)</li>
