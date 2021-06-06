@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Booleans</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 5, 2021 (09:05:10 PM)</p>
+<p class="date">June 6, 2021 (07:51:45 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -260,37 +260,42 @@
 </ul></li>
 </ul>
 </nav>
+<p>This lab has four core goals: - To help you manipulate boolean values, - To practise boolean operators, - To understand the concept of <em>precedence</em>, - To practise simple calculation mentally.</p>
 <section id="truth-tables" class="level1">
 <h1>Truth Tables</h1>
-<p>Copy-and-paste the following code into the <code class="sourceCode cs">Main</code> method of a new project:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* </span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"> * We have two boolean values: true and false.</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"> * We can use the constant &quot;true&quot; and &quot;false&quot;,</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"> * we can also declare constants with the same value,</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"> * but a shorter name:</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"> */</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> <span class="dt">bool</span> t <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> <span class="dt">bool</span> f <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Conjunction (and, &amp;&amp;) truth table:&quot;</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n\n\t</span><span class="st">&quot;</span> <span class="op">+</span> t<span class="op">+</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span> <span class="op">+</span> f</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> t<span class="op">+</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span> <span class="op">+</span> <span class="op">(</span>t <span class="op">&amp;&amp;</span> t<span class="op">)+</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span> <span class="op">+</span> <span class="op">(</span>t <span class="op">&amp;&amp;</span> f<span class="op">)</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> f<span class="op">+</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span> <span class="op">+</span> <span class="op">(</span>f <span class="op">&amp;&amp;</span> t<span class="op">)+</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span> <span class="op">+</span> <span class="op">(</span>f <span class="op">&amp;&amp;</span> f<span class="op">)</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Negation (not, !) truth table:&quot;</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n\n\t</span><span class="st">&quot;</span> <span class="op">+</span> t<span class="op">+</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span> <span class="op">+</span> f</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n\t</span><span class="st">&quot;</span> <span class="op">+</span> <span class="op">(!</span>t<span class="op">)+</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span> <span class="op">+</span> <span class="op">(!</span>f<span class="op">)</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span></code></pre></div>
-<p>Compile and execute it.</p>
-<p>This should display to the screen truth tables for conjunction (and, <code class="sourceCode cs"><span class="op">&amp;&amp;</span></code>) and negation (not, <code class="sourceCode cs"><span class="op">!</span></code>). Next, write code that will display truth tables for the binary operators disjunction (or, <code class="sourceCode cs"><span class="op">||</span></code>), identity (equality, <code class="sourceCode cs"><span class="op">==</span></code>) and difference (inequality, <code class="sourceCode cs"><span class="op">!=</span></code>).</p>
-<p>Normally, using the find-and-replace feature of your IDE should make this a quick and easy task.</p>
+<ol>
+<li>Copy-and-paste the following code into the <code class="sourceCode cs">Main</code> method of a new project:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Conjunction (and, &amp;&amp;) truth table:&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st"> &amp;&amp;   ||</span><span class="sc">\t</span><span class="st">&quot;</span> <span class="op">+</span> <span class="kw">true</span><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">| &quot;</span> <span class="op">+</span> <span class="kw">false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">------||------------|--------&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> <span class="kw">true</span> <span class="op">+</span> <span class="st">&quot;  ||</span><span class="sc">\t</span><span class="st">&quot;</span> <span class="op">+</span> <span class="op">(</span><span class="kw">true</span> <span class="op">&amp;&amp;</span> <span class="kw">true</span><span class="op">)+</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">| &quot;</span> <span class="op">+</span> <span class="op">(</span><span class="kw">true</span> <span class="op">&amp;&amp;</span> <span class="kw">false</span><span class="op">)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> <span class="kw">false</span><span class="op">+</span> <span class="st">&quot; ||</span><span class="sc">\t</span><span class="st">&quot;</span> <span class="op">+</span> <span class="op">(</span><span class="kw">false</span> <span class="op">&amp;&amp;</span> <span class="kw">true</span><span class="op">)+</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">| &quot;</span> <span class="op">+</span> <span class="op">(</span><span class="kw">false</span> <span class="op">&amp;&amp;</span> <span class="kw">false</span><span class="op">)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Negation (not, !) truth table:&quot;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st"> value   ||</span><span class="sc">\t</span><span class="st"> ! </span><span class="sc">\t</span><span class="st"> &quot;</span> </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">---------||------&quot;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> <span class="kw">true</span><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st"> ||</span><span class="sc">\t</span><span class="st">&quot;</span> <span class="op">+</span> <span class="kw">false</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> <span class="op">(!</span><span class="kw">true</span><span class="op">)+</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st"> ||</span><span class="sc">\t</span><span class="st">&quot;</span> <span class="op">+</span> <span class="op">(!</span><span class="kw">false</span><span class="op">)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span></code></pre></div>
+<ol>
+<li>Compile and execute it. This should display to the screen truth tables for conjunction (and, <code class="sourceCode cs"><span class="op">&amp;&amp;</span></code>) and negation (not, <code class="sourceCode cs"><span class="op">!</span></code>).</li>
+<li>Make sure you understand both the code and its output.</li>
+<li>Add after the truth table for the negation the code that will display truth tables for
+<ol>
+<li>the binary operators disjunction (or, <code class="sourceCode cs"><span class="op">||</span></code>),</li>
+<li>identity (equality, <code class="sourceCode cs"><span class="op">==</span></code>) and</li>
+<li>difference (inequality, <code class="sourceCode cs"><span class="op">!=</span></code>). Normally, using the find-and-replace feature of your IDE should make this a quick and easy task.</li>
+</ol></li>
+<li>You can make sure you completed this exercise correctly by checking that your output match the truth tables on wikipedia for <a href="https://en.wikipedia.org/wiki/Truth_table#Logical_disjunction_(OR)">disjunction</a> and <a href="https://en.wikipedia.org/wiki/Truth_table#Logical_equality">equality</a>.</li>
+</ol>
 </section>
 <section id="precedence-and-order-of-evaluation" class="level1">
 <h1>Precedence and Order of Evaluation</h1>
 <section id="reading-and-understanding" class="level2">
 <h2>Reading and Understanding</h2>
-<p>If you look at <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/#operator-precedence" class="uri">https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/#operator-precedence</a>, you will see that</p>
+<p>If you read the <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/#operator-precedence">documentation on operator precedence</a>, you will see that operators are evaluated in a particular order. That is,</p>
 <table>
 <tbody>
 <tr class="odd">
@@ -354,20 +359,20 @@
 </tr>
 </tbody>
 </table>
-<p>Note that an expression like <code class="sourceCode cs"><span class="op">!</span><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">2</span></code> doesn’t make any sense: C# would try to take the negation of <code class="sourceCode cs"><span class="dv">3</span></code>, but you can’t negate the truth value of an integer! Along the same lines, an expression like <code class="sourceCode cs"><span class="kw">false</span> <span class="op">*</span> <span class="kw">true</span></code> doesn’t make any sense: you can’t multiply booleans! Similarly, <code class="sourceCode cs"><span class="dv">3</span> <span class="op">%</span> <span class="kw">false</span></code> will cause an error: can you see why? These are all examples of “illegal” expressions.</p>
+<p>Note that an expression like <code class="sourceCode cs"><span class="op">!</span><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">2</span></code> doesn’t make any sense: C# would try to take the negation of <code class="sourceCode cs"><span class="dv">3</span></code>, but you can’t negate the truth value of an integer! Along the same lines, an expression like <code class="sourceCode cs"><span class="kw">false</span> <span class="op">*</span> <span class="kw">true</span></code> doesn’t make any sense: you can not multiply booleans (what would be “true times false”?)! Similarly, <code class="sourceCode cs"><span class="dv">3</span> <span class="op">%</span> <span class="kw">false</span></code> will cause an error: can you see why? These are all examples of “illegal” expressions.</p>
 </section>
 <section id="computing-simple-boolean-expressions" class="level2">
 <h2>Computing Simple Boolean Expressions</h2>
-<p>Evaluate the following expressions (where <code class="sourceCode cs">t</code> stands for <code class="sourceCode cs"><span class="kw">true</span></code>, and <code class="sourceCode cs">f</code> for <code class="sourceCode cs"><span class="kw">false</span></code>). Try to do this “by hand,” and write your answers down on paper.</p>
+<p>Evaluate the following expressions. Try to do this “by hand,” and write your answers down on paper.</p>
 <ul>
-<li><code class="sourceCode cs">t <span class="op">&amp;&amp;</span> f <span class="op">||</span> t</code></li>
-<li><code class="sourceCode cs"><span class="op">!</span>t <span class="op">&amp;&amp;</span> f</code></li>
-<li><code class="sourceCode cs">f <span class="op">||</span> t <span class="op">&amp;&amp;</span> <span class="op">!</span>f</code></li>
-<li><code class="sourceCode cs">f <span class="op">==</span> <span class="op">!</span>t <span class="op">||</span> f</code></li>
-<li><code class="sourceCode cs"><span class="op">!(</span>t <span class="op">||</span> f <span class="op">||</span> t <span class="op">&amp;&amp;</span> t<span class="op">)</span></code></li>
-<li><code class="sourceCode cs"><span class="op">!(</span>t <span class="op">||</span> f<span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="op">(</span>t <span class="op">&amp;&amp;</span> <span class="op">!</span>f<span class="op">)</span></code></li>
-<li><code class="sourceCode cs"><span class="op">!</span>t <span class="op">||</span> f <span class="op">&amp;&amp;</span> <span class="op">(</span>t <span class="op">&amp;&amp;</span> <span class="op">!</span>f<span class="op">)</span></code></li>
-<li><code class="sourceCode cs">t <span class="op">!=</span> <span class="op">!(</span>f <span class="op">||</span> t<span class="op">)</span></code></li>
+<li><code class="sourceCode cs"><span class="kw">true</span> <span class="op">&amp;&amp;</span> <span class="kw">false</span> <span class="op">||</span> <span class="kw">true</span></code></li>
+<li><code class="sourceCode cs"><span class="op">!</span><span class="kw">true</span> <span class="op">&amp;&amp;</span> <span class="kw">false</span></code></li>
+<li><code class="sourceCode cs"><span class="kw">false</span> <span class="op">||</span> <span class="kw">true</span> <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="kw">false</span></code></li>
+<li><code class="sourceCode cs"><span class="kw">false</span> <span class="op">==</span> <span class="op">!</span><span class="kw">true</span> <span class="op">||</span> <span class="kw">false</span></code></li>
+<li><code class="sourceCode cs"><span class="op">!(</span><span class="kw">true</span> <span class="op">||</span> <span class="kw">false</span> <span class="op">||</span> <span class="kw">true</span> <span class="op">&amp;&amp;</span> <span class="kw">true</span><span class="op">)</span></code></li>
+<li><code class="sourceCode cs"><span class="op">!(</span><span class="kw">true</span> <span class="op">||</span> <span class="kw">false</span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="op">(</span><span class="kw">true</span> <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="kw">false</span><span class="op">)</span></code></li>
+<li><code class="sourceCode cs"><span class="op">!</span><span class="kw">true</span> <span class="op">||</span> <span class="kw">false</span> <span class="op">&amp;&amp;</span> <span class="op">(</span><span class="kw">true</span> <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="kw">false</span><span class="op">)</span></code></li>
+<li><code class="sourceCode cs"><span class="kw">true</span> <span class="op">!=</span> <span class="op">!(</span><span class="kw">false</span> <span class="op">||</span> <span class="kw">true</span><span class="op">)</span></code></li>
 </ul>
 </section>
 <section id="computing-expressions-involving-booleans-and-numerical-values" class="level2">
@@ -376,10 +381,10 @@
 <ul>
 <li><code class="sourceCode cs"><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">2</span></code></li>
 <li><code class="sourceCode cs"><span class="dv">2</span> <span class="op">==</span> <span class="dv">4</span></code></li>
-<li><code class="sourceCode cs"><span class="dv">3</span> <span class="op">&gt;=</span> <span class="dv">2</span> <span class="op">!=</span> f</code></li>
-<li><code class="sourceCode cs"><span class="dv">3</span> <span class="op">&gt;</span> f</code></li>
-<li><code class="sourceCode cs">t <span class="op">&amp;&amp;</span> <span class="dv">3</span> <span class="op">+</span> <span class="dv">5</span> <span class="op">*</span> <span class="dv">8</span> <span class="op">==</span> <span class="dv">43</span></code></li>
-<li><code class="sourceCode cs"><span class="dv">3</span> <span class="op">+</span> t <span class="op">!=</span> f</code></li>
+<li><code class="sourceCode cs"><span class="dv">3</span> <span class="op">&gt;=</span> <span class="dv">2</span> <span class="op">!=</span> <span class="kw">false</span></code></li>
+<li><code class="sourceCode cs"><span class="dv">3</span> <span class="op">&gt;</span> <span class="kw">false</span></code></li>
+<li><code class="sourceCode cs"><span class="kw">true</span> <span class="op">&amp;&amp;</span> <span class="dv">3</span> <span class="op">+</span> <span class="dv">5</span> <span class="op">*</span> <span class="dv">8</span> <span class="op">==</span> <span class="dv">43</span></code></li>
+<li><code class="sourceCode cs"><span class="dv">3</span> <span class="op">+</span> <span class="kw">true</span> <span class="op">!=</span> <span class="kw">false</span></code></li>
 </ul>
 </section>
 </section>

@@ -157,6 +157,69 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="../../style.css" />
@@ -184,15 +247,52 @@
 <header id="title-block-header">
 <h1 class="title">If Statements</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 5, 2021 (09:05:11 PM)</p>
+<p class="date">June 6, 2021 (07:51:46 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#basic-conditional-statements">Basic Conditional Statements</a></li>
+<li><a href="#basic-conditional-statements">Basic Conditional Statements</a>
+<ul>
+<li><a href="#testing-and-improving-conditional-statements">Testing and Improving Conditional Statements</a></li>
+<li><a href="#writing-simple-conditional-statements">Writing Simple Conditional Statements</a></li>
+</ul></li>
+<li><a href="#conditional-operator-optional">Conditional Operator (optional)</a></li>
 </ul>
 </nav>
-<section id="basic-conditional-statements" class="level2">
-<h2>Basic Conditional Statements</h2>
+<p>This lab aims at having you practise simple conditional statements. It may seem repetitive, but that is because you need to practise <code class="sourceCode cs"><span class="kw">if</span></code> statements <em>a lot</em> to understand their mechanism and to be able to write them properly.</p>
+<section id="basic-conditional-statements" class="level1">
+<h1>Basic Conditional Statements</h1>
+<section id="testing-and-improving-conditional-statements" class="level2">
+<h2>Testing and Improving Conditional Statements</h2>
+<p>Consider the following code:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> yourAge<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please, enter your age&quot;</span><span class="op">);</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>yourAge <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span><span class="op">(</span>yourAge <span class="op">&lt;</span> <span class="dv">0</span><span class="op">){</span>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;I believe you made a mistake, an age cannot be negative!&quot;</span><span class="op">);}</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span><span class="op">(</span>yourAge <span class="op">&gt;</span> <span class="dv">2000</span><span class="op">){</span>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;I believe you made a mistake, nobody can live that long!&quot;</span><span class="op">);}</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span><span class="op">{</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>yourAge <span class="op">&gt;=</span> <span class="dv">18</span><span class="op">){</span>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;In all States but Alabama, Nebraska, Mississippi and Puerto Rico, you have reached the age of majority.&quot;</span><span class="op">);}</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>yourAge <span class="op">&gt;=</span><span class="dv">19</span><span class="op">){</span>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;In all States but Mississippi and Puerto Rico, you have reached the age of majority.&quot;</span><span class="op">);}</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>yourAge <span class="op">&gt;=</span><span class="dv">21</span><span class="op">){</span>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;You have reached the age of majority in all US states.&quot;</span><span class="op">);}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>The information about the age of majority <a href="https://en.wikipedia.org/wiki/Age_of_majority">comes from wikipedia</a>.</p>
+<ol>
+<li><em>Without executing it</em>, write down what you think will be displayed if the user enters
+<ol>
+<li>“That’s confidential”,</li>
+<li>10</li>
+<li>18</li>
+<li>19</li>
+<li>22</li>
+<li>29339</li>
+</ol></li>
+<li>Copy-and-paste the code in the body of the <code class="sourceCode cs">main</code> method, and execute it, providing the values written below. Was your thinking correct? If not, revise it and make sure you understand the logic of the program.</li>
+<li>There is at least one issue with this code, as “You have reached the age of majority in all US states.” will never be displayed. Can you understand why?</li>
+<li>Fix the program so that all the messages can be displayed when relevant.</li>
+</ol>
+</section>
+<section id="writing-simple-conditional-statements" class="level2">
+<h2>Writing Simple Conditional Statements</h2>
 <p>Read all the instructions in this part before starting to type code. Create a new project, and write portions of code that perform the following:</p>
 <ol>
 <li>Ask the user for an integer, and display on the screen “You were born after me” if the number is strictly greater than your year of birth.</li>
@@ -203,6 +303,19 @@
 <li>Ask the user for an integer, and display on the screen “positive and odd” if the number is positive and odd, “positive and even” if the number is positive and even, “negative and odd” if the number is negative and odd, “negative and even” if the number is negative and even, and “You picked <span class="math inline">0</span>” if the number is <span class="math inline">0</span>.</li>
 </ol>
 <p>For each of those questions, write on paper whenever you should use if, if-else, if-else-if or nested conditional structures, and what the condition(s) should be. Once you feel confident, write the code in your IDE, and then test it intensively: enter all kinds of values (positive and odd, negative and even, <span class="math inline">0</span>, and remember that <span class="math inline">0</span> is even, etc.) and make sure that what is displayed on the screen is always correct.</p>
+</section>
+</section>
+<section id="conditional-operator-optional" class="level1">
+<h1>Conditional Operator (optional)</h1>
+<p>You were introduced to the conditional operator, which can be used to replace <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statements in particular cases (assignment, call, increment, decrement, and new object expressions). Its structure is:</p>
+<p><code class="sourceCode cs">condition <span class="op">?</span> first_expression <span class="op">:</span> second_expression<span class="op">;</span></code></p>
+<p>You can read more about it <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator">in the documentation</a>.</p>
+<p>If you have time, practice using the conditional operator by adding these statements to your program:</p>
+<ol>
+<li>Write a statement that sets <code class="sourceCode cs">myVar</code> to <code class="sourceCode cs"><span class="dv">0</span></code> if <code class="sourceCode cs">initial</code> is an upper-case letter, and to <code class="sourceCode cs"><span class="dv">1</span></code> otherwise. You already wrote an <code class="sourceCode cs"><span class="kw">if</span></code> statement that accomplishes this in the previous exercise, so you just need to rewrite it using the conditional operator.</li>
+<li>Write a statement that sets <code class="sourceCode cs">initial</code> to <code class="sourceCode cs"><span class="ch">&#39;B&#39;</span></code> if <code class="sourceCode cs">myVar</code> is greater than 500 and to <code class="sourceCode cs"><span class="ch">&#39;S&#39;</span></code> if <code class="sourceCode cs">myVar</code> is less than or equal to 500.</li>
+<li>Write a statement that doubles the value of <code class="sourceCode cs">myVar</code> if <code class="sourceCode cs">day</code> is <code class="sourceCode cs"><span class="st">&quot;Sat.&quot;</span></code> or <code class="sourceCode cs"><span class="st">&quot;Sun.&quot;</span></code> and adds 1 to the value of <code class="sourceCode cs">myVar</code> otherwise.</li>
+</ol>
 </section>
 </main>
 <footer id="footer">
