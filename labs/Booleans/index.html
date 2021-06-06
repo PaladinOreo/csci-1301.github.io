@@ -19,7 +19,7 @@
   <meta property="og:image" content="../../android-chrome-512x512.png" />
   <meta name="author" content="https://csci-1301.github.io/about#authors" />
   <meta name="keywords" content="Computer Science, Problem solving methods, Augusta University, Bachelor of Science, C# Programming language" />
-  <title>Boolean and Basic Conditional Statements</title>
+  <title>Booleans</title>
   <style>
     html {
       line-height: 1.5;
@@ -245,9 +245,9 @@
     </div>
 </header>
 <header id="title-block-header">
-<h1 class="title">Boolean and Basic Conditional Statements</h1>
+<h1 class="title">Booleans</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 5, 2021 (04:20:03 PM)</p>
+<p class="date">June 5, 2021 (09:05:10 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -258,7 +258,6 @@
 <li><a href="#computing-simple-boolean-expressions">Computing Simple Boolean Expressions</a></li>
 <li><a href="#computing-expressions-involving-booleans-and-numerical-values">Computing Expressions Involving Booleans and Numerical Values</a></li>
 </ul></li>
-<li><a href="#basic-conditional-statements">Basic Conditional Statements</a></li>
 </ul>
 </nav>
 <section id="truth-tables" class="level1">
@@ -284,7 +283,7 @@
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n\t</span><span class="st">&quot;</span> <span class="op">+</span> <span class="op">(!</span>t<span class="op">)+</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span> <span class="op">+</span> <span class="op">(!</span>f<span class="op">)</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>Compile and execute it.</p>
-<p>This should display to the screen truth tables for conjection (and, <code class="sourceCode cs"><span class="op">&amp;&amp;</span></code>) and negation (not, <code class="sourceCode cs"><span class="op">!</span></code>). Next, write code that will display truth tables for the binary operators disjunction (or, <code class="sourceCode cs"><span class="op">||</span></code>), identity (equality, <code class="sourceCode cs"><span class="op">==</span></code>) and difference (inequality, <code class="sourceCode cs"><span class="op">!=</span></code>).</p>
+<p>This should display to the screen truth tables for conjunction (and, <code class="sourceCode cs"><span class="op">&amp;&amp;</span></code>) and negation (not, <code class="sourceCode cs"><span class="op">!</span></code>). Next, write code that will display truth tables for the binary operators disjunction (or, <code class="sourceCode cs"><span class="op">||</span></code>), identity (equality, <code class="sourceCode cs"><span class="op">==</span></code>) and difference (inequality, <code class="sourceCode cs"><span class="op">!=</span></code>).</p>
 <p>Normally, using the find-and-replace feature of your IDE should make this a quick and easy task.</p>
 </section>
 <section id="precedence-and-order-of-evaluation" class="level1">
@@ -384,19 +383,6 @@
 </ul>
 </section>
 </section>
-<section id="basic-conditional-statements" class="level1">
-<h1>Basic Conditional Statements</h1>
-<p>Read all the instructions in this part before starting to type code. Create a new project, and write portions of code that perform the following:</p>
-<ol>
-<li>Ask the user for an integer, and display on the screen “You were born after me” if the number is strictly greater than your year of birth.</li>
-<li>Ask the user for an integer, and display on the screen “Between <span class="math inline"> − 1</span> and <span class="math inline">1</span>” if the number is greater than or equal to <span class="math inline"> − 1</span> and less than or equal to <span class="math inline">1</span>.</li>
-<li>Ask the user for an integer, and display on the screen “Not between <span class="math inline"> − 1</span> and <span class="math inline">1</span>” if the number is greater than <span class="math inline">1</span> or less than <span class="math inline"> − 1</span>.</li>
-<li>Ask the user for an integer, and display on the screen “Odd” or “Even”, depending if the number is odd or even.</li>
-<li>Ask the user for an integer, and display on the screen “Negative” if the integer is negative, “Positive” if the integer in positive, and nothing if the integer is <span class="math inline">0</span>.</li>
-<li>Ask the user for an integer, and display on the screen “positive and odd” if the number is positive and odd, “positive and even” if the number is positive and even, “negative and odd” if the number is negative and odd, “negative and even” if the number is negative and even, and “You picked <span class="math inline">0</span>” if the number is <span class="math inline">0</span>.</li>
-</ol>
-<p>For each of those questions, write <em>on paper</em> whenever you should use <code class="sourceCode cs"><span class="kw">if</span></code>, <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code>, <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span><span class="op">-</span><span class="kw">if</span></code> or nested conditional structures, and what the condition(s) should be. Once you feel confident, write the code in your IDE, and then test it intensively: enter all kinds of values (positive and odd, negative and even, <span class="math inline">0</span>, and remember that <a href="https://en.wikipedia.org/wiki/Parity_of_zero"><span class="math inline">0</span> is even</a>, etc.) and make sure that what is displayed on the screen is always correct.</p>
-</section>
 </main>
 <footer id="footer">
     <h2>How Is This Page?</h2>
@@ -414,7 +400,7 @@
                     <a href="index.pdf" title="Download this ressoucre in pdf">↓ pdf</a>
             <a href="index.odt" title="Download this ressource in odt.">↓ odt</a>
             <a href="index.docx" title="Download this ressource in docx.">↓ docx</a>
-                            <a href="https://github.com/csci-1301/csci-1301.github.io/tree/main/labs/BooleanBasicConditionalStatements/readme.md" title="Access the source code of this ressource.">Source code</a>
+                            <a href="https://github.com/csci-1301/csci-1301.github.io/tree/main/labs/Booleans/readme.md" title="Access the source code of this ressource.">Source code</a>
                 <a href="../../about.html" title="Learn more about this website.">About</a>
         <a href="../../about.html#licence-1" title="Licence">CC BY 4.0</a>
         </div> 
