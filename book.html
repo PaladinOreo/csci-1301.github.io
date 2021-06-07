@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 7, 2021 (04:50:35 PM)</p>
+<p class="date">June 7, 2021 (05:19:38 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -3519,8 +3519,8 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 <p>The <code class="sourceCode cs"><span class="op">(</span>…<span class="op">)</span></code> are mandatory, the <code class="sourceCode cs"><span class="op">{</span>…<span class="op">}</span></code> are optional.</p>
 <ul>
 <li>All the literals need to be different.</li>
-<li>The literal and the variable have to be of the same type.</li>
-<li>You can’t have case(&lt;variable name&gt;)</li>
+<li>The literals and the variable have to be of the same type.</li>
+<li>You can’t have case(&lt;variable name&gt;).</li>
 </ul>
 <p>For instance, imagine we want to go from a month’s number to its name. We could do that with an <code class="sourceCode cs">if…else <span class="kw">if</span> …</code>:</p>
 <div class="sourceCode" id="cb116"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> month <span class="op">=</span> <span class="dv">11</span><span class="op">;</span></span>
@@ -3547,7 +3547,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 <span id="cb117-14"><a href="#cb117-14" aria-hidden="true" tabindex="-1"></a>        monthname <span class="op">=</span> <span class="st">&quot;Error!&quot;</span><span class="op">;</span></span>
 <span id="cb117-15"><a href="#cb117-15" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
 <span id="cb117-16"><a href="#cb117-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>Another example, to match a section letter against 4 possibilities, where two actually result in the same behavior:</p>
+<p>Here is another example, switching on section letter. There are 4 possibilities, but two result in the same behavior:</p>
 <div class="sourceCode" id="cb118"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span> section <span class="op">=</span> <span class="ch">&#39;c&#39;</span><span class="op">;</span></span>
 <span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> meet<span class="op">;</span></span>
 <span id="cb118-3"><a href="#cb118-3" aria-hidden="true" tabindex="-1"></a><span class="kw">switch</span> <span class="op">(</span>section<span class="op">)</span></span>
@@ -3567,6 +3567,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 <span id="cb118-17"><a href="#cb118-17" aria-hidden="true" tabindex="-1"></a>        meet <span class="op">=</span> <span class="st">&quot;Invalid code&quot;</span><span class="op">;</span></span>
 <span id="cb118-18"><a href="#cb118-18" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
 <span id="cb118-19"><a href="#cb118-19" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>The <code class="sourceCode cs"><span class="kw">break</span></code>statement identifies where the program should stop reading a case. Here case c contains all of case d, with no additional information added. It is also possible to add content exclusively to case c without including the break. In that situation case c would contain both the c-exclusive content and all of the d content.</p>
 </section>
 <section id="definition-and-first-example-of-while-loops" class="level1">
 <h1>Definition and First Example of while loops</h1>
