@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Booleans</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 7, 2021 (05:19:52 PM)</p>
+<p class="date">June 7, 2021 (10:03:25 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -295,40 +295,7 @@
 <h1>Precedence and Order of Evaluation</h1>
 <section id="reading-and-understanding" class="level2">
 <h2>Reading and Understanding</h2>
-<p>If you read the <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/#operator-precedence">documentation on operator precedence</a>, you will see that operators are evaluated in a particular order. That is,</p>
-<table>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><code class="sourceCode cs"><span class="op">!</span></code></td>
-<td style="text-align: center;">is evaluated before</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code class="sourceCode cs"><span class="op">*</span></code>, <code class="sourceCode cs"><span class="op">/</span></code>, and <code class="sourceCode cs"><span class="op">%</span></code></td>
-<td style="text-align: center;">which are evaluated before</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code class="sourceCode cs"><span class="op">+</span></code> and <code class="sourceCode cs"><span class="op">-</span></code></td>
-<td style="text-align: center;">which are evaluated before</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code class="sourceCode cs"><span class="op">&lt;</span></code>, <code class="sourceCode cs"><span class="op">&gt;</span></code>, <code class="sourceCode cs"><span class="op">&lt;=</span></code>, and <code class="sourceCode cs"><span class="op">&gt;=</span></code></td>
-<td style="text-align: center;">which are evaluated before</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code class="sourceCode cs"><span class="op">==</span></code> and <code class="sourceCode cs"><span class="op">!=</span></code></td>
-<td style="text-align: center;">which are evaluated before</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code class="sourceCode cs"><span class="op">&amp;&amp;</span></code></td>
-<td style="text-align: center;">which is evaluated before</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code class="sourceCode cs"><span class="op">||</span></code></td>
-<td style="text-align: center;">which comes last.</td>
-</tr>
-</tbody>
-</table>
-<p>and that within those groups, operations are evaluated from left to right.</p>
+<p>If you read the <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/#operator-precedence">documentation on operator precedence</a>, you will see that operators are evaluated in a particular order. From higher precedence (that is, evaluated first) to lower precedence (that is, evaluated last), this order is: <code class="sourceCode cs"><span class="op">!</span> <span class="op">(*</span> <span class="op">/</span> <span class="op">%)</span> <span class="op">(+</span> <span class="op">-)</span> <span class="op">(&lt;</span> <span class="op">&gt;</span> <span class="op">&lt;=</span> <span class="op">&gt;=)</span> <span class="op">(==</span> <span class="op">!=)</span> <span class="op">&amp;&amp;</span> <span class="op">||</span></code>. Inside each group in parenthesis, operations are evaluated from left to right.</p>
 <p>So that, for instance, <code class="sourceCode cs"><span class="op">!</span> <span class="kw">true</span> <span class="op">||</span> <span class="kw">false</span> <span class="op">&amp;&amp;</span> <span class="dv">3</span> <span class="op">*</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">6</span></code> will be evaluated as</p>
 <table>
 <tbody>
