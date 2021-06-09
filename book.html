@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 8, 2021 (09:17:32 PM)</p>
+<p class="date">June 8, 2021 (10:31:17 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -325,6 +325,8 @@
 <li><a href="#relational-operators">Relational Operators</a></li>
 <li><a href="#precedence-of-operators">Precedence of Operators</a></li>
 </ul></li>
+<li><a href="#if-if-else-and-nested-if-statements">if, if-else and Nested if Statements</a>
+<ul>
 <li><a href="#if-statements">if Statements</a>
 <ul>
 <li><a href="#first-example">First Example</a></li>
@@ -333,15 +335,26 @@
 <li><a href="#if-else-statements">if-else Statements</a>
 <ul>
 <li><a href="#syntax-1">Syntax</a></li>
-</ul></li>
-<li><a href="#nested-if-else-statements">Nested if-else Statements</a></li>
-<li><a href="#if-else-if-statements">if-else-if Statements</a>
-<ul>
 <li><a href="#example">Example</a></li>
 </ul></li>
+<li><a href="#nested-if-else-statements">Nested if-else Statements</a>
+<ul>
+<li><a href="#example-1">Example</a></li>
+</ul></li>
+<li><a href="#if-else-if-statements">if-else-if Statements</a>
+<ul>
+<li><a href="#syntax-2">Syntax</a></li>
+<li><a href="#example-2">Example</a></li>
+</ul></li>
 <li><a href="#shorthand-notation-the-operator">Shorthand notation: the <code class="sourceCode cs"><span class="op">?:</span></code> Operator</a></li>
-<li><a href="#boolean-flags">Boolean Flags</a></li>
-<li><a href="#switch-statements">Switch Statements</a></li>
+<li><a href="#coming-back-to-boolean-flags">Coming Back to Boolean Flags</a></li>
+</ul></li>
+<li><a href="#switch-statements">Switch Statements</a>
+<ul>
+<li><a href="#syntax-3">Syntax</a></li>
+<li><a href="#first-example-from-if-to-switch">First Example: From if to switch</a></li>
+<li><a href="#second-example-switching-on-characters">Second Example: Switching on Characters</a></li>
+</ul></li>
 <li><a href="#definition-and-first-example-of-while-loops">Definition and First Example of while loops</a>
 <ul>
 <li><a href="#formal-syntax">Formal Syntax</a></li>
@@ -3366,12 +3379,14 @@ But C# does not care about 0 decimal values: True</code></pre>
 </ul>
 </section>
 </section>
-<section id="if-statements" class="level1">
-<h1>if Statements</h1>
+<section id="if-if-else-and-nested-if-statements" class="level1">
+<h1>if, if-else and Nested if Statements</h1>
 <p>The keyword <code class="sourceCode cs"><span class="kw">if</span></code> allows us to write code that “branches” between multiple flows of execution. So far, all the code we have studied has been executed one line after the other: line <span class="math inline"><em>n</em></span> is always executed before line <span class="math inline"><em>n</em> + 1</span> and after line <span class="math inline"><em>n</em> − 1</span> (this order is called “sequential”). With <code class="sourceCode cs"><span class="kw">if</span></code> statements, we can tell C# that some lines need to be “skipped” depending if a condition (that evaluates to a boolean value) is met or not.</p>
 <p>We will start by motivating with a simple example, then introduce the formal syntax of <code class="sourceCode cs"><span class="kw">if</span></code> and <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statements, and conclude with a discussion of more advanced topics.</p>
-<section id="first-example" class="level2">
-<h2>First Example</h2>
+<section id="if-statements" class="level2">
+<h2>if Statements</h2>
+<section id="first-example" class="level3">
+<h3>First Example</h3>
 <p>Let us study the following lines:</p>
 <div class="sourceCode" id="cb105"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter your age&quot;</span><span class="op">);</span></span>
 <span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> age <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
@@ -3386,8 +3401,8 @@ But C# does not care about 0 decimal values: True</code></pre>
 <img src="img/activity_diag_vote_if.svg" alt="“A flowchart representation of an if statement”" /><figcaption aria-hidden="true">“A flowchart representation of an if statement”</figcaption>
 </figure>
 </section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<section id="syntax" class="level3">
+<h3>Syntax</h3>
 <p>The syntax of an <code class="sourceCode cs"><span class="kw">if</span></code> statement is as follows:</p>
 <div class="sourceCode" id="cb106"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(&lt;</span>condition<span class="op">&gt;)</span></span>
 <span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -3403,8 +3418,8 @@ But C# does not care about 0 decimal values: True</code></pre>
 <p>The body of an <code class="sourceCode cs"><span class="kw">if</span></code> statement can be arbitrarily complicated: it can contain multiple statements, including other <code class="sourceCode cs"><span class="kw">if</span></code> statements, object instantiation, etc.</p>
 </section>
 </section>
-<section id="if-else-statements" class="level1">
-<h1>if-else Statements</h1>
+<section id="if-else-statements" class="level2">
+<h2>if-else Statements</h2>
 <p>One limit of <code class="sourceCode cs"><span class="kw">if</span></code> statements is that they only describe what happens if the condition is met, and not what should happen if the condition is <em>not</em> met. This can be worked around with a clever use of the negation operator (<code class="sourceCode cs"><span class="op">!</span></code>):</p>
 <div class="sourceCode" id="cb107"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span><span class="op">(&lt;</span>condition<span class="op">&gt;)</span></span>
 <span id="cb107-2"><a href="#cb107-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -3416,8 +3431,8 @@ But C# does not care about 0 decimal values: True</code></pre>
 <span id="cb107-8"><a href="#cb107-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>If <code class="sourceCode cs"><span class="op">&lt;</span>condition<span class="op">&gt;</span></code> is met, then <code class="sourceCode cs"><span class="op">&lt;</span>statement block <span class="dv">1</span><span class="op">&gt;</span></code> will be executed. If <code class="sourceCode cs"><span class="op">&lt;</span>condition<span class="op">&gt;</span></code> is not met, that is, if it evaluates to <code class="sourceCode cs"><span class="kw">false</span></code>, then we know that <code class="sourceCode cs"><span class="op">!&lt;</span>condition<span class="op">&gt;</span></code> will evaluate to <code class="sourceCode cs"><span class="kw">true</span></code>, and hence <code class="sourceCode cs"><span class="op">&lt;</span>statement block <span class="dv">2</span><span class="op">&gt;</span></code> will be executed.</p>
 <p>This method is inconvenient and clunky, but luckily C# contains the keyword <code class="sourceCode cs"><span class="kw">else</span></code> that enables the described behavior in a more elegant syntax.</p>
-<section id="syntax-1" class="level2">
-<h2>Syntax</h2>
+<section id="syntax-1" class="level3">
+<h3>Syntax</h3>
 <div class="sourceCode" id="cb108"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(&lt;</span>condition<span class="op">&gt;)</span></span>
 <span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>statement block <span class="dv">1</span><span class="op">&gt;</span></span>
@@ -3427,6 +3442,9 @@ But C# does not care about 0 decimal values: True</code></pre>
 <span id="cb108-7"><a href="#cb108-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>statement block <span class="dv">2</span><span class="op">&gt;</span></span>
 <span id="cb108-8"><a href="#cb108-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>With <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statements, <code class="sourceCode cs"><span class="op">&lt;</span>statement block <span class="dv">1</span><span class="op">&gt;</span></code> is executed only if the condition evaluates to <code class="sourceCode cs"><span class="kw">true</span></code>, and <code class="sourceCode cs"><span class="op">&lt;</span>statement block <span class="dv">2</span><span class="op">&gt;</span></code> is executed only if the condition evaluates to <code class="sourceCode cs"><span class="kw">false</span></code>. Note that since a condition always evaluates to either <code class="sourceCode cs"><span class="kw">true</span></code> or <code class="sourceCode cs"><span class="kw">false</span></code>, we know that at least one of the blocks will be executed. Since a condition cannot be <code class="sourceCode cs"><span class="kw">true</span></code> and <code class="sourceCode cs"><span class="kw">false</span></code> at the same time, we also know that at most one block will be executed. Hence, exactly one block will be executed.</p>
+</section>
+<section id="example" class="level3">
+<h3>Example</h3>
 <p>Here we modify our previous example to include else:</p>
 <div class="sourceCode" id="cb109"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter your age&quot;</span><span class="op">);</span></span>
 <span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> age <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
@@ -3446,9 +3464,11 @@ But C# does not care about 0 decimal values: True</code></pre>
 </figure>
 </section>
 </section>
-<section id="nested-if-else-statements" class="level1">
-<h1>Nested if-else Statements</h1>
+<section id="nested-if-else-statements" class="level2">
+<h2>Nested if-else Statements</h2>
 <p>As we wrote previously, the body of an <code class="sourceCode cs"><span class="kw">if</span></code> statement (that is, the <code class="sourceCode cs"><span class="op">&lt;</span>statement block<span class="op">&gt;</span></code>) can be arbitrarily complex. In particular, it can include an <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statement itself!</p>
+<section id="example-1" class="level3">
+<h3>Example</h3>
 <p>Imagine we want to improve our previous program that decides if the user can vote: we would like to ask not only for the age of the user, but also citizenship, and make a decision based on both parameters. A possible way of doing that is by <em>nesting the options</em>, so that we would <em>first</em> check the citizenship, and <em>then</em> the age, before displaying a more personalized message.</p>
 <p>The behavior we would like to implement can be represented with the following activity diagram:</p>
 <figure>
@@ -3481,8 +3501,11 @@ But C# does not care about 0 decimal values: True</code></pre>
 <li><p>We could have a similar program with only one <code class="sourceCode cs"><span class="kw">if</span> <span class="kw">else</span></code>, but using a more complex condition: <code class="sourceCode cs"><span class="kw">if</span><span class="op">(</span>age <span class="op">&gt;</span> <span class="dv">18</span> <span class="op">&amp;&amp;</span> usCitizen<span class="op">)</span> … <span class="kw">else</span> …</code>, but the messages would be less precise (as if this condition fails, we cannot tell if it is because of the age or the citizenship).</p></li>
 </ul>
 </section>
-<section id="if-else-if-statements" class="level1">
-<h1>if-else-if Statements</h1>
+</section>
+<section id="if-else-if-statements" class="level2">
+<h2>if-else-if Statements</h2>
+<section id="syntax-2" class="level3">
+<h3>Syntax</h3>
 <p>We can also nest the conditions in a different way: instead of writing</p>
 <div class="sourceCode" id="cb111"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(&lt;</span>condition <span class="dv">1</span><span class="op">&gt;)</span></span>
 <span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -3508,25 +3531,26 @@ But C# does not care about 0 decimal values: True</code></pre>
 <p>We can use a convenient <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span><span class="op">-</span><span class="kw">if</span></code> structure, as follows:</p>
 <div class="sourceCode" id="cb112"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(&lt;</span>condition <span class="dv">1</span><span class="op">&gt;)</span></span>
 <span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>statement block<span class="op">&gt;</span> <span class="co">// Executed if condition 1 is true</span></span>
+<span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>statement block <span class="dv">1</span><span class="op">&gt;</span> <span class="co">// Executed if condition 1 is true</span></span>
 <span id="cb112-4"><a href="#cb112-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb112-5"><a href="#cb112-5" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(&lt;</span>condition <span class="dv">2</span><span class="op">&gt;)</span></span>
 <span id="cb112-6"><a href="#cb112-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb112-7"><a href="#cb112-7" aria-hidden="true" tabindex="-1"></a>   <span class="op">&lt;</span>statement block<span class="op">&gt;</span> <span class="co">// Executed if condition 1 is false and condition 2 is true</span></span>
+<span id="cb112-7"><a href="#cb112-7" aria-hidden="true" tabindex="-1"></a>   <span class="op">&lt;</span>statement block <span class="dv">2</span><span class="op">&gt;</span> <span class="co">// Executed if condition 1 is false and condition 2 is true</span></span>
 <span id="cb112-8"><a href="#cb112-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb112-9"><a href="#cb112-9" aria-hidden="true" tabindex="-1"></a>…</span>
 <span id="cb112-10"><a href="#cb112-10" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(&lt;</span>condition N<span class="op">&gt;)</span></span>
 <span id="cb112-11"><a href="#cb112-11" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb112-12"><a href="#cb112-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>statement block<span class="op">&gt;</span> <span class="co">// Executed if all the previous conditions are false and condition N is true</span></span>
+<span id="cb112-12"><a href="#cb112-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>statement block N<span class="op">&gt;</span> <span class="co">// Executed if all the previous conditions are false and condition N is true</span></span>
 <span id="cb112-13"><a href="#cb112-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb112-14"><a href="#cb112-14" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
 <span id="cb112-15"><a href="#cb112-15" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb112-16"><a href="#cb112-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>statement block<span class="op">&gt;</span>  <span class="co">// Executed if all the conditions are false</span></span>
+<span id="cb112-16"><a href="#cb112-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>statement block N<span class="op">+</span><span class="dv">1</span><span class="op">&gt;</span>  <span class="co">// Executed if all the conditions are false</span></span>
 <span id="cb112-17"><a href="#cb112-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>This reduces the need of nesting <em>statements</em> (that comes with identation for readability) and makes the code easier to read and debug.</p>
-<p>An important aspect to note is that the conditions could be really different, and may not even pertain to the same variable!</p>
-<section id="example" class="level2">
-<h2>Example</h2>
+<p>An important aspect to note is that the conditions could be really different, and may not even pertain to the same variable! However, if a “trailing else” (the last else) is present, than at least one statement block will always be executed: if all the conditions fails, then the <code class="sourceCode cs"><span class="op">&lt;</span>statement block N<span class="op">+</span><span class="dv">1</span><span class="op">&gt;</span></code> will be executed. Note that this trailing else is not mandatory and could be ommited.</p>
+</section>
+<section id="example-2" class="level3">
+<h3>Example</h3>
 <p>We can make an example with really different, non-overlapping, conditions:</p>
 <div class="sourceCode" id="cb113"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>age <span class="op">&gt;</span> <span class="dv">12</span><span class="op">)</span></span>
 <span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
@@ -3621,8 +3645,8 @@ But C# does not care about 0 decimal values: True</code></pre>
 </table>
 </section>
 </section>
-<section id="shorthand-notation-the-operator" class="level1">
-<h1>Shorthand notation: the <code class="sourceCode cs"><span class="op">?:</span></code> Operator</h1>
+<section id="shorthand-notation-the-operator" class="level2">
+<h2>Shorthand notation: the <code class="sourceCode cs"><span class="op">?:</span></code> Operator</h2>
 <p>There is an operator for <code class="sourceCode cs"><span class="kw">if</span> <span class="kw">else</span></code> statements for particular cases (assignment, call, increment, decrement, and new object expressions). Its syntax is as follow:</p>
 <p><code class="sourceCode cs"><span class="op">&lt;</span>condition<span class="op">&gt;</span> <span class="op">?</span> <span class="op">&lt;</span>first_expression<span class="op">&gt;</span> <span class="op">:</span> <span class="op">&lt;</span>second_expression<span class="op">&gt;;</span></code></p>
 <p>For example, one can write:</p>
@@ -3630,8 +3654,8 @@ But C# does not care about 0 decimal values: True</code></pre>
 <p>which means that <code class="sourceCode cs">price</code> will receive the value <code class="sourceCode cs"><span class="dv">5</span></code> if <code class="sourceCode cs">adult</code> is <code class="sourceCode cs"><span class="kw">true</span></code>, and <code class="sourceCode cs"><span class="dv">3</span></code> otherwise.</p>
 <p>You can read more about this convenient operator <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator">in the documentation</a>.</p>
 </section>
-<section id="boolean-flags" class="level1">
-<h1>Boolean Flags</h1>
+<section id="coming-back-to-boolean-flags" class="level2">
+<h2>Coming Back to Boolean Flags</h2>
 <p>Do you remember that a boolean <em>flag</em> is a boolean variable? We can use it to “store” the result of an interaction with a user.</p>
 <p>Assume we want to know if the user works full time at some place, we could get started with:</p>
 <div class="sourceCode" id="cb116"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Do you work full-time here?&quot;</span><span class="op">);</span></span>
@@ -3661,9 +3685,14 @@ But C# does not care about 0 decimal values: True</code></pre>
 <div class="sourceCode" id="cb120"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a>fullTime <span class="op">=</span> <span class="op">(</span>ch <span class="op">==</span> <span class="ch">&#39;y&#39;</span> <span class="op">||</span> ch <span class="op">==</span> <span class="ch">&#39;Y&#39;</span><span class="op">);</span></span></code></pre></div>
 <p>And that is it! We went from long, convoluted code, to a very simple line! This allows to simply store result of tests in variables, and to access it easily.</p>
 </section>
+</section>
 <section id="switch-statements" class="level1">
 <h1>Switch Statements</h1>
-<p><code class="sourceCode cs"><span class="kw">switch</span></code> statements allow to simplify the “matching” of a value against a pre-determined set of values. Its formal syntax is as follows:</p>
+<p>Another way of selecting which “branch” of code to execute is given thanks to <code class="sourceCode cs"><span class="kw">switch</span></code> statements. Those statements have a flair similar to <code class="sourceCode cs">if…else <span class="kw">if</span> … <span class="kw">else</span></code>, except that they “force” all the conditions to test the value of the same variable. While using <em>more restrictive</em> structures can seem odd at first, it is important to understand that they allow the programmer to think differently about their program, and, in this particular case, that it allows to easily read, understand and check a particular decision structure.</p>
+<p>Stated differently, <code class="sourceCode cs"><span class="kw">switch</span></code> statements allow to simplify the “matching” of a value against a pre-determined set of values.</p>
+<section id="syntax-3" class="level2">
+<h2>Syntax</h2>
+<p>The formal syntax of <code class="sourceCode cs"><span class="kw">switch</span></code> statements is as follows:</p>
 <div class="sourceCode" id="cb121"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="kw">switch</span> <span class="op">(&lt;</span>variable name<span class="op">&gt;)</span></span>
 <span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb121-3"><a href="#cb121-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(&lt;</span>literal <span class="dv">1</span><span class="op">&gt;):</span></span>
@@ -3672,63 +3701,100 @@ But C# does not care about 0 decimal values: True</code></pre>
 <span id="cb121-6"><a href="#cb121-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(&lt;</span>literal <span class="dv">2</span><span class="op">&gt;):</span></span>
 <span id="cb121-7"><a href="#cb121-7" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>statement block <span class="dv">2</span><span class="op">&gt;</span></span>
 <span id="cb121-8"><a href="#cb121-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb121-9"><a href="#cb121-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span>
+<span id="cb121-9"><a href="#cb121-9" aria-hidden="true" tabindex="-1"></a>    …</span>
 <span id="cb121-10"><a href="#cb121-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">default</span><span class="op">:</span></span>
 <span id="cb121-11"><a href="#cb121-11" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>statement block n<span class="op">&gt;</span></span>
 <span id="cb121-12"><a href="#cb121-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
 <span id="cb121-13"><a href="#cb121-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>The <code class="sourceCode cs"><span class="op">(</span>…<span class="op">)</span></code> are mandatory, the <code class="sourceCode cs"><span class="op">{</span>…<span class="op">}</span></code> are optional.</p>
+<p>The <code class="sourceCode cs"><span class="op">(</span>…<span class="op">)</span></code> are mandatory, but the <code class="sourceCode cs"><span class="op">{</span>…<span class="op">}</span></code> are optional.</p>
+<p>Note that to be correct, you have to follow multiple restrictions:</p>
 <ul>
 <li>All the literals need to be different.</li>
 <li>The literals and the variable have to be of the same type.</li>
-<li>You can’t have case(&lt;variable name&gt;).</li>
+<li>A literal <em>cannot be</em> a variable name: it has to be an actual value!</li>
 </ul>
-<p>For instance, imagine we want to go from a month’s number to its name. We could do that with an <code class="sourceCode cs">if…else <span class="kw">if</span> …</code>:</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> month <span class="op">=</span> <span class="dv">11</span><span class="op">;</span></span>
-<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> monthname<span class="op">;</span></span>
-<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>month <span class="op">==</span> <span class="dv">1</span><span class="op">)</span> monthname <span class="op">=</span> <span class="st">&quot;January&quot;</span><span class="op">;</span></span>
-<span id="cb122-4"><a href="#cb122-4" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>month <span class="op">==</span> <span class="dv">2</span><span class="op">)</span> monthname <span class="op">=</span> <span class="st">&quot;February&quot;</span><span class="op">;</span></span>
-<span id="cb122-5"><a href="#cb122-5" aria-hidden="true" tabindex="-1"></a><span class="co">// ...</span></span>
-<span id="cb122-6"><a href="#cb122-6" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>month <span class="op">==</span> <span class="dv">12</span><span class="op">)</span> monthname <span class="op">=</span> <span class="st">&quot;December&quot;</span><span class="op">;</span></span>
-<span id="cb122-7"><a href="#cb122-7" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> monthname <span class="op">=</span> <span class="st">&quot;Error!&quot;</span><span class="op">;</span></span></code></pre></div>
+<p>Finally, note that since all the literals have to be different, the order of the literal does not matter in <code class="sourceCode cs"><span class="kw">switch</span></code> statements! However, the <code class="sourceCode cs"><span class="kw">default</span></code> branch, that is executed if all the literal are different from the switch variable, must always come last, exactly like a trailing <code class="sourceCode cs"><span class="kw">else</span></code> in an <code class="sourceCode cs"><span class="kw">if</span> … <span class="kw">else</span> <span class="kw">if</span> …</code> statement.</p>
+</section>
+<section id="first-example-from-if-to-switch" class="level2">
+<h2>First Example: From if to switch</h2>
+<p>For instance, imagine we want to go from a month’s number (e.g., <code class="sourceCode cs"><span class="dv">1</span></code>) to its name (e.g. <code class="sourceCode cs"><span class="st">&quot;January&quot;</span></code>). We could do that with an <code class="sourceCode cs">if…else <span class="kw">if</span> …</code>:</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter the month as a number between 1 and 12.&quot;</span><span class="op">);</span></span>
+<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> month <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> monthname<span class="op">;</span></span>
+<span id="cb122-4"><a href="#cb122-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-5"><a href="#cb122-5" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>month <span class="op">==</span> <span class="dv">1</span><span class="op">)</span> monthname <span class="op">=</span> <span class="st">&quot;January&quot;</span><span class="op">;</span></span>
+<span id="cb122-6"><a href="#cb122-6" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>month <span class="op">==</span> <span class="dv">2</span><span class="op">)</span> monthname <span class="op">=</span> <span class="st">&quot;February&quot;</span><span class="op">;</span></span>
+<span id="cb122-7"><a href="#cb122-7" aria-hidden="true" tabindex="-1"></a><span class="co">// fill in cases for March to November</span></span>
+<span id="cb122-8"><a href="#cb122-8" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>month <span class="op">==</span> <span class="dv">12</span><span class="op">)</span> monthname <span class="op">=</span> <span class="st">&quot;December&quot;</span><span class="op">;</span></span>
+<span id="cb122-9"><a href="#cb122-9" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> monthname <span class="op">=</span> <span class="st">&quot;Error!&quot;</span><span class="op">;</span></span>
+<span id="cb122-10"><a href="#cb122-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-11"><a href="#cb122-11" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The number &quot;</span> <span class="op">+</span> month <span class="op">+</span> <span class="st">&quot; corresponds to the month &quot;</span> <span class="op">+</span> monthname <span class="op">+</span> <span class="st">&quot;.&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>But since we know that “month” will be a value between 1 and 12, or else we have an error, we could also have:</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="kw">switch</span> <span class="op">(</span>month<span class="op">)</span></span>
-<span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb123-3"><a href="#cb123-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="dv">1</span><span class="op">):</span></span>
-<span id="cb123-4"><a href="#cb123-4" aria-hidden="true" tabindex="-1"></a>        monthname <span class="op">=</span> <span class="st">&quot;January&quot;</span><span class="op">;</span></span>
-<span id="cb123-5"><a href="#cb123-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb123-6"><a href="#cb123-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="dv">2</span><span class="op">):</span></span>
-<span id="cb123-7"><a href="#cb123-7" aria-hidden="true" tabindex="-1"></a>        monthname <span class="op">=</span> <span class="st">&quot;February&quot;</span><span class="op">;</span></span>
-<span id="cb123-8"><a href="#cb123-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb123-9"><a href="#cb123-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ..</span></span>
-<span id="cb123-10"><a href="#cb123-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="dv">12</span><span class="op">):</span></span>
-<span id="cb123-11"><a href="#cb123-11" aria-hidden="true" tabindex="-1"></a>        monthname <span class="op">=</span> <span class="st">&quot;December&quot;</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb123"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter the month as a number between 1 and 12.&quot;</span><span class="op">);</span></span>
+<span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> month <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span> <span class="op">.</span></span>
+<span id="cb123-3"><a href="#cb123-3" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> monthname<span class="op">;</span></span>
+<span id="cb123-4"><a href="#cb123-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb123-5"><a href="#cb123-5" aria-hidden="true" tabindex="-1"></a><span class="kw">switch</span> <span class="op">(</span>month<span class="op">)</span></span>
+<span id="cb123-6"><a href="#cb123-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb123-7"><a href="#cb123-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="dv">1</span><span class="op">):</span></span>
+<span id="cb123-8"><a href="#cb123-8" aria-hidden="true" tabindex="-1"></a>        monthname <span class="op">=</span> <span class="st">&quot;January&quot;</span><span class="op">;</span></span>
+<span id="cb123-9"><a href="#cb123-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb123-10"><a href="#cb123-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="dv">2</span><span class="op">):</span></span>
+<span id="cb123-11"><a href="#cb123-11" aria-hidden="true" tabindex="-1"></a>        monthname <span class="op">=</span> <span class="st">&quot;February&quot;</span><span class="op">;</span></span>
 <span id="cb123-12"><a href="#cb123-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb123-13"><a href="#cb123-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">default</span><span class="op">:</span></span>
-<span id="cb123-14"><a href="#cb123-14" aria-hidden="true" tabindex="-1"></a>        monthname <span class="op">=</span> <span class="st">&quot;Error!&quot;</span><span class="op">;</span></span>
-<span id="cb123-15"><a href="#cb123-15" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb123-16"><a href="#cb123-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>Here is another example, switching on section letter. There are 4 possibilities, but two result in the same behavior:</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span> section <span class="op">=</span> <span class="ch">&#39;c&#39;</span><span class="op">;</span></span>
-<span id="cb124-2"><a href="#cb124-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> meet<span class="op">;</span></span>
-<span id="cb124-3"><a href="#cb124-3" aria-hidden="true" tabindex="-1"></a><span class="kw">switch</span> <span class="op">(</span>section<span class="op">)</span></span>
-<span id="cb124-4"><a href="#cb124-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb124-5"><a href="#cb124-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;a&#39;</span><span class="op">):</span></span>
-<span id="cb124-6"><a href="#cb124-6" aria-hidden="true" tabindex="-1"></a>        meet <span class="op">=</span> <span class="st">&quot;MW 1-2PM&quot;</span><span class="op">;</span></span>
-<span id="cb124-7"><a href="#cb124-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb124-8"><a href="#cb124-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;b&#39;</span><span class="op">):</span></span>
-<span id="cb124-9"><a href="#cb124-9" aria-hidden="true" tabindex="-1"></a>        meet <span class="op">=</span> <span class="st">&quot;TT 1-2PM&quot;</span><span class="op">;</span></span>
-<span id="cb124-10"><a href="#cb124-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb124-11"><a href="#cb124-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;c&#39;</span><span class="op">):</span></span>
-<span id="cb124-12"><a href="#cb124-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;d&#39;</span><span class="op">):</span></span>
-<span id="cb124-13"><a href="#cb124-13" aria-hidden="true" tabindex="-1"></a> <span class="co">//   case (&#39;a&#39;): Would not compile!</span></span>
-<span id="cb124-14"><a href="#cb124-14" aria-hidden="true" tabindex="-1"></a>        meet <span class="op">=</span> <span class="st">&quot;F 2-4PM&quot;</span><span class="op">;</span></span>
-<span id="cb124-15"><a href="#cb124-15" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb124-16"><a href="#cb124-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">default</span><span class="op">:</span></span>
-<span id="cb124-17"><a href="#cb124-17" aria-hidden="true" tabindex="-1"></a>        meet <span class="op">=</span> <span class="st">&quot;Invalid code&quot;</span><span class="op">;</span></span>
-<span id="cb124-18"><a href="#cb124-18" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb124-19"><a href="#cb124-19" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>The <code class="sourceCode cs"><span class="kw">break</span></code>statement identifies where the program should stop reading a case. Here case c contains all of case d, with no additional information added. It is also possible to add content exclusively to case c without including the break. In that situation case c would contain both the c-exclusive content and all of the d content.</p>
+<span id="cb123-13"><a href="#cb123-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ..</span></span>
+<span id="cb123-14"><a href="#cb123-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="dv">12</span><span class="op">):</span></span>
+<span id="cb123-15"><a href="#cb123-15" aria-hidden="true" tabindex="-1"></a>        monthname <span class="op">=</span> <span class="st">&quot;December&quot;</span><span class="op">;</span></span>
+<span id="cb123-16"><a href="#cb123-16" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb123-17"><a href="#cb123-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">default</span><span class="op">:</span></span>
+<span id="cb123-18"><a href="#cb123-18" aria-hidden="true" tabindex="-1"></a>        monthname <span class="op">=</span> <span class="st">&quot;Error!&quot;</span><span class="op">;</span></span>
+<span id="cb123-19"><a href="#cb123-19" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb123-20"><a href="#cb123-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb123-21"><a href="#cb123-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb123-22"><a href="#cb123-22" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The number &quot;</span> <span class="op">+</span> month <span class="op">+</span> <span class="st">&quot; corresponds to the month &quot;</span> <span class="op">+</span> monthname <span class="op">+</span> <span class="st">&quot;.&quot;</span><span class="op">);</span></span></code></pre></div>
+<p>Both structures have the same activity diagram:</p>
+<figure>
+<img src="img/activity_diag_month.svg" alt="“A flowchart representation of the mapping between month number and name”" /><figcaption aria-hidden="true">“A flowchart representation of the mapping between month number and name”</figcaption>
+</figure>
+<p>However, note that a more faithful representation of the <code class="sourceCode cs">if…else <span class="kw">if</span> …</code> structure would actually be made only of <em>binary</em> choices: <code class="sourceCode cs"><span class="kw">switch</span></code> statements open the possiblity of representing <span class="math inline"><em>n</em></span>-ary choices “natively”, without having to represent them with <span class="math inline"><em>n</em> − 1</span> binary choices.</p>
+<p>Furthermore, note that _not all <code class="sourceCode cs">if…else…if</code> statements can be rewritten as <code class="sourceCode cs"><span class="kw">switch</span></code>! Typically, consider a condition <code class="sourceCode cs">mileage <span class="op">&gt;</span> <span class="dv">1000</span></code> over an <code class="sourceCode cs"><span class="dt">int</span></code> <code class="sourceCode cs">mileage</code>, a <code class="sourceCode cs"><span class="kw">switch</span></code> could never express that condition, as it would have to list all the <code class="sourceCode cs"><span class="dt">int</span></code> greater than 1,000!</p>
+</section>
+<section id="second-example-switching-on-characters" class="level2">
+<h2>Second Example: Switching on Characters</h2>
+<p>Here is another example, that highlights two aspects:</p>
+<ul>
+<li>The “switch variable” can be of any datatype. It does not need to be an <code class="sourceCode cs"><span class="dt">int</span></code>.</li>
+<li>It is possible to express “if the switch variable has value &lt;literal 1&gt; <em>or</em> &lt;literal 2&gt;”, but note that <em>this is done without boolean disjunction</em>, simply by listing the two cases one after the other.</li>
+</ul>
+<p>Imagine we want to ask the user their section for a particular class (that can be <code class="sourceCode cs"><span class="ch">&#39;a&#39;</span></code>, <code class="sourceCode cs"><span class="ch">&#39;b&#39;</span></code>, <code class="sourceCode cs"><span class="ch">&#39;c&#39;</span></code> or <code class="sourceCode cs"><span class="ch">&#39;d&#39;</span></code>) to inform them of their section’s meeting time. In that example, sections <code class="sourceCode cs"><span class="ch">&#39;c&#39;</span></code> and <code class="sourceCode cs"><span class="ch">&#39;d&#39;</span></code> meet at the same time.</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please, enter your section (a, b, c or d).&quot;</span><span class="op">);</span></span>
+<span id="cb124-2"><a href="#cb124-2" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span> section <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadKey</span><span class="op">().</span><span class="fu">KeyChar</span><span class="op">;</span> <span class="co">// Note that we are using a new method, to read characters.</span></span>
+<span id="cb124-3"><a href="#cb124-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb124-4"><a href="#cb124-4" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> meet<span class="op">;</span></span>
+<span id="cb124-5"><a href="#cb124-5" aria-hidden="true" tabindex="-1"></a><span class="kw">switch</span> <span class="op">(</span>section<span class="op">)</span></span>
+<span id="cb124-6"><a href="#cb124-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb124-7"><a href="#cb124-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;a&#39;</span><span class="op">):</span></span>
+<span id="cb124-8"><a href="#cb124-8" aria-hidden="true" tabindex="-1"></a>        meet <span class="op">=</span> <span class="st">&quot;MW 1-2PM&quot;</span><span class="op">;</span></span>
+<span id="cb124-9"><a href="#cb124-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb124-10"><a href="#cb124-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;b&#39;</span><span class="op">):</span></span>
+<span id="cb124-11"><a href="#cb124-11" aria-hidden="true" tabindex="-1"></a>        meet <span class="op">=</span> <span class="st">&quot;TR 1-2PM&quot;</span><span class="op">;</span></span>
+<span id="cb124-12"><a href="#cb124-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb124-13"><a href="#cb124-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;c&#39;</span><span class="op">):</span></span>
+<span id="cb124-14"><a href="#cb124-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;d&#39;</span><span class="op">):</span></span>
+<span id="cb124-15"><a href="#cb124-15" aria-hidden="true" tabindex="-1"></a>        meet <span class="op">=</span> <span class="st">&quot;F 2-4PM&quot;</span><span class="op">;</span></span>
+<span id="cb124-16"><a href="#cb124-16" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb124-17"><a href="#cb124-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">default</span><span class="op">:</span></span>
+<span id="cb124-18"><a href="#cb124-18" aria-hidden="true" tabindex="-1"></a>        meet <span class="op">=</span> <span class="st">&quot;Invalid code&quot;</span><span class="op">;</span></span>
+<span id="cb124-19"><a href="#cb124-19" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb124-20"><a href="#cb124-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb124-21"><a href="#cb124-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb124-22"><a href="#cb124-22" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Your section (&quot;</span> <span class="op">+</span> section <span class="op">+</span> <span class="st">&quot;) meets on &quot;</span> <span class="op">+</span> meet <span class="op">+</span> <span class="st">&quot;.&quot;</span><span class="op">);</span></span></code></pre></div>
+<p>The <code class="sourceCode cs"><span class="kw">break</span></code>statement identifies where the program should stop reading a case. Here, the case for the literal <code class="sourceCode cs">c</code> also contains the case for the literal <code class="sourceCode cs">d</code>: the same statements are executed if one of those two values match the user-input for <code class="sourceCode cs">section</code>.</p>
+<!--
+It is also possible to add content exclusively to case c without including the break.  In that situation case c would contain both the c-exclusive content and all of the d content.
+I don't think we want to discuss that.
+-->
+</section>
 </section>
 <section id="definition-and-first-example-of-while-loops" class="level1">
 <h1>Definition and First Example of while loops</h1>
