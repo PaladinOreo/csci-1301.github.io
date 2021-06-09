@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 7, 2021 (11:33:33 PM)</p>
+<p class="date">June 8, 2021 (09:17:32 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -3138,7 +3138,7 @@ Room number is 356</code></pre></li>
 </ul>
 <p>This type of “branching” between multiple choices can be represented with an <a href="https://en.wikipedia.org/wiki/Activity_diagram">activity diagram</a>:</p>
 <figure>
-<img src="img/teaching.svg" alt="“An Activity Diagram on Teaching a Class”" /><figcaption aria-hidden="true">“An Activity Diagram on Teaching a Class”</figcaption>
+<img src="img/activity_diag_teaching.svg" alt="“An Activity Diagram on Teaching a Class”" /><figcaption aria-hidden="true">“An Activity Diagram on Teaching a Class”</figcaption>
 </figure>
 <p>In C#, we will express</p>
 <ul>
@@ -3358,12 +3358,12 @@ But C# does not care about 0 decimal values: True</code></pre>
 </tbody>
 </table>
 <ul>
-<li>Operators with higher precedence are on the left and operators with lower precedence are on the right: for instance, in an expression like <code class="sourceCode cs"><span class="dv">2</span><span class="op">*</span><span class="dv">3</span><span class="op">+</span><span class="dv">4</span></code>, <code class="sourceCode cs"><span class="dv">2</span><span class="op">*</span><span class="dv">3</span></code> will have higher precedence than <code class="sourceCode cs"><span class="dv">3</span><span class="op">+</span><span class="dv">4</span></code>, and thus be evaluated first: <code class="sourceCode cs"><span class="dv">2</span><span class="op">*</span><span class="dv">3</span><span class="op">+</span><span class="dv">4</span></code> is to be read as <code class="sourceCode cs"><span class="op">(</span><span class="dv">2</span><span class="op">*</span><span class="dv">3</span><span class="op">)+</span><span class="dv">4</span> <span class="op">=</span> <span class="dv">6</span> <span class="op">+</span> <span class="dv">4</span> <span class="op">=</span> <span class="dv">10</span></code> and <em>not</em> as <code class="sourceCode cs"><span class="dv">2</span><span class="op">*(</span><span class="dv">3</span><span class="op">+</span><span class="dv">4</span><span class="op">)</span> <span class="op">=</span> <span class="dv">2</span><span class="op">*</span><span class="dv">7</span> <span class="op">=</span> <span class="dv">14</span></code>.</li>
-<li>Operators on the same row have equal precedence and are evaluated in the order they appear, from left to right: in <code class="sourceCode cs"><span class="dv">1-2</span><span class="op">+</span><span class="dv">3</span></code>, <code class="sourceCode cs"><span class="dv">1-2</span></code> will be evaluated before <code class="sourceCode cs"><span class="dv">2</span><span class="op">+</span><span class="dv">3</span></code>: <code class="sourceCode cs"><span class="dv">1-2</span><span class="op">+</span><span class="dv">3</span></code> is to be read as <code class="sourceCode cs"><span class="op">(</span><span class="dv">1-2</span><span class="op">)+</span><span class="dv">3</span> <span class="op">=</span> <span class="op">-</span><span class="dv">1</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">=</span> <span class="dv">2</span></code> and <em>not</em> as <code class="sourceCode cs"><span class="dv">1</span><span class="op">-(</span><span class="dv">2</span><span class="op">+</span><span class="dv">3</span><span class="op">)</span> <span class="op">=</span> <span class="dv">1-5</span> <span class="op">=</span> <span class="dv">4</span></code>.</li>
-<li>Forgetting about precendence can lead to errors that can be hard for debug: for instance, an expression such as <code class="sourceCode cs"><span class="op">!</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">2</span></code> will give the error</li>
-</ul>
+<li><p>Operators with higher precedence are on the left and operators with lower precedence are on the right: for instance, in an expression like <code class="sourceCode cs"><span class="dv">2</span><span class="op">*</span><span class="dv">3</span><span class="op">+</span><span class="dv">4</span></code>, <code class="sourceCode cs"><span class="dv">2</span><span class="op">*</span><span class="dv">3</span></code> will have higher precedence than <code class="sourceCode cs"><span class="dv">3</span><span class="op">+</span><span class="dv">4</span></code>, and thus be evaluated first: <code class="sourceCode cs"><span class="dv">2</span><span class="op">*</span><span class="dv">3</span><span class="op">+</span><span class="dv">4</span></code> is to be read as <code class="sourceCode cs"><span class="op">(</span><span class="dv">2</span><span class="op">*</span><span class="dv">3</span><span class="op">)+</span><span class="dv">4</span> <span class="op">=</span> <span class="dv">6</span> <span class="op">+</span> <span class="dv">4</span> <span class="op">=</span> <span class="dv">10</span></code> and <em>not</em> as <code class="sourceCode cs"><span class="dv">2</span><span class="op">*(</span><span class="dv">3</span><span class="op">+</span><span class="dv">4</span><span class="op">)</span> <span class="op">=</span> <span class="dv">2</span><span class="op">*</span><span class="dv">7</span> <span class="op">=</span> <span class="dv">14</span></code>.</p></li>
+<li><p>Operators on the same row have equal precedence and are evaluated in the order they appear, from left to right: in <code class="sourceCode cs"><span class="dv">1-2</span><span class="op">+</span><span class="dv">3</span></code>, <code class="sourceCode cs"><span class="dv">1-2</span></code> will be evaluated before <code class="sourceCode cs"><span class="dv">2</span><span class="op">+</span><span class="dv">3</span></code>: <code class="sourceCode cs"><span class="dv">1-2</span><span class="op">+</span><span class="dv">3</span></code> is to be read as <code class="sourceCode cs"><span class="op">(</span><span class="dv">1-2</span><span class="op">)+</span><span class="dv">3</span> <span class="op">=</span> <span class="op">-</span><span class="dv">1</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">=</span> <span class="dv">2</span></code> and <em>not</em> as <code class="sourceCode cs"><span class="dv">1</span><span class="op">-(</span><span class="dv">2</span><span class="op">+</span><span class="dv">3</span><span class="op">)</span> <span class="op">=</span> <span class="dv">1-5</span> <span class="op">=</span> <span class="dv">4</span></code>.</p></li>
+<li><p>Forgetting about precendence can lead to errors that can be hard for debug: for instance, an expression such as <code class="sourceCode cs"><span class="op">!</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">2</span></code> will give the error</p>
 <pre class="text"><code>The `!&#39; operator cannot be applied to operand of type `int&#39;</code></pre>
-<p>Since <code class="sourceCode cs"><span class="op">!</span></code> has a higher precendence than <code class="sourceCode cs"><span class="op">==</span></code>, C# first attempts to compute the result of <code class="sourceCode cs"><span class="op">!</span><span class="dv">4</span></code>, which corresponds to “not 4”. As negation (<code class="sourceCode cs"><span class="op">!</span></code>) is an operation that can be applied only to booleans, this expression does not make sense and C# reports an error. The expression can be rewritten to change the order of evaluation by using parenthesis, e.g. to write <code class="sourceCode cs"><span class="op">!(</span><span class="dv">4</span> <span class="op">==</span> <span class="dv">2</span><span class="op">)</span></code>, which will correctly be evaluated to <code class="sourceCode cs"><span class="kw">true</span></code>.</p>
+<p>Since <code class="sourceCode cs"><span class="op">!</span></code> has a higher precendence than <code class="sourceCode cs"><span class="op">==</span></code>, C# first attempts to compute the result of <code class="sourceCode cs"><span class="op">!</span><span class="dv">4</span></code>, which corresponds to “not 4”. As negation (<code class="sourceCode cs"><span class="op">!</span></code>) is an operation that can be applied only to booleans, this expression does not make sense and C# reports an error. The expression can be rewritten to change the order of evaluation by using parenthesis, e.g. to write <code class="sourceCode cs"><span class="op">!(</span><span class="dv">4</span> <span class="op">==</span> <span class="dv">2</span><span class="op">)</span></code>, which will correctly be evaluated to <code class="sourceCode cs"><span class="kw">true</span></code>.</p></li>
+</ul>
 </section>
 </section>
 <section id="if-statements" class="level1">
@@ -3381,6 +3381,10 @@ But C# does not care about 0 decimal values: True</code></pre>
 <span id="cb105-6"><a href="#cb105-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb105-7"><a href="#cb105-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Thanks for using our program!&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>The code is written such that the statement <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;You can vote!&quot;</span><span class="op">);</span></code> is executed only if the condition <code class="sourceCode cs"><span class="op">(</span>age <span class="op">&gt;=</span> <span class="dv">18</span><span class="op">)</span></code> evaluates to <code class="sourceCode cs"><span class="kw">true</span></code>. Otherwise, that statement is simply “skipped”. Note that regardless of the truth value of the condition <code class="sourceCode cs"><span class="op">(</span>age <span class="op">&gt;=</span> <span class="dv">18</span><span class="op">)</span></code>, “Thanks for using our program” will always be displayed: once the body of the <code class="sourceCode cs"><span class="kw">if</span></code> statement is executed, the flow of execution resumes its sequential course.</p>
+<p>This behaviour can be represented as follows:</p>
+<figure>
+<img src="img/activity_diag_vote_if.svg" alt="“A flowchart representation of an if statement”" /><figcaption aria-hidden="true">“A flowchart representation of an if statement”</figcaption>
+</figure>
 </section>
 <section id="syntax" class="level2">
 <h2>Syntax</h2>
@@ -3432,10 +3436,14 @@ But C# does not care about 0 decimal values: True</code></pre>
 <span id="cb109-6"><a href="#cb109-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb109-7"><a href="#cb109-7" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
 <span id="cb109-8"><a href="#cb109-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb109-9"><a href="#cb109-9" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;It seems that you are too young to vote!&quot;</span><span class="op">);</span></span>
+<span id="cb109-9"><a href="#cb109-9" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;You are too young!&quot;</span><span class="op">);</span></span>
 <span id="cb109-10"><a href="#cb109-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb109-11"><a href="#cb109-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb109-12"><a href="#cb109-12" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Thanks for using our program!&quot;</span><span class="op">);</span></span></code></pre></div>
+<p>This behaviour can be represented as follows:</p>
+<figure>
+<img src="img/activity_diag_vote_if_else.svg" alt="“A flowchart representation of an if-else statement”" /><figcaption aria-hidden="true">“A flowchart representation of an if-else statement”</figcaption>
+</figure>
 </section>
 </section>
 <section id="nested-if-else-statements" class="level1">
@@ -3444,7 +3452,7 @@ But C# does not care about 0 decimal values: True</code></pre>
 <p>Imagine we want to improve our previous program that decides if the user can vote: we would like to ask not only for the age of the user, but also citizenship, and make a decision based on both parameters. A possible way of doing that is by <em>nesting the options</em>, so that we would <em>first</em> check the citizenship, and <em>then</em> the age, before displaying a more personalized message.</p>
 <p>The behavior we would like to implement can be represented with the following activity diagram:</p>
 <figure>
-<img src="img/vote_age_citizenship.svg" alt="“A flowchart representation of the nested if-else statement”" /><figcaption aria-hidden="true">“A flowchart representation of the nested if-else statement”</figcaption>
+<img src="img/activity_diag_vote_nested_if.svg" alt="“A flowchart representation of the nested if-else statement”" /><figcaption aria-hidden="true">“A flowchart representation of the nested if-else statement”</figcaption>
 </figure>
 <p>This particular behavior can be implemented as follows (where we simply “hard-code” the value of <code class="sourceCode cs">usCitizen</code> and <code class="sourceCode cs">age</code> to simplify the code):</p>
 <div class="sourceCode" id="cb110"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> usCitizen <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
