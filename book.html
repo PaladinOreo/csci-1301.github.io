@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 11, 2021 (01:09:31 PM)</p>
+<p class="date">June 11, 2021 (04:35:35 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -3725,7 +3725,7 @@ But C# does not care about 0 decimal values: True</code></pre>
 <p>Note that to be correct, you have to follow multiple restrictions:</p>
 <ul>
 <li>All the literals need to be different.</li>
-<li>The literals and the variable have to be of the same type.</li>
+<li>The literals and the variable have to be of the same type; the <code class="sourceCode cs"><span class="kw">switch</span></code> statement compares the variable and the literals using the equality comparison (and <em>only</em> the equality comparison–it cannot use the greater than/less than comparisons) and a comparison cannot be made between different types because it would return an error.</li>
 <li>A literal <em>cannot be</em> a variable name: it has to be an actual value!</li>
 </ul>
 <p>Finally, note that since all the literals have to be different, the order of the literal does not matter in <code class="sourceCode cs"><span class="kw">switch</span></code> statements! However, the <code class="sourceCode cs"><span class="kw">default</span></code> branch, that is executed if all the literal are different from the switch variable, must always come last, exactly like a trailing <code class="sourceCode cs"><span class="kw">else</span></code> in an <code class="sourceCode cs"><span class="kw">if</span> … <span class="kw">else</span> <span class="kw">if</span> …</code> statement.</p>
