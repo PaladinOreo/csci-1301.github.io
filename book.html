@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 12, 2021 (03:15:59 PM)</p>
+<p class="date">June 12, 2021 (04:29:18 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -3836,7 +3836,7 @@ I don't think we want to discuss that.
 <div class="sourceCode" id="cb125"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(&lt;</span>boolean expression<span class="op">&gt;)</span></span>
 <span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>code block<span class="op">&gt;</span> or <span class="op">&lt;</span>a statement<span class="op">&gt;</span></span></code></pre></div>
 <ul>
-<li>In the above code, <code class="sourceCode cs"><span class="op">&lt;</span>code block<span class="op">&gt;</span></code> or <code class="sourceCode cs"><span class="op">&lt;</span>a statement<span class="op">&gt;</span></code> is called the loop body.</li>
+<li>In the above code, <code class="sourceCode cs"><span class="op">&lt;</span>code block<span class="op">&gt;</span></code> or <code class="sourceCode cs"><span class="op">&lt;</span>a statement<span class="op">&gt;</span></code> is called the loop body. <!-- This notion should have been introduced earlier, and I believe it has been. --></li>
 </ul>
 </section>
 <section id="example-1-1" class="level3">
@@ -3850,12 +3850,14 @@ I don't think we want to discuss that.
 <ul>
 <li>Note, one or more statements enclosed in left and right braces is called a code block.</li>
 </ul>
+<!-- This is redundant with the previous comment on code block. -->
 </section>
 <section id="example-2-1" class="level3">
 <h3>Example 2</h3>
 <div class="sourceCode" id="cb127"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
 <span id="cb127-3"><a href="#cb127-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>number<span class="op">++);</span></span></code></pre></div>
+<!-- It should be explicitely explained that braces are optional, and what that entails. -->
 </section>
 <section id="example-3" class="level3">
 <h3>Example 3</h3>
@@ -3863,13 +3865,14 @@ I don't think we want to discuss that.
 <span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span><span class="kw">true</span><span class="op">)</span></span>
 <span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>number<span class="op">++);</span></span></code></pre></div>
 <ul>
-<li>Note, if <code class="sourceCode cs"><span class="op">&lt;</span>boolean expression<span class="op">&gt;</span></code> is always true, then the program loops until the program fails or a statement in the loop body ends the loop!</li>
+<li>Note, if <code class="sourceCode cs"><span class="op">&lt;</span>boolean expression<span class="op">&gt;</span></code> is always true, then the program loops until the program fails <!-- I don't think the students know what "failing" means for a program. --> or a statement in the loop body ends the loop! <!-- Explain that we will explain how that can happen in the following. They don't know it's possible at that point. --></li>
 </ul>
 </section>
 </section>
 <section id="break-statement" class="level2">
 <h2><code class="sourceCode cs"><span class="kw">break</span></code> statement</h2>
 <p>This command ends a loop immediately.</p>
+<!-- Which command? Give it explicitely, and explain that it is a statement, so that it must be followed by a `;` -->
 <section id="example-4" class="level3">
 <h3>Example</h3>
 <div class="sourceCode" id="cb129"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
@@ -3883,7 +3886,7 @@ I don't think we want to discuss that.
 </section>
 <section id="continue-statement" class="level2">
 <h2><code class="sourceCode cs"><span class="kw">continue</span></code> statement</h2>
-<p>This command ends the current iteration of a loop.</p>
+<p>This command ends the current iteration of a loop and skips the remaming statements in the body of the loop.</p>
 <section id="example-5" class="level3">
 <h3>Example</h3>
 <div class="sourceCode" id="cb130"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
