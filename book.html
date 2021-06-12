@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 12, 2021 (08:25:30 AM)</p>
+<p class="date">June 12, 2021 (08:27:18 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -359,7 +359,8 @@
 <li><a href="#while-statement">while statement</a>
 <ul>
 <li><a href="#formal-syntax">Formal Syntax</a></li>
-<li><a href="#example-3">Example</a></li>
+<li><a href="#example-1-1">Example 1</a></li>
+<li><a href="#example-2-1">Example 2</a></li>
 <li><a href="#five-ways-things-can-go-wrong">Five Ways Things Can Go Wrong</a>
 <ul>
 <li><a href="#failing-to-update-the-variable-occurring-in-the-condition">Failing to update the variable occurring in the condition</a></li>
@@ -3827,14 +3828,20 @@ I don't think we want to discuss that.
 <li>Remember, one or more statements enclosed in left and right braces is called a code block.</li>
 </ul>
 </section>
-<section id="example-3" class="level2">
-<h2>Example</h2>
+<section id="example-1-1" class="level2">
+<h2>Example 1</h2>
 <div class="sourceCode" id="cb126"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
 <span id="cb126-3"><a href="#cb126-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb126-4"><a href="#cb126-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>number<span class="op">);</span></span>
 <span id="cb126-5"><a href="#cb126-5" aria-hidden="true" tabindex="-1"></a>    number<span class="op">++;</span></span>
 <span id="cb126-6"><a href="#cb126-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</section>
+<section id="example-2-1" class="level2">
+<h2>Example 2</h2>
+<div class="sourceCode" id="cb127"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
+<span id="cb127-3"><a href="#cb127-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>number<span class="op">++);</span></span></code></pre></div>
 <p>Notes: - If <code class="sourceCode cs"><span class="op">&lt;</span>boolean expression<span class="op">&gt;</span></code> is always true, then the program loops for ever!</p>
 </section>
 <section id="five-ways-things-can-go-wrong" class="level2">
@@ -3842,51 +3849,51 @@ I don't think we want to discuss that.
 <p>It is easy to write <em>wrong</em> <code class="sourceCode cs">loop</code> statements. Let us review some of the “classic” blunders.</p>
 <section id="failing-to-update-the-variable-occurring-in-the-condition" class="level3">
 <h3>Failing to update the variable occurring in the condition</h3>
-<div class="sourceCode" id="cb127"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
-<span id="cb127-3"><a href="#cb127-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb127-4"><a href="#cb127-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!);</span></span>
-<span id="cb127-5"><a href="#cb127-5" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span>number<span class="op">);</span></span>
-<span id="cb127-6"><a href="#cb127-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>Number isn’t changed!</p>
-</section>
-<section id="updating-the-wrong-value" class="level3">
-<h3>Updating the “wrong” value</h3>
-<div class="sourceCode" id="cb128"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number1<span class="op">,</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb128"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
 <span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb128-4"><a href="#cb128-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!);</span></span>
 <span id="cb128-5"><a href="#cb128-5" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span>number<span class="op">);</span></span>
-<span id="cb128-6"><a href="#cb128-6" aria-hidden="true" tabindex="-1"></a>    number1<span class="op">++;</span></span>
-<span id="cb128-7"><a href="#cb128-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<span id="cb128-6"><a href="#cb128-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Number isn’t changed!</p>
+</section>
+<section id="updating-the-wrong-value" class="level3">
+<h3>Updating the “wrong” value</h3>
+<div class="sourceCode" id="cb129"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number1<span class="op">,</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
+<span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb129-4"><a href="#cb129-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!);</span></span>
+<span id="cb129-5"><a href="#cb129-5" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span>number<span class="op">);</span></span>
+<span id="cb129-6"><a href="#cb129-6" aria-hidden="true" tabindex="-1"></a>    number1<span class="op">++;</span></span>
+<span id="cb129-7"><a href="#cb129-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="having-an-empty-body" class="level3">
 <h3>Having an empty body</h3>
-<div class="sourceCode" id="cb129"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> </span>
-<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">);</span> <span class="co">// Note the semi-colon here!</span></span>
-<span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb129-4"><a href="#cb129-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!&quot;</span><span class="op">);</span></span>
-<span id="cb129-5"><a href="#cb129-5" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span>number<span class="op">);</span></span>
-<span id="cb129-6"><a href="#cb129-6" aria-hidden="true" tabindex="-1"></a>    number<span class="op">++;</span></span>
-<span id="cb129-7"><a href="#cb129-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> </span>
+<span id="cb130-2"><a href="#cb130-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">);</span> <span class="co">// Note the semi-colon here!</span></span>
+<span id="cb130-3"><a href="#cb130-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb130-4"><a href="#cb130-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!&quot;</span><span class="op">);</span></span>
+<span id="cb130-5"><a href="#cb130-5" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span>number<span class="op">);</span></span>
+<span id="cb130-6"><a href="#cb130-6" aria-hidden="true" tabindex="-1"></a>    number<span class="op">++;</span></span>
+<span id="cb130-7"><a href="#cb130-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="having-an-empty-body-variation" class="level3">
 <h3>Having an empty body (variation)</h3>
-<div class="sourceCode" id="cb130"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb130-2"><a href="#cb130-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
-<span id="cb130-3"><a href="#cb130-3" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!);</span></span>
-<span id="cb130-4"><a href="#cb130-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span>number<span class="op">);</span></span>
-<span id="cb130-5"><a href="#cb130-5" aria-hidden="true" tabindex="-1"></a>    number<span class="op">++;</span></span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
+<span id="cb131-3"><a href="#cb131-3" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!);</span></span>
+<span id="cb131-4"><a href="#cb131-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span>number<span class="op">);</span></span>
+<span id="cb131-5"><a href="#cb131-5" aria-hidden="true" tabindex="-1"></a>    number<span class="op">++;</span></span></code></pre></div>
 </section>
 <section id="going-in-the-wrong-direction" class="level3">
 <h3>Going in the wrong direction</h3>
-<div class="sourceCode" id="cb131"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&gt;=</span><span class="dv">5</span><span class="op">)</span></span>
-<span id="cb131-3"><a href="#cb131-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb131-4"><a href="#cb131-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!);</span></span>
-<span id="cb131-5"><a href="#cb131-5" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span>number<span class="op">);</span></span>
-<span id="cb131-6"><a href="#cb131-6" aria-hidden="true" tabindex="-1"></a>    number<span class="op">++;</span></span>
-<span id="cb131-7"><a href="#cb131-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb132-2"><a href="#cb132-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&gt;=</span><span class="dv">5</span><span class="op">)</span></span>
+<span id="cb132-3"><a href="#cb132-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb132-4"><a href="#cb132-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!);</span></span>
+<span id="cb132-5"><a href="#cb132-5" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span>number<span class="op">);</span></span>
+<span id="cb132-6"><a href="#cb132-6" aria-hidden="true" tabindex="-1"></a>    number<span class="op">++;</span></span>
+<span id="cb132-7"><a href="#cb132-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The variable <code class="sourceCode cs">number</code> should be decremented, not incremented.</p>
 </section>
 </section>
@@ -3894,13 +3901,13 @@ I don't think we want to discuss that.
 <section id="user-input-validation" class="level1">
 <h1>User-Input Validation</h1>
 <p>We can use loops to test what was entered by the user, and ask again if the value does not fit our needs:</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please enter a positive number&quot;</span><span class="op">);</span></span>
-<span id="cb132-2"><a href="#cb132-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
-<span id="cb132-3"><a href="#cb132-3" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>n <span class="op">&lt;</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb132-4"><a href="#cb132-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb132-5"><a href="#cb132-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;You entered {n}, I asked you for a positive number. Please try again.&quot;</span><span class="op">);</span></span>
-<span id="cb132-6"><a href="#cb132-6" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
-<span id="cb132-7"><a href="#cb132-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please enter a positive number&quot;</span><span class="op">);</span></span>
+<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb133-3"><a href="#cb133-3" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>n <span class="op">&lt;</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb133-4"><a href="#cb133-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb133-5"><a href="#cb133-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;You entered {n}, I asked you for a positive number. Please try again.&quot;</span><span class="op">);</span></span>
+<span id="cb133-6"><a href="#cb133-6" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb133-7"><a href="#cb133-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="vocabulary" class="level1">
 <h1>Vocabulary</h1>
@@ -3910,62 +3917,62 @@ I don't think we want to discuss that.
 <dd><p>Variable that is incremented every time a given event occurs.</p>
 </dd>
 </dl>
-<div class="sourceCode" id="cb133"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> <span class="co">// i is a counter</span></span>
-<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">){</span></span>
-<span id="cb133-3"><a href="#cb133-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
-<span id="cb133-4"><a href="#cb133-4" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
-<span id="cb133-5"><a href="#cb133-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> <span class="co">// i is a counter</span></span>
+<span id="cb134-2"><a href="#cb134-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">){</span></span>
+<span id="cb134-3"><a href="#cb134-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
+<span id="cb134-4"><a href="#cb134-4" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
+<span id="cb134-5"><a href="#cb134-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <dl>
 <dt>Sentinel Value</dt>
 <dd><p>A special value that signals that the loop needs to end.</p>
 </dd>
 </dl>
-<div class="sourceCode" id="cb134"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Give me a string.&quot;</span><span class="op">);</span></span>
-<span id="cb134-2"><a href="#cb134-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> ans <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
-<span id="cb134-3"><a href="#cb134-3" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>ans <span class="op">!=</span> <span class="st">&quot;Quit&quot;</span><span class="op">)</span> <span class="co">// The sentinel value is &quot;Quit&quot;.</span></span>
-<span id="cb134-4"><a href="#cb134-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb134-5"><a href="#cb134-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hi!&quot;</span><span class="op">);</span></span>
-<span id="cb134-6"><a href="#cb134-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter </span><span class="sc">\&quot;</span><span class="st">Quit</span><span class="sc">\&quot;</span><span class="st"> to quit, or anything else to continue.&quot;</span><span class="op">);</span></span>
-<span id="cb134-7"><a href="#cb134-7" aria-hidden="true" tabindex="-1"></a>    ans <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
-<span id="cb134-8"><a href="#cb134-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Give me a string.&quot;</span><span class="op">);</span></span>
+<span id="cb135-2"><a href="#cb135-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> ans <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb135-3"><a href="#cb135-3" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>ans <span class="op">!=</span> <span class="st">&quot;Quit&quot;</span><span class="op">)</span> <span class="co">// The sentinel value is &quot;Quit&quot;.</span></span>
+<span id="cb135-4"><a href="#cb135-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb135-5"><a href="#cb135-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hi!&quot;</span><span class="op">);</span></span>
+<span id="cb135-6"><a href="#cb135-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter </span><span class="sc">\&quot;</span><span class="st">Quit</span><span class="sc">\&quot;</span><span class="st"> to quit, or anything else to continue.&quot;</span><span class="op">);</span></span>
+<span id="cb135-7"><a href="#cb135-7" aria-hidden="true" tabindex="-1"></a>    ans <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb135-8"><a href="#cb135-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <dl>
 <dt>Accumulator</dt>
 <dd><p>Variable used to keep the total of several values.</p>
 </dd>
 </dl>
-<div class="sourceCode" id="cb135"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> total <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb135-2"><a href="#cb135-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">){</span></span>
-<span id="cb135-3"><a href="#cb135-3" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> i<span class="op">;</span> <span class="co">// total is the accumulator.</span></span>
-<span id="cb135-4"><a href="#cb135-4" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
-<span id="cb135-5"><a href="#cb135-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb135-6"><a href="#cb135-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb135-7"><a href="#cb135-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The sum from 0 to {i} is {total}.&quot;</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> total <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb136-2"><a href="#cb136-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">){</span></span>
+<span id="cb136-3"><a href="#cb136-3" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> i<span class="op">;</span> <span class="co">// total is the accumulator.</span></span>
+<span id="cb136-4"><a href="#cb136-4" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
+<span id="cb136-5"><a href="#cb136-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb136-6"><a href="#cb136-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb136-7"><a href="#cb136-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The sum from 0 to {i} is {total}.&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>We can have an accumulator and a sentinel value at the same time:</p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a number to sum, or </span><span class="sc">\&quot;</span><span class="st">Done</span><span class="sc">\&quot;</span><span class="st"> to stop and print the total.&quot;</span><span class="op">);</span></span>
-<span id="cb136-2"><a href="#cb136-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> enter <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
-<span id="cb136-3"><a href="#cb136-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb136-4"><a href="#cb136-4" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>enter <span class="op">!=</span> <span class="st">&quot;Done&quot;</span><span class="op">)</span></span>
-<span id="cb136-5"><a href="#cb136-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb136-6"><a href="#cb136-6" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>enter<span class="op">);</span></span>
-<span id="cb136-7"><a href="#cb136-7" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a number to sum, or </span><span class="sc">\&quot;</span><span class="st">Done</span><span class="sc">\&quot;</span><span class="st"> to stop and print the total.&quot;</span><span class="op">);</span></span>
-<span id="cb136-8"><a href="#cb136-8" aria-hidden="true" tabindex="-1"></a>    enter <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
-<span id="cb136-9"><a href="#cb136-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb136-10"><a href="#cb136-10" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Your total is {sum}.&quot;</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a number to sum, or </span><span class="sc">\&quot;</span><span class="st">Done</span><span class="sc">\&quot;</span><span class="st"> to stop and print the total.&quot;</span><span class="op">);</span></span>
+<span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> enter <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb137-3"><a href="#cb137-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb137-4"><a href="#cb137-4" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>enter <span class="op">!=</span> <span class="st">&quot;Done&quot;</span><span class="op">)</span></span>
+<span id="cb137-5"><a href="#cb137-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb137-6"><a href="#cb137-6" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>enter<span class="op">);</span></span>
+<span id="cb137-7"><a href="#cb137-7" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a number to sum, or </span><span class="sc">\&quot;</span><span class="st">Done</span><span class="sc">\&quot;</span><span class="st"> to stop and print the total.&quot;</span><span class="op">);</span></span>
+<span id="cb137-8"><a href="#cb137-8" aria-hidden="true" tabindex="-1"></a>    enter <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb137-9"><a href="#cb137-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb137-10"><a href="#cb137-10" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Your total is {sum}.&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>You can have counter, accumulator and sentinel values at the same time!</p>
-<div class="sourceCode" id="cb137"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb137-3"><a href="#cb137-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> counter <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb137-4"><a href="#cb137-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter an integer, or N to quit.&quot;</span><span class="op">);</span></span>
-<span id="cb137-5"><a href="#cb137-5" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> entered <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
-<span id="cb137-6"><a href="#cb137-6" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>entered <span class="op">!=</span> <span class="st">&quot;N&quot;</span><span class="op">)</span> <span class="co">// Sentinel value</span></span>
-<span id="cb137-7"><a href="#cb137-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb137-8"><a href="#cb137-8" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>entered<span class="op">);</span></span>
-<span id="cb137-9"><a href="#cb137-9" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> a<span class="op">;</span> <span class="co">// Accumulator</span></span>
-<span id="cb137-10"><a href="#cb137-10" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter an integer, or N to quit.&quot;</span><span class="op">);</span></span>
-<span id="cb137-11"><a href="#cb137-11" aria-hidden="true" tabindex="-1"></a>    entered <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
-<span id="cb137-12"><a href="#cb137-12" aria-hidden="true" tabindex="-1"></a>    counter<span class="op">++;</span> <span class="co">// counter</span></span>
-<span id="cb137-13"><a href="#cb137-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb137-14"><a href="#cb137-14" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The average is {sum / (double)counter}&quot;</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb138-3"><a href="#cb138-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> counter <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb138-4"><a href="#cb138-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter an integer, or N to quit.&quot;</span><span class="op">);</span></span>
+<span id="cb138-5"><a href="#cb138-5" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> entered <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb138-6"><a href="#cb138-6" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>entered <span class="op">!=</span> <span class="st">&quot;N&quot;</span><span class="op">)</span> <span class="co">// Sentinel value</span></span>
+<span id="cb138-7"><a href="#cb138-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb138-8"><a href="#cb138-8" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>entered<span class="op">);</span></span>
+<span id="cb138-9"><a href="#cb138-9" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> a<span class="op">;</span> <span class="co">// Accumulator</span></span>
+<span id="cb138-10"><a href="#cb138-10" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter an integer, or N to quit.&quot;</span><span class="op">);</span></span>
+<span id="cb138-11"><a href="#cb138-11" aria-hidden="true" tabindex="-1"></a>    entered <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb138-12"><a href="#cb138-12" aria-hidden="true" tabindex="-1"></a>    counter<span class="op">++;</span> <span class="co">// counter</span></span>
+<span id="cb138-13"><a href="#cb138-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb138-14"><a href="#cb138-14" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The average is {sum / (double)counter}&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>We can distinguish between three “flavors” of loops (that are not mutually exclusive):</p>
 <dl>
 <dt>Sentinel controlled loop</dt>
@@ -3983,194 +3990,194 @@ I don't think we want to discuss that.
 <section id="more-input-validation-using-tryparse" class="level1">
 <h1>More Input Validation, Using TryParse</h1>
 <p>The <code class="sourceCode cs">TryParse</code> method is a complex method that will allow us to parse strings, and to “extract” a number out of them if they contain one, or to be given a way to recover if they don’t.</p>
-<div class="sourceCode" id="cb138"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please, enter an integer.&quot;</span><span class="op">);</span></span>
-<span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> message <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
-<span id="cb138-3"><a href="#cb138-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a<span class="op">;</span></span>
-<span id="cb138-4"><a href="#cb138-4" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> res <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>message<span class="op">,</span> <span class="kw">out</span> a<span class="op">);</span></span>
-<span id="cb138-5"><a href="#cb138-5" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>res<span class="op">)</span></span>
-<span id="cb138-6"><a href="#cb138-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb138-7"><a href="#cb138-7" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The value entered was an integer: {a}.&quot;</span><span class="op">);</span></span>
-<span id="cb138-8"><a href="#cb138-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb138-9"><a href="#cb138-9" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
-<span id="cb138-10"><a href="#cb138-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb138-11"><a href="#cb138-11" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The value entered was not an integer, so 0 is assigned to a.&quot;</span><span class="op">);</span></span>
-<span id="cb138-12"><a href="#cb138-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb138-13"><a href="#cb138-13" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>a<span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please, enter an integer.&quot;</span><span class="op">);</span></span>
+<span id="cb139-2"><a href="#cb139-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> message <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb139-3"><a href="#cb139-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a<span class="op">;</span></span>
+<span id="cb139-4"><a href="#cb139-4" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> res <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>message<span class="op">,</span> <span class="kw">out</span> a<span class="op">);</span></span>
+<span id="cb139-5"><a href="#cb139-5" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>res<span class="op">)</span></span>
+<span id="cb139-6"><a href="#cb139-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb139-7"><a href="#cb139-7" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The value entered was an integer: {a}.&quot;</span><span class="op">);</span></span>
+<span id="cb139-8"><a href="#cb139-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb139-9"><a href="#cb139-9" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
+<span id="cb139-10"><a href="#cb139-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb139-11"><a href="#cb139-11" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The value entered was not an integer, so 0 is assigned to a.&quot;</span><span class="op">);</span></span>
+<span id="cb139-12"><a href="#cb139-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb139-13"><a href="#cb139-13" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>a<span class="op">);</span></span></code></pre></div>
 <p>As you can see, <code class="sourceCode cs"><span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span></code> takes two arguments, a string and a variable name (prefixed by the “magic” novel keyword <code class="sourceCode cs"><span class="kw">out</span></code>) and returns a boolean. You will get a chance to experiment with this code in lab.</p>
 </section>
 <section id="while-loop-with-complex-conditions" class="level1">
 <h1>While Loop With Complex Conditions</h1>
-<div class="sourceCode" id="cb139"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> c<span class="op">;</span></span>
-<span id="cb139-2"><a href="#cb139-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> message<span class="op">;</span></span>
-<span id="cb139-3"><a href="#cb139-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> count<span class="op">;</span></span>
-<span id="cb139-4"><a href="#cb139-4" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> res<span class="op">;</span></span>
-<span id="cb139-5"><a href="#cb139-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb139-6"><a href="#cb139-6" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please, enter an integer.&quot;</span><span class="op">);</span></span>
-<span id="cb139-7"><a href="#cb139-7" aria-hidden="true" tabindex="-1"></a>message <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
-<span id="cb139-8"><a href="#cb139-8" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>message<span class="op">,</span> <span class="kw">out</span> c<span class="op">);</span></span>
-<span id="cb139-9"><a href="#cb139-9" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> <span class="co">// The user has 3 tries: count will be 0, 1, 2, and then we default.</span></span>
-<span id="cb139-10"><a href="#cb139-10" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(!</span>res <span class="op">&amp;&amp;</span> count <span class="op">&lt;</span> <span class="dv">3</span><span class="op">)</span></span>
-<span id="cb139-11"><a href="#cb139-11" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb139-12"><a href="#cb139-12" aria-hidden="true" tabindex="-1"></a>    count<span class="op">++;</span></span>
-<span id="cb139-13"><a href="#cb139-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span> <span class="op">(</span>count <span class="op">==</span> <span class="dv">3</span><span class="op">)</span></span>
-<span id="cb139-14"><a href="#cb139-14" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb139-15"><a href="#cb139-15" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb139-16"><a href="#cb139-16" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;I&#39;m using the default value 1.&quot;</span><span class="op">);</span></span>
-<span id="cb139-17"><a href="#cb139-17" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb139-18"><a href="#cb139-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">else</span></span>
-<span id="cb139-19"><a href="#cb139-19" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb139-20"><a href="#cb139-20" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The value entered was not an integer.&quot;</span><span class="op">);</span></span>
-<span id="cb139-21"><a href="#cb139-21" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please, enter an integer.&quot;</span><span class="op">);</span></span>
-<span id="cb139-22"><a href="#cb139-22" aria-hidden="true" tabindex="-1"></a>        message <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
-<span id="cb139-23"><a href="#cb139-23" aria-hidden="true" tabindex="-1"></a>        res <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>message<span class="op">,</span> <span class="kw">out</span> c<span class="op">);</span></span>
-<span id="cb139-24"><a href="#cb139-24" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb139-25"><a href="#cb139-25" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb139-26"><a href="#cb139-26" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The value is: &quot;</span> <span class="op">+</span> c<span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> c<span class="op">;</span></span>
+<span id="cb140-2"><a href="#cb140-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> message<span class="op">;</span></span>
+<span id="cb140-3"><a href="#cb140-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> count<span class="op">;</span></span>
+<span id="cb140-4"><a href="#cb140-4" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> res<span class="op">;</span></span>
+<span id="cb140-5"><a href="#cb140-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb140-6"><a href="#cb140-6" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please, enter an integer.&quot;</span><span class="op">);</span></span>
+<span id="cb140-7"><a href="#cb140-7" aria-hidden="true" tabindex="-1"></a>message <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb140-8"><a href="#cb140-8" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>message<span class="op">,</span> <span class="kw">out</span> c<span class="op">);</span></span>
+<span id="cb140-9"><a href="#cb140-9" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> <span class="co">// The user has 3 tries: count will be 0, 1, 2, and then we default.</span></span>
+<span id="cb140-10"><a href="#cb140-10" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(!</span>res <span class="op">&amp;&amp;</span> count <span class="op">&lt;</span> <span class="dv">3</span><span class="op">)</span></span>
+<span id="cb140-11"><a href="#cb140-11" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb140-12"><a href="#cb140-12" aria-hidden="true" tabindex="-1"></a>    count<span class="op">++;</span></span>
+<span id="cb140-13"><a href="#cb140-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span> <span class="op">(</span>count <span class="op">==</span> <span class="dv">3</span><span class="op">)</span></span>
+<span id="cb140-14"><a href="#cb140-14" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb140-15"><a href="#cb140-15" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb140-16"><a href="#cb140-16" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;I&#39;m using the default value 1.&quot;</span><span class="op">);</span></span>
+<span id="cb140-17"><a href="#cb140-17" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb140-18"><a href="#cb140-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">else</span></span>
+<span id="cb140-19"><a href="#cb140-19" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb140-20"><a href="#cb140-20" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The value entered was not an integer.&quot;</span><span class="op">);</span></span>
+<span id="cb140-21"><a href="#cb140-21" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please, enter an integer.&quot;</span><span class="op">);</span></span>
+<span id="cb140-22"><a href="#cb140-22" aria-hidden="true" tabindex="-1"></a>        message <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb140-23"><a href="#cb140-23" aria-hidden="true" tabindex="-1"></a>        res <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>message<span class="op">,</span> <span class="kw">out</span> c<span class="op">);</span></span>
+<span id="cb140-24"><a href="#cb140-24" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb140-25"><a href="#cb140-25" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb140-26"><a href="#cb140-26" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The value is: &quot;</span> <span class="op">+</span> c<span class="op">);</span></span></code></pre></div>
 </section>
 <section id="combining-methods-and-decision-structures" class="level1">
 <h1>Combining Methods and Decision Structures</h1>
 <p>Note that we can have a decision structure inside a method! If we were to re-visit the Rectangle class, we could have a constructor of the following type:</p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="fu">Rectangle</span><span class="op">(</span><span class="dt">int</span> wP<span class="op">,</span> <span class="dt">int</span> lP<span class="op">)</span></span>
-<span id="cb140-2"><a href="#cb140-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb140-3"><a href="#cb140-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>wP <span class="op">&lt;=</span> <span class="dv">0</span> <span class="op">||</span> lP <span class="op">&lt;=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb140-4"><a href="#cb140-4" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb140-5"><a href="#cb140-5" aria-hidden="true" tabindex="-1"></a>            Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Invalid Data, setting everything to 0&quot;</span><span class="op">);</span></span>
-<span id="cb140-6"><a href="#cb140-6" aria-hidden="true" tabindex="-1"></a>            width <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb140-7"><a href="#cb140-7" aria-hidden="true" tabindex="-1"></a>            length <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb140-8"><a href="#cb140-8" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb140-9"><a href="#cb140-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span></span>
-<span id="cb140-10"><a href="#cb140-10" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb140-11"><a href="#cb140-11" aria-hidden="true" tabindex="-1"></a>        width <span class="op">=</span> wP<span class="op">;</span></span>
-<span id="cb140-12"><a href="#cb140-12" aria-hidden="true" tabindex="-1"></a>        length <span class="op">=</span> lP<span class="op">;</span></span>
-<span id="cb140-13"><a href="#cb140-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb140-14"><a href="#cb140-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="fu">Rectangle</span><span class="op">(</span><span class="dt">int</span> wP<span class="op">,</span> <span class="dt">int</span> lP<span class="op">)</span></span>
+<span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb141-3"><a href="#cb141-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>wP <span class="op">&lt;=</span> <span class="dv">0</span> <span class="op">||</span> lP <span class="op">&lt;=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb141-4"><a href="#cb141-4" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb141-5"><a href="#cb141-5" aria-hidden="true" tabindex="-1"></a>            Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Invalid Data, setting everything to 0&quot;</span><span class="op">);</span></span>
+<span id="cb141-6"><a href="#cb141-6" aria-hidden="true" tabindex="-1"></a>            width <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb141-7"><a href="#cb141-7" aria-hidden="true" tabindex="-1"></a>            length <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb141-8"><a href="#cb141-8" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb141-9"><a href="#cb141-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span></span>
+<span id="cb141-10"><a href="#cb141-10" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb141-11"><a href="#cb141-11" aria-hidden="true" tabindex="-1"></a>        width <span class="op">=</span> wP<span class="op">;</span></span>
+<span id="cb141-12"><a href="#cb141-12" aria-hidden="true" tabindex="-1"></a>        length <span class="op">=</span> lP<span class="op">;</span></span>
+<span id="cb141-13"><a href="#cb141-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb141-14"><a href="#cb141-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="putting-it-all-together" class="level1">
 <h1>Putting it all together!</h1>
-<div class="sourceCode" id="cb141"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
-<span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb141-3"><a href="#cb141-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Loan</span>
-<span id="cb141-4"><a href="#cb141-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb141-5"><a href="#cb141-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">string</span> account<span class="op">;</span></span>
-<span id="cb141-6"><a href="#cb141-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">char</span> type<span class="op">;</span></span>
-<span id="cb141-7"><a href="#cb141-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> cscore<span class="op">;</span></span>
-<span id="cb141-8"><a href="#cb141-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">decimal</span> amount<span class="op">;</span></span>
-<span id="cb141-9"><a href="#cb141-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">decimal</span> rate<span class="op">;</span></span>
-<span id="cb141-10"><a href="#cb141-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb141-11"><a href="#cb141-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Loan</span><span class="op">()</span></span>
-<span id="cb141-12"><a href="#cb141-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb141-13"><a href="#cb141-13" aria-hidden="true" tabindex="-1"></a>        account <span class="op">=</span> <span class="st">&quot;Unknown&quot;</span><span class="op">;</span></span>
-<span id="cb141-14"><a href="#cb141-14" aria-hidden="true" tabindex="-1"></a>        type <span class="op">=</span> <span class="ch">&#39;o&#39;</span><span class="op">;</span></span>
-<span id="cb141-15"><a href="#cb141-15" aria-hidden="true" tabindex="-1"></a>        cscore <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
-<span id="cb141-16"><a href="#cb141-16" aria-hidden="true" tabindex="-1"></a>        amount <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
-<span id="cb141-17"><a href="#cb141-17" aria-hidden="true" tabindex="-1"></a>        rate <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
-<span id="cb141-18"><a href="#cb141-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb141-19"><a href="#cb141-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb141-20"><a href="#cb141-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Loan</span><span class="op">(</span><span class="dt">string</span> nameP<span class="op">,</span> <span class="dt">char</span> typeP<span class="op">,</span> <span class="dt">int</span> cscoreP<span class="op">,</span> <span class="dt">decimal</span> needP<span class="op">,</span> <span class="dt">decimal</span> downP<span class="op">)</span></span>
-<span id="cb141-21"><a href="#cb141-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb141-22"><a href="#cb141-22" aria-hidden="true" tabindex="-1"></a>        account <span class="op">=</span> nameP<span class="op">;</span></span>
-<span id="cb141-23"><a href="#cb141-23" aria-hidden="true" tabindex="-1"></a>        type <span class="op">=</span> typeP<span class="op">;</span></span>
-<span id="cb141-24"><a href="#cb141-24" aria-hidden="true" tabindex="-1"></a>        cscore <span class="op">=</span> cscoreP<span class="op">;</span></span>
-<span id="cb141-25"><a href="#cb141-25" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>cscore <span class="op">&lt;</span> <span class="dv">300</span><span class="op">)</span></span>
-<span id="cb141-26"><a href="#cb141-26" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb141-27"><a href="#cb141-27" aria-hidden="true" tabindex="-1"></a>            Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Sorry, we can&#39;t accept your application&quot;</span><span class="op">);</span></span>
-<span id="cb141-28"><a href="#cb141-28" aria-hidden="true" tabindex="-1"></a>            amount <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
-<span id="cb141-29"><a href="#cb141-29" aria-hidden="true" tabindex="-1"></a>            rate <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
-<span id="cb141-30"><a href="#cb141-30" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb141-31"><a href="#cb141-31" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span></span>
-<span id="cb141-32"><a href="#cb141-32" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb141-33"><a href="#cb141-33" aria-hidden="true" tabindex="-1"></a>            amount <span class="op">=</span> needP <span class="op">-</span> downP<span class="op">;</span></span>
-<span id="cb141-34"><a href="#cb141-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb141-35"><a href="#cb141-35" aria-hidden="true" tabindex="-1"></a>            <span class="kw">switch</span> <span class="op">(</span>type<span class="op">)</span></span>
-<span id="cb141-36"><a href="#cb141-36" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
-<span id="cb141-37"><a href="#cb141-37" aria-hidden="true" tabindex="-1"></a>                <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;a&#39;</span><span class="op">):</span></span>
-<span id="cb141-38"><a href="#cb141-38" aria-hidden="true" tabindex="-1"></a>                    rate <span class="op">=</span> <span class="op">.</span><span class="fu">05M</span><span class="op">;</span></span>
-<span id="cb141-39"><a href="#cb141-39" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb141-40"><a href="#cb141-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb141-41"><a href="#cb141-41" aria-hidden="true" tabindex="-1"></a>                <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;h&#39;</span><span class="op">):</span></span>
-<span id="cb141-42"><a href="#cb141-42" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(</span>cscore <span class="op">&gt;</span> <span class="dv">600</span> <span class="op">&amp;&amp;</span> amount <span class="op">&lt;</span> 1000000M<span class="op">)</span></span>
-<span id="cb141-43"><a href="#cb141-43" aria-hidden="true" tabindex="-1"></a>                        rate <span class="op">=</span> <span class="op">.</span><span class="fu">03M</span><span class="op">;</span></span>
-<span id="cb141-44"><a href="#cb141-44" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">else</span></span>
-<span id="cb141-45"><a href="#cb141-45" aria-hidden="true" tabindex="-1"></a>                        rate <span class="op">=</span> <span class="op">.</span><span class="fu">04M</span><span class="op">;</span></span>
-<span id="cb141-46"><a href="#cb141-46" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb141-47"><a href="#cb141-47" aria-hidden="true" tabindex="-1"></a>                <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;o&#39;</span><span class="op">):</span></span>
-<span id="cb141-48"><a href="#cb141-48" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(</span>cscore <span class="op">&gt;</span> <span class="dv">650</span> <span class="op">||</span> amount <span class="op">&lt;</span> 10000M<span class="op">)</span></span>
-<span id="cb141-49"><a href="#cb141-49" aria-hidden="true" tabindex="-1"></a>                        rate <span class="op">=</span> <span class="op">.</span><span class="fu">07M</span><span class="op">;</span></span>
-<span id="cb141-50"><a href="#cb141-50" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">else</span></span>
-<span id="cb141-51"><a href="#cb141-51" aria-hidden="true" tabindex="-1"></a>                        rate <span class="op">=</span> <span class="op">.</span><span class="fu">09M</span><span class="op">;</span></span>
-<span id="cb141-52"><a href="#cb141-52" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb141-53"><a href="#cb141-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb141-54"><a href="#cb141-54" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
-<span id="cb141-55"><a href="#cb141-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb141-56"><a href="#cb141-56" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb141-57"><a href="#cb141-57" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb141-58"><a href="#cb141-58" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">override</span> <span class="dt">string</span> <span class="fu">ToString</span><span class="op">()</span></span>
-<span id="cb141-59"><a href="#cb141-59" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb141-60"><a href="#cb141-60" aria-hidden="true" tabindex="-1"></a>        <span class="dt">string</span> typeName <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
-<span id="cb141-61"><a href="#cb141-61" aria-hidden="true" tabindex="-1"></a>        <span class="kw">switch</span> <span class="op">(</span>type<span class="op">)</span></span>
-<span id="cb141-62"><a href="#cb141-62" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb141-63"><a href="#cb141-63" aria-hidden="true" tabindex="-1"></a>            <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;a&#39;</span><span class="op">):</span></span>
-<span id="cb141-64"><a href="#cb141-64" aria-hidden="true" tabindex="-1"></a>                typeName <span class="op">=</span> <span class="st">&quot;an auto&quot;</span><span class="op">;</span></span>
-<span id="cb141-65"><a href="#cb141-65" aria-hidden="true" tabindex="-1"></a>                <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb141-66"><a href="#cb141-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb141-67"><a href="#cb141-67" aria-hidden="true" tabindex="-1"></a>            <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;h&#39;</span><span class="op">):</span></span>
-<span id="cb141-68"><a href="#cb141-68" aria-hidden="true" tabindex="-1"></a>                typeName <span class="op">=</span> <span class="st">&quot;a house&quot;</span><span class="op">;</span></span>
-<span id="cb141-69"><a href="#cb141-69" aria-hidden="true" tabindex="-1"></a>                <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb141-70"><a href="#cb141-70" aria-hidden="true" tabindex="-1"></a>            <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;o&#39;</span><span class="op">):</span></span>
-<span id="cb141-71"><a href="#cb141-71" aria-hidden="true" tabindex="-1"></a>                typeName <span class="op">=</span> <span class="st">&quot;another reason&quot;</span><span class="op">;</span></span>
-<span id="cb141-72"><a href="#cb141-72" aria-hidden="true" tabindex="-1"></a>                <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb141-73"><a href="#cb141-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb141-74"><a href="#cb141-74" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb141-75"><a href="#cb141-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb141-76"><a href="#cb141-76" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> <span class="st">&quot;Dear &quot;</span> <span class="op">+</span> account <span class="op">+</span> $<span class="st">&quot;, you borrowed {amount:C} at {rate:P} for &quot;</span></span>
-<span id="cb141-77"><a href="#cb141-77" aria-hidden="true" tabindex="-1"></a>            <span class="op">+</span> typeName <span class="op">+</span> <span class="st">&quot;.&quot;</span><span class="op">;</span></span>
-<span id="cb141-78"><a href="#cb141-78" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb141-79"><a href="#cb141-79" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <div class="sourceCode" id="cb142"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
-<span id="cb142-2"><a href="#cb142-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Program</span>
-<span id="cb142-3"><a href="#cb142-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb142-4"><a href="#cb142-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">()</span></span>
-<span id="cb142-5"><a href="#cb142-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb142-6"><a href="#cb142-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb142-7"><a href="#cb142-7" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;What is your name?&quot;</span><span class="op">);</span></span>
-<span id="cb142-8"><a href="#cb142-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">string</span> name <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
-<span id="cb142-9"><a href="#cb142-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb142-10"><a href="#cb142-10" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Do you want a loan for an Auto (A, a), a House (H, h), or for some Other (O, o) reason?&quot;</span><span class="op">);</span></span>
-<span id="cb142-11"><a href="#cb142-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">char</span> type <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadKey</span><span class="op">().</span><span class="fu">KeyChar</span><span class="op">;</span> <span class="op">;</span></span>
-<span id="cb142-12"><a href="#cb142-12" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">();</span></span>
-<span id="cb142-13"><a href="#cb142-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb142-14"><a href="#cb142-14" aria-hidden="true" tabindex="-1"></a>        <span class="dt">string</span> typeOfLoan<span class="op">;</span></span>
-<span id="cb142-15"><a href="#cb142-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb142-16"><a href="#cb142-16" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>type <span class="op">==</span> <span class="ch">&#39;A&#39;</span> <span class="op">||</span> type <span class="op">==</span> <span class="ch">&#39;a&#39;</span><span class="op">)</span></span>
-<span id="cb142-17"><a href="#cb142-17" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb142-18"><a href="#cb142-18" aria-hidden="true" tabindex="-1"></a>            type <span class="op">=</span> <span class="ch">&#39;a&#39;</span><span class="op">;</span></span>
-<span id="cb142-19"><a href="#cb142-19" aria-hidden="true" tabindex="-1"></a>            typeOfLoan <span class="op">=</span> <span class="st">&quot;an auto&quot;</span><span class="op">;</span></span>
-<span id="cb142-20"><a href="#cb142-20" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb142-21"><a href="#cb142-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>type <span class="op">==</span> <span class="ch">&#39;H&#39;</span> <span class="op">||</span> type <span class="op">==</span> <span class="ch">&#39;h&#39;</span><span class="op">)</span></span>
-<span id="cb142-22"><a href="#cb142-22" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb142-23"><a href="#cb142-23" aria-hidden="true" tabindex="-1"></a>            type <span class="op">=</span> <span class="ch">&#39;h&#39;</span><span class="op">;</span></span>
-<span id="cb142-24"><a href="#cb142-24" aria-hidden="true" tabindex="-1"></a>            typeOfLoan <span class="op">=</span> <span class="st">&quot;a house&quot;</span><span class="op">;</span></span>
-<span id="cb142-25"><a href="#cb142-25" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb142-26"><a href="#cb142-26" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span></span>
-<span id="cb142-27"><a href="#cb142-27" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb142-28"><a href="#cb142-28" aria-hidden="true" tabindex="-1"></a>            type <span class="op">=</span> <span class="ch">&#39;o&#39;</span><span class="op">;</span></span>
-<span id="cb142-29"><a href="#cb142-29" aria-hidden="true" tabindex="-1"></a>            typeOfLoan <span class="op">=</span> <span class="st">&quot;some other reason&quot;</span><span class="op">;</span></span>
+<span id="cb142-2"><a href="#cb142-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-3"><a href="#cb142-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Loan</span>
+<span id="cb142-4"><a href="#cb142-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb142-5"><a href="#cb142-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">string</span> account<span class="op">;</span></span>
+<span id="cb142-6"><a href="#cb142-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">char</span> type<span class="op">;</span></span>
+<span id="cb142-7"><a href="#cb142-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> cscore<span class="op">;</span></span>
+<span id="cb142-8"><a href="#cb142-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">decimal</span> amount<span class="op">;</span></span>
+<span id="cb142-9"><a href="#cb142-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">decimal</span> rate<span class="op">;</span></span>
+<span id="cb142-10"><a href="#cb142-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-11"><a href="#cb142-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Loan</span><span class="op">()</span></span>
+<span id="cb142-12"><a href="#cb142-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb142-13"><a href="#cb142-13" aria-hidden="true" tabindex="-1"></a>        account <span class="op">=</span> <span class="st">&quot;Unknown&quot;</span><span class="op">;</span></span>
+<span id="cb142-14"><a href="#cb142-14" aria-hidden="true" tabindex="-1"></a>        type <span class="op">=</span> <span class="ch">&#39;o&#39;</span><span class="op">;</span></span>
+<span id="cb142-15"><a href="#cb142-15" aria-hidden="true" tabindex="-1"></a>        cscore <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb142-16"><a href="#cb142-16" aria-hidden="true" tabindex="-1"></a>        amount <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb142-17"><a href="#cb142-17" aria-hidden="true" tabindex="-1"></a>        rate <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb142-18"><a href="#cb142-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb142-19"><a href="#cb142-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-20"><a href="#cb142-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Loan</span><span class="op">(</span><span class="dt">string</span> nameP<span class="op">,</span> <span class="dt">char</span> typeP<span class="op">,</span> <span class="dt">int</span> cscoreP<span class="op">,</span> <span class="dt">decimal</span> needP<span class="op">,</span> <span class="dt">decimal</span> downP<span class="op">)</span></span>
+<span id="cb142-21"><a href="#cb142-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb142-22"><a href="#cb142-22" aria-hidden="true" tabindex="-1"></a>        account <span class="op">=</span> nameP<span class="op">;</span></span>
+<span id="cb142-23"><a href="#cb142-23" aria-hidden="true" tabindex="-1"></a>        type <span class="op">=</span> typeP<span class="op">;</span></span>
+<span id="cb142-24"><a href="#cb142-24" aria-hidden="true" tabindex="-1"></a>        cscore <span class="op">=</span> cscoreP<span class="op">;</span></span>
+<span id="cb142-25"><a href="#cb142-25" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>cscore <span class="op">&lt;</span> <span class="dv">300</span><span class="op">)</span></span>
+<span id="cb142-26"><a href="#cb142-26" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb142-27"><a href="#cb142-27" aria-hidden="true" tabindex="-1"></a>            Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Sorry, we can&#39;t accept your application&quot;</span><span class="op">);</span></span>
+<span id="cb142-28"><a href="#cb142-28" aria-hidden="true" tabindex="-1"></a>            amount <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb142-29"><a href="#cb142-29" aria-hidden="true" tabindex="-1"></a>            rate <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
 <span id="cb142-30"><a href="#cb142-30" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb142-31"><a href="#cb142-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb142-32"><a href="#cb142-32" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;You need money for {typeOfLoan}, great.</span><span class="sc">\n</span><span class="st">What is your current credit score?&quot;</span><span class="op">);</span></span>
-<span id="cb142-33"><a href="#cb142-33" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> cscore <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb142-31"><a href="#cb142-31" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span></span>
+<span id="cb142-32"><a href="#cb142-32" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb142-33"><a href="#cb142-33" aria-hidden="true" tabindex="-1"></a>            amount <span class="op">=</span> needP <span class="op">-</span> downP<span class="op">;</span></span>
 <span id="cb142-34"><a href="#cb142-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb142-35"><a href="#cb142-35" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;How much do you need, total?&quot;</span><span class="op">);</span></span>
-<span id="cb142-36"><a href="#cb142-36" aria-hidden="true" tabindex="-1"></a>        <span class="dt">decimal</span> need <span class="op">=</span> <span class="dt">decimal</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
-<span id="cb142-37"><a href="#cb142-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb142-38"><a href="#cb142-38" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;What is your down payment?&quot;</span><span class="op">);</span></span>
-<span id="cb142-39"><a href="#cb142-39" aria-hidden="true" tabindex="-1"></a>        <span class="dt">decimal</span> down <span class="op">=</span> <span class="dt">decimal</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb142-35"><a href="#cb142-35" aria-hidden="true" tabindex="-1"></a>            <span class="kw">switch</span> <span class="op">(</span>type<span class="op">)</span></span>
+<span id="cb142-36"><a href="#cb142-36" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb142-37"><a href="#cb142-37" aria-hidden="true" tabindex="-1"></a>                <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;a&#39;</span><span class="op">):</span></span>
+<span id="cb142-38"><a href="#cb142-38" aria-hidden="true" tabindex="-1"></a>                    rate <span class="op">=</span> <span class="op">.</span><span class="fu">05M</span><span class="op">;</span></span>
+<span id="cb142-39"><a href="#cb142-39" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">break</span><span class="op">;</span></span>
 <span id="cb142-40"><a href="#cb142-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb142-41"><a href="#cb142-41" aria-hidden="true" tabindex="-1"></a>        Loan myLoan <span class="op">=</span> <span class="kw">new</span> <span class="fu">Loan</span><span class="op">(</span>name<span class="op">,</span> type<span class="op">,</span> cscore<span class="op">,</span> need<span class="op">,</span> down<span class="op">);</span></span>
-<span id="cb142-42"><a href="#cb142-42" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myLoan<span class="op">);</span></span>
-<span id="cb142-43"><a href="#cb142-43" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb142-44"><a href="#cb142-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb142-45"><a href="#cb142-45" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<span id="cb142-41"><a href="#cb142-41" aria-hidden="true" tabindex="-1"></a>                <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;h&#39;</span><span class="op">):</span></span>
+<span id="cb142-42"><a href="#cb142-42" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(</span>cscore <span class="op">&gt;</span> <span class="dv">600</span> <span class="op">&amp;&amp;</span> amount <span class="op">&lt;</span> 1000000M<span class="op">)</span></span>
+<span id="cb142-43"><a href="#cb142-43" aria-hidden="true" tabindex="-1"></a>                        rate <span class="op">=</span> <span class="op">.</span><span class="fu">03M</span><span class="op">;</span></span>
+<span id="cb142-44"><a href="#cb142-44" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">else</span></span>
+<span id="cb142-45"><a href="#cb142-45" aria-hidden="true" tabindex="-1"></a>                        rate <span class="op">=</span> <span class="op">.</span><span class="fu">04M</span><span class="op">;</span></span>
+<span id="cb142-46"><a href="#cb142-46" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb142-47"><a href="#cb142-47" aria-hidden="true" tabindex="-1"></a>                <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;o&#39;</span><span class="op">):</span></span>
+<span id="cb142-48"><a href="#cb142-48" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(</span>cscore <span class="op">&gt;</span> <span class="dv">650</span> <span class="op">||</span> amount <span class="op">&lt;</span> 10000M<span class="op">)</span></span>
+<span id="cb142-49"><a href="#cb142-49" aria-hidden="true" tabindex="-1"></a>                        rate <span class="op">=</span> <span class="op">.</span><span class="fu">07M</span><span class="op">;</span></span>
+<span id="cb142-50"><a href="#cb142-50" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">else</span></span>
+<span id="cb142-51"><a href="#cb142-51" aria-hidden="true" tabindex="-1"></a>                        rate <span class="op">=</span> <span class="op">.</span><span class="fu">09M</span><span class="op">;</span></span>
+<span id="cb142-52"><a href="#cb142-52" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb142-53"><a href="#cb142-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-54"><a href="#cb142-54" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb142-55"><a href="#cb142-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-56"><a href="#cb142-56" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb142-57"><a href="#cb142-57" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb142-58"><a href="#cb142-58" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">override</span> <span class="dt">string</span> <span class="fu">ToString</span><span class="op">()</span></span>
+<span id="cb142-59"><a href="#cb142-59" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb142-60"><a href="#cb142-60" aria-hidden="true" tabindex="-1"></a>        <span class="dt">string</span> typeName <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb142-61"><a href="#cb142-61" aria-hidden="true" tabindex="-1"></a>        <span class="kw">switch</span> <span class="op">(</span>type<span class="op">)</span></span>
+<span id="cb142-62"><a href="#cb142-62" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb142-63"><a href="#cb142-63" aria-hidden="true" tabindex="-1"></a>            <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;a&#39;</span><span class="op">):</span></span>
+<span id="cb142-64"><a href="#cb142-64" aria-hidden="true" tabindex="-1"></a>                typeName <span class="op">=</span> <span class="st">&quot;an auto&quot;</span><span class="op">;</span></span>
+<span id="cb142-65"><a href="#cb142-65" aria-hidden="true" tabindex="-1"></a>                <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb142-66"><a href="#cb142-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-67"><a href="#cb142-67" aria-hidden="true" tabindex="-1"></a>            <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;h&#39;</span><span class="op">):</span></span>
+<span id="cb142-68"><a href="#cb142-68" aria-hidden="true" tabindex="-1"></a>                typeName <span class="op">=</span> <span class="st">&quot;a house&quot;</span><span class="op">;</span></span>
+<span id="cb142-69"><a href="#cb142-69" aria-hidden="true" tabindex="-1"></a>                <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb142-70"><a href="#cb142-70" aria-hidden="true" tabindex="-1"></a>            <span class="kw">case</span> <span class="op">(</span><span class="ch">&#39;o&#39;</span><span class="op">):</span></span>
+<span id="cb142-71"><a href="#cb142-71" aria-hidden="true" tabindex="-1"></a>                typeName <span class="op">=</span> <span class="st">&quot;another reason&quot;</span><span class="op">;</span></span>
+<span id="cb142-72"><a href="#cb142-72" aria-hidden="true" tabindex="-1"></a>                <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb142-73"><a href="#cb142-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-74"><a href="#cb142-74" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb142-75"><a href="#cb142-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-76"><a href="#cb142-76" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> <span class="st">&quot;Dear &quot;</span> <span class="op">+</span> account <span class="op">+</span> $<span class="st">&quot;, you borrowed {amount:C} at {rate:P} for &quot;</span></span>
+<span id="cb142-77"><a href="#cb142-77" aria-hidden="true" tabindex="-1"></a>            <span class="op">+</span> typeName <span class="op">+</span> <span class="st">&quot;.&quot;</span><span class="op">;</span></span>
+<span id="cb142-78"><a href="#cb142-78" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb142-79"><a href="#cb142-79" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
+<span id="cb143-2"><a href="#cb143-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Program</span>
+<span id="cb143-3"><a href="#cb143-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb143-4"><a href="#cb143-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">()</span></span>
+<span id="cb143-5"><a href="#cb143-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb143-6"><a href="#cb143-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb143-7"><a href="#cb143-7" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;What is your name?&quot;</span><span class="op">);</span></span>
+<span id="cb143-8"><a href="#cb143-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">string</span> name <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb143-9"><a href="#cb143-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb143-10"><a href="#cb143-10" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Do you want a loan for an Auto (A, a), a House (H, h), or for some Other (O, o) reason?&quot;</span><span class="op">);</span></span>
+<span id="cb143-11"><a href="#cb143-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">char</span> type <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadKey</span><span class="op">().</span><span class="fu">KeyChar</span><span class="op">;</span> <span class="op">;</span></span>
+<span id="cb143-12"><a href="#cb143-12" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">();</span></span>
+<span id="cb143-13"><a href="#cb143-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb143-14"><a href="#cb143-14" aria-hidden="true" tabindex="-1"></a>        <span class="dt">string</span> typeOfLoan<span class="op">;</span></span>
+<span id="cb143-15"><a href="#cb143-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb143-16"><a href="#cb143-16" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>type <span class="op">==</span> <span class="ch">&#39;A&#39;</span> <span class="op">||</span> type <span class="op">==</span> <span class="ch">&#39;a&#39;</span><span class="op">)</span></span>
+<span id="cb143-17"><a href="#cb143-17" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb143-18"><a href="#cb143-18" aria-hidden="true" tabindex="-1"></a>            type <span class="op">=</span> <span class="ch">&#39;a&#39;</span><span class="op">;</span></span>
+<span id="cb143-19"><a href="#cb143-19" aria-hidden="true" tabindex="-1"></a>            typeOfLoan <span class="op">=</span> <span class="st">&quot;an auto&quot;</span><span class="op">;</span></span>
+<span id="cb143-20"><a href="#cb143-20" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb143-21"><a href="#cb143-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>type <span class="op">==</span> <span class="ch">&#39;H&#39;</span> <span class="op">||</span> type <span class="op">==</span> <span class="ch">&#39;h&#39;</span><span class="op">)</span></span>
+<span id="cb143-22"><a href="#cb143-22" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb143-23"><a href="#cb143-23" aria-hidden="true" tabindex="-1"></a>            type <span class="op">=</span> <span class="ch">&#39;h&#39;</span><span class="op">;</span></span>
+<span id="cb143-24"><a href="#cb143-24" aria-hidden="true" tabindex="-1"></a>            typeOfLoan <span class="op">=</span> <span class="st">&quot;a house&quot;</span><span class="op">;</span></span>
+<span id="cb143-25"><a href="#cb143-25" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb143-26"><a href="#cb143-26" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span></span>
+<span id="cb143-27"><a href="#cb143-27" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb143-28"><a href="#cb143-28" aria-hidden="true" tabindex="-1"></a>            type <span class="op">=</span> <span class="ch">&#39;o&#39;</span><span class="op">;</span></span>
+<span id="cb143-29"><a href="#cb143-29" aria-hidden="true" tabindex="-1"></a>            typeOfLoan <span class="op">=</span> <span class="st">&quot;some other reason&quot;</span><span class="op">;</span></span>
+<span id="cb143-30"><a href="#cb143-30" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb143-31"><a href="#cb143-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb143-32"><a href="#cb143-32" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;You need money for {typeOfLoan}, great.</span><span class="sc">\n</span><span class="st">What is your current credit score?&quot;</span><span class="op">);</span></span>
+<span id="cb143-33"><a href="#cb143-33" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> cscore <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb143-34"><a href="#cb143-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb143-35"><a href="#cb143-35" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;How much do you need, total?&quot;</span><span class="op">);</span></span>
+<span id="cb143-36"><a href="#cb143-36" aria-hidden="true" tabindex="-1"></a>        <span class="dt">decimal</span> need <span class="op">=</span> <span class="dt">decimal</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb143-37"><a href="#cb143-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb143-38"><a href="#cb143-38" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;What is your down payment?&quot;</span><span class="op">);</span></span>
+<span id="cb143-39"><a href="#cb143-39" aria-hidden="true" tabindex="-1"></a>        <span class="dt">decimal</span> down <span class="op">=</span> <span class="dt">decimal</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb143-40"><a href="#cb143-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb143-41"><a href="#cb143-41" aria-hidden="true" tabindex="-1"></a>        Loan myLoan <span class="op">=</span> <span class="kw">new</span> <span class="fu">Loan</span><span class="op">(</span>name<span class="op">,</span> type<span class="op">,</span> cscore<span class="op">,</span> need<span class="op">,</span> down<span class="op">);</span></span>
+<span id="cb143-42"><a href="#cb143-42" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myLoan<span class="op">);</span></span>
+<span id="cb143-43"><a href="#cb143-43" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb143-44"><a href="#cb143-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb143-45"><a href="#cb143-45" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="arrays" class="level1">
 <h1>Arrays</h1>
@@ -4185,63 +4192,63 @@ I don't think we want to discuss that.
 <section id="declaration-and-initialization-of-arrays" class="level2">
 <h2>Declaration and Initialization of Arrays</h2>
 <p>Declaration and assignment</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray<span class="op">;</span></span>
-<span id="cb143-2"><a href="#cb143-2" aria-hidden="true" tabindex="-1"></a>myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">3</span><span class="op">];</span> <span class="co">// 3 is the size declarator</span></span>
-<span id="cb143-3"><a href="#cb143-3" aria-hidden="true" tabindex="-1"></a><span class="co">// We can now store 3 ints in this array,</span></span>
-<span id="cb143-4"><a href="#cb143-4" aria-hidden="true" tabindex="-1"></a><span class="co">// at index 0, 1 and 2</span></span>
-<span id="cb143-5"><a href="#cb143-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb143-6"><a href="#cb143-6" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">=</span> <span class="dv">10</span><span class="op">;</span> <span class="co">// 0 is the subscript, or index</span></span>
-<span id="cb143-7"><a href="#cb143-7" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="op">=</span> <span class="dv">20</span><span class="op">;</span></span>
-<span id="cb143-8"><a href="#cb143-8" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">2</span><span class="op">]</span> <span class="op">=</span> <span class="dv">30</span><span class="op">;</span></span>
-<span id="cb143-9"><a href="#cb143-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb143-10"><a href="#cb143-10" aria-hidden="true" tabindex="-1"></a><span class="co">// the following would give an error:</span></span>
-<span id="cb143-11"><a href="#cb143-11" aria-hidden="true" tabindex="-1"></a><span class="co">//myArray[3] = 40;</span></span>
-<span id="cb143-12"><a href="#cb143-12" aria-hidden="true" tabindex="-1"></a><span class="co">// Unhandled Exception: System.IndexOutOfRangeException: Index was outside the bounds of the array at Program.Main()</span></span>
-<span id="cb143-13"><a href="#cb143-13" aria-hidden="true" tabindex="-1"></a><span class="co">// &quot;Array bound checking&quot;: happen at runtime.</span></span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray<span class="op">;</span></span>
+<span id="cb144-2"><a href="#cb144-2" aria-hidden="true" tabindex="-1"></a>myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">3</span><span class="op">];</span> <span class="co">// 3 is the size declarator</span></span>
+<span id="cb144-3"><a href="#cb144-3" aria-hidden="true" tabindex="-1"></a><span class="co">// We can now store 3 ints in this array,</span></span>
+<span id="cb144-4"><a href="#cb144-4" aria-hidden="true" tabindex="-1"></a><span class="co">// at index 0, 1 and 2</span></span>
+<span id="cb144-5"><a href="#cb144-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb144-6"><a href="#cb144-6" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">=</span> <span class="dv">10</span><span class="op">;</span> <span class="co">// 0 is the subscript, or index</span></span>
+<span id="cb144-7"><a href="#cb144-7" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="op">=</span> <span class="dv">20</span><span class="op">;</span></span>
+<span id="cb144-8"><a href="#cb144-8" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">2</span><span class="op">]</span> <span class="op">=</span> <span class="dv">30</span><span class="op">;</span></span>
+<span id="cb144-9"><a href="#cb144-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb144-10"><a href="#cb144-10" aria-hidden="true" tabindex="-1"></a><span class="co">// the following would give an error:</span></span>
+<span id="cb144-11"><a href="#cb144-11" aria-hidden="true" tabindex="-1"></a><span class="co">//myArray[3] = 40;</span></span>
+<span id="cb144-12"><a href="#cb144-12" aria-hidden="true" tabindex="-1"></a><span class="co">// Unhandled Exception: System.IndexOutOfRangeException: Index was outside the bounds of the array at Program.Main()</span></span>
+<span id="cb144-13"><a href="#cb144-13" aria-hidden="true" tabindex="-1"></a><span class="co">// &quot;Array bound checking&quot;: happen at runtime.</span></span></code></pre></div>
 <p>As usual, we can combine declaration and assignment on one line:</p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">3</span><span class="op">];</span></span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">3</span><span class="op">];</span></span></code></pre></div>
 <p>We can even initialize <em>and</em> give values on one line:</p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">3</span><span class="op">]</span> <span class="op">{</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">30</span> <span class="op">};</span></span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">3</span><span class="op">]</span> <span class="op">{</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">30</span> <span class="op">};</span></span></code></pre></div>
 <p>And that statement can be rewritten as any of the following:</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[]</span> <span class="op">{</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">30</span> <span class="op">};</span></span>
-<span id="cb146-2"><a href="#cb146-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="kw">new</span><span class="op">[]</span> <span class="op">{</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">30</span> <span class="op">};</span></span>
-<span id="cb146-3"><a href="#cb146-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="op">{</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">30</span> <span class="op">};</span></span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[]</span> <span class="op">{</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">30</span> <span class="op">};</span></span>
+<span id="cb147-2"><a href="#cb147-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="kw">new</span><span class="op">[]</span> <span class="op">{</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">30</span> <span class="op">};</span></span>
+<span id="cb147-3"><a href="#cb147-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="op">{</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">30</span> <span class="op">};</span></span></code></pre></div>
 <p>But, we should be careful, the following would cause an error:</p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">5</span><span class="op">];</span></span>
-<span id="cb147-2"><a href="#cb147-2" aria-hidden="true" tabindex="-1"></a>myArray <span class="op">=</span> <span class="op">{</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span> <span class="op">,</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">};</span> <span class="co">// ERROR</span></span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">5</span><span class="op">];</span></span>
+<span id="cb148-2"><a href="#cb148-2" aria-hidden="true" tabindex="-1"></a>myArray <span class="op">=</span> <span class="op">{</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span> <span class="op">,</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">};</span> <span class="co">// ERROR</span></span></code></pre></div>
 <p>If we use the shorter notation, we <em>have to</em> give the values at initialization, we cannot re-use this notation once the array was created.</p>
 <p>Other datatype, and even objects, can be stored in arrays:</p>
-<div class="sourceCode" id="cb148"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="op">{</span> <span class="st">&quot;Bob&quot;</span><span class="op">,</span> <span class="st">&quot;Mom&quot;</span><span class="op">,</span> <span class="st">&quot;Train&quot;</span><span class="op">,</span> <span class="st">&quot;Console&quot;</span> <span class="op">};</span></span>
-<span id="cb148-2"><a href="#cb148-2" aria-hidden="true" tabindex="-1"></a>Rectangle<span class="op">[]</span> arrayOfRectangle <span class="op">=</span> <span class="kw">new</span> Rectangle<span class="op">[</span><span class="dv">5</span><span class="op">];</span></span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="op">{</span> <span class="st">&quot;Bob&quot;</span><span class="op">,</span> <span class="st">&quot;Mom&quot;</span><span class="op">,</span> <span class="st">&quot;Train&quot;</span><span class="op">,</span> <span class="st">&quot;Console&quot;</span> <span class="op">};</span></span>
+<span id="cb149-2"><a href="#cb149-2" aria-hidden="true" tabindex="-1"></a>Rectangle<span class="op">[]</span> arrayOfRectangle <span class="op">=</span> <span class="kw">new</span> Rectangle<span class="op">[</span><span class="dv">5</span><span class="op">];</span></span></code></pre></div>
 </section>
 <section id="custom-size-and-values" class="level2">
 <h2>Custom Size and Values</h2>
-<div class="sourceCode" id="cb149"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;What is size of the array that you want?&quot;</span><span class="op">);</span></span>
-<span id="cb149-2"><a href="#cb149-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> size <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
-<span id="cb149-3"><a href="#cb149-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> customArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span>size<span class="op">];</span></span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb150-1"><a href="#cb150-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;What is size of the array that you want?&quot;</span><span class="op">);</span></span>
+<span id="cb150-2"><a href="#cb150-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> size <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb150-3"><a href="#cb150-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> customArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span>size<span class="op">];</span></span></code></pre></div>
 <p>How can we fill it with values, since we do not know its size? Using iteration!</p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb150-1"><a href="#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> counter <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb150-2"><a href="#cb150-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>counter <span class="op">&lt;</span> size<span class="op">)</span></span>
-<span id="cb150-3"><a href="#cb150-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb150-4"><a href="#cb150-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Enter the {counter + 1}th value&quot;</span><span class="op">);</span></span>
-<span id="cb150-5"><a href="#cb150-5" aria-hidden="true" tabindex="-1"></a>    customArray<span class="op">[</span>counter<span class="op">]</span> <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
-<span id="cb150-6"><a href="#cb150-6" aria-hidden="true" tabindex="-1"></a>    counter<span class="op">++;</span></span>
-<span id="cb150-7"><a href="#cb150-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> counter <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb151-2"><a href="#cb151-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>counter <span class="op">&lt;</span> size<span class="op">)</span></span>
+<span id="cb151-3"><a href="#cb151-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb151-4"><a href="#cb151-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Enter the {counter + 1}th value&quot;</span><span class="op">);</span></span>
+<span id="cb151-5"><a href="#cb151-5" aria-hidden="true" tabindex="-1"></a>    customArray<span class="op">[</span>counter<span class="op">]</span> <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb151-6"><a href="#cb151-6" aria-hidden="true" tabindex="-1"></a>    counter<span class="op">++;</span></span>
+<span id="cb151-7"><a href="#cb151-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>We can use <code class="sourceCode cs">length</code>, a property of our <code class="sourceCode cs">array</code>. That is, the integer value <code class="sourceCode cs">myArray<span class="op">.</span><span class="fu">Length</span></code> is the length (= size) of the array, we can access it directly.</p>
 <p>To display an array, we need to iterate as well (this time using the <code class="sourceCode cs">Length</code> property):</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> counter2 <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb151-2"><a href="#cb151-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>counter2 <span class="op">&lt;</span> customArray<span class="op">.</span><span class="fu">Length</span><span class="op">)</span></span>
-<span id="cb151-3"><a href="#cb151-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb151-4"><a href="#cb151-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{counter2}: {customArray[counter2]}.&quot;</span><span class="op">);</span></span>
-<span id="cb151-5"><a href="#cb151-5" aria-hidden="true" tabindex="-1"></a>    counter2<span class="op">++;</span></span>
-<span id="cb151-6"><a href="#cb151-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb152-1"><a href="#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> counter2 <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb152-2"><a href="#cb152-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>counter2 <span class="op">&lt;</span> customArray<span class="op">.</span><span class="fu">Length</span><span class="op">)</span></span>
+<span id="cb152-3"><a href="#cb152-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb152-4"><a href="#cb152-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{counter2}: {customArray[counter2]}.&quot;</span><span class="op">);</span></span>
+<span id="cb152-5"><a href="#cb152-5" aria-hidden="true" tabindex="-1"></a>    counter2<span class="op">++;</span></span>
+<span id="cb152-6"><a href="#cb152-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="changing-the-size" class="level2">
 <h2>Changing the Size</h2>
 <p><code class="sourceCode cs">Array</code> is actually a class, and it comes with methods!</p>
-<div class="sourceCode" id="cb152"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb152-1"><a href="#cb152-1" aria-hidden="true" tabindex="-1"></a>Array<span class="op">.</span><span class="fu">Resize</span><span class="op">(</span><span class="kw">ref</span> myArray<span class="op">,</span> <span class="dv">4</span><span class="op">);</span></span>
-<span id="cb152-2"><a href="#cb152-2" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">3</span><span class="op">]</span> <span class="op">=</span> <span class="dv">40</span><span class="op">;</span></span>
-<span id="cb152-3"><a href="#cb152-3" aria-hidden="true" tabindex="-1"></a>Array<span class="op">.</span><span class="fu">Resize</span><span class="op">(</span><span class="kw">ref</span> myArray<span class="op">,</span> <span class="dv">2</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a>Array<span class="op">.</span><span class="fu">Resize</span><span class="op">(</span><span class="kw">ref</span> myArray<span class="op">,</span> <span class="dv">4</span><span class="op">);</span></span>
+<span id="cb153-2"><a href="#cb153-2" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">3</span><span class="op">]</span> <span class="op">=</span> <span class="dv">40</span><span class="op">;</span></span>
+<span id="cb153-3"><a href="#cb153-3" aria-hidden="true" tabindex="-1"></a>Array<span class="op">.</span><span class="fu">Resize</span><span class="op">(</span><span class="kw">ref</span> myArray<span class="op">,</span> <span class="dv">2</span><span class="op">);</span></span></code></pre></div>
 <p><code class="sourceCode cs">Resize</code> shrinks (and content is lost) and extends (and store the default value, i.e., <span class="math inline">0</span> for <code class="sourceCode cs"><span class="dt">int</span></code>, etc.)!</p>
 </section>
 </section>
@@ -4249,27 +4256,27 @@ I don't think we want to discuss that.
 <h1>For Loops</h1>
 <section id="for-loops-1" class="level2">
 <h2><code class="sourceCode cs"><span class="kw">for</span></code> Loops</h2>
-<div class="sourceCode" id="cb153"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb153-2"><a href="#cb153-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>i <span class="op">&lt;=</span> <span class="dv">5</span><span class="op">)</span></span>
-<span id="cb153-3"><a href="#cb153-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb153-4"><a href="#cb153-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>i <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
-<span id="cb153-5"><a href="#cb153-5" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
-<span id="cb153-6"><a href="#cb153-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<div class="sourceCode" id="cb154"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb154-2"><a href="#cb154-2" aria-hidden="true" tabindex="-1"></a><span class="kw">do</span></span>
+<div class="sourceCode" id="cb154"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb154-2"><a href="#cb154-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>i <span class="op">&lt;=</span> <span class="dv">5</span><span class="op">)</span></span>
 <span id="cb154-3"><a href="#cb154-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb154-4"><a href="#cb154-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>j <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
-<span id="cb154-5"><a href="#cb154-5" aria-hidden="true" tabindex="-1"></a>    j<span class="op">++;</span></span>
-<span id="cb154-6"><a href="#cb154-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="kw">while</span> <span class="op">(</span>j <span class="op">&lt;=</span> <span class="dv">5</span><span class="op">);</span></span></code></pre></div>
-<div class="sourceCode" id="cb155"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> k <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb155-2"><a href="#cb155-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span>k <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> k <span class="op">&lt;=</span> <span class="dv">5</span><span class="op">;</span> k<span class="op">++)</span></span>
+<span id="cb154-4"><a href="#cb154-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>i <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
+<span id="cb154-5"><a href="#cb154-5" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
+<span id="cb154-6"><a href="#cb154-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb155-2"><a href="#cb155-2" aria-hidden="true" tabindex="-1"></a><span class="kw">do</span></span>
 <span id="cb155-3"><a href="#cb155-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb155-4"><a href="#cb155-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>k <span class="op">+</span> <span class="st">&quot;&quot;</span><span class="op">);</span></span>
-<span id="cb155-5"><a href="#cb155-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<div class="sourceCode" id="cb156"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb156-1"><a href="#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> l <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> l <span class="op">&lt;=</span> <span class="dv">5</span><span class="op">;</span> l<span class="op">++)</span></span>
-<span id="cb156-2"><a href="#cb156-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb156-3"><a href="#cb156-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>l <span class="op">+</span> <span class="st">&quot;&quot;</span><span class="op">);</span></span>
-<span id="cb156-4"><a href="#cb156-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<span id="cb155-4"><a href="#cb155-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>j <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
+<span id="cb155-5"><a href="#cb155-5" aria-hidden="true" tabindex="-1"></a>    j<span class="op">++;</span></span>
+<span id="cb155-6"><a href="#cb155-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="kw">while</span> <span class="op">(</span>j <span class="op">&lt;=</span> <span class="dv">5</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb156-1"><a href="#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> k <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb156-2"><a href="#cb156-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span>k <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> k <span class="op">&lt;=</span> <span class="dv">5</span><span class="op">;</span> k<span class="op">++)</span></span>
+<span id="cb156-3"><a href="#cb156-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb156-4"><a href="#cb156-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>k <span class="op">+</span> <span class="st">&quot;&quot;</span><span class="op">);</span></span>
+<span id="cb156-5"><a href="#cb156-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb157-1"><a href="#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> l <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> l <span class="op">&lt;=</span> <span class="dv">5</span><span class="op">;</span> l<span class="op">++)</span></span>
+<span id="cb157-2"><a href="#cb157-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb157-3"><a href="#cb157-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>l <span class="op">+</span> <span class="st">&quot;&quot;</span><span class="op">);</span></span>
+<span id="cb157-4"><a href="#cb157-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Structure : initialization / condition / update</p>
 </section>
 <section id="ways-things-can-go-wrong" class="level2">
@@ -4284,45 +4291,45 @@ I don't think we want to discuss that.
 <section id="for-loops-with-arrays" class="level2">
 <h2>For loops With Arrays</h2>
 <p><code class="sourceCode cs"><span class="kw">for</span></code> loops actually go very well with arrays:</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb157-1"><a href="#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> size<span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb157-2"><a href="#cb157-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb157-3"><a href="#cb157-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Enter the {i + 1}th value&quot;</span><span class="op">);</span></span>
-<span id="cb157-4"><a href="#cb157-4" aria-hidden="true" tabindex="-1"></a>    customArray<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
-<span id="cb157-5"><a href="#cb157-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>Remember that we can use the <code class="sourceCode cs">Length</code> property of our <code class="sourceCode cs">array</code>. The previous code could become (only the first line changed):</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb158-1"><a href="#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> customArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<div class="sourceCode" id="cb158"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb158-1"><a href="#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> size<span class="op">;</span> i<span class="op">++)</span></span>
 <span id="cb158-2"><a href="#cb158-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb158-3"><a href="#cb158-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Enter the {i + 1}th value&quot;</span><span class="op">);</span></span>
 <span id="cb158-4"><a href="#cb158-4" aria-hidden="true" tabindex="-1"></a>    customArray<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
 <span id="cb158-5"><a href="#cb158-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Remember that we can use the <code class="sourceCode cs">Length</code> property of our <code class="sourceCode cs">array</code>. The previous code could become (only the first line changed):</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb159-1"><a href="#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> customArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb159-2"><a href="#cb159-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb159-3"><a href="#cb159-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Enter the {i + 1}th value&quot;</span><span class="op">);</span></span>
+<span id="cb159-4"><a href="#cb159-4" aria-hidden="true" tabindex="-1"></a>    customArray<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb159-5"><a href="#cb159-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="nested-loops" class="level2">
 <h2>Nested Loops</h2>
 <p>Of course, exactly as we could nest <code class="sourceCode cs"><span class="kw">if</span></code> statements, we can nest looping structures!</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb159-1"><a href="#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> o <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> o <span class="op">&lt;</span> <span class="dv">11</span><span class="op">;</span> o<span class="op">++)</span></span>
-<span id="cb159-2"><a href="#cb159-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb159-3"><a href="#cb159-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> p <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> p <span class="op">&lt;</span> <span class="dv">11</span><span class="op">;</span> p<span class="op">++)</span></span>
-<span id="cb159-4"><a href="#cb159-4" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>$<span class="st">&quot;{o} × {p} = {o * p}  </span><span class="sc">\t</span><span class="st"> &quot;</span><span class="op">);</span></span>
-<span id="cb159-5"><a href="#cb159-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">();</span></span>
-<span id="cb159-6"><a href="#cb159-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> o <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> o <span class="op">&lt;</span> <span class="dv">11</span><span class="op">;</span> o<span class="op">++)</span></span>
+<span id="cb160-2"><a href="#cb160-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb160-3"><a href="#cb160-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> p <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> p <span class="op">&lt;</span> <span class="dv">11</span><span class="op">;</span> p<span class="op">++)</span></span>
+<span id="cb160-4"><a href="#cb160-4" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>$<span class="st">&quot;{o} × {p} = {o * p}  </span><span class="sc">\t</span><span class="st"> &quot;</span><span class="op">);</span></span>
+<span id="cb160-5"><a href="#cb160-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">();</span></span>
+<span id="cb160-6"><a href="#cb160-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="mixing-control-flows" class="level2">
 <h2>Mixing Control Flows</h2>
 <p>And we can use <code class="sourceCode cs"><span class="kw">if</span></code> statements in the body of <code class="sourceCode cs"><span class="kw">for</span></code> loops:</p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> m <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> m <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> m<span class="op">++)</span></span>
-<span id="cb160-2"><a href="#cb160-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb160-3"><a href="#cb160-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span> <span class="op">(</span>m <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span> Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;This is my turn.&quot;</span><span class="op">);</span></span>
-<span id="cb160-4"><a href="#cb160-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">else</span> Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;This is your turn.&quot;</span><span class="op">);</span></span>
-<span id="cb160-5"><a href="#cb160-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb161-1"><a href="#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> m <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> m <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> m<span class="op">++)</span></span>
+<span id="cb161-2"><a href="#cb161-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb161-3"><a href="#cb161-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span> <span class="op">(</span>m <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span> Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;This is my turn.&quot;</span><span class="op">);</span></span>
+<span id="cb161-4"><a href="#cb161-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">else</span> Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;This is your turn.&quot;</span><span class="op">);</span></span>
+<span id="cb161-5"><a href="#cb161-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="iterations" class="level2">
 <h2>Iterations</h2>
 <p>There is another, close, structure that allows to iterate over the elements of an array, but can only access them, not change their values (they are “read only”).</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb161-1"><a href="#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> myArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb161-2"><a href="#cb161-2" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>myArray<span class="op">[</span>i<span class="op">]</span> <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
-<span id="cb161-3"><a href="#cb161-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb161-4"><a href="#cb161-4" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">int</span> i <span class="kw">in</span> myArray<span class="op">)</span> <span class="co">// &quot;Read only&quot;</span></span>
-<span id="cb161-5"><a href="#cb161-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>i <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb162-1"><a href="#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> myArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb162-2"><a href="#cb162-2" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>myArray<span class="op">[</span>i<span class="op">]</span> <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
+<span id="cb162-3"><a href="#cb162-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb162-4"><a href="#cb162-4" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">int</span> i <span class="kw">in</span> myArray<span class="op">)</span> <span class="co">// &quot;Read only&quot;</span></span>
+<span id="cb162-5"><a href="#cb162-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>i <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span></code></pre></div>
 <p>Difference is w.r.t (with respect to) modifying the array “read vs write”. Having <code class="sourceCode cs">i <span class="op">=</span> <span class="dv">2</span></code> in the <code class="sourceCode cs"><span class="kw">foreach</span></code> would cause an error!</p>
 <p>That last structure is given for the sake of completeness, but it’s ok if you’d rather not use it.</p>
 </section>
@@ -4330,15 +4337,15 @@ I don't think we want to discuss that.
 <section id="static" class="level1">
 <h1>Static</h1>
 <p>When we write:</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb162-1"><a href="#cb162-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Math<span class="op">.</span><span class="fu">PI</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Math<span class="op">.</span><span class="fu">PI</span><span class="op">);</span></span></code></pre></div>
 <p>The <code class="sourceCode cs">Math</code> actually refers to <em>a class</em>, and not to <em>an object</em>. How is that?</p>
 <p>Actually, everything in the <code class="sourceCode cs">MATH</code> class is <em>static</em> (<code class="sourceCode cs"><span class="kw">public</span> <span class="kw">static</span> <span class="kw">class</span> Math</code>), and the <code class="sourceCode cs">PI</code> constant is actually public! (<code class="sourceCode cs"><span class="kw">public</span> <span class="dt">const</span> <span class="dt">double</span> PI</code>).</p>
 <p>Class attribute: can be static or not, public or private, a constant or variable.</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">const</span> <span class="dt">double</span> PI <span class="op">=</span> <span class="fl">3.14159265358979</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb164-1"><a href="#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">const</span> <span class="dt">double</span> PI <span class="op">=</span> <span class="fl">3.14159265358979</span><span class="op">;</span></span></code></pre></div>
 <p>We also have static methods:</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb164-1"><a href="#cb164-1" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Min</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span>
-<span id="cb164-2"><a href="#cb164-2" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Max</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span>
-<span id="cb164-3"><a href="#cb164-3" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Pow</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb165-1"><a href="#cb165-1" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Min</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span>
+<span id="cb165-2"><a href="#cb165-2" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Max</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span>
+<span id="cb165-3"><a href="#cb165-3" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Pow</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span></code></pre></div>
 <p>A static member (variable, method, etc) belongs to the type of an object rather than to an instance of that type.</p>
 <section id="static-class-members" class="level2">
 <h2>Static Class Members</h2>
@@ -4388,49 +4395,49 @@ I don't think we want to discuss that.
 </section>
 <section id="a-static-class-for-arrays" class="level1">
 <h1>A Static Class for Arrays</h1>
-<div class="sourceCode" id="cb165"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb165-1"><a href="#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
-<span id="cb165-2"><a href="#cb165-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="kw">class</span> Lib</span>
-<span id="cb165-3"><a href="#cb165-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb165-4"><a href="#cb165-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">public</span> <span class="kw">static</span> <span class="dt">int</span> <span class="fu">ValueIsIndex</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP<span class="op">)</span></span>
-<span id="cb165-5"><a href="#cb165-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb165-6"><a href="#cb165-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> res <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb165-7"><a href="#cb165-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> arrayP<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb165-8"><a href="#cb165-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>arrayP<span class="op">[</span>i<span class="op">]</span> <span class="op">==</span> i<span class="op">)</span> res<span class="op">++;</span></span>
-<span id="cb165-9"><a href="#cb165-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> res<span class="op">;</span></span>
-<span id="cb165-10"><a href="#cb165-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb165-11"><a href="#cb165-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb165-12"><a href="#cb165-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">bool</span> <span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP<span class="op">)</span></span>
-<span id="cb165-13"><a href="#cb165-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb165-14"><a href="#cb165-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> <span class="op">(</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayP<span class="op">)</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">);</span></span>
-<span id="cb165-15"><a href="#cb165-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb165-16"><a href="#cb165-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb165-17"><a href="#cb165-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">int</span> <span class="fu">ValueMatch</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP1<span class="op">,</span> <span class="dt">int</span><span class="op">[]</span> arrayP2<span class="op">)</span></span>
-<span id="cb165-18"><a href="#cb165-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb165-19"><a href="#cb165-19" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> res <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb165-20"><a href="#cb165-20" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> smallestSize<span class="op">;</span></span>
-<span id="cb165-21"><a href="#cb165-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>arrayP1<span class="op">.</span><span class="fu">Length</span> <span class="op">&lt;</span> arrayP2<span class="op">.</span><span class="fu">Length</span><span class="op">)</span> smallestSize <span class="op">=</span> arrayP1<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span>
-<span id="cb165-22"><a href="#cb165-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span> smallestSize <span class="op">=</span> arrayP2<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span>
-<span id="cb165-23"><a href="#cb165-23" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> smallestSize<span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb165-24"><a href="#cb165-24" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>arrayP1<span class="op">[</span>i<span class="op">]</span> <span class="op">==</span> arrayP2<span class="op">[</span>i<span class="op">])</span> res<span class="op">++;</span></span>
-<span id="cb165-25"><a href="#cb165-25" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> res<span class="op">;</span></span>
-<span id="cb165-26"><a href="#cb165-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb165-27"><a href="#cb165-27" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <div class="sourceCode" id="cb166"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb166-1"><a href="#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
-<span id="cb166-2"><a href="#cb166-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Program</span>
+<span id="cb166-2"><a href="#cb166-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="kw">class</span> Lib</span>
 <span id="cb166-3"><a href="#cb166-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb166-4"><a href="#cb166-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">(</span><span class="dt">string</span><span class="op">[]</span> args<span class="op">)</span></span>
-<span id="cb166-5"><a href="#cb166-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb166-6"><a href="#cb166-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span><span class="op">[]</span> arrayA <span class="op">=</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">12</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">8</span> <span class="op">};</span></span>
-<span id="cb166-7"><a href="#cb166-7" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayA<span class="op">));</span></span>
-<span id="cb166-8"><a href="#cb166-8" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span>arrayA<span class="op">));</span></span>
-<span id="cb166-9"><a href="#cb166-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb166-10"><a href="#cb166-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span><span class="op">[]</span> arrayB <span class="op">=</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">12</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">8</span> <span class="op">};</span></span>
-<span id="cb166-11"><a href="#cb166-11" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayB<span class="op">));</span></span>
-<span id="cb166-12"><a href="#cb166-12" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span>arrayB<span class="op">));</span></span>
-<span id="cb166-13"><a href="#cb166-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb166-14"><a href="#cb166-14" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueMatch</span><span class="op">(</span>arrayA<span class="op">,</span> arrayB<span class="op">));</span></span>
-<span id="cb166-15"><a href="#cb166-15" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb166-16"><a href="#cb166-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<span id="cb166-4"><a href="#cb166-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">public</span> <span class="kw">static</span> <span class="dt">int</span> <span class="fu">ValueIsIndex</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP<span class="op">)</span></span>
+<span id="cb166-5"><a href="#cb166-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb166-6"><a href="#cb166-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> res <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb166-7"><a href="#cb166-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> arrayP<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb166-8"><a href="#cb166-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>arrayP<span class="op">[</span>i<span class="op">]</span> <span class="op">==</span> i<span class="op">)</span> res<span class="op">++;</span></span>
+<span id="cb166-9"><a href="#cb166-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> res<span class="op">;</span></span>
+<span id="cb166-10"><a href="#cb166-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb166-11"><a href="#cb166-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb166-12"><a href="#cb166-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">bool</span> <span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP<span class="op">)</span></span>
+<span id="cb166-13"><a href="#cb166-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb166-14"><a href="#cb166-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> <span class="op">(</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayP<span class="op">)</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">);</span></span>
+<span id="cb166-15"><a href="#cb166-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb166-16"><a href="#cb166-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb166-17"><a href="#cb166-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">int</span> <span class="fu">ValueMatch</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP1<span class="op">,</span> <span class="dt">int</span><span class="op">[]</span> arrayP2<span class="op">)</span></span>
+<span id="cb166-18"><a href="#cb166-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb166-19"><a href="#cb166-19" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> res <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb166-20"><a href="#cb166-20" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> smallestSize<span class="op">;</span></span>
+<span id="cb166-21"><a href="#cb166-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>arrayP1<span class="op">.</span><span class="fu">Length</span> <span class="op">&lt;</span> arrayP2<span class="op">.</span><span class="fu">Length</span><span class="op">)</span> smallestSize <span class="op">=</span> arrayP1<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span>
+<span id="cb166-22"><a href="#cb166-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span> smallestSize <span class="op">=</span> arrayP2<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span>
+<span id="cb166-23"><a href="#cb166-23" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> smallestSize<span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb166-24"><a href="#cb166-24" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>arrayP1<span class="op">[</span>i<span class="op">]</span> <span class="op">==</span> arrayP2<span class="op">[</span>i<span class="op">])</span> res<span class="op">++;</span></span>
+<span id="cb166-25"><a href="#cb166-25" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> res<span class="op">;</span></span>
+<span id="cb166-26"><a href="#cb166-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb166-27"><a href="#cb166-27" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb167-1"><a href="#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
+<span id="cb167-2"><a href="#cb167-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Program</span>
+<span id="cb167-3"><a href="#cb167-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb167-4"><a href="#cb167-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">(</span><span class="dt">string</span><span class="op">[]</span> args<span class="op">)</span></span>
+<span id="cb167-5"><a href="#cb167-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb167-6"><a href="#cb167-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span><span class="op">[]</span> arrayA <span class="op">=</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">12</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">8</span> <span class="op">};</span></span>
+<span id="cb167-7"><a href="#cb167-7" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayA<span class="op">));</span></span>
+<span id="cb167-8"><a href="#cb167-8" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span>arrayA<span class="op">));</span></span>
+<span id="cb167-9"><a href="#cb167-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb167-10"><a href="#cb167-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span><span class="op">[]</span> arrayB <span class="op">=</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">12</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">8</span> <span class="op">};</span></span>
+<span id="cb167-11"><a href="#cb167-11" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayB<span class="op">));</span></span>
+<span id="cb167-12"><a href="#cb167-12" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span>arrayB<span class="op">));</span></span>
+<span id="cb167-13"><a href="#cb167-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb167-14"><a href="#cb167-14" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueMatch</span><span class="op">(</span>arrayA<span class="op">,</span> arrayB<span class="op">));</span></span>
+<span id="cb167-15"><a href="#cb167-15" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb167-16"><a href="#cb167-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
 </section>
 </main>
 <footer id="footer">
