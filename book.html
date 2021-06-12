@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 12, 2021 (06:21:30 AM)</p>
+<p class="date">June 12, 2021 (08:23:14 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -356,11 +356,10 @@
 <li><a href="#second-example-switching-on-characters">Second Example: Switching on Characters</a></li>
 </ul></li>
 <li><a href="#loops">Loops</a></li>
-<li><a href="#definition-and-first-example-of-while-loops">Definition and First Example of while loops</a>
+<li><a href="#while-statement">while statement</a>
 <ul>
 <li><a href="#formal-syntax">Formal Syntax</a></li>
 <li><a href="#example-3">Example</a></li>
-</ul></li>
 <li><a href="#five-ways-things-can-go-wrong">Five Ways Things Can Go Wrong</a>
 <ul>
 <li><a href="#failing-to-update-the-variable-occurring-in-the-condition">Failing to update the variable occurring in the condition</a></li>
@@ -368,6 +367,7 @@
 <li><a href="#having-an-empty-body">Having an empty body</a></li>
 <li><a href="#having-an-empty-body-variation">Having an empty body (variation)</a></li>
 <li><a href="#going-in-the-wrong-direction">Going in the wrong direction</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#user-input-validation">User-Input Validation</a></li>
 <li><a href="#vocabulary">Vocabulary</a></li>
@@ -3816,37 +3816,32 @@ I don't think we want to discuss that.
 <h1>Loops</h1>
 <p>One of the significant reasons humans use computers is to execute a specific process without mistakes repeatedly. Therefore, each programming language provides some statements that iterate a block of code. In this course, you will learn <code class="sourceCode cs"><span class="kw">while</span></code>, <code class="sourceCode cs"><span class="kw">do</span><span class="op">-</span><span class="kw">while</span></code>, <code class="sourceCode cs"><span class="kw">for</span></code>, and <code class="sourceCode cs"><span class="kw">foreach</span></code> statements that are used for implementing loops.</p>
 </section>
-<section id="definition-and-first-example-of-while-loops" class="level1">
-<h1>Definition and First Example of while loops</h1>
+<section id="while-statement" class="level1">
+<h1>while statement</h1>
+<p>The <code class="sourceCode cs"><span class="kw">while</span></code> statement executes a block of statements while a specified <em>boolean expression</em> evaluates to true before starting a new iteration.</p>
 <section id="formal-syntax" class="level2">
 <h2>Formal Syntax</h2>
-<div class="sourceCode" id="cb125"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(&lt;</span>condition<span class="op">&gt;)</span></span>
-<span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb125-3"><a href="#cb125-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>statement block<span class="op">&gt;</span></span>
-<span id="cb125-4"><a href="#cb125-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(&lt;</span>boolean expression<span class="op">&gt;)</span></span>
+<span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>code block<span class="op">&gt;</span> or <span class="op">&lt;</span>a statement<span class="op">&gt;</span></span></code></pre></div>
+<ul>
+<li>Remember, one or more statements enclosed in left and right braces is called a code block.</li>
+</ul>
 </section>
 <section id="example-3" class="level2">
 <h2>Example</h2>
-<div class="sourceCode" id="cb126"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb126"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
 <span id="cb126-3"><a href="#cb126-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb126-4"><a href="#cb126-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!);</span></span>
-<span id="cb126-5"><a href="#cb126-5" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span>number<span class="op">);</span></span>
-<span id="cb126-6"><a href="#cb126-6" aria-hidden="true" tabindex="-1"></a>    number<span class="op">++;</span></span>
-<span id="cb126-7"><a href="#cb126-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>Notes:</p>
-<ul>
-<li>If <code class="sourceCode cs"><span class="op">&lt;</span>condition<span class="op">&gt;</span></code> is <code class="sourceCode cs"><span class="kw">false</span></code>: 0 execution of the body.</li>
-<li>If <code class="sourceCode cs"><span class="op">&lt;</span>condition<span class="op">&gt;</span></code> is always true: program loop for ever!</li>
-<li>The conditions under which <code class="sourceCode cs"><span class="op">&lt;</span>condition<span class="op">&gt;</span></code> changes should be given a chance to change in the body of the loop!</li>
-</ul>
+<span id="cb126-4"><a href="#cb126-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>number<span class="op">);</span></span>
+<span id="cb126-5"><a href="#cb126-5" aria-hidden="true" tabindex="-1"></a>    number<span class="op">++;</span></span>
+<span id="cb126-6"><a href="#cb126-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Notes: - If <code class="sourceCode cs"><span class="op">&lt;</span>boolean expression<span class="op">&gt;</span></code> is always true, then the program loops for ever!</p>
 </section>
-</section>
-<section id="five-ways-things-can-go-wrong" class="level1">
-<h1>Five Ways Things Can Go Wrong</h1>
+<section id="five-ways-things-can-go-wrong" class="level2">
+<h2>Five Ways Things Can Go Wrong</h2>
 <p>It is easy to write <em>wrong</em> <code class="sourceCode cs">loop</code> statements. Let us review some of the “classic” blunders.</p>
-<section id="failing-to-update-the-variable-occurring-in-the-condition" class="level2">
-<h2>Failing to update the variable occurring in the condition</h2>
+<section id="failing-to-update-the-variable-occurring-in-the-condition" class="level3">
+<h3>Failing to update the variable occurring in the condition</h3>
 <div class="sourceCode" id="cb127"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
 <span id="cb127-3"><a href="#cb127-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -3855,8 +3850,8 @@ I don't think we want to discuss that.
 <span id="cb127-6"><a href="#cb127-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Number isn’t changed!</p>
 </section>
-<section id="updating-the-wrong-value" class="level2">
-<h2>Updating the “wrong” value</h2>
+<section id="updating-the-wrong-value" class="level3">
+<h3>Updating the “wrong” value</h3>
 <div class="sourceCode" id="cb128"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number1<span class="op">,</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
 <span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -3865,8 +3860,8 @@ I don't think we want to discuss that.
 <span id="cb128-6"><a href="#cb128-6" aria-hidden="true" tabindex="-1"></a>    number1<span class="op">++;</span></span>
 <span id="cb128-7"><a href="#cb128-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
-<section id="having-an-empty-body" class="level2">
-<h2>Having an empty body</h2>
+<section id="having-an-empty-body" class="level3">
+<h3>Having an empty body</h3>
 <div class="sourceCode" id="cb129"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> </span>
 <span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">);</span> <span class="co">// Note the semi-colon here!</span></span>
 <span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -3875,16 +3870,16 @@ I don't think we want to discuss that.
 <span id="cb129-6"><a href="#cb129-6" aria-hidden="true" tabindex="-1"></a>    number<span class="op">++;</span></span>
 <span id="cb129-7"><a href="#cb129-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
-<section id="having-an-empty-body-variation" class="level2">
-<h2>Having an empty body (variation)</h2>
+<section id="having-an-empty-body-variation" class="level3">
+<h3>Having an empty body (variation)</h3>
 <div class="sourceCode" id="cb130"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb130-2"><a href="#cb130-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
 <span id="cb130-3"><a href="#cb130-3" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span><span class="st">&quot;Hi Mom!);</span></span>
 <span id="cb130-4"><a href="#cb130-4" aria-hidden="true" tabindex="-1"></a>    C<span class="op">.</span><span class="fu">WL</span><span class="op">(</span>number<span class="op">);</span></span>
 <span id="cb130-5"><a href="#cb130-5" aria-hidden="true" tabindex="-1"></a>    number<span class="op">++;</span></span></code></pre></div>
 </section>
-<section id="going-in-the-wrong-direction" class="level2">
-<h2>Going in the wrong direction</h2>
+<section id="going-in-the-wrong-direction" class="level3">
+<h3>Going in the wrong direction</h3>
 <div class="sourceCode" id="cb131"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&gt;=</span><span class="dv">5</span><span class="op">)</span></span>
 <span id="cb131-3"><a href="#cb131-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -3893,6 +3888,7 @@ I don't think we want to discuss that.
 <span id="cb131-6"><a href="#cb131-6" aria-hidden="true" tabindex="-1"></a>    number<span class="op">++;</span></span>
 <span id="cb131-7"><a href="#cb131-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The variable <code class="sourceCode cs">number</code> should be decremented, not incremented.</p>
+</section>
 </section>
 </section>
 <section id="user-input-validation" class="level1">
