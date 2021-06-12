@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 12, 2021 (08:39:39 AM)</p>
+<p class="date">June 12, 2021 (08:40:41 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -3854,7 +3854,7 @@ I don't think we want to discuss that.
 <h3>Five Ways a <code class="sourceCode cs"><span class="kw">while</span></code> Loop Can Go Wrong</h3>
 <p>It is easy to write <em>wrong</em> <code class="sourceCode cs">loop</code> statements. Let us review some of the “classic” blunders.</p>
 <section id="failing-to-update-the-variable-occurring-in-the-condition" class="level4">
-<h4>Failing to update the variable occurring in the condition</h4>
+<h4>1- Failing to update the variable occurring in the condition</h4>
 <div class="sourceCode" id="cb129"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
 <span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -3863,7 +3863,7 @@ I don't think we want to discuss that.
 <p>Number isn’t changed!</p>
 </section>
 <section id="updating-the-wrong-value" class="level4">
-<h4>Updating the “wrong” value</h4>
+<h4>2- Updating the “wrong” value</h4>
 <div class="sourceCode" id="cb130"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number1<span class="op">,</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb130-2"><a href="#cb130-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
 <span id="cb130-3"><a href="#cb130-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -3872,7 +3872,7 @@ I don't think we want to discuss that.
 <span id="cb130-6"><a href="#cb130-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="having-an-empty-body" class="level4">
-<h4>Having an empty body</h4>
+<h4>3- Having an empty body</h4>
 <div class="sourceCode" id="cb131"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> </span>
 <span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">);</span> <span class="co">// Note the semi-colon here!</span></span>
 <span id="cb131-3"><a href="#cb131-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -3881,14 +3881,14 @@ I don't think we want to discuss that.
 <span id="cb131-6"><a href="#cb131-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="missing-braces" class="level4">
-<h4>Missing braces</h4>
+<h4>4- Missing braces</h4>
 <div class="sourceCode" id="cb132"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb132-2"><a href="#cb132-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
 <span id="cb132-3"><a href="#cb132-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>number<span class="op">);</span></span>
 <span id="cb132-4"><a href="#cb132-4" aria-hidden="true" tabindex="-1"></a>    number<span class="op">++;</span></span></code></pre></div>
 </section>
 <section id="going-in-the-wrong-direction" class="level4">
-<h4>Going in the wrong direction</h4>
+<h4>5- Going in the wrong direction</h4>
 <div class="sourceCode" id="cb133"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
 <span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&gt;=</span><span class="dv">0</span><span class="op">)</span></span>
 <span id="cb133-3"><a href="#cb133-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
