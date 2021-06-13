@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 12, 2021 (06:57:18 PM)</p>
+<p class="date">June 12, 2021 (09:36:10 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -672,21 +672,26 @@
 Analogy: A <em>class</em> is like a floorplan while an <em>object</em> is the house build from the floorplan. Plus, you can make as many houses as you would like from a single floorplan.</li>
 <li><strong>Attribute</strong>: A piece of data stored in an object<br />
 Example: A <em>House</em> class has a spot for a color property while an house object has a color(e.g. “Green”).</li>
-<li><strong>Method</strong>: A function that modifies an object. This is code that is defined (written) in the class, but when it runs, it only runs on/for a specific object and modifies that object.<br />
-Example: A <em>House</em> class has a method to change the house color. Using this method to change the color a single house object doesn’t change the color on any other houses.</li>
+<li><strong>Method</strong>: A function that modifies an object. This code is part of the class, but when it runs, it modifies only a specific object and not the class.<br />
+Example: A <em>House</em> class with a method to change the house color. Using this method changes the color a single house object but doesn’t change the <em>House</em> class or the color on any other house objects.</li>
 </ul></li>
-<li>Example objects:
+<li>Examples:
 <ul>
-<li>“Car” object, represents a car
+<li>A Car <em>Class</em>
 <ul>
-<li>Attributes: Color, wheel size, engine status (on/off/idle), gear position</li>
-<li>Methods: Press gas or brake pedal, turn key on/off, shift transmission</li>
+<li>Attributes: Color, engine status (on/off), gear position</li>
+<li>Methods: Press gas or brake pedal, turn key on/off, shift transmission<br />
+</li>
 </ul></li>
-<li>“Audio” object, represents a song being played in a music player
+<li>A Car <em>Object</em><br />
+Example: A <em>Porsche911</em> object that is Red, Engine On, and in 1st gear</li>
+<li>An “Audio File” <em>Class</em> represents a song being played in a music player
 <ul>
 <li>Attributes: Sound wave data, current playback position, target speaker device</li>
 <li>Methods: Play, pause, stop, fast-forward, rewind</li>
 </ul></li>
+<li>An Audio File <em>Object</em><br />
+Example: A <em>NeverGonnaGiveYouUp</em> object that is “rolled wave data”, 0:00, speaker01</li>
 </ul></li>
 </ul>
 </section>
