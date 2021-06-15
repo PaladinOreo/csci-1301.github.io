@@ -157,6 +157,69 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="../../style.css" />
@@ -184,9 +247,91 @@
 <header id="title-block-header">
 <h1 class="title">while and do while</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 14, 2021 (11:30:40 PM)</p>
+<p class="date">June 15, 2021 (12:05:43 AM)</p>
 </header>
-
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#practicing-while-loops">Practicing while Loops</a></li>
+<li><a href="#do-while-loops">Do while Loops</a></li>
+</ul>
+</nav>
+<p>In Part 1 of this lab you practice implementing while loops with different terminating conditions and applied to different types of problems.</p>
+<p>In Part 2 of this lab you will practice using do while loops.</p>
+<section id="practicing-while-loops" class="level1">
+<h1>Practicing while Loops</h1>
+<p>Write a loop that displays…</p>
+<ol>
+<li>all integers between 0 and 100 that are divisible by 3.</li>
+<li>all integers between 1 and 100 but do not display numbers between 10-20 and 40-60.</li>
+<li><code class="sourceCode cs">Hello World</code> ten times.</li>
+<li>10 rows of text where <code class="sourceCode cs">Hello</code> is displayed on every other row and <code class="sourceCode cs">World</code> on every other row</li>
+<li>value that decreases by 0.5 on each iteration. Start from 10.0 and iterate as long as the value remains positive.</li>
+</ol>
+<p>In these problems you will need to ask for user for input then perform described actions on the input.</p>
+<ol>
+<li><p>Ask the user for a positive integer value (1 or greater). After the user provides a number, compute the result of this series where <span class="math inline"><em>n</em></span> represents the number obtained from user: <span class="math inline">$1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + ... + \frac{1}{n}$</span></p></li>
+<li><p>Assume you have the following mapping of zip codes to cities:</p>
+<table>
+<thead>
+<tr class="header">
+<th>zip code</th>
+<th>city name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>30901</td>
+<td>Augusta</td>
+</tr>
+<tr class="even">
+<td>30904</td>
+<td>Augusta</td>
+</tr>
+<tr class="odd">
+<td>30912</td>
+<td>Augusta</td>
+</tr>
+<tr class="even">
+<td>30809</td>
+<td>Evans</td>
+</tr>
+<tr class="odd">
+<td>30813</td>
+<td>Grovetown</td>
+</tr>
+<tr class="even">
+<td>30814</td>
+<td>Harlem</td>
+</tr>
+<tr class="odd">
+<td>30815</td>
+<td>Hephzibah</td>
+</tr>
+<tr class="even">
+<td>29842</td>
+<td>North Augusta</td>
+</tr>
+</tbody>
+</table>
+<p>Write a small program that asks the user to enter a zip code. Then display to the user the city name based on the zip code user entered. If the zip code is not included in the table given above, the program should display “unknown city!”. Allow the user to repeat the input until the user indicates they are ready to quit by entering approprite sentinel value.</p></li>
+</ol>
+</section>
+<section id="do-while-loops" class="level1">
+<h1>Do while Loops</h1>
+<p>Before writing code, think through the following problems:</p>
+<ol>
+<li>In your own words, what is the difference between <code class="sourceCode cs"><span class="kw">while</span></code> and <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> loops?</li>
+<li>Can you think of a problem where you can use <code class="sourceCode cs"><span class="kw">while</span></code> but not <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> loop?</li>
+</ol>
+<p>Next solve the following problems using a do while loop:</p>
+<ol>
+<li><p>Display numbers 0 to 50.</p></li>
+<li><p>Display numbers 30 to -20.</p></li>
+<li><p>Write a do while loop that generates this output:</p>
+<pre class="text"><code>1 10 100 1000 10000 100000 1000000</code></pre></li>
+<li><p>Ask the user to enter positive integers. Keep track of the largest number user enters. After user indicates they are done, display the largest number user entered.</p></li>
+</ol>
+</section>
 </main>
 <footer id="footer">
     <h2>How Is This Page?</h2>
