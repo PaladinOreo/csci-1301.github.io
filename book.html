@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 15, 2021 (06:44:57 AM)</p>
+<p class="date">June 15, 2021 (06:45:32 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -3918,10 +3918,10 @@ I don't think we want to discuss that.
 <div class="sourceCode" id="cb126"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
 <span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> y <span class="op">=</span> x<span class="op">++;</span>  \\ First y <span class="op">=</span> <span class="dv">10</span><span class="op">;</span> then x <span class="op">=</span> x <span class="op">+</span> <span class="dv">1</span></span></code></pre></div>
 <ul>
-<li>If they are put after the operand, the current value of the operand will be returned, and then the current value of the operand will be changed.</li>
+<li>If they are put after the operand, the current value of the operand will be returned, and then the current value of the operand will be changed. See the bellow example:</li>
 </ul>
 <div class="sourceCode" id="cb127"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
-<span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> y <span class="op">=</span> <span class="op">++</span>x<span class="op">;</span>  \\ First x <span class="op">=</span> x<span class="op">+</span> <span class="dv">1</span><span class="op">,</span> so x <span class="op">=</span> <span class="dv">11</span><span class="op">;</span> then y <span class="op">=</span> x<span class="op">,</span> So y <span class="op">=</span> <span class="dv">11</span></span></code></pre></div>
+<span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> y <span class="op">=</span> <span class="op">++</span>x<span class="op">;</span>  \\ First x <span class="op">=</span> x <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> so x <span class="op">=</span> <span class="dv">11</span><span class="op">;</span> then y <span class="op">=</span> x<span class="op">,</span> So y <span class="op">=</span> <span class="dv">11</span></span></code></pre></div>
 </section>
 <section id="loops" class="level1">
 <h1>Loops</h1>
