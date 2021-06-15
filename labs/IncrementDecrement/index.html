@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Increment and Decrement Operators, First Loops</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 14, 2021 (11:24:11 PM)</p>
+<p class="date">June 14, 2021 (11:30:40 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -266,14 +266,14 @@
 <p>Assuming <code class="sourceCode cs"><span class="dt">int</span> i</code> is initialized and its current value is 5,</p>
 <ol>
 <li>What does <code class="sourceCode cs">i<span class="op">++</span></code> do to <code class="sourceCode cs">i</code>?</li>
-<li>What dies <code class="sourceCode cs">i<span class="op">--</span></code> do to <code class="sourceCode cs">i</code>?</li>
-<li>Can you explain what is the difference between <code class="sourceCode cs"><span class="op">++</span>i</code> and <code class="sourceCode cs">i<span class="op">++</span></code>?</li>
+<li>What does <code class="sourceCode cs">i<span class="op">--</span></code> do to <code class="sourceCode cs">i</code>?</li>
+<li>In your own words, can you explain what is the difference between <code class="sourceCode cs"><span class="op">++</span>i</code> and <code class="sourceCode cs">i<span class="op">++</span></code>?</li>
 </ol>
 <section id="practice" class="level2">
 <h2>Practice</h2>
 <p>Copy and paste this code into a new C# project in your IDE and execute it.</p>
 <p>Study the output carefully to make sure you understand the mechanism of the increment and decrement operators.</p>
-<p>Compare your answers from previous section to what you observe in the output. Do your answers match?</p>
+<p>Compare your answers from previous section to what you observe in the output. Do your answers match with what you observe in the output?</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> IncrementExample</span>
@@ -330,34 +330,34 @@
 <section id="pushing-further-optional" class="level1">
 <h1>Pushing Further (Optional)</h1>
 <p>Here are additional (fun!) pattern problems. Try generating them using a while loop.</p>
-<p>##. Triangle:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>```text</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> </span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> </span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>``` </span></code></pre></div>
-<p>##. Triangle of numbers</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>```text</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="dv">222</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="dv">33333</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="dv">4444444</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="dv">555555555</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>``` </span></code></pre></div>
-<p>##. Upside-down binary triangle</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>```</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1010101</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a> <span class="dv">10101</span> </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="dv">101</span>  </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>   <span class="dv">1</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>``` </span></code></pre></div>
+<ol type="1">
+<li>Triangle:</li>
+</ol>
+<pre class="text"><code> * 
+ * *
+ * * *
+ * * * * 
+ * * * * *
+ * * * * * *
+ * * * * * * * 
+ * * * * * * * * 
+ * * * * * * * * * 
+ * * * * * * * * * *</code></pre>
+<ol start="2" type="1">
+<li>Triangle of numbers</li>
+</ol>
+<pre class="text"><code>1
+222
+33333
+4444444
+555555555</code></pre>
+<ol start="3" type="1">
+<li>Upside-down binary triangle</li>
+</ol>
+<pre class="text"><code>1010101
+ 10101 
+  101  
+   1</code></pre>
 </section>
 </main>
 <footer id="footer">
