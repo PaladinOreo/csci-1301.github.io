@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">while and do while</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 15, 2021 (05:54:28 AM)</p>
+<p class="date">June 15, 2021 (06:30:27 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -268,6 +268,7 @@
 </ul></li>
 <li><a href="#while-vs-do-while"><code class="sourceCode cs"><span class="kw">while</span></code> vs <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code></a></li>
 <li><a href="#infinite-loops">Infinite Loops</a></li>
+<li><a href="#and----operators"><code class="sourceCode cs"><span class="op">++</span></code> and <code class="sourceCode cs"><span class="op">--</span></code> Operators</a></li>
 </ul>
 </nav>
 <section id="practicing-while-loops" class="level1">
@@ -443,6 +444,22 @@
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>number<span class="op">);</span></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>number<span class="op">++;</span></span></code></pre></div>
+</section>
+<section id="and----operators" class="level1">
+<h1><code class="sourceCode cs"><span class="op">++</span></code> and <code class="sourceCode cs"><span class="op">--</span></code> Operators</h1>
+<p>For each of the following peace of code, determine the final value of <em>n</em>. Explain your answer.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> x<span class="op">++;</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> <span class="op">++</span>x<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> x<span class="op">++</span> <span class="op">+</span> x<span class="op">++;</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> <span class="op">++</span>x <span class="op">+</span> <span class="op">++</span>x<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">,</span> y <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> x<span class="op">++</span> <span class="op">*</span> <span class="op">++</span>y<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> x<span class="op">++</span> <span class="op">+</span> <span class="op">--</span>x<span class="op">;</span></span></code></pre></div>
 </section>
 </main>
 <footer id="footer">
