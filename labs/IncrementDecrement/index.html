@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Increment and Decrement Operators, First Loops</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 14, 2021 (11:22:45 PM)</p>
+<p class="date">June 14, 2021 (11:24:11 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -310,10 +310,10 @@
 <section id="first-while-loops" class="level1">
 <h1>First While Loops</h1>
 <ol>
-<li><p>Write a <code class="sourceCode cs"><span class="kw">while</span></code> loop that displays the integers between <span class="math inline">1</span> and <span class="math inline">100</span> on the screen, with a space between them.</p></li>
-<li><p>Write a <code class="sourceCode cs"><span class="kw">while</span></code> loop that displays the integers between <span class="math inline">100</span> and <span class="math inline"> − 100</span> on the screen, in decreasing order, with a space between them.</p></li>
-<li><p>Write a <code class="sourceCode cs"><span class="kw">while</span></code> loop that displays the <code class="sourceCode cs"><span class="op">*</span></code> (asterisk) character 100 times on the screen.</p></li>
-<li><p>Modify your previous loop, so that a new line character is displayed on the screen every time 10 asterisks have been displayed on the screen.</p></li>
+<li>Write a <code class="sourceCode cs"><span class="kw">while</span></code> loop that displays the integers between <span class="math inline">1</span> and <span class="math inline">100</span> on the screen, with a space between them.</li>
+<li>Write a <code class="sourceCode cs"><span class="kw">while</span></code> loop that displays the integers between <span class="math inline">100</span> and <span class="math inline"> − 100</span> on the screen, in decreasing order, with a space between them.</li>
+<li>Write a <code class="sourceCode cs"><span class="kw">while</span></code> loop that displays the <code class="sourceCode cs"><span class="op">*</span></code> (asterisk) character 100 times on the screen.</li>
+<li>Modify your previous loop, so that a new line character is displayed on the screen every time 10 asterisks have been displayed on the screen.</li>
 </ol>
 <p>That is, your program should display this on the screen (this example has a space after each asterisk for display purposes):</p>
 <pre class="text"><code> * * * * * * * * * *
@@ -330,34 +330,34 @@
 <section id="pushing-further-optional" class="level1">
 <h1>Pushing Further (Optional)</h1>
 <p>Here are additional (fun!) pattern problems. Try generating them using a while loop.</p>
-<ol>
-<li>Triangle:</li>
-</ol>
-<pre class="text"><code> * 
- * *
- * * *
- * * * * 
- * * * * *
- * * * * * *
- * * * * * * * 
- * * * * * * * * 
- * * * * * * * * * 
- * * * * * * * * * *</code></pre>
-<ol>
-<li>Triangle of numbers</li>
-</ol>
-<pre class="text"><code>1
-222
-33333
-4444444
-555555555</code></pre>
-<ol>
-<li>Upside-down binary triangle</li>
-</ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1010101</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> <span class="dv">10101</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="dv">101</span>  </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>   <span class="dv">1</span></span></code></pre></div>
+<p>##. Triangle:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>```text</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span> <span class="op">*</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>``` </span></code></pre></div>
+<p>##. Triangle of numbers</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>```text</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="dv">222</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="dv">33333</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="dv">4444444</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="dv">555555555</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>``` </span></code></pre></div>
+<p>##. Upside-down binary triangle</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>```</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1010101</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a> <span class="dv">10101</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="dv">101</span>  </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>   <span class="dv">1</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>``` </span></code></pre></div>
 </section>
 </main>
 <footer id="footer">
