@@ -19,7 +19,7 @@
   <meta property="og:image" content="../../android-chrome-512x512.png" />
   <meta name="author" content="https://csci-1301.github.io/about#authors" />
   <meta name="keywords" content="Computer Science, Problem solving methods, Augusta University, Bachelor of Science, C# Programming language" />
-  <title>First Problem Solving</title>
+  <title>First Arrays Manipulations</title>
   <style>
     html {
       line-height: 1.5;
@@ -245,55 +245,59 @@
     </div>
 </header>
 <header id="title-block-header">
-<h1 class="title">First Problem Solving</h1>
+<h1 class="title">First Arrays Manipulations</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 16, 2021 (04:55:29 PM)</p>
+<p class="date">June 16, 2021 (08:20:41 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#problem-solving">Problem Solving</a>
+<li><a href="#first-array-manipulation">First Array Manipulation</a></li>
+<li><a href="#second-array-manipulation">Second Array Manipulation</a></li>
+<li><a href="#pushing-further-optional">Pushing Further (Optional)</a>
 <ul>
-<li><a href="#a-guessing-game">A Guessing Game</a></li>
-<li><a href="#computing-the-entry-price">Computing the Entry Price</a></li>
+<li><a href="#default-values">Default values</a></li>
 </ul></li>
 </ul>
 </nav>
-<section id="problem-solving" class="level1">
-<h1>Problem Solving</h1>
-<p>Those problems are fairly advanced considering our progress so far. Have a look at them, make an attempt, but don’t feel bad if you don’t succeed.</p>
-<section id="a-guessing-game" class="level2">
-<h2>A Guessing Game</h2>
+<section id="first-array-manipulation" class="level1">
+<h1>First Array Manipulation</h1>
 <p>Write a program that</p>
 <ol>
-<li>Stores your favorite number in a variable.</li>
-<li>Asks the user to enter a numerical value, and stores the user’s answer in a variable.</li>
-<li>With an <code class="sourceCode cs"><span class="kw">if</span></code> statement, displays on the screen “You guessed correctly” if the number entered by the user is your favorite number.</li>
-<li>Once this part of the program works, add an <code class="sourceCode cs"><span class="kw">if</span></code> statement that displays on the screen “Too high!” if the number entered by the user is strictly greater than your favorite number.</li>
-<li>Once this part of the program works, add an <code class="sourceCode cs"><span class="kw">if</span></code> statement that displays on the screen “Too low!” if the number entered by the user is strictly lower than your favorite number.</li>
-<li>Once this part of the program works, add an <code class="sourceCode cs"><span class="kw">if</span></code> statement that displays on the screen “You found a multiple of my favorite number!” if the number entered by the user is a multiple of your favorite number, but different from it.</li>
+<li>declares an array <code class="sourceCode cs">myArray</code> of <code class="sourceCode cs"><span class="dt">int</span></code> of size <span class="math inline">5</span>,</li>
+<li>initializes <code class="sourceCode cs">myArray</code> with the values <span class="math inline">1</span>, <span class="math inline">2</span>, <span class="math inline">3</span>, <span class="math inline">4</span> and <span class="math inline">5</span>,</li>
+<li>displays the content of <code class="sourceCode cs">myArray</code>.</li>
 </ol>
-<p>You can adjust your program so that e.g. if the user enters a number that is at the same time higher and a multiple of your favorite number, only one message is displayed.</p>
-<p>A solution is proposed <a href="GuessingGame.zip">in this archive</a>.</p>
+<p>Now, let us write <em>incorrect</em> statements. Add the following statements one by one to your program, observe how C# reacts (that is, try to compile and execute after you add one, then remove it), and answer the following questions.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>myArray <span class="op">=</span> <span class="op">{</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span> <span class="op">,</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">};</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myArray<span class="op">[</span><span class="dv">5</span><span class="op">]);</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">5</span><span class="op">]</span> <span class="op">=</span> <span class="dv">12</span><span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myArray<span class="op">);</span></span></code></pre></div>
+<ul>
+<li>One of these statements is not “incorrect” in the sense that it won’t prevent your program from executing, but it is not doing what you would have expected: which one?</li>
+<li>Can you read and understand the error messages you obtained for the others?</li>
+</ul>
 </section>
-<section id="computing-the-entry-price" class="level2">
-<h2>Computing the Entry Price</h2>
-<p>You are asked to write a simple program that computes the total price for a group of people to enter a park.</p>
-<p>Your program should:</p>
-<ul>
-<li>Ask the user how many adults and how many children want to enter the park,</li>
-<li>If the group comprises <span class="math inline">6</span> persons or more, offer to sell a group pass for $<span class="math inline">30</span> (that allows everyone in the group to enter the park),</li>
-<li>Compute and display the total price on the screen, knowing that:
-<ul>
-<li>Adults pay $<span class="math inline">7</span>,</li>
-<li>Children pay $<span class="math inline">4</span>,</li>
-<li><em>If</em> purchasing the group pass allowed the group to save money (which isn’t always the case!), you should display on the screen the amount saved.</li>
-</ul></li>
-</ul>
-<p>Some tips:</p>
-<ul>
-<li>When asking “yes” / “no” questions, treat “y” and “Y” as a “Yes”, and any other string as a “No”.</li>
-<li>Note that we will sell the pass even if the user is not gaining money by doing so (for instance, if 6 children want to enter, <span class="math inline">$4 × 6 = $24 &lt; $30</span>, but we would still sell them the pass).</li>
-</ul>
+<section id="second-array-manipulation" class="level1">
+<h1>Second Array Manipulation</h1>
+<p>Write a program that</p>
+<ol>
+<li>declares an array <code class="sourceCode cs">myArray</code> of <code class="sourceCode cs"><span class="dt">int</span></code> of size <span class="math inline">10</span>,</li>
+<li>initializes <code class="sourceCode cs">myArray</code> with the values <span class="math inline">1</span>, <span class="math inline">2</span>, <span class="math inline">3</span>, …, <span class="math inline">9</span> and <span class="math inline">10</span>,</li>
+<li>displays the content of <code class="sourceCode cs">myArray</code>.</li>
+<li>sums the values stored in <code class="sourceCode cs">myArray</code> and displays the result.</li>
+<li>computes the product of the values stored in <code class="sourceCode cs">myArray</code> and displays the result.</li>
+</ol>
+</section>
+<section id="pushing-further-optional" class="level1">
+<h1>Pushing Further (Optional)</h1>
+<section id="default-values" class="level2">
+<h2>Default values</h2>
+<p>Execute the following:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> ar <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">5</span><span class="op">];</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ar<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> ar<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>ar<span class="op">[</span>i<span class="op">]);</span></span></code></pre></div>
+<p>What can you conclude about the value of the array cells that were not assigned?</p>
 </section>
 </section>
 </main>
@@ -313,7 +317,7 @@
                     <a href="index.pdf" title="Download this ressoucre in pdf">↓ pdf</a>
             <a href="index.odt" title="Download this ressource in odt.">↓ odt</a>
             <a href="index.docx" title="Download this ressource in docx.">↓ docx</a>
-                            <a href="https://github.com/csci-1301/csci-1301.github.io/tree/main/labs/FirstProblemSolving/readme.md" title="Access the source code of this ressource.">Source code</a>
+                            <a href="https://github.com/csci-1301/csci-1301.github.io/tree/main/labs/ArrayBasics/readme.md" title="Access the source code of this ressource.">Source code</a>
                 <a href="../../about.html" title="Learn more about this website.">About</a>
         <a href="../../about.html#licence-1" title="Licence">CC BY 4.0</a>
         </div> 
