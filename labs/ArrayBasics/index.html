@@ -247,35 +247,59 @@
 <header id="title-block-header">
 <h1 class="title">First Arrays Manipulations</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 16, 2021 (10:03:46 PM)</p>
+<p class="date">June 16, 2021 (10:47:34 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#first-array-manipulation">First Array Manipulation</a></li>
-<li><a href="#second-array-manipulation">Second Array Manipulation</a></li>
-<li><a href="#pushing-further-optional">Pushing Further (Optional)</a>
+<li><a href="#first-array-manipulation">First Array Manipulation</a>
 <ul>
-<li><a href="#default-values">Default values</a></li>
+<li><a href="#warm-up">Warm-up</a></li>
+<li><a href="#going-wrong">Going wrong</a></li>
 </ul></li>
+<li><a href="#second-array-manipulation">Second Array Manipulation</a></li>
+<li><a href="#exploring-arrays">Exploring arrays</a></li>
 </ul>
 </nav>
 <section id="first-array-manipulation" class="level1">
 <h1>First Array Manipulation</h1>
-<p>Write a program that</p>
+<section id="warm-up" class="level2">
+<h2>Warm-up</h2>
+<p>Write a program that implements the following steps:</p>
 <ol>
-<li>declares an array <code class="sourceCode cs">myArray</code> of <code class="sourceCode cs"><span class="dt">int</span></code> of size <span class="math inline">5</span>,</li>
-<li>initializes <code class="sourceCode cs">myArray</code> with the values <span class="math inline">1</span>, <span class="math inline">2</span>, <span class="math inline">3</span>, <span class="math inline">4</span> and <span class="math inline">5</span>,</li>
-<li>displays the content of <code class="sourceCode cs">myArray</code>.</li>
+<li><p>declares an array <code class="sourceCode cs">myArray</code> of <code class="sourceCode cs"><span class="dt">int</span></code> of size <span class="math inline">5</span>,</p>
+<dl>
+<dt>Question</dt>
+<dd>What values are stored in this array
+</dd>
+</dl></li>
+<li><p>initializes <code class="sourceCode cs">myArray</code> with the values <span class="math inline">1</span>, <span class="math inline">2</span>, <span class="math inline">3</span>, <span class="math inline">4</span> and <span class="math inline">5</span>,</p>
+<dl>
+<dt>Question</dt>
+<dd>There are a few different ways you can declare and initialize array of size <span class="math inline">5</span> holding values <span class="math inline">1</span>, <span class="math inline">2</span>, <span class="math inline">3</span>, <span class="math inline">4</span> and <span class="math inline">5</span>. Can you think of two different ways to do this?
+</dd>
+</dl></li>
+<li><p>displays the content of <code class="sourceCode cs">myArray</code>.</p></li>
 </ol>
-<p>Now, let us write <em>incorrect</em> statements. Add the following statements one by one to your program, observe how C# reacts (that is, try to compile and execute after you add one, then remove it), and answer the following questions.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>myArray <span class="op">=</span> <span class="op">{</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span> <span class="op">,</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">};</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myArray<span class="op">[</span><span class="dv">5</span><span class="op">]);</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">5</span><span class="op">]</span> <span class="op">=</span> <span class="dv">12</span><span class="op">;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myArray<span class="op">);</span></span></code></pre></div>
-<ul>
+</section>
+<section id="going-wrong" class="level2">
+<h2>Going wrong</h2>
+<p>Now, let us write <em>incorrect</em> statements.</p>
+<p>Add the following statement to the program you created in the warm-up part, and observe how C# reacts, that is, try to compile and execute the program after adding this line:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>myArray <span class="op">=</span> <span class="op">{</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span> <span class="op">,</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">};</span></span></code></pre></div>
+<p>Remove the previous line. Then add this statement:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myArray<span class="op">[</span><span class="dv">5</span><span class="op">]);</span></span></code></pre></div>
+<p>try to compile and execute the program.</p>
+<p>Then, remove previous line, and add this:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">5</span><span class="op">]</span> <span class="op">=</span> <span class="dv">12</span><span class="op">;</span></span></code></pre></div>
+<p>try to compile and execute the program again.</p>
+<p>Remove previous line. Add this line and try executing the program:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myArray<span class="op">);</span></span></code></pre></div>
+<p>Now answer the following questions.</p>
+<ol>
 <li>One of these statements is not “incorrect” in the sense that it won’t prevent your program from executing, but it is not doing what you would have expected: which one?</li>
 <li>Can you read and understand the error messages you obtained for the others?</li>
-</ul>
+</ol>
+</section>
 </section>
 <section id="second-array-manipulation" class="level1">
 <h1>Second Array Manipulation</h1>
@@ -288,17 +312,29 @@
 <li>computes the product of the values stored in <code class="sourceCode cs">myArray</code> and displays the result.</li>
 </ol>
 </section>
-<section id="pushing-further-optional" class="level1">
-<h1>Pushing Further (Optional)</h1>
-<section id="default-values" class="level2">
-<h2>Default values</h2>
-<p>Execute the following:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> ar <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">5</span><span class="op">];</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ar<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> ar<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>ar<span class="op">[</span>i<span class="op">]);</span></span></code></pre></div>
-<p>What can you conclude about the value of the array cells that were not assigned?</p>
-</section>
+<section id="exploring-arrays" class="level1">
+<h1>Exploring arrays</h1>
+<p>For this exercise you will need an array to work with. Let’s create one:</p>
+<ul>
+<li>declare a <code class="sourceCode cs"><span class="dt">char</span></code> array of length <span class="math inline">6</span>, name it <code class="sourceCode cs">letters</code></li>
+<li>initialize the first 4 indices of <code class="sourceCode cs">letters</code> with following values: <code class="sourceCode cs"><span class="ch">&#39;a&#39;</span><span class="op">,</span> <span class="ch">&#39;b&#39;</span><span class="op">,</span> <span class="ch">&#39;c&#39;</span><span class="op">,</span> <span class="ch">&#39;d&#39;</span></code></li>
+<li>initialize index 5 of <code class="sourceCode cs">letters</code> with value <code class="sourceCode cs"><span class="ch">&#39;f&#39;</span></code></li>
+</ul>
+<p>Now, write the following statements:</p>
+<ol>
+<li>Write a statement to display the last <code class="sourceCode cs"><span class="dt">char</span></code> value in <code class="sourceCode cs">letters</code>? (should display <code class="sourceCode cs">f</code>)</li>
+<li>Write a statement to display value stored at index 4. What is the value? Why?</li>
+<li>Write a statement to display characters in the first half of the array (<code class="sourceCode cs"><span class="ch">&#39;a&#39;</span><span class="op">,</span> <span class="ch">&#39;b&#39;</span><span class="op">,</span> <span class="ch">&#39;c&#39;</span></code> but no others).</li>
+</ol>
+<p>Execute your program to ensure you seeing the expected output before proceeding.</p>
+<p>Next, update the part of the program where <code class="sourceCode cs">letters</code> is declared and change <code class="sourceCode cs">letters</code> length to <span class="math inline">8</span>. Do not modify any other parts of the program. Then execute the program again.</p>
+<p>Answer the following questions:</p>
+<ol>
+<li>What is the last <code class="sourceCode cs"><span class="dt">char</span></code> of the <code class="sourceCode cs">letters</code> array now after changing the length?</li>
+<li>Does your program still output <em>the last</em> <code class="sourceCode cs"><span class="dt">char</span></code> value in <code class="sourceCode cs">letters</code> array?</li>
+<li>When displaying the first half of the array, does your program still display <em>the first half</em>? (After changing length the first half contains values <code class="sourceCode cs"><span class="ch">&#39;a&#39;</span><span class="op">,</span> <span class="ch">&#39;b&#39;</span><span class="op">,</span> <span class="ch">&#39;c&#39;</span><span class="op">,</span> <span class="ch">&#39;d&#39;</span></code>)</li>
+<li>If you did not get the last value, or first half you expected, can you think of a way to perform these array operations in a way that can accomodate arrays of different lengths?</li>
+</ol>
 </section>
 </main>
 <footer id="footer">
