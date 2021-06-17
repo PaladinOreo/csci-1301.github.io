@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Validating Inputs</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 16, 2021 (08:55:45 PM)</p>
+<p class="date">June 16, 2021 (09:01:12 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -267,159 +267,84 @@
 <p>First few lines are given as examples, your task is to complete the rest of the table.</p>
 <table>
 <thead>
-<tr>
-<th>
-</th>
-<th colspan="2">
-<code>int.TryParse</code>
-</th>
-<th colspan="2">
-<code>double.TryParse</code>
-</th>
-</tr>
-<tr>
-<th>
-Input
-</th>
-<th>
-returns
-</th>
-<th>
-value
-</th>
-<th>
-returns
-</th>
-<th>
-value
-</th>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">int.TryParse</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">double.TryParse</th>
+<th style="text-align: center;"></th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>
-<code>“9432.0”</code>
-</td>
-<td>
-<code>false</code>
-</td>
-<td>
-<code>0</code>
-</td>
-<td>
-<code>true</code>
-</td>
-<td>
-<code>9432.0</code>
-</td>
+<tr class="odd">
+<td style="text-align: left;">Input</td>
+<td style="text-align: center;">returns</td>
+<td style="text-align: center;">value</td>
+<td style="text-align: center;">returns value</td>
+<td style="text-align: center;"></td>
 </tr>
-<tr>
-<td>
-<code>“160519”</code>
-</td>
-<td>
-<code>true</code>
-</td>
-<td>
-<code>160519</code>
-</td>
-<td>
-<code>true</code>
-</td>
-<td>
-<code>160519</code>
-</td>
+<tr class="even">
+<td style="text-align: left;"><code class="sourceCode cs"><span class="st">&quot;9432.0&quot;</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="kw">false</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dv">0</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="kw">true</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="fl">9432.0</span></code></td>
 </tr>
-<tr>
-<td>
-<code>“12,804”</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><code class="sourceCode cs"><span class="st">&quot;160519&quot;</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="kw">true</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dv">160519</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="kw">true</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dv">160519</span></code></td>
 </tr>
-<tr>
-<td>
-<code>“+5102”</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
+<tr class="even">
+<td style="text-align: left;"><code class="sourceCode cs"><span class="st">&quot;12,804&quot;</span></code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
-<tr>
-<td>
-<code>“2+2”</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><code class="sourceCode cs"><span class="st">&quot;+5102&quot;</span></code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
-<tr>
-<td>
-<code>” -322 “</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
+<tr class="even">
+<td style="text-align: left;"><code class="sourceCode cs"><span class="st">&quot;2+2&quot;</span></code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
-<tr>
-<td>
-<code>“(72);”</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><code class="sourceCode cs"><span class="st">&quot; -322 &quot;</span></code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
-<tr>
-<td>
-<code>“000”</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
+<tr class="even">
+<td style="text-align: left;"><code class="sourceCode cs"><span class="st">&quot;(72);&quot;</span></code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
-<tr>
-<td>
-<code>“78 095”</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><code class="sourceCode cs"><span class="st">&quot;000&quot;</span></code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code class="sourceCode cs"><span class="st">&quot;78 095&quot;</span></code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
