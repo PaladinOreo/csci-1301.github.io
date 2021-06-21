@@ -247,14 +247,14 @@
 <header id="title-block-header">
 <h1 class="title">For Loops</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 21, 2021 (03:20:21 PM)</p>
+<p class="date">June 21, 2021 (03:30:29 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
 <li><a href="#from-while-to-for">From <code class="sourceCode cs"><span class="kw">while</span></code> to <code class="sourceCode cs"><span class="kw">for</span></code></a></li>
 <li><a href="#from-for-to-while">From <code class="sourceCode cs"><span class="kw">for</span></code> to <code class="sourceCode cs"><span class="kw">while</span></code></a></li>
 <li><a href="#implementing-for-loops">Implementing for Loops</a></li>
-<li><a href="#continue-and-break"><code class="sourceCode cs"><span class="kw">continue</span></code> and <code class="sourceCode cs"><span class="kw">break</span></code></a></li>
+<li><a href="#using-continue-and-break">Using <code class="sourceCode cs"><span class="kw">continue</span></code> and <code class="sourceCode cs"><span class="kw">break</span></code></a></li>
 <li><a href="#pushing-further-optional">Pushing Further (Optional)</a>
 <ul>
 <li><a href="#multiple-initializations-and-updates">Multiple Initializations and Updates</a></li>
@@ -321,7 +321,7 @@ for (char g = 'A' ; g !='a'; g = (char)((int)g +1) ) Console.Write(g + " ");
 <li><p>How would you change the program to make it display on the screen the divisors of the integer entered? Examples:</p>
 <ul>
 <li>divisors of <span class="math inline">5</span> are: <span class="math inline">1</span>, <span class="math inline">5</span></li>
-<li>divisors of <span class="math inline">10</span> are: <span class="math inline">1</span>, <span class="math inline">2</span>, <span class="math inline">5</span>, <span class="math inline">10</span>)?</li>
+<li>divisors of <span class="math inline">10</span> are: <span class="math inline">1</span>, <span class="math inline">2</span>, <span class="math inline">5</span>, <span class="math inline">10</span>?</li>
 </ul></li>
 </ol>
 <p>You can modify your program to check your answers to the previous questions. Once you are done, modify your original program in these two respects:</p>
@@ -330,8 +330,8 @@ for (char g = 'A' ; g !='a'; g = (char)((int)g +1) ) Console.Write(g + " ");
 <li>Add some input validation: floating-point values, non-numeric strings and negative values should not be allowed (i.e., your program should ask for another value).</li>
 </ol>
 </section>
-<section id="continue-and-break" class="level1">
-<h1><code class="sourceCode cs"><span class="kw">continue</span></code> and <code class="sourceCode cs"><span class="kw">break</span></code></h1>
+<section id="using-continue-and-break" class="level1">
+<h1>Using <code class="sourceCode cs"><span class="kw">continue</span></code> and <code class="sourceCode cs"><span class="kw">break</span></code></h1>
 <p>Programmers can use two keywords in loops, <code class="sourceCode cs"><span class="kw">continue</span></code> and <code class="sourceCode cs"><span class="kw">break</span></code>, that modify the control flow. They can make the loop more confusing to read, but can sometimes be useful for reducing the number of nested <code class="sourceCode cs"><span class="kw">if</span></code> statements in a complex loop. Try executing the following code to see what these statements do.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;=</span> <span class="dv">5</span><span class="op">;</span> i<span class="op">++)</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
