@@ -19,7 +19,7 @@
   <meta property="og:image" content="../../android-chrome-512x512.png" />
   <meta name="author" content="https://csci-1301.github.io/about#authors" />
   <meta name="keywords" content="Computer Science, Problem solving methods, Augusta University, Bachelor of Science, C# Programming language" />
-  <title>Advanced Arrays Manipulation</title>
+  <title>Arrays Manipulation</title>
   <style>
     html {
       line-height: 1.5;
@@ -245,13 +245,12 @@
     </div>
 </header>
 <header id="title-block-header">
-<h1 class="title">Advanced Arrays Manipulation</h1>
+<h1 class="title">Arrays Manipulation</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 21, 2021 (03:30:28 PM)</p>
+<p class="date">June 21, 2021 (04:15:44 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#manipulating-two-arrays-at-the-same-time">Manipulating Two Arrays at the Same Time</a></li>
 <li><a href="#array-manipulation-practice-advanced">Array Manipulation Practice (Advanced)</a>
 <ul>
 <li><a href="#set-up">Set-Up</a></li>
@@ -260,35 +259,6 @@
 <li><a href="#pushing-further-optional">Pushing Further (Optional)</a></li>
 </ul>
 </nav>
-<section id="manipulating-two-arrays-at-the-same-time" class="level1">
-<h1>Manipulating Two Arrays at the Same Time</h1>
-<p>This problem combines random number generation with arrays. The <code class="sourceCode cs">Random</code> class from the C# standard library can be used to generate random numbers in any given range. Here is an example of how to use it to generate 15 random numbers:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Random myRandomObject <span class="op">=</span> <span class="kw">new</span> <span class="fu">Random</span><span class="op">();</span>     <span class="co">//Instantiate a Random object</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> randNum<span class="op">,</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>i <span class="op">&lt;</span> <span class="dv">15</span><span class="op">)</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    randNum <span class="op">=</span> myRandomObject<span class="op">.</span><span class="fu">Next</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="dv">11</span><span class="op">);</span> <span class="co">//Generate a random number between 1 and 10</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>randNum<span class="op">);</span>           <span class="co">//Display the random number</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>Using a Random object like this, write a program that</p>
-<ol>
-<li>declares two arrays of <code class="sourceCode cs"><span class="dt">int</span></code> of size <code class="sourceCode cs"><span class="dv">8</span></code>,</li>
-<li>initializes the values of the first array with random numbers between <span class="math inline">0</span> and <span class="math inline">9</span>,</li>
-<li>initializes the values of second array with random numbers between <span class="math inline">0</span> and <span class="math inline">9</span>,</li>
-<li>displays the contents of the two arrays in a table, and, for each index, a letter indicating whether the first array “won” or “lost” a contest with the second array: “W” if the value in the first array is greater than the value in the second array, “T” if they are equal, and “L” if it is lesser.</li>
-</ol>
-<p>An example execution of this program would display:</p>
-<pre class="plain"><code>0       8       L
-5       3       W
-3       3       T
-1       2       L
-3       1       W
-9       0       W
-9       0       W
-1       5       L</code></pre>
-<p>In this example, the first array contains “0 5 3 1 3 9 9 1” and the second contains “8 3 3 2 1 0 0 5”.</p>
-</section>
 <section id="array-manipulation-practice-advanced" class="level1">
 <h1>Array Manipulation Practice (Advanced)</h1>
 <section id="set-up" class="level2">
@@ -311,47 +281,47 @@
 <h1>Pushing Further (Optional)</h1>
 <p>Here, we will explore the difference between value and reference types. We have mentioned this concept in class several times, but we have not used it in the programs we have written so far. Since arrays are reference types, however, it is now more important for you to understand how reference types work.</p>
 <p>Let us show why this notion is so critical with an example:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> arrayA <span class="op">=</span> <span class="op">{</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span> <span class="op">};</span>  <span class="co">// Declare a simple array of integers</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">// I&#39;d like to make a copy of that array. Let me try the following:</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> arrayCopyWrong <span class="op">=</span> arrayA<span class="op">;</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">int</span> i <span class="kw">in</span> arrayCopyWrong<span class="op">)</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>i <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">();</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">// It seems to be working! Except that if we change a value in our copy:</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>arrayCopyWrong<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">// It also changes the value in our original array!</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">int</span> i <span class="kw">in</span> arrayA<span class="op">)</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>i <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">();</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> arrayA <span class="op">=</span> <span class="op">{</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span> <span class="op">};</span>  <span class="co">// Declare a simple array of integers</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">// I&#39;d like to make a copy of that array. Let me try the following:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> arrayCopyWrong <span class="op">=</span> arrayA<span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">int</span> i <span class="kw">in</span> arrayCopyWrong<span class="op">)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>i <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">();</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">// It seems to be working! Except that if we change a value in our copy:</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>arrayCopyWrong<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">// It also changes the value in our original array!</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">int</span> i <span class="kw">in</span> arrayA<span class="op">)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>i <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">();</span></span></code></pre></div>
 <p>Try running this program yourself to see what happens. The problem is that when we wrote the assignment statement <code class="sourceCode cs"><span class="dt">int</span><span class="op">[]</span> arrayCopyWrong <span class="op">=</span> arrayA</code>, we copied the <em>reference</em> to the array, but not the array itself. We now have two ways of accessing our array, using <code class="sourceCode cs">arrayA</code> or <code class="sourceCode cs">arrayCopyWrong</code>, but still only one array.</p>
 <p>To correctly copy the array, we need to do something like the following:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> arrayB <span class="op">=</span> <span class="op">{</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span> <span class="op">};</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">// Create a new array object and assign it to a new reference variable</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> arrayCopyRight <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span>arrayB<span class="op">.</span><span class="fu">Length</span><span class="op">];</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">// Copy each value in the array, one by one:</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span> <span class="op">;</span> i <span class="op">&lt;</span> arrayB<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    arrayCopyRight<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> arrayB<span class="op">[</span>i<span class="op">];</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">// If we change a value in our copy:</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>arrayCopyRight<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">// It changes the value only in that copy:</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">int</span> i <span class="kw">in</span> arrayB<span class="op">)</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>i <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">();</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">int</span> i <span class="kw">in</span> arrayCopyRight<span class="op">)</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>i <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span>  </span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">();</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> arrayB <span class="op">=</span> <span class="op">{</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span> <span class="op">};</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">// Create a new array object and assign it to a new reference variable</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> arrayCopyRight <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span>arrayB<span class="op">.</span><span class="fu">Length</span><span class="op">];</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">// Copy each value in the array, one by one:</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span> <span class="op">;</span> i <span class="op">&lt;</span> arrayB<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    arrayCopyRight<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> arrayB<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">// If we change a value in our copy:</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>arrayCopyRight<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">// It changes the value only in that copy:</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">int</span> i <span class="kw">in</span> arrayB<span class="op">)</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>i <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">();</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">int</span> i <span class="kw">in</span> arrayCopyRight<span class="op">)</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>i <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span>  </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">();</span></span></code></pre></div>
 <p>Try running this program. Can you see the difference?</p>
 <p><code class="sourceCode cs">Array</code> is actually a class (documented at <a href="https://msdn.microsoft.com/en-us/library/system.array(v=vs.110).aspx" class="uri">https://msdn.microsoft.com/en-us/library/system.array(v=vs.110).aspx</a>), and as such provides several methods. If you have two arrays, <code class="sourceCode cs">array1</code> and <code class="sourceCode cs">array2</code> containing the same type of values and of size at least <code class="sourceCode cs">x</code>, you can copy the first <code class="sourceCode cs">x</code> values of <code class="sourceCode cs">array1</code> into <code class="sourceCode cs">array2</code> using <code class="sourceCode cs">Array<span class="op">.</span><span class="fu">Copy</span><span class="op">(</span>array1<span class="op">,</span> array2<span class="op">,</span> x<span class="op">);</span></code>. Try using this method with the previous example to create a copy of <code class="sourceCode cs">arrayB</code>.</p>
 </section>

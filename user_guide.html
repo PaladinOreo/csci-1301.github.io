@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">User Guide</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 21, 2021 (03:30:13 PM)</p>
+<p class="date">June 21, 2021 (04:15:27 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -499,9 +499,11 @@
 <li>create a subdirectory with the name of the solution you would like to use,</li>
 <li>create a subdirectory with the name of the project you would like to use,</li>
 <li>create a file called <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code> in <code class="sourceCode cs">src<span class="op">/&lt;</span>solution<span class="op">&gt;/&lt;</span>project<span class="op">&gt;/</span>Program<span class="op">.</span><span class="fu">cs</span></code></li>
-<li>if you want to add additional classes, add them in <code class="sourceCode cs">src<span class="op">/&lt;</span>solution<span class="op">&gt;/&lt;</span>project<span class="op">&gt;/&lt;</span>Class<span class="op">&gt;.</span><span class="fu">cs</span></code> files. Do <strong>not</strong> add solution (<code class="sourceCode cs">sln</code>) or project (<code class="sourceCode cs">csproj</code>) files: they will be created automatically using the project and solution’s name you specified, if multiple classes are present they will all be linked, and the resulting archive will be hosted in the lab’s folder as <code class="sourceCode cs"><span class="op">&lt;</span>solution<span class="op">&gt;.</span><span class="fu">zip</span></code>.</li>
+<li>if you want to add additional classes, add them in <code class="sourceCode cs">src<span class="op">/&lt;</span>solution<span class="op">&gt;/&lt;</span>project<span class="op">&gt;/&lt;</span>Class<span class="op">&gt;.</span><span class="fu">cs</span></code> files.</li>
 </ul></li>
-</ol></li>
+</ol>
+<p>Do <strong>not</strong> add solution (<code class="sourceCode cs">sln</code>) or project (<code class="sourceCode cs">csproj</code>) files: they will be created automatically using the project and solution’s name you specified, if multiple classes are present they will all be linked, and the resulting archive will be hosted in the lab’s folder as <code class="sourceCode cs"><span class="op">&lt;</span>solution<span class="op">&gt;.</span><span class="fu">zip</span></code>.</p>
+<p>Note / known issue: when including multiple solutions, the basename should be different, for example: <code class="sourceCode cs">SomeLab</code> and <code class="sourceCode cs">Solution_SomeLab</code> (instead of <code class="sourceCode cs">SomeLabSolution</code>); to ensure solutions are packaged separately from one another.</p></li>
 </ol>
 <p>If you follow these instructions the lab will be automatically built into a distributable format when you commit changes. It works as follows:</p>
 <ol>
