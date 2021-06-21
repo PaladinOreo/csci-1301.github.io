@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 21, 2021 (10:12:59 AM)</p>
+<p class="date">June 21, 2021 (11:47:47 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -5310,7 +5310,8 @@ Done</code></pre></li>
 <span id="cb220-6"><a href="#cb220-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a positive number to add it. &quot;</span></span>
 <span id="cb220-7"><a href="#cb220-7" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> <span class="st">&quot;Enter anything else to stop.&quot;</span><span class="op">);</span></span>
 <span id="cb220-8"><a href="#cb220-8" aria-hidden="true" tabindex="-1"></a>    success <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">(),</span> <span class="kw">out</span> userNum<span class="op">);</span></span>
-<span id="cb220-9"><a href="#cb220-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<span id="cb220-9"><a href="#cb220-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb220-10"><a href="#cb220-10" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The sum of your numbers is {sum}&quot;</span><span class="op">);</span></span></code></pre></div>
 <ul>
 <li>The condition <code class="sourceCode cs">success <span class="op">&amp;&amp;</span> userNum <span class="op">&gt;=</span> <span class="dv">0</span></code> is true if the user entered a valid number that was not negative</li>
 <li>In order to write this condition, we needed to declare the extra variable <code class="sourceCode cs">success</code> to keep track of the result of <code class="sourceCode cs"><span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span></code></li>
@@ -5330,11 +5331,12 @@ Done</code></pre></li>
 <span id="cb221-2"><a href="#cb221-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>userNum <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">)</span></span>
 <span id="cb221-3"><a href="#cb221-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb221-4"><a href="#cb221-4" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> userNum<span class="op">;</span></span>
-<span id="cb221-5"><a href="#cb221-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a positive number. &quot;</span></span>
+<span id="cb221-5"><a href="#cb221-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a positive number to add it. &quot;</span></span>
 <span id="cb221-6"><a href="#cb221-6" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> <span class="st">&quot;Enter anything else to stop.&quot;</span><span class="op">);</span></span>
 <span id="cb221-7"><a href="#cb221-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(!</span><span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">(),</span> <span class="kw">out</span> userNum<span class="op">))</span></span>
 <span id="cb221-8"><a href="#cb221-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb221-9"><a href="#cb221-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<span id="cb221-9"><a href="#cb221-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb221-10"><a href="#cb221-10" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The sum of your numbers is {sum}&quot;</span><span class="op">);</span></span></code></pre></div>
 <ul>
 <li>Inside the body of the loop, the return value of <code class="sourceCode cs">TryParse</code> can be used directly in an <code class="sourceCode cs"><span class="kw">if</span></code> statement instead of assigning it to the <code class="sourceCode cs">success</code> variable</li>
 <li>If <code class="sourceCode cs">TryParse</code> fails, the <code class="sourceCode cs"><span class="kw">break</span></code> statement will end the loop, so there is no need to add <code class="sourceCode cs">success</code> to the <code class="sourceCode cs"><span class="kw">while</span></code> condition</li>
