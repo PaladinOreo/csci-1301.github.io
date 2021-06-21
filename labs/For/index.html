@@ -19,7 +19,7 @@
   <meta property="og:image" content="../../android-chrome-512x512.png" />
   <meta name="author" content="https://csci-1301.github.io/about#authors" />
   <meta name="keywords" content="Computer Science, Problem solving methods, Augusta University, Bachelor of Science, C# Programming language" />
-  <title>While and For Loops</title>
+  <title>For Loops</title>
   <style>
     html {
       line-height: 1.5;
@@ -245,18 +245,18 @@
     </div>
 </header>
 <header id="title-block-header">
-<h1 class="title">While and For Loops</h1>
+<h1 class="title">For Loops</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 21, 2021 (03:16:29 PM)</p>
+<p class="date">June 21, 2021 (03:17:36 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
 <li><a href="#from-while-to-for">From <code class="sourceCode cs"><span class="kw">while</span></code> to <code class="sourceCode cs"><span class="kw">for</span></code></a></li>
 <li><a href="#from-for-to-while">From <code class="sourceCode cs"><span class="kw">for</span></code> to <code class="sourceCode cs"><span class="kw">while</span></code></a></li>
-<li><a href="#a-simple-loop">A Simple Loop</a></li>
+<li><a href="#implementing-for-loops">Implementing for Loops</a></li>
+<li><a href="#continue-and-break"><code class="sourceCode cs"><span class="kw">continue</span></code> and <code class="sourceCode cs"><span class="kw">break</span></code></a></li>
 <li><a href="#pushing-further-optional">Pushing Further (Optional)</a>
 <ul>
-<li><a href="#continue-and-break"><code class="sourceCode cs"><span class="kw">continue</span></code> and <code class="sourceCode cs"><span class="kw">break</span></code></a></li>
 <li><a href="#multiple-initializations-and-updates">Multiple Initializations and Updates</a></li>
 </ul></li>
 </ul>
@@ -309,16 +309,20 @@ for (char g = 'A' ; g !='a'; g = (char)((int)g +1) ) Console.Write(g + " ");
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>h <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
-<section id="a-simple-loop" class="level1">
-<h1>A Simple Loop</h1>
+<section id="implementing-for-loops" class="level1">
+<h1>Implementing for Loops</h1>
 <p>This exercise is to practice <code class="sourceCode cs"><span class="kw">for</span></code> loops.</p>
 <p>Write a program that asks the user to enter a positive integer, and then uses a <code class="sourceCode cs"><span class="kw">for</span></code> loop to compute the sum of all the integers between <span class="math inline">1</span> and the integer given by the user. For instance, if the user enters <span class="math inline">5</span>, your program should display <span class="math inline">15</span> on the screen (i.e., <span class="math inline">1 + 2 + 3 + 4 + 5 = 15</span>).</p>
 <p>Then, answer the following questions:</p>
 <ol>
-<li>Without running your program, can you tell what will happen if the user enters a negative value?</li>
-<li>Do you think you could have written the same program using a <code class="sourceCode cs"><span class="kw">while</span></code> loop?</li>
-<li>How could you change your program so that it would compute the product instead of the sum (i.e., for <span class="math inline">5</span>, <span class="math inline">1 × 2 × 3 × 4 × 5 = 120</span>)?</li>
-<li>How could you change your program so that it would display on the screen the divisors of the integer entered (i.e., for <span class="math inline">5</span>, only <span class="math inline">1</span> and <span class="math inline">5</span>)?</li>
+<li><p>Without running your program, can you tell what will happen if the user enters a negative value?</p></li>
+<li><p>Do you think you could have written the same program using a <code class="sourceCode cs"><span class="kw">while</span></code> loop?</p></li>
+<li><p>How would you change the program to make it compute the product instead of the sum (i.e., for <span class="math inline">5</span>, <span class="math inline">1 × 2 × 3 × 4 × 5 = 120</span>)?</p></li>
+<li><p>How would you change the program to make it display on the screen the divisors of the integer entered? Examples:</p>
+<ul>
+<li>divisors of <span class="math inline">5</span> are: <span class="math inline">1</span>, <span class="math inline">5</span></li>
+<li>divisors of <span class="math inline">10</span> are: <span class="math inline">1</span>, <span class="math inline">2</span>, <span class="math inline">5</span>, <span class="math inline">10</span>)?</li>
+</ul></li>
 </ol>
 <p>You can modify your program to check your answers to the previous questions. Once you are done, modify your original program in these two respects:</p>
 <ol>
@@ -326,10 +330,8 @@ for (char g = 'A' ; g !='a'; g = (char)((int)g +1) ) Console.Write(g + " ");
 <li>Add some input validation: floating-point values, non-numeric strings and negative values should not be allowed (i.e., your program should ask for another value).</li>
 </ol>
 </section>
-<section id="pushing-further-optional" class="level1">
-<h1>Pushing Further (Optional)</h1>
-<section id="continue-and-break" class="level2">
-<h2><code class="sourceCode cs"><span class="kw">continue</span></code> and <code class="sourceCode cs"><span class="kw">break</span></code></h2>
+<section id="continue-and-break" class="level1">
+<h1><code class="sourceCode cs"><span class="kw">continue</span></code> and <code class="sourceCode cs"><span class="kw">break</span></code></h1>
 <p>Programmers can use two keywords in loops, <code class="sourceCode cs"><span class="kw">continue</span></code> and <code class="sourceCode cs"><span class="kw">break</span></code>, that modify the control flow. They can make the loop more confusing to read, but can sometimes be useful for reducing the number of nested <code class="sourceCode cs"><span class="kw">if</span></code> statements in a complex loop. Try executing the following code to see what these statements do.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;=</span> <span class="dv">5</span><span class="op">;</span> i<span class="op">++)</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -343,9 +345,11 @@ for (char g = 'A' ; g !='a'; g = (char)((int)g +1) ) Console.Write(g + " ");
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>You can also use <code class="sourceCode cs"><span class="kw">break</span></code> and <code class="sourceCode cs"><span class="kw">continue</span></code> in <code class="sourceCode cs"><span class="kw">while</span></code> loops. Try to rewrite the previous two <code class="sourceCode cs"><span class="kw">for</span></code> loops as <code class="sourceCode cs"><span class="kw">while</span></code> loops. There is a trick to make the <code class="sourceCode cs"><span class="kw">while</span></code> loop using <code class="sourceCode cs"><span class="kw">continue</span></code> work properly; can you spot it?</p>
 </section>
+<section id="pushing-further-optional" class="level1">
+<h1>Pushing Further (Optional)</h1>
 <section id="multiple-initializations-and-updates" class="level2">
 <h2>Multiple Initializations and Updates</h2>
-<p>This section is about two modifications of <code class="sourceCode cs"><span class="kw">for</span></code> loops that are sometimes considered bad design: used poorly, they can make the code harder to read and to debug, and sometimes make it hard to follow the flow of control of your program. They are introduced because you may see them in your future, but, except for rare cases, should be avoided in your own code. The exact structure of <code class="sourceCode cs"><span class="kw">for</span></code> loops is actually more complex than what we discussed in class. It is</p>
+<p>This section is about two modifications of <code class="sourceCode cs"><span class="kw">for</span></code> loops that are sometimes considered bad design: used poorly, they can make the code harder to read and to debug, and sometimes make it hard to follow the flow of control of your program. They are introduced because you may see them in your future, but, except for rare cases, should be avoided in your own code. The exact structure of <code class="sourceCode cs"><span class="kw">for</span></code> loops is actually more complex than discussed in class. It is</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(&lt;</span>initializations<span class="op">&gt;;</span> <span class="op">&lt;</span>condition<span class="op">&gt;;</span> <span class="op">&lt;</span>updates<span class="op">&gt;)</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>statement block<span class="op">&gt;</span></span>
