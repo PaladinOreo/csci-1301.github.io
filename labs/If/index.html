@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">If Statements</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 21, 2021 (05:45:52 PM)</p>
+<p class="date">June 21, 2021 (06:21:40 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -257,7 +257,11 @@
 <li><a href="#writing-simple-conditional-statements">Writing Simple Conditional Statements</a></li>
 <li><a href="#observation-how-to-construct-a-value-progressively">Observation: How to Construct a Value Progressively</a></li>
 </ul></li>
-<li><a href="#conditional-operator-optional">Conditional Operator (optional)</a></li>
+<li><a href="#pushing-further-optional">Pushing Further (Optional)</a>
+<ul>
+<li><a href="#conditional-operator">Conditional Operator</a></li>
+<li><a href="#computing-entry-price">Computing Entry Price</a></li>
+</ul></li>
 </ul>
 </nav>
 <p>This lab is aimed at having you practice simple conditional statements. It may seem repetitive, but you need to practice <code class="sourceCode cs"><span class="kw">if</span></code> statements <em>a lot</em> to understand their mechanics and to be able to write them properly.</p>
@@ -376,8 +380,10 @@
 <p>Much better! Since the two conditions are actually independent, we can test them in two different <code class="sourceCode cs"><span class="kw">if</span></code> statements!</p>
 </section>
 </section>
-<section id="conditional-operator-optional" class="level1">
-<h1>Conditional Operator (optional)</h1>
+<section id="pushing-further-optional" class="level1">
+<h1>Pushing Further (Optional)</h1>
+<section id="conditional-operator" class="level2">
+<h2>Conditional Operator</h2>
 <p>You were introduced to the conditional operator, which can be used to replace <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statements in particular cases (assignment, call, increment, decrement, and new object expressions). Its structure is:</p>
 <p><code class="sourceCode cs">condition <span class="op">?</span> first_expression <span class="op">:</span> second_expression<span class="op">;</span></code></p>
 <p>You can read more about it <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator">in the documentation</a>.</p>
@@ -387,6 +393,27 @@
 <li>Write a statement that sets <code class="sourceCode cs">initial</code> to <code class="sourceCode cs"><span class="ch">&#39;B&#39;</span></code> if <code class="sourceCode cs">myVar</code> is greater than 500 and to <code class="sourceCode cs"><span class="ch">&#39;S&#39;</span></code> if <code class="sourceCode cs">myVar</code> is less than or equal to 500.</li>
 <li>Write a statement that doubles the value of <code class="sourceCode cs">myVar</code> if <code class="sourceCode cs">day</code> is <code class="sourceCode cs"><span class="st">&quot;Sat.&quot;</span></code> or <code class="sourceCode cs"><span class="st">&quot;Sun.&quot;</span></code> and adds 1 to the value of <code class="sourceCode cs">myVar</code> otherwise.</li>
 </ol>
+</section>
+<section id="computing-entry-price" class="level2">
+<h2>Computing Entry Price</h2>
+<p>You are asked to write a simple program that computes the total price for a group of people to enter a park.</p>
+<p>Your program should:</p>
+<ul>
+<li>Ask the user how many adults and how many children want to enter the park,</li>
+<li>If the group comprises <span class="math inline">6</span> persons or more, offer to sell a group pass for $<span class="math inline">30</span> (that allows everyone in the group to enter the park),</li>
+<li>Compute and display the total price on the screen, knowing that:
+<ul>
+<li>Adults pay $<span class="math inline">7</span>,</li>
+<li>Children pay $<span class="math inline">4</span>,</li>
+<li><em>If</em> purchasing the group pass allowed the group to save money (which isn’t always the case!), you should display on the screen the amount saved.</li>
+</ul></li>
+</ul>
+<p>Some tips:</p>
+<ul>
+<li>When asking “yes” / “no” questions, treat “y” and “Y” as a “Yes”, and any other string as a “No”.</li>
+<li>Note that we will sell the pass even if the user is not gaining money by doing so (for instance, if 6 children want to enter, <span class="math inline">$4 × 6 = $24 &lt; $30</span>, but we would still sell them the pass).</li>
+</ul>
+</section>
 </section>
 </main>
 <footer id="footer">
