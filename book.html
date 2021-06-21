@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 21, 2021 (07:39:23 AM)</p>
+<p class="date">June 21, 2021 (08:03:08 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -358,7 +358,10 @@
 <li><a href="#example-1">Example 1</a></li>
 </ul></li>
 <li><a href="#custom-size-and-values">Custom Size and Values</a></li>
-<li><a href="#changing-the-size">Changing the Size</a></li>
+<li><a href="#changing-the-size">Changing the Size</a>
+<ul>
+<li><a href="#example">Example</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#for-loops">For Loops</a>
 <ul>
@@ -4908,11 +4911,14 @@ Done</code></pre></li>
 </section>
 <section id="changing-the-size" class="level2">
 <h2>Changing the Size</h2>
-<p><code class="sourceCode cs">Array</code> is actually a class, and it comes with methods!</p>
+<p>There is a class named <code class="sourceCode cs">Array</code> that can be used to resize an array. But, note that if you resize an array, you will lose all the current values and the elements will be reset to the data-type default.</p>
+<section id="example" class="level3">
+<h3>Example</h3>
 <div class="sourceCode" id="cb193"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb193-1"><a href="#cb193-1" aria-hidden="true" tabindex="-1"></a>Array<span class="op">.</span><span class="fu">Resize</span><span class="op">(</span><span class="kw">ref</span> myArray<span class="op">,</span> <span class="dv">4</span><span class="op">);</span></span>
 <span id="cb193-2"><a href="#cb193-2" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">3</span><span class="op">]</span> <span class="op">=</span> <span class="dv">40</span><span class="op">;</span></span>
 <span id="cb193-3"><a href="#cb193-3" aria-hidden="true" tabindex="-1"></a>Array<span class="op">.</span><span class="fu">Resize</span><span class="op">(</span><span class="kw">ref</span> myArray<span class="op">,</span> <span class="dv">2</span><span class="op">);</span></span></code></pre></div>
 <p><code class="sourceCode cs">Resize</code> shrinks (and content is lost) and extends (and store the default value, i.e., <span class="math inline">0</span> for <code class="sourceCode cs"><span class="dt">int</span></code>, etc.)!</p>
+</section>
 </section>
 </section>
 <section id="for-loops" class="level1">
