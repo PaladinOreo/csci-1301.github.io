@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 21, 2021 (08:03:08 AM)</p>
+<p class="date">June 21, 2021 (08:15:36 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -355,12 +355,19 @@
 <ul>
 <li><a href="#single-dimensional-arrays">Single-Dimensional Arrays</a>
 <ul>
-<li><a href="#example-1">Example 1</a></li>
+<li><a href="#example">Example</a></li>
 </ul></li>
-<li><a href="#custom-size-and-values">Custom Size and Values</a></li>
+<li><a href="#custom-size-and-values">Custom Size and Values</a>
+<ul>
+<li><a href="#example-1">Example</a></li>
+</ul></li>
+<li><a href="#array-size">Array Size</a>
+<ul>
+<li><a href="#example-2">Example</a></li>
+</ul></li>
 <li><a href="#changing-the-size">Changing the Size</a>
 <ul>
-<li><a href="#example">Example</a></li>
+<li><a href="#example-3">Example</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#for-loops">For Loops</a>
@@ -4852,8 +4859,8 @@ Done</code></pre></li>
 <li>The index of the first element in an array is always zero; the index of the second element is one, and so on.</li>
 <li>If you specify an index greater or equal to the number of elements, a run time error will happen.</li>
 </ul>
-<section id="example-1" class="level3">
-<h3>Example 1</h3>
+<section id="example" class="level3">
+<h3>Example</h3>
 <p>In the following example, we define an array named <em>myArray</em> with three elements of type integer, and assign 10 to the first element, 20 to the second element, and 30 to the last element.</p>
 <div class="sourceCode" id="cb183"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb183-1"><a href="#cb183-1" aria-hidden="true" tabindex="-1"></a> <span class="dt">int</span><span class="op">[]</span> myArray<span class="op">;</span></span>
 <span id="cb183-2"><a href="#cb183-2" aria-hidden="true" tabindex="-1"></a>myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">3</span><span class="op">];</span> <span class="co">// 3 is the size declarator</span></span>
@@ -4889,34 +4896,45 @@ Done</code></pre></li>
 </section>
 <section id="custom-size-and-values" class="level2">
 <h2>Custom Size and Values</h2>
-<div class="sourceCode" id="cb190"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb190-1"><a href="#cb190-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;What is size of the array that you want?&quot;</span><span class="op">);</span></span>
+<p>One of the benefits of arrays is that they allow you to specify the number of their elements at run-time. Hence, depending on the run-time conditions, we can have enough space to store and process values.</p>
+<section id="example-1" class="level3">
+<h3>Example</h3>
+<p>In the following example, we get the number of elements at run-time from the user, create an array with the appropriate size, and fill the array.</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb190-1"><a href="#cb190-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;What is the size of the array that you want?&quot;</span><span class="op">);</span></span>
 <span id="cb190-2"><a href="#cb190-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> size <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
-<span id="cb190-3"><a href="#cb190-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> customArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span>size<span class="op">];</span></span></code></pre></div>
-<p>How can we fill it with values, since we do not know its size? Using iteration!</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb191-1"><a href="#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> counter <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb191-2"><a href="#cb191-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>counter <span class="op">&lt;</span> size<span class="op">)</span></span>
+<span id="cb190-3"><a href="#cb190-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> customArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span>size<span class="op">];</span></span>
+<span id="cb190-4"><a href="#cb190-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb190-5"><a href="#cb190-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> counter <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb190-6"><a href="#cb190-6" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>counter <span class="op">&lt;</span> size<span class="op">)</span></span>
+<span id="cb190-7"><a href="#cb190-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb190-8"><a href="#cb190-8" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Enter the {counter + 1}th value&quot;</span><span class="op">);</span></span>
+<span id="cb190-9"><a href="#cb190-9" aria-hidden="true" tabindex="-1"></a>    customArray<span class="op">[</span>counter<span class="op">]</span> <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb190-10"><a href="#cb190-10" aria-hidden="true" tabindex="-1"></a>    counter<span class="op">++;</span></span>
+<span id="cb190-11"><a href="#cb190-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</section>
+</section>
+<section id="array-size" class="level2">
+<h2>Array Size</h2>
+<p>Every single-dimensional array has a property called <code class="sourceCode cs">Length</code> that returns the number of the elements in the array (or size of the array).</p>
+<p>To process an array that its size is not fixed, we can use this property to find out the number of elements in the array</p>
+<section id="example-2" class="level3">
+<h3>Example</h3>
+<div class="sourceCode" id="cb191"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb191-1"><a href="#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> counter2 <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb191-2"><a href="#cb191-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>counter2 <span class="op">&lt;</span> customArray<span class="op">.</span><span class="fu">Length</span><span class="op">)</span></span>
 <span id="cb191-3"><a href="#cb191-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb191-4"><a href="#cb191-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Enter the {counter + 1}th value&quot;</span><span class="op">);</span></span>
-<span id="cb191-5"><a href="#cb191-5" aria-hidden="true" tabindex="-1"></a>    customArray<span class="op">[</span>counter<span class="op">]</span> <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
-<span id="cb191-6"><a href="#cb191-6" aria-hidden="true" tabindex="-1"></a>    counter<span class="op">++;</span></span>
-<span id="cb191-7"><a href="#cb191-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>We can use <code class="sourceCode cs">length</code>, a property of our <code class="sourceCode cs">array</code>. That is, the integer value <code class="sourceCode cs">myArray<span class="op">.</span><span class="fu">Length</span></code> is the length (= size) of the array, we can access it directly.</p>
-<p>To display an array, we need to iterate as well (this time using the <code class="sourceCode cs">Length</code> property):</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb192-1"><a href="#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> counter2 <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb192-2"><a href="#cb192-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>counter2 <span class="op">&lt;</span> customArray<span class="op">.</span><span class="fu">Length</span><span class="op">)</span></span>
-<span id="cb192-3"><a href="#cb192-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb192-4"><a href="#cb192-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{counter2}: {customArray[counter2]}.&quot;</span><span class="op">);</span></span>
-<span id="cb192-5"><a href="#cb192-5" aria-hidden="true" tabindex="-1"></a>    counter2<span class="op">++;</span></span>
-<span id="cb192-6"><a href="#cb192-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<span id="cb191-4"><a href="#cb191-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{counter2}: {customArray[counter2]}.&quot;</span><span class="op">);</span></span>
+<span id="cb191-5"><a href="#cb191-5" aria-hidden="true" tabindex="-1"></a>    counter2<span class="op">++;</span></span>
+<span id="cb191-6"><a href="#cb191-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</section>
 </section>
 <section id="changing-the-size" class="level2">
 <h2>Changing the Size</h2>
 <p>There is a class named <code class="sourceCode cs">Array</code> that can be used to resize an array. But, note that if you resize an array, you will lose all the current values and the elements will be reset to the data-type default.</p>
-<section id="example" class="level3">
+<section id="example-3" class="level3">
 <h3>Example</h3>
-<div class="sourceCode" id="cb193"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb193-1"><a href="#cb193-1" aria-hidden="true" tabindex="-1"></a>Array<span class="op">.</span><span class="fu">Resize</span><span class="op">(</span><span class="kw">ref</span> myArray<span class="op">,</span> <span class="dv">4</span><span class="op">);</span></span>
-<span id="cb193-2"><a href="#cb193-2" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">3</span><span class="op">]</span> <span class="op">=</span> <span class="dv">40</span><span class="op">;</span></span>
-<span id="cb193-3"><a href="#cb193-3" aria-hidden="true" tabindex="-1"></a>Array<span class="op">.</span><span class="fu">Resize</span><span class="op">(</span><span class="kw">ref</span> myArray<span class="op">,</span> <span class="dv">2</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb192-1"><a href="#cb192-1" aria-hidden="true" tabindex="-1"></a>Array<span class="op">.</span><span class="fu">Resize</span><span class="op">(</span><span class="kw">ref</span> myArray<span class="op">,</span> <span class="dv">4</span><span class="op">);</span></span>
+<span id="cb192-2"><a href="#cb192-2" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">3</span><span class="op">]</span> <span class="op">=</span> <span class="dv">40</span><span class="op">;</span></span>
+<span id="cb192-3"><a href="#cb192-3" aria-hidden="true" tabindex="-1"></a>Array<span class="op">.</span><span class="fu">Resize</span><span class="op">(</span><span class="kw">ref</span> myArray<span class="op">,</span> <span class="dv">2</span><span class="op">);</span></span></code></pre></div>
 <p><code class="sourceCode cs">Resize</code> shrinks (and content is lost) and extends (and store the default value, i.e., <span class="math inline">0</span> for <code class="sourceCode cs"><span class="dt">int</span></code>, etc.)!</p>
 </section>
 </section>
@@ -4929,20 +4947,20 @@ Done</code></pre></li>
 <li><p>Previously, when we learned about loop vocabulary, we looked at counter-controlled <code class="sourceCode cs"><span class="kw">while</span></code> loops</p></li>
 <li><p>Although counter-controlled loops can perform many different kinds of actions in the body of the loop, they all use very similar code for managing the counter variable</p></li>
 <li><p>Two examples of counter-controlled <code class="sourceCode cs"><span class="kw">while</span></code> loops:</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb194-1"><a href="#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb194-2"><a href="#cb194-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb193"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb193-1"><a href="#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb193-2"><a href="#cb193-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">)</span></span>
+<span id="cb193-3"><a href="#cb193-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb193-4"><a href="#cb193-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
+<span id="cb193-5"><a href="#cb193-5" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
+<span id="cb193-6"><a href="#cb193-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb193-7"><a href="#cb193-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Done&quot;</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb194-1"><a href="#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> num <span class="op">=</span> <span class="dv">1</span><span class="op">,</span> total <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb194-2"><a href="#cb194-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>num <span class="op">&lt;=</span> <span class="dv">25</span><span class="op">)</span></span>
 <span id="cb194-3"><a href="#cb194-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb194-4"><a href="#cb194-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
-<span id="cb194-5"><a href="#cb194-5" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
+<span id="cb194-4"><a href="#cb194-4" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> num<span class="op">;</span></span>
+<span id="cb194-5"><a href="#cb194-5" aria-hidden="true" tabindex="-1"></a>    num<span class="op">++;</span></span>
 <span id="cb194-6"><a href="#cb194-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb194-7"><a href="#cb194-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Done&quot;</span><span class="op">);</span></span></code></pre></div>
-<div class="sourceCode" id="cb195"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb195-1"><a href="#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> num <span class="op">=</span> <span class="dv">1</span><span class="op">,</span> total <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb195-2"><a href="#cb195-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>num <span class="op">&lt;=</span> <span class="dv">25</span><span class="op">)</span></span>
-<span id="cb195-3"><a href="#cb195-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb195-4"><a href="#cb195-4" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> num<span class="op">;</span></span>
-<span id="cb195-5"><a href="#cb195-5" aria-hidden="true" tabindex="-1"></a>    num<span class="op">++;</span></span>
-<span id="cb195-6"><a href="#cb195-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb195-7"><a href="#cb195-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The sum is {total}&quot;</span><span class="op">)</span></span></code></pre></div>
+<span id="cb194-7"><a href="#cb194-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The sum is {total}&quot;</span><span class="op">)</span></span></code></pre></div>
 <p>Notice that in both cases, we’ve written the same three pieces of code:</p>
 <ul>
 <li>Initialize a counter variable (<code class="sourceCode cs">i</code> or <code class="sourceCode cs">num</code>) before the loop starts</li>
@@ -4953,11 +4971,11 @@ Done</code></pre></li>
 <li><p><code class="sourceCode cs"><span class="kw">for</span></code> loop example and syntax</p>
 <ul>
 <li><p>This <code class="sourceCode cs"><span class="kw">for</span></code> loop does the same thing as the first of the two <code class="sourceCode cs"><span class="kw">while</span></code> loops above:</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb196-1"><a href="#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb196-2"><a href="#cb196-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb196-3"><a href="#cb196-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
-<span id="cb196-4"><a href="#cb196-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb196-5"><a href="#cb196-5" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Done&quot;</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb195-1"><a href="#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb195-2"><a href="#cb195-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb195-3"><a href="#cb195-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
+<span id="cb195-4"><a href="#cb195-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb195-5"><a href="#cb195-5" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Done&quot;</span><span class="op">);</span></span></code></pre></div>
 <ul>
 <li>The <code class="sourceCode cs"><span class="kw">for</span></code> statement actually contains 3 statements in 1 line; note that they are separated by semicolons</li>
 <li>The code to initialize the counter variable has moved inside the <code class="sourceCode cs"><span class="kw">for</span></code> statement, and appears first</li>
@@ -4965,10 +4983,10 @@ Done</code></pre></li>
 <li>The third statement is the increment operation, <code class="sourceCode cs">i<span class="op">++</span></code>, which no longer needs to be written at the end of the loop body</li>
 </ul></li>
 <li><p>In general, <code class="sourceCode cs"><span class="kw">for</span></code> loops have this syntax:</p>
-<div class="sourceCode" id="cb197"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb197-1"><a href="#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(&lt;</span>initialization<span class="op">&gt;;</span> <span class="op">&lt;</span>condition<span class="op">&gt;;</span> <span class="op">&lt;</span>update<span class="op">&gt;)</span></span>
-<span id="cb197-2"><a href="#cb197-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb197-3"><a href="#cb197-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>statements<span class="op">&gt;</span></span>
-<span id="cb197-4"><a href="#cb197-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb196-1"><a href="#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(&lt;</span>initialization<span class="op">&gt;;</span> <span class="op">&lt;</span>condition<span class="op">&gt;;</span> <span class="op">&lt;</span>update<span class="op">&gt;)</span></span>
+<span id="cb196-2"><a href="#cb196-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb196-3"><a href="#cb196-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>statements<span class="op">&gt;</span></span>
+<span id="cb196-4"><a href="#cb196-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>The initialization statement is executed once, when the program first reaches the loop. This is where you declare and initialize the counter variable.</li>
 <li>The condition statement works exactly the same as a <code class="sourceCode cs"><span class="kw">while</span></code> loop’s condition statement: Before executing the loop’s body, the computer checks the condition, and skips the body (ending the loop) if it is false.</li>
@@ -4993,22 +5011,22 @@ Done</code></pre></li>
 <li><p>When you declare a counter variable in the <code class="sourceCode cs"><span class="kw">for</span></code> statement, its scope is limited to <em>inside</em> the loop</p></li>
 <li><p>Just like method parameters, it’s as if the variable declaration happened just inside the opening <code class="sourceCode cs"><span class="op">{</span></code>, so it can only be accessed inside that code block</p></li>
 <li><p>This means you can’t use a counter variable after the end of the loop. This code will produce a compile error:</p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb198-1"><a href="#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> total <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb198-2"><a href="#cb198-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> count <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> count <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> count<span class="op">++)</span></span>
-<span id="cb198-3"><a href="#cb198-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb198-4"><a href="#cb198-4" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> count<span class="op">;</span></span>
-<span id="cb198-5"><a href="#cb198-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb198-6"><a href="#cb198-6" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The average is {(double) total / count}&quot;</span><span class="op">);</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb197"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb197-1"><a href="#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> total <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb197-2"><a href="#cb197-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> count <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> count <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> count<span class="op">++)</span></span>
+<span id="cb197-3"><a href="#cb197-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb197-4"><a href="#cb197-4" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> count<span class="op">;</span></span>
+<span id="cb197-5"><a href="#cb197-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb197-6"><a href="#cb197-6" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The average is {(double) total / count}&quot;</span><span class="op">);</span></span></code></pre></div></li>
 <li><p>If you want to use the counter variable after the end of the loop, you must declare it <em>before</em> the loop</p></li>
 <li><p>This means your loop’s initialization statement will need to assign the variable its starting value, but not declare it</p></li>
 <li><p>This code works correctly, since <code class="sourceCode cs">count</code> is still in scope after the end of the loop:</p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb199-1"><a href="#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> total <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb199-2"><a href="#cb199-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> count<span class="op">;</span></span>
-<span id="cb199-3"><a href="#cb199-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span>count <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> count <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> count<span class="op">++)</span></span>
-<span id="cb199-4"><a href="#cb199-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb199-5"><a href="#cb199-5" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> count<span class="op">;</span></span>
-<span id="cb199-6"><a href="#cb199-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb199-7"><a href="#cb199-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The average is {(double) total / count}&quot;</span><span class="op">);</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb198"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb198-1"><a href="#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> total <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb198-2"><a href="#cb198-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> count<span class="op">;</span></span>
+<span id="cb198-3"><a href="#cb198-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span>count <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> count <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> count<span class="op">++)</span></span>
+<span id="cb198-4"><a href="#cb198-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb198-5"><a href="#cb198-5" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> count<span class="op">;</span></span>
+<span id="cb198-6"><a href="#cb198-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb198-7"><a href="#cb198-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The average is {(double) total / count}&quot;</span><span class="op">);</span></span></code></pre></div></li>
 </ul></li>
 <li><p>Be sure not to re-declare a variable</p>
 <ul>
@@ -5016,53 +5034,53 @@ Done</code></pre></li>
 <li><p>If you want your counter variable to still be in scope after the end of the loop, you can’t also declare it in the <code class="sourceCode cs"><span class="kw">for</span></code> loop. This is why we had to write <code class="sourceCode cs"><span class="kw">for</span><span class="op">(</span>count <span class="op">=</span> <span class="dv">0</span><span class="op">...</span></code> instead of <code class="sourceCode cs"><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> count <span class="op">=</span> <span class="dv">0</span><span class="op">...</span></code> in the previous example: the name <code class="sourceCode cs">count</code> was already being used.</p></li>
 <li><p>Since counter variables often use short, common names (like <code class="sourceCode cs">i</code> or <code class="sourceCode cs">count</code>), it’s more likely that you’ll accidentally re-use one that’s already in scope</p></li>
 <li><p>For example, you might have a program with many <code class="sourceCode cs"><span class="kw">for</span></code> loops, and in one of them you decide to declare the counter variable outside the loop because you need to use it after the end of the loop. This can cause an error in a different <code class="sourceCode cs"><span class="kw">for</span></code> loop much later in the program:</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb200-1"><a href="#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> total <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb200-2"><a href="#cb200-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i<span class="op">;</span></span>
-<span id="cb200-3"><a href="#cb200-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span>i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb200-4"><a href="#cb200-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb200-5"><a href="#cb200-5" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> i<span class="op">;</span></span>
-<span id="cb200-6"><a href="#cb200-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb200-7"><a href="#cb200-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The average is {(double) total / i}&quot;</span><span class="op">);</span></span>
-<span id="cb200-8"><a href="#cb200-8" aria-hidden="true" tabindex="-1"></a><span class="co">// Many more lines of code</span></span>
-<span id="cb200-9"><a href="#cb200-9" aria-hidden="true" tabindex="-1"></a><span class="co">// ...</span></span>
-<span id="cb200-10"><a href="#cb200-10" aria-hidden="true" tabindex="-1"></a><span class="co">// Some time later:</span></span>
-<span id="cb200-11"><a href="#cb200-11" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb200-12"><a href="#cb200-12" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb200-13"><a href="#cb200-13" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
-<span id="cb200-14"><a href="#cb200-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb199-1"><a href="#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> total <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb199-2"><a href="#cb199-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i<span class="op">;</span></span>
+<span id="cb199-3"><a href="#cb199-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span>i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb199-4"><a href="#cb199-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb199-5"><a href="#cb199-5" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> i<span class="op">;</span></span>
+<span id="cb199-6"><a href="#cb199-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb199-7"><a href="#cb199-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The average is {(double) total / i}&quot;</span><span class="op">);</span></span>
+<span id="cb199-8"><a href="#cb199-8" aria-hidden="true" tabindex="-1"></a><span class="co">// Many more lines of code</span></span>
+<span id="cb199-9"><a href="#cb199-9" aria-hidden="true" tabindex="-1"></a><span class="co">// ...</span></span>
+<span id="cb199-10"><a href="#cb199-10" aria-hidden="true" tabindex="-1"></a><span class="co">// Some time later:</span></span>
+<span id="cb199-11"><a href="#cb199-11" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb199-12"><a href="#cb199-12" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb199-13"><a href="#cb199-13" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
+<span id="cb199-14"><a href="#cb199-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The compiler will produce an error on the second <code class="sourceCode cs"><span class="kw">for</span></code> loop, because the name “i” is already being used.</p></li>
 <li><p>On the other hand, if all of your <code class="sourceCode cs"><span class="kw">for</span></code> loops declare their variables inside the <code class="sourceCode cs"><span class="kw">for</span></code> statement, it’s perfectly fine to reuse the same variable name. This code does not produce any errors:</p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb201-1"><a href="#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> total <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb201-2"><a href="#cb201-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb201-3"><a href="#cb201-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb201-4"><a href="#cb201-4" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> i<span class="op">;</span></span>
-<span id="cb201-5"><a href="#cb201-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb201-6"><a href="#cb201-6" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The total is {total}&quot;</span><span class="op">);</span></span>
-<span id="cb201-7"><a href="#cb201-7" aria-hidden="true" tabindex="-1"></a><span class="co">// Some time later:</span></span>
-<span id="cb201-8"><a href="#cb201-8" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb201-9"><a href="#cb201-9" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb201-10"><a href="#cb201-10" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
-<span id="cb201-11"><a href="#cb201-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb200"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb200-1"><a href="#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> total <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb200-2"><a href="#cb200-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb200-3"><a href="#cb200-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb200-4"><a href="#cb200-4" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> i<span class="op">;</span></span>
+<span id="cb200-5"><a href="#cb200-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb200-6"><a href="#cb200-6" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The total is {total}&quot;</span><span class="op">);</span></span>
+<span id="cb200-7"><a href="#cb200-7" aria-hidden="true" tabindex="-1"></a><span class="co">// Some time later:</span></span>
+<span id="cb200-8"><a href="#cb200-8" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb200-9"><a href="#cb200-9" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb200-10"><a href="#cb200-10" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
+<span id="cb200-11"><a href="#cb200-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 </ul></li>
 <li><p>Be sure not to double-increment the counter</p>
 <ul>
 <li><p>Now that you know about <code class="sourceCode cs"><span class="kw">for</span></code> loops, you may want to convert some of your counter-controlled <code class="sourceCode cs"><span class="kw">while</span></code> loops to <code class="sourceCode cs"><span class="kw">for</span></code> loops</p></li>
 <li><p>Remember that in a <code class="sourceCode cs"><span class="kw">while</span></code> loop the counter must be incremented in the loop body, but in a <code class="sourceCode cs"><span class="kw">for</span></code> loop the increment is part of the loop’s header</p></li>
 <li><p>If you just convert the header of the loop and leave the body the same, you will end up incrementing the counter <em>twice</em> per iteration. For example, if you convert this <code class="sourceCode cs"><span class="kw">while</span></code> loop:</p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb202-1"><a href="#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb202-2"><a href="#cb202-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">)</span></span>
-<span id="cb202-3"><a href="#cb202-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb202-4"><a href="#cb202-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
-<span id="cb202-5"><a href="#cb202-5" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
-<span id="cb202-6"><a href="#cb202-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb202-7"><a href="#cb202-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Done&quot;</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb201-1"><a href="#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb201-2"><a href="#cb201-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">)</span></span>
+<span id="cb201-3"><a href="#cb201-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb201-4"><a href="#cb201-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
+<span id="cb201-5"><a href="#cb201-5" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
+<span id="cb201-6"><a href="#cb201-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb201-7"><a href="#cb201-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Done&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>to this <code class="sourceCode cs"><span class="kw">for</span></code> loop:</p>
-<div class="sourceCode" id="cb203"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb203-1"><a href="#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb203-2"><a href="#cb203-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb203-3"><a href="#cb203-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
-<span id="cb203-4"><a href="#cb203-4" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
-<span id="cb203-5"><a href="#cb203-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb203-6"><a href="#cb203-6" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Done&quot;</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb202-1"><a href="#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb202-2"><a href="#cb202-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb202-3"><a href="#cb202-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
+<span id="cb202-4"><a href="#cb202-4" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
+<span id="cb202-5"><a href="#cb202-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb202-6"><a href="#cb202-6" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Done&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>it will not work correctly, because <code class="sourceCode cs">i</code> will be incremented by both the loop body and the loop’s update statement. The loop will seem to “skip” every other value of <code class="sourceCode cs">i</code>.</p></li>
 </ul></li>
 </ul>
@@ -5073,81 +5091,81 @@ Done</code></pre></li>
 <li><p>The condition in a <code class="sourceCode cs"><span class="kw">for</span></code> loop can be any expression that results in a <code class="sourceCode cs"><span class="dt">bool</span></code> value</p>
 <ul>
 <li><p>If the condition compares the counter to a variable, the number of iterations depends on the variable. If the variable comes from user input, the loop is also user-controlled, like in this example:</p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb204-1"><a href="#cb204-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a positive number.&quot;</span><span class="op">);</span></span>
-<span id="cb204-2"><a href="#cb204-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> numTimes <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
-<span id="cb204-3"><a href="#cb204-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> c <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> c <span class="op">&lt;</span> numTimes<span class="op">;</span> c<span class="op">++)</span></span>
-<span id="cb204-4"><a href="#cb204-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb204-5"><a href="#cb204-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;**********&quot;</span><span class="op">);</span></span>
-<span id="cb204-6"><a href="#cb204-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb203"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb203-1"><a href="#cb203-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a positive number.&quot;</span><span class="op">);</span></span>
+<span id="cb203-2"><a href="#cb203-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> numTimes <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb203-3"><a href="#cb203-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> c <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> c <span class="op">&lt;</span> numTimes<span class="op">;</span> c<span class="op">++)</span></span>
+<span id="cb203-4"><a href="#cb203-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb203-5"><a href="#cb203-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;**********&quot;</span><span class="op">);</span></span>
+<span id="cb203-6"><a href="#cb203-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 <li><p>The condition can compare the counter to the result of a method call. In this case, the method will get called on every iteration of the loop, since the condition is re-evaluated every time the loop returns to the beginning. For example, in this loop:</p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb205-1"><a href="#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;=</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span> myItem<span class="op">.</span><span class="fu">GetPrice</span><span class="op">();</span> i<span class="op">++)</span></span>
-<span id="cb205-2"><a href="#cb205-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb205-3"><a href="#cb205-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;${i}&quot;</span><span class="op">);</span></span>
-<span id="cb205-4"><a href="#cb205-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb204-1"><a href="#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;=</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span> myItem<span class="op">.</span><span class="fu">GetPrice</span><span class="op">();</span> i<span class="op">++)</span></span>
+<span id="cb204-2"><a href="#cb204-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb204-3"><a href="#cb204-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;${i}&quot;</span><span class="op">);</span></span>
+<span id="cb204-4"><a href="#cb204-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>the <code class="sourceCode cs"><span class="fu">GetPrice</span><span class="op">()</span></code> method of <code class="sourceCode cs">myItem</code> will be called every time the condition is evaluated.</p></li>
 </ul></li>
 <li><p>The update statement can be anything, not just an increment operation</p>
 <ul>
 <li><p>For example, you can write a loop that only processes the even numbers like this:</p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb206-1"><a href="#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">19</span><span class="op">;</span> i <span class="op">+=</span> <span class="dv">2</span><span class="op">)</span></span>
-<span id="cb206-2"><a href="#cb206-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb206-3"><a href="#cb206-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
-<span id="cb206-4"><a href="#cb206-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb205"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb205-1"><a href="#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">19</span><span class="op">;</span> i <span class="op">+=</span> <span class="dv">2</span><span class="op">)</span></span>
+<span id="cb205-2"><a href="#cb205-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb205-3"><a href="#cb205-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
+<span id="cb205-4"><a href="#cb205-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 <li><p>You can write a loop that decreases the counter variable on every iteration, like this:</p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb207-1"><a href="#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> t <span class="op">=</span> <span class="dv">10</span><span class="op">;</span> t <span class="op">&gt;</span> <span class="dv">0</span><span class="op">;</span> t<span class="op">--)</span></span>
-<span id="cb207-2"><a href="#cb207-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb207-3"><a href="#cb207-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>$<span class="st">&quot;{t}...&quot;</span><span class="op">);</span></span>
-<span id="cb207-4"><a href="#cb207-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb207-5"><a href="#cb207-5" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Liftoff!&quot;</span><span class="op">);</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb206"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb206-1"><a href="#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> t <span class="op">=</span> <span class="dv">10</span><span class="op">;</span> t <span class="op">&gt;</span> <span class="dv">0</span><span class="op">;</span> t<span class="op">--)</span></span>
+<span id="cb206-2"><a href="#cb206-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb206-3"><a href="#cb206-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>$<span class="st">&quot;{t}...&quot;</span><span class="op">);</span></span>
+<span id="cb206-4"><a href="#cb206-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb206-5"><a href="#cb206-5" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Liftoff!&quot;</span><span class="op">);</span></span></code></pre></div></li>
 </ul></li>
 <li><p>The loop body can contain more complex statements</p>
 <ul>
 <li><p><code class="sourceCode cs"><span class="kw">if</span></code> statements can be nested inside <code class="sourceCode cs"><span class="kw">for</span></code> loops, and they will be evaluated again on every iteration</p></li>
 <li><p>For example, in this program:</p>
-<div class="sourceCode" id="cb208"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb208-1"><a href="#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">8</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb208-2"><a href="#cb208-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb208-3"><a href="#cb208-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb208-4"><a href="#cb208-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb208-5"><a href="#cb208-5" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;It&#39;s my turn&quot;</span><span class="op">);</span></span>
-<span id="cb208-6"><a href="#cb208-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb208-7"><a href="#cb208-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">else</span></span>
-<span id="cb208-8"><a href="#cb208-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb208-9"><a href="#cb208-9" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;It&#39;s your turn&quot;</span><span class="op">);</span></span>
-<span id="cb208-10"><a href="#cb208-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb208-11"><a href="#cb208-11" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Switching players...&quot;</span><span class="op">);</span></span>
-<span id="cb208-12"><a href="#cb208-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb207-1"><a href="#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">8</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb207-2"><a href="#cb207-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb207-3"><a href="#cb207-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb207-4"><a href="#cb207-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb207-5"><a href="#cb207-5" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;It&#39;s my turn&quot;</span><span class="op">);</span></span>
+<span id="cb207-6"><a href="#cb207-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb207-7"><a href="#cb207-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">else</span></span>
+<span id="cb207-8"><a href="#cb207-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb207-9"><a href="#cb207-9" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;It&#39;s your turn&quot;</span><span class="op">);</span></span>
+<span id="cb207-10"><a href="#cb207-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb207-11"><a href="#cb207-11" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Switching players...&quot;</span><span class="op">);</span></span>
+<span id="cb207-12"><a href="#cb207-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>On even-numbered iterations, the computer will display “It’s my turn” followed by “Switching players…”, and on odd-numbered iterations the computer will display “It’s your turn” followed by “Switching players…”</p></li>
 <li><p><code class="sourceCode cs"><span class="kw">for</span></code> loops can contain other <code class="sourceCode cs"><span class="kw">for</span></code> loops. This means the “inner” loop will execute all of its iterations each time the “outer” loop executes one iteration.</p></li>
 <li><p>For example, this program prints a multiplication table:</p>
-<div class="sourceCode" id="cb209"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb209-1"><a href="#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> r <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> r <span class="op">&lt;</span> <span class="dv">11</span><span class="op">;</span> r<span class="op">++)</span></span>
-<span id="cb209-2"><a href="#cb209-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb209-3"><a href="#cb209-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span><span class="op">(</span><span class="dt">int</span> c <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> c <span class="op">&lt;</span> <span class="dv">11</span><span class="op">;</span> c<span class="op">++)</span></span>
-<span id="cb209-4"><a href="#cb209-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb209-5"><a href="#cb209-5" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>$<span class="st">&quot;{r} x {c} = {r * c} </span><span class="sc">\t</span><span class="st">&quot;</span><span class="op">);</span></span>
-<span id="cb209-6"><a href="#cb209-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb209-7"><a href="#cb209-7" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
-<span id="cb209-8"><a href="#cb209-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb208-1"><a href="#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> r <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> r <span class="op">&lt;</span> <span class="dv">11</span><span class="op">;</span> r<span class="op">++)</span></span>
+<span id="cb208-2"><a href="#cb208-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb208-3"><a href="#cb208-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span><span class="op">(</span><span class="dt">int</span> c <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> c <span class="op">&lt;</span> <span class="dv">11</span><span class="op">;</span> c<span class="op">++)</span></span>
+<span id="cb208-4"><a href="#cb208-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb208-5"><a href="#cb208-5" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>$<span class="st">&quot;{r} x {c} = {r * c} </span><span class="sc">\t</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb208-6"><a href="#cb208-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb208-7"><a href="#cb208-7" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb208-8"><a href="#cb208-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The outer loop prints the rows of the table, while the inner loop prints the columns. On a single iteration of the outer <code class="sourceCode cs"><span class="kw">for</span></code> loop (i.e. when <code class="sourceCode cs">r <span class="op">=</span> <span class="dv">2</span></code>), the inner <code class="sourceCode cs"><span class="kw">for</span></code> loop executes its body 11 times, using values of <code class="sourceCode cs">c</code> from 0 to 10. Then the computer executes the <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">)</span></code> to print a newline before the next “row” iteration.</p></li>
 </ul></li>
 <li><p><code class="sourceCode cs"><span class="kw">for</span></code> loops can be combined with <code class="sourceCode cs"><span class="kw">while</span></code> loops</p>
 <ul>
 <li><p><code class="sourceCode cs"><span class="kw">while</span></code> loops are good for sentinel-controlled loops or user-input validation, and <code class="sourceCode cs"><span class="kw">for</span></code> loops are good for counter-controlled loops</p></li>
 <li><p>This program asks the user to enter a number, then uses a <code class="sourceCode cs"><span class="kw">for</span></code> loop to print that number of lines of asterisks:</p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb210-1"><a href="#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> userInput<span class="op">;</span></span>
-<span id="cb210-2"><a href="#cb210-2" aria-hidden="true" tabindex="-1"></a><span class="kw">do</span></span>
-<span id="cb210-3"><a href="#cb210-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb210-4"><a href="#cb210-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a positive number, or </span><span class="sc">\&quot;</span><span class="st">Q</span><span class="sc">\&quot;</span><span class="st"> to stop&quot;</span><span class="op">);</span></span>
-<span id="cb210-5"><a href="#cb210-5" aria-hidden="true" tabindex="-1"></a>    userInput <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
-<span id="cb210-6"><a href="#cb210-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> inputNum<span class="op">;</span></span>
-<span id="cb210-7"><a href="#cb210-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>userInput<span class="op">,</span> <span class="kw">out</span> inputNum<span class="op">);</span></span>
-<span id="cb210-8"><a href="#cb210-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>inputNum <span class="op">&gt;</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb210-9"><a href="#cb210-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb210-10"><a href="#cb210-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span><span class="op">(</span><span class="dt">int</span> c <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> c <span class="op">&lt;</span> inputNum<span class="op">;</span> c<span class="op">++)</span></span>
-<span id="cb210-11"><a href="#cb210-11" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb210-12"><a href="#cb210-12" aria-hidden="true" tabindex="-1"></a>            Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;**********&quot;</span><span class="op">);</span></span>
-<span id="cb210-13"><a href="#cb210-13" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb210-14"><a href="#cb210-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb210-15"><a href="#cb210-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="kw">while</span><span class="op">(</span>userInput <span class="op">!=</span> <span class="st">&quot;Q&quot;</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb209-1"><a href="#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> userInput<span class="op">;</span></span>
+<span id="cb209-2"><a href="#cb209-2" aria-hidden="true" tabindex="-1"></a><span class="kw">do</span></span>
+<span id="cb209-3"><a href="#cb209-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb209-4"><a href="#cb209-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a positive number, or </span><span class="sc">\&quot;</span><span class="st">Q</span><span class="sc">\&quot;</span><span class="st"> to stop&quot;</span><span class="op">);</span></span>
+<span id="cb209-5"><a href="#cb209-5" aria-hidden="true" tabindex="-1"></a>    userInput <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb209-6"><a href="#cb209-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> inputNum<span class="op">;</span></span>
+<span id="cb209-7"><a href="#cb209-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>userInput<span class="op">,</span> <span class="kw">out</span> inputNum<span class="op">);</span></span>
+<span id="cb209-8"><a href="#cb209-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>inputNum <span class="op">&gt;</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb209-9"><a href="#cb209-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb209-10"><a href="#cb209-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span><span class="op">(</span><span class="dt">int</span> c <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> c <span class="op">&lt;</span> inputNum<span class="op">;</span> c<span class="op">++)</span></span>
+<span id="cb209-11"><a href="#cb209-11" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb209-12"><a href="#cb209-12" aria-hidden="true" tabindex="-1"></a>            Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;**********&quot;</span><span class="op">);</span></span>
+<span id="cb209-13"><a href="#cb209-13" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb209-14"><a href="#cb209-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb209-15"><a href="#cb209-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="kw">while</span><span class="op">(</span>userInput <span class="op">!=</span> <span class="st">&quot;Q&quot;</span><span class="op">);</span></span></code></pre></div>
 <ul>
 <li><p>The sentinel value “Q” is used to end the program, so the outer <code class="sourceCode cs"><span class="kw">while</span></code> loop repeats until the user enters this value</p></li>
 <li><p>Once the user enters a number, that number is used in the condition for a <code class="sourceCode cs"><span class="kw">for</span></code> loop that prints lines of asterisks</p></li>
@@ -5164,16 +5182,16 @@ Done</code></pre></li>
 <ul>
 <li><p>Previously, we learned that you can access a single array element using the <code class="sourceCode cs"><span class="op">&lt;</span>array<span class="op">&gt;[&lt;</span>index<span class="op">&gt;]</span></code> syntax. However, it can be tedious to access each element of an array one at a time.</p></li>
 <li><p>For example, consider this code that finds the average of all the elements in an array:</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb211-1"><a href="#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> homeworkGrades <span class="op">=</span> <span class="op">{</span><span class="dv">89</span><span class="op">,</span> <span class="dv">72</span><span class="op">,</span> <span class="dv">88</span><span class="op">,</span> <span class="dv">80</span><span class="op">,</span> <span class="dv">91</span><span class="op">};</span></span>
-<span id="cb211-2"><a href="#cb211-2" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> average <span class="op">=</span> <span class="op">(</span>homeworkGrades<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">+</span> homeworkGrades<span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="op">+</span></span>
-<span id="cb211-3"><a href="#cb211-3" aria-hidden="true" tabindex="-1"></a>    homeworkGrades<span class="op">[</span><span class="dv">2</span><span class="op">]</span> <span class="op">+</span> homeworkGrades<span class="op">[</span><span class="dv">3</span><span class="op">]</span> <span class="op">+</span> homeworkGrades<span class="op">[</span><span class="dv">4</span><span class="op">])</span> <span class="op">/</span> <span class="fl">5.0</span><span class="op">;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb210"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb210-1"><a href="#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> homeworkGrades <span class="op">=</span> <span class="op">{</span><span class="dv">89</span><span class="op">,</span> <span class="dv">72</span><span class="op">,</span> <span class="dv">88</span><span class="op">,</span> <span class="dv">80</span><span class="op">,</span> <span class="dv">91</span><span class="op">};</span></span>
+<span id="cb210-2"><a href="#cb210-2" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> average <span class="op">=</span> <span class="op">(</span>homeworkGrades<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">+</span> homeworkGrades<span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="op">+</span></span>
+<span id="cb210-3"><a href="#cb210-3" aria-hidden="true" tabindex="-1"></a>    homeworkGrades<span class="op">[</span><span class="dv">2</span><span class="op">]</span> <span class="op">+</span> homeworkGrades<span class="op">[</span><span class="dv">3</span><span class="op">]</span> <span class="op">+</span> homeworkGrades<span class="op">[</span><span class="dv">4</span><span class="op">])</span> <span class="op">/</span> <span class="fl">5.0</span><span class="op">;</span></span></code></pre></div></li>
 <li><p>The sum of the array elements repeatedly accesses <code class="sourceCode cs">homeworkGrades<span class="op">[&lt;</span>index<span class="op">&gt;]</span></code> with index values that increment by 1 at a time. This can be written much more concisely by using a variable for the index value, and incrementing the variable in a <code class="sourceCode cs"><span class="kw">for</span></code> loop:</p>
-<div class="sourceCode" id="cb212"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb212-1"><a href="#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb212-2"><a href="#cb212-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">5</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb212-3"><a href="#cb212-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb212-4"><a href="#cb212-4" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> homeworkGrades<span class="op">[</span>i<span class="op">];</span></span>
-<span id="cb212-5"><a href="#cb212-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb212-6"><a href="#cb212-6" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> average <span class="op">=</span> sum <span class="op">/</span> <span class="fl">5.0</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb211-1"><a href="#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb211-2"><a href="#cb211-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">5</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb211-3"><a href="#cb211-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb211-4"><a href="#cb211-4" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> homeworkGrades<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb211-5"><a href="#cb211-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb211-6"><a href="#cb211-6" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> average <span class="op">=</span> sum <span class="op">/</span> <span class="fl">5.0</span><span class="op">;</span></span></code></pre></div>
 <ul>
 <li>In a <code class="sourceCode cs"><span class="kw">for</span></code> loop that iterates over an array, the counter variable is also used as the array index</li>
 <li>The loop condition should ensure that the loop stops on the last index of the array, and doesn’t attempt to access the array with an invalid index</li>
@@ -5181,62 +5199,62 @@ Done</code></pre></li>
 <li>In this case, the array’s length is 5, so the loop condition <code class="sourceCode cs">i <span class="op">&lt;</span> <span class="dv">5</span></code> will ensure that the loop does not execute the body when <code class="sourceCode cs">i</code> equals 5 (it will stop when <code class="sourceCode cs">i</code> equals 4)</li>
 </ul></li>
 <li><p>Using a <code class="sourceCode cs"><span class="kw">for</span></code> loop to access array elements makes it easy to process “the whole array” when the size of the array is user-provided:</p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb213-1"><a href="#cb213-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;How many grades are there?&quot;</span><span class="op">);</span></span>
-<span id="cb213-2"><a href="#cb213-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> numGrades <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
-<span id="cb213-3"><a href="#cb213-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> homeworkGrades <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span>numGrades<span class="op">];</span></span>
-<span id="cb213-4"><a href="#cb213-4" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> numGrades<span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb213-5"><a href="#cb213-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb213-6"><a href="#cb213-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Enter grade for homework {i+1}&quot;</span><span class="op">);</span></span>
-<span id="cb213-7"><a href="#cb213-7" aria-hidden="true" tabindex="-1"></a>    homeworkGrades<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
-<span id="cb213-8"><a href="#cb213-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb212-1"><a href="#cb212-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;How many grades are there?&quot;</span><span class="op">);</span></span>
+<span id="cb212-2"><a href="#cb212-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> numGrades <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb212-3"><a href="#cb212-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> homeworkGrades <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span>numGrades<span class="op">];</span></span>
+<span id="cb212-4"><a href="#cb212-4" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> numGrades<span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb212-5"><a href="#cb212-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb212-6"><a href="#cb212-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Enter grade for homework {i+1}&quot;</span><span class="op">);</span></span>
+<span id="cb212-7"><a href="#cb212-7" aria-hidden="true" tabindex="-1"></a>    homeworkGrades<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb212-8"><a href="#cb212-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>Since the size of the <code class="sourceCode cs">homeworkGrades</code> array depends on user input, we don’t know when writing the program how many elements it has or which indices are valid. It wouldn’t be safe to try to access a specific element like <code class="sourceCode cs">homeworkGrades<span class="op">[</span><span class="dv">4</span><span class="op">]</span></code> because the user might enter a size smaller than 5.</li>
 <li>Using a counter that starts at 0 with the loop condition <code class="sourceCode cs">i <span class="op">&lt;</span> numGrades</code> means the loop body will run once on each element of the array, no matter what the user enters</li>
 <li>Note that since array elements start at 0, but humans usually number their lists starting at 1, the user directions in the loop body display <code class="sourceCode cs"><span class="st">&quot;homework {i+1}&quot;</span></code></li>
 </ul></li>
 <li><p>You can use the <code class="sourceCode cs">Length</code> property of an array to write a loop condition, even if you didn’t store the size of the array in a variable. For example, this code doesn’t need the variable <code class="sourceCode cs">numGrades</code>:</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb214-1"><a href="#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb214-2"><a href="#cb214-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> homeworkGrades<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb214-3"><a href="#cb214-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb214-4"><a href="#cb214-4" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> homeworkGrades<span class="op">[</span>i<span class="op">];</span></span>
-<span id="cb214-5"><a href="#cb214-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb214-6"><a href="#cb214-6" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> average <span class="op">=</span> <span class="op">(</span><span class="dt">double</span><span class="op">)</span> sum <span class="op">/</span> homeworkGrades<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb213"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb213-1"><a href="#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb213-2"><a href="#cb213-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> homeworkGrades<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb213-3"><a href="#cb213-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb213-4"><a href="#cb213-4" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> homeworkGrades<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb213-5"><a href="#cb213-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb213-6"><a href="#cb213-6" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> average <span class="op">=</span> <span class="op">(</span><span class="dt">double</span><span class="op">)</span> sum <span class="op">/</span> homeworkGrades<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span></code></pre></div></li>
 <li><p>In general, as long as the loop condition is in the format <code class="sourceCode cs">i <span class="op">&lt;</span> <span class="op">&lt;</span>arrayName<span class="op">&gt;.</span><span class="fu">Length</span></code> (or, equivalently, <code class="sourceCode cs">i <span class="op">&lt;=</span> <span class="op">&lt;</span>arrayName<span class="op">&gt;.</span><span class="fu">Length</span> <span class="op">-</span> <span class="dv">1</span></code>), the loop will access each element of the array.</p></li>
 </ul></li>
 <li><p>The <code class="sourceCode cs"><span class="kw">foreach</span></code> loop</p>
 <ul>
 <li><p>When writing a <code class="sourceCode cs"><span class="kw">for</span></code> loop that accesses each element of an array once, you will end up writing code like this:</p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb215-1"><a href="#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> myArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb215-2"><a href="#cb215-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb215-3"><a href="#cb215-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span><span class="kw">do</span> something with myArray<span class="op">[</span>i<span class="op">]&gt;;</span></span>
-<span id="cb215-4"><a href="#cb215-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb214"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb214-1"><a href="#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> myArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb214-2"><a href="#cb214-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb214-3"><a href="#cb214-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span><span class="kw">do</span> something with myArray<span class="op">[</span>i<span class="op">]&gt;;</span></span>
+<span id="cb214-4"><a href="#cb214-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 <li><p>In some cases, this code has unnecessary repetition: If you aren’t using the counter <code class="sourceCode cs">i</code> for anything other than an array index, you still need to declare it, increment it, and write the condition with <code class="sourceCode cs">myArray<span class="op">.</span><span class="fu">Length</span></code></p></li>
 <li><p>The <strong>foreach loop</strong> is a shortcut that allows you to get rid of the counter variable and the loop condition. It has this syntax:</p>
-<div class="sourceCode" id="cb216"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb216-1"><a href="#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span><span class="op">(&lt;</span>type<span class="op">&gt;</span> <span class="op">&lt;</span>variableName<span class="op">&gt;</span> <span class="kw">in</span> <span class="op">&lt;</span>arrayName<span class="op">&gt;)</span></span>
-<span id="cb216-2"><a href="#cb216-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb216-3"><a href="#cb216-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span><span class="kw">do</span> something with variable<span class="op">&gt;</span></span>
-<span id="cb216-4"><a href="#cb216-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb215-1"><a href="#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span><span class="op">(&lt;</span>type<span class="op">&gt;</span> <span class="op">&lt;</span>variableName<span class="op">&gt;</span> <span class="kw">in</span> <span class="op">&lt;</span>arrayName<span class="op">&gt;)</span></span>
+<span id="cb215-2"><a href="#cb215-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb215-3"><a href="#cb215-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span><span class="kw">do</span> something with variable<span class="op">&gt;</span></span>
+<span id="cb215-4"><a href="#cb215-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>The loop will repeat exactly as many times as there are elements in the array</li>
 <li>On each iteration of the loop, the variable will be assigned the next value from the array, in order</li>
 <li>The variable must be the same type as the array</li>
 </ul></li>
 <li><p>For example, this loop accesses each element of <code class="sourceCode cs">homeworkGrades</code> and computes their sum:</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb217-1"><a href="#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb217-2"><a href="#cb217-2" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span><span class="op">(</span><span class="dt">int</span> grade <span class="kw">in</span> homeworkGrades<span class="op">)</span></span>
-<span id="cb217-3"><a href="#cb217-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb217-4"><a href="#cb217-4" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> grade<span class="op">;</span></span>
-<span id="cb217-5"><a href="#cb217-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb216-1"><a href="#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb216-2"><a href="#cb216-2" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span><span class="op">(</span><span class="dt">int</span> grade <span class="kw">in</span> homeworkGrades<span class="op">)</span></span>
+<span id="cb216-3"><a href="#cb216-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb216-4"><a href="#cb216-4" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> grade<span class="op">;</span></span>
+<span id="cb216-5"><a href="#cb216-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>The variable <code class="sourceCode cs">grade</code> is declared with type <code class="sourceCode cs"><span class="dt">int</span></code> since <code class="sourceCode cs">homeworkGrades</code> is an array of <code class="sourceCode cs"><span class="dt">int</span></code></li>
 <li><code class="sourceCode cs">grade</code> has a scope limited to the body of the loop, just like the counter variable <code class="sourceCode cs">i</code></li>
 <li>In successive iterations of the loop <code class="sourceCode cs">grade</code> will have the value <code class="sourceCode cs">homeworkGrades<span class="op">[</span><span class="dv">0</span><span class="op">]</span></code>, then <code class="sourceCode cs">homeworkGrades<span class="op">[</span><span class="dv">1</span><span class="op">]</span></code>, and so on, through <code class="sourceCode cs">homeworkGrades<span class="op">[</span>homeworkGrades<span class="op">.</span><span class="fu">Length</span> <span class="op">-</span> <span class="dv">1</span><span class="op">]</span></code></li>
 </ul></li>
 <li><p>A <code class="sourceCode cs"><span class="kw">foreach</span></code> loop is <strong>read-only</strong> with respect to the array: The loop’s variable cannot be used to <em>change</em> any elements of the array. This code will result in an error:</p>
-<div class="sourceCode" id="cb218"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb218-1"><a href="#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span><span class="op">(</span><span class="dt">int</span> grade <span class="kw">in</span> homeworkGrades<span class="op">)</span></span>
-<span id="cb218-2"><a href="#cb218-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb218-3"><a href="#cb218-3" aria-hidden="true" tabindex="-1"></a>    grade <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
-<span id="cb218-4"><a href="#cb218-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb217"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb217-1"><a href="#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span><span class="op">(</span><span class="dt">int</span> grade <span class="kw">in</span> homeworkGrades<span class="op">)</span></span>
+<span id="cb217-2"><a href="#cb217-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb217-3"><a href="#cb217-3" aria-hidden="true" tabindex="-1"></a>    grade <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb217-4"><a href="#cb217-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 </ul></li>
 </ul>
 </section>
@@ -5248,15 +5266,15 @@ Done</code></pre></li>
 <li><p>Sometimes, you want to write a loop that will skip some iterations if a certain condition is met</p></li>
 <li><p>For example, you may be writing a <code class="sourceCode cs"><span class="kw">for</span></code> loop that iterates through an array of numbers, but you only want to use <em>even</em> numbers from the array</p></li>
 <li><p>One way to accomplish this is to nest an <code class="sourceCode cs"><span class="kw">if</span></code> statement inside the <code class="sourceCode cs"><span class="kw">for</span></code> loop that checks for the desired condition. For example:</p>
-<div class="sourceCode" id="cb219"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb219-1"><a href="#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb219-2"><a href="#cb219-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> myArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb219-3"><a href="#cb219-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb219-4"><a href="#cb219-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>myArray<span class="op">[</span>i<span class="op">]</span> <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb219-5"><a href="#cb219-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb219-6"><a href="#cb219-6" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myArray<span class="op">[</span>i<span class="op">]);</span></span>
-<span id="cb219-7"><a href="#cb219-7" aria-hidden="true" tabindex="-1"></a>        sum <span class="op">+=</span> myArray<span class="op">[</span>i<span class="op">];</span></span>
-<span id="cb219-8"><a href="#cb219-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb219-9"><a href="#cb219-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb218-1"><a href="#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb218-2"><a href="#cb218-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> myArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb218-3"><a href="#cb218-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb218-4"><a href="#cb218-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>myArray<span class="op">[</span>i<span class="op">]</span> <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb218-5"><a href="#cb218-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb218-6"><a href="#cb218-6" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myArray<span class="op">[</span>i<span class="op">]);</span></span>
+<span id="cb218-7"><a href="#cb218-7" aria-hidden="true" tabindex="-1"></a>        sum <span class="op">+=</span> myArray<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb218-8"><a href="#cb218-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb218-9"><a href="#cb218-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Since the entire body of the <code class="sourceCode cs"><span class="kw">for</span></code> loop is contained within an <code class="sourceCode cs"><span class="kw">if</span></code> statement, the iterations where <code class="sourceCode cs">myArray<span class="op">[</span>i<span class="op">]</span></code> is odd will skip the body and do nothing.</p></li>
 </ul></li>
 <li><p>Skipping iterations with <code class="sourceCode cs"><span class="kw">continue</span></code></p>
@@ -5268,14 +5286,14 @@ Done</code></pre></li>
 </ul></li>
 <li><p>A <code class="sourceCode cs"><span class="kw">continue</span><span class="op">;</span></code> statement inside an <code class="sourceCode cs"><span class="kw">if</span></code> statement will end the current iteration only if that condition is true</p></li>
 <li><p>For example, this code will skip the odd numbers in <code class="sourceCode cs">myArray</code> and use only the even numbers:</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb220-1"><a href="#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb220-2"><a href="#cb220-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> myArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb220-3"><a href="#cb220-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb220-4"><a href="#cb220-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>myArray<span class="op">[</span>i<span class="op">]</span> <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb220-5"><a href="#cb220-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">continue</span><span class="op">;</span></span>
-<span id="cb220-6"><a href="#cb220-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myArray<span class="op">[</span>i<span class="op">]);</span></span>
-<span id="cb220-7"><a href="#cb220-7" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> myArray<span class="op">[</span>i<span class="op">];</span></span>
-<span id="cb220-8"><a href="#cb220-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb219-1"><a href="#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb219-2"><a href="#cb219-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> myArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb219-3"><a href="#cb219-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb219-4"><a href="#cb219-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>myArray<span class="op">[</span>i<span class="op">]</span> <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb219-5"><a href="#cb219-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">continue</span><span class="op">;</span></span>
+<span id="cb219-6"><a href="#cb219-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myArray<span class="op">[</span>i<span class="op">]);</span></span>
+<span id="cb219-7"><a href="#cb219-7" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> myArray<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb219-8"><a href="#cb219-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>If <code class="sourceCode cs">myArray<span class="op">[</span>i<span class="op">]</span></code> is odd, the computer will execute the <code class="sourceCode cs"><span class="kw">continue</span></code> statement and immediately start the next iteration of the loop. This means that the rest of the loop body (the other two statements) only gets executed if <code class="sourceCode cs">myArray<span class="op">[</span>i<span class="op">]</span></code> is even.</p></li>
 <li><p>Using a <code class="sourceCode cs"><span class="kw">continue</span></code> statement instead of putting the entire body within an <code class="sourceCode cs"><span class="kw">if</span></code> statement can reduce the amount of indentation in your code, and it can sometimes make your code’s logic clearer.</p></li>
 </ul></li>
@@ -5284,15 +5302,15 @@ Done</code></pre></li>
 <li><p>More advanced loops may have multiple conditions that affect whether the loop should continue</p></li>
 <li><p>Attempting to combine all of these conditions in the loop condition (i.e. the expression after <code class="sourceCode cs"><span class="kw">while</span></code>) can make the loop more complicated</p></li>
 <li><p>For example, consider a loop that processes user input, which should end either when a sentinel value is encountered or when the input is invalid. This loop ends if the user enters a negative number (the sentinel value) or a non-numeric string:</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb221-1"><a href="#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> userNum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb221-2"><a href="#cb221-2" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> success <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
-<span id="cb221-3"><a href="#cb221-3" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>success <span class="op">&amp;&amp;</span> userNum <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb221-4"><a href="#cb221-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb221-5"><a href="#cb221-5" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> userNum<span class="op">;</span></span>
-<span id="cb221-6"><a href="#cb221-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a positive number to add it. &quot;</span></span>
-<span id="cb221-7"><a href="#cb221-7" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> <span class="st">&quot;Enter anything else to stop.&quot;</span><span class="op">);</span></span>
-<span id="cb221-8"><a href="#cb221-8" aria-hidden="true" tabindex="-1"></a>    success <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">(),</span> <span class="kw">out</span> userNum<span class="op">);</span></span>
-<span id="cb221-9"><a href="#cb221-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb220-1"><a href="#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> userNum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb220-2"><a href="#cb220-2" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> success <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb220-3"><a href="#cb220-3" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>success <span class="op">&amp;&amp;</span> userNum <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb220-4"><a href="#cb220-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb220-5"><a href="#cb220-5" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> userNum<span class="op">;</span></span>
+<span id="cb220-6"><a href="#cb220-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a positive number to add it. &quot;</span></span>
+<span id="cb220-7"><a href="#cb220-7" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> <span class="st">&quot;Enter anything else to stop.&quot;</span><span class="op">);</span></span>
+<span id="cb220-8"><a href="#cb220-8" aria-hidden="true" tabindex="-1"></a>    success <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">(),</span> <span class="kw">out</span> userNum<span class="op">);</span></span>
+<span id="cb220-9"><a href="#cb220-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>The condition <code class="sourceCode cs">success <span class="op">&amp;&amp;</span> userNum <span class="op">&gt;=</span> <span class="dv">0</span></code> is true if the user entered a valid number that was not negative</li>
 <li>In order to write this condition, we needed to declare the extra variable <code class="sourceCode cs">success</code> to keep track of the result of <code class="sourceCode cs"><span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span></code></li>
@@ -5308,28 +5326,28 @@ Done</code></pre></li>
 <li>In both cases it has the same meaning: stop execution here and skip to the end of this code block (the ending <code class="sourceCode cs"><span class="op">}</span></code> for the <code class="sourceCode cs"><span class="kw">switch</span></code> or the loop)</li>
 </ul></li>
 <li><p>Using a <code class="sourceCode cs"><span class="kw">break</span></code> statement inside an <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statement, we can rewrite the previous <code class="sourceCode cs"><span class="kw">while</span></code> loop so that the variable <code class="sourceCode cs">success</code> is not needed:</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb222-1"><a href="#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> userNum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb222-2"><a href="#cb222-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>userNum <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb222-3"><a href="#cb222-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb222-4"><a href="#cb222-4" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> userNum<span class="op">;</span></span>
-<span id="cb222-5"><a href="#cb222-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a positive number. &quot;</span></span>
-<span id="cb222-6"><a href="#cb222-6" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> <span class="st">&quot;Enter anything else to stop.&quot;</span><span class="op">);</span></span>
-<span id="cb222-7"><a href="#cb222-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(!</span><span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">(),</span> <span class="kw">out</span> userNum<span class="op">))</span></span>
-<span id="cb222-8"><a href="#cb222-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb222-9"><a href="#cb222-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb221-1"><a href="#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> userNum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb221-2"><a href="#cb221-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>userNum <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb221-3"><a href="#cb221-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb221-4"><a href="#cb221-4" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">+=</span> userNum<span class="op">;</span></span>
+<span id="cb221-5"><a href="#cb221-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a positive number. &quot;</span></span>
+<span id="cb221-6"><a href="#cb221-6" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> <span class="st">&quot;Enter anything else to stop.&quot;</span><span class="op">);</span></span>
+<span id="cb221-7"><a href="#cb221-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(!</span><span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">(),</span> <span class="kw">out</span> userNum<span class="op">))</span></span>
+<span id="cb221-8"><a href="#cb221-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb221-9"><a href="#cb221-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>Inside the body of the loop, the return value of <code class="sourceCode cs">TryParse</code> can be used directly in an <code class="sourceCode cs"><span class="kw">if</span></code> statement instead of assigning it to the <code class="sourceCode cs">success</code> variable</li>
 <li>If <code class="sourceCode cs">TryParse</code> fails, the <code class="sourceCode cs"><span class="kw">break</span></code> statement will end the loop, so there is no need to add <code class="sourceCode cs">success</code> to the <code class="sourceCode cs"><span class="kw">while</span></code> condition</li>
 </ul></li>
 <li><p>We can also use the <code class="sourceCode cs"><span class="kw">break</span></code> statement with a <code class="sourceCode cs"><span class="kw">for</span></code> loop, if there are some cases where the loop should end before the counter reaches its last value</p></li>
 <li><p>For example, imagine that our program is given an <code class="sourceCode cs"><span class="dt">int</span></code> array that a user <em>partially</em> filled with numbers, and we need to find their product. The “unused” entries at the end of the array are all 0 (the default value of <code class="sourceCode cs"><span class="dt">int</span></code>), so the <code class="sourceCode cs"><span class="kw">for</span></code> loop needs to stop before the end of the array if it encounters a 0. A <code class="sourceCode cs"><span class="kw">break</span></code> statement can accomplish this:</p>
-<div class="sourceCode" id="cb223"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb223-1"><a href="#cb223-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> product <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb223-2"><a href="#cb223-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> myArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb223-3"><a href="#cb223-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb223-4"><a href="#cb223-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>myArray<span class="op">[</span>i<span class="op">]</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb223-5"><a href="#cb223-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb223-6"><a href="#cb223-6" aria-hidden="true" tabindex="-1"></a>    product <span class="op">*=</span> myArray<span class="op">[</span>i<span class="op">];</span></span>
-<span id="cb223-7"><a href="#cb223-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb222-1"><a href="#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> product <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb222-2"><a href="#cb222-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> myArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb222-3"><a href="#cb222-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb222-4"><a href="#cb222-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>myArray<span class="op">[</span>i<span class="op">]</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb222-5"><a href="#cb222-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb222-6"><a href="#cb222-6" aria-hidden="true" tabindex="-1"></a>    product <span class="op">*=</span> myArray<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb222-7"><a href="#cb222-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>If <code class="sourceCode cs">myArray<span class="op">[</span>i<span class="op">]</span></code> is 0, the loop stops before it can multiply the product by 0</li>
 <li>If all of the array entries are nonzero, though, the loop continues until <code class="sourceCode cs">i</code> is equal to <code class="sourceCode cs">myArray<span class="op">.</span><span class="fu">Length</span></code></li>
@@ -5345,15 +5363,15 @@ Done</code></pre></li>
 <section id="static" class="level1">
 <h1>Static</h1>
 <p>When we write:</p>
-<div class="sourceCode" id="cb224"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb224-1"><a href="#cb224-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Math<span class="op">.</span><span class="fu">PI</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb223"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb223-1"><a href="#cb223-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Math<span class="op">.</span><span class="fu">PI</span><span class="op">);</span></span></code></pre></div>
 <p>The <code class="sourceCode cs">Math</code> actually refers to <em>a class</em>, and not to <em>an object</em>. How is that?</p>
 <p>Actually, everything in the <code class="sourceCode cs">MATH</code> class is <em>static</em> (<code class="sourceCode cs"><span class="kw">public</span> <span class="kw">static</span> <span class="kw">class</span> Math</code>), and the <code class="sourceCode cs">PI</code> constant is actually public! (<code class="sourceCode cs"><span class="kw">public</span> <span class="dt">const</span> <span class="dt">double</span> PI</code>).</p>
 <p>Class attribute: can be static or not, public or private, a constant or variable.</p>
-<div class="sourceCode" id="cb225"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb225-1"><a href="#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">const</span> <span class="dt">double</span> PI <span class="op">=</span> <span class="fl">3.14159265358979</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb224-1"><a href="#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">const</span> <span class="dt">double</span> PI <span class="op">=</span> <span class="fl">3.14159265358979</span><span class="op">;</span></span></code></pre></div>
 <p>We also have static methods:</p>
-<div class="sourceCode" id="cb226"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb226-1"><a href="#cb226-1" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Min</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span>
-<span id="cb226-2"><a href="#cb226-2" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Max</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span>
-<span id="cb226-3"><a href="#cb226-3" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Pow</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb225-1"><a href="#cb225-1" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Min</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span>
+<span id="cb225-2"><a href="#cb225-2" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Max</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span>
+<span id="cb225-3"><a href="#cb225-3" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Pow</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span></code></pre></div>
 <p>A static member (variable, method, etc) belongs to the type of an object rather than to an instance of that type.</p>
 <section id="static-class-members" class="level2">
 <h2>Static Class Members</h2>
@@ -5403,49 +5421,49 @@ Done</code></pre></li>
 </section>
 <section id="a-static-class-for-arrays" class="level1">
 <h1>A Static Class for Arrays</h1>
+<div class="sourceCode" id="cb226"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb226-1"><a href="#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
+<span id="cb226-2"><a href="#cb226-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="kw">class</span> Lib</span>
+<span id="cb226-3"><a href="#cb226-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb226-4"><a href="#cb226-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">public</span> <span class="kw">static</span> <span class="dt">int</span> <span class="fu">ValueIsIndex</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP<span class="op">)</span></span>
+<span id="cb226-5"><a href="#cb226-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb226-6"><a href="#cb226-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> res <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb226-7"><a href="#cb226-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> arrayP<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb226-8"><a href="#cb226-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>arrayP<span class="op">[</span>i<span class="op">]</span> <span class="op">==</span> i<span class="op">)</span> res<span class="op">++;</span></span>
+<span id="cb226-9"><a href="#cb226-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> res<span class="op">;</span></span>
+<span id="cb226-10"><a href="#cb226-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb226-11"><a href="#cb226-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb226-12"><a href="#cb226-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">bool</span> <span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP<span class="op">)</span></span>
+<span id="cb226-13"><a href="#cb226-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb226-14"><a href="#cb226-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> <span class="op">(</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayP<span class="op">)</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">);</span></span>
+<span id="cb226-15"><a href="#cb226-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb226-16"><a href="#cb226-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb226-17"><a href="#cb226-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">int</span> <span class="fu">ValueMatch</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP1<span class="op">,</span> <span class="dt">int</span><span class="op">[]</span> arrayP2<span class="op">)</span></span>
+<span id="cb226-18"><a href="#cb226-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb226-19"><a href="#cb226-19" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> res <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb226-20"><a href="#cb226-20" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> smallestSize<span class="op">;</span></span>
+<span id="cb226-21"><a href="#cb226-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>arrayP1<span class="op">.</span><span class="fu">Length</span> <span class="op">&lt;</span> arrayP2<span class="op">.</span><span class="fu">Length</span><span class="op">)</span> smallestSize <span class="op">=</span> arrayP1<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span>
+<span id="cb226-22"><a href="#cb226-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span> smallestSize <span class="op">=</span> arrayP2<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span>
+<span id="cb226-23"><a href="#cb226-23" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> smallestSize<span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb226-24"><a href="#cb226-24" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>arrayP1<span class="op">[</span>i<span class="op">]</span> <span class="op">==</span> arrayP2<span class="op">[</span>i<span class="op">])</span> res<span class="op">++;</span></span>
+<span id="cb226-25"><a href="#cb226-25" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> res<span class="op">;</span></span>
+<span id="cb226-26"><a href="#cb226-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb226-27"><a href="#cb226-27" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <div class="sourceCode" id="cb227"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb227-1"><a href="#cb227-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
-<span id="cb227-2"><a href="#cb227-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="kw">class</span> Lib</span>
+<span id="cb227-2"><a href="#cb227-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Program</span>
 <span id="cb227-3"><a href="#cb227-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb227-4"><a href="#cb227-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">public</span> <span class="kw">static</span> <span class="dt">int</span> <span class="fu">ValueIsIndex</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP<span class="op">)</span></span>
-<span id="cb227-5"><a href="#cb227-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb227-6"><a href="#cb227-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> res <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb227-7"><a href="#cb227-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> arrayP<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb227-8"><a href="#cb227-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>arrayP<span class="op">[</span>i<span class="op">]</span> <span class="op">==</span> i<span class="op">)</span> res<span class="op">++;</span></span>
-<span id="cb227-9"><a href="#cb227-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> res<span class="op">;</span></span>
-<span id="cb227-10"><a href="#cb227-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb227-11"><a href="#cb227-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb227-12"><a href="#cb227-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">bool</span> <span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP<span class="op">)</span></span>
-<span id="cb227-13"><a href="#cb227-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb227-14"><a href="#cb227-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> <span class="op">(</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayP<span class="op">)</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">);</span></span>
-<span id="cb227-15"><a href="#cb227-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb227-16"><a href="#cb227-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb227-17"><a href="#cb227-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">int</span> <span class="fu">ValueMatch</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP1<span class="op">,</span> <span class="dt">int</span><span class="op">[]</span> arrayP2<span class="op">)</span></span>
-<span id="cb227-18"><a href="#cb227-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb227-19"><a href="#cb227-19" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> res <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb227-20"><a href="#cb227-20" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> smallestSize<span class="op">;</span></span>
-<span id="cb227-21"><a href="#cb227-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>arrayP1<span class="op">.</span><span class="fu">Length</span> <span class="op">&lt;</span> arrayP2<span class="op">.</span><span class="fu">Length</span><span class="op">)</span> smallestSize <span class="op">=</span> arrayP1<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span>
-<span id="cb227-22"><a href="#cb227-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span> smallestSize <span class="op">=</span> arrayP2<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span>
-<span id="cb227-23"><a href="#cb227-23" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> smallestSize<span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb227-24"><a href="#cb227-24" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>arrayP1<span class="op">[</span>i<span class="op">]</span> <span class="op">==</span> arrayP2<span class="op">[</span>i<span class="op">])</span> res<span class="op">++;</span></span>
-<span id="cb227-25"><a href="#cb227-25" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> res<span class="op">;</span></span>
-<span id="cb227-26"><a href="#cb227-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb227-27"><a href="#cb227-27" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<div class="sourceCode" id="cb228"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb228-1"><a href="#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
-<span id="cb228-2"><a href="#cb228-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Program</span>
-<span id="cb228-3"><a href="#cb228-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb228-4"><a href="#cb228-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">(</span><span class="dt">string</span><span class="op">[]</span> args<span class="op">)</span></span>
-<span id="cb228-5"><a href="#cb228-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb228-6"><a href="#cb228-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span><span class="op">[]</span> arrayA <span class="op">=</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">12</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">8</span> <span class="op">};</span></span>
-<span id="cb228-7"><a href="#cb228-7" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayA<span class="op">));</span></span>
-<span id="cb228-8"><a href="#cb228-8" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span>arrayA<span class="op">));</span></span>
-<span id="cb228-9"><a href="#cb228-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb228-10"><a href="#cb228-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span><span class="op">[]</span> arrayB <span class="op">=</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">12</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">8</span> <span class="op">};</span></span>
-<span id="cb228-11"><a href="#cb228-11" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayB<span class="op">));</span></span>
-<span id="cb228-12"><a href="#cb228-12" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span>arrayB<span class="op">));</span></span>
-<span id="cb228-13"><a href="#cb228-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb228-14"><a href="#cb228-14" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueMatch</span><span class="op">(</span>arrayA<span class="op">,</span> arrayB<span class="op">));</span></span>
-<span id="cb228-15"><a href="#cb228-15" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb228-16"><a href="#cb228-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<span id="cb227-4"><a href="#cb227-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">(</span><span class="dt">string</span><span class="op">[]</span> args<span class="op">)</span></span>
+<span id="cb227-5"><a href="#cb227-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb227-6"><a href="#cb227-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span><span class="op">[]</span> arrayA <span class="op">=</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">12</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">8</span> <span class="op">};</span></span>
+<span id="cb227-7"><a href="#cb227-7" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayA<span class="op">));</span></span>
+<span id="cb227-8"><a href="#cb227-8" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span>arrayA<span class="op">));</span></span>
+<span id="cb227-9"><a href="#cb227-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb227-10"><a href="#cb227-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span><span class="op">[]</span> arrayB <span class="op">=</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">12</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">8</span> <span class="op">};</span></span>
+<span id="cb227-11"><a href="#cb227-11" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayB<span class="op">));</span></span>
+<span id="cb227-12"><a href="#cb227-12" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span>arrayB<span class="op">));</span></span>
+<span id="cb227-13"><a href="#cb227-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb227-14"><a href="#cb227-14" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueMatch</span><span class="op">(</span>arrayA<span class="op">,</span> arrayB<span class="op">));</span></span>
+<span id="cb227-15"><a href="#cb227-15" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb227-16"><a href="#cb227-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
 </section>
 <section class="footnotes" role="doc-endnotes">
 <hr />
