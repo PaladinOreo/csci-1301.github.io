@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 21, 2021 (11:47:47 AM)</p>
+<p class="date">June 21, 2021 (12:20:49 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -377,7 +377,10 @@
 <li><a href="#for-loops-with-arrays">For Loops With Arrays</a></li>
 <li><a href="#break-and-continue"><code class="sourceCode cs"><span class="kw">break</span></code> and <code class="sourceCode cs"><span class="kw">continue</span></code></a></li>
 </ul></li>
-<li><a href="#foreach-loop">foreach Loop</a></li>
+<li><a href="#foreach-loop">foreach Loop</a>
+<ul>
+<li><a href="#syntax">Syntax</a></li>
+</ul></li>
 <li><a href="#static">Static</a>
 <ul>
 <li><a href="#static-class-members">Static Class Members</a></li>
@@ -5360,20 +5363,33 @@ Done</code></pre></li>
 </section>
 <section id="foreach-loop" class="level1">
 <h1>foreach Loop</h1>
-<p>TODO</p>
+<p>In C#, some objects can store several other objects. Arrays are one of them. The <code class="sourceCode cs"><span class="kw">foreach</span></code> statement provides an easy way to execute a statement or a block of statements for each element stored in an object.</p>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
+<p>The general syntax of using the <em>foreach</em> statement is as follow:</p>
+<div class="sourceCode" id="cb223"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb223-1"><a href="#cb223-1" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span><span class="op">(</span>Type ItemName <span class="kw">in</span> CollectionName<span class="op">)</span></span>
+<span id="cb223-2"><a href="#cb223-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb223-3"><a href="#cb223-3" aria-hidden="true" tabindex="-1"></a>   <span class="co">// the code for processing the ItemName</span></span>
+<span id="cb223-4"><a href="#cb223-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ul>
+<li>#Type#: The type of items in the collection</li>
+<li>#ItemName#: The chosen item is accessible using ItemName</li>
+<li>#CollectionName#: The name of the collection</li>
+</ul>
+</section>
 </section>
 <section id="static" class="level1">
 <h1>Static</h1>
 <p>When we write:</p>
-<div class="sourceCode" id="cb223"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb223-1"><a href="#cb223-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Math<span class="op">.</span><span class="fu">PI</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb224-1"><a href="#cb224-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Math<span class="op">.</span><span class="fu">PI</span><span class="op">);</span></span></code></pre></div>
 <p>The <code class="sourceCode cs">Math</code> actually refers to <em>a class</em>, and not to <em>an object</em>. How is that?</p>
 <p>Actually, everything in the <code class="sourceCode cs">MATH</code> class is <em>static</em> (<code class="sourceCode cs"><span class="kw">public</span> <span class="kw">static</span> <span class="kw">class</span> Math</code>), and the <code class="sourceCode cs">PI</code> constant is actually public! (<code class="sourceCode cs"><span class="kw">public</span> <span class="dt">const</span> <span class="dt">double</span> PI</code>).</p>
 <p>Class attribute: can be static or not, public or private, a constant or variable.</p>
-<div class="sourceCode" id="cb224"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb224-1"><a href="#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">const</span> <span class="dt">double</span> PI <span class="op">=</span> <span class="fl">3.14159265358979</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb225-1"><a href="#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">const</span> <span class="dt">double</span> PI <span class="op">=</span> <span class="fl">3.14159265358979</span><span class="op">;</span></span></code></pre></div>
 <p>We also have static methods:</p>
-<div class="sourceCode" id="cb225"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb225-1"><a href="#cb225-1" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Min</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span>
-<span id="cb225-2"><a href="#cb225-2" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Max</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span>
-<span id="cb225-3"><a href="#cb225-3" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Pow</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb226-1"><a href="#cb226-1" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Min</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span>
+<span id="cb226-2"><a href="#cb226-2" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Max</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span>
+<span id="cb226-3"><a href="#cb226-3" aria-hidden="true" tabindex="-1"></a>Math<span class="op">.</span><span class="fu">Pow</span><span class="op">(</span>x<span class="op">,</span>y<span class="op">);</span></span></code></pre></div>
 <p>A static member (variable, method, etc) belongs to the type of an object rather than to an instance of that type.</p>
 <section id="static-class-members" class="level2">
 <h2>Static Class Members</h2>
@@ -5423,49 +5439,49 @@ Done</code></pre></li>
 </section>
 <section id="a-static-class-for-arrays" class="level1">
 <h1>A Static Class for Arrays</h1>
-<div class="sourceCode" id="cb226"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb226-1"><a href="#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
-<span id="cb226-2"><a href="#cb226-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="kw">class</span> Lib</span>
-<span id="cb226-3"><a href="#cb226-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb226-4"><a href="#cb226-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">public</span> <span class="kw">static</span> <span class="dt">int</span> <span class="fu">ValueIsIndex</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP<span class="op">)</span></span>
-<span id="cb226-5"><a href="#cb226-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb226-6"><a href="#cb226-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> res <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb226-7"><a href="#cb226-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> arrayP<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb226-8"><a href="#cb226-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>arrayP<span class="op">[</span>i<span class="op">]</span> <span class="op">==</span> i<span class="op">)</span> res<span class="op">++;</span></span>
-<span id="cb226-9"><a href="#cb226-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> res<span class="op">;</span></span>
-<span id="cb226-10"><a href="#cb226-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb226-11"><a href="#cb226-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb226-12"><a href="#cb226-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">bool</span> <span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP<span class="op">)</span></span>
-<span id="cb226-13"><a href="#cb226-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb226-14"><a href="#cb226-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> <span class="op">(</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayP<span class="op">)</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">);</span></span>
-<span id="cb226-15"><a href="#cb226-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb226-16"><a href="#cb226-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb226-17"><a href="#cb226-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">int</span> <span class="fu">ValueMatch</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP1<span class="op">,</span> <span class="dt">int</span><span class="op">[]</span> arrayP2<span class="op">)</span></span>
-<span id="cb226-18"><a href="#cb226-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb226-19"><a href="#cb226-19" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> res <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb226-20"><a href="#cb226-20" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> smallestSize<span class="op">;</span></span>
-<span id="cb226-21"><a href="#cb226-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>arrayP1<span class="op">.</span><span class="fu">Length</span> <span class="op">&lt;</span> arrayP2<span class="op">.</span><span class="fu">Length</span><span class="op">)</span> smallestSize <span class="op">=</span> arrayP1<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span>
-<span id="cb226-22"><a href="#cb226-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span> smallestSize <span class="op">=</span> arrayP2<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span>
-<span id="cb226-23"><a href="#cb226-23" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> smallestSize<span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb226-24"><a href="#cb226-24" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>arrayP1<span class="op">[</span>i<span class="op">]</span> <span class="op">==</span> arrayP2<span class="op">[</span>i<span class="op">])</span> res<span class="op">++;</span></span>
-<span id="cb226-25"><a href="#cb226-25" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> res<span class="op">;</span></span>
-<span id="cb226-26"><a href="#cb226-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb226-27"><a href="#cb226-27" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <div class="sourceCode" id="cb227"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb227-1"><a href="#cb227-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
-<span id="cb227-2"><a href="#cb227-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Program</span>
+<span id="cb227-2"><a href="#cb227-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="kw">class</span> Lib</span>
 <span id="cb227-3"><a href="#cb227-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb227-4"><a href="#cb227-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">(</span><span class="dt">string</span><span class="op">[]</span> args<span class="op">)</span></span>
-<span id="cb227-5"><a href="#cb227-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb227-6"><a href="#cb227-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span><span class="op">[]</span> arrayA <span class="op">=</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">12</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">8</span> <span class="op">};</span></span>
-<span id="cb227-7"><a href="#cb227-7" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayA<span class="op">));</span></span>
-<span id="cb227-8"><a href="#cb227-8" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span>arrayA<span class="op">));</span></span>
-<span id="cb227-9"><a href="#cb227-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb227-10"><a href="#cb227-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span><span class="op">[]</span> arrayB <span class="op">=</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">12</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">8</span> <span class="op">};</span></span>
-<span id="cb227-11"><a href="#cb227-11" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayB<span class="op">));</span></span>
-<span id="cb227-12"><a href="#cb227-12" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span>arrayB<span class="op">));</span></span>
-<span id="cb227-13"><a href="#cb227-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb227-14"><a href="#cb227-14" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueMatch</span><span class="op">(</span>arrayA<span class="op">,</span> arrayB<span class="op">));</span></span>
-<span id="cb227-15"><a href="#cb227-15" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb227-16"><a href="#cb227-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<span id="cb227-4"><a href="#cb227-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">public</span> <span class="kw">static</span> <span class="dt">int</span> <span class="fu">ValueIsIndex</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP<span class="op">)</span></span>
+<span id="cb227-5"><a href="#cb227-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb227-6"><a href="#cb227-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> res <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb227-7"><a href="#cb227-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> arrayP<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb227-8"><a href="#cb227-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>arrayP<span class="op">[</span>i<span class="op">]</span> <span class="op">==</span> i<span class="op">)</span> res<span class="op">++;</span></span>
+<span id="cb227-9"><a href="#cb227-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> res<span class="op">;</span></span>
+<span id="cb227-10"><a href="#cb227-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb227-11"><a href="#cb227-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb227-12"><a href="#cb227-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">bool</span> <span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP<span class="op">)</span></span>
+<span id="cb227-13"><a href="#cb227-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb227-14"><a href="#cb227-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> <span class="op">(</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayP<span class="op">)</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">);</span></span>
+<span id="cb227-15"><a href="#cb227-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb227-16"><a href="#cb227-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb227-17"><a href="#cb227-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">int</span> <span class="fu">ValueMatch</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arrayP1<span class="op">,</span> <span class="dt">int</span><span class="op">[]</span> arrayP2<span class="op">)</span></span>
+<span id="cb227-18"><a href="#cb227-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb227-19"><a href="#cb227-19" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> res <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb227-20"><a href="#cb227-20" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> smallestSize<span class="op">;</span></span>
+<span id="cb227-21"><a href="#cb227-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>arrayP1<span class="op">.</span><span class="fu">Length</span> <span class="op">&lt;</span> arrayP2<span class="op">.</span><span class="fu">Length</span><span class="op">)</span> smallestSize <span class="op">=</span> arrayP1<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span>
+<span id="cb227-22"><a href="#cb227-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span> smallestSize <span class="op">=</span> arrayP2<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span>
+<span id="cb227-23"><a href="#cb227-23" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> smallestSize<span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb227-24"><a href="#cb227-24" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>arrayP1<span class="op">[</span>i<span class="op">]</span> <span class="op">==</span> arrayP2<span class="op">[</span>i<span class="op">])</span> res<span class="op">++;</span></span>
+<span id="cb227-25"><a href="#cb227-25" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> res<span class="op">;</span></span>
+<span id="cb227-26"><a href="#cb227-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb227-27"><a href="#cb227-27" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb228-1"><a href="#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
+<span id="cb228-2"><a href="#cb228-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Program</span>
+<span id="cb228-3"><a href="#cb228-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb228-4"><a href="#cb228-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">(</span><span class="dt">string</span><span class="op">[]</span> args<span class="op">)</span></span>
+<span id="cb228-5"><a href="#cb228-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb228-6"><a href="#cb228-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span><span class="op">[]</span> arrayA <span class="op">=</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">12</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">8</span> <span class="op">};</span></span>
+<span id="cb228-7"><a href="#cb228-7" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayA<span class="op">));</span></span>
+<span id="cb228-8"><a href="#cb228-8" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span>arrayA<span class="op">));</span></span>
+<span id="cb228-9"><a href="#cb228-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb228-10"><a href="#cb228-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span><span class="op">[]</span> arrayB <span class="op">=</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">12</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">8</span> <span class="op">};</span></span>
+<span id="cb228-11"><a href="#cb228-11" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueIsIndex</span><span class="op">(</span>arrayB<span class="op">));</span></span>
+<span id="cb228-12"><a href="#cb228-12" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">AtLeastOneValueIsIndex</span><span class="op">(</span>arrayB<span class="op">));</span></span>
+<span id="cb228-13"><a href="#cb228-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb228-14"><a href="#cb228-14" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueMatch</span><span class="op">(</span>arrayA<span class="op">,</span> arrayB<span class="op">));</span></span>
+<span id="cb228-15"><a href="#cb228-15" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb228-16"><a href="#cb228-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
 </section>
 <section class="footnotes" role="doc-endnotes">
 <hr />
