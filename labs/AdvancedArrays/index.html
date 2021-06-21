@@ -19,7 +19,7 @@
   <meta property="og:image" content="../../android-chrome-512x512.png" />
   <meta name="author" content="https://csci-1301.github.io/about#authors" />
   <meta name="keywords" content="Computer Science, Problem solving methods, Augusta University, Bachelor of Science, C# Programming language" />
-  <title>Arrays Manipulation</title>
+  <title>Advanced Arrays</title>
   <style>
     html {
       line-height: 1.5;
@@ -245,13 +245,13 @@
     </div>
 </header>
 <header id="title-block-header">
-<h1 class="title">Arrays Manipulation</h1>
+<h1 class="title">Advanced Arrays</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 21, 2021 (04:15:44 PM)</p>
+<p class="date">June 21, 2021 (05:45:52 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#array-manipulation-practice-advanced">Array Manipulation Practice (Advanced)</a>
+<li><a href="#array-manipulation-practice">Array Manipulation Practice</a>
 <ul>
 <li><a href="#set-up">Set-Up</a></li>
 <li><a href="#your-goal">Your goal</a></li>
@@ -259,27 +259,37 @@
 <li><a href="#pushing-further-optional">Pushing Further (Optional)</a></li>
 </ul>
 </nav>
-<section id="array-manipulation-practice-advanced" class="level1">
-<h1>Array Manipulation Practice (Advanced)</h1>
+<section id="array-manipulation-practice" class="level1">
+<h1>Array Manipulation Practice</h1>
+<p>Read the following instructions (“set-up” and “your goal”) completely and carefully before starting.</p>
 <section id="set-up" class="level2">
 <h2>Set-Up</h2>
 <p>For this exercise:</p>
 <ul>
-<li>Download and extract <a href="ArrayManipulation.zip">the ArrayManiplutaion project</a>. It contains two .cs files, <code class="sourceCode cs">ArrayLib<span class="op">.</span><span class="fu">cs</span></code> and <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code>.</li>
+<li>Download and extract <a href="ArrayManipulation.zip">ArrayManipulation</a> project.</li>
+<li>It contains two .cs files, <code class="sourceCode cs">ArrayLib<span class="op">.</span><span class="fu">cs</span></code> and <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code>.</li>
 <li>Compile and execute it.</li>
-<li>Observe <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code>: this is a <em>test program</em> that you <strong>should not modify</strong>. It will be useful to test the methods that you will be writing in the <code class="sourceCode cs">ArrayLib<span class="op">.</span><span class="fu">cs</span></code> class file. For each method, this program displays the expected value, and what is actually returned. As you can see, only the <code class="sourceCode cs">Display</code> method seems to be always correct.</li>
-<li>Now, read <code class="sourceCode cs">ArrayLib<span class="op">.</span><span class="fu">cs</span></code>. Every method used by <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code> has a header, but all the bodies are returning “default” values or do nothing, with the exception of <code class="sourceCode cs">Display</code>. This last method was written for you.</li>
+<li>Observe <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code>: this is a <em>test program</em> that you <strong>should not modify</strong>. It will be useful to test the methods that you will be writing in the <code class="sourceCode cs">ArrayLib<span class="op">.</span><span class="fu">cs</span></code> class file. For each method, this program displays the expected value, and what is actually returned. As you can see, only the <code class="sourceCode cs">Display</code> method seems to be always correct.<br />
+</li>
+<li>Now, read <code class="sourceCode cs">ArrayLib<span class="op">.</span><span class="fu">cs</span></code>. Every method used by <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code> has a header, but all the bodies are returning “default” values or do nothing, with the exception of <code class="sourceCode cs">Display</code>. This method was written for you.</li>
 </ul>
 </section>
 <section id="your-goal" class="level2">
 <h2>Your goal</h2>
-<p>Your goal is to write the body of the methods in the <code class="sourceCode cs">ArrayLib</code> class. You should not change their headers. Modify only their bodies, so that they return the “right” values, according to their description (in comments after their headers) and the test given in <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code>. You can change their order within <code class="sourceCode cs">ArrayLib</code>, and you can write them in any order. Some of them are actually easier to write, and they are not the first ones: can you find a method that seems easy enough to start your project?</p>
-<p>If you have the time and interest, have a look at the challenges offered at the end of the <code class="sourceCode cs">ArrayLib<span class="op">.</span><span class="fu">cs</span></code> file. You can find a possible solution <a href="ArrayManipulationSolution.zip">in this archive</a>.</p>
+<ul>
+<li>Your goal is to write the body of the methods in the <code class="sourceCode cs">ArrayLib</code> class.</li>
+<li>Do not change any method headers in <code class="sourceCode cs">ArrayLib</code> class.</li>
+<li>Modify only method bodies, so that they return the “right” values, according to their description (in comments after their headers) and the test given in <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code>.</li>
+<li>You can change their order within <code class="sourceCode cs">ArrayLib</code>, and you can implement them in any order.</li>
+<li>Some of them are actually easier to write, and they are not the first ones: can you find a method that seems easy enough to start your project?</li>
+</ul>
+<p>If you have the time and interest, have a look at the challenges offered at the end of the <code class="sourceCode cs">ArrayLib<span class="op">.</span><span class="fu">cs</span></code> file.</p>
+<p>You can find a possible solution <a href="Solution_ArrayManipulation.zip">in this archive</a>.</p>
 </section>
 </section>
 <section id="pushing-further-optional" class="level1">
 <h1>Pushing Further (Optional)</h1>
-<p>Here, we will explore the difference between value and reference types. We have mentioned this concept in class several times, but we have not used it in the programs we have written so far. Since arrays are reference types, however, it is now more important for you to understand how reference types work.</p>
+<p>Here, we will explore the difference between value and reference types. Since arrays are reference types, it is important for you to understand how reference types work.</p>
 <p>Let us show why this notion is so critical with an example:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> arrayA <span class="op">=</span> <span class="op">{</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span> <span class="op">};</span>  <span class="co">// Declare a simple array of integers</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
