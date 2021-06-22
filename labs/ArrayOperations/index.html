@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Operations on Arrays</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 21, 2021 (08:00:30 PM)</p>
+<p class="date">June 21, 2021 (08:05:02 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -311,13 +311,13 @@
 </section>
 <section id="working-with-two-arrays" class="level1">
 <h1>Working with two arrays</h1>
-<p>For this part of lab, lets create two <code class="sourceCode cs"><span class="dt">char</span></code> arrays, with following values:</p>
+<p>For this part of lab, create two <code class="sourceCode cs"><span class="dt">char</span></code> arrays, with following values:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span><span class="op">[]</span> chars1 <span class="op">=</span> <span class="op">{</span><span class="ch">&#39;K&#39;</span><span class="op">,</span> <span class="ch">&#39;s&#39;</span><span class="op">,</span> <span class="ch">&#39;Q&#39;</span><span class="op">,</span> <span class="ch">&#39;U&#39;</span><span class="op">,</span> <span class="ch">&#39;i&#39;</span><span class="op">,</span> <span class="ch">&#39;N&#39;</span><span class="op">,</span> <span class="ch">&#39;K&#39;</span><span class="op">,</span> <span class="ch">&#39;N&#39;</span><span class="op">,</span> <span class="ch">&#39;h&#39;</span><span class="op">,</span> <span class="ch">&#39;t&#39;</span><span class="op">,</span> <span class="ch">&#39;u&#39;</span><span class="op">};</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span><span class="op">[]</span> chars2 <span class="op">=</span> <span class="op">{</span><span class="ch">&#39;?&#39;</span><span class="op">,</span> <span class="ch">&#39;E&#39;</span><span class="op">,</span> <span class="ch">&#39;U&#39;</span><span class="op">,</span> <span class="ch">&#39;a&#39;</span><span class="op">,</span> <span class="ch">&#39;j&#39;</span><span class="op">,</span> <span class="ch">&#39;X&#39;</span><span class="op">,</span> <span class="ch">&#39;L&#39;</span><span class="op">,</span> <span class="ch">&#39;G&#39;</span><span class="op">,</span> <span class="ch">&#39;@&#39;</span><span class="op">,</span> <span class="ch">&#39;L&#39;</span><span class="op">,</span> <span class="ch">&#39;l&#39;</span><span class="op">,</span> <span class="ch">&#39;C&#39;</span><span class="op">,</span> <span class="ch">&#39;w&#39;</span><span class="op">,</span> <span class="ch">&#39;J&#39;</span><span class="op">,</span> <span class="ch">&#39;U&#39;</span> <span class="op">};</span></span></code></pre></div>
-<p>Next, write statements that answer the following questions:</p>
+<p>Next, write statements that answer the these two questions:</p>
 <ol>
 <li>Does value <code class="sourceCode cs">w</code> occur in both arrays (true/false)?</li>
-<li>What is the first value (searching left to right) that occurs in both arrays?</li>
+<li>What is the first value that occurs in both arrays (searching left to right)?</li>
 </ol>
 <p>After completing these two problems, make sure the program answers these questions correctly. The expected results are:</p>
 <ul>
@@ -328,11 +328,12 @@
 <div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span><span class="op">[]</span> chars1 <span class="op">=</span> <span class="op">{</span><span class="ch">&#39;s&#39;</span><span class="op">,</span> <span class="ch">&#39;p&#39;</span><span class="op">,</span> <span class="ch">&#39;d&#39;</span><span class="op">,</span> <span class="ch">&#39;P&#39;</span><span class="op">,</span> <span class="ch">&#39;y&#39;</span><span class="op">,</span> <span class="ch">&#39;D&#39;</span><span class="op">,</span> <span class="ch">&#39;w&#39;</span><span class="op">,</span> <span class="ch">&#39;?&#39;</span><span class="op">};</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span><span class="op">[]</span> chars2 <span class="op">=</span> <span class="op">{</span><span class="ch">&#39;V&#39;</span><span class="op">,</span> <span class="ch">&#39;D&#39;</span><span class="op">,</span> <span class="ch">&#39;l&#39;</span><span class="op">,</span> <span class="ch">&#39;P&#39;</span><span class="op">,</span> <span class="ch">&#39;w&#39;</span><span class="op">,</span> <span class="ch">&#39;O&#39;</span><span class="op">,</span> <span class="ch">&#39;y&#39;</span><span class="op">,</span> <span class="ch">&#39;k&#39;</span><span class="op">,</span> <span class="ch">&#39;D&#39;</span><span class="op">,</span> <span class="ch">&#39;Z&#39;</span> <span class="op">};</span></span></code></pre></div>
 <p>Then run the program again.</p>
-<p>Ideally, after changing array values, the program should not crash and should still produce correct results:</p>
+<p>Ideally the program should not crash and should still produce correct results:</p>
 <ul>
 <li>Does <code class="sourceCode cs">w</code> occur in both arrays -&gt; <code class="sourceCode cs"><span class="kw">true</span></code></li>
 <li>first value that occurs in both arrays -&gt; <code class="sourceCode cs">P</code></li>
 </ul>
+<p>If the program does not produce these expected answers after changing the array values, review your program and try to determine how to write a solution that works for *any* array values.</p>
 </section>
 </main>
 <footer id="footer">
