@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">foreach</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 22, 2021 (04:16:48 AM)</p>
+<p class="date">June 22, 2021 (04:33:10 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -255,8 +255,8 @@
 <ul>
 <li><a href="#problem-1">Problem 1</a></li>
 <li><a href="#problem-2">Problem 2</a></li>
-<li><a href="#problem-3">problem 3</a></li>
-<li><a href="#problem-4">Problem 4</a></li>
+<li><a href="#problem-4">problem 4</a></li>
+<li><a href="#problem-5">Problem 5</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -290,66 +290,67 @@
 <section id="problem-2" class="level2">
 <h2>Problem 2</h2>
 <ul>
-<li>Can you rewrite the following code with <code class="sourceCode cs"><span class="kw">foreach</span></code> statement? Why?</li>
+<li>Create a new project and replace the content of the file <em>Program.cs</em> with the following code:</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> <span class="op">[]</span> numbers <span class="op">=</span> <span class="op">{</span><span class="fl">1.2</span><span class="op">,</span> <span class="fl">4.3</span><span class="op">,</span> <span class="fl">5.7</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="op">-</span><span class="fl">3.13</span><span class="op">,</span> <span class="fl">1.7</span><span class="op">}</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span> numbers<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">namespace</span> Practice</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    numbers<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> numbers<span class="op">[</span>i<span class="op">]</span> <span class="op">*</span> <span class="fl">1.1</span><span class="op">;</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>numbers<span class="op">[</span>i<span class="op">]);</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-</section>
-<section id="problem-3" class="level2">
-<h2>problem 3</h2>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Book</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">public</span> <span class="dt">string</span> Title<span class="op">;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">public</span> <span class="dt">int</span> Year<span class="op">;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">public</span> <span class="dt">string</span> Publisher<span class="op">;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Program</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">(</span><span class="dt">string</span><span class="op">[]</span> args<span class="op">)</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>            Book<span class="op">[]</span> bookList <span class="op">=</span> <span class="kw">new</span> Book<span class="op">[</span><span class="dv">10</span><span class="op">];</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>                Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Enter the book title:&quot;</span><span class="op">);</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>                bookList<span class="op">[</span>i<span class="op">].</span><span class="fu">Title</span> <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>                Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Enter the publish year:&quot;</span><span class="op">);</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>                bookList<span class="op">[</span>i<span class="op">].</span><span class="fu">Year</span> <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>                Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Enter the publisher:&quot;</span><span class="op">);</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>                bookList<span class="op">[</span>i<span class="op">].</span><span class="fu">Publisher</span> <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <ul>
-<li>Can you rewrite the following code with <code class="sourceCode cs"><span class="kw">foreach</span></code> statement? Why?</li>
+<li><p>As you notice, in the above code we define an array of 10 Book objects, and using a <em>for</em> loop, we accommodate the array.</p></li>
+<li><p>Replace the <em>for</em> statement with <em>foreach</em> statement and apply the required changes.</p></li>
+<li><p>Add a piece of code that, using a <em>foreach</em> statement, gets a year from the user and prints all the books published in the given year.</p></li>
+<li><p>Add a piece of code that, using a <em>for</em> statement, gets a year from the user and prints all the books published in the given year.</p></li>
+<li><p><em>foreach</em> or <em>for</em>? Which one do you prefer to implement the above search? Explain your answer. ## Problem 3</p></li>
+<li><p>Can you rewrite the following code with <code class="sourceCode cs"><span class="kw">foreach</span></code> statement? Why?</p></li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> <span class="op">[]</span> numbers <span class="op">=</span> <span class="op">{</span><span class="fl">1.2</span><span class="op">,</span> <span class="fl">4.3</span><span class="op">,</span> <span class="fl">5.7</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="op">-</span><span class="fl">3.13</span><span class="op">,</span> <span class="fl">1.7</span><span class="op">}</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span> numbers<span class="op">.</span><span class="fu">Length</span> <span class="op">-</span> <span class="dv">1</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span>   </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">((</span>numbers<span class="op">[</span>i<span class="op">]</span> <span class="op">+</span> numbers<span class="op">[</span>i<span class="op">+</span><span class="dv">1</span><span class="op">]</span> <span class="op">)/</span><span class="dv">2</span><span class="op">);</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span> numbers<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    numbers<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> numbers<span class="op">[</span>i<span class="op">]</span> <span class="op">*</span> <span class="fl">1.1</span><span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>numbers<span class="op">[</span>i<span class="op">]);</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="problem-4" class="level2">
-<h2>Problem 4</h2>
+<h2>problem 4</h2>
 <ul>
-<li>Create a new project and replace the content of the file <em>Program.cs</em> with the following code:</li>
+<li>Can you rewrite the following code with <code class="sourceCode cs"><span class="kw">foreach</span></code> statement? Why?</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> <span class="op">[]</span> numbers <span class="op">=</span> <span class="op">{</span><span class="fl">1.2</span><span class="op">,</span> <span class="fl">4.3</span><span class="op">,</span> <span class="fl">5.7</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="op">-</span><span class="fl">3.13</span><span class="op">,</span> <span class="fl">1.7</span><span class="op">}</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">namespace</span> Practice</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Book</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">public</span> <span class="dt">string</span> Title<span class="op">;</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">public</span> <span class="dt">int</span> Year<span class="op">;</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">public</span> <span class="dt">string</span> Publisher<span class="op">;</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Program</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">(</span><span class="dt">string</span><span class="op">[]</span> args<span class="op">)</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>            Book<span class="op">[]</span> bookList <span class="op">=</span> <span class="kw">new</span> Book<span class="op">[</span><span class="dv">10</span><span class="op">];</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>                Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Enter the book title:&quot;</span><span class="op">);</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                bookList<span class="op">[</span>i<span class="op">].</span><span class="fu">Title</span> <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Enter the publish year:&quot;</span><span class="op">);</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                bookList<span class="op">[</span>i<span class="op">].</span><span class="fu">Year</span> <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Enter the publisher:&quot;</span><span class="op">);</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>                bookList<span class="op">[</span>i<span class="op">].</span><span class="fu">Publisher</span> <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span> numbers<span class="op">.</span><span class="fu">Length</span> <span class="op">-</span> <span class="dv">1</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span>   </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">((</span>numbers<span class="op">[</span>i<span class="op">]</span> <span class="op">+</span> numbers<span class="op">[</span>i<span class="op">+</span><span class="dv">1</span><span class="op">]</span> <span class="op">)/</span><span class="dv">2</span><span class="op">);</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</section>
+<section id="problem-5" class="level2">
+<h2>Problem 5</h2>
 <ul>
-<li>As you notice, in the above code we define an array of 10 Book objects, and using a <em>for</em> loop, we accommodate the array.</li>
-<li>Replace the <em>for</em> statement with <em>foreach</em> statement and apply the required changes.</li>
-<li>Add a piece of code that, using a <em>foreach</em> statement, gets a year from the user and prints all the books published in the given year.</li>
-<li>Add a piece of code that, using a <em>for</em> statement, gets a year from the user and prints all the books published in the given year.</li>
-<li><em>foreach</em> or <em>for</em>? Which one do you prefer to implement the above search? Explain your answer.</li>
+<li>Can you think of any loops that are implementable by <em>foreach</em> but not with <em>for</em>?</li>
 </ul>
 </section>
 </section>
