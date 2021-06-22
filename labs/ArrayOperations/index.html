@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Operations on Arrays</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 21, 2021 (08:33:44 PM)</p>
+<p class="date">June 21, 2021 (08:43:00 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -315,9 +315,9 @@
 <p>For this part, declare and initialize the following two <code class="sourceCode cs"><span class="dt">char</span></code> arrays:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span><span class="op">[]</span> chars1 <span class="op">=</span> <span class="op">{</span><span class="ch">&#39;K&#39;</span><span class="op">,</span> <span class="ch">&#39;s&#39;</span><span class="op">,</span> <span class="ch">&#39;Q&#39;</span><span class="op">,</span> <span class="ch">&#39;U&#39;</span><span class="op">,</span> <span class="ch">&#39;i&#39;</span><span class="op">,</span> <span class="ch">&#39;N&#39;</span><span class="op">,</span> <span class="ch">&#39;K&#39;</span><span class="op">,</span> <span class="ch">&#39;N&#39;</span><span class="op">,</span> <span class="ch">&#39;h&#39;</span><span class="op">,</span> <span class="ch">&#39;t&#39;</span><span class="op">,</span> <span class="ch">&#39;u&#39;</span><span class="op">};</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span><span class="op">[]</span> chars2 <span class="op">=</span> <span class="op">{</span><span class="ch">&#39;?&#39;</span><span class="op">,</span> <span class="ch">&#39;E&#39;</span><span class="op">,</span> <span class="ch">&#39;U&#39;</span><span class="op">,</span> <span class="ch">&#39;a&#39;</span><span class="op">,</span> <span class="ch">&#39;j&#39;</span><span class="op">,</span> <span class="ch">&#39;X&#39;</span><span class="op">,</span> <span class="ch">&#39;L&#39;</span><span class="op">,</span> <span class="ch">&#39;G&#39;</span><span class="op">,</span> <span class="ch">&#39;@&#39;</span><span class="op">,</span> <span class="ch">&#39;L&#39;</span><span class="op">,</span> <span class="ch">&#39;l&#39;</span><span class="op">,</span> <span class="ch">&#39;C&#39;</span><span class="op">,</span> <span class="ch">&#39;w&#39;</span><span class="op">,</span> <span class="ch">&#39;J&#39;</span><span class="op">,</span> <span class="ch">&#39;U&#39;</span> <span class="op">};</span></span></code></pre></div>
-<p>Next, write statements that answer the these two questions:</p>
+<p>Next, write statements that answer these two questions:</p>
 <ol>
-<li>Does value <code class="sourceCode cs"><span class="ch">&#39;w&#39;</span></code> occur in both arrays (display true/false)?</li>
+<li>Does value <code class="sourceCode cs"><span class="ch">&#39;w&#39;</span></code> occur in both arrays? Display the answer, true/false.</li>
 <li>What is the first value that occurs in both arrays, searching from left to right? If none is found, display <code class="sourceCode cs">no match</code>.</li>
 </ol>
 <p>After completing these two problems, make sure the program answers these questions correctly. The expected results are:</p>
@@ -325,11 +325,11 @@
 <li>Does <code class="sourceCode cs"><span class="ch">&#39;w&#39;</span></code> occur in both arrays -&gt; <code class="sourceCode cs"><span class="kw">false</span></code></li>
 <li>first value that occurs in both arrays -&gt; <code class="sourceCode cs"><span class="ch">&#39;U&#39;</span></code></li>
 </ul>
-<p>Again, evaluate your work by changing the array initialization to:</p>
+<p>Again, evaluate your work by changing the array initializations to:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span><span class="op">[]</span> chars1 <span class="op">=</span> <span class="op">{</span><span class="ch">&#39;s&#39;</span><span class="op">,</span> <span class="ch">&#39;p&#39;</span><span class="op">,</span> <span class="ch">&#39;d&#39;</span><span class="op">,</span> <span class="ch">&#39;P&#39;</span><span class="op">,</span> <span class="ch">&#39;y&#39;</span><span class="op">,</span> <span class="ch">&#39;D&#39;</span><span class="op">,</span> <span class="ch">&#39;w&#39;</span><span class="op">,</span> <span class="ch">&#39;?&#39;</span><span class="op">};</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span><span class="op">[]</span> chars2 <span class="op">=</span> <span class="op">{</span><span class="ch">&#39;V&#39;</span><span class="op">,</span> <span class="ch">&#39;D&#39;</span><span class="op">,</span> <span class="ch">&#39;l&#39;</span><span class="op">,</span> <span class="ch">&#39;P&#39;</span><span class="op">,</span> <span class="ch">&#39;w&#39;</span><span class="op">,</span> <span class="ch">&#39;O&#39;</span><span class="op">,</span> <span class="ch">&#39;y&#39;</span><span class="op">,</span> <span class="ch">&#39;k&#39;</span><span class="op">,</span> <span class="ch">&#39;D&#39;</span><span class="op">,</span> <span class="ch">&#39;Z&#39;</span> <span class="op">};</span></span></code></pre></div>
 <p>Then run the program again.</p>
-<p>Ideally the program does not crash and should still produce correct results:</p>
+<p>Ideally the program does not crash and should still produce correct answers:</p>
 <ul>
 <li>Does <code class="sourceCode cs"><span class="ch">&#39;w&#39;</span></code> occur in both arrays -&gt; <code class="sourceCode cs"><span class="kw">true</span></code></li>
 <li>first value that occurs in both arrays -&gt; <code class="sourceCode cs"><span class="ch">&#39;P&#39;</span></code></li>
