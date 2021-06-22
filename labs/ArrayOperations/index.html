@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Operations on Arrays</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 21, 2021 (08:17:21 PM)</p>
+<p class="date">June 21, 2021 (08:22:29 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -265,7 +265,7 @@
 <section id="operations-on-numeric-arrays" class="level1">
 <h1>Operations on numeric arrays</h1>
 <p>Start by creating a new C# solution.</p>
-<p>After creating the solution, declare and initialize an int array called <code class="sourceCode cs">numbers</code>. Initialize the array so that it holds the following values, in the same order:</p>
+<p>After creating the solution, declare and initialize an <code class="sourceCode cs"><span class="dt">int</span></code> array called <code class="sourceCode cs">numbers</code>. Initialize the array so that it holds the following values, in the same order:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">6</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">8</span><span class="op">,</span> <span class="dv">6</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">9</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">9</span><span class="op">,</span> <span class="dv">7</span></span></code></pre></div>
 <section id="displaying-values" class="level2">
 <h2>Displaying values</h2>
@@ -280,33 +280,33 @@
 <h2>Counting values</h2>
 <p>Next, write statements that provide answers to following questions:</p>
 <ol>
-<li>Count the sum of all <code class="sourceCode cs">numbers</code> then display the result. (The expected value is 102)</li>
-<li>Count how many times value 7 occurs in <code class="sourceCode cs">numbers</code>, then display that value. Check that your program outputs the correct answer, which you can determine by visually observing the array values.</li>
+<li>Count the sum of all <code class="sourceCode cs">numbers</code> then display the result. (The expected answer is 102)</li>
+<li>Count how many times <code class="sourceCode cs"><span class="dv">7</span></code> occurs in <code class="sourceCode cs">numbers</code>, then display that count. Check that your program outputs the correct answer, which you can determine by visually observing the array values.</li>
 </ol>
 </section>
 <section id="finding-values" class="level2">
 <h2>Finding values</h2>
-<p>Now implement the following statements:</p>
+<p>Now implement statements to answer following questions:</p>
 <ol>
-<li>Find the <em>index</em> of first 7, then display that index. If the value does not exist, display -1 to indicate it was not found. Check that your solution is correct by comparing what you obtain from the program with what you know by visually observing the array.</li>
+<li>Find the <em>index</em> of first <code class="sourceCode cs"><span class="dv">7</span></code>, then display that index. If the value does not exist, display <code class="sourceCode cs"><span class="op">-</span><span class="dv">1</span></code> to indicate it was not found. Check that your solution is correct by comparing what you obtain from the program with what you know by visually observing the array.</li>
 <li>Find the maximum value in <code class="sourceCode cs">numbers</code>. Check that the solution you implement obtains the expected value.</li>
 </ol>
 </section>
 <section id="evaluate-your-solution" class="level2">
 <h2>Evaluate your solution</h2>
-<p>After implementing these methods and assuming the program you implemented obtained the expected values, <em>ideally</em> the solution should still work even if the values stored in <code class="sourceCode cs">numbers</code> array change, or even if the array length changes.</p>
-<p>To test your solution, go back to the beginning of the program where you declared <code class="sourceCode cs">numbers</code> array, then change the initialization so that the new array values are:</p>
+<p>After implementing these methods, and assuming your program obtained the expected answers, <em>ideally</em> the solution still works even if the values in <code class="sourceCode cs">numbers</code> array change, or even if the array length changes.</p>
+<p>To test your program, go back to the beginning where you declared <code class="sourceCode cs">numbers</code> array, then change the initialization so that the new array values are:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">55</span><span class="op">,</span> <span class="dv">92</span><span class="op">,</span> <span class="dv">12</span><span class="op">,</span> <span class="dv">90</span><span class="op">,</span> <span class="dv">37</span><span class="op">,</span> <span class="dv">18</span><span class="op">,</span> <span class="dv">6</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">80</span><span class="op">,</span> <span class="dv">18</span><span class="op">,</span> <span class="dv">46</span><span class="op">,</span> <span class="dv">19</span><span class="op">,</span> <span class="dv">65</span><span class="op">,</span> <span class="dv">68</span><span class="op">,</span> <span class="dv">18</span></span></code></pre></div>
 <p>Then re-run the program.</p>
 <p>Check that you obtain expected values:</p>
 <ul>
-<li>the sum should now be 644</li>
-<li>since 7 does not occur in the array anymore,
+<li>the sum should now be <code class="sourceCode cs"><span class="dv">644</span></code></li>
+<li>since <code class="sourceCode cs"><span class="dv">7</span></code> does not occur in the array anymore,
 <ul>
-<li>count should be 0</li>
-<li>first index of 7 should be -1</li>
+<li>count should be <code class="sourceCode cs"><span class="dv">0</span></code></li>
+<li>first index of <code class="sourceCode cs"><span class="dv">7</span></code> should be <code class="sourceCode cs"><span class="op">-</span><span class="dv">1</span></code></li>
 </ul></li>
-<li>maximum value is now 92</li>
+<li>maximum value is now <code class="sourceCode cs"><span class="dv">92</span></code></li>
 </ul>
 </section>
 </section>
@@ -317,12 +317,12 @@
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span><span class="op">[]</span> chars2 <span class="op">=</span> <span class="op">{</span><span class="ch">&#39;?&#39;</span><span class="op">,</span> <span class="ch">&#39;E&#39;</span><span class="op">,</span> <span class="ch">&#39;U&#39;</span><span class="op">,</span> <span class="ch">&#39;a&#39;</span><span class="op">,</span> <span class="ch">&#39;j&#39;</span><span class="op">,</span> <span class="ch">&#39;X&#39;</span><span class="op">,</span> <span class="ch">&#39;L&#39;</span><span class="op">,</span> <span class="ch">&#39;G&#39;</span><span class="op">,</span> <span class="ch">&#39;@&#39;</span><span class="op">,</span> <span class="ch">&#39;L&#39;</span><span class="op">,</span> <span class="ch">&#39;l&#39;</span><span class="op">,</span> <span class="ch">&#39;C&#39;</span><span class="op">,</span> <span class="ch">&#39;w&#39;</span><span class="op">,</span> <span class="ch">&#39;J&#39;</span><span class="op">,</span> <span class="ch">&#39;U&#39;</span> <span class="op">};</span></span></code></pre></div>
 <p>Next, write statements that answer the these two questions:</p>
 <ol>
-<li>Does value <code class="sourceCode cs">w</code> occur in both arrays (true/false)?</li>
+<li>Does value <code class="sourceCode cs"><span class="ch">&#39;w&#39;</span></code> occur in both arrays (true/false)?</li>
 <li>What is the first value that occurs in both arrays (searching left to right)? If these is no match, display <code class="sourceCode cs">no match</code>.</li>
 </ol>
 <p>After completing these two problems, make sure the program answers these questions correctly. The expected results are:</p>
 <ul>
-<li>Does <code class="sourceCode cs">w</code> occur in both arrays -&gt; <code class="sourceCode cs"><span class="kw">false</span></code></li>
+<li>Does <code class="sourceCode cs"><span class="ch">&#39;w&#39;</span></code> occur in both arrays -&gt; <code class="sourceCode cs"><span class="kw">false</span></code></li>
 <li>first value that occurs in both arrays -&gt; <code class="sourceCode cs">U</code></li>
 </ul>
 <p>Again, evaluate your work by changing the array initialization to:</p>
@@ -331,7 +331,7 @@
 <p>Then run the program again.</p>
 <p>Ideally the program should not crash and should still produce correct results:</p>
 <ul>
-<li>Does <code class="sourceCode cs">w</code> occur in both arrays -&gt; <code class="sourceCode cs"><span class="kw">true</span></code></li>
+<li>Does <code class="sourceCode cs"><span class="ch">&#39;w&#39;</span></code> occur in both arrays -&gt; <code class="sourceCode cs"><span class="kw">true</span></code></li>
 <li>first value that occurs in both arrays -&gt; <code class="sourceCode cs">P</code></li>
 </ul>
 <p>If the program does not produce these expected answers after changing the array values, review your program and try to determine how to write a solution that works for *any* array values.</p>
