@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 23, 2021 (08:23:55 PM)</p>
+<p class="date">June 23, 2021 (09:31:21 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -4862,11 +4862,11 @@ Done</code></pre></li>
 </ul>
 <div class="sourceCode" id="cb181"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb181-1"><a href="#cb181-1" aria-hidden="true" tabindex="-1"></a>arrayName <span class="op">=</span> <span class="kw">new</span> type<span class="op">[</span>number of elements<span class="op">];</span></span></code></pre></div>
 <ul>
-<li>An element of a single-dimentional array can be accessed and modified by using the name of the array and the index of the element as follow:</li>
+<li>An element of a single-dimensional array can be accessed and modified by using the name of the array and the index of the element as follow:</li>
 </ul>
-<div class="sourceCode" id="cb182"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb182-1"><a href="#cb182-1" aria-hidden="true" tabindex="-1"></a>arrayName<span class="op">[</span>Index<span class="op">]</span> <span class="op">=</span> value<span class="op">;</span>  \\ assigning a value to an element</span>
+<div class="sourceCode" id="cb182"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb182-1"><a href="#cb182-1" aria-hidden="true" tabindex="-1"></a>arrayName<span class="op">[</span>Index<span class="op">]</span> <span class="op">=</span> value<span class="op">;</span>  <span class="co">// assigning a value to an element</span></span>
 <span id="cb182-2"><a href="#cb182-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb182-3"><a href="#cb182-3" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> arrayName<span class="op">[</span>Index<span class="op">];</span> \\ Reading the current value of an element</span></code></pre></div>
+<span id="cb182-3"><a href="#cb182-3" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> arrayName<span class="op">[</span>Index<span class="op">];</span> <span class="co">// Reading the current value of an element</span></span></code></pre></div>
 <ul>
 <li>The index of the first element in an array is always zero; the index of the second element is one, and so on.</li>
 <li>If you specify an index greater or equal to the number of elements, a run time error will happen.</li>
@@ -4903,7 +4903,7 @@ Done</code></pre></li>
 <p>If we use the shorter notation, we <em>have to</em> give the values at initialization, we cannot re-use this notation once the array was created.</p>
 <p>Other datatype, and even objects, can be stored in arrays:</p>
 <div class="sourceCode" id="cb189"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb189-1"><a href="#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="op">{</span> <span class="st">&quot;Bob&quot;</span><span class="op">,</span> <span class="st">&quot;Mom&quot;</span><span class="op">,</span> <span class="st">&quot;Train&quot;</span><span class="op">,</span> <span class="st">&quot;Console&quot;</span> <span class="op">};</span></span>
-<span id="cb189-2"><a href="#cb189-2" aria-hidden="true" tabindex="-1"></a>Rectangle<span class="op">[]</span> arrayOfRectangle <span class="op">=</span> <span class="kw">new</span> Rectangle<span class="op">[</span><span class="dv">5</span><span class="op">];</span>  \\ Assume there <span class="kw">is</span> a <span class="kw">class</span> called Rectangle</span></code></pre></div>
+<span id="cb189-2"><a href="#cb189-2" aria-hidden="true" tabindex="-1"></a>Rectangle<span class="op">[]</span> arrayOfRectangle <span class="op">=</span> <span class="kw">new</span> Rectangle<span class="op">[</span><span class="dv">5</span><span class="op">];</span>  <span class="co">// Assume there is a class called Rectangle</span></span></code></pre></div>
 </section>
 </section>
 <section id="custom-size-and-values" class="level2">
@@ -5397,17 +5397,17 @@ Done</code></pre></li>
 <span id="cb224-3"><a href="#cb224-3" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">string</span> CntName <span class="kw">in</span> countries<span class="op">)</span></span>
 <span id="cb224-4"><a href="#cb224-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb224-5"><a href="#cb224-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>CntName<span class="op">);</span></span>
-<span id="cb224-6"><a href="#cb224-6" aria-hidden="true" tabindex="-1"></a>    CntName <span class="op">=</span> <span class="st">&quot;something&quot;</span><span class="op">;</span> \\ Error<span class="op">:</span> <span class="kw">this</span> <span class="kw">is</span> not allowed</span>
+<span id="cb224-6"><a href="#cb224-6" aria-hidden="true" tabindex="-1"></a>    CntName <span class="op">=</span> <span class="st">&quot;something&quot;</span><span class="op">;</span> <span class="co">// Error: this is not allowed</span></span>
 <span id="cb224-7"><a href="#cb224-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="example-2-1" class="level3">
 <h3>Example 2</h3>
 <p>In the following example, we use <em>foreach</em> statement to accommodate an array of complex objects without dealing with indexes.</p>
-<div class="sourceCode" id="cb225"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb225-1"><a href="#cb225-1" aria-hidden="true" tabindex="-1"></a>Employee<span class="op">[]</span> empArray <span class="op">=</span> <span class="kw">new</span> TestClass<span class="op">[</span><span class="dv">5</span><span class="op">];</span> \\ Assume we have a <span class="kw">class</span> called Employee</span>
+<div class="sourceCode" id="cb225"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb225-1"><a href="#cb225-1" aria-hidden="true" tabindex="-1"></a>Employee<span class="op">[]</span> empArray <span class="op">=</span> <span class="kw">new</span> TestClass<span class="op">[</span><span class="dv">5</span><span class="op">];</span> <span class="co">// Assume we have a class called Employee</span></span>
 <span id="cb225-2"><a href="#cb225-2" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span><span class="op">(</span>TestClass m <span class="kw">in</span> empArray<span class="op">)</span></span>
 <span id="cb225-3"><a href="#cb225-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb225-4"><a href="#cb225-4" aria-hidden="true" tabindex="-1"></a>   Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Enter the name of the employee:&quot;</span><span class="op">);</span></span>
-<span id="cb225-5"><a href="#cb225-5" aria-hidden="true" tabindex="-1"></a>   m<span class="op">.</span><span class="fu">Name</span> <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span>  \\ Assume the <span class="kw">class</span> Employee has a property called Name</span>
+<span id="cb225-5"><a href="#cb225-5" aria-hidden="true" tabindex="-1"></a>   m<span class="op">.</span><span class="fu">Name</span> <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span>  <span class="co">// Assume the class Employee has a property called Name</span></span>
 <span id="cb225-6"><a href="#cb225-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 </section>
@@ -5425,7 +5425,7 @@ Done</code></pre></li>
 <span id="cb226-7"><a href="#cb226-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>CntName  <span class="op">==</span> target<span class="op">)</span></span>
 <span id="cb226-8"><a href="#cb226-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
 <span id="cb226-9"><a href="#cb226-9" aria-hidden="true" tabindex="-1"></a>        flag <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
-<span id="cb226-10"><a href="#cb226-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span>  \\ ends the loop immediately<span class="op">.</span> </span>
+<span id="cb226-10"><a href="#cb226-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span>  <span class="co">// ends the loop immediately. </span></span>
 <span id="cb226-11"><a href="#cb226-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb226-12"><a href="#cb226-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb226-13"><a href="#cb226-13" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span><span class="op">(</span>flag<span class="op">)</span></span>
