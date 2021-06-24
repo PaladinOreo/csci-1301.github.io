@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">foreach</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 24, 2021 (01:25:13 AM)</p>
+<p class="date">June 24, 2021 (10:27:19 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -255,7 +255,7 @@
 <ul>
 <li><a href="#problem-1">Problem 1</a></li>
 <li><a href="#problem-2">Problem 2</a></li>
-<li><a href="#problem-3">problem 3</a></li>
+<li><a href="#problem-3">Problem 3</a></li>
 <li><a href="#problem-4">Problem 4</a></li>
 <li><a href="#problem-5">Problem 5</a></li>
 </ul></li>
@@ -266,7 +266,7 @@
 <section id="problem-1" class="level2">
 <h2>Problem 1</h2>
 <p>Create a new project, and replace the content of the <code class="sourceCode cs">Main</code> method with the following code:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> primes <span class="op">=</span> <span class="op">{</span><span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="dv">13</span><span class="op">,</span> <span class="dv">17</span><span class="op">,</span> <span class="dv">19</span><span class="op">}</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> primes <span class="op">=</span> <span class="op">{</span><span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="dv">13</span><span class="op">,</span> <span class="dv">17</span><span class="op">,</span> <span class="dv">19</span><span class="op">};</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span> primes<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>primes<span class="op">[</span>i<span class="op">]);</span></span>
@@ -282,7 +282,7 @@
 <section id="problem-2" class="level2">
 <h2>Problem 2</h2>
 <p>Can you rewrite the following code with <code class="sourceCode cs"><span class="kw">foreach</span></code> statement? Why?</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> <span class="op">[]</span> numbers <span class="op">=</span> <span class="op">{</span><span class="fl">1.2</span><span class="op">,</span> <span class="fl">4.3</span><span class="op">,</span> <span class="fl">5.7</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="op">-</span><span class="fl">3.13</span><span class="op">,</span> <span class="fl">1.7</span><span class="op">}</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> <span class="op">[]</span> numbers <span class="op">=</span> <span class="op">{</span><span class="fl">1.2</span><span class="op">,</span> <span class="fl">4.3</span><span class="op">,</span> <span class="fl">5.7</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="op">-</span><span class="fl">3.13</span><span class="op">,</span> <span class="fl">1.7</span><span class="op">};</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span> numbers<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -291,9 +291,9 @@
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="problem-3" class="level2">
-<h2>problem 3</h2>
+<h2>Problem 3</h2>
 <p>Can you rewrite the following code with <code class="sourceCode cs"><span class="kw">foreach</span></code> statement? Why?</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> <span class="op">[]</span> numbers <span class="op">=</span> <span class="op">{</span><span class="fl">1.2</span><span class="op">,</span> <span class="fl">4.3</span><span class="op">,</span> <span class="fl">5.7</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="op">-</span><span class="fl">3.13</span><span class="op">,</span> <span class="fl">1.7</span><span class="op">}</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> <span class="op">[]</span> numbers <span class="op">=</span> <span class="op">{</span><span class="fl">1.2</span><span class="op">,</span> <span class="fl">4.3</span><span class="op">,</span> <span class="fl">5.7</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="op">-</span><span class="fl">3.13</span><span class="op">,</span> <span class="fl">1.7</span><span class="op">};</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span> numbers<span class="op">.</span><span class="fu">Length</span> <span class="op">-</span> <span class="dv">1</span><span class="op">;</span> i<span class="op">++)</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span>   </span>
