@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 23, 2021 (09:31:21 PM)</p>
+<p class="date">June 23, 2021 (11:22:52 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -4849,27 +4849,28 @@ Done</code></pre></li>
 <section id="arrays" class="level1">
 <h1>Arrays</h1>
 <p>Arrays are structures that allow you to store multiple values in memory using a single name and indexes. - Usually all the elements of an array have the same type. - You limit the type of array elements when you declare the array. - If you want the array to store elements of any type, you can specify object as its type.</p>
-<p>An array can be: - Single-Dimensional - Multidimensional (not covered) - Jagged (not covered)</p>
+<p>An array can be:</p>
+<ul>
+<li>Single-Dimensional</li>
+<li>Multidimensional (not covered)</li>
+<li>Jagged (not covered)</li>
+</ul>
 <p>Arrays are useful, for instance, - When you want to store a collection of related values, - When you don’t know in advance how many variables we need. - When you need too many variables of the same type.</p>
 <section id="single-dimensional-arrays" class="level2">
 <h2>Single-Dimensional Arrays</h2>
 <p>You can define a single-dimensional array as follow:</p>
 <div class="sourceCode" id="cb180"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a>type<span class="op">[]</span> arrayName<span class="op">;</span></span></code></pre></div>
 <ul>
-<li><code class="sourceCode cs">type</code> can be any data-type and specifies the data-type of the array elements.</li>
-<li><code class="sourceCode cs">arrayName</code> is an identifier that you will use to access and modify the array elements.</li>
-<li>Before using an array, you must specify the number of elements of the array as follow:</li>
-</ul>
-<div class="sourceCode" id="cb181"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb181-1"><a href="#cb181-1" aria-hidden="true" tabindex="-1"></a>arrayName <span class="op">=</span> <span class="kw">new</span> type<span class="op">[</span>number of elements<span class="op">];</span></span></code></pre></div>
-<ul>
-<li>An element of a single-dimensional array can be accessed and modified by using the name of the array and the index of the element as follow:</li>
-</ul>
+<li><p><code class="sourceCode cs">type</code> can be any data-type and specifies the data-type of the array elements.</p></li>
+<li><p><code class="sourceCode cs">arrayName</code> is an identifier that you will use to access and modify the array elements.</p></li>
+<li><p>Before using an array, you must specify the number of elements of the array as follow:</p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb181-1"><a href="#cb181-1" aria-hidden="true" tabindex="-1"></a>arrayName <span class="op">=</span> <span class="kw">new</span> type<span class="op">[</span>number of elements<span class="op">];</span></span></code></pre></div></li>
+<li><p>An element of a single-dimensional array can be accessed and modified by using the name of the array and the index of the element as follow:</p>
 <div class="sourceCode" id="cb182"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb182-1"><a href="#cb182-1" aria-hidden="true" tabindex="-1"></a>arrayName<span class="op">[</span>Index<span class="op">]</span> <span class="op">=</span> value<span class="op">;</span>  <span class="co">// assigning a value to an element</span></span>
 <span id="cb182-2"><a href="#cb182-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb182-3"><a href="#cb182-3" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> arrayName<span class="op">[</span>Index<span class="op">];</span> <span class="co">// Reading the current value of an element</span></span></code></pre></div>
-<ul>
-<li>The index of the first element in an array is always zero; the index of the second element is one, and so on.</li>
-<li>If you specify an index greater or equal to the number of elements, a run time error will happen.</li>
+<span id="cb182-3"><a href="#cb182-3" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> arrayName<span class="op">[</span>Index<span class="op">];</span> <span class="co">// Reading the current value of an element</span></span></code></pre></div></li>
+<li><p>The index of the first element in an array is always zero; the index of the second element is one, and so on.</p></li>
+<li><p>If you specify an index greater or equal to the number of elements, a run time error will happen.</p></li>
 </ul>
 <section id="example" class="level3">
 <h3>Example</h3>
@@ -5383,12 +5384,17 @@ Done</code></pre></li>
 <ul>
 <li><strong>Type</strong>: The type of items in the collection</li>
 <li><strong>ItemName</strong>: The chosen item is accessible using ItemName</li>
-<li><strong>CollectionName</strong>: The name of the collection Since, arrays are the only object that we study in this course, we will use the term array instead of the collections.</li>
+<li><strong>CollectionName</strong>: The name of the collection</li>
 </ul>
+<p>Since, arrays are the only object that we study in this course, we will use the term array instead of the collections.</p>
 </section>
 <section id="some-points-about-foreach" class="level2">
 <h2>Some Points About <code class="sourceCode cs"><span class="kw">foreach</span></code></h2>
-<p>The <em>foreach</em> statement picks an element from the array and copies it to <em>ItemName</em>. - You are not allowed to change the value of <em>ItemName</em>, but if it is a complex object, you can change its member fields and properties. - You should use <code class="sourceCode cs"><span class="kw">foreach</span></code> statement whenever you want to process only one element in each iteration.</p>
+<p>The <em>foreach</em> statement picks an element from the array and copies it to <em>ItemName</em>.</p>
+<ul>
+<li>You are not allowed to change the value of <em>ItemName</em>, but if it is a complex object, you can change its member fields and properties.</li>
+<li>You should use <code class="sourceCode cs"><span class="kw">foreach</span></code> statement whenever you want to process only one element in each iteration.</li>
+</ul>
 <section id="example-1-1" class="level3">
 <h3>Example 1</h3>
 <p>In the following example, we define an array of strings. Then, using the foreach statement, we print all the element of the array in the console. Note that to access the elements we <strong>do not use indexes</strong>.</p>
