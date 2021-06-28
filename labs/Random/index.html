@@ -247,31 +247,47 @@
 <header id="title-block-header">
 <h1 class="title">Random class</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 24, 2021 (10:27:21 AM)</p>
+<p class="date">June 28, 2021 (06:30:14 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#manipulating-two-arrays-at-the-same-time">Manipulating Two Arrays at the Same Time</a></li>
-<li><a href="#a-guessing-game">A Guessing Game</a></li>
+<li><a href="#generating-random-numbers">Generating random numbers</a></li>
+<li><a href="#manipulating-two-arrays">Manipulating two arrays</a></li>
+<li><a href="#higher-or-lower-game">“Higher or Lower” Game</a></li>
 </ul>
 </nav>
-<section id="manipulating-two-arrays-at-the-same-time" class="level1">
-<h1>Manipulating Two Arrays at the Same Time</h1>
-<p>This problem combines random number generation with arrays. The <code class="sourceCode cs">Random</code> class from the C# standard library can be used to generate random numbers in any given range. Here is an example of how to use it to generate 15 random numbers:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Random myRandomObject <span class="op">=</span> <span class="kw">new</span> <span class="fu">Random</span><span class="op">();</span>     <span class="co">//Instantiate a Random object</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> randNum<span class="op">,</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>i <span class="op">&lt;</span> <span class="dv">15</span><span class="op">)</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    randNum <span class="op">=</span> myRandomObject<span class="op">.</span><span class="fu">Next</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="dv">11</span><span class="op">);</span> <span class="co">//Generate a random number between 1 and 10</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>randNum<span class="op">);</span>           <span class="co">//Display the random number</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>Using a Random object like this, write a program that</p>
+<p>The <code class="sourceCode cs">Random</code> class from the C# standard library can be used to generate random numbers in any given range. In this lab you will practice using <code class="sourceCode cs">Random</code> class.</p>
+<section id="generating-random-numbers" class="level1">
+<h1>Generating random numbers</h1>
+<p>Start by creating a new project, then practice generating different random numbers and display them at the screen:</p>
 <ol>
-<li>declares two arrays of <code class="sourceCode cs"><span class="dt">int</span></code> of size <code class="sourceCode cs"><span class="dv">8</span></code>,</li>
-<li>initializes the values of the first array with random numbers between <span class="math inline">0</span> and <span class="math inline">9</span>,</li>
-<li>initializes the values of second array with random numbers between <span class="math inline">0</span> and <span class="math inline">9</span>,</li>
-<li>displays the contents of the two arrays in a table, and, for each index, a letter indicating whether the first array “won” or “lost” a contest with the second array: “W” if the value in the first array is greater than the value in the second array, “T” if they are equal, and “L” if it is lesser.</li>
+<li>Generate any random integer</li>
+<li>Generate a random integer between -10 and 10 including these boundary values</li>
+<li>Generate a random double</li>
+</ol>
+<p>Note you only need 1 instance of <code class="sourceCode cs">Random</code> class to generate these numbers.</p>
+<p>Execute the program a few times to make sure the outputs are different each time.</p>
+<p>Once you have successfully generated the 3 random numbers described above, add the following enhancements to the program:</p>
+<ol>
+<li>Generate any random integer <em>5 times</em></li>
+<li>Generate a random integer between -10 and 10 including these boundary values, <em>10 times</em></li>
+<li>Generate a random double, <em>5 times</em></li>
+</ol>
+<p>Execute the program again, a few times, to make sure these values change on each execution.</p>
+</section>
+<section id="manipulating-two-arrays" class="level1">
+<h1>Manipulating two arrays</h1>
+<p>This problem combines random number generation with arrays. Using a Random object, write a program that:</p>
+<ol>
+<li><p>declares two arrays of <code class="sourceCode cs"><span class="dt">int</span></code> of size <code class="sourceCode cs"><span class="dv">8</span></code>,</p></li>
+<li><p>initializes the values of the first array with random numbers between <span class="math inline">0</span> and <span class="math inline">9</span>,</p></li>
+<li><p>initializes the values of second array with random numbers between <span class="math inline">0</span> and <span class="math inline">9</span>,</p></li>
+<li><p>displays the contents of the two arrays in a table, and, for each index, a letter indicating whether the first array “won” or “lost” a contest with the second array:</p>
+<ul>
+<li><code class="sourceCode cs"><span class="st">&quot;W&quot;</span></code> if the value in the first array is greater than the value in the second array</li>
+<li><code class="sourceCode cs"><span class="st">&quot;T&quot;</span></code> if they are equal, and</li>
+<li><code class="sourceCode cs"><span class="st">&quot;L&quot;</span></code> if it is less</li>
+</ul></li>
 </ol>
 <p>An example execution of this program would display:</p>
 <pre class="text"><code>0       8       L
@@ -284,19 +300,24 @@
 1       5       L</code></pre>
 <p>In this example, the first array contains “0 5 3 1 3 9 9 1” and the second contains “8 3 3 2 1 0 0 5”.</p>
 </section>
-<section id="a-guessing-game" class="level1">
-<h1>A Guessing Game</h1>
-<p>Write a program that</p>
+<section id="higher-or-lower-game" class="level1">
+<h1>“Higher or Lower” Game</h1>
+<p>Write a program that:</p>
 <ol>
-<li>Stores a random number in a variable.</li>
-<li>Asks the user to enter a numerical value, and stores the user’s answer in a variable.</li>
-<li>With an <code class="sourceCode cs"><span class="kw">if</span></code> statement, displays on the screen “You guessed correctly” if the number entered by the user is your favorite number.</li>
-<li>Once this part of the program works, add an <code class="sourceCode cs"><span class="kw">if</span></code> statement that displays on the screen “Too high!” if the number entered by the user is strictly greater than your favorite number.</li>
-<li>Once this part of the program works, add an <code class="sourceCode cs"><span class="kw">if</span></code> statement that displays on the screen “Too low!” if the number entered by the user is strictly lower than your favorite number.</li>
-<li>Once this part of the program works, add an <code class="sourceCode cs"><span class="kw">if</span></code> statement that displays on the screen “You found a multiple of my favorite number!” if the number entered by the user is a multiple of your favorite number, but different from it.</li>
+<li><p>Let computer choose a random number between 0 and 100 and store that number at a variable.</p></li>
+<li><p>Asks the user to enter a numerical value, and stores the user’s answer in a variable.</p></li>
+<li><p>Add an <code class="sourceCode cs"><span class="kw">if</span></code> statement, displays on the screen <code class="sourceCode cs"><span class="st">&quot;You guessed correctly&quot;</span></code> if the number entered by the user matches the number selected by computer.</p></li>
+<li><p>Add an <code class="sourceCode cs"><span class="kw">if</span></code> statement that displays on the screen <code class="sourceCode cs"><span class="st">&quot;Too high!&quot;</span></code> if the number entered by the user is strictly greater than the number selected by computer.</p></li>
+<li><p>Add an <code class="sourceCode cs"><span class="kw">if</span></code> statement that displays on the screen <code class="sourceCode cs"><span class="st">&quot;Too low!&quot;</span></code> if the number entered by the user is strictly than the number selected by computer.</p></li>
+<li><p>Add an <code class="sourceCode cs"><span class="kw">if</span></code> statement that displays on the screen <code class="sourceCode cs"><span class="st">&quot;You found a multiple of my favorite number!&quot;</span></code> if the number entered by the user is a multiple of the number selected by computer, but different from it.<br />
+</p></li>
+<li><p>When user enters a number that does not match computers selection, the user should be able to enter another number. This continues until user guesses correctly.<br />
+</p></li>
+<li><p>Keep count of how many guesses it takes for the user to arrive to the correct answer. After user guesses correctly, display that count, for example:</p>
+<pre class="text"><code>You guessed correctly.
+That was 7 guesses!</code></pre></li>
 </ol>
 <p>You can adjust your program so that e.g. if the user enters a number that is at the same time higher and a multiple of your favorite number, only one message is displayed.</p>
-<p>A solution is proposed <a href="GuessingGame.zip">in this archive</a>.</p>
 </section>
 </main>
 <footer id="footer">
