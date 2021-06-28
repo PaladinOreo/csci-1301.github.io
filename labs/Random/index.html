@@ -247,13 +247,17 @@
 <header id="title-block-header">
 <h1 class="title">Random class</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 28, 2021 (06:40:47 PM)</p>
+<p class="date">June 28, 2021 (07:01:22 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
 <li><a href="#generating-random-numbers">Generating random numbers</a></li>
 <li><a href="#manipulating-two-arrays">Manipulating two arrays</a></li>
 <li><a href="#higher-or-lower-game">“Higher or Lower” Game</a></li>
+<li><a href="#pushing-further-optional">Pushing Further (Optional)</a>
+<ul>
+<li><a href="#cryptographically-secure-random-numbers">Cryptographically secure random numbers</a></li>
+</ul></li>
 </ul>
 </nav>
 <p>The <code class="sourceCode cs">Random</code> class from the C# standard library can be used to generate random numbers in any given range. In this lab you will practice using <code class="sourceCode cs">Random</code> class.</p>
@@ -318,6 +322,42 @@
 That was 7 guesses!</code></pre></li>
 </ol>
 <p>You can adjust your program so that e.g. if the user enters a number that is at the same time higher and a multiple of computer’s number, only one message is displayed.</p>
+</section>
+<section id="pushing-further-optional" class="level1">
+<h1>Pushing Further (Optional)</h1>
+<section id="cryptographically-secure-random-numbers" class="level2">
+<h2>Cryptographically secure random numbers</h2>
+<p>Random number generation is only pseudo-random, meaning these are algorithmically generated numbers that approximate a sequence of truly random numbers. Using the default <code class="sourceCode cs">Random</code> class is not recommended for applications that need cryptographically secure random numbers, for example, to generate suggested passwords.</p>
+<p>When an application needs cryptographically secure random numbers, RandomNumberGenerator class should be used instead. It works as follows:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">.</span><span class="fu">Security</span><span class="op">.</span><span class="fu">Cryptography</span><span class="op">;</span> <span class="co">// include definition!</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Program</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">()</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="co">// choose secure (!) random integer</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">// between 0 (inclusive) and 100 (exclusive)</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> secureRandom <span class="op">=</span> RandomNumberGenerator<span class="op">.</span><span class="fu">GetInt32</span><span class="op">(</span><span class="dv">100</span><span class="op">);</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">// display cryptographically secure int</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>secureRandom<span class="op">);</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="co">// choose secure (!) random integer</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">// between 50 (inclusive) and 500 (exclusive)</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> anotherSecureRandom <span class="op">=</span> RandomNumberGenerator<span class="op">.</span><span class="fu">GetInt32</span><span class="op">(</span><span class="dv">50</span><span class="op">,</span> <span class="dv">500</span><span class="op">);</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        <span class="co">// display cryptographically secure int</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>anotherSecureRandom<span class="op">);</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>You can learn more about secure random numbers by reading through:</p>
+<ul>
+<li>the technical description of <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator">RandomNumberGenerator class</a></li>
+<li>discussion on <a href="https://stackoverflow.com/questions/1257299/why-use-the-c-sharp-class-system-random-at-all-instead-of-system-security-crypto">how to choose which Random generator to use</a></li>
+</ul>
+</section>
 </section>
 </main>
 <footer id="footer">
