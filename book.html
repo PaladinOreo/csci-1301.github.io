@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 29, 2021 (11:54:47 AM)</p>
+<p class="date">June 29, 2021 (12:06:40 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -736,13 +736,13 @@ class [name of class]
 <li>A C# program requires a method called <code class="sourceCode cs">Main</code>, and, in our example, is followed by empty parentheses (we’ll get to those later, but they’re required)</li>
 <li>Just like the class declaration, the body of the method beings with <code class="sourceCode cs"><span class="op">{</span></code> and ends with <code class="sourceCode cs"><span class="op">}</span></code></li>
 </ul></li>
-<li>A statement inside the body of the method
+<li>A statement inside the body of the method: <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hello, world!&quot;</span><span class="op">);</span> <span class="co">// I&#39;m an in-line comment.</span></code>
 <ul>
 <li>This is the part of the program that actually “does something”: It prints a line of text to the console</li>
-<li>A statement <em>must</em> end in a semicolon (the class header and method header aren’t statements)</li>
 <li>This statement contains a class name (<code class="sourceCode cs">Console</code>), followed by a method name (<code class="sourceCode cs">WriteLine</code>). It calls the <code class="sourceCode cs">WriteLine</code> method in the <code class="sourceCode cs">Console</code> class.</li>
 <li>The <strong>argument</strong> to the <code class="sourceCode cs">WriteLine</code> method is the text “Hello, world!”, which is in parentheses after the name of the method. This is the text that gets printed in the console: The <code class="sourceCode cs">WriteLine</code> method (which is in the standard library) takes an argument and prints it to the console.</li>
 <li>Note that the argument to <code class="sourceCode cs">WriteLine</code> is inside double-quotes. This means it is a <strong>string</strong>, i.e. textual data, not a piece of C# code. The quotes are required in order to distinguish between text and code.</li>
+<li>A statement <em>must</em> end in a semicolon (the class header and method header aren’t statements)</li>
 </ul></li>
 <li>An in-line comment: All the text from the <code class="sourceCode cs"><span class="co">//</span></code> to the end of the line is considered a comment, and is ignored by the C# compiler.</li>
 </ul>
