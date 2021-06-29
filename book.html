@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 29, 2021 (02:12:27 PM)</p>
+<p class="date">June 29, 2021 (03:33:48 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -1372,13 +1372,12 @@ Welcome to CSCI 1301!</code></pre></li>
 <h1>Operators</h1>
 <section id="arithmetic-operators" class="level2">
 <h2>Arithmetic Operators</h2>
-<p>Variables or literals of numeric data types (<code class="sourceCode cs"><span class="dt">int</span></code>, <code class="sourceCode cs"><span class="dt">double</span></code>, etc.) can be used to do math. All the usual arithmetic operations are available in C#:</p>
+<p>Variables can be used to do math. All the usual arithmetic operations are available in C#:</p>
 <table>
 <thead>
 <tr class="header">
 <th>Operation</th>
 <th>C# Operator</th>
-<th>Algebraic Expression</th>
 <th>C# Expression</th>
 </tr>
 </thead>
@@ -1386,36 +1385,32 @@ Welcome to CSCI 1301!</code></pre></li>
 <tr class="odd">
 <td>Addition</td>
 <td><code class="sourceCode cs"><span class="op">+</span></code></td>
-<td><span class="math inline"><em>x</em> + 7</span></td>
 <td><code class="sourceCode cs">myVar <span class="op">+</span> <span class="dv">7</span></code></td>
 </tr>
 <tr class="even">
 <td>Subtraction</td>
 <td><code class="sourceCode cs"><span class="op">-</span></code></td>
-<td><span class="math inline"><em>x</em> − 7</span></td>
 <td><code class="sourceCode cs">myVar <span class="op">-</span> <span class="dv">7</span></code></td>
 </tr>
 <tr class="odd">
 <td>Multiplication</td>
 <td><code class="sourceCode cs"><span class="op">*</span></code></td>
-<td><span class="math inline"><em>x</em> × 7</span></td>
 <td><code class="sourceCode cs">myVar <span class="op">*</span> <span class="dv">7</span></code></td>
 </tr>
 <tr class="even">
 <td>Division</td>
 <td><code class="sourceCode cs"><span class="op">/</span></code></td>
-<td><span class="math inline"><em>x</em>/7</span>, <span class="math inline"><em>x</em> ÷ 7</span></td>
 <td><code class="sourceCode cs">myVar <span class="op">/</span> <span class="dv">7</span></code></td>
 </tr>
 <tr class="odd">
 <td>Remainder (a.k.a. modulo)</td>
 <td><code class="sourceCode cs"><span class="op">%</span></code></td>
-<td><span class="math inline"><em>x</em> mod  7</span></td>
 <td><code class="sourceCode cs">myVar <span class="op">%</span> <span class="dv">7</span></code></td>
 </tr>
 </tbody>
 </table>
-<p>Note: the “remainder” or “modulo” operator represents the remainder after doing integer division between its two operands. For example, <span class="math inline">44 mod  7 = 2</span> because <span class="math inline">44 ÷ 7 = 6</span> <em>with remainder</em> <span class="math inline">2</span>.</p>
+<p>Note: the “remainder” or “modulo” operator represents the remainder after doing integer division between its two operands.<br />
+For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 42 and 44 - 42 = 2.</p>
 <ul>
 <li>Arithmetic and variables
 <ul>
