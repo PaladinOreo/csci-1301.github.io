@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 29, 2021 (12:06:40 PM)</p>
+<p class="date">June 29, 2021 (02:12:27 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -752,7 +752,12 @@ class [name of class]
 <ul>
 <li>Each statement must end in a semicolon (<code class="sourceCode cs"><span class="op">;</span></code>),
 <ul>
-<li>Class and method declarations are not statements</li>
+<li>Exceptions:
+<ul>
+<li>opening <code class="sourceCode cs"><span class="op">{</span></code> and closing <code class="sourceCode cs"><span class="op">}</span></code> don’t end in a ;</li>
+<li>Class and method declarations don’t end in a ; since they end in a }<br />
+Example: class Program { …. <code class="sourceCode cs"><span class="op">}</span></code></li>
+</ul></li>
 <li>A method <em>contains</em> some statements, but it is not a statement</li>
 </ul></li>
 <li>All words are case-sensitive
@@ -854,7 +859,7 @@ class [name of class]
 <li><p>The <code class="sourceCode cs">WriteLine</code> method</p>
 <ul>
 <li><p>We saw this in the “Hello World” program: <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hello World!&quot;</span><span class="op">);</span></code> results in “Hello World!” being displayed in the terminal</p></li>
-<li><p>In general, <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;text&quot;</span><span class="op">);</span></code> will display the text in the terminal, then <em>start a new line</em></p></li>
+<li><p>In general, <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;text&quot;</span><span class="op">);</span></code> will display the text but not the “’s in the terminal, then <em>start a new line</em></p></li>
 <li><p>This means a second <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code> will display its text on the next line of the terminal. For example, this program:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
