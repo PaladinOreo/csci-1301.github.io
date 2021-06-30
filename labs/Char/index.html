@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Char and Int Conversion, Ordering of Characters</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 29, 2021 (09:37:14 PM)</p>
+<p class="date">June 30, 2021 (03:52:53 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -257,34 +257,112 @@
 <li><a href="#testing-for-equality">Testing for Equality</a></li>
 <li><a href="#pushing-further-optional">Pushing Further (Optional)</a>
 <ul>
-<li><a href="#char-and-for-loop"><code class="sourceCode cs"><span class="dt">char</span></code> and <code class="sourceCode cs"><span class="kw">for</span></code> loop</a></li>
 <li><a href="#string-comparison">String Comparison</a></li>
 </ul></li>
 </ul>
 </nav>
 <section id="reading-and-understanding" class="level2">
 <h2>Reading and Understanding</h2>
-<p>Characters are represented by integers: cf. <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters" class="uri">https://en.wikipedia.org/wiki/ASCII#Printable_characters</a> for a mapping between the glyphs (i.e., space, !, etc.) and <strong>dec</strong>imal values (to be read as “integer code”, i.e., 32, 33, 34, etc.). Note that the characters are divided in groups, and that there are 95 printable characters.</p>
+<p>Characters are represented by integers: cf. <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters" class="uri">https://en.wikipedia.org/wiki/ASCII#Printable_characters</a> for a mapping between the glyphs (i.e., space, <code class="sourceCode cs">A</code>, <code class="sourceCode cs"><span class="op">!</span></code>, etc.) and <strong>dec</strong>imal values, to be read as “integer code”, i.e., 32, 33, 34, etc.</p>
+<p>In the references table, each character’s integer code is given for different <a href="https://en.wikipedia.org/wiki/Radix#In_numeral_systems">numeral systems</a>:</p>
+<ul>
+<li>Binary: base 2</li>
+<li>Oct: octal, base 8</li>
+<li>Dec: decimal, base 10</li>
+<li>Hex: hexadecimal, base 16</li>
+</ul>
+<p>Note that the characters are divided in groups, and that there are 95 printable characters.</p>
 </section>
 <section id="converting" class="level2">
 <h2>Converting</h2>
 <p>Copy the following snippet of code in a <code class="sourceCode cs">Main</code> method:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> intVar <span class="op">=</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;C&#39;</span><span class="op">;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span> charVar <span class="op">=</span> <span class="op">(</span><span class="dt">char</span><span class="op">)</span><span class="dv">84</span><span class="op">;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;&#39;C&#39; is represented as {intVar}</span><span class="sc">\n</span><span class="st">&quot;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> $<span class="st">&quot;{charVar} corresponds to the value 84&quot;</span><span class="op">);</span> </span></code></pre></div>
-<p>And note that we can explicitely convert <code class="sourceCode cs"><span class="dt">int</span></code> into <code class="sourceCode cs"><span class="dt">char</span></code>, and <code class="sourceCode cs"><span class="dt">char</span></code> into <code class="sourceCode cs"><span class="dt">int</span></code>.</p>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;&#39;C&#39; is represented as {intVar}&quot;</span><span class="op">);</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{charVar} corresponds to the value 84&quot;</span><span class="op">);</span> </span></code></pre></div>
+<p>And note that we can explicitly convert <code class="sourceCode cs"><span class="dt">int</span></code> into <code class="sourceCode cs"><span class="dt">char</span></code>, and <code class="sourceCode cs"><span class="dt">char</span></code> into <code class="sourceCode cs"><span class="dt">int</span></code>.</p>
 <p>Actually, the conversion from <code class="sourceCode cs"><span class="dt">char</span></code> to <code class="sourceCode cs"><span class="dt">int</span></code> could be done implicitly by C#: replace the previous first line with</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> intVar <span class="op">=</span> <span class="ch">&#39;C&#39;</span><span class="op">;</span></span></code></pre></div>
-<p>And note that your program would still compile. Can you also convert implicitly <code class="sourceCode cs"><span class="dt">int</span></code> into <code class="sourceCode cs"><span class="dt">char</span></code>?</p>
+<p>And note that your program still compiles.</p>
+<p>Can you also convert implicitly <code class="sourceCode cs"><span class="dt">int</span></code> into <code class="sourceCode cs"><span class="dt">char</span></code>?</p>
+<p>Next write code to determine the <code class="sourceCode cs"><span class="dt">int</span></code> values for the following characters:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><code class="sourceCode cs"><span class="dt">char</span></code> value</th>
+<th style="text-align: center;"><code class="sourceCode cs"><span class="dt">int</span></code> value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code class="sourceCode cs">w</code></td>
+<td style="text-align: center;">119</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code class="sourceCode cs">A</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dv">5</span></code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code class="sourceCode cs">#</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code class="sourceCode cs">p</code></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Also determine what characters the following integers (in decimal base) represent: 49, 104, 89.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><code class="sourceCode cs"><span class="dt">int</span></code> value</th>
+<th style="text-align: center;"><code class="sourceCode cs"><span class="dt">char</span></code> value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dv">59</span></code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dv">112</span></code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dv">89</span></code></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="comparing" class="level2">
 <h2>Comparing</h2>
-<p>Exactly as <span class="math inline">65</span> is less than <span class="math inline">97</span>, the character associated to <span class="math inline">65</span>, <code class="sourceCode cs">A</code>, is less than the character associated with <span class="math inline">97</span>, <code class="sourceCode cs">a</code>. You can convince yourself by executing the following code:</p>
+<p>Exactly as <span class="math inline">65</span> is less than <span class="math inline">97</span>, the character associated with <span class="math inline">65</span>, <code class="sourceCode cs">A</code>, is less than the character associated with <span class="math inline">97</span>, <code class="sourceCode cs">a</code>.</p>
+<p>You can convince yourself by executing the following code:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span><span class="ch">&#39;A&#39;</span> <span class="op">&gt;</span> <span class="ch">&#39;a&#39;</span><span class="op">)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;A is greater than a&quot;</span><span class="op">);</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;A is less than a&quot;</span><span class="op">);</span></span></code></pre></div>
+<p>Implement the following short program:</p>
+<p>Ask user to enter a lowercase character.</p>
+<ol>
+<li>First check that the alphabet is within a - z range</li>
+<li>if it is not, display “not a lowercase character”</li>
+<li>if it is, perform the following steps:
+<ul>
+<li>if user enters letter n, display “You entered n”</li>
+<li>if the character occurs before n in the alphabet, display “Before n”</li>
+<li>if the character occurs after n in the alphabet, display “After n”</li>
+</ul></li>
+</ol>
+<ul>
+<li>To read <em>a single character</em> (instead of a whole string), use ReadKey() method: <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">ReadKey</span><span class="op">().</span><span class="fu">KeyChar</span></code></li>
+</ul>
 </section>
 <section id="testing-for-equality" class="level2">
 <h2>Testing for Equality</h2>
@@ -296,31 +374,21 @@
 <li>Display on the screen “The user said no” if the user entered “N” or “n”,</li>
 <li>Display on the screen “The user entered an incorrect value” if the user entered any other character.</li>
 </ul>
-<p>To read <em>a single character</em> (instead of a whole string), use</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Press y or Y for Yes, n or N for No:&quot;</span><span class="op">);</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span> answer <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadKey</span><span class="op">().</span><span class="fu">KeyChar</span><span class="op">;</span></span></code></pre></div>
 </section>
 <section id="pushing-further-optional" class="level1">
 <h1>Pushing Further (Optional)</h1>
-<p>This lab’s pushing further suggests to take some advance in two topics we will be covering soon: <code class="sourceCode cs"><span class="kw">for</span></code> loops and <code class="sourceCode cs"><span class="dt">string</span></code> comparison</p>
-<section id="char-and-for-loop" class="level2">
-<h2><code class="sourceCode cs"><span class="dt">char</span></code> and <code class="sourceCode cs"><span class="kw">for</span></code> loop</h2>
-<p>Try to understand what the following code does:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">32</span><span class="op">;</span> i <span class="op">&lt;=</span> <span class="dv">126</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">((</span><span class="dt">char</span><span class="op">)</span>i<span class="op">);</span></span></code></pre></div>
-<p>Compile it, execute it, understand what its purpose is, and what its structure is.</p>
-</section>
 <section id="string-comparison" class="level2">
 <h2>String Comparison</h2>
-<p>Comparing strings cannot be done with <code class="sourceCode cs"><span class="op">&gt;</span></code> and <code class="sourceCode cs"><span class="op">&lt;</span></code> operators. To compare them, we have to use the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.string.compareordinal?view=netframework-4.7.1">CompareOrdinal</a> method of the <a href="https://msdn.microsoft.com/en-us/library/system.string(v=vs.110).aspx">String</a> class. It works as follow:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>String<span class="op">.</span><span class="fu">CompareOrdinal</span><span class="op">(</span><span class="st">&quot;A&quot;</span><span class="op">,</span> <span class="st">&quot;a&quot;</span><span class="op">)</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;A is greater than a&quot;</span><span class="op">);</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;A is less than a&quot;</span><span class="op">);</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Comparing strings cannot be done with <code class="sourceCode cs"><span class="op">&gt;</span></code> and <code class="sourceCode cs"><span class="op">&lt;</span></code> operators. To compare them, we have to use the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.string.compareordinal">CompareOrdinal</a> method of the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> class.</p>
+<p>It works as follow:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>String<span class="op">.</span><span class="fu">CompareOrdinal</span><span class="op">(</span><span class="st">&quot;A&quot;</span><span class="op">,</span> <span class="st">&quot;a&quot;</span><span class="op">)</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;A is greater than a&quot;</span><span class="op">);</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;A is less than a&quot;</span><span class="op">);</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Note that <code class="sourceCode cs">CompareOrdinal</code> returns an integer, that we then compare with <span class="math inline">0</span>.</p>
 <ul>
 <li>If the value returned is <span class="math inline">0</span>, then the strings are the same,</li>
@@ -328,25 +396,27 @@
 <li>If the value returned is greater than <span class="math inline">0</span>, then the first string is greater than the second one.</li>
 </ul>
 <p>In the previous example, we tested string made of only one character, but we can compare arbitrarily complex strings:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>String<span class="op">.</span><span class="fu">CompareOrdinal</span><span class="op">(</span><span class="st">&quot;Augusta&quot;</span><span class="op">,</span> <span class="st">&quot;Auguste&quot;</span><span class="op">)</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Augusta is greater than Auguste&quot;</span><span class="op">);</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Augsta is less than Auguste&quot;</span><span class="op">);</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>To conclude with this topic, note that the integer returned actually has a precise value: examine the following code to understand it.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>String<span class="op">.</span><span class="fu">CompareOrdinal</span><span class="op">(</span><span class="st">&quot;A&quot;</span><span class="op">,</span> <span class="st">&quot;a&quot;</span><span class="op">)</span> <span class="op">==</span> <span class="op">((</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;A&#39;</span> <span class="op">-</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;a&#39;</span><span class="op">))</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Ok, I get it now&quot;</span><span class="op">);</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>String<span class="op">.</span><span class="fu">CompareOrdinal</span><span class="op">(</span><span class="st">&quot;Ab&quot;</span><span class="op">,</span> <span class="st">&quot;az&quot;</span><span class="op">)</span> <span class="op">==</span> <span class="op">(((</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;A&#39;</span> <span class="op">+</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;b&#39;</span><span class="op">)</span> <span class="op">-</span> <span class="op">((</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;a&#39;</span> <span class="op">+</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;z&#39;</span><span class="op">)))</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Yes, I really do.&quot;</span><span class="op">);</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>String<span class="op">.</span><span class="fu">CompareOrdinal</span><span class="op">(</span><span class="st">&quot;Ab&quot;</span><span class="op">,</span> <span class="st">&quot;az&quot;</span><span class="op">)</span> <span class="op">==</span> <span class="op">((</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;A&#39;</span> <span class="op">-</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;a&#39;</span><span class="op">))</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Or do I?&quot;</span><span class="op">);</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>String<span class="op">.</span><span class="fu">CompareOrdinal</span><span class="op">(</span><span class="st">&quot;ABCDEf&quot;</span><span class="op">,</span> <span class="st">&quot;ABCDEF&quot;</span><span class="op">)</span> <span class="op">==</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;f&#39;</span> <span class="op">-</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;F&#39;</span><span class="op">)</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Ok, now I&#39;m good.&quot;</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>String<span class="op">.</span><span class="fu">CompareOrdinal</span><span class="op">(</span><span class="st">&quot;Augusta&quot;</span><span class="op">,</span> <span class="st">&quot;August&quot;</span><span class="op">)</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Augusta is greater than August&quot;</span><span class="op">);</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Augusta is less than August&quot;</span><span class="op">);</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>To conclude with this topic, note that the integer returned actually has a precise value.</p>
+<p>Examine the following code to understand it.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>String<span class="op">.</span><span class="fu">CompareOrdinal</span><span class="op">(</span><span class="st">&quot;A&quot;</span><span class="op">,</span> <span class="st">&quot;a&quot;</span><span class="op">)</span> <span class="op">==</span> <span class="op">((</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;A&#39;</span> <span class="op">-</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;a&#39;</span><span class="op">))</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Ok, I get it now&quot;</span><span class="op">);</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>String<span class="op">.</span><span class="fu">CompareOrdinal</span><span class="op">(</span><span class="st">&quot;Ab&quot;</span><span class="op">,</span> <span class="st">&quot;az&quot;</span><span class="op">)</span> <span class="op">==</span> <span class="op">(((</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;A&#39;</span> <span class="op">+</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;b&#39;</span><span class="op">)</span> <span class="op">-</span> <span class="op">((</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;a&#39;</span> <span class="op">+</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;z&#39;</span><span class="op">)))</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Yes, I really do.&quot;</span><span class="op">);</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>String<span class="op">.</span><span class="fu">CompareOrdinal</span><span class="op">(</span><span class="st">&quot;Ab&quot;</span><span class="op">,</span> <span class="st">&quot;az&quot;</span><span class="op">)</span> <span class="op">==</span> <span class="op">((</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;A&#39;</span> <span class="op">-</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;a&#39;</span><span class="op">))</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Or do I?&quot;</span><span class="op">);</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>String<span class="op">.</span><span class="fu">CompareOrdinal</span><span class="op">(</span><span class="st">&quot;ABCDEf&quot;</span><span class="op">,</span> <span class="st">&quot;ABCDEF&quot;</span><span class="op">)</span> <span class="op">==</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;f&#39;</span> <span class="op">-</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;F&#39;</span><span class="op">)</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Ok, now I&#39;m good.&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>Do you understand how the returning value is computed for these strings?</p>
 </section>
 </section>
