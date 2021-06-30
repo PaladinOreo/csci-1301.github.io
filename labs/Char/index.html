@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Char and Int Conversion, Ordering of Characters</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 30, 2021 (04:07:40 PM)</p>
+<p class="date">June 30, 2021 (04:23:58 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -271,7 +271,7 @@
 <li>Dec: decimal, base 10</li>
 <li>Hex: hexadecimal, base 16</li>
 </ul>
-<p>Base 10 (“decimal”) is the system we use everyday, but computer programs occasionally use other numerical systems, and these values are listed for convenience.</p>
+<p><em>Decimal system</em> is what we use everyday, but computer programs occasionally use other numerical systems.</p>
 <p>Note that the characters are divided in groups, and that there are 95 printable characters.</p>
 </section>
 <section id="converting" class="level2">
@@ -311,10 +311,6 @@
 <td style="text-align: center;"><code class="sourceCode cs">#</code></td>
 <td style="text-align: center;"></td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;"><code class="sourceCode cs">p</code></td>
-<td style="text-align: center;"></td>
-</tr>
 </tbody>
 </table>
 <p>Also determine what characters the following integers (in decimal base) represent:</p>
@@ -352,13 +348,13 @@
 <p>Implement the following short program to practice this concept:</p>
 <ol>
 <li>Ask user to enter a lowercase character.</li>
-<li>Check that the alphabet is within a - z range, to check that it <em>is</em> a lowercase character</li>
-<li>when it is not display “not a lowercase character”</li>
+<li>Check that the character is within a - z range, to check that it <em>is</em> a lowercase character</li>
+<li>when it is not, display “not a lowercase character”</li>
 <li>otherwise perform the following steps:
 <ul>
 <li>if user enters character <code class="sourceCode cs"><span class="ch">&#39;n&#39;</span></code>, display “You entered n”</li>
-<li>if the character occurs before <code class="sourceCode cs"><span class="ch">&#39;n&#39;</span></code> in the alphabet, display “Before n”</li>
-<li>if the character occurs after <code class="sourceCode cs"><span class="ch">&#39;n&#39;</span></code> in the alphabet, display “After n”</li>
+<li>if the character occurs before <code class="sourceCode cs"><span class="ch">&#39;n&#39;</span></code>, display “Before n”</li>
+<li>if the character occurs after <code class="sourceCode cs"><span class="ch">&#39;n&#39;</span></code>, display “After n”</li>
 </ul></li>
 </ol>
 <ul>
@@ -367,12 +363,12 @@
 </section>
 <section id="testing-for-equality" class="level2">
 <h2>Testing for Equality</h2>
-<p>Note that you can also test if a character is equal to an other by using <code class="sourceCode cs"><span class="op">==</span></code>, as for integer values. This is particularly useful when we want to ask the user for a “yes” / “no” decision.</p>
+<p>You can also test if a character is equal to an other by using <code class="sourceCode cs"><span class="op">==</span></code>, as for integer values. This is particularly useful when we want to ask the user for a “yes” / “no” decision.</p>
 <p>Write a program that</p>
 <ul>
 <li>Asks the user for a character,</li>
-<li>Displays on the screen “The user said yes” if the user entered “Y” or “y”,</li>
-<li>Displays on the screen “The user said no” if the user entered “N” or “n”,</li>
+<li>Displays on the screen “The user said yes” if the user entered <code class="sourceCode cs"><span class="ch">&#39;Y&#39;</span></code> or <code class="sourceCode cs"><span class="ch">&#39;y&#39;</span></code>,</li>
+<li>Displays on the screen “The user said no” if the user entered <code class="sourceCode cs"><span class="ch">&#39;N&#39;</span></code> or <code class="sourceCode cs"><span class="ch">&#39;n&#39;</span></code>,</li>
 <li>Displays on the screen “The user entered an incorrect value” if the user entered any other character.</li>
 </ul>
 </section>
