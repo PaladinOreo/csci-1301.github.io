@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Char and Int Conversion, Ordering of Characters</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 30, 2021 (05:31:05 PM)</p>
+<p class="date">June 30, 2021 (05:35:14 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -261,8 +261,8 @@
 </ul></li>
 </ul>
 </nav>
-<section id="reading-and-understanding" class="level2">
-<h2>Reading and Understanding</h2>
+<section id="reading-and-understanding" class="level1">
+<h1>Reading and Understanding</h1>
 <p>Characters are represented by integers: cf. <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters" class="uri">https://en.wikipedia.org/wiki/ASCII#Printable_characters</a> for a mapping between the glyphs (i.e., space, <code class="sourceCode cs">A</code>, <code class="sourceCode cs"><span class="op">!</span></code>, etc.) and <strong>dec</strong>imal values, to be read as “integer code”, i.e., 32, 33, 34, etc.</p>
 <p>In the referenced table, each character’s integer code is given for different <a href="https://en.wikipedia.org/wiki/Radix#In_numeral_systems">numeral systems</a>:</p>
 <ul>
@@ -274,8 +274,8 @@
 <p><em>Decimal system</em> is what we use everyday, but computer programs occasionally use other numerical systems.</p>
 <p>Note that the characters are divided in groups, and that there are 95 printable characters.</p>
 </section>
-<section id="converting" class="level2">
-<h2>Converting</h2>
+<section id="converting" class="level1">
+<h1>Converting</h1>
 <p>Copy the following snippet of code in a <code class="sourceCode cs">Main</code> method:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> intVar <span class="op">=</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="ch">&#39;C&#39;</span><span class="op">;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span> charVar <span class="op">=</span> <span class="op">(</span><span class="dt">char</span><span class="op">)</span><span class="dv">84</span><span class="op">;</span></span>
@@ -337,8 +337,8 @@
 </tbody>
 </table>
 </section>
-<section id="comparing" class="level2">
-<h2>Comparing</h2>
+<section id="comparing" class="level1">
+<h1>Comparing</h1>
 <p>Exactly as <span class="math inline">65</span> is less than <span class="math inline">97</span>, the character associated with <span class="math inline">65</span>, <code class="sourceCode cs">A</code>, is less than the character associated with <span class="math inline">97</span>, <code class="sourceCode cs">a</code>.</p>
 <p>You can convince yourself by executing the following code:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span><span class="ch">&#39;A&#39;</span> <span class="op">&gt;</span> <span class="ch">&#39;a&#39;</span><span class="op">)</span></span>
@@ -361,8 +361,8 @@
 <li>To read <em>a single character</em> (instead of a whole string), use ReadKey() method: <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">ReadKey</span><span class="op">().</span><span class="fu">KeyChar</span></code></li>
 </ul>
 </section>
-<section id="testing-for-equality" class="level2">
-<h2>Testing for Equality</h2>
+<section id="testing-for-equality" class="level1">
+<h1>Testing for Equality</h1>
 <p>You can also test if a character is equal to an other by using <code class="sourceCode cs"><span class="op">==</span></code>, as for integer values. This is particularly useful when we want to ask the user for a “yes” / “no” decision.</p>
 <p>Write a program that</p>
 <ul>
