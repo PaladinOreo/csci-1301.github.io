@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Class Diagram</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 30, 2021 (05:37:03 PM)</p>
+<p class="date">June 30, 2021 (05:54:22 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -256,13 +256,20 @@
 <li><a href="#pushing-further-optional">Pushing Further (Optional)</a></li>
 </ul>
 </nav>
-<p><strong>Unified Modeling Language</strong> (UML) is a tool for visually representing programs. UML is used to represents many different <a href="https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams">types of diagrams</a>. In this lab you will practice interpreting and creating one of them: a <em>class diagram</em>.</p>
+<p><strong>Unified Modeling Language</strong> (UML) is a tool for visually representing programs. UML can represent many different types of diagrams. In this lab you will practice interpreting and creating one of them: a <em>class diagram</em>.</p>
 <section id="interpreting-a-uml-class-diagram" class="level1">
 <h1>Interpreting a UML class diagram</h1>
 <p>Study the following diagram, then answer follow up questions:</p>
-<figure>
-<img src="./img/account_class.png" alt="“Class diagram for a bank account”" /><figcaption aria-hidden="true">“Class diagram for a bank account”</figcaption>
-</figure>
+<pre class="text"><code>|===========================================|
+|                 Account                   |
+|-------------------------------------------|
+| - balance : decimal                       |
+|-------------------------------------------|
+| + GetBalance():decimal                    |
+| + DisplayBalance():void                   |
+| + AddFunds(amount:decimal):void           |
+| + Withdraw(amount:decimal):bool           |
+|===========================================|</code></pre>
 <ol>
 <li>What is the name of this class?</li>
 <li>How many attributes does this class have?</li>
@@ -270,20 +277,20 @@
 <li>You will notice that there are two similar methods: <code class="sourceCode cs">GetBalance</code> and <code class="sourceCode cs">DisplayBalance</code>
 <ul>
 <li>based on the name can you interpret the behavior of these methods?</li>
-<li>can you think of <em>why</em> we might need such similar methods?</li>
+<li>can you think of <em>why</em> we might need two such similar methods?</li>
 </ul></li>
 </ol>
 <p>Class diagram provides a concise way to represent attributes and methods, but it does not explain the implementation of the methods.</p>
 <p>Knowing that:</p>
 <ol>
-<li><p><code class="sourceCode cs">GetBalance</code> method returns the current value of balance,</p></li>
-<li><p><code class="sourceCode cs">DisplayBalance</code> will display the current balance at the screen formatted as currency, for example:</p>
+<li><p><code class="sourceCode cs">GetBalance</code> returns the current value of balance,</p></li>
+<li><p><code class="sourceCode cs">DisplayBalance</code> displays the current balance at the screen formatted as currency, for example:</p>
 <pre class="text"><code>Your current balance is $1,000,000.00 dollars!</code></pre></li>
 <li><p><code class="sourceCode cs">AddFunds</code> increments the current balance value by specified <code class="sourceCode cs">amount</code>, and</p></li>
 <li><p><code class="sourceCode cs">Withdraw</code> performs following operation:</p>
 <ul>
 <li>if sufficient funds are available, it reduces balance by specified amount and returns <code class="sourceCode cs"><span class="kw">true</span></code> to indicate withdrawl succeeded</li>
-<li>if funds are insufficient, it does nothing to balance, and returns <code class="sourceCode cs"><span class="kw">false</span></code></li>
+<li>if funds are insufficient, it does nothing to balance, and returns <code class="sourceCode cs"><span class="kw">false</span></code> to indicate withdrawal was unsuccessful.</li>
 </ul></li>
 </ol>
 <p>implement your version of this class in C#.</p>
@@ -308,14 +315,15 @@
 <h1>Pushing Further (Optional)</h1>
 <p>The following is an independent task, to widen your understanding of UML modelling concepts:</p>
 <ol>
-<li><p>Class diagrams are just a special case of UML diagram. Have a look at <a href="https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams" class="uri">https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams</a>. In which category are class diagrams: behavior, or structure diagram?</p></li>
-<li><p>Besides attributes and methods, class diagrams can also represent relationships between classes.<br />
-Have a look at <a href="https://en.wikipedia.org/wiki/Class_diagram/" class="uri">https://en.wikipedia.org/wiki/Class_diagram/</a> for more examples of class diagrams.</p></li>
-<li><p>Activity Diagram is another type of UML diagram for representing program actions. You will occasionally see activity diagrams in the lecture notes.</p>
-<figure>
-<img src="./img/activity_diag_vote_if_else.svg" alt="“A flowchart representation of an if-else statement”" /><figcaption aria-hidden="true">“A flowchart representation of an if-else statement”</figcaption>
-</figure>
-<p>Have a look at <a href="https://en.wikipedia.org/wiki/Activity_diagram" class="uri">https://en.wikipedia.org/wiki/Activity_diagram</a> and try to understand the example: “Activity diagram for a guided brainstorming process”.</p></li>
+<li><p>Class diagrams are just a special case of UML diagram. Have a look at</p>
+<p><a href="https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams" class="uri">https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams</a></p>
+<p>In which category are class diagrams: behavior, or structure diagram?</p></li>
+<li><p>Besides modelling attributes and methods, class diagrams can also represent relationships between classes.<br />
+Have a look at</p>
+<p><a href="https://en.wikipedia.org/wiki/Class_diagram/" class="uri">https://en.wikipedia.org/wiki/Class_diagram/</a></p>
+<p>for more examples of class diagrams and its uses.</p></li>
+<li><p>Activity Diagram is another type of UML diagram for representing program actions. You will occasionally see activity diagrams in the lecture notes.<br />
+Have a look at <a href="https://en.wikipedia.org/wiki/Activity_diagram" class="uri">https://en.wikipedia.org/wiki/Activity_diagram</a> and try to understand the example: “Activity diagram for a guided brainstorming process”.</p></li>
 </ol>
 </section>
 </main>
