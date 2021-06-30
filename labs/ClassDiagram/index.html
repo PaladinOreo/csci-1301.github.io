@@ -19,7 +19,7 @@
   <meta property="og:image" content="../../android-chrome-512x512.png" />
   <meta name="author" content="https://csci-1301.github.io/about#authors" />
   <meta name="keywords" content="Computer Science, Problem solving methods, Augusta University, Bachelor of Science, C# Programming language" />
-  <title>Class Diagram</title>
+  <title>UML Class Diagram</title>
   <style>
     html {
       line-height: 1.5;
@@ -245,13 +245,17 @@
     </div>
 </header>
 <header id="title-block-header">
-<h1 class="title">Class Diagram</h1>
+<h1 class="title">UML Class Diagram</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">June 30, 2021 (05:54:22 PM)</p>
+<p class="date">June 30, 2021 (06:04:26 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#interpreting-a-uml-class-diagram">Interpreting a UML class diagram</a></li>
+<li><a href="#interpreting-a-uml-class-diagram">Interpreting a UML class diagram</a>
+<ul>
+<li><a href="#reading-the-diagram">Reading the diagram</a></li>
+<li><a href="#implementing-the-class">Implementing the class</a></li>
+</ul></li>
 <li><a href="#writing-your-own-class-diagram">Writing your own class diagram</a></li>
 <li><a href="#pushing-further-optional">Pushing Further (Optional)</a></li>
 </ul>
@@ -259,6 +263,8 @@
 <p><strong>Unified Modeling Language</strong> (UML) is a tool for visually representing programs. UML can represent many different types of diagrams. In this lab you will practice interpreting and creating one of them: a <em>class diagram</em>.</p>
 <section id="interpreting-a-uml-class-diagram" class="level1">
 <h1>Interpreting a UML class diagram</h1>
+<section id="reading-the-diagram" class="level2">
+<h2>Reading the diagram</h2>
 <p>Study the following diagram, then answer follow up questions:</p>
 <pre class="text"><code>|===========================================|
 |                 Account                   |
@@ -268,7 +274,7 @@
 | + GetBalance():decimal                    |
 | + DisplayBalance():void                   |
 | + AddFunds(amount:decimal):void           |
-| + Withdraw(amount:decimal):bool           |
+| + Withdraw(amount:decimal):void           |
 |===========================================|</code></pre>
 <ol>
 <li>What is the name of this class?</li>
@@ -280,6 +286,9 @@
 <li>can you think of <em>why</em> we might need two such similar methods?</li>
 </ul></li>
 </ol>
+</section>
+<section id="implementing-the-class" class="level2">
+<h2>Implementing the class</h2>
 <p>Class diagram provides a concise way to represent attributes and methods, but it does not explain the implementation of the methods.</p>
 <p>Knowing that:</p>
 <ol>
@@ -287,13 +296,10 @@
 <li><p><code class="sourceCode cs">DisplayBalance</code> displays the current balance at the screen formatted as currency, for example:</p>
 <pre class="text"><code>Your current balance is $1,000,000.00 dollars!</code></pre></li>
 <li><p><code class="sourceCode cs">AddFunds</code> increments the current balance value by specified <code class="sourceCode cs">amount</code>, and</p></li>
-<li><p><code class="sourceCode cs">Withdraw</code> performs following operation:</p>
-<ul>
-<li>if sufficient funds are available, it reduces balance by specified amount and returns <code class="sourceCode cs"><span class="kw">true</span></code> to indicate withdrawl succeeded</li>
-<li>if funds are insufficient, it does nothing to balance, and returns <code class="sourceCode cs"><span class="kw">false</span></code> to indicate withdrawal was unsuccessful.</li>
-</ul></li>
+<li><p><code class="sourceCode cs">Withdraw</code> reduces balance by specified amount.</p></li>
 </ol>
 <p>implement your version of this class in C#.</p>
+</section>
 </section>
 <section id="writing-your-own-class-diagram" class="level1">
 <h1>Writing your own class diagram</h1>
@@ -315,15 +321,10 @@
 <h1>Pushing Further (Optional)</h1>
 <p>The following is an independent task, to widen your understanding of UML modelling concepts:</p>
 <ol>
-<li><p>Class diagrams are just a special case of UML diagram. Have a look at</p>
-<p><a href="https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams" class="uri">https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams</a></p>
-<p>In which category are class diagrams: behavior, or structure diagram?</p></li>
-<li><p>Besides modelling attributes and methods, class diagrams can also represent relationships between classes.<br />
-Have a look at</p>
-<p><a href="https://en.wikipedia.org/wiki/Class_diagram/" class="uri">https://en.wikipedia.org/wiki/Class_diagram/</a></p>
-<p>for more examples of class diagrams and its uses.</p></li>
-<li><p>Activity Diagram is another type of UML diagram for representing program actions. You will occasionally see activity diagrams in the lecture notes.<br />
-Have a look at <a href="https://en.wikipedia.org/wiki/Activity_diagram" class="uri">https://en.wikipedia.org/wiki/Activity_diagram</a> and try to understand the example: “Activity diagram for a guided brainstorming process”.</p></li>
+<li>Class diagrams are just a special case of UML diagram. Have a look at <a href="https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams" class="uri">https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams</a> In which category are class diagrams: behavior, or structure diagram?<br />
+</li>
+<li>Besides modelling attributes and methods, class diagrams can also represent relationships between classes. Have a look at <a href="https://en.wikipedia.org/wiki/Class_diagram/" class="uri">https://en.wikipedia.org/wiki/Class_diagram/</a> for more examples of class diagrams and its uses.</li>
+<li>Activity Diagram is another type of UML diagram for representing program actions. You will occasionally see activity diagrams in the lecture notes. Have a look at <a href="https://en.wikipedia.org/wiki/Activity_diagram" class="uri">https://en.wikipedia.org/wiki/Activity_diagram</a> and try to understand the example: “Activity diagram for a guided brainstorming process”.</li>
 </ol>
 </section>
 </main>
