@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Char and Int Conversion, Ordering of Characters</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">July 1, 2021 (10:35:34 AM)</p>
+<p class="date">July 1, 2021 (10:46:38 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -263,7 +263,7 @@
 </nav>
 <section id="reading-and-understanding" class="level1">
 <h1>Reading and Understanding</h1>
-<p>Characters are represented by integers: cf. <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters" class="uri">https://en.wikipedia.org/wiki/ASCII#Printable_characters</a> for a mapping between the glyphs (i.e., space, <code class="sourceCode cs">A</code>, <code class="sourceCode cs"><span class="op">!</span></code>, etc.) and <strong>dec</strong>imal values, to be read as “integer code”, i.e., 32, 33, 34, etc.</p>
+<p>Characters are represented by integers: cf. <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters" class="uri">https://en.wikipedia.org/wiki/ASCII#Printable_characters</a> for a mapping between the glyphs (i.e., space, <code class="sourceCode cs">A</code>, <code class="sourceCode cs"><span class="op">!</span></code>, etc.) and decimal values, to be read as “integer code”, i.e., 32, 33, 34, etc.</p>
 <p>In the referenced table, each character’s integer code is given for different <a href="https://en.wikipedia.org/wiki/Radix#In_numeral_systems">numeral systems</a>:</p>
 <ul>
 <li>Binary: base 2</li>
@@ -282,9 +282,9 @@
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;&#39;C&#39; is represented as {intVar}&quot;</span><span class="op">);</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{charVar} corresponds to the value 84&quot;</span><span class="op">);</span> </span></code></pre></div>
 <p>And note that we can explicitly convert <code class="sourceCode cs"><span class="dt">int</span></code> into <code class="sourceCode cs"><span class="dt">char</span></code>, and <code class="sourceCode cs"><span class="dt">char</span></code> into <code class="sourceCode cs"><span class="dt">int</span></code>.</p>
-<p>Actually, the conversion from <code class="sourceCode cs"><span class="dt">char</span></code> to <code class="sourceCode cs"><span class="dt">int</span></code> could be done implicitly by C#: replace the previous first line with</p>
+<p>Actually, the conversion from <code class="sourceCode cs"><span class="dt">char</span></code> to <code class="sourceCode cs"><span class="dt">int</span></code> could be done implicitly by C#; replace the previous first line with:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> intVar <span class="op">=</span> <span class="ch">&#39;C&#39;</span><span class="op">;</span></span></code></pre></div>
-<p>And note that your program still compiles.</p>
+<p>and note that your program still compiles.</p>
 <p>Can you also convert implicitly <code class="sourceCode cs"><span class="dt">int</span></code> into <code class="sourceCode cs"><span class="dt">char</span></code>?</p>
 <p>Next write code to determine the <code class="sourceCode cs"><span class="dt">int</span></code> values for the following characters:</p>
 <table>
@@ -348,9 +348,9 @@
 <p>Implement the following short program to practice this concept:</p>
 <ol>
 <li>Ask user to enter a lowercase character.</li>
-<li>Check that the character is within a - z range, to check that it <em>is</em> a lowercase character</li>
-<li>when it is not, display “not a lowercase character”</li>
-<li>otherwise perform the following steps:
+<li>Check that the character is within the <strong>a - z</strong> range (it <em>is</em> a lowercase character)</li>
+<li>When it is not in this range, display “not a lowercase character”</li>
+<li>Otherwise, perform the following steps:
 <ul>
 <li>if user enters character <code class="sourceCode cs"><span class="ch">&#39;n&#39;</span></code>, display “You entered n”</li>
 <li>if the character occurs before <code class="sourceCode cs"><span class="ch">&#39;n&#39;</span></code>, display “Before n”</li>
