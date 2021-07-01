@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">July 1, 2021 (10:46:21 AM)</p>
+<p class="date">July 1, 2021 (03:21:43 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -5563,6 +5563,76 @@ Done</code></pre></li>
 <span id="cb231-14"><a href="#cb231-14" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Lib<span class="op">.</span><span class="fu">ValueMatch</span><span class="op">(</span>arrayA<span class="op">,</span> arrayB<span class="op">));</span></span>
 <span id="cb231-15"><a href="#cb231-15" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
 <span id="cb231-16"><a href="#cb231-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<p>#Random</p>
+<ul>
+<li><p>Random Number Generation</p>
+<ul>
+<li>Produce a number within some bounds following some statistical rules.</li>
+<li>A true random number is a number that is <strong>nondeterministically</strong> selected from a set of numbers wherein each possible selection has an equal probability of occurrence.</li>
+<li>Usually in computer science we contend with <strong>pseudo-random</strong> numbers. These are not truly nondeterministic, but an approximation of random selection based on some algorithm.</li>
+<li>Since pseudo-random selections are “determined” by an algorithm, or set of rules, they are technically <strong>deterministic</strong>.</li>
+</ul></li>
+<li><p>Random Class in C#</p>
+<ul>
+<li><p>Instantiate a random number generator and use to select numbers:</p>
+<div class="sourceCode" id="cb232"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb232-1"><a href="#cb232-1" aria-hidden="true" tabindex="-1"></a>Random rand <span class="op">=</span> <span class="kw">new</span> <span class="fu">Random</span><span class="op">();</span></span>
+<span id="cb232-2"><a href="#cb232-2" aria-hidden="true" tabindex="-1"></a>Random randB <span class="op">=</span> <span class="kw">new</span> <span class="fu">Random</span><span class="op">(</span>seed_int<span class="op">);</span></span></code></pre></div></li>
+<li><p>Notice that we can create a generator with or without an argument. The argument is called a <strong>seed</strong> for the generator.</p></li>
+<li><p>A seed tells the generator where to start its sequence. Using the same seed will always reproduce the same sequence of numbers.</p></li>
+<li><p>The default constructor still has a seed value, but it is a hidden value pulled from the clock time during instantiation.</p></li>
+<li><p>Time-based seeds only reset approximately every 15 milliseconds.</p></li>
+<li><p>The random class is not “random enough” for cryptography.</p></li>
+<li><p>For cryptographic randomness, use the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0">RNGCryptoServiceProvider</a> class or <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator?view=net-5.0">System.Security.Cryptography.RandomNumberGenerator</a>.</p></li>
+</ul></li>
+<li><p>Using Random</p>
+<ul>
+<li><p>Next() method returns a pseudo-random number between 0 and 2,147,483,647 (max signed <code class="sourceCode cs"><span class="dt">int</span></code>), inclusive.</p></li>
+<li><p>By default, the number is always non-negative and within that range.</p>
+<div class="sourceCode" id="cb233"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb233-1"><a href="#cb233-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> randomInt <span class="op">=</span> rand<span class="op">.</span><span class="fu">Next</span><span class="op">();</span></span></code></pre></div></li>
+<li><p>What if we wanted to create a random number between 0 and 100?</p></li>
+<li><p>We could use rand.Next() and then use modulo to cut down the answer range!</p></li>
+<li><p>Alternatively, we could give the Next() method an <code class="sourceCode cs"><span class="dt">int</span></code> argument to set a ceiling.</p>
+<div class="sourceCode" id="cb234"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb234-1"><a href="#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> randomUpto100 <span class="op">=</span> rand<span class="op">.</span><span class="fu">Next</span><span class="op">(</span><span class="dv">101</span><span class="op">);</span></span></code></pre></div></li>
+<li><p>The ceiling value is <strong>exclusive</strong>, so remember to use one number higher than what you want to be your max number.</p></li>
+<li><p>We can also pass two arguments in order to set a range for the values.</p>
+<div class="sourceCode" id="cb235"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb235-1"><a href="#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> random50to100 <span class="op">=</span> rand<span class="op">.</span><span class="fu">Next</span><span class="op">(</span><span class="dv">50</span><span class="op">,</span><span class="dv">101</span><span class="op">);</span></span></code></pre></div></li>
+<li><p>The ceiling value is still exclusive, but the floor is <strong>inclusive</strong>.</p></li>
+<li><p>NextDouble() returns a <strong>normalized</strong> value (value between 0.0 and 1.0 inclusive).</p></li>
+<li><p>What if we want a different range? Adjust with math!</p>
+<div class="sourceCode" id="cb236"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb236-1"><a href="#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> randNeg2to3 <span class="op">-</span> <span class="op">(</span>rand<span class="op">.</span><span class="fu">NextDouble</span><span class="op">()*</span><span class="dv">5</span><span class="op">)-</span><span class="dv">2</span><span class="op">;</span></span></code></pre></div></li>
+<li><p>NextBytes() method takes a <code class="sourceCode cs"><span class="dt">byte</span></code> array as an argument and generates a random <code class="sourceCode cs"><span class="dt">byte</span></code> value for each index.</p></li>
+<li><p>Remember, a <code class="sourceCode cs"><span class="dt">byte</span></code> has an unsigned value between 0 and 255 inclusive.</p>
+<div class="sourceCode" id="cb237"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb237-1"><a href="#cb237-1" aria-hidden="true" tabindex="-1"></a><span class="dt">byte</span><span class="op">[]</span> byteArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">byte</span><span class="op">[</span><span class="dv">10</span><span class="op">];</span></span>
+<span id="cb237-2"><a href="#cb237-2" aria-hidden="true" tabindex="-1"></a>rand<span class="op">.</span><span class="fu">NextBytes</span><span class="op">(</span>byteArray<span class="op">);</span></span></code></pre></div></li>
+</ul></li>
+<li><p>Creating Random Strings</p>
+<ul>
+<li><p>What if we want to construct random strings made of a, b, c, and d?</p></li>
+<li><p>Other techniques are available, but we can use a loop and switch!</p>
+<div class="sourceCode" id="cb238"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb238-1"><a href="#cb238-1" aria-hidden="true" tabindex="-1"></a>Random rand <span class="op">=</span> <span class="kw">new</span> <span class="fu">Random</span><span class="op">();</span></span>
+<span id="cb238-2"><a href="#cb238-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> answer <span class="op">=</span> “”<span class="op">;</span></span>
+<span id="cb238-3"><a href="#cb238-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> selection <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb238-4"><a href="#cb238-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb238-5"><a href="#cb238-5" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb238-6"><a href="#cb238-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb238-7"><a href="#cb238-7" aria-hidden="true" tabindex="-1"></a>    selection <span class="op">=</span> rand<span class="op">.</span><span class="fu">Next</span><span class="op">(</span><span class="dv">4</span><span class="op">);</span></span>
+<span id="cb238-8"><a href="#cb238-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">switch</span><span class="op">(</span>selection<span class="op">){</span></span>
+<span id="cb238-9"><a href="#cb238-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span><span class="op">(</span><span class="dv">0</span><span class="op">):</span></span>
+<span id="cb238-10"><a href="#cb238-10" aria-hidden="true" tabindex="-1"></a>        answer<span class="op">+=</span>“a”<span class="op">;</span></span>
+<span id="cb238-11"><a href="#cb238-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb238-12"><a href="#cb238-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span><span class="op">(</span><span class="dv">1</span><span class="op">):</span></span>
+<span id="cb238-13"><a href="#cb238-13" aria-hidden="true" tabindex="-1"></a>        answer<span class="op">+=</span>“b”<span class="op">;</span></span>
+<span id="cb238-14"><a href="#cb238-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb238-15"><a href="#cb238-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span><span class="op">(</span><span class="dv">2</span><span class="op">):</span></span>
+<span id="cb238-16"><a href="#cb238-16" aria-hidden="true" tabindex="-1"></a>        answer<span class="op">+=</span>“c”<span class="op">;</span></span>
+<span id="cb238-17"><a href="#cb238-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb238-18"><a href="#cb238-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">default</span><span class="op">:</span></span>
+<span id="cb238-19"><a href="#cb238-19" aria-hidden="true" tabindex="-1"></a>        answer<span class="op">+=</span>“d”<span class="op">;</span></span>
+<span id="cb238-20"><a href="#cb238-20" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb238-21"><a href="#cb238-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb238-22"><a href="#cb238-22" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+</ul></li>
+</ul>
 </section>
 <section class="footnotes" role="doc-endnotes">
 <hr />
