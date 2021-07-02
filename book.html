@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">July 2, 2021 (09:42:16 AM)</p>
+<p class="date">July 2, 2021 (12:11:17 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -3983,81 +3983,121 @@ Goodbye</code></pre>
 <span id="cb125-14"><a href="#cb125-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 <li><p>The computer knows which statements are included in each case because of the <code class="sourceCode cs"><span class="kw">break</span></code> keyword. For the “1” case, the block of statements starts after <code class="sourceCode cs"><span class="kw">case</span> <span class="dv">1</span><span class="op">:</span></code> and ends with the <code class="sourceCode cs"><span class="kw">break</span><span class="op">;</span></code> after <code class="sourceCode cs">monthAbbrev <span class="op">=</span> <span class="st">&quot;Jan&quot;</span><span class="op">;</span></code></p></li>
 </ul></li>
-<li><p>The importance of <code class="sourceCode cs"><span class="kw">break</span></code></p>
-<ul>
-<li><p>The curly braces in an <code class="sourceCode cs"><span class="kw">if</span></code> statement <em>must</em> be matched up because this is a rule in C#; you will get a compile error if you forget the <code class="sourceCode cs"><span class="op">}</span></code></p></li>
-<li><p>There is <em>not</em> a rule stating that each <code class="sourceCode cs"><span class="kw">case</span></code> must have a matching <code class="sourceCode cs"><span class="kw">break</span></code>, so if you forget the <code class="sourceCode cs"><span class="kw">break</span></code>, the compiler will not give you an error – but your program might not behave the way you want</p></li>
-<li><p>The <code class="sourceCode cs"><span class="kw">case</span></code> statement only defines where code execution <em>starts</em> when the variable matches a value, not where it <em>ends</em>. The <code class="sourceCode cs"><span class="kw">break</span></code> statement is what defines where code execution stops after a <code class="sourceCode cs"><span class="kw">case</span></code> is matched.</p></li>
-<li><p>Thus, if your “case block” does not end with <code class="sourceCode cs"><span class="kw">break</span></code>, the computer will continue executing code within the <code class="sourceCode cs"><span class="kw">switch</span></code>, and proceed to the next case’s statements. This behavior is called <strong>fall-through</strong>.</p></li>
-<li><p>For example, imagine you forgot to write <code class="sourceCode cs"><span class="kw">break</span></code> at the end of the first “case block” in the months program:</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="kw">switch</span><span class="op">(</span>month<span class="op">)</span></span>
-<span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb126-3"><a href="#cb126-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">1</span><span class="op">:</span></span>
-<span id="cb126-4"><a href="#cb126-4" aria-hidden="true" tabindex="-1"></a>        monthName <span class="op">=</span> <span class="st">&quot;January&quot;</span><span class="op">;</span></span>
-<span id="cb126-5"><a href="#cb126-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">2</span><span class="op">:</span></span>
-<span id="cb126-6"><a href="#cb126-6" aria-hidden="true" tabindex="-1"></a>        monthName <span class="op">=</span> <span class="st">&quot;February&quot;</span><span class="op">;</span></span>
-<span id="cb126-7"><a href="#cb126-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb126-8"><a href="#cb126-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">//...</span></span>
-<span id="cb126-9"><a href="#cb126-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>When this program executes, if <code class="sourceCode cs">month</code> is equal to 1, this is what will happen:</p>
-<ul>
-<li>When the computer encounters <code class="sourceCode cs"><span class="kw">switch</span><span class="op">(</span>month<span class="op">)</span></code>, it compares <code class="sourceCode cs">month</code> to each value in a <code class="sourceCode cs"><span class="kw">case</span></code></li>
-<li>Since <code class="sourceCode cs">month <span class="op">==</span> <span class="dv">1</span></code>, the computer starts executing code at the line <code class="sourceCode cs"><span class="kw">case</span> <span class="dv">1</span><span class="op">:</span></code></li>
-<li><code class="sourceCode cs">monthName</code> gets assigned the value “January”</li>
-<li>The computer continues past the line <code class="sourceCode cs"><span class="kw">case</span> <span class="dv">2</span><span class="op">:</span></code> without doing anything, since the <code class="sourceCode cs"><span class="kw">switch</span></code> comparison has already been done</li>
-<li>The computer executes <code class="sourceCode cs">monthName <span class="op">=</span> <span class="st">&quot;February&quot;</span><span class="op">;</span></code> and <code class="sourceCode cs">monthName</code> gets assigned the value “February”</li>
-<li>The computer encounters a <code class="sourceCode cs"><span class="kw">break</span><span class="op">;</span></code> statement and stops executing code from the <code class="sourceCode cs"><span class="kw">switch</span></code>. It skips to the closing <code class="sourceCode cs"><span class="op">}</span></code> for the <code class="sourceCode cs"><span class="kw">switch</span></code> and continues with the next line of code after that.</li>
 </ul>
-<p>As a result, <code class="sourceCode cs">monthName</code> will end up with the value “February” even though <code class="sourceCode cs">month</code> was equal to 1.</p></li>
-</ul></li>
+<!--
+Commented out because C# doesn't actually support fall-through like every other language with a switch statement.
+Still might be useful to discuss as a comparison with other languages like Java.
+
+- The importance of `break` (in languages other than C#)
+
+    - The curly braces in an `if` statement *must* be matched up because this is a rule; you will get a compile error if you forget the `}`
+
+    - There is *not* a rule stating that each `case` must have a matching `break`, so if you forget the `break`, the compiler will not give you an error -- but your program might not behave the way you want
+
+    - The `case` statement only defines where code execution *starts* when the variable matches a value, not where it *ends*. The `break` statement is what defines where code execution stops after a `case` is matched.
+
+    - Thus, if your "case block" does not end with `break`, the computer will continue executing code within the `switch`, and proceed to the next case's statements. This behavior is called **fall-through**.
+
+    - For example, imagine you forgot to write `break` at the end of the first "case block" in the months program:
+
+        ```java
+        switch(month)
+        {
+            case 1:
+                monthName = "January";
+            case 2:
+                monthName = "February";
+                break;
+            //...
+        }
+        ```
+
+      When this program executes, if `month` is equal to 1, this is what will happen:
+
+        - When the computer encounters `switch(month)`, it compares `month` to each value in a `case`
+        - Since `month == 1`, the computer starts executing code at the line `case 1:`
+        - `monthName` gets assigned the value "January"
+        - The computer continues past the line `case 2:` without doing anything, since the `switch` comparison has already been done
+        - The computer executes `monthName = "February";` and `monthName` gets assigned the value "February"
+        - The computer encounters a `break;` statement and stops executing code from the `switch`. It skips to the closing `}` for the `switch` and continues with the next line of code after that.
+
+      As a result, `monthName` will end up with the value "February" even though `month` was equal to 1.
+-->
+<ul>
 <li><p>Intentionally omitting <code class="sourceCode cs"><span class="kw">break</span></code></p>
 <ul>
-<li><p>It’s not always a mistake to write a <code class="sourceCode cs"><span class="kw">case</span></code> without a matching <code class="sourceCode cs"><span class="kw">break</span></code></p></li>
-<li><p>If there is more than one value that should have the same behavior (i.e. you would write an <code class="sourceCode cs"><span class="kw">if</span></code> condition with an <code class="sourceCode cs"><span class="op">||</span></code>, like <code class="sourceCode cs"><span class="kw">if</span><span class="op">(</span>x <span class="op">==</span> <span class="dv">1</span> <span class="op">||</span> x <span class="op">==</span> <span class="dv">2</span><span class="op">)</span></code>), you can “combine” multiple cases by omitting the <code class="sourceCode cs"><span class="kw">break</span></code> between them</p></li>
+<li><p>Each block of code that starts with a <code class="sourceCode cs"><span class="kw">case</span></code> statement must end with a <code class="sourceCode cs"><span class="kw">break</span></code> statement; it won’t automatically end at the next <code class="sourceCode cs"><span class="kw">case</span></code> statement</p>
+<ul>
+<li>The <code class="sourceCode cs"><span class="kw">case</span></code> statement only defines where code execution <em>starts</em> when the variable matches a value (like an open <code class="sourceCode cs"><span class="op">{</span></code>). The <code class="sourceCode cs"><span class="kw">break</span></code> statement defines where it <em>ends</em> (like a close <code class="sourceCode cs"><span class="op">}</span></code>).</li>
+</ul></li>
+<li><p>However, there’s one exception: A <code class="sourceCode cs"><span class="kw">case</span></code> statement with <em>no body</em> (code block) after it does not need a matching <code class="sourceCode cs"><span class="kw">break</span></code></p></li>
+<li><p>If there is more than one value that should have the same behavior, you can write <code class="sourceCode cs"><span class="kw">case</span></code> statements for both values above a single block of code, with no <code class="sourceCode cs"><span class="kw">break</span></code> between them. If <em>either one</em> matches, the computer will execute that block of code, and then stop at the <code class="sourceCode cs"><span class="kw">break</span></code> statement.</p></li>
 <li><p>In a switch statement with this structure:</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="kw">switch</span><span class="op">(&lt;</span>variable<span class="op">&gt;)</span></span>
-<span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb127-3"><a href="#cb127-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">&lt;</span>value <span class="dv">1</span><span class="op">&gt;:</span></span>
-<span id="cb127-4"><a href="#cb127-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">&lt;</span>value <span class="dv">2</span><span class="op">&gt;:</span></span>
-<span id="cb127-5"><a href="#cb127-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>statement block <span class="dv">1</span><span class="op">&gt;</span></span>
-<span id="cb127-6"><a href="#cb127-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb127-7"><a href="#cb127-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">&lt;</span>value <span class="dv">3</span><span class="op">&gt;:</span></span>
-<span id="cb127-8"><a href="#cb127-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">&lt;</span>value <span class="dv">4</span><span class="op">&gt;:</span></span>
-<span id="cb127-9"><a href="#cb127-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>statement block <span class="dv">2</span><span class="op">&gt;</span></span>
-<span id="cb127-10"><a href="#cb127-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb127-11"><a href="#cb127-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">default</span><span class="op">:</span></span>
-<span id="cb127-12"><a href="#cb127-12" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>statement block <span class="dv">3</span><span class="op">&gt;</span></span>
-<span id="cb127-13"><a href="#cb127-13" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb127-14"><a href="#cb127-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="kw">switch</span><span class="op">(&lt;</span>variable<span class="op">&gt;)</span></span>
+<span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb126-3"><a href="#cb126-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">&lt;</span>value <span class="dv">1</span><span class="op">&gt;:</span></span>
+<span id="cb126-4"><a href="#cb126-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">&lt;</span>value <span class="dv">2</span><span class="op">&gt;:</span></span>
+<span id="cb126-5"><a href="#cb126-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>statement block <span class="dv">1</span><span class="op">&gt;</span></span>
+<span id="cb126-6"><a href="#cb126-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb126-7"><a href="#cb126-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">&lt;</span>value <span class="dv">3</span><span class="op">&gt;:</span></span>
+<span id="cb126-8"><a href="#cb126-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">&lt;</span>value <span class="dv">4</span><span class="op">&gt;:</span></span>
+<span id="cb126-9"><a href="#cb126-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>statement block <span class="dv">2</span><span class="op">&gt;</span></span>
+<span id="cb126-10"><a href="#cb126-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb126-11"><a href="#cb126-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">default</span><span class="op">:</span></span>
+<span id="cb126-12"><a href="#cb126-12" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>statement block <span class="dv">3</span><span class="op">&gt;</span></span>
+<span id="cb126-13"><a href="#cb126-13" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb126-14"><a href="#cb126-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The statements in block 1 will execute if the variable matches value 1 <em>or</em> value 2, and the statements in block 2 will execute if the variable matches value 3 <em>or</em> value 4.</p></li>
 <li><p>For example, imagine our program needs to tell the user which season the month is in. If the month number is 1, 2, or 3, the season is the same (winter), so we can combine these 3 cases. This code will correctly initialize the string <code class="sourceCode cs">season</code>:</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="kw">switch</span><span class="op">(</span>month<span class="op">)</span></span>
+<div class="sourceCode" id="cb127"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="kw">switch</span><span class="op">(</span>month<span class="op">)</span></span>
+<span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb127-3"><a href="#cb127-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">1</span><span class="op">:</span></span>
+<span id="cb127-4"><a href="#cb127-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">2</span><span class="op">:</span></span>
+<span id="cb127-5"><a href="#cb127-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">3</span><span class="op">:</span></span>
+<span id="cb127-6"><a href="#cb127-6" aria-hidden="true" tabindex="-1"></a>        season <span class="op">=</span> <span class="st">&quot;Winter&quot;</span><span class="op">;</span></span>
+<span id="cb127-7"><a href="#cb127-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb127-8"><a href="#cb127-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">4</span><span class="op">:</span></span>
+<span id="cb127-9"><a href="#cb127-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">5</span><span class="op">:</span></span>
+<span id="cb127-10"><a href="#cb127-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">6</span><span class="op">:</span></span>
+<span id="cb127-11"><a href="#cb127-11" aria-hidden="true" tabindex="-1"></a>        season <span class="op">=</span> <span class="st">&quot;Spring&quot;</span><span class="op">;</span></span>
+<span id="cb127-12"><a href="#cb127-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb127-13"><a href="#cb127-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">7</span><span class="op">:</span></span>
+<span id="cb127-14"><a href="#cb127-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">8</span><span class="op">:</span></span>
+<span id="cb127-15"><a href="#cb127-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">9</span><span class="op">:</span></span>
+<span id="cb127-16"><a href="#cb127-16" aria-hidden="true" tabindex="-1"></a>        season <span class="op">=</span> <span class="st">&quot;Summer&quot;</span><span class="op">;</span></span>
+<span id="cb127-17"><a href="#cb127-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb127-18"><a href="#cb127-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">10</span><span class="op">:</span></span>
+<span id="cb127-19"><a href="#cb127-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">11</span><span class="op">:</span></span>
+<span id="cb127-20"><a href="#cb127-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">12</span><span class="op">:</span></span>
+<span id="cb127-21"><a href="#cb127-21" aria-hidden="true" tabindex="-1"></a>        season <span class="op">=</span> <span class="st">&quot;Fall&quot;</span><span class="op">;</span></span>
+<span id="cb127-22"><a href="#cb127-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb127-23"><a href="#cb127-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">default</span><span class="op">:</span></span>
+<span id="cb127-24"><a href="#cb127-24" aria-hidden="true" tabindex="-1"></a>        season <span class="op">=</span> <span class="st">&quot;Error!&quot;</span></span>
+<span id="cb127-25"><a href="#cb127-25" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb127-26"><a href="#cb127-26" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>If <code class="sourceCode cs">month</code> is equal to 1, execution will start at <code class="sourceCode cs"><span class="kw">case</span> <span class="dv">1</span><span class="op">:</span></code>, but the computer will continue past <code class="sourceCode cs"><span class="kw">case</span> <span class="dv">2</span></code> and <code class="sourceCode cs"><span class="kw">case</span> <span class="dv">3</span></code> and execute <code class="sourceCode cs">season <span class="op">=</span> <span class="st">&quot;Winter&quot;</span></code>. It will then stop when it reaches the <code class="sourceCode cs"><span class="kw">break</span></code>, so <code class="sourceCode cs">season</code> gets the value “Winter”. Similarly, if <code class="sourceCode cs">month</code> is equal to 2, execution will start at <code class="sourceCode cs"><span class="kw">case</span> <span class="dv">2</span><span class="op">:</span></code>, and continue until the <code class="sourceCode cs"><span class="kw">break</span></code> statement, so <code class="sourceCode cs">season</code> will also get the value “Winter”.</p></li>
+<li><p>This syntax allows <code class="sourceCode cs"><span class="kw">switch</span></code> statements to have conditions with a logical OR, equivalent to an <code class="sourceCode cs"><span class="kw">if</span></code> condition with an <code class="sourceCode cs"><span class="op">||</span></code>, like <code class="sourceCode cs"><span class="kw">if</span><span class="op">(</span>x <span class="op">==</span> <span class="dv">1</span> <span class="op">||</span> x <span class="op">==</span> <span class="dv">2</span><span class="op">)</span></code></p></li>
+<li><p>For example, the “seasons” statement could also be written as an <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span><span class="op">-</span><span class="kw">if</span></code> with <code class="sourceCode cs"><span class="op">||</span></code> operators, like this:</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span><span class="op">(</span>month <span class="op">==</span> <span class="dv">1</span> <span class="op">||</span> month <span class="op">==</span> <span class="dv">2</span> <span class="op">||</span> month <span class="op">==</span> <span class="dv">3</span><span class="op">)</span></span>
 <span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">1</span><span class="op">:</span></span>
-<span id="cb128-4"><a href="#cb128-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">2</span><span class="op">:</span></span>
-<span id="cb128-5"><a href="#cb128-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">3</span><span class="op">:</span></span>
-<span id="cb128-6"><a href="#cb128-6" aria-hidden="true" tabindex="-1"></a>        season <span class="op">=</span> <span class="st">&quot;Winter&quot;</span><span class="op">;</span></span>
-<span id="cb128-7"><a href="#cb128-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb128-8"><a href="#cb128-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">4</span><span class="op">:</span></span>
-<span id="cb128-9"><a href="#cb128-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">5</span><span class="op">:</span></span>
-<span id="cb128-10"><a href="#cb128-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">6</span><span class="op">:</span></span>
-<span id="cb128-11"><a href="#cb128-11" aria-hidden="true" tabindex="-1"></a>        season <span class="op">=</span> <span class="st">&quot;Spring&quot;</span><span class="op">;</span></span>
-<span id="cb128-12"><a href="#cb128-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb128-13"><a href="#cb128-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">7</span><span class="op">:</span></span>
-<span id="cb128-14"><a href="#cb128-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">8</span><span class="op">:</span></span>
-<span id="cb128-15"><a href="#cb128-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">9</span><span class="op">:</span></span>
-<span id="cb128-16"><a href="#cb128-16" aria-hidden="true" tabindex="-1"></a>        season <span class="op">=</span> <span class="st">&quot;Summer&quot;</span><span class="op">;</span></span>
-<span id="cb128-17"><a href="#cb128-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb128-18"><a href="#cb128-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">10</span><span class="op">:</span></span>
-<span id="cb128-19"><a href="#cb128-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">11</span><span class="op">:</span></span>
-<span id="cb128-20"><a href="#cb128-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">12</span><span class="op">:</span></span>
-<span id="cb128-21"><a href="#cb128-21" aria-hidden="true" tabindex="-1"></a>        season <span class="op">=</span> <span class="st">&quot;Fall&quot;</span><span class="op">;</span></span>
-<span id="cb128-22"><a href="#cb128-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb128-23"><a href="#cb128-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">default</span><span class="op">:</span></span>
-<span id="cb128-24"><a href="#cb128-24" aria-hidden="true" tabindex="-1"></a>        season <span class="op">=</span> <span class="st">&quot;Error!&quot;</span></span>
-<span id="cb128-25"><a href="#cb128-25" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb128-26"><a href="#cb128-26" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>If <code class="sourceCode cs">month</code> is equal to 1, execution will start at <code class="sourceCode cs"><span class="kw">case</span> <span class="dv">1</span><span class="op">:</span></code>, but the computer will continue past <code class="sourceCode cs"><span class="kw">case</span> <span class="dv">2</span></code> and <code class="sourceCode cs"><span class="kw">case</span> <span class="dv">3</span></code> and execute <code class="sourceCode cs">season <span class="op">=</span> <span class="st">&quot;Winter&quot;</span></code>. It will then stop when it reaches the <code class="sourceCode cs"><span class="kw">break</span></code>, so <code class="sourceCode cs">season</code> gets the value “Winter”.</p></li>
+<span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a>    season <span class="op">=</span> <span class="st">&quot;Winter&quot;</span><span class="op">;</span></span>
+<span id="cb128-4"><a href="#cb128-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb128-5"><a href="#cb128-5" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span><span class="op">(</span>month <span class="op">==</span> <span class="dv">4</span> <span class="op">||</span> month <span class="op">==</span> <span class="dv">5</span> <span class="op">||</span> month <span class="op">==</span> <span class="dv">6</span><span class="op">)</span></span>
+<span id="cb128-6"><a href="#cb128-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb128-7"><a href="#cb128-7" aria-hidden="true" tabindex="-1"></a>    season <span class="op">=</span> <span class="st">&quot;Spring&quot;</span><span class="op">;</span></span>
+<span id="cb128-8"><a href="#cb128-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb128-9"><a href="#cb128-9" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span><span class="op">(</span>month <span class="op">==</span> <span class="dv">7</span> <span class="op">||</span> month <span class="op">==</span> <span class="dv">8</span> <span class="op">||</span> month <span class="op">==</span> <span class="dv">9</span><span class="op">)</span></span>
+<span id="cb128-10"><a href="#cb128-10" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb128-11"><a href="#cb128-11" aria-hidden="true" tabindex="-1"></a>    season <span class="op">=</span> <span class="st">&quot;Summer&quot;</span><span class="op">;</span></span>
+<span id="cb128-12"><a href="#cb128-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb128-13"><a href="#cb128-13" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span><span class="op">(</span>month <span class="op">==</span> <span class="dv">10</span> <span class="op">||</span> month <span class="op">==</span> <span class="dv">11</span> <span class="op">||</span> month <span class="op">==</span> <span class="dv">12</span><span class="op">)</span></span>
+<span id="cb128-14"><a href="#cb128-14" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb128-15"><a href="#cb128-15" aria-hidden="true" tabindex="-1"></a>    season <span class="op">=</span> <span class="st">&quot;Fall&quot;</span></span>
+<span id="cb128-16"><a href="#cb128-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb128-17"><a href="#cb128-17" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
+<span id="cb128-18"><a href="#cb128-18" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb128-19"><a href="#cb128-19" aria-hidden="true" tabindex="-1"></a>    season <span class="op">=</span> <span class="st">&quot;Error!&quot;</span></span>
+<span id="cb128-20"><a href="#cb128-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 </ul></li>
 <li><p>Scope and <code class="sourceCode cs"><span class="kw">switch</span></code></p>
 <ul>
