@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Using static keyword</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">July 5, 2021 (03:32:47 PM)</p>
+<p class="date">July 5, 2021 (03:41:38 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -255,7 +255,7 @@
 <ul>
 <li><a href="#static-calculator">Static Calculator</a></li>
 </ul></li>
-<li><a href="#static-members-in-non-static-class">Static members in non-static class</a></li>
+<li><a href="#static-members-in-a-non-static-class">Static members in a non-static class</a></li>
 </ul>
 </nav>
 <section id="static-classes" class="level1">
@@ -322,9 +322,9 @@
 <p>Review <a href="Calculator_Solution.zip">Calculator_Solution</a> for a sample solution.</p>
 </section>
 </section>
-<section id="static-members-in-non-static-class" class="level1">
-<h1>Static members in non-static class</h1>
-<p>A non-static class can contain both static or non-static class members.</p>
+<section id="static-members-in-a-non-static-class" class="level1">
+<h1>Static members in a non-static class</h1>
+<p>A non-static class can contain both static and non-static class members.</p>
 <p>Study the following program implementation but *do not* execute it. After reading through the implementation, answer the questions below.</p>
 <p>Student.cs</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
@@ -343,7 +343,7 @@
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> </span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">void</span> <span class="fu">DisplayStudentCount</span><span class="op">(){</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">// does this work? uncomment next line to check!</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">// does this work? uncomment to check</span></span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Console.WriteLine(name);</span></span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        </span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Number of students: {studentCount}&quot;</span><span class="op">);</span></span>
@@ -359,19 +359,20 @@
 <div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Program <span class="op">{</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">()</span> </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        Student alice <span class="op">=</span> <span class="kw">new</span> <span class="fu">Student</span><span class="op">(</span><span class="dv">1111</span><span class="op">,</span> <span class="st">&quot;Alice&quot;</span><span class="op">);</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>alice<span class="op">);</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        Student<span class="op">.</span><span class="fu">DisplayStudentCount</span><span class="op">();</span> <span class="co">// first time</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        Student bob <span class="op">=</span> <span class="kw">new</span> <span class="fu">Student</span><span class="op">(</span><span class="dv">1112</span><span class="op">,</span> <span class="st">&quot;Bob&quot;</span><span class="op">);</span>        </span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>bob<span class="op">);</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        Student<span class="op">.</span><span class="fu">DisplayStudentCount</span><span class="op">();</span> <span class="co">// second time</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        Student alice <span class="op">=</span> <span class="kw">new</span> <span class="fu">Student</span><span class="op">(</span><span class="dv">1111</span><span class="op">,</span> <span class="st">&quot;Alice&quot;</span><span class="op">);</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>alice<span class="op">);</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        Student<span class="op">.</span><span class="fu">DisplayStudentCount</span><span class="op">();</span> <span class="co">// first time</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        Student bob <span class="op">=</span> <span class="kw">new</span> <span class="fu">Student</span><span class="op">(</span><span class="dv">1112</span><span class="op">,</span> <span class="st">&quot;Bob&quot;</span><span class="op">);</span>        </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>bob<span class="op">);</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        Student<span class="op">.</span><span class="fu">DisplayStudentCount</span><span class="op">();</span> <span class="co">// second time</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <ol>
 <li><p>How many non-static attributes does <code class="sourceCode cs">Student</code> class have?</p></li>
 <li><p>How many static attributes does <code class="sourceCode cs">Student</code> class have?</p></li>
@@ -384,7 +385,7 @@
 <li><code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>bob<span class="op">);</span></code></li>
 <li><code class="sourceCode cs">Student<span class="op">.</span><span class="fu">DisplayStudentCount</span><span class="op">();</span> <span class="co">// second time</span></code></li>
 </ol></li>
-<li><p>if the <code class="sourceCode cs">studentCount</code> attribute was <em>not</em> <code class="sourceCode cs"><span class="kw">static</span></code>, what would be the output of:</p>
+<li><p>if the <code class="sourceCode cs">studentCount</code> attribute was *not* <code class="sourceCode cs"><span class="kw">static</span></code>, what would be the output of:</p>
 <ol>
 <li><code class="sourceCode cs">Student<span class="op">.</span><span class="fu">DisplayStudentCount</span><span class="op">();</span> <span class="co">// first time</span></code></li>
 <li><code class="sourceCode cs">Student<span class="op">.</span><span class="fu">DisplayStudentCount</span><span class="op">();</span> <span class="co">// second time</span></code></li>
