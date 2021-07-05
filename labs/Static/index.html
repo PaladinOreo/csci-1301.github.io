@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Using static keyword</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">July 5, 2021 (02:35:27 PM)</p>
+<p class="date">July 5, 2021 (02:42:35 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -264,7 +264,7 @@
 <p>Pay attention to how these classes are used:</p>
 <ul>
 <li><code class="sourceCode cs">Console</code> object is never instantiated before use</li>
-<li><code class="sourceCode cs">WriteLine</code> method is called referring to the <em>name of the class</em> (not some object)</li>
+<li><code class="sourceCode cs">WriteLine</code> method is called referring to the <em>name of the class</em> (not object identifier)</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -273,7 +273,7 @@
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;calling a static method&quot;</span><span class="op">);</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>Using your IDE, see what happens if you do the following:</p>
+<p>Using your IDE, check what happens if you do the following:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Program <span class="op">{</span></span>
@@ -281,7 +281,7 @@
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        Console test <span class="op">=</span> <span class="kw">new</span> <span class="fu">Console</span><span class="op">();</span>       </span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>Indeed, it is <em>not possible</em> to instantiate an object when a class is declared <code class="sourceCode cs"><span class="kw">static</span></code>. Further, in a static class, all class members (attributes, methods, constructors, etc.) must also be declared <code class="sourceCode cs"><span class="kw">static</span></code>.</p>
+<p>Indeed, it is <em>not possible</em> to instantiate an object when a class is declared <code class="sourceCode cs"><span class="kw">static</span></code>. Further, if a class is declared static, all its members (attributes, methods, constructors, etc.) must also be declared <code class="sourceCode cs"><span class="kw">static</span></code>.</p>
 <section id="static-calculator" class="level2">
 <h2>static Calculator</h2>
 <p>In your IDE create a new project. Then add a new class file called Calculator.cs</p>
@@ -325,7 +325,7 @@
 <section id="static-members-in-non-static-class" class="level1">
 <h1>Static members in non-static class</h1>
 <p>A non-static class can contain both static or non-static class members.</p>
-<p>Study the following program implementation, but do not execute it. After reading through the implementation, answer the follow-up questions below.</p>
+<p>Study the following program implementation but *do not* execute it. After reading through the implementation, answer the questions below.</p>
 <p>“Student.cs”</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -370,20 +370,23 @@
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <ol>
-<li>How many static attributes does <code class="sourceCode cs">Student</code> class have?</li>
-<li>What is the output of each of the following lines in “Program.cs”
+<li><p>How many non-static attributes does <code class="sourceCode cs">Student</code> class have?</p></li>
+<li><p>How many static attributes does <code class="sourceCode cs">Student</code> class have?</p></li>
+<li><p>How many non-static methods does <code class="sourceCode cs">Student</code> class have?</p></li>
+<li><p>How many static methods does <code class="sourceCode cs">Student</code> class have?</p></li>
+<li><p>What is the output of each of the following lines in “Program.cs”</p>
 <ol>
 <li><code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>alice<span class="op">);</span></code></li>
 <li><code class="sourceCode cs">Student<span class="op">.</span><span class="fu">DisplayStudentCount</span><span class="op">();</span> <span class="co">// first time</span></code></li>
 <li><code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>bob<span class="op">);</span></code></li>
 <li><code class="sourceCode cs">Student<span class="op">.</span><span class="fu">DisplayStudentCount</span><span class="op">();</span> <span class="co">// second time</span></code></li>
 </ol></li>
-<li>if the <code class="sourceCode cs">studentCount</code> attribute was <em>not</em> <code class="sourceCode cs"><span class="kw">static</span></code>, what would be the output of:
+<li><p>if the <code class="sourceCode cs">studentCount</code> attribute was <em>not</em> <code class="sourceCode cs"><span class="kw">static</span></code>, what would be the output of:</p>
 <ol>
 <li><code class="sourceCode cs">Student<span class="op">.</span><span class="fu">DisplayStudentCount</span><span class="op">();</span> <span class="co">// first time</span></code></li>
 <li><code class="sourceCode cs">Student<span class="op">.</span><span class="fu">DisplayStudentCount</span><span class="op">();</span> <span class="co">// second time</span></code></li>
 </ol></li>
-<li>When a class contains both static and non-static members, is it possible to refer to non-static members inside a static method? For example, if we try to refer to <code class="sourceCode cs">name</code> attribute inside <code class="sourceCode cs">DisplayStudentCount</code>, will it work? Why or why not?</li>
+<li><p>When a class contains both static and non-static members, is it possible to refer to non-static members inside a static method? For example, if we try to refer to <code class="sourceCode cs">name</code> attribute inside <code class="sourceCode cs">DisplayStudentCount</code>, will it work? Why or why not?</p></li>
 </ol>
 <p>Check your answers by downloading and extracting <a href="Student.zip">Student</a> and executing it. To check the last question, uncomment line 16 in downloaded version of “Student.cs”.</p>
 </section>
