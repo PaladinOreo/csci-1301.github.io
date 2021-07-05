@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">Static Class Members</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">July 2, 2021 (12:11:43 PM)</p>
+<p class="date">July 5, 2021 (12:46:02 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -261,10 +261,10 @@
 </nav>
 <section id="a-class-for-chemical-elements" class="level1">
 <h1>A Class for Chemical Elements</h1>
-<p>You will study and modify a class for <a href="https://en.wikipedia.org/wiki/Chemical_element">chemical elements</a> (consult <a href="https://en.wikipedia.org/wiki/List_of_chemical_elements#List" class="uri">https://en.wikipedia.org/wiki/List_of_chemical_elements#List</a> for a complete list).</p>
+<p>I this lab you will study and modify a class for <a href="https://en.wikipedia.org/wiki/Chemical_element">chemical elements</a>. Consult <a href="https://en.wikipedia.org/wiki/List_of_chemical_elements#List" class="uri">https://en.wikipedia.org/wiki/List_of_chemical_elements#List</a> for a complete list of all elements.</p>
 <section id="reading" class="level2">
 <h2>Reading</h2>
-<p>Download <a href="ChemElemProject.zip">ChemElemProject</a>, extract the project, open it in VS, compile and execute it. Now read the code in “ChemElem.cs” and “Program.cs”.</p>
+<p>Download <a href="ChemicalElements.zip">ChemElemProject</a> and extract the project. Open it in in your IDE, compile and execute it. Now read the code in “ChemElem.cs” and “Program.cs”.</p>
 <p>The class definition “ChemElem.cs” contains:</p>
 <ul>
 <li>Three attributes,</li>
@@ -273,15 +273,15 @@
 <li>One methods that returns the melting point in Celsius,</li>
 <li>One <code class="sourceCode cs">ToString</code> method.</li>
 </ul>
-<p>The application program “Program.cs” performs one simple conversion from Kelvin to Celsius, using data given by the user, create and display a ChemElem object (implicitely calling the <code class="sourceCode cs">ToString</code> method).</p>
+<p>The application program “Program.cs” performs one simple conversion from Kelvin to Celsius. It uses data given by the user, create and display a ChemElem object (implicitly calling the <code class="sourceCode cs">ToString</code> method).</p>
 </section>
 <section id="modifying" class="level2">
 <h2>Modifying</h2>
 <p>Do the following:</p>
 <ol>
 <li>In “ChemElem.cs”, write getters and setters for all attributes</li>
-<li>In “Program.cs”, create a second object using our custom constructor, and display the value of its attributes using the getters you previoulsy defined.</li>
-<li>In “ChemElem.cs”, write a no-args constructor.</li>
+<li>In “ChemElem.cs”, write a constructor that requires no arguments.</li>
+<li>In “Program.cs”, create a second object using the custom constructor that takes 3 arguments, then display the value of its attributes using the getters you previously defined.</li>
 <li>In “Program.cs”, create an object using the no-args constructor, and set its values using the setters your previously defined.</li>
 <li>In “Program.cs”, display on the screen the string returned by the <code class="sourceCode cs">ToString</code> method when it is called by the object you created at the previous step.</li>
 <li>In “Program.cs”, try calling the <code class="sourceCode cs">FromKelvinToCelsius</code> method with one of your object, for instance using <code class="sourceCode cs">hydrogen<span class="op">.</span><span class="fu">FromKelvinToCelsius</span><span class="op">(</span><span class="dv">34</span><span class="op">)</span></code>. What happens?</li>
@@ -290,23 +290,23 @@
 </section>
 <section id="enhancing" class="level2">
 <h2>Enhancing</h2>
-<p>We now want to significantly improve this class, by adding</p>
+<p>We now want to significantly improve this class, by adding:</p>
 <ol>
-<li>An attribute for the boilling point,</li>
+<li>An attribute for the billing point,</li>
 <li>All the tools needed to display the information in Fahrenheit degree, in addition to Celsius and Kelvin.</li>
 </ol>
 <p>You may want to comment part, of all of your “Program.cs” file, before starting to change your class.</p>
 <ul>
 <li>Add an attribute for the boiling point (in Kelvin).</li>
-<li>Modify the constructor, so that it takes a forth argument, and sets its value to be the value of the boiling point attribute.</li>
+<li>Modify the constructor, so that it takes a 4th argument, and sets its value to be the value of the boiling point attribute.</li>
 <li>Create a <em>static</em> <code class="sourceCode cs">FromKelvinToFahrenheit</code> method, taking inspiration from the <code class="sourceCode cs">FromKelvinToCelsius</code> method.</li>
 <li>Create a <code class="sourceCode cs">MeltingInFahrenheit</code> method, that returns the melting point in Fahrenheit of the calling object. This method should use your <code class="sourceCode cs">FromKelvinToFahrenheit</code> method.</li>
 <li>Create a <code class="sourceCode cs">BoilingInFahrenheit</code> method, that return the boiling point in Fahrenheit of the calling object. This method should use your <code class="sourceCode cs">FromKelvinToFahrenheit</code> method.</li>
 <li>Modify the <code class="sourceCode cs">ToString</code> method, so that the string returned includes
 <ul>
 <li>The name of the chemical element and its atomic number,</li>
-<li>The melting point in Kelvin and in Fahrenheit,</li>
-<li>The boiling point in Kelvin and in Fahrenheit.</li>
+<li>The <em>melting point</em> in Kelvin and in Fahrenheit,</li>
+<li>The <em>boiling point</em> in Kelvin and in Fahrenheit.</li>
 </ul></li>
 </ul>
 <p>You should test all of those modifications in your “Program.cs” file as you implement them. Use relevant data, test your program, and make sure the behaviour is the expected behaviour.</p>
