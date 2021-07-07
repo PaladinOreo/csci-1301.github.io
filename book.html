@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">July 7, 2021 (08:21:30 AM)</p>
+<p class="date">July 7, 2021 (05:07:12 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -397,6 +397,7 @@
 <li><a href="#static-variables">Static Variables</a></li>
 <li><a href="#static-classes">Static Classes</a></li>
 </ul></li>
+<li><a href="#random">Random</a></li>
 </ul>
 </nav>
 <!-- The previous outline, which includes some ideas I haven't covered in my lecture
@@ -5769,27 +5770,8 @@ Done</code></pre></li>
 <ul>
 <li><p>Static variables and instance variables are both <strong>fields</strong> of a class; they can also be called “static fields” and “non-static fields”</p></li>
 <li><p>This table summarizes how methods are allowed to access them:</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">\</th>
-<th style="text-align: center;">Static Field</th>
-<th style="text-align: center;">Non-static Field</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Static method</td>
-<td style="text-align: center;">Yes</td>
-<td style="text-align: center;">No</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Non-static method</td>
-<td style="text-align: center;">Yes</td>
-<td style="text-align: center;">Yes</td>
-</tr>
-</tbody>
-</table></li>
+<div class="sourceCode" id="cb246"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb246-1"><a href="#cb246-1" aria-hidden="true" tabindex="-1"></a>                <span class="op">|</span> Static Field <span class="op">|</span> Non<span class="op">-</span><span class="kw">static</span> Field</span></code></pre></div>
+<p>:—: | :—: | :—: Static method | Yes | No Non-static method | Yes | Yes</p></li>
 </ul></li>
 </ul>
 </section>
@@ -5800,20 +5782,23 @@ Done</code></pre></li>
 <li><p>If a class is declared <code class="sourceCode cs"><span class="kw">static</span></code>, all of its members (fields and methods) must be static</p></li>
 <li><p>This is useful for classes that serve as “utility libraries” containing a collection of functions, and are not supposed to be instantiated and used as objects</p></li>
 <li><p>For example, the <code class="sourceCode cs">Math</code> class is declared like this:</p>
-<div class="sourceCode" id="cb246"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb246-1"><a href="#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="kw">static</span> <span class="kw">class</span> Math</span>
-<span id="cb246-2"><a href="#cb246-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb246-3"><a href="#cb246-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">double</span> <span class="fu">Sqrt</span><span class="op">(</span><span class="dt">double</span> x<span class="op">)</span></span>
-<span id="cb246-4"><a href="#cb246-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb246-5"><a href="#cb246-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">...</span></span>
-<span id="cb246-6"><a href="#cb246-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb246-7"><a href="#cb246-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">double</span> <span class="fu">Pow</span><span class="op">(</span><span class="dt">double</span> x<span class="op">,</span> <span class="dt">double</span> y<span class="op">)</span></span>
-<span id="cb246-8"><a href="#cb246-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb246-9"><a href="#cb246-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">...</span></span>
-<span id="cb246-10"><a href="#cb246-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb246-11"><a href="#cb246-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb247-1"><a href="#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="kw">static</span> <span class="kw">class</span> Math</span>
+<span id="cb247-2"><a href="#cb247-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb247-3"><a href="#cb247-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">double</span> <span class="fu">Sqrt</span><span class="op">(</span><span class="dt">double</span> x<span class="op">)</span></span>
+<span id="cb247-4"><a href="#cb247-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb247-5"><a href="#cb247-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">...</span></span>
+<span id="cb247-6"><a href="#cb247-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb247-7"><a href="#cb247-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">double</span> <span class="fu">Pow</span><span class="op">(</span><span class="dt">double</span> x<span class="op">,</span> <span class="dt">double</span> y<span class="op">)</span></span>
+<span id="cb247-8"><a href="#cb247-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb247-9"><a href="#cb247-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">...</span></span>
+<span id="cb247-10"><a href="#cb247-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb247-11"><a href="#cb247-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>There is no need to ever create a <code class="sourceCode cs">Math</code> object, but all of these methods belong together (within the same class) because they all implement standard mathematical functions.</p></li>
 </ul>
-<p>#Random</p>
+</section>
+</section>
+<section id="random" class="level1">
+<h1>Random</h1>
 <ul>
 <li><p>Random Number Generation</p>
 <ul>
@@ -5825,8 +5810,8 @@ Done</code></pre></li>
 <li><p>Random Class in C#</p>
 <ul>
 <li><p>Instantiate a random number generator and use to select numbers:</p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb247-1"><a href="#cb247-1" aria-hidden="true" tabindex="-1"></a>Random rand <span class="op">=</span> <span class="kw">new</span> <span class="fu">Random</span><span class="op">();</span></span>
-<span id="cb247-2"><a href="#cb247-2" aria-hidden="true" tabindex="-1"></a>Random randB <span class="op">=</span> <span class="kw">new</span> <span class="fu">Random</span><span class="op">(</span>seed_int<span class="op">);</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb248"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb248-1"><a href="#cb248-1" aria-hidden="true" tabindex="-1"></a>Random rand <span class="op">=</span> <span class="kw">new</span> <span class="fu">Random</span><span class="op">();</span></span>
+<span id="cb248-2"><a href="#cb248-2" aria-hidden="true" tabindex="-1"></a>Random randB <span class="op">=</span> <span class="kw">new</span> <span class="fu">Random</span><span class="op">(</span>seed_int<span class="op">);</span></span></code></pre></div></li>
 <li><p>Notice that we can create a generator with or without an argument. The argument is called a <strong>seed</strong> for the generator.</p></li>
 <li><p>A seed tells the generator where to start its sequence. Using the same seed will always reproduce the same sequence of numbers.</p></li>
 <li><p>The default constructor still has a seed value, but it is a hidden value pulled from the clock time during instantiation.</p></li>
@@ -5838,52 +5823,51 @@ Done</code></pre></li>
 <ul>
 <li><p>Next() method returns a pseudo-random number between 0 and 2,147,483,647 (max signed <code class="sourceCode cs"><span class="dt">int</span></code>), inclusive.</p></li>
 <li><p>By default, the number is always non-negative and within that range.</p>
-<div class="sourceCode" id="cb248"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb248-1"><a href="#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> randomInt <span class="op">=</span> rand<span class="op">.</span><span class="fu">Next</span><span class="op">();</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb249"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb249-1"><a href="#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> randomInt <span class="op">=</span> rand<span class="op">.</span><span class="fu">Next</span><span class="op">();</span></span></code></pre></div></li>
 <li><p>What if we wanted to create a random number between 0 and 100?</p></li>
 <li><p>We could use rand.Next() and then use modulo to cut down the answer range!</p></li>
 <li><p>Alternatively, we could give the Next() method an <code class="sourceCode cs"><span class="dt">int</span></code> argument to set a ceiling.</p>
-<div class="sourceCode" id="cb249"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb249-1"><a href="#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> randomUpto100 <span class="op">=</span> rand<span class="op">.</span><span class="fu">Next</span><span class="op">(</span><span class="dv">101</span><span class="op">);</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb250"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb250-1"><a href="#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> randomUpto100 <span class="op">=</span> rand<span class="op">.</span><span class="fu">Next</span><span class="op">(</span><span class="dv">101</span><span class="op">);</span></span></code></pre></div></li>
 <li><p>The ceiling value is <strong>exclusive</strong>, so remember to use one number higher than what you want to be your max number.</p></li>
 <li><p>We can also pass two arguments in order to set a range for the values.</p>
-<div class="sourceCode" id="cb250"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb250-1"><a href="#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> random50to100 <span class="op">=</span> rand<span class="op">.</span><span class="fu">Next</span><span class="op">(</span><span class="dv">50</span><span class="op">,</span><span class="dv">101</span><span class="op">);</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb251"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb251-1"><a href="#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> random50to100 <span class="op">=</span> rand<span class="op">.</span><span class="fu">Next</span><span class="op">(</span><span class="dv">50</span><span class="op">,</span><span class="dv">101</span><span class="op">);</span></span></code></pre></div></li>
 <li><p>The ceiling value is still exclusive, but the floor is <strong>inclusive</strong>.</p></li>
 <li><p>NextDouble() returns a <strong>normalized</strong> value (value between 0.0 and 1.0 inclusive).</p></li>
 <li><p>What if we want a different range? Adjust with math!</p>
-<div class="sourceCode" id="cb251"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb251-1"><a href="#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> randNeg2to3 <span class="op">-</span> <span class="op">(</span>rand<span class="op">.</span><span class="fu">NextDouble</span><span class="op">()*</span><span class="dv">5</span><span class="op">)-</span><span class="dv">2</span><span class="op">;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb252"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb252-1"><a href="#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> randNeg2to3 <span class="op">-</span> <span class="op">(</span>rand<span class="op">.</span><span class="fu">NextDouble</span><span class="op">()*</span><span class="dv">5</span><span class="op">)-</span><span class="dv">2</span><span class="op">;</span></span></code></pre></div></li>
 <li><p>NextBytes() method takes a <code class="sourceCode cs"><span class="dt">byte</span></code> array as an argument and generates a random <code class="sourceCode cs"><span class="dt">byte</span></code> value for each index.</p></li>
 <li><p>Remember, a <code class="sourceCode cs"><span class="dt">byte</span></code> has an unsigned value between 0 and 255 inclusive.</p>
-<div class="sourceCode" id="cb252"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb252-1"><a href="#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="dt">byte</span><span class="op">[]</span> byteArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">byte</span><span class="op">[</span><span class="dv">10</span><span class="op">];</span></span>
-<span id="cb252-2"><a href="#cb252-2" aria-hidden="true" tabindex="-1"></a>rand<span class="op">.</span><span class="fu">NextBytes</span><span class="op">(</span>byteArray<span class="op">);</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb253"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb253-1"><a href="#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="dt">byte</span><span class="op">[]</span> byteArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">byte</span><span class="op">[</span><span class="dv">10</span><span class="op">];</span></span>
+<span id="cb253-2"><a href="#cb253-2" aria-hidden="true" tabindex="-1"></a>rand<span class="op">.</span><span class="fu">NextBytes</span><span class="op">(</span>byteArray<span class="op">);</span></span></code></pre></div></li>
 </ul></li>
 <li><p>Creating Random Strings</p>
 <ul>
 <li><p>What if we want to construct random strings made of a, b, c, and d?</p></li>
 <li><p>Other techniques are available, but we can use a loop and switch!</p>
-<div class="sourceCode" id="cb253"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb253-1"><a href="#cb253-1" aria-hidden="true" tabindex="-1"></a>Random rand <span class="op">=</span> <span class="kw">new</span> <span class="fu">Random</span><span class="op">();</span></span>
-<span id="cb253-2"><a href="#cb253-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> answer <span class="op">=</span> “”<span class="op">;</span></span>
-<span id="cb253-3"><a href="#cb253-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> selection <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb253-4"><a href="#cb253-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb253-5"><a href="#cb253-5" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb253-6"><a href="#cb253-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb253-7"><a href="#cb253-7" aria-hidden="true" tabindex="-1"></a>    selection <span class="op">=</span> rand<span class="op">.</span><span class="fu">Next</span><span class="op">(</span><span class="dv">4</span><span class="op">);</span></span>
-<span id="cb253-8"><a href="#cb253-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">switch</span><span class="op">(</span>selection<span class="op">){</span></span>
-<span id="cb253-9"><a href="#cb253-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span><span class="op">(</span><span class="dv">0</span><span class="op">):</span></span>
-<span id="cb253-10"><a href="#cb253-10" aria-hidden="true" tabindex="-1"></a>        answer<span class="op">+=</span>“a”<span class="op">;</span></span>
-<span id="cb253-11"><a href="#cb253-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb253-12"><a href="#cb253-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span><span class="op">(</span><span class="dv">1</span><span class="op">):</span></span>
-<span id="cb253-13"><a href="#cb253-13" aria-hidden="true" tabindex="-1"></a>        answer<span class="op">+=</span>“b”<span class="op">;</span></span>
-<span id="cb253-14"><a href="#cb253-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb253-15"><a href="#cb253-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span><span class="op">(</span><span class="dv">2</span><span class="op">):</span></span>
-<span id="cb253-16"><a href="#cb253-16" aria-hidden="true" tabindex="-1"></a>        answer<span class="op">+=</span>“c”<span class="op">;</span></span>
-<span id="cb253-17"><a href="#cb253-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb253-18"><a href="#cb253-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">default</span><span class="op">:</span></span>
-<span id="cb253-19"><a href="#cb253-19" aria-hidden="true" tabindex="-1"></a>        answer<span class="op">+=</span>“d”<span class="op">;</span></span>
-<span id="cb253-20"><a href="#cb253-20" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb253-21"><a href="#cb253-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb253-22"><a href="#cb253-22" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb254"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb254-1"><a href="#cb254-1" aria-hidden="true" tabindex="-1"></a>Random rand <span class="op">=</span> <span class="kw">new</span> <span class="fu">Random</span><span class="op">();</span></span>
+<span id="cb254-2"><a href="#cb254-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> answer <span class="op">=</span> “”<span class="op">;</span></span>
+<span id="cb254-3"><a href="#cb254-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> selection <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb254-4"><a href="#cb254-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb254-5"><a href="#cb254-5" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb254-6"><a href="#cb254-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb254-7"><a href="#cb254-7" aria-hidden="true" tabindex="-1"></a>    selection <span class="op">=</span> rand<span class="op">.</span><span class="fu">Next</span><span class="op">(</span><span class="dv">4</span><span class="op">);</span></span>
+<span id="cb254-8"><a href="#cb254-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">switch</span><span class="op">(</span>selection<span class="op">){</span></span>
+<span id="cb254-9"><a href="#cb254-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span><span class="op">(</span><span class="dv">0</span><span class="op">):</span></span>
+<span id="cb254-10"><a href="#cb254-10" aria-hidden="true" tabindex="-1"></a>        answer<span class="op">+=</span>“a”<span class="op">;</span></span>
+<span id="cb254-11"><a href="#cb254-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb254-12"><a href="#cb254-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span><span class="op">(</span><span class="dv">1</span><span class="op">):</span></span>
+<span id="cb254-13"><a href="#cb254-13" aria-hidden="true" tabindex="-1"></a>        answer<span class="op">+=</span>“b”<span class="op">;</span></span>
+<span id="cb254-14"><a href="#cb254-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb254-15"><a href="#cb254-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span><span class="op">(</span><span class="dv">2</span><span class="op">):</span></span>
+<span id="cb254-16"><a href="#cb254-16" aria-hidden="true" tabindex="-1"></a>        answer<span class="op">+=</span>“c”<span class="op">;</span></span>
+<span id="cb254-17"><a href="#cb254-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb254-18"><a href="#cb254-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">default</span><span class="op">:</span></span>
+<span id="cb254-19"><a href="#cb254-19" aria-hidden="true" tabindex="-1"></a>        answer<span class="op">+=</span>“d”<span class="op">;</span></span>
+<span id="cb254-20"><a href="#cb254-20" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb254-21"><a href="#cb254-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb254-22"><a href="#cb254-22" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 </ul></li>
 </ul>
-</section>
 </section>
 <section class="footnotes" role="doc-endnotes">
 <hr />
