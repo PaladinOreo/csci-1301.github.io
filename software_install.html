@@ -185,7 +185,7 @@
 <header id="title-block-header">
 <h1 class="title">Installing Software</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">August 12, 2021 (11:51:35 AM)</p>
+<p class="date">August 12, 2021 (02:10:17 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -193,7 +193,7 @@
 <li><a href="#executing-code-found-on-line">Executing Code Found on-line</a></li>
 <li><a href="#accessing-an-ide">Accessing an IDE</a>
 <ul>
-<li><a href="#installing-an-ide-on-your-own-computer">Installing an Ide On Your Own Computer</a>
+<li><a href="#installing-an-ide-on-your-own-computer">Installing an IDE On Your Own Computer</a>
 <ul>
 <li><a href="#installing-visual-studio-on-your-own-computer">Installing Visual Studio On Your Own Computer</a></li>
 <li><a href="#installing-monodevelop-on-your-own-computer">Installing MonoDevelop On Your Own Computer</a></li>
@@ -207,20 +207,20 @@
 </nav>
 <section id="generalities-on-installing-software" class="level1">
 <h1>Generalities on Installing Software</h1>
-<p>You probably already installed a software in your life, be it <a href="http://www.videolan.org/">VLC</a>, <a href="https://www.microsoft.com/en-us/microsoft-teams/download-app">Microsoft Teams</a>, or <a href="https://www.whatsapp.com/">Whatsapp</a>. However, depending on if you installed it on a phone, a tablet, a computer, and depending on the operating systems (Android, Windows 10, iOS, Ubuntu, etc.) your experience may have varied drastically.</p>
-<p>Between the <a href="https://en.wikipedia.org/wiki/Google_Play#Play_Store_on_Android">Play store</a>, the <a href="https://en.wikipedia.org/wiki/Command-line_interface">command-line interface</a>, <a href="http://brew.sh/">homebrew</a> and the act of downloading a software using your browser and then installing it using the navigator, there can be a lot of differences, but in all those circumstances you should keep security in mind. In addition of making sure that you are downloading the software from a trusted source, you should also be vigilant about the information the software will be able to access about e.g. your private life.</p>
-<p>As data can be lost or corrupted upon downloading, many plat-form now uses <a href="https://en.wikipedia.org/wiki/Checksum">checksum</a> to verify the integrity of the software you downloaded before installing it. This is an excellent practise that can also be performed “by hand”, as explained for instance for <a href="https://dev.mysql.com/doc/refman/8.0/en/verifying-package-integrity.html">the database manager MySQL</a>: the main idea is that the probability of the signature matching a tampered-with file is extremely low, and that as long as you are downloading the signature and the software from two different sources, you are considerably reducing the <a href="https://en.wikipedia.org/wiki/Attack_surface">attack surface</a>.</p>
+<p>You probably already installed software in your life, be it <a href="http://www.videolan.org/">VLC</a>, <a href="https://www.microsoft.com/en-us/microsoft-teams/download-app">Microsoft Teams</a>, or <a href="https://www.whatsapp.com/">Whatsapp</a>. However, depending on whether you installed it on a phone, a tablet, a computer, and depending on the operating systems (Android, Windows 10, iOS, Ubuntu, etc.) your experience may have varied drastically.</p>
+<p>Between the <a href="https://en.wikipedia.org/wiki/Google_Play#Play_Store_on_Android">Play store</a>, the <a href="https://en.wikipedia.org/wiki/Command-line_interface">command-line interface</a>, <a href="http://brew.sh/">homebrew</a> and the act of downloading software using your browser and then installing it using the navigator, there can be a lot of differences, but in all those circumstances you should keep security in mind. In addition to making sure that you are downloading the software from a trusted source, you should also be vigilant about the information the software will be able to access about e.g. your private life.</p>
+<p>As data can be lost or corrupted upon downloading, many platforms now use <a href="https://en.wikipedia.org/wiki/Checksum">checksums</a> to verify the integrity of the software you downloaded before installing it. This is an excellent practice that can also be performed “by hand”, as explained for instance for <a href="https://dev.mysql.com/doc/refman/8.0/en/verifying-package-integrity.html">the database manager MySQL</a>: the main idea is that the probability of the signature matching a tampered-with file is extremely low, and that as long as you are downloading the signature and the software from two different sources, you are considerably reducing the <a href="https://en.wikipedia.org/wiki/Attack_surface">attack surface</a>.</p>
 </section>
 <section id="executing-code-found-on-line" class="level1">
 <h1>Executing Code Found on-line</h1>
 <p>As you progress in this class, you will be asked more and more to download and execute code hosted <a href="https://github.com/csci-1301/csci-1301.github.io/">in our repository</a>. How can you tell that you can trust this code?</p>
-<p>We have not implemented a checksum-matching (yet!), but you can trust this code as it was coded by your instructors, and hosted on a plat-form using <a href="https://docs.github.com/en/github/authenticating-to-github/about-two-factor-authentication">two-factor authentication</a> and were every action is tracked using <a href="https://en.wikipedia.org/wiki/Software_versioning">versioning</a>. Concretely, this means that only somebody who manages to steal your instructor’s credentials, their phone, and thwart all the other instructor’s vigilance would be able to host malicious code on our plat-form: while we certainly imagine that this is theoretically possible, we hope that you will agree that the probability is low enough for you to trust the code on this site.</p>
-<p>As often, security is not absolute, but aims at providing reasonable confidence. Executing “blindly” code found on-line, on the other hand, gives a good chance of facing unpleasant surprises: while there certainly is a lot of useful, good code on websites like <a href="https://stackoverflow.com/">stackoverflow</a>—your instructor probably uses such websites, by the way!—, copying-and-pasting it without understanding its purpose or general structure is almost guaranteed to, at best, not execute properly, at worst, make your system unstable or insecure.</p>
+<p>We have not implemented checksum-matching (yet!), but you can trust this code as it was coded by your instructors, and hosted on a platform using <a href="https://docs.github.com/en/github/authenticating-to-github/about-two-factor-authentication">two-factor authentication</a> where every action is tracked using <a href="https://en.wikipedia.org/wiki/Software_versioning">versioning</a>. Concretely, this means that only somebody who manages to steal your instructor’s credentials and their phone, and thwart all the other instructors’ vigilance, would be able to host malicious code on our platform: while we certainly imagine that this is theoretically possible, we hope that you will agree that the probability is low enough for you to trust the code on this site.</p>
+<p>As often, security is not absolute, but aims at providing reasonable confidence. Executing “blindly” code found on-line, on the other hand, gives you a good chance of facing unpleasant surprises: while there certainly is a lot of useful, good code on websites like <a href="https://stackoverflow.com/">stackoverflow</a>—your instructor probably uses such websites, by the way!—, copying-and-pasting it without understanding its purpose or general structure is almost guaranteed to, at best, not execute properly, at worst, make your system unstable or insecure.</p>
 </section>
 <section id="accessing-an-ide" class="level1">
 <h1>Accessing an IDE</h1>
-<p>An <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a>, for “Integrated development environment”, is the software or service you will be using to write, compile, execute and debug your code. There are many available IDEs, and some can accomodate multiple different programming languages.</p>
-<p>For C#, <a href="https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments#C%23">there are many different possibilities</a>: some are cross-platforms (meaning you can use them on macOS, windows or Linux), some are provided free of charge, some have not been updated in a long time. Three natural choices are <a href="https://visualstudio.microsoft.com/">Visual Studio</a>, <a href="https://www.monodevelop.com/">MonoDevelop</a> and <a href="https://www.jetbrains.com/rider/features/">Rider</a>. While the last two are accessible on every operating systems, Visual Studio is available only for windows, and in a slightly different version for macOS.</p>
+<p>An <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a>, for “Integrated development environment”, is the software or service you will be using to write, compile, execute and debug your code. There are many available IDEs, and some can accommodate multiple different programming languages.</p>
+<p>For C#, <a href="https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments#C%23">there are many different possibilities</a>: some are cross-platforms (meaning you can use them on macOS, Windows or Linux), some are provided free of charge, some have not been updated in a long time. Three natural choices are <a href="https://visualstudio.microsoft.com/">Visual Studio</a>, <a href="https://www.monodevelop.com/">MonoDevelop</a> and <a href="https://www.jetbrains.com/rider/features/">Rider</a>. While the last two are accessible on every operating systems, Visual Studio is available only for Windows, and in a slightly different version for macOS.</p>
 <p>To access one or the other, you will need either</p>
 <ul>
 <li>a computer with the right to install software on it,</li>
@@ -229,12 +229,12 @@
 </ul>
 <p>The third solution is a backup plan, as instead you will access a very minimal version of an IDE to test small snippets of code. You should not rely on it for the duration of this course.</p>
 <section id="installing-an-ide-on-your-own-computer" class="level2">
-<h2>Installing an Ide On Your Own Computer</h2>
+<h2>Installing an IDE On Your Own Computer</h2>
 <p>This part gathers some references for you to install <a href="https://visualstudio.microsoft.com/">Visual Studio</a>, <a href="https://www.monodevelop.com/">MonoDevelop</a> and <a href="https://www.jetbrains.com/rider/features/">Rider</a> on your own computer, regardless of your operating system. It is strongly encouraged that you do so, especially if you want to continue in a CS/IT/Cyber degree, but is not mandatory<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <p>The instructions are detailed, but there are plenty of ways this can go wrong: make sure you have read and followed those instructions carefully before <a href="labs/Introduction/#how-to-ask-a-question">asking for help</a>!</p>
 <section id="installing-visual-studio-on-your-own-computer" class="level3">
 <h3>Installing Visual Studio On Your Own Computer</h3>
-<p>Note that we are <em>not</em> installing “Visual Studio <em>code</em>”, but simply “Visual Studio”.</p>
+<p>Note that we are <em>not</em> installing “Visual Studio <em>Code</em>”, but simply “Visual Studio”.</p>
 <section id="install-win" class="level4">
 <h4>For Windows</h4>
 <ol>
@@ -266,12 +266,12 @@
 </section>
 <section id="installing-rider-on-your-own-computer" class="level3">
 <h3>Installing Rider On Your Own Computer</h3>
-<p>You can download Rider <a href="https://www.jetbrains.com/rider/download/">from their website</a>, for any operating system. Note that, as a student, you can <a href="https://www.jetbrains.com/community/education/#students">obtain a licence for free</a>: simply <a href="https://www.jetbrains.com/shop/eform/students">fill this form</a>, making sure you use your <span class="citation" data-cites="augusta.edu">@augusta.edu</span> email account, and you should receive a free licence instantaneously!</p>
-<p>Note that jetbrains offers to use a SHA-256 checksum (for instance, <a href="https://download.jetbrains.com/rider/JetBrains.Rider-2021.1.2.tar.gz.sha256">for the linux version</a>) for you to check that your download has not been tampered with. In any case, you can <a href="https://www.jetbrains.com/help/rider/Installation_guide.html#standalone">consult their detailled instructions</a> to install and execute Rider on any operating system.</p>
+<p>You can download Rider <a href="https://www.jetbrains.com/rider/download/">from their website</a>, for any operating system. Note that, as a student, you can <a href="https://www.jetbrains.com/community/education/#students">obtain a licence for free</a>: simply <a href="https://www.jetbrains.com/shop/eform/students">fill out this form</a>, making sure you use your <span class="citation" data-cites="augusta.edu">@augusta.edu</span> email account, and you should receive a free licence instantaneously!</p>
+<p>Note that Jetbrains offers to use a SHA-256 checksum (for instance, <a href="https://download.jetbrains.com/rider/JetBrains.Rider-2021.1.2.tar.gz.sha256">for the linux version</a>) for you to check that your download has not been tampered with. In any case, you can <a href="https://www.jetbrains.com/help/rider/Installation_guide.html#standalone">consult their detailled instructions</a> to install and execute Rider on any operating system.</p>
 </section>
 <section id="installing-anything-anywhere" class="level3">
 <h3>Installing Anything Anywhere</h3>
-<p>If the IDE you would like to adopt is not available for your operating system, you can use a <a href="https://en.wikipedia.org/wiki/Virtual_machine">Virtual Machine</a> manager to run a linux-based distribution or a windows-image on top of your operating system.</p>
+<p>If the IDE you would like to adopt is not available for your operating system, you can use a <a href="https://en.wikipedia.org/wiki/Virtual_machine">Virtual Machine</a> manager to run a linux-based distribution or a Windows image on top of your operating system.</p>
 <p>For this, and regardless of your current operating system, you will need a <a href="https://en.wikipedia.org/wiki/Virtual_machine">Virtual Machine</a> manager.</p>
 <ol>
 <li>You can use
