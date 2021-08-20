@@ -248,7 +248,7 @@
 <header id="title-block-header">
 <h1 class="title">User Guide</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">August 19, 2021 (09:28:17 PM)</p>
+<p class="date">August 19, 2021 (09:38:29 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -640,29 +640,27 @@
 <h3>Migrating feedback repository</h3>
 <p>The steps for migrating feedback target repository are as follows:</p>
 <ol>
-<li>Create a new <strong>public</strong> repository under <code class="sourceCode cs">csci<span class="dv">-1301</span></code> github organization. Follow the established naming convention.</li>
-<li>Go to repository Issues (make sure issues is enabled in repository settings)</li>
-<li>Create a new label whose <em>label name</em> is <code class="sourceCode cs">comment</code> (to match <a href="https://github.com/csci-1301/csci-1301.github.io/blob/main/templates/web/template.html#L87-L94">widget configuration</a>)</li>
-<li>Go to <a href="https://github.com/organizations/csci-1301/settings/installations"><code class="sourceCode cs">Organization Settings <span class="op">&gt;</span> Installed GitHub Apps</code></a></li>
-<li>Choose “utterances” &gt; “configure”</li>
-<li>Under “Repository access” &gt; “Only select repositories”
+<li><p>Create a new <strong>public</strong> repository under <code class="sourceCode cs">csci<span class="dv">-1301</span></code> github organization. Follow the established naming convention.</p></li>
+<li><p>Go to repository Issues (make sure issues is enabled in repository settings)</p></li>
+<li><p>Create a new label whose <em>label name</em> is <code class="sourceCode cs">comment</code> (to match <a href="https://github.com/csci-1301/csci-1301.github.io/blob/main/templates/web/template.html#L87-L94">widget configuration</a>)</p></li>
+<li><p>Go to <a href="https://github.com/organizations/csci-1301/settings/installations"><code class="sourceCode cs">Organization Settings <span class="op">&gt;</span> Installed GitHub Apps</code></a></p></li>
+<li><p>Choose “utterances” &gt; “configure”</p></li>
+<li><p>Under “Repository access” &gt; “Only select repositories”</p>
 <ul>
 <li>select the repository created in step 1.</li>
 <li>remove the previous semester feeback repository</li>
 </ul></li>
-<li>Save</li>
-<li>In <code class="sourceCode cs">csci<span class="fl">-1301.</span>github<span class="op">.</span><span class="fu">io</span></code> repository open <code class="sourceCode cs"><span class="op">/</span>templates<span class="op">/</span>web<span class="op">/</span>template<span class="op">.</span><span class="fu">html</span></code></li>
-<li>Update utteranc.es widget code to point to the new feedback repository created in step 1.</li>
-</ol>
+<li><p>Save</p></li>
+<li><p>In <code class="sourceCode cs">csci<span class="fl">-1301.</span>github<span class="op">.</span><span class="fu">io</span></code> repository open <code class="sourceCode cs"><span class="op">/</span>templates<span class="op">/</span>web<span class="op">/</span>template<span class="op">.</span><span class="fu">html</span></code></p></li>
+<li><p>Update utteranc.es widget code to point to the new feedback repository created in step 1.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>script data<span class="op">-</span>external<span class="op">=</span><span class="st">&quot;1&quot;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>            src<span class="op">=</span><span class="st">&quot;https://utteranc.es/client.js&quot;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            repo<span class="op">=</span><span class="st">&quot;csci-1301/{REPOSITORY_NAME}&quot;</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            label<span class="op">=</span><span class="st">&quot;comment&quot;</span> <span class="op">....&gt;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>script<span class="op">&gt;</span></span></code></pre></div>
-<ol>
-<li>Commit change to template.html</li>
-<li>Make sure the feedback works after migration. If it does not, retrace your steps.</li>
-<li>Archive the earlier feedback repository in its settings.</li>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>script<span class="op">&gt;</span></span></code></pre></div></li>
+<li><p>Commit change to template.html</p></li>
+<li><p>Make sure the feedback works after migration. If it does not, retrace your steps.</p></li>
+<li><p>Archive the earlier feedback repository in its settings.</p></li>
 </ol>
 </section>
 </section>
