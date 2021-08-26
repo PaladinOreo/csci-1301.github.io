@@ -36,7 +36,7 @@
       padding-top: 50px;
       padding-bottom: 50px;
       hyphens: auto;
-      word-wrap: break-word;
+      overflow-wrap: break-word;
       text-rendering: optimizeLegibility;
       font-kerning: normal;
     }
@@ -107,6 +107,7 @@
     pre code {
       padding: 0;
       overflow: visible;
+      overflow-wrap: normal;
     }
     .sourceCode {
      background-color: transparent;
@@ -248,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">User Guide</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">August 23, 2021 (02:48:02 PM)</p>
+<p class="date">August 26, 2021 (04:49:46 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -653,11 +654,11 @@
 <li><p>Save</p></li>
 <li><p>In <code class="sourceCode cs">csci<span class="fl">-1301.</span>github<span class="op">.</span><span class="fu">io</span></code> repository open <code class="sourceCode cs"><span class="op">/</span>templates<span class="op">/</span>web<span class="op">/</span>template<span class="op">.</span><span class="fu">html</span></code></p></li>
 <li><p>Update utteranc.es widget code to point to the new feedback repository created in step 1.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>script data<span class="op">-</span>external<span class="op">=</span><span class="st">&quot;1&quot;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>            src<span class="op">=</span><span class="st">&quot;https://utteranc.es/client.js&quot;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            repo<span class="op">=</span><span class="st">&quot;csci-1301/{REPOSITORY_NAME}&quot;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            label<span class="op">=</span><span class="st">&quot;comment&quot;</span> <span class="op">....&gt;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>script<span class="op">&gt;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>script data<span class="op">-</span>external<span class="op">=</span><span class="st">&quot;1&quot;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        src<span class="op">=</span><span class="st">&quot;https://utteranc.es/client.js&quot;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        repo<span class="op">=</span><span class="st">&quot;csci-1301/{REPOSITORY_NAME}&quot;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">&quot;comment&quot;</span> <span class="op">...</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>script<span class="op">&gt;</span></span></code></pre></div></li>
 <li><p>Commit change to template.html</p></li>
 <li><p>Make sure the feedback works after migration. If it does not, retrace your steps.</p></li>
 <li><p>Archive the earlier feedback repository in its settings.</p></li>

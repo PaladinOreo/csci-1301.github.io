@@ -36,7 +36,7 @@
       padding-top: 50px;
       padding-bottom: 50px;
       hyphens: auto;
-      word-wrap: break-word;
+      overflow-wrap: break-word;
       text-rendering: optimizeLegibility;
       font-kerning: normal;
     }
@@ -107,6 +107,7 @@
     pre code {
       padding: 0;
       overflow: visible;
+      overflow-wrap: normal;
     }
     .sourceCode {
      background-color: transparent;
@@ -248,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">August 23, 2021 (02:48:06 PM)</p>
+<p class="date">August 26, 2021 (04:49:51 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -1377,54 +1378,55 @@ Welcome to CSCI 1301!</code></pre></li>
 <section id="overflow" class="level2">
 <h2>Overflow 🛡</h2>
 <ul>
-<li><p>Assume a car has a 4-digit odometer, and currently, it shows <code class="sourceCode cs"><span class="dv">9999</span></code>. What does the odometer show if you drive the car another mile? As you guess, it shows <code class="sourceCode cs"><span class="dv">0000</span></code> while it should show <code class="sourceCode cs"><span class="dv">10000</span></code>. The reason is the odometer does not have a counter for the fifth digit. Similarly, in C#, when you do arithmetic operations on integral data, the result may not fit in the corresponding data type. This situation is called <code class="sourceCode cs">overflow</code> error.</p></li>
-<li><p>In an unsigned data type variable with <span class="math inline"><em>N</em></span> bits, we can store the numbers ranged from 0 to <span class="math inline">2<sup>(<em>N</em>−1)</sup></span>. In signed data type variables, the high order bit represents the sign of the number as follows:</p>
+<li><p>Assume a car has a 4-digit odometer, and currently, it shows <code class="sourceCode cs"><span class="dv">9999</span></code>. What does the odometer show if you drive the car another mile? As you might guess, it shows <code class="sourceCode cs"><span class="dv">0000</span></code> while it should show <code class="sourceCode cs"><span class="dv">10000</span></code>. The reason is the odometer does not have a counter for the fifth digit. Similarly, in C#, when you do arithmetic operations on integral data, the result may not fit in the corresponding data type. This situation is called an <strong>overflow</strong> error.</p></li>
+<li><p>In an unsigned data type variable with <span class="math inline"><em>N</em></span> bits, we can store the numbers from 0 to <span class="math inline">2<sup>(<em>N</em>−1)</sup></span>. In signed data type variables, the high order bit represents the sign of the number as follows:</p>
 <ul>
 <li>0 means zero or a positive value</li>
 <li>1 means a negative value</li>
 </ul></li>
-<li><p>With the remaining <span class="math inline"><em>N</em> − 1</span> bits, we can represent <span class="math inline">2<sup>(<em>N</em>−1)</sup></span> states. Hence, considering the sign bit, we can store a number from <span class="math inline"> − 2<sup>(<em>N</em>−1)</sup></span> to <span class="math inline">2<sup>(<em>N</em>−1)</sup> − 1</span> in the variable.</p></li>
-<li><p>In many programming languages like C, overflow error raise an exceptional situation that crashes the program if it is not handled. But, in C#, the extra bits are just ignored, and if the programmer does not care about such a possibility, it can lead to a severe security problem.</p></li>
-<li><p>For example, assume a company gives loans to its employee. Couples working for the company can get loans separately, but the total amount can not exceed $10,000. The underneath program looks like it does this job, but there is a risk of attacks. (This program uses notions you have not studied yet, but that should not prevent you from reading the source code and executing it.)</p>
+<li><p>With the remaining <span class="math inline"><em>N</em> − 1</span> bits, we can represent <span class="math inline">2<sup>(<em>N</em>−1)</sup></span> values. Hence, considering the sign bit, we can store a number from <span class="math inline"> − 2<sup>(<em>N</em>−1)</sup></span> to <span class="math inline">2<sup>(<em>N</em>−1)</sup> − 1</span> in the variable.</p></li>
+<li><p>In some programming languages like C and C++, overflow errors cause undefined behavior, and can crash your program. In C#, however, the extra bits are just ignored, and the program will continue executing even though the value in the variable may not make sense. If the programmer is not careful to check for the possibility of overflow errors, they can lead to unwanted program behavior and even severe security problems.</p></li>
+<li><p>For example, assume a company gives loans to its employee. Couples working for the company can get loans separately, but the total amount cannot exceed $10,000. The following program looks like it checks loan requests to ensure they are below the limit, but it can be attacked using an overflow error. (This program uses notions you have not studied yet, but that should not prevent you from reading the source code and executing it.)</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Program</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">()</span></span>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">uint</span> n1<span class="op">,</span> n2<span class="op">;</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">uint</span> n1<span class="op">,</span> n2<span class="op">;</span></span>
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter the requested loan amount for the first person:&quot;</span><span class="op">);</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    n1 <span class="op">=</span> <span class="dt">uint</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter the requested loan amount for the first person:&quot;</span><span class="op">);</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>        n1 <span class="op">=</span> <span class="dt">uint</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
 <span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter the requested loan amount for the second person:&quot;</span><span class="op">);</span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    n2 <span class="op">=</span> <span class="dt">uint</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter the requested loan amount for the second person:&quot;</span><span class="op">);</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>        n2 <span class="op">=</span> <span class="dt">uint</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
 <span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>n1 <span class="op">+</span> n2 <span class="op">&lt;</span> <span class="dv">10000</span><span class="op">)</span></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Pay ${n1} for the first person&quot;</span><span class="op">);</span></span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Pay ${n2} for the second person&quot;</span><span class="op">);</span></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">else</span></span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Error: the sum of loans exceeds the maximum allowance.&quot;</span><span class="op">);</span></span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span><span class="op">(</span>n1 <span class="op">+</span> n2 <span class="op">&lt;</span> <span class="dv">10000</span><span class="op">)</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>            Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Pay ${n1} to the first person&quot;</span><span class="op">);</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>            Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Pay ${n2} to the second person&quot;</span><span class="op">);</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>            Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Error: the sum of the loans exceeds the maximum allowance.&quot;</span><span class="op">);</span></span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
 <span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
-<li><p>If the user enters 2 and 4,294,967,295, we expect to see the error message (“Error: the sum of loans exceeds the maximum allowance.”). However, this is not what will happened, and the request will be accepted even if it should not have. The reason can be explained as follows:</p>
+<li><p>If the user enters 2 and 4,294,967,295, we expect to see the error message (“Error: the sum of loans exceeds the maximum allowance.”). However, this is not what will happen, and the request will be accepted even though it should not have. The reason can be explained as follows:</p>
 <ul>
 <li><code class="sourceCode cs"><span class="dt">uint</span></code> is a 32-bit data type.</li>
 <li>The binary representation of 2 and 4,294,967,295 are <code class="sourceCode cs"><span class="dv">00000000000000000000000000000010</span></code> and <code class="sourceCode cs"><span class="dv">11111111111111111111111111111111</span></code>.</li>
 <li>Therefore, the sum of these numbers should be <code class="sourceCode cs"><span class="dv">100000000000000000000000000000001</span></code>, which needs 33 bits.</li>
-<li>Nevertheless, there is only 32 bits available for the result, and the extra bits will be dropped, and the result looks like <code class="sourceCode cs"><span class="dv">00000000000000000000000000000001</span></code>, which is less than 10,000.</li>
+<li>Nevertheless, there are only 32 bits available for the result, and the extra bits will be dropped, so the result will be <code class="sourceCode cs"><span class="dv">00000000000000000000000000000001</span></code>. This is less than 10,000, so the program will conclude that the sum of the loan values is less than 10,000.</li>
 </ul></li>
 </ul>
 </section>
 <section id="underflow" class="level2">
 <h2>Underflow 🛡</h2>
 <ul>
-<li><p>Sometimes, the result of arithmetic operations over floating-point numbers is smaller than what can be stored in the corresponding data type. This problem is known as the underflow problem.</p></li>
-<li><p>In C#, in case of an underflow problem, the result will be zero.</p>
+<li><p>Sometimes, the result of arithmetic operations over floating-point numbers is smaller than the minimum value that can be stored in the corresponding data type. This problem is known as the <strong>underflow</strong> problem.</p></li>
+<li><p>In C#, in case of an underflow, the result will be zero.</p></li>
+<li><p>For example, the smallest value that can be stored in a <code class="sourceCode cs"><span class="dt">float</span></code> variable is <span class="math inline">1.5 ⋅ 10<sup>−45</sup></span>. If we attempt to divide this value by 10, the variable will get the value 0, not <span class="math inline">1.5 ⋅ 10<sup>−46</sup></span>:</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Program</span>
@@ -1438,8 +1440,11 @@ Welcome to CSCI 1301!</code></pre></li>
 <span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myNumber<span class="op">);</span> <span class="co">//outputs 0</span></span>
 <span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>        myNumber <span class="op">=</span> myNumber <span class="op">*</span> <span class="dv">10</span><span class="op">;</span></span>
 <span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myNumber<span class="op">);</span> <span class="co">//outputs 0</span></span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>        myNumber <span class="op">=</span> <span class="op">(</span><span class="fl">1E-45f</span> <span class="op">/</span> <span class="dv">10</span><span class="op">)</span> <span class="op">*</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myNumber<span class="op">);</span> <span class="co">//outputs 0</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>An underflow error can result in “losing” data in the middle of a series of operations: even if you immediately multiply by 10 again, the intermediate result was less than <span class="math inline">1.5 ⋅ 10<sup>−45</sup></span>, so the final result is still 0.</p></li>
 </ul>
 </section>
 </section>
@@ -4998,9 +5003,7 @@ Done</code></pre></li>
 <li><code class="sourceCode cs">arrayName</code> is an identifier that you will use to access and modify the array elements.</li>
 </ul>
 <p>Before using an array, you must specify the number of elements of the array as follow:</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb186-1"><a href="#cb186-1" aria-hidden="true" tabindex="-1"></a>```</span>
-<span id="cb186-2"><a href="#cb186-2" aria-hidden="true" tabindex="-1"></a>arrayName <span class="op">=</span> <span class="kw">new</span> <span class="op">&lt;</span>type<span class="op">&gt;[&lt;</span>number of elements<span class="op">&gt;];</span></span>
-<span id="cb186-3"><a href="#cb186-3" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb186-1"><a href="#cb186-1" aria-hidden="true" tabindex="-1"></a>arrayName <span class="op">=</span> <span class="kw">new</span> <span class="op">&lt;</span>type<span class="op">&gt;[&lt;</span>number of elements<span class="op">&gt;];</span></span></code></pre></div>
 <p>where <code class="sourceCode cs"><span class="op">&lt;</span>type<span class="op">&gt;</span></code> is as previously, and <code class="sourceCode cs"><span class="op">&lt;</span>number of elements<span class="op">&gt;</span></code>, called the <em>size declarator</em>, needs to be a strictly positive integer which will correspond to the size of the array.</p>
 <ul>
 <li><p>An element of a single-dimensional array can be accessed and modified by using the name of the array and the index of the element as follow:</p>

@@ -36,7 +36,7 @@
       padding-top: 50px;
       padding-bottom: 50px;
       hyphens: auto;
-      word-wrap: break-word;
+      overflow-wrap: break-word;
       text-rendering: optimizeLegibility;
       font-kerning: normal;
     }
@@ -107,6 +107,7 @@
     pre code {
       padding: 0;
       overflow: visible;
+      overflow-wrap: normal;
     }
     .sourceCode {
      background-color: transparent;
@@ -248,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">Variables Manipulation</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">August 23, 2021 (02:48:25 PM)</p>
+<p class="date">August 26, 2021 (04:50:10 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -304,7 +305,7 @@
 <li>One that declares an <code class="sourceCode cs"><span class="dt">int</span></code> variable named <code class="sourceCode cs">classOf</code>.</li>
 </ul></li>
 <li><p>Below those three statements, write statements that assign your last name to the first variable, your first name to the second variable, and your anticipated graduation year (i.e., 2025, for instance) to the third variable.</p></li>
-<li><p>Display at the screen the values of the three variables, using the following statement:</p>
+<li><p>Display on the screen the values of the three variables, using the following statement:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;My name is {firstName} {lastName}, and I expect to graduate in {classOf}.&quot;</span><span class="op">);</span></span></code></pre></div></li>
 <li><p>Compile and execute your program. It should display a message like:</p>
 <pre class="text"><code>My name is Evi Nemeth, and I expect to graduate in 2025.</code></pre></li>
@@ -321,7 +322,7 @@
 <li>Copy the <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code> statement that was previously given,</li>
 <li>Compile and run the program.</li>
 </ol>
-<p>Notice that the very same statement will now display at the screen a different message!</p></li>
+<p>Notice that the very same statement will now display on the screen a different message!</p></li>
 </ol>
 </section>
 <section id="experimenting-with-numeric-datatypes" class="level2">

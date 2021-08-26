@@ -36,7 +36,7 @@
       padding-top: 50px;
       padding-bottom: 50px;
       hyphens: auto;
-      word-wrap: break-word;
+      overflow-wrap: break-word;
       text-rendering: optimizeLegibility;
       font-kerning: normal;
     }
@@ -107,6 +107,7 @@
     pre code {
       padding: 0;
       overflow: visible;
+      overflow-wrap: normal;
     }
     .sourceCode {
      background-color: transparent;
@@ -185,18 +186,50 @@
 <header id="title-block-header">
 <h1 class="title">Keyboard Shortcuts Cheat Sheet</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">August 23, 2021 (02:48:02 PM)</p>
+<p class="date">August 26, 2021 (04:49:46 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#foreword">Foreword</a></li>
+<li><a href="#useful-shortcuts">Useful Shortcuts</a>
 <ul>
 <li><a href="#build-solution">Build solution</a></li>
 <li><a href="#exit-any-program">Exit any program*</a></li>
 <li><a href="#runexecute-program">Run/execute program</a></li>
 <li><a href="#undo">Undo*</a></li>
+</ul></li>
 </ul>
 </nav>
-<p>This document contains useful keyboard shortcuts for different operating systems and IDEs.</p>
-<p>* = these commands work generally everywhere, beyond your IDE.</p>
+<section id="foreword" class="level1">
+<h1>Foreword</h1>
+<p>This document contains useful keyboard shortcuts for different operating systems and IDEs. We use the following symbols:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Common Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><kbd>⇧</kbd></td>
+<td>Shift</td>
+</tr>
+<tr class="even">
+<td><kbd>⌥</kbd></td>
+<td>Option (or Alt)</td>
+</tr>
+<tr class="odd">
+<td><kbd>⌘</kbd></td>
+<td>Command (or Cmd)</td>
+</tr>
+<tr class="even">
+<td><kbd>↵</kbd></td>
+<td>(Carriage) Return</td>
+</tr>
+</tbody>
+</table>
+<p>The sections labeled with the star symbol (“*”) work generally everywhere, beyond your IDE.</p>
 <!-- alphabetical list -->
 <!-- make the action the title so it is possible to link to it -->
 <!-- if there is a diff between IDEs, then can add IDE column to handle such cases -->
@@ -207,6 +240,9 @@
 <li>For Rider, refer to <a href="https://www.jetbrains.com/help/rider/mastering_keyboard_shortcuts.html">the documentation</a>,</li>
 <li>For MonoDevelop, you can refer to <a href="https://shortcutworld.com/Xamarin-Studio/win/Xamarin-Studio-(MonoDevelop)_Shortcuts">this cheatsheet</a> or directly access <a href="https://mhut.ch/journal/2011/02/05/monodevelop-tips-key-bindings">the key binding panel</a>.</li>
 </ul>
+</section>
+<section id="useful-shortcuts" class="level1">
+<h1>Useful Shortcuts</h1>
 <section id="build-solution" class="level2">
 <h2>Build solution</h2>
 <table>
@@ -219,15 +255,15 @@
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Linux</td>
-<td style="text-align: left;"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd></td>
+<td style="text-align: left;"><kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>B</kbd></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">MacOS</td>
-<td style="text-align: left;"><kbd>Cmd</kbd> + <kbd>B</kbd></td>
+<td style="text-align: left;"><kbd>⌘</kbd> + <kbd>B</kbd></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Windows</td>
-<td style="text-align: left;"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd></td>
+<td style="text-align: left;"><kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>B</kbd></td>
 </tr>
 </tbody>
 </table>
@@ -248,7 +284,7 @@
 </tr>
 <tr class="even">
 <td style="text-align: left;">MacOS</td>
-<td style="text-align: left;"><kbd>Cmd</kbd> + <kbd>q</kbd></td>
+<td style="text-align: left;"><kbd>⌘</kbd> + <kbd>q</kbd></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Windows</td>
@@ -273,7 +309,7 @@
 </tr>
 <tr class="even">
 <td style="text-align: left;">MacOS</td>
-<td style="text-align: left;"><kbd>F5</kbd> -or- <kbd>option</kbd> + <kbd>⌘</kbd> + <kbd>return</kbd></td>
+<td style="text-align: left;"><kbd>F5</kbd> -or- <kbd>⌥</kbd> + <kbd>⌘</kbd> + <kbd>↵</kbd></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Windows</td>
@@ -298,7 +334,7 @@
 </tr>
 <tr class="even">
 <td style="text-align: left;">MacOS</td>
-<td style="text-align: left;"><kbd>Cmd</kbd> + <kbd>z</kbd></td>
+<td style="text-align: left;"><kbd>⌘</kbd> + <kbd>z</kbd></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Windows</td>
@@ -306,6 +342,7 @@
 </tr>
 </tbody>
 </table>
+</section>
 </section>
 </main>
 <footer id="footer">

@@ -36,7 +36,7 @@
       padding-top: 50px;
       padding-bottom: 50px;
       hyphens: auto;
-      word-wrap: break-word;
+      overflow-wrap: break-word;
       text-rendering: optimizeLegibility;
       font-kerning: normal;
     }
@@ -107,6 +107,7 @@
     pre code {
       padding: 0;
       overflow: visible;
+      overflow-wrap: normal;
     }
     .sourceCode {
      background-color: transparent;
@@ -248,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">Increment and Decrement Operators, First Loops</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">August 23, 2021 (02:48:24 PM)</p>
+<p class="date">August 26, 2021 (04:50:08 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -326,20 +327,20 @@
 <ol>
 <li>Write a <code class="sourceCode cs"><span class="kw">while</span></code> loop that displays the integers between <span class="math inline">1</span> and <span class="math inline">100</span> on the screen, with a space between them.</li>
 <li>Write a <code class="sourceCode cs"><span class="kw">while</span></code> loop that displays the integers between <span class="math inline">100</span> and <span class="math inline"> − 100</span> on the screen, in decreasing order, with a space between them.</li>
-<li>Write a <code class="sourceCode cs"><span class="kw">while</span></code> loop that displays the <code class="sourceCode cs"><span class="op">*</span></code> (asterisk) character 100 times on the screen.</li>
-<li>Modify your previous loop, so that a new line character is displayed on the screen every time 10 asterisks have been displayed on the screen.</li>
+<li>Write a <code class="sourceCode cs"><span class="kw">while</span></code> loop that displays the <code class="sourceCode cs">°</code> (degree symbol) character 100 times on the screen.</li>
+<li>Modify your previous loop, so that a new line character is displayed on the screen every time 10 degree symbols have been displayed on the screen.</li>
 </ol>
-<p>That is, your program should display this on the screen (this example has a space after each asterisk for display purposes):</p>
-<pre class="text"><code> * * * * * * * * * *
- * * * * * * * * * *
- * * * * * * * * * *
- * * * * * * * * * *
- * * * * * * * * * *
- * * * * * * * * * *
- * * * * * * * * * *
- * * * * * * * * * *
- * * * * * * * * * *
- * * * * * * * * * *</code></pre>
+<p>That is, your program should display this on the screen (this example has a space after each degree symbol for display purposes):</p>
+<pre class="text"><code> ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °</code></pre>
 </section>
 <section id="pushing-further-optional" class="level1">
 <h1>Pushing Further (Optional)</h1>
@@ -347,16 +348,16 @@
 <ol type="1">
 <li>Triangle:</li>
 </ol>
-<pre class="text"><code> * 
- * *
- * * *
- * * * * 
- * * * * *
- * * * * * *
- * * * * * * * 
- * * * * * * * * 
- * * * * * * * * * 
- * * * * * * * * * *</code></pre>
+<pre class="text"><code> ° 
+ ° °
+ ° ° °
+ ° ° ° ° 
+ ° ° ° ° °
+ ° ° ° ° ° °
+ ° ° ° ° ° ° ° 
+ ° ° ° ° ° ° ° ° 
+ ° ° ° ° ° ° ° ° ° 
+ ° ° ° ° ° ° ° ° ° °</code></pre>
 <ol start="2" type="1">
 <li>Triangle of numbers</li>
 </ol>
