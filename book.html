@@ -249,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">September 9, 2021 (02:31:49 PM)</p>
+<p class="date">September 10, 2021 (12:53:07 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -1018,8 +1018,8 @@ Welcome to CSCI 1301!</code></pre></li>
 </section>
 <section id="literals-and-variables" class="level2">
 <h2>Literals and Variables</h2>
-<ul>
-<li>Literals and their types
+<section id="literals-and-their-types" class="level4">
+<h4>Literals and their types</h4>
 <ul>
 <li>A <strong>literal</strong> is a data value written in the code</li>
 <li>A form of “input” provided by the programmer rather than the user; its value is fixed throughout the program’s execution</li>
@@ -1033,8 +1033,10 @@ Welcome to CSCI 1301!</code></pre></li>
 <li><code class="sourceCode cs"><span class="dt">float</span></code> literal: just like a <code class="sourceCode cs"><span class="dt">double</span></code> literal but with the suffix <code class="sourceCode cs">f</code> or <code class="sourceCode cs">F</code> (for “float”), e.g. <code class="sourceCode cs"><span class="fl">4.5f</span></code></li>
 <li><code class="sourceCode cs"><span class="dt">decimal</span></code> literal: just like a <code class="sourceCode cs"><span class="dt">double</span></code> literal but with the suffix <code class="sourceCode cs">m</code> or <code class="sourceCode cs">M</code>(for “deciMal”), e.g. <code class="sourceCode cs"><span class="fl">6.01m</span></code></li>
 </ul></li>
-</ul></li>
-<li>Variables overview
+</ul>
+</section>
+<section id="variables-overview" class="level4">
+<h4>Variables overview</h4>
 <ul>
 <li><p>Variables store data that can <em>vary</em> (change) during the program’s execution</p></li>
 <li><p>They have a type, just like literals, and also a name</p></li>
@@ -1062,13 +1064,13 @@ Welcome to CSCI 1301!</code></pre></li>
 <li>Then, it <strong>assigns</strong> values to each of those variables, using literals of the same type. <code class="sourceCode cs">myAge</code> is assigned the value 29, using the <code class="sourceCode cs"><span class="dt">int</span></code> literal <code class="sourceCode cs"><span class="dv">29</span></code>, and <code class="sourceCode cs">myName</code> is assigned the value “Edward”, using the <code class="sourceCode cs"><span class="dt">string</span></code> literal <code class="sourceCode cs"><span class="st">&quot;Edward&quot;</span></code></li>
 <li>Finally, it <strong>displays</strong> the current value of each variable by using the <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code> method and <strong>string interpolation</strong>, in which the values of variables are inserted into a string by writing their names with some special syntax (a <code class="sourceCode cs">$</code> character at the beginning of the string, and braces around the variable names)</li>
 </ul></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="variable-operations" class="level2">
 <h2>Variable Operations</h2>
-<ul>
-<li>Declaration
+<section id="declaration" class="level4">
+<h4>Declaration</h4>
 <ul>
 <li>This is when you specify the <em>name</em> of a variable and its <em>type</em></li>
 <li>Syntax: <code class="sourceCode cs">type_keyword variable_name<span class="op">;</span></code></li>
@@ -1081,8 +1083,10 @@ Welcome to CSCI 1301!</code></pre></li>
 </ul></li>
 <li>Note that the variable’s type is not part of its name: two variables cannot have the same name <em>even if</em> they are different types</li>
 <li>Multiple variables can be declared in the same statement: <code class="sourceCode cs"><span class="dt">string</span> myFirstName<span class="op">,</span> myLastName<span class="op">;</span></code> would declare <em>two</em> strings called respectively <code class="sourceCode cs">myFirstName</code> and <code class="sourceCode cs">myLastName</code>.</li>
-</ul></li>
-<li>Assignment
+</ul>
+</section>
+<section id="assignment" class="level4">
+<h4>Assignment</h4>
 <ul>
 <li>The act of changing the value of a variable</li>
 <li>Uses the symbol <code class="sourceCode cs"><span class="op">=</span></code>, which is the <em>assignment operator</em>, not a statement of equality – it does not mean “equals”</li>
@@ -1090,16 +1094,20 @@ Welcome to CSCI 1301!</code></pre></li>
 <li>Syntax: <code class="sourceCode cs">variable_name <span class="op">=</span> value<span class="op">;</span></code></li>
 <li>Example: <code class="sourceCode cs">myAge <span class="op">=</span> <span class="dv">29</span><span class="op">;</span></code></li>
 <li>Value <em>must</em> match the type of the variable. If <code class="sourceCode cs">myAge</code> was declared as an <code class="sourceCode cs"><span class="dt">int</span></code>-type variable, you cannot write <code class="sourceCode cs">myAge <span class="op">=</span> <span class="st">&quot;29&quot;</span><span class="op">;</span></code> because <code class="sourceCode cs"><span class="st">&quot;29&quot;</span></code> is a <code class="sourceCode cs"><span class="dt">string</span></code></li>
-</ul></li>
-<li>Initialization (Declaration + Assignment)
+</ul>
+</section>
+<section id="initialization-declaration-assignment" class="level4">
+<h4>Initialization (Declaration + Assignment)</h4>
 <ul>
 <li>Initialization statement combines declaration and assignment in one line (it’s just a shortcut, not a new operation)</li>
 <li>Creates a new variable and also gives it an initial value</li>
 <li>Syntax: <code class="sourceCode cs">type variable_name <span class="op">=</span> value<span class="op">;</span></code></li>
 <li>Example: <code class="sourceCode cs"><span class="dt">string</span> myName <span class="op">=</span> <span class="st">&quot;Edward&quot;</span><span class="op">;</span></code></li>
 <li>Can only be used once per variable, since you can only declare a variable once</li>
-</ul></li>
-<li>Assignment Details
+</ul>
+</section>
+<section id="assignment-details" class="level4">
+<h4>Assignment Details</h4>
 <ul>
 <li><p>Assignment replaces the “old” value of the variable with a “new” one; it’s how variables <em>vary</em></p>
 <ul>
@@ -1114,8 +1122,10 @@ Welcome to CSCI 1301!</code></pre></li>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="op">-</span><span class="dv">5</span><span class="op">;</span></span></code></pre></div>
 <p>the variable <code class="sourceCode cs">b</code> gets the value 12, because that’s the value that <code class="sourceCode cs">a</code> had when the statement <code class="sourceCode cs"><span class="dt">int</span> b <span class="op">=</span> a</code> was executed. Even though <code class="sourceCode cs">a</code> was then changed to -5 afterward, <code class="sourceCode cs">b</code> is still <code class="sourceCode cs"><span class="dv">12</span></code>.</p></li>
 </ul></li>
-</ul></li>
-<li>Displaying
+</ul>
+</section>
+<section id="displaying" class="level4">
+<h4>Displaying</h4>
 <ul>
 <li>Only text (strings) can be displayed in the console</li>
 <li>When we want to print a mixture of text and variables with <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code>, we need to convert all of them to a string</li>
@@ -1129,9 +1139,9 @@ Welcome to CSCI 1301!</code></pre></li>
 <li>If the argument to <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code> is the name of a variable, it will automatically convert that variable to a <code class="sourceCode cs"><span class="dt">string</span></code> before displaying it</li>
 <li>For example, <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myAge<span class="op">);</span></code> will display “29” in the console, as if we had written <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{myAge}&quot;</span><span class="op">);</span></code></li>
 <li>When string interpolation converts a variable to a string, it must call a “string conversion” method supplied with the data type (<code class="sourceCode cs"><span class="dt">int</span></code>, <code class="sourceCode cs"><span class="dt">double</span></code>, etc.). All built-in C# datatypes come with string conversion methods, but when you write your own data types (classes), you’ll need to write your own string conversions – string interpolation won’t magically “know” how to convert <code class="sourceCode cs">MyClass</code> variables to <code class="sourceCode cs"><span class="dt">string</span></code>s</li>
-</ul></li>
 </ul>
 <p>On a final note, observe that you can write statements mixing multiple declarations and assignments, as in <code class="sourceCode cs"><span class="dt">int</span> myAge <span class="op">=</span> <span class="dv">10</span><span class="op">,</span> yourAge<span class="op">,</span> ageDifference<span class="op">;</span></code> that declares three variables of type <code class="sourceCode cs"><span class="dt">int</span></code> and set the value of the first one. It is generally recommended to separate those instructions in different statements as you begin, to ease debugging and have a better understanding of the “atomic steps” your program should perform.</p>
+</section>
 </section>
 <section id="format-specifiers" class="level2">
 <h2>Format Specifiers</h2>
@@ -1217,12 +1227,14 @@ Welcome to CSCI 1301!</code></pre></li>
 <section id="variables-in-memory" class="level2">
 <h2>Variables in Memory</h2>
 <ul>
-<li>A variable names a memory location
-<ul>
+<li>A variable names a memory location</li>
 <li>Data is stored in memory (RAM), so a variable “stores data” by storing it in memory</li>
 <li>Declaring a variable reserves a memory location (address) and gives it a name</li>
 <li>Assigning to a variable stores data to the memory location (address) named by that variable</li>
-</ul></li>
+</ul>
+<section id="sizes-of-numeric-datatypes" class="level4">
+<h4>Sizes of Numeric Datatypes</h4>
+<ul>
 <li>Numeric datatypes have different sizes
 <ul>
 <li>Amount of memory used/reserved by each variable depends on the variable’s type</li>
@@ -1350,9 +1362,11 @@ Welcome to CSCI 1301!</code></pre></li>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="value-and-reference-types" class="level4">
+<h4>Value and Reference types</h4>
 <ul>
-<li>Value and reference types: different ways of storing data in memory
-<ul>
+<li><p>Value and reference types are different ways of storing data in memory</p></li>
 <li><p>Variables name memory locations, but the data that gets stored at the named location is different for each type</p></li>
 <li><p>For a <strong>value type</strong> variable, the named memory location stores the exact data value held by the variable (just what you’d expect)</p></li>
 <li><p>Value types: all the numeric types (<code class="sourceCode cs"><span class="dt">int</span></code>, <code class="sourceCode cs"><span class="dt">float</span></code>, <code class="sourceCode cs"><span class="dt">double</span></code>, <code class="sourceCode cs"><span class="dt">decimal</span></code>, etc.), <code class="sourceCode cs"><span class="dt">char</span></code>, and <code class="sourceCode cs"><span class="dt">bool</span></code></p></li>
@@ -1372,8 +1386,8 @@ Welcome to CSCI 1301!</code></pre></li>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> word2 <span class="op">=</span> word<span class="op">;</span></span></code></pre></div>
 <p>Both <code class="sourceCode cs">word</code> and <code class="sourceCode cs">word2</code> contain the same memory address, pointing to the same memory location, which contains the string “Hello”. There is only one copy of the string “Hello”; <code class="sourceCode cs">word2</code> doesn’t get its own copy.</p></li>
 </ul></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="overflow" class="level2">
 <h2>Overflow 🛡</h2>
@@ -1491,8 +1505,8 @@ Welcome to CSCI 1301!</code></pre></li>
 </table>
 <p>Note: the “remainder” or “modulo” operator represents the remainder after doing integer division between its two operands.<br />
 For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 42 and 44 - 42 = 2.</p>
-<ul>
-<li>Arithmetic and variables
+<section id="arithmetic-and-variables" class="level4">
+<h4>Arithmetic and variables</h4>
 <ul>
 <li><p>The result of an arithmetic expression (like those shown in the table) is a numeric value</p>
 <ul>
@@ -1513,8 +1527,10 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <div class="sourceCode" id="cb24"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> myVar <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>myVar <span class="op">=</span> myVar <span class="op">*</span> <span class="dv">2</span><span class="op">;</span></span></code></pre></div>
 <p>This looks like a paradox because <code class="sourceCode cs">myVar</code> is assigned to itself, but it has a clear meaning because assignment is evaluated right to left. When executing the second line of code, the computer evaluates the right side of the <code class="sourceCode cs"><span class="op">=</span></code> before doing the assignment. So it first reads the current (“old”) value of <code class="sourceCode cs">myVar</code>, which is 4, and computes <code class="sourceCode cs"><span class="dv">4</span> <span class="op">*</span> <span class="dv">2</span></code> to get the value 8. Then, it assigns the new value to <code class="sourceCode cs">myVar</code>, overwriting its old value.</p></li>
-</ul></li>
-<li>Compound assignment operators
+</ul>
+</section>
+<section id="compound-assignment-operators" class="level4">
+<h4>Compound assignment operators</h4>
 <ul>
 <li>The pattern of “compute an expression with a variable, then assign the result to that variable” is common, so there are shortcuts for doing it</li>
 <li>The <strong>compound assignment operators</strong> change the value of a variable by adding, subtracting, etc. from its current value, equivalent to an assignment statement that has the value on both sides:</li>
@@ -1548,13 +1564,13 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <td><code class="sourceCode cs">x <span class="op">=</span> x <span class="op">%</span> <span class="dv">2</span><span class="op">;</span></code></td>
 </tr>
 </tbody>
-</table></li>
-</ul>
+</table>
+</section>
 </section>
 <section id="implicit-and-explicit-conversions-between-datatypes" class="level2">
 <h2>Implicit and Explicit Conversions Between Datatypes</h2>
-<ul>
-<li><p>Assignments from different types</p>
+<section id="assignments-from-different-types" class="level4">
+<h4>Assignments from different types</h4>
 <ul>
 <li><p>The “proper” way to initialize a variable is to assign it a literal of the same type:</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> myAge <span class="op">=</span> <span class="dv">29</span><span class="op">;</span></span>
@@ -1563,8 +1579,10 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <p>Note that <code class="sourceCode cs"><span class="fl">1.77</span></code> is a <code class="sourceCode cs"><span class="dt">double</span></code> literal, while <code class="sourceCode cs"><span class="fl">2.3f</span></code> is a <code class="sourceCode cs"><span class="dt">float</span></code> literal</p></li>
 <li><p>If the literal is not the same type as the variable, you will sometimes get an error – for example, <code class="sourceCode cs"><span class="dt">float</span> radius <span class="op">=</span> <span class="fl">2.3</span></code> will result in a compile error – but sometimes, it appears to work fine: for example <code class="sourceCode cs"><span class="dt">float</span> radius <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></code> compiles and runs without error even though 2 is an <code class="sourceCode cs"><span class="dt">int</span></code> value.</p></li>
 <li><p>In fact, the value being assigned to the variable <strong>must</strong> be the same type as the variable, but some types can be <strong>implicitly converted</strong> to others</p></li>
-</ul></li>
-<li><p>Implicit conversions</p>
+</ul>
+</section>
+<section id="implicit-conversions" class="level4">
+<h4>Implicit conversions</h4>
 <ul>
 <li><p>Implicit conversion allows variables to be assigned from literals of the “wrong” type: the literal value is first implicitly converted to the right type</p>
 <ul>
@@ -1625,8 +1643,10 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <ul>
 <li>This is because of the “sign bit”: a <code class="sourceCode cs"><span class="dt">uint</span></code> can store larger values than an <code class="sourceCode cs"><span class="dt">int</span></code> because it doesn’t use a sign bit, so converting a large <code class="sourceCode cs"><span class="dt">uint</span></code> to an <code class="sourceCode cs"><span class="dt">int</span></code> might lose data</li>
 </ul></li>
-</ul></li>
-<li><p>Explicit conversions</p>
+</ul>
+</section>
+<section id="explicit-conversions" class="level4">
+<h4>Explicit conversions</h4>
 <ul>
 <li><p>Any conversion that is “unsafe” because it might lose data will not happen automatically: you get a compile error if you assign a <code class="sourceCode cs"><span class="dt">double</span></code> variable to a <code class="sourceCode cs"><span class="dt">float</span></code> variable</p></li>
 <li><p>If you want to do an unsafe conversion anyway, you must perform an <strong>explicit conversion</strong> with the <strong>cast operator</strong></p></li>
@@ -1665,7 +1685,6 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <p>In this code, <code class="sourceCode cs">fromSmall</code> will get the value <code class="sourceCode cs"><span class="fl">42.76875m</span></code>, but the program will crash when attempting to cast <code class="sourceCode cs">bigDouble</code> to a <code class="sourceCode cs"><span class="dt">decimal</span></code> because <span class="math inline">2.65 × 10<sup>35</sup></span> is larger than <code class="sourceCode cs"><span class="dt">decimal</span></code>’s maximum value of <span class="math inline">7.9 × 10<sup>28</sup></span></p></li>
 <li><p><code class="sourceCode cs"><span class="dt">decimal</span></code> is more precise than the other two floating-point types (thus doesn’t need to round), but has a smaller range (only <span class="math inline">10<sup>28</sup></span>, vs. <span class="math inline">10<sup>308</sup></span>)</p></li>
 </ul></li>
-</ul></li>
 </ul>
 <p>Summary of implicit and explicit conversions for the numeric datatypes:</p>
 <figure>
@@ -1673,17 +1692,17 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 </figure>
 <p>Refer to <a href="../datatypes_in_csharp.html#result-type-of-operations">the “Result Type of Operations” chart from the cheatsheet</a> for more detail.</p>
 </section>
+</section>
 <section id="arithmetic-on-mixed-data-types" class="level2">
 <h2>Arithmetic on Mixed Data Types</h2>
-<ul>
-<li><p>Math operators for each data type</p>
 <ul>
 <li>The math operators (<code class="sourceCode cs"><span class="op">+</span></code>, <code class="sourceCode cs"><span class="op">-</span></code>, <code class="sourceCode cs"><span class="op">*</span></code>, <code class="sourceCode cs"><span class="op">/</span></code>) are defined separately for each data type: There is an <code class="sourceCode cs"><span class="dt">int</span></code> version of <code class="sourceCode cs"><span class="op">+</span></code> that adds <code class="sourceCode cs"><span class="dt">int</span></code>s, a <code class="sourceCode cs"><span class="dt">float</span></code> version of <code class="sourceCode cs"><span class="op">+</span></code> that adds <code class="sourceCode cs"><span class="dt">float</span></code>s, etc.</li>
 <li>Each operator expects to get two values of the same type on each side, and produces a result of that same type. For example, <code class="sourceCode cs"><span class="fl">2.25</span> <span class="op">+</span> <span class="fl">3.25</span></code> uses the <code class="sourceCode cs"><span class="dt">double</span></code> version of <code class="sourceCode cs"><span class="op">+</span></code>, which adds the two <code class="sourceCode cs"><span class="dt">double</span></code> values to produce a <code class="sourceCode cs"><span class="dt">double</span></code>-type result, 5.5.</li>
 <li>Most operators have the same effect regardless of their type, except for <code class="sourceCode cs"><span class="op">/</span></code></li>
 <li>The <code class="sourceCode cs"><span class="dt">int</span></code>/<code class="sourceCode cs"><span class="dt">short</span></code>/<code class="sourceCode cs"><span class="dt">long</span></code> version of <code class="sourceCode cs"><span class="op">/</span></code> does <strong>integer division</strong>, which returns only the quotient and drops the remainder: In the statement <code class="sourceCode cs"><span class="dt">int</span> result <span class="op">=</span> <span class="dv">21</span> <span class="op">/</span> <span class="dv">5</span><span class="op">;</span></code>, the variable <code class="sourceCode cs">result</code> gets the value 4, because <span class="math inline">21 ÷ 5</span> is 4 with a remainder of 1. If you want the fractional part, you need to use the floating-point version (for <code class="sourceCode cs"><span class="dt">float</span></code>, <code class="sourceCode cs"><span class="dt">double</span></code>, and <code class="sourceCode cs"><span class="dt">decimal</span></code>): <code class="sourceCode cs"><span class="dt">double</span> fracDiv <span class="op">=</span> <span class="fl">21.0</span> <span class="op">/</span> <span class="fl">5.0</span><span class="op">;</span></code> will initialize <code class="sourceCode cs">fracDiv</code> to 4.2.</li>
-</ul></li>
-<li><p>Implicit conversions in math</p>
+</ul>
+<section id="implicit-conversions-in-math" class="level4">
+<h4>Implicit conversions in math</h4>
 <ul>
 <li>If the two operands/arguments to a math operator are not the same type, they must become the same type – one must be converted</li>
 <li>C# will first try implicit conversion to “promote” a less-precise or smaller value to a more precise, larger type</li>
@@ -1704,8 +1723,10 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <li>Now this value is assigned to the variable <code class="sourceCode cs">fraction</code>, which is <code class="sourceCode cs"><span class="dt">double</span></code> type</li>
 <li>The <code class="sourceCode cs"><span class="dt">int</span></code> value is implicitly converted to the <code class="sourceCode cs"><span class="dt">double</span></code> value 4.0, and <code class="sourceCode cs">fraction</code> is assigned the value 4.0</li>
 </ul></li>
-</ul></li>
-<li><p>Explicit conversions in math</p>
+</ul>
+</section>
+<section id="explicit-conversions-in-math" class="level4">
+<h4>Explicit conversions in math</h4>
 <ul>
 <li><p>If the operands are <code class="sourceCode cs"><span class="dt">int</span></code> type, the <code class="sourceCode cs"><span class="dt">int</span></code> version of <code class="sourceCode cs"><span class="op">/</span></code> will get called, even if you assign the result to a <code class="sourceCode cs"><span class="dt">double</span></code></p></li>
 <li><p>You can “force” floating-point division by explicitly converting one operand to <code class="sourceCode cs"><span class="dt">double</span></code> or <code class="sourceCode cs"><span class="dt">float</span></code></p></li>
@@ -1720,8 +1741,8 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> shares <span class="op">=</span> <span class="fl">47.75</span><span class="op">;</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="dt">decimal</span> total <span class="op">=</span> price <span class="op">*</span> <span class="op">(</span><span class="dt">decimal</span><span class="op">)</span> shares<span class="op">;</span></span></code></pre></div>
 <p>In this code, <code class="sourceCode cs"><span class="dt">double</span></code> can’t be implicitly converted to <code class="sourceCode cs"><span class="dt">decimal</span></code>, and <code class="sourceCode cs"><span class="dt">decimal</span></code> can’t be explicitly converted to <code class="sourceCode cs"><span class="dt">double</span></code>, so the multiplication <code class="sourceCode cs">price <span class="op">*</span> shares</code> would produce a compile error. We need an explicit cast to <code class="sourceCode cs"><span class="dt">decimal</span></code> to make both operands the same type (<code class="sourceCode cs"><span class="dt">decimal</span></code>).</p></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="order-of-operations" class="level2">
 <h2>Order of Operations</h2>
@@ -1792,7 +1813,9 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <li><p><code class="sourceCode cs">Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">()</span></code> does have a return value, specifically a <code class="sourceCode cs"><span class="dt">string</span></code>. This means you can use the result of this method to assign a <code class="sourceCode cs"><span class="dt">string</span></code> variable, just like you can use the result of an arithmetic expression to assign a numeric variable.</p></li>
 <li><p>The <code class="sourceCode cs"><span class="dt">string</span></code> that <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">()</span></code> returns is <strong>one line of text</strong> typed in the console. When you call it, the computer will wait for the user to type some text and then press “Enter”, and everything the user typed before pressing “Enter” gets returned from <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">()</span></code></p></li>
 </ul></li>
-<li>Parsing user input
+</ul>
+<section id="parsing-user-input" class="level4">
+<h4>Parsing user input</h4>
 <ul>
 <li><p><code class="sourceCode cs">Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">()</span></code> always returns the same type of data, a <code class="sourceCode cs"><span class="dt">string</span></code>, regardless of what the user enters</p>
 <ul>
@@ -1823,8 +1846,10 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <div class="sourceCode" id="cb37"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter your age:&quot;</span><span class="op">);</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> ageString <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> age <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>ageString<span class="op">);</span></span></code></pre></div></li>
-</ul></li>
-<li>More detail on the <code class="sourceCode cs">Parse</code> methods
+</ul>
+</section>
+<section id="more-detail-on-the-parse-methods" class="level4">
+<h4>More detail on the <code class="sourceCode cs">Parse</code> methods</h4>
 <ul>
 <li><p><code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code> is a method that takes input from your program, in the form of an argument, but does not return any output. Meanwhile, <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">ReadLine</span></code> is a method that does not have any arguments, but it returns output to your program (the user’s string).</p></li>
 <li><p><code class="sourceCode cs"><span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span></code> is a method that both takes input (the <code class="sourceCode cs"><span class="dt">string</span></code> argument) and returns output (the converted <code class="sourceCode cs"><span class="dt">int</span></code> value)</p></li>
@@ -1844,8 +1869,10 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <div class="sourceCode" id="cb41"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> curYear <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span></code></pre></div>
 <p>In this statement, the return value (output) of one method is used as the argument (input) to another method. When the computer executes the statement, it starts by evaluating the <code class="sourceCode cs"><span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(...)</span></code> method call, but it cannot actually run the <code class="sourceCode cs">Parse</code> method yet because its argument is an expression, not a variable or value. In order to determine what value to send to the <code class="sourceCode cs">Parse</code> method as input, it must first evaluate the <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">()</span></code> method call. Since this method has no arguments, the computer can immediately start executing it; the <code class="sourceCode cs">ReadLine</code> method waits for the user to type a line of text, then returns that text as a <code class="sourceCode cs"><span class="dt">string</span></code> value. This return value can now be used as the argument to <code class="sourceCode cs"><span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span></code>, and the computer starts executing <code class="sourceCode cs"><span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span></code> with the user-provided string as input. When the <code class="sourceCode cs">Parse</code> method returns an <code class="sourceCode cs"><span class="dt">int</span></code> value, this value becomes the value of the entire expression <code class="sourceCode cs"><span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">())</span></code>, and the computer assigns it to the variable <code class="sourceCode cs">curYear</code>.</p></li>
 <li><p>Notice that by placing the call to <code class="sourceCode cs">ReadLine</code> inside the argument to <code class="sourceCode cs">Parse</code>, we have eliminated the variable <code class="sourceCode cs">userInput</code> entirely. The <code class="sourceCode cs"><span class="dt">string</span></code> returned by <code class="sourceCode cs">ReadLine</code> doesn’t need to be stored anywhere (i.e. in a variable); it only needs to exist long enough to be sent to the <code class="sourceCode cs">Parse</code> method as input.</p></li>
-</ul></li>
-<li>Correct input formatting
+</ul>
+</section>
+<section id="correct-input-formatting" class="level4">
+<h4>Correct input formatting</h4>
 <ul>
 <li>The Parse methods <em>assume</em> that the string they are given as an argument (i.e. the user input) actually contains a valid number. But the user may not follow directions, and invalid input can cause a variety of errors.</li>
 <li>If the string does not contain a number at all – e.g. <code class="sourceCode cs"><span class="dt">int</span> badIdea <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span><span class="st">&quot;Hello&quot;</span><span class="op">);</span></code> – the program will fail with the error <code class="sourceCode cs">System<span class="op">.</span><span class="fu">FormatException</span></code></li>
@@ -1862,13 +1889,13 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <li><code class="sourceCode cs"><span class="dt">decimal</span><span class="op">.</span><span class="fu">Parse</span></code> will accept strings in the format <code class="sourceCode cs"><span class="op">([</span>ws<span class="op">])([</span>sign<span class="op">])([</span>digits<span class="op">],)[</span>digits<span class="op">](.[</span>digits<span class="op">])([</span>ws<span class="op">])</span></code>. Note that you can optionally include commas between groups of digits, and the decimal point is also optional. This means a string like <code class="sourceCode cs"><span class="st">&quot;18,999&quot;</span></code> is valid for <code class="sourceCode cs"><span class="dt">decimal</span><span class="op">.</span><span class="fu">Parse</span></code> but not for <code class="sourceCode cs"><span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span></code>.</li>
 <li><code class="sourceCode cs"><span class="dt">float</span><span class="op">.</span><span class="fu">Parse</span></code> and <code class="sourceCode cs"><span class="dt">double</span><span class="op">.</span><span class="fu">Parse</span></code> will accept strings in the format <code class="sourceCode cs"><span class="op">([</span>ws<span class="op">])([</span>sign<span class="op">])([</span>digits<span class="op">],)[</span>digits<span class="op">](.[</span>digits<span class="op">])(</span>e<span class="op">[</span>sign<span class="op">][</span>digits<span class="op">])([</span>ws<span class="op">])</span></code>. As with <code class="sourceCode cs"><span class="dt">decimal</span></code>, you can include commas between groups of digits. In addition, you can write the string in scientific notation with the letter “e” or “E” followed by an exponent, such as <code class="sourceCode cs"><span class="st">&quot;-9.44e15&quot;</span></code>.</li>
 </ul></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="output-with-variables" class="level2">
 <h2>Output with Variables</h2>
-<ul>
-<li><p>Converting from numbers to strings</p>
+<section id="converting-from-numbers-to-strings" class="level4">
+<h4>Converting from numbers to strings</h4>
 <ul>
 <li><p>As we saw in a previous lecture (Datatypes and Variables), the <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code> method needs a <code class="sourceCode cs"><span class="dt">string</span></code> as its argument</p></li>
 <li><p>If the variable you want to display is not a <code class="sourceCode cs"><span class="dt">string</span></code>, you might think you could cast it to a <code class="sourceCode cs"><span class="dt">string</span></code>, but that won’t work – there is no explicit conversion from <code class="sourceCode cs"><span class="dt">string</span></code> to numeric types</p>
@@ -1890,8 +1917,10 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <pre class="text"><code>47 divided by 6 is 7.8333333
 47 plus 7 is 54</code></pre>
 <p>Note that writing a math expression inside a string interpolation statement does not change the values of any variables. After executing this code, <code class="sourceCode cs">x</code> is still 47, and <code class="sourceCode cs">y</code> is still 6.</p></li>
-</ul></li>
-<li><p>The <code class="sourceCode cs"><span class="fu">ToString</span><span class="op">()</span></code> method</p>
+</ul>
+</section>
+<section id="the-tostring-method" class="level4">
+<h4>The <code class="sourceCode cs"><span class="fu">ToString</span><span class="op">()</span></code> method</h4>
 <ul>
 <li><p>String interpolation doesn’t “magically know” how to convert numbers to strings – it delegates the task to the numbers themselves</p></li>
 <li><p>This works because all data types in C# are objects, even the built-in ones like <code class="sourceCode cs"><span class="dt">int</span></code> and <code class="sourceCode cs"><span class="dt">double</span></code></p>
@@ -1914,14 +1943,14 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;num is {num.ToString()}&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>Putting <code class="sourceCode cs">num</code> within the braces is the same as calling <code class="sourceCode cs"><span class="fu">ToString</span><span class="op">()</span></code> on it.</p></li>
 </ul></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="string-concatenation" class="level2">
 <h2>String Concatenation</h2>
 <ul>
-<li><p>Now that we’ve seen <code class="sourceCode cs"><span class="fu">ToString</span><span class="op">()</span></code>, we can introduce another operator: the concatenation operator</p></li>
-<li><p>Concatenation basics</p>
+<li>Now that we’ve seen <code class="sourceCode cs"><span class="fu">ToString</span><span class="op">()</span></code>, we can introduce another operator: the concatenation operator</li>
+<li>Concatenation basics
 <ul>
 <li><p>Remember, the <code class="sourceCode cs"><span class="op">+</span></code> operator is defined separately for each data type. The “<code class="sourceCode cs"><span class="dt">double</span> <span class="op">+</span> <span class="dt">double</span></code>” operator is different from the “<code class="sourceCode cs"><span class="dt">int</span> <span class="op">+</span> <span class="dt">int</span></code>” operator.</p></li>
 <li><p>If the operand types are <code class="sourceCode cs"><span class="dt">string</span></code> (i.e. <code class="sourceCode cs"><span class="dt">string</span> <span class="op">+</span> <span class="dt">string</span></code>), the <code class="sourceCode cs"><span class="op">+</span></code> operator performs concatenation, not addition</p></li>
@@ -1931,7 +1960,7 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> greeting2 <span class="op">=</span> <span class="st">&quot;Hi there, &quot;</span> <span class="op">+</span> name<span class="op">;</span></span></code></pre></div>
 <p>After executing this code, <code class="sourceCode cs">greeting</code> will contain “Hi there, John” and <code class="sourceCode cs">greeting2</code> will contain “Hi there, Paul”</p></li>
 </ul></li>
-<li><p>Concatenation with mixed types</p>
+<li>Concatenation with mixed types
 <ul>
 <li><p>Just like with the other operators, both operands (both sides of the <code class="sourceCode cs"><span class="op">+</span></code>) must be the same type</p></li>
 <li><p>If one operand is a <code class="sourceCode cs"><span class="dt">string</span></code> and the other is not a <code class="sourceCode cs"><span class="dt">string</span></code>, the <code class="sourceCode cs"><span class="fu">ToString</span><span class="op">()</span></code> method will automatically be called to convert it to a <code class="sourceCode cs"><span class="dt">string</span></code></p></li>
@@ -1940,7 +1969,9 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> text <span class="op">=</span> <span class="st">&quot;Bananas: &quot;</span> <span class="op">+</span> bananas<span class="op">;</span></span></code></pre></div>
 <p>The <code class="sourceCode cs"><span class="op">+</span></code> operator has a <code class="sourceCode cs"><span class="dt">string</span></code> operand and an <code class="sourceCode cs"><span class="dt">int</span></code> operand, so the <code class="sourceCode cs"><span class="dt">int</span></code> will be converted to a <code class="sourceCode cs"><span class="dt">string</span></code>. This means the computer will call <code class="sourceCode cs">bananas<span class="op">.</span><span class="fu">ToString</span><span class="op">()</span></code>, which returns the string “42”. Then the <code class="sourceCode cs"><span class="dt">string</span> <span class="op">+</span> <span class="dt">string</span></code> operator is called with the operands “Bananas:” and “42”, which concatenates them into “Bananas: 42”.</p></li>
 </ul></li>
-<li><p>Output with concatenation</p>
+</ul>
+<section id="output-with-concatenation" class="level4">
+<h4>Output with concatenation</h4>
 <ul>
 <li><p>We now have two different ways to construct a string for <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code>: Interpolation and concatenation</p></li>
 <li><p>Concatenating a string with a variable will automatically call its <code class="sourceCode cs"><span class="fu">ToString</span><span class="op">()</span></code> method, just like interpolation will. These two <code class="sourceCode cs">WriteLine</code> calls are equivalent:</p>
@@ -1967,8 +1998,8 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The result is &quot;</span> <span class="op">+</span> <span class="op">(</span>var1 <span class="op">+</span> var2<span class="op">));</span></span></code></pre></div>
 <p>In this code, the parentheses ensure that <code class="sourceCode cs">var1 <span class="op">+</span> var2</code> is always interpreted as addition.</p></li>
 </ul></li>
-</ul></li>
 </ul>
+</section>
 </section>
 </section>
 <section id="classes-objects-and-uml" class="level1">
