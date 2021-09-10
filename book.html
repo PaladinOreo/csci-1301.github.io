@@ -249,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">September 10, 2021 (01:02:17 PM)</p>
+<p class="date">September 10, 2021 (02:20:05 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -2240,7 +2240,9 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <li>The instance variable <code class="sourceCode cs">length</code> in <code class="sourceCode cs">length <span class="op">=</span> lengthParameter</code> refers to <code class="sourceCode cs">rect2</code>’s length</li>
 </ul></li>
 </ul></li>
-<li><p>Accessing object members</p>
+</ul>
+<section id="accessing-object-members" class="level4">
+<h4>Accessing object members</h4>
 <ul>
 <li><p>The “dot operator” that we use to call methods is technically the <strong>member access operator</strong></p></li>
 <li><p>A <strong>member</strong> of an object is either a method or an instance variable</p></li>
@@ -2258,10 +2260,12 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    Rectangle rect1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Rectangle</span><span class="op">();</span></span>
 <span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>    rect1<span class="op">.</span><span class="fu">length</span> <span class="op">=</span> <span class="dv">12</span><span class="op">;</span></span>
 <span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>    rect1<span class="op">.</span><span class="fu">width</span> <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
-</ul>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>But this code violates encapsulation, so we won’t do this.</p></li>
-<li><p>Method calls in more detail</p>
+</ul>
+</section>
+<section id="method-calls-in-more-detail" class="level4">
+<h4>Method calls in more detail</h4>
 <ul>
 <li><p>Now that we know about the member access operator, we can explain how method calls work a little better</p></li>
 <li><p>When we write <code class="sourceCode cs">rect1<span class="op">.</span><span class="fu">SetLength</span><span class="op">(</span><span class="dv">12</span><span class="op">)</span></code>, the <code class="sourceCode cs">SetLength</code> method is executed with <code class="sourceCode cs">rect1</code> as the calling object – we’re accessing the <code class="sourceCode cs">SetLength</code> member of <code class="sourceCode cs">rect1</code> in particular (even though every Rectangle has the same <code class="sourceCode cs">SetLength</code> method)</p></li>
@@ -2289,8 +2293,10 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <li><p>When <code class="sourceCode cs">SetLength</code> is called with <code class="sourceCode cs">rect1<span class="op">.</span><span class="fu">SetLength</span><span class="op">(</span><span class="dv">12</span><span class="op">)</span></code>, <code class="sourceCode cs"><span class="kw">this</span></code> becomes equal to <code class="sourceCode cs">rect1</code>, just like <code class="sourceCode cs">lengthParameter</code> becomes equal to 12</p></li>
 <li><p>When <code class="sourceCode cs">SetLength</code> is called with <code class="sourceCode cs">rect2<span class="op">.</span><span class="fu">SetLength</span><span class="op">(</span><span class="dv">7</span><span class="op">)</span></code>, <code class="sourceCode cs"><span class="kw">this</span></code> becomes equal to <code class="sourceCode cs">rect2</code> and <code class="sourceCode cs">lengthParameter</code> becomes equal to 7</p></li>
 </ul></li>
-</ul></li>
-<li><p>Methods don’t always change instance variables</p>
+</ul>
+</section>
+<section id="methods-and-instance-variables" class="level4">
+<h4>Methods and instance variables</h4>
 <ul>
 <li><p>Using a variable in an expression means <em>reading</em> its value</p></li>
 <li><p>A variable only changes when it’s on the left side of an assignment statement; this is <em>writing</em> to the variable</p></li>
@@ -2307,8 +2313,10 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>rect1<span class="op">.</span><span class="fu">SetWidth</span><span class="op">(</span><span class="dv">3</span><span class="op">);</span></span>
 <span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> area <span class="op">=</span> rect1<span class="op">.</span><span class="fu">ComputeArea</span><span class="op">();</span></span></code></pre></div>
 <p><code class="sourceCode cs">rect1</code> has a <code class="sourceCode cs">length</code> of 12 and a <code class="sourceCode cs">width</code> of 3. The call to <code class="sourceCode cs">rect1<span class="op">.</span><span class="fu">ComputeArea</span><span class="op">()</span></code> computes <span class="math inline">12 ⋅ 3 = 36</span>, and the <code class="sourceCode cs">area</code> variable is assigned this return value, but it does not change <code class="sourceCode cs">rect1</code>.</p></li>
-</ul></li>
-<li><p>Methods and return values</p>
+</ul>
+</section>
+<section id="methods-and-return-values" class="level4">
+<h4>Methods and return values</h4>
 <ul>
 <li><p>Recall the basic structure of a program: receive input, compute something, produce output</p></li>
 <li><p>A method has the same structure: it <em>receives input</em> from its parameters, <em>computes</em> by executing the statements in its body, then <em>produces output</em> by returning a value</p>
@@ -2316,7 +2324,7 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <li><p>For example, consider this method defined in the Rectangle class:</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">int</span> <span class="fu">LengthProduct</span><span class="op">(</span><span class="dt">int</span> factor<span class="op">)</span></span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">return</span> length <span class="op">*</span> factor<span class="op">;</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> length <span class="op">*</span> factor<span class="op">;</span></span>
 <span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Its input is the parameter <code class="sourceCode cs">factor</code>, which is an <code class="sourceCode cs"><span class="dt">int</span></code>. In the method body, it computes the product of the rectangle’s length and <code class="sourceCode cs">factor</code>. The method’s output is the resulting product.</p></li>
 </ul></li>
@@ -2356,8 +2364,8 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> length<span class="op">;</span></span>
 <span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 </ul></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="introduction-to-uml" class="level2">
 <h2>Introduction to UML</h2>
@@ -2470,8 +2478,8 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 </section>
 <section id="variable-scope" class="level2">
 <h2>Variable Scope</h2>
-<ul>
-<li><p>Instance variables are different from local variables</p>
+<section id="instance-variables-vs.-local-variables" class="level4">
+<h4>Instance variables vs. local variables</h4>
 <ul>
 <li><p>Instance variables: Stored (in memory) with the object, shared by all methods of the object. Changes made within a method persist after method finishes executing.</p></li>
 <li><p>Local variables: Visible to only one method, not shared. Disappear after method finishes executing. Variables we’ve created before in the Main method (they’re local to the Main method!).</p></li>
@@ -2492,8 +2500,10 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <li>When <code class="sourceCode cs">SwapDimensions</code> changes <code class="sourceCode cs">length</code>, that change is persistent – it will still be different when <code class="sourceCode cs">GetLength</code> executes, and the next call to <code class="sourceCode cs">GetLength</code> after <code class="sourceCode cs">SwapDimensions</code> will return the new length</li>
 <li>When <code class="sourceCode cs">SwapDimensions</code> assigns a value to <code class="sourceCode cs">temp</code>, it only has that value within the current call to <code class="sourceCode cs">SwapDimensions</code> – after <code class="sourceCode cs">SwapDimensions</code> finishes, <code class="sourceCode cs">temp</code> disappears, and the next call to <code class="sourceCode cs">SwapDimensions</code> creates a new <code class="sourceCode cs">temp</code></li>
 </ul></li>
-</ul></li>
-<li><p>Each variable has a <strong>scope</strong></p>
+</ul>
+</section>
+<section id="definition-of-scope" class="level4">
+<h4>Definition of scope</h4>
 <ul>
 <li><p>Variables exist only in limited <strong>time</strong> and <strong>space</strong> within the program</p></li>
 <li><p>Outside those limits, the variable cannot be accessed – e.g. local variables cannot be accessed outside their method</p></li>
@@ -2531,8 +2541,10 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <li>This is why they can have the same name: variable names must be unique <em>within the variable’s scope</em>. You can have two variables with the same name if they are in different scopes.</li>
 <li>The scope of instance variables <code class="sourceCode cs">length</code> and <code class="sourceCode cs">width</code> is the body of class <code class="sourceCode cs">Rectangle</code>, so they are in scope for both of these methods</li>
 </ul></li>
-</ul></li>
-<li><p>Be careful when mixing instance and local variables</p>
+</ul>
+</section>
+<section id="variables-with-overlapping-scopes" class="level4">
+<h4>Variables with overlapping scopes</h4>
 <ul>
 <li><p>This code is legal (compiles) but doesn’t do what you want:</p>
 <div class="sourceCode" id="cb71"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle</span>
@@ -2573,8 +2585,8 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Without <code class="sourceCode cs"><span class="kw">this</span></code>, the body of the <code class="sourceCode cs">SetWidth</code> method would be <code class="sourceCode cs">width <span class="op">=</span> width<span class="op">;</span></code>, which doesn’t do anything (it would assign the parameter <code class="sourceCode cs">width</code> to itself).</p></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="constants" class="level2">
 <h2>Constants</h2>
@@ -2684,8 +2696,6 @@ Rectangle 2: 4 by 10</code></pre></li>
 <section id="default-values-and-the-classroom-class" class="level2">
 <h2>Default Values and the ClassRoom Class</h2>
 <ul>
-<li><p>Instance variables get default values</p>
-<ul>
 <li><p>In lab, you were asked to run a program like this:</p>
 <div class="sourceCode" id="cb80"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -2741,8 +2751,9 @@ Width is 0</code></pre></li>
 </tbody>
 </table></li>
 <li><p>Remember, <code class="sourceCode cs"><span class="kw">null</span></code> is the value of a reference-type variable that refers to “nothing” - it does not contain the location of any object at all. You can’t do anything with a reference variable containing <code class="sourceCode cs"><span class="kw">null</span></code>.</p></li>
-</ul></li>
-<li><p>A class we’ll use for subsequent examples</p>
+</ul>
+<section id="a-class-well-use-for-subsequent-examples" class="level4">
+<h4>A class we’ll use for subsequent examples</h4>
 <ul>
 <li><p>ClassRoom: Represents a room in a building on campus</p></li>
 <li><p>UML Diagram:</p>
@@ -2824,13 +2835,11 @@ Width is 0</code></pre></li>
 <pre class="text"><code>Building is
 Room number is 0</code></pre>
 <p>Remember that the default value of a <code class="sourceCode cs"><span class="dt">string</span></code> variable is <code class="sourceCode cs"><span class="kw">null</span></code>. When you use string interpolation on <code class="sourceCode cs"><span class="kw">null</span></code>, you get an empty string.</p></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="constructors" class="level2">
 <h2>Constructors</h2>
-<ul>
-<li>Instantiation and constructors
 <ul>
 <li><p>Instantiation syntax requires you to write parentheses after the name of the class, like this:</p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>ClassRoom english <span class="op">=</span> <span class="kw">new</span> <span class="fu">ClassRoom</span><span class="op">();</span></span></code></pre></div></li>
@@ -2839,8 +2848,9 @@ Room number is 0</code></pre>
 <li><p>Constructor: A special method used to create an object. It “sets up” a new instance by <strong>initializing its instance variables</strong>.</p></li>
 <li><p>If you don’t write a constructor in your class, C# will generate a “default” constructor for you – this is what’s getting called when we write <code class="sourceCode cs"><span class="kw">new</span> <span class="fu">ClassRoom</span><span class="op">()</span></code> here</p></li>
 <li><p>The default constructor initializes each instance variable to its default value – that’s where default values come from</p></li>
-</ul></li>
-<li>Writing a constructor
+</ul>
+<section id="writing-a-constructor" class="level4">
+<h4>Writing a constructor</h4>
 <ul>
 <li><p>Example for ClassRoom:</p>
 <div class="sourceCode" id="cb87"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="fu">ClassRoom</span><span class="op">(</span><span class="dt">string</span> buildingParam<span class="op">,</span> <span class="dt">int</span> numberParam<span class="op">)</span></span>
@@ -2864,9 +2874,7 @@ Room number is 0</code></pre>
 <ul>
 <li>Very similar to calling both “setters” at once</li>
 </ul></li>
-</ul></li>
-<li>Using a constructor
-<ul>
+<li><p>Using a constructor</p></li>
 <li><p>An instantiation statement will call a constructor for the class being instantiated</p></li>
 <li><p>Arguments in parentheses must match the parameters of the constructor</p></li>
 <li><p>Example with the <code class="sourceCode cs">ClassRoom</code> constructor:</p>
@@ -2886,8 +2894,10 @@ Room number is 0</code></pre>
 Room number is 356</code></pre></li>
 <li><p>The instantiation statement <code class="sourceCode cs"><span class="kw">new</span> <span class="fu">ClassRoom</span><span class="op">(</span><span class="st">&quot;Allgood East&quot;</span><span class="op">,</span> <span class="dv">356</span><span class="op">)</span></code> first creates a new “empty” object of type <code class="sourceCode cs">ClassRoom</code>, then calls the constructor to initialize it. The first argument, “Allgood East”, becomes the constructor’s first parameter (<code class="sourceCode cs">buildingParam</code>), and the second argument, 356, becomes the constructor’s second parameter (<code class="sourceCode cs">numberParam</code>).</p></li>
 <li><p>After executing the instantiation statement, the object referred to by <code class="sourceCode cs">csci</code> has its instance variables set to these values, even though we never called <code class="sourceCode cs">SetBuilding</code> or <code class="sourceCode cs">SetNumber</code></p></li>
-</ul></li>
-<li>Methods with multiple parameters
+</ul>
+</section>
+<section id="methods-with-multiple-parameters" class="level4">
+<h4>Methods with multiple parameters</h4>
 <ul>
 <li><p>The constructor we wrote is an example of a method with two parameters</p></li>
 <li><p>The same syntax can be used for ordinary, non-constructor methods, if we need more than one input value</p></li>
@@ -2906,8 +2916,10 @@ Room number is 356</code></pre></li>
 <p>The first argument, 3, will be assigned to the first parameter, <code class="sourceCode cs">lengthFactor</code>. The second argument, 5, will be assigned to the second parameter, <code class="sourceCode cs">widthFactor</code></p></li>
 <li><p>The order of the arguments matters when calling a multi-parameter method. If you write <code class="sourceCode cs">myRect<span class="op">.</span><span class="fu">MultiplyBoth</span><span class="op">(</span><span class="dv">5</span><span class="op">,</span> <span class="dv">3</span><span class="op">)</span></code>, then <code class="sourceCode cs">lengthFactor</code> will be 5 and <code class="sourceCode cs">widthFactor</code> will be 3.</p></li>
 <li><p>The type of each argument must match the type of the corresponding parameter. For example, when you call the <code class="sourceCode cs">ClassRoom</code> constructor we just wrote, the first argument must be a <code class="sourceCode cs"><span class="dt">string</span></code> and the second argument must be an <code class="sourceCode cs"><span class="dt">int</span></code></p></li>
-</ul></li>
-<li>Writing multiple constructors
+</ul>
+</section>
+<section id="writing-multiple-constructors" class="level4">
+<h4>Writing multiple constructors</h4>
 <ul>
 <li><p>Remember that if you don’t write a constructor, C# generates a “default” one with no parameters, so you can write <code class="sourceCode cs"><span class="kw">new</span> <span class="fu">ClassRoom</span><span class="op">()</span></code></p></li>
 <li><p>Once you add a constructor to your class, C# will <strong>not</strong> generate a default constructor</p>
@@ -2947,8 +2959,8 @@ Room number is 356</code></pre></li>
 <div class="sourceCode" id="cb94"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>ClassRoom csci <span class="op">=</span> <span class="kw">new</span> <span class="fu">ClassRoom</span><span class="op">(</span><span class="dv">356</span><span class="op">,</span> <span class="st">&quot;Allgood East&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>This will produce a compile error, because the instantiation statement has two arguments in the order <code class="sourceCode cs"><span class="dt">int</span></code>, <code class="sourceCode cs"><span class="dt">string</span></code>, but the only constructor with two parameters needs the first parameter to be a <code class="sourceCode cs"><span class="dt">string</span></code>.</p></li>
 </ul></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="writing-tostring-methods" class="level2">
 <h2>Writing ToString Methods</h2>
@@ -2997,8 +3009,8 @@ Room number is 356</code></pre></li>
 </section>
 <section id="method-signatures-and-overloading" class="level2">
 <h2>Method Signatures and Overloading</h2>
-<ul>
-<li>Name uniqueness in C#
+<section id="name-uniqueness-in-c" class="level4">
+<h4>Name uniqueness in C</h4>
 <ul>
 <li>In general, variables, methods, and classes must have unique names, but there are several exceptions</li>
 <li><strong>Variables</strong> can have the same name if they are in <em>different scopes</em>
@@ -3058,8 +3070,10 @@ Room number is 356</code></pre></li>
 <span id="cb101-9"><a href="#cb101-9" aria-hidden="true" tabindex="-1"></a>    number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb101-10"><a href="#cb101-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 </ul></li>
-</ul></li>
-<li>Method signatures
+</ul>
+</section>
+<section id="method-signatures" class="level4">
+<h4>Method signatures</h4>
 <ul>
 <li>A method’s <strong>signature</strong> has 3 components: its <strong>name</strong>, the <strong>type</strong> of each parameter, and the <strong>order</strong> the parameters appear in</li>
 <li>Methods are unique if their <em>signatures</em> are unique, which is why they can have the same name</li>
@@ -3120,8 +3134,10 @@ Room number is 356</code></pre></li>
 <li>The constructor <code class="sourceCode cs"><span class="fu">ClassRoom</span><span class="op">()</span></code> has the signature <code class="sourceCode cs"><span class="fu">ClassRoom</span><span class="op">()</span></code></li>
 <li>Constructors all have the same name, but they are unique if their signatures (parameters) are different</li>
 </ul></li>
-</ul></li>
-<li>Calling overloaded methods
+</ul>
+</section>
+<section id="calling-overloaded-methods" class="level4">
+<h4>Calling overloaded methods</h4>
 <ul>
 <li>Previously, when you used the dot operator and wrote the name of a method, the name was enough to determine which method to run – <code class="sourceCode cs">myRect<span class="op">.</span><span class="fu">GetLength</span><span class="op">()</span></code> would call the <code class="sourceCode cs">GetLength</code> method</li>
 <li>When a method is overloaded, you must use the entire signature to determine which method gets executed</li>
@@ -3131,8 +3147,8 @@ Room number is 356</code></pre></li>
 <li>Example: <code class="sourceCode cs">myRect<span class="op">.</span><span class="fu">Multiply</span><span class="op">(</span><span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">);</span></code> has the signature <code class="sourceCode cs"><span class="fu">Multiply</span><span class="op">(</span><span class="dt">int</span><span class="op">,</span> <span class="dt">int</span><span class="op">)</span></code>, so C# will look for a method with that signature in the Rectangle class. This matches the method <code class="sourceCode cs"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">Multiply</span><span class="op">(</span><span class="dt">int</span> lengthFactor<span class="op">,</span> <span class="dt">int</span> widthFactor<span class="op">)</span></code></li>
 <li>The same process happens when you instantiate a class with multiple constructors: C# calls the constructor whose signature matches the signature of the instantiation</li>
 <li>If no method or constructor matches the signature of the method call, you get a compile error. You still can’t write <code class="sourceCode cs">myRect<span class="op">.</span><span class="fu">Multiply</span><span class="op">(</span><span class="fl">1.5</span><span class="op">)</span></code> if there is no method whose signature is <code class="sourceCode cs"><span class="fu">Multiply</span><span class="op">(</span><span class="dt">double</span><span class="op">)</span></code>.</li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="constructors-in-uml" class="level2">
 <h2>Constructors in UML</h2>
@@ -3185,8 +3201,7 @@ Room number is 356</code></pre></li>
 <section id="properties" class="level2">
 <h2>Properties</h2>
 <ul>
-<li>Attributes are implemented with a standard “template” of code
-<ul>
+<li><p>Attributes are implemented with a standard “template” of code</p></li>
 <li><p>Remember, “attribute” is the abstract concept of some data stored in an object; “instance variable” is the way that data is actually stored</p></li>
 <li><p>First, declare an instance variable for the attribute</p></li>
 <li><p>Then write a “getter” method for the instance variable</p></li>
@@ -3212,8 +3227,9 @@ Room number is 356</code></pre></li>
 <li>You need to come up with a name for the setter’s parameter, even though it also represents the width (i.e. the new value you want to assign to the width attribute). We usually end up naming it “widthParameter” or “widthParam” or “newWidth” or “newValue.”</li>
 </ul></li>
 <li><p>Properties are a “shorthand” way of writing this code: They implement an attribute with less repetition</p></li>
-</ul></li>
-<li>Writing properties
+</ul>
+<section id="writing-properties" class="level4">
+<h4>Writing properties</h4>
 <ul>
 <li><p>Declare an instance variable for the attribute, like before</p></li>
 <li><p>A <strong>property declaration</strong> has 3 parts:</p>
@@ -3255,8 +3271,10 @@ Room number is 356</code></pre></li>
 <li>Parameter: Same type as the property header’s type, name is always “value”. In this case that means the parameter is <code class="sourceCode cs"><span class="dt">int</span> value</code>; imagine the method header says <code class="sourceCode cs"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">set</span><span class="op">(</span><span class="dt">int</span> value<span class="op">)</span></code></li>
 <li>Body of <code class="sourceCode cs">set</code> section looks just like the body of a setter: Assign the parameter to the instance variable (and the parameter is always named “value”). In this case, that means <code class="sourceCode cs">width <span class="op">=</span> value</code></li>
 </ul></li>
-</ul></li>
-<li>Using properties
+</ul>
+</section>
+<section id="using-properties" class="level4">
+<h4>Using properties</h4>
 <ul>
 <li><p>Properties are members of an object, just like instance variables and methods</p></li>
 <li><p>Access them with the “member access” operator, aka the dot operator</p>
@@ -3289,8 +3307,10 @@ Room number is 356</code></pre></li>
 <li>For example, <code class="sourceCode cs">myRectangle<span class="op">.</span><span class="fu">Width</span> <span class="op">=</span> <span class="dv">15</span><span class="op">;</span></code> will call the <code class="sourceCode cs">set</code> section inside the <code class="sourceCode cs">Width</code> property, with <code class="sourceCode cs">value</code> equal to 15</li>
 <li>This is equivalent to <code class="sourceCode cs">myRectangle<span class="op">.</span><span class="fu">SetWidth</span><span class="op">(</span><span class="dv">15</span><span class="op">);</span></code> using the “old” Rectangle code</li>
 </ul></li>
-</ul></li>
-<li>Properties in UML
+</ul>
+</section>
+<section id="properties-in-uml" class="level4">
+<h4>Properties in UML</h4>
 <ul>
 <li><p>Since properties represent attributes, they go in the “attributes” box (the second box)</p></li>
 <li><p>If a property will simply “get” and “set” an instance variable of the same name, you do <em>not</em> need to write the instance variable in the box</p>
@@ -3322,8 +3342,8 @@ Room number is 356</code></pre></li>
 </tbody>
 </table></li>
 <li><p>We no longer need to write all those setter and getter methods, since they are “built in” to the properties</p></li>
-</ul></li>
 </ul>
+</section>
 </section>
 </section>
 <section id="decisions-and-decision-structures" class="level1">
@@ -3574,14 +3594,16 @@ But C# does not care about 0 decimal values: True</code></pre>
 <h1>if, if-else and if-else-if Statements</h1>
 <section id="if-statements" class="level2">
 <h2>if Statements</h2>
-<ul>
-<li><p>Introduction</p>
+<section id="introduction" class="level4">
+<h4>Introduction</h4>
 <ul>
 <li>Recall from a previous lecture (Booleans and Comparisons) that decision structures change the flow of code execution based on conditions</li>
 <li>Now that we know how to write conditions in C#, we can write decision structures</li>
 <li>Our first decision structure is the <strong>if statement</strong>, which executes a block of code <em>only if a condition is true</em></li>
-</ul></li>
-<li><p>Example code with an if statement:</p>
+</ul>
+</section>
+<section id="example-code-with-an-if-statement" class="level4">
+<h4>Example code with an <code class="sourceCode cs"><span class="kw">if</span></code> statement</h4>
 <div class="sourceCode" id="cb114"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter your age&quot;</span><span class="op">);</span></span>
 <span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> age <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
 <span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>age <span class="op">&gt;=</span> <span class="dv">18</span><span class="op">)</span></span>
@@ -3609,8 +3631,10 @@ Goodbye</code></pre>
 17
 Goodbye</code></pre>
 <p>When the user enters “17”, the value 17 is assigned to the <code class="sourceCode cs">age</code> variable, so the condition <code class="sourceCode cs">age <span class="op">&gt;=</span> <span class="dv">18</span></code> is false, and the <code class="sourceCode cs"><span class="kw">if</span></code> statement’s code block gets skipped.</p></li>
-</ul></li>
-<li><p>Syntax and rules for if statements</p>
+</ul>
+</section>
+<section id="syntax-and-rules-for-if-statements" class="level4">
+<h4>Syntax and rules for if statements</h4>
 <ul>
 <li><p>Formally, the syntax for an <code class="sourceCode cs"><span class="kw">if</span></code> statement is this:</p>
 <div class="sourceCode" id="cb117"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(&lt;</span>condition<span class="op">&gt;)</span></span>
@@ -3628,13 +3652,12 @@ Goodbye</code></pre>
 <span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;You can vote!&quot;</span><span class="op">);</span></span>
 <span id="cb119-3"><a href="#cb119-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Goodbye&quot;</span><span class="op">);</span></span></code></pre></div></li>
 <li><p>Omitting the curly braces is slightly dangerous, though, because it makes it less obvious which line of code is controlled by the <code class="sourceCode cs"><span class="kw">if</span></code> statement. It is up to you, the programmer, to remember to indent the line after the <code class="sourceCode cs"><span class="kw">if</span></code> statement, and then de-indent the line after that; indentation is just a convention. Curly braces make it easier to see where the <code class="sourceCode cs"><span class="kw">if</span></code> statement starts and ends.</p></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="if-else-statements" class="level2">
 <h2>if-else Statements</h2>
-<ul>
-<li><p>Introductory example:</p>
+<p>Example:</p>
 <div class="sourceCode" id="cb120"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span><span class="op">(</span>age <span class="op">&gt;=</span> <span class="dv">18</span><span class="op">)</span></span>
 <span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;You can vote!&quot;</span><span class="op">);</span></span>
@@ -3655,8 +3678,9 @@ Goodbye</code></pre>
 <figure>
 <img src="./img/activity_diag_vote_if_else.svg" alt="“A flowchart representation of an if-else statement”" /><figcaption aria-hidden="true">“A flowchart representation of an if-else statement”</figcaption>
 </figure></li>
-</ul></li>
-<li><p>Syntax and comparison</p>
+</ul>
+<section id="syntax-and-comparison" class="level4">
+<h4>Syntax and comparison</h4>
 <ul>
 <li><p>Formally, the syntax for an <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statement is this:</p>
 <div class="sourceCode" id="cb121"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(&lt;</span>condition<span class="op">&gt;)</span></span>
@@ -3676,13 +3700,11 @@ Goodbye</code></pre>
 <li>With an <code class="sourceCode cs"><span class="kw">if</span></code> statement, the “if block” is executed if the condition is true, but <em>nothing happens</em> if the condition is false.</li>
 <li>With an <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statement, the code in the “else block” is executed if the condition is false, so something always happens - one of the two code blocks will get executed</li>
 </ul></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="nested-if-else-statements" class="level2">
 <h2>Nested if-else Statements</h2>
-<ul>
-<li>Decisions with more complex conditions
 <ul>
 <li><p>If-else statements are used to change program flow based on a condition; they represent making a decision</p></li>
 <li><p>Sometimes decisions are more complex than a single yes/no question: once you know whether a certain condition is true or false, you then need to ask another question (check another condition) based on the outcome</p></li>
@@ -3694,8 +3716,9 @@ Goodbye</code></pre>
 <li>First, the program should test whether the user is a citizen. If not, there is no need to check the user’s age, since he/she can’t vote anyway</li>
 <li>If the user is a citizen, the program should then test whether the user is over 18 to determine if he/she is old enough to vote.</li>
 </ul></li>
-</ul></li>
-<li>Using nested if statements
+</ul>
+<section id="using-nested-if-statements" class="level4">
+<h4>Using nested if statements</h4>
 <ul>
 <li><p>An <code class="sourceCode cs"><span class="kw">if</span></code> statement’s code block can contain any kind of statements, including another <code class="sourceCode cs"><span class="kw">if</span></code> statement</p></li>
 <li><p>Putting an <code class="sourceCode cs"><span class="kw">if</span></code> statement inside an if block represents making a sequence of decisions - once execution has reached the inside of an if block, your program “knows” that the <code class="sourceCode cs"><span class="kw">if</span></code> condition is true, so it can proceed to make the next decision</p></li>
@@ -3708,7 +3731,7 @@ Goodbye</code></pre>
 <span id="cb122-6"><a href="#cb122-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb122-7"><a href="#cb122-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">else</span></span>
 <span id="cb122-8"><a href="#cb122-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb122-9"><a href="#cb122-9" aria-hidden="true" tabindex="-1"></a>      Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;You are too young to vote&quot;</span><span class="op">);</span></span>
+<span id="cb122-9"><a href="#cb122-9" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;You are too young to vote&quot;</span><span class="op">);</span></span>
 <span id="cb122-10"><a href="#cb122-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb122-11"><a href="#cb122-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb122-12"><a href="#cb122-12" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
@@ -3735,7 +3758,7 @@ Goodbye</code></pre>
 <span id="cb123-8"><a href="#cb123-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb123-9"><a href="#cb123-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">else</span></span>
 <span id="cb123-10"><a href="#cb123-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb123-11"><a href="#cb123-11" aria-hidden="true" tabindex="-1"></a>      Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;You are too young to vote&quot;</span><span class="op">);</span></span>
+<span id="cb123-11"><a href="#cb123-11" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;You are too young to vote&quot;</span><span class="op">);</span></span>
 <span id="cb123-12"><a href="#cb123-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb123-13"><a href="#cb123-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb123-14"><a href="#cb123-14" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
@@ -3743,13 +3766,11 @@ Goodbye</code></pre>
 <span id="cb123-16"><a href="#cb123-16" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Sorry, only citizens can vote&quot;</span><span class="op">);</span></span>
 <span id="cb123-17"><a href="#cb123-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb123-18"><a href="#cb123-18" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Goodbye&quot;</span><span class="op">);</span></span></code></pre></div></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="if-else-if-statements" class="level2">
 <h2>if-else-if Statements</h2>
-<ul>
-<li><p>Mutually exclusive conditions</p>
 <ul>
 <li>Sometimes your program needs to test multiple conditions at once, and take different actions depending on which one is true</li>
 <li>Example: We want to write a program that tells the user which floor a <code class="sourceCode cs">ClassRoom</code> object is on, based on its room number
@@ -3757,8 +3778,9 @@ Goodbye</code></pre>
 <li>If the room number is between 100 and 200 it’s on the first floor; if it’s between 200 and 300 it’s on the second floor; if it’s greater than 300 it’s on the third floor</li>
 </ul></li>
 <li>There are 3 ranges of numbers to test, and 3 possible results, so we can’t do it with a single if-else statement</li>
-</ul></li>
-<li><p>If-else-if syntax</p>
+</ul>
+<section id="if-else-if-syntax" class="level4">
+<h4>If-else-if syntax</h4>
 <ul>
 <li><p>An if-else-if statement looks like this:</p>
 <div class="sourceCode" id="cb124"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span><span class="op">(&lt;</span>condition <span class="dv">1</span><span class="op">&gt;)</span></span>
@@ -3788,8 +3810,10 @@ Goodbye</code></pre>
 </ul></li>
 <li><p>Same process repeats for condition 3: If condition 2 is false, condition 3 is evaluated, and statement block 3 is either executed or skipped</p></li>
 <li><p>If <em>all</em> the conditions are false, the final else block (statement block 4) is executed</p></li>
-</ul></li>
-<li><p>Using if-else-if to solve the “floors problem”</p>
+</ul>
+</section>
+<section id="using-if-else-if-to-solve-the-floors-problem" class="level4">
+<h4>Using if-else-if to solve the “floors problem”</h4>
 <ul>
 <li><p>Assuming <code class="sourceCode cs">myRoom</code> is a <code class="sourceCode cs">ClassRoom</code> object, this code will display which floor it is on:</p>
 <div class="sourceCode" id="cb125"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span><span class="op">(</span>myRoom<span class="op">.</span><span class="fu">GetNumber</span><span class="op">()</span> <span class="op">&gt;=</span> <span class="dv">300</span><span class="op">)</span></span>
@@ -3814,8 +3838,10 @@ Goodbye</code></pre>
 <li><p>If the second condition is false, the program continues to the line <code class="sourceCode cs"><span class="kw">else</span> <span class="kw">if</span><span class="op">(</span>myRoom<span class="op">.</span><span class="fu">GetNumber</span><span class="op">()</span> <span class="op">&gt;=</span> <span class="dv">100</span><span class="op">)</span></code>, evaluates the condition, and prints “First floor” if it is true.</p></li>
 <li><p>Again, the condition <code class="sourceCode cs">myRoom<span class="op">.</span><span class="fu">GetNumber</span><span class="op">()</span> <span class="op">&gt;=</span> <span class="dv">100</span></code> is only evaluated if the first two conditions have already been tested and turned out false, so we know the room number is less than 300 and less than 200.</p></li>
 <li><p>In the final <code class="sourceCode cs"><span class="kw">else</span></code> block, the program prints “Invalid room number” because this block is only executed if the room number is less than 100 (all three conditions were false).</p></li>
-</ul></li>
-<li><p>if-else-if with different conditions</p>
+</ul>
+</section>
+<section id="if-else-if-with-different-conditions" class="level4">
+<h4>if-else-if with different conditions</h4>
 <ul>
 <li><p>We often use if-else-if statements to test the same variable multiple times, but there is no requirement for the conditions to use the same variable</p></li>
 <li><p>An if-else-if statement can use several different variables, and its conditions can be completely unrelated, like this:</p>
@@ -3874,8 +3900,10 @@ Goodbye</code></pre>
 </tr>
 </tbody>
 </table></li>
-</ul></li>
-<li><p>if-else-if vs. nested if</p>
+</ul>
+</section>
+<section id="if-else-if-vs.-nested-if" class="level4">
+<h4>if-else-if vs. nested if</h4>
 <ul>
 <li><p>Sometimes a nested <code class="sourceCode cs"><span class="kw">if</span></code> statement can be rewritten as an <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span><span class="op">-</span><span class="kw">if</span></code> statement</p></li>
 <li><p>This reduces the amount of indentation in your code, which makes it easier to read</p></li>
@@ -3891,7 +3919,7 @@ Goodbye</code></pre>
 <span id="cb127-6"><a href="#cb127-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb127-7"><a href="#cb127-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">else</span></span>
 <span id="cb127-8"><a href="#cb127-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb127-9"><a href="#cb127-9" aria-hidden="true" tabindex="-1"></a>      Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;You are too young to vote&quot;</span><span class="op">);</span></span>
+<span id="cb127-9"><a href="#cb127-9" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;You are too young to vote&quot;</span><span class="op">);</span></span>
 <span id="cb127-10"><a href="#cb127-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb127-11"><a href="#cb127-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb127-12"><a href="#cb127-12" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
@@ -3924,7 +3952,7 @@ Goodbye</code></pre>
 <span id="cb129-8"><a href="#cb129-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb129-9"><a href="#cb129-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">else</span></span>
 <span id="cb129-10"><a href="#cb129-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb129-11"><a href="#cb129-11" aria-hidden="true" tabindex="-1"></a>      Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;You are too young to vote&quot;</span><span class="op">);</span></span>
+<span id="cb129-11"><a href="#cb129-11" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;You are too young to vote&quot;</span><span class="op">);</span></span>
 <span id="cb129-12"><a href="#cb129-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb129-13"><a href="#cb129-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb129-14"><a href="#cb129-14" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
@@ -3959,16 +3987,16 @@ Goodbye</code></pre>
 <span id="cb130-20"><a href="#cb130-20" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
 <span id="cb130-21"><a href="#cb130-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb130-22"><a href="#cb130-22" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
-</ul></li>
 </ul>
+</section>
 </section>
 </section>
 <section id="switch-statements-and-the-conditional-operator" class="level1">
 <h1>Switch Statements and the Conditional Operator</h1>
 <section id="switch-statements" class="level2">
 <h2>Switch Statements</h2>
-<ul>
-<li><p>Introduction: Multiple equality comparisons</p>
+<section id="multiple-equality-comparisons" class="level4">
+<h4>Multiple equality comparisons</h4>
 <ul>
 <li><p>In some situations, your program will need to test if a variable is equal to one of several values, and perform a different action based on which value the variable matches</p></li>
 <li><p>For example, you have an <code class="sourceCode cs"><span class="dt">int</span></code> variable named <code class="sourceCode cs">month</code> containing a month number, and want to convert it to a <code class="sourceCode cs"><span class="dt">string</span></code> with the name of the month. This means your program needs to take a different action depending on whether <code class="sourceCode cs">month</code> is equal to 1, 2, 3, … or 12:</p>
@@ -4033,8 +4061,10 @@ Goodbye</code></pre>
 <span id="cb131-55"><a href="#cb131-55" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb131-56"><a href="#cb131-56" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The number &quot;</span> <span class="op">+</span> month <span class="op">+</span> <span class="st">&quot; corresponds to the month &quot;</span> <span class="op">+</span> monthName <span class="op">+</span> <span class="st">&quot;.&quot;</span><span class="op">)</span></span></code></pre></div></li>
 <li><p>This code is very repetitive, though: every <code class="sourceCode cs"><span class="kw">else</span> <span class="kw">if</span></code> statement is almost the same, with only the number changing. The text “<code class="sourceCode cs"><span class="kw">if</span><span class="op">(</span>month <span class="op">==</span></code>” is copied over and over again.</p></li>
-</ul></li>
-<li><p>Syntax for <code class="sourceCode cs"><span class="kw">switch</span></code> statements</p>
+</ul>
+</section>
+<section id="syntax-for-switch-statements" class="level4">
+<h4>Syntax for <code class="sourceCode cs"><span class="kw">switch</span></code> statements</h4>
 <ul>
 <li><p>A <code class="sourceCode cs"><span class="kw">switch</span></code> statement is a simpler, easier way to compare a single variable against multiple possible values</p></li>
 <li><p>It is written like this:</p>
@@ -4057,8 +4087,10 @@ Goodbye</code></pre>
 <li><p>The statement “block” within each <code class="sourceCode cs"><span class="kw">case</span></code> is <strong>not</strong> enclosed in curly braces, unlike <code class="sourceCode cs"><span class="kw">if</span></code> and <code class="sourceCode cs"><span class="kw">else</span> <span class="kw">if</span></code> blocks. Instead, it begins on the line after the <code class="sourceCode cs"><span class="kw">case</span></code> statement, and ends with the keyword <code class="sourceCode cs"><span class="kw">break</span></code>.</p></li>
 <li><p>The <code class="sourceCode cs"><span class="kw">default</span></code> statement is like the <code class="sourceCode cs"><span class="kw">else</span></code> statement: It defines code that gets executed if the variable does not match any of the values in the <code class="sourceCode cs"><span class="kw">case</span></code> statements.</p></li>
 <li><p>The values in each <code class="sourceCode cs"><span class="kw">case</span></code> statement must be <strong>literals</strong>, not variables, and they must be <strong>unique</strong> (you can’t write two <code class="sourceCode cs"><span class="kw">case</span></code> statements with the same value)</p></li>
-</ul></li>
-<li><p>Example <code class="sourceCode cs"><span class="kw">switch</span></code> statement</p>
+</ul>
+</section>
+<section id="example-switch-statement" class="level4">
+<h4>Example <code class="sourceCode cs"><span class="kw">switch</span></code> statement</h4>
 <ul>
 <li><p>This program has the same behavior as our previous example, but uses a <code class="sourceCode cs"><span class="kw">switch</span></code> statement instaed of an <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span><span class="op">-</span><span class="kw">if</span></code> statement:</p>
 <div class="sourceCode" id="cb133"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter the month as a number between 1 and 12.&quot;</span><span class="op">);</span></span>
@@ -4079,8 +4111,8 @@ Goodbye</code></pre>
 <span id="cb133-16"><a href="#cb133-16" aria-hidden="true" tabindex="-1"></a>        monthName <span class="op">=</span> <span class="st">&quot;April&quot;</span><span class="op">;</span></span>
 <span id="cb133-17"><a href="#cb133-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
 <span id="cb133-18"><a href="#cb133-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">5</span><span class="op">:</span></span>
-<span id="cb133-19"><a href="#cb133-19" aria-hidden="true" tabindex="-1"></a>       monthName <span class="op">=</span> <span class="st">&quot;May&quot;</span><span class="op">;</span></span>
-<span id="cb133-20"><a href="#cb133-20" aria-hidden="true" tabindex="-1"></a>       <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb133-19"><a href="#cb133-19" aria-hidden="true" tabindex="-1"></a>        monthName <span class="op">=</span> <span class="st">&quot;May&quot;</span><span class="op">;</span></span>
+<span id="cb133-20"><a href="#cb133-20" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
 <span id="cb133-21"><a href="#cb133-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="dv">6</span><span class="op">:</span></span>
 <span id="cb133-22"><a href="#cb133-22" aria-hidden="true" tabindex="-1"></a>        monthName <span class="op">=</span> <span class="st">&quot;June&quot;</span><span class="op">;</span></span>
 <span id="cb133-23"><a href="#cb133-23" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
@@ -4110,8 +4142,10 @@ Goodbye</code></pre>
 <li><p>Since the variable in the <code class="sourceCode cs"><span class="kw">switch</span></code> statement is <code class="sourceCode cs">month</code>, each <code class="sourceCode cs"><span class="kw">case</span></code> statement means, effectively, <code class="sourceCode cs"><span class="kw">if</span> <span class="op">(</span>month <span class="op">==</span> <span class="op">&lt;</span>value<span class="op">&gt;)</span></code>. For example, <code class="sourceCode cs"><span class="kw">case</span> <span class="dv">1</span><span class="op">:</span></code> has the same effect as <code class="sourceCode cs"><span class="kw">if</span> <span class="op">(</span>month <span class="op">==</span> <span class="dv">1</span><span class="op">)</span></code></p></li>
 <li><p>The values in each <code class="sourceCode cs"><span class="kw">case</span></code> statement must be <code class="sourceCode cs"><span class="dt">int</span></code> literals, since <code class="sourceCode cs">month</code> is an <code class="sourceCode cs"><span class="dt">int</span></code></p></li>
 <li><p>The <code class="sourceCode cs"><span class="kw">default</span></code> statement has the same effect as the final <code class="sourceCode cs"><span class="kw">else</span></code> in the <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span><span class="op">-</span><span class="kw">if</span></code> statement: it contains code that will be executed if <code class="sourceCode cs">month</code> didn’t match any of the values</p></li>
-</ul></li>
-<li><p><code class="sourceCode cs"><span class="kw">switch</span></code> with multiple statements</p>
+</ul>
+</section>
+<section id="switch-with-multiple-statements" class="level4">
+<h4><code class="sourceCode cs"><span class="kw">switch</span></code> with multiple statements</h4>
 <ul>
 <li><p>So far, our examples have used only one line of code in each <code class="sourceCode cs"><span class="kw">case</span></code></p></li>
 <li><p>Unlike <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code>, you do not need curly braces to put multiple lines of code in a <code class="sourceCode cs"><span class="kw">case</span></code></p></li>
@@ -4131,7 +4165,6 @@ Goodbye</code></pre>
 <span id="cb134-13"><a href="#cb134-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">// and so on, with all the other months...</span></span>
 <span id="cb134-14"><a href="#cb134-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 <li><p>The computer knows which statements are included in each case because of the <code class="sourceCode cs"><span class="kw">break</span></code> keyword. For the “1” case, the block of statements starts after <code class="sourceCode cs"><span class="kw">case</span> <span class="dv">1</span><span class="op">:</span></code> and ends with the <code class="sourceCode cs"><span class="kw">break</span><span class="op">;</span></code> after <code class="sourceCode cs">monthAbbrev <span class="op">=</span> <span class="st">&quot;Jan&quot;</span><span class="op">;</span></code></p></li>
-</ul></li>
 </ul>
 <!--
 Commented out because C# doesn't actually support fall-through like every other language with a switch statement.
@@ -4172,8 +4205,9 @@ Still might be useful to discuss as a comparison with other languages like Java.
 
       As a result, `monthName` will end up with the value "February" even though `month` was equal to 1.
 -->
-<ul>
-<li><p>Intentionally omitting <code class="sourceCode cs"><span class="kw">break</span></code></p>
+</section>
+<section id="intentionally-omitting-break" class="level4">
+<h4>Intentionally omitting <code class="sourceCode cs"><span class="kw">break</span></code></h4>
 <ul>
 <li><p>Each block of code that starts with a <code class="sourceCode cs"><span class="kw">case</span></code> statement must end with a <code class="sourceCode cs"><span class="kw">break</span></code> statement; it won’t automatically end at the next <code class="sourceCode cs"><span class="kw">case</span></code> statement</p>
 <ul>
@@ -4247,8 +4281,10 @@ Still might be useful to discuss as a comparison with other languages like Java.
 <span id="cb137-18"><a href="#cb137-18" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb137-19"><a href="#cb137-19" aria-hidden="true" tabindex="-1"></a>    season <span class="op">=</span> <span class="st">&quot;Error!&quot;</span></span>
 <span id="cb137-20"><a href="#cb137-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
-</ul></li>
-<li><p>Scope and <code class="sourceCode cs"><span class="kw">switch</span></code></p>
+</ul>
+</section>
+<section id="scope-and-switch" class="level4">
+<h4>Scope and <code class="sourceCode cs"><span class="kw">switch</span></code></h4>
 <ul>
 <li><p>In C#, the scope of a variable is defined by curly braces (recall that local variables defined in a method have a scope that ends with the <code class="sourceCode cs"><span class="op">}</span></code> at the end of the method)</p></li>
 <li><p>Since the <code class="sourceCode cs"><span class="kw">case</span></code> statements in a <code class="sourceCode cs"><span class="kw">switch</span></code> do not have curly braces, they are all in the same scope: the one defined by the <code class="sourceCode cs"><span class="kw">switch</span></code> statement’s curly braces</p></li>
@@ -4269,8 +4305,10 @@ Still might be useful to discuss as a comparison with other languages like Java.
 <span id="cb138-13"><a href="#cb138-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">//...</span></span>
 <span id="cb138-14"><a href="#cb138-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The line <code class="sourceCode cs"><span class="dt">int</span> nextMonth <span class="op">=</span> <span class="dv">3</span></code> would cause a compile error because a variable named <code class="sourceCode cs">nextMonth</code> already exists – the one declared within <code class="sourceCode cs"><span class="kw">case</span> <span class="dv">1</span></code>.</p></li>
-</ul></li>
-<li><p>Limitations of <code class="sourceCode cs"><span class="kw">switch</span></code></p>
+</ul>
+</section>
+<section id="limitations-of-switch" class="level4">
+<h4>Limitations of <code class="sourceCode cs"><span class="kw">switch</span></code></h4>
 <ul>
 <li><p>Not all <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span><span class="op">-</span><span class="kw">if</span></code> statements can be rewritten as <code class="sourceCode cs"><span class="kw">switch</span></code> statements</p></li>
 <li><p><code class="sourceCode cs"><span class="kw">switch</span></code> can only test equality, so in general, only <code class="sourceCode cs"><span class="kw">if</span></code> statements whose condition uses <code class="sourceCode cs"><span class="op">==</span></code> can be converted to <code class="sourceCode cs"><span class="kw">switch</span></code></p></li>
@@ -4285,13 +4323,11 @@ Still might be useful to discuss as a comparison with other languages like Java.
 <span id="cb139-8"><a href="#cb139-8" aria-hidden="true" tabindex="-1"></a>    fee <span class="op">=</span> <span class="fl">25.0M</span><span class="op">;</span></span>
 <span id="cb139-9"><a href="#cb139-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 <li><p>This <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span><span class="op">-</span><span class="kw">if</span></code> statement could not be converted to <code class="sourceCode cs"><span class="kw">switch</span><span class="op">(</span>mileage<span class="op">)</span></code> because of the condition <code class="sourceCode cs">mileage <span class="op">&gt;</span> <span class="dv">1000</span></code>. The <code class="sourceCode cs"><span class="kw">switch</span></code> statement would need to have a <code class="sourceCode cs"><span class="kw">case</span></code> for each number greater than 1000, which is infinitely many.</p></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="the-conditional-operator" class="level2">
 <h2>The Conditional Operator</h2>
-<ul>
-<li><p>Assignment and <code class="sourceCode cs"><span class="kw">if</span></code> statements</p>
 <ul>
 <li><p>There are many situations where we need to assign a variable to a different value depending on the result of a condition</p></li>
 <li><p>For example, the <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span><span class="op">-</span><span class="kw">if</span></code> and <code class="sourceCode cs"><span class="kw">switch</span></code> statements in the previous section were used to decide which value to assign to the variable <code class="sourceCode cs">monthName</code></p></li>
@@ -4305,8 +4341,9 @@ Still might be useful to discuss as a comparison with other languages like Java.
 <span id="cb140-7"><a href="#cb140-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb140-8"><a href="#cb140-8" aria-hidden="true" tabindex="-1"></a>    output <span class="op">=</span> <span class="st">&quot;Odd&quot;</span><span class="op">;</span></span>
 <span id="cb140-9"><a href="#cb140-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
-</ul></li>
-<li><p>Assignment with the conditional operator</p>
+</ul>
+<section id="assignment-with-the-conditional-operator" class="level4">
+<h4>Assignment with the conditional operator</h4>
 <ul>
 <li><p>If the only thing an <code class="sourceCode cs"><span class="kw">if</span></code> statement does is assign a value to a variable, there’s a much shorter way to write it</p></li>
 <li><p>The <strong>conditional operator</strong> <code class="sourceCode cs"><span class="op">?:</span></code> tests a condition, and then outputs one of two values based on the result</p></li>
@@ -4328,8 +4365,10 @@ Still might be useful to discuss as a comparison with other languages like Java.
 <li><p>For example, if <code class="sourceCode cs">true_expression</code> is <code class="sourceCode cs">myInt <span class="op">*</span> <span class="fl">1.5</span></code>, then <code class="sourceCode cs">false_expression</code> must also produce a <code class="sourceCode cs"><span class="dt">double</span></code></p></li>
 <li><p>When the conditional operator is evaluated, it returns either the value of <code class="sourceCode cs">true_expression</code> or the value of <code class="sourceCode cs">false_expression</code> (depending on the condition) and this value can then be used in other operations such as assignment</p></li>
 </ul></li>
-</ul></li>
-<li><p>Conditional operator examples</p>
+</ul>
+</section>
+<section id="conditional-operator-examples" class="level4">
+<h4>Conditional operator examples</h4>
 <ul>
 <li><p>The <code class="sourceCode cs">true_expression</code> and <code class="sourceCode cs">false_expression</code> can both be mathematical expressions, and only one of them will get computed. For example:</p>
 <div class="sourceCode" id="cb143"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> answer <span class="op">=</span> <span class="op">(</span>myInt <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span> <span class="op">?</span> myInt <span class="op">/</span> <span class="dv">2</span> <span class="op">:</span> myInt <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span></code></pre></div>
@@ -4342,16 +4381,16 @@ Still might be useful to discuss as a comparison with other languages like Java.
 <div class="sourceCode" id="cb145"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> isAdult <span class="op">=</span> age <span class="op">&gt;=</span> <span class="dv">18</span><span class="op">;</span></span>
 <span id="cb145-2"><a href="#cb145-2" aria-hidden="true" tabindex="-1"></a><span class="dt">decimal</span> price <span class="op">=</span> isAdult <span class="op">?</span> <span class="fl">5.0m</span> <span class="op">:</span> <span class="fl">2.5m</span><span class="op">;</span></span>
 <span id="cb145-3"><a href="#cb145-3" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> closingTime <span class="op">=</span> isAdult <span class="op">?</span> <span class="st">&quot;10:00 pm&quot;</span> <span class="op">:</span> <span class="st">&quot;8:00 pm&quot;</span><span class="op">;</span></span></code></pre></div></li>
-</ul></li>
 </ul>
+</section>
 </section>
 </section>
 <section id="loops-increment-operators-and-input-validation" class="level1">
 <h1>Loops, Increment Operators, and Input Validation</h1>
 <section id="the----and-operators" class="level2">
 <h2>The <code class="sourceCode cs"><span class="op">--</span></code> and <code class="sourceCode cs"><span class="op">++</span></code> Operators</h2>
-<ul>
-<li><p>Increment and decrement basics</p>
+<section id="increment-and-decrement-basics" class="level4">
+<h4>Increment and decrement basics</h4>
 <ul>
 <li><p>In C#, we have already seen multiple ways to add 1 to a numeric variable:</p>
 <div class="sourceCode" id="cb146"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> myVar <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
@@ -4391,8 +4430,10 @@ Still might be useful to discuss as a comparison with other languages like Java.
 </tr>
 </tbody>
 </table></li>
-</ul></li>
-<li><p>Difference between prefix and postfix</p>
+</ul>
+</section>
+<section id="difference-between-prefix-and-postfix" class="level4">
+<h4>Difference between prefix and postfix</h4>
 <ul>
 <li><p>The prefix and postfix versions of the increment and decrement operators both have the same effect on the variable: Its value increases or decreases by 1</p></li>
 <li><p>The difference between prefix and postfix is whether the “old” or “new” value of the variable is <em>returned</em> by the expression</p></li>
@@ -4416,8 +4457,10 @@ Still might be useful to discuss as a comparison with other languages like Java.
 <li><p>The expression <code class="sourceCode cs"><span class="op">++</span>a</code> increments <code class="sourceCode cs">a</code> by 1, then returns the value of <code class="sourceCode cs">a</code> for use in Console.WriteLine. Thus, the first Console.WriteLine displays “2” on the screen.</p></li>
 <li><p>The expression <code class="sourceCode cs"><span class="op">--</span>a</code> decrements <code class="sourceCode cs">a</code> by 1, then returns the value of <code class="sourceCode cs">a</code> for use in Console.WriteLine. Thus, the second Console.WriteLine displays “1” on the screen.</p></li>
 </ul></li>
-</ul></li>
-<li><p>Using increment/decrement in expressions</p>
+</ul>
+</section>
+<section id="using-incrementdecrement-in-expressions" class="level4">
+<h4>Using increment/decrement in expressions</h4>
 <ul>
 <li><p>The <code class="sourceCode cs"><span class="op">++</span></code> and <code class="sourceCode cs"><span class="op">--</span></code> operators have higher precedence than the other math operators, so if you use them in an expression they will get executed first</p></li>
 <li><p>The “result” of the operator, i.e. the value that will be used in the rest of the math expression, depends on whether it is the prefix or postfix increment/decrement operator: The prefix operator returns the variable’s new value, while the postfix operator returns the variable’s old value</p></li>
@@ -4429,19 +4472,21 @@ Still might be useful to discuss as a comparison with other languages like Java.
 <li><p>The variable <code class="sourceCode cs">b</code> gets the value 1, because <code class="sourceCode cs">a<span class="op">++</span></code> returns the “old” value of <code class="sourceCode cs">a</code> (1) and then increments <code class="sourceCode cs">a</code> to 2</p></li>
 <li><p>In the expression <code class="sourceCode cs"><span class="op">++</span>a <span class="op">*</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">4</span></code>, the operator <code class="sourceCode cs"><span class="op">++</span>a</code> executes first, and it returns the new value of <code class="sourceCode cs">a</code>, which is 3. Then the multiplication executes (<code class="sourceCode cs"><span class="dv">3</span> <span class="op">*</span> <span class="dv">2</span></code>, which is 6), then the addition (<code class="sourceCode cs"><span class="dv">6</span> <span class="op">+</span> <span class="dv">4</span></code>, which is 10). Thus <code class="sourceCode cs">c</code> gets the value 10.</p></li>
 <li><p>In thee expression <code class="sourceCode cs">a<span class="op">--</span> <span class="op">+</span> <span class="dv">1</span></code>, the operator <code class="sourceCode cs">a<span class="op">--</span></code> executes first, and it returns the <em>old</em> value of <code class="sourceCode cs">a</code>, which is 3 (even though <code class="sourceCode cs">a</code> is now 2). Then the addition executes, so <code class="sourceCode cs">d</code> gets the value 4.</p></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="while-loops" class="level2">
 <h2>While Loops</h2>
-<ul>
-<li><p>Introduction to <code class="sourceCode cs"><span class="kw">while</span></code> loops</p>
+<section id="introduction-to-while-loops" class="level4">
+<h4>Introduction to <code class="sourceCode cs"><span class="kw">while</span></code> loops</h4>
 <ul>
 <li>There are two basic types of decision structures in all programming languages. We’ve just learned about the first, which is the “selection structure,” or <code class="sourceCode cs"><span class="kw">if</span></code> statement. This allows the program to choose whether or not to execute a block of code, based on a condition.</li>
 <li>The second basic decision structure is the loop, which allows the program to execute the same block of code repeatedly, and choose when to stop based on a condition.</li>
 <li>The <strong>while statement</strong> executes a block of code repeatedly, <em>as long as a condition is true</em>. You can also think of it as executing the code repeatedly <em>until a condition is false</em></li>
-</ul></li>
-<li><p>Example code with a <code class="sourceCode cs"><span class="kw">while</span></code> loop</p>
+</ul>
+</section>
+<section id="example-code-with-a-while-loop" class="level4">
+<h4>Example code with a <code class="sourceCode cs"><span class="kw">while</span></code> loop</h4>
 <div class="sourceCode" id="cb153"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> counter <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb153-2"><a href="#cb153-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>counter <span class="op">&lt;=</span> <span class="dv">3</span><span class="op">)</span></span>
 <span id="cb153-3"><a href="#cb153-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -4465,8 +4510,10 @@ Hello again!
 Hello again!
 3
 Done</code></pre></li>
-</ul></li>
-<li><p>Syntax and rules for <code class="sourceCode cs"><span class="kw">while</span></code> loops</p>
+</ul>
+</section>
+<section id="syntax-and-rules-for-while-loops" class="level4">
+<h4>Syntax and rules for <code class="sourceCode cs"><span class="kw">while</span></code> loops</h4>
 <ul>
 <li><p>Formally, the syntax for a <code class="sourceCode cs"><span class="kw">while</span></code> loop is this:</p>
 <div class="sourceCode" id="cb155"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(&lt;</span>condition<span class="op">&gt;)</span></span>
@@ -4481,16 +4528,16 @@ Done</code></pre></li>
 <li><p>Just like with an <code class="sourceCode cs"><span class="kw">if</span></code> statement, the curly braces can be omitted if the loop body is just one statement:</p>
 <div class="sourceCode" id="cb156"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb156-1"><a href="#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(&lt;</span>condition<span class="op">&gt;)</span></span>
 <span id="cb156-2"><a href="#cb156-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>statement<span class="op">&gt;</span></span></code></pre></div></li>
-</ul></li>
-<li><p>Examining the example in detail</p>
-<ul>
+<li><p>Examining the example in detail</p></li>
 <li><p>When our example program runs, it initializes <code class="sourceCode cs">counter</code> to 0, then it encounters the loop</p></li>
 <li><p>It evaluates the condition <code class="sourceCode cs">counter <span class="op">&lt;=</span> <span class="dv">0</span></code>, which is true, so it executes the loop’s body. The program displays “Hello again!” and “0” on the screen.</p></li>
 <li><p>At the end of the code block (after <code class="sourceCode cs">counter<span class="op">++</span></code>) the program returns to the <code class="sourceCode cs"><span class="kw">while</span></code> statement and evaluates the condition again. 1 is less than 3, so it executes the loop’s body again.</p></li>
 <li><p>This process repeats two more times, and the program displays “Hello again!” with “2” and “3”</p></li>
 <li><p>After displaying “3”, <code class="sourceCode cs">counter<span class="op">++</span></code> increments <code class="sourceCode cs">counter</code> to 4. Then the program returns to the <code class="sourceCode cs"><span class="kw">while</span></code> statement and evaluates the condition, but <code class="sourceCode cs">counter <span class="op">&lt;=</span> <span class="dv">3</span></code> is false, so it skips the loop body and executes the last line of code (displaying “Done”)</p></li>
-</ul></li>
-<li><p>While loops may execute zero times</p>
+</ul>
+</section>
+<section id="while-loops-may-execute-zero-times" class="level4">
+<h4>While loops may execute zero times</h4>
 <ul>
 <li><p>You might think that a “loop” always repeats code, but nothing requires a while loop to execute at least once</p></li>
 <li><p>If the condition is false when the computer first encounters the loop, the loop body is skipped</p></li>
@@ -4504,8 +4551,10 @@ Done</code></pre></li>
 <span id="cb157-7"><a href="#cb157-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb157-8"><a href="#cb157-8" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Done&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>The program will only display “Done,” because the body of the loop never executes. <code class="sourceCode cs">counter <span class="op">&lt;=</span> <span class="dv">3</span></code> is false the first time it is evaluated, so the program skips the code block and continues on the next line.</p></li>
-</ul></li>
-<li><p>Ensuring the loop ends</p>
+</ul>
+</section>
+<section id="ensuring-the-loop-ends" class="level4">
+<h4>Ensuring the loop ends</h4>
 <ul>
 <li><p>If the loop condition is always true, the loop will never end, and your program will run “forever” (until you forcibly stop it, or the computer shuts down)</p></li>
 <li><p>Obviously, if you use the value <code class="sourceCode cs"><span class="kw">true</span></code> for the condition, the loop will run forever, like in this example:</p>
@@ -4551,8 +4600,10 @@ Done</code></pre></li>
 <span id="cb162-6"><a href="#cb162-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Since <code class="sourceCode cs">number</code> was initialized to 0, <code class="sourceCode cs">number <span class="op">*=</span> <span class="dv">2</span></code> doesn’t actually change the value of <code class="sourceCode cs">number</code>: <span class="math inline">2 × 0 = 0</span>. So the loop body will never make the condition <code class="sourceCode cs">number <span class="op">&lt;=</span> <span class="dv">64</span></code> false.</p></li>
 </ul></li>
-</ul></li>
-<li><p>Principles of writing a <code class="sourceCode cs"><span class="kw">while</span></code> loop</p>
+</ul>
+</section>
+<section id="principles-of-writing-a-while-loop" class="level4">
+<h4>Principles of writing a <code class="sourceCode cs"><span class="kw">while</span></code> loop</h4>
 <ul>
 <li><p>When writing a <code class="sourceCode cs"><span class="kw">while</span></code> loop, ask yourself these questions about your program:</p>
 <ol type="1">
@@ -4562,13 +4613,13 @@ Done</code></pre></li>
 </ol></li>
 <li><p>This will help you think clearly about how to write your loop condition. You should write a condition (Boolean expression) that will be <code class="sourceCode cs"><span class="kw">true</span></code> in the circumstances described by (1), and <code class="sourceCode cs"><span class="kw">false</span></code> in the circumstances described by (2)</p></li>
 <li><p>Keep your answer to (3) in mind as you write the body of the loop, and make sure the actions in your loop’s body match the condition you wrote.</p></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="loops-and-input-validation" class="level2">
 <h2>Loops and Input Validation</h2>
-<ul>
-<li><p>Valid and invalid data</p>
+<section id="valid-and-invalid-data" class="level4">
+<h4>Valid and invalid data</h4>
 <ul>
 <li><p>Depending on the purpose of your program, each variable might have a limited range of values that are “valid” or “good,” even if the data type can hold more</p></li>
 <li><p>For example, a <code class="sourceCode cs"><span class="dt">decimal</span></code> variable that holds a price (in dollars) should have a positive value, even though it’s legal to store negative numbers in a <code class="sourceCode cs"><span class="dt">decimal</span></code></p></li>
@@ -4591,8 +4642,10 @@ Done</code></pre></li>
 <span id="cb165-4"><a href="#cb165-4" aria-hidden="true" tabindex="-1"></a>    price <span class="op">=</span> <span class="op">(</span>initPrice <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">)</span> <span class="op">?</span> initPrice <span class="op">:</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb165-5"><a href="#cb165-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>then the instantiation <code class="sourceCode cs"><span class="kw">new</span> <span class="fu">Item</span><span class="op">(</span>desc<span class="op">,</span> price<span class="op">)</span></code> would never be able to create an object with a negative price. If the user provides an invalid price, the constructor will ignore their value and initialize the <code class="sourceCode cs">price</code> instance variable to 0 instead.</p></li>
-</ul></li>
-<li><p>Ensuring data is valid with a loop</p>
+</ul>
+</section>
+<section id="ensuring-data-is-valid-with-a-loop" class="level4">
+<h4>Ensuring data is valid with a loop</h4>
 <ul>
 <li><p>Another way to protect your program from “bad” user input is to check whether the data is valid as soon as the user enters it, and prompt him/her to re-enter the data if it is not valid</p></li>
 <li><p>A <code class="sourceCode cs"><span class="kw">while</span></code> loop is the perfect fit for this approach: you can write a loop condition that is true when the user’s input is <em>invalid</em>, and ask the user for input in the body of the loop. This means your program will repeatedly ask the user for input until he/she enters valid data.</p></li>
@@ -4613,8 +4666,10 @@ Done</code></pre></li>
 <li>If the user enters a valid price, the loop condition will be false, so the program will proceed to the next line and instantiate the Item</li>
 <li>Note that the <em>only</em> way for the program to “escape” from the <code class="sourceCode cs"><span class="kw">while</span></code> loop is for the user to enter a valid price. This means that <code class="sourceCode cs"><span class="kw">new</span> <span class="fu">Item</span><span class="op">(</span>desc<span class="op">,</span> price<span class="op">)</span></code> is guaranteed to create an Item with a non-negative price, even if we did not write the constructor that checks whether <code class="sourceCode cs">initPrice <span class="op">&gt;=</span> <span class="dv">0</span></code>. On the next line of code after the end of a <code class="sourceCode cs"><span class="kw">while</span></code> loop, you can be certain that the loop’s condition is false, otherwise execution would not have reached that point.</li>
 </ul></li>
-</ul></li>
-<li><p>Ensuring the user enters a number with <code class="sourceCode cs">TryParse</code></p>
+</ul>
+</section>
+<section id="ensuring-the-user-enters-a-number-with-tryparse" class="level4">
+<h4>Ensuring the user enters a number with <code class="sourceCode cs">TryParse</code></h4>
 <ul>
 <li><p>Another way that user input might be invalid: When asked for a number, the user could enter something that is not a number</p></li>
 <li><p>The <code class="sourceCode cs">Parse</code> methods we have been using assume that the <code class="sourceCode cs"><span class="dt">string</span></code> they are given (in the argument) is a valid number, and produce a run-time error if it is not</p>
@@ -4677,16 +4732,16 @@ Done</code></pre></li>
 <li><p>The loop condition should be true when the user’s input is <em>invalid</em>, so we use the negation operator <code class="sourceCode cs"><span class="op">!</span></code> to write a condition that is true when <code class="sourceCode cs">success</code> is <code class="sourceCode cs"><span class="kw">false</span></code></p></li>
 <li><p>Each time the loop body executes, both <code class="sourceCode cs">success</code> and <code class="sourceCode cs">number</code> are assigned new values by <code class="sourceCode cs">TryParse</code></p></li>
 </ul></li>
-</ul></li>
 </ul>
+</section>
 </section>
 </section>
 <section id="do-while-loops-and-loop-vocabulary" class="level1">
 <h1>Do-While Loops and Loop Vocabulary</h1>
 <section id="the-do-while-statement" class="level2">
 <h2>The <code class="sourceCode cs"><span class="kw">do</span><span class="op">-</span><span class="kw">while</span></code> Statement</h2>
-<ul>
-<li><p>Comparing <code class="sourceCode cs"><span class="kw">while</span></code> and <code class="sourceCode cs"><span class="kw">if</span></code> statements</p>
+<section id="comparing-while-and-if-statements" class="level4">
+<h4>Comparing <code class="sourceCode cs"><span class="kw">while</span></code> and <code class="sourceCode cs"><span class="kw">if</span></code> statements</h4>
 <ul>
 <li><p><code class="sourceCode cs"><span class="kw">while</span></code> and <code class="sourceCode cs"><span class="kw">if</span></code> are very similar: Both test a condition, execute a block of code if the condition is true, and skip the block of code if the condition is false</p></li>
 <li><p>There’s only a difference if the condition is true: <code class="sourceCode cs"><span class="kw">if</span></code> statements only execute the block of code once if the condition is true, but <code class="sourceCode cs"><span class="kw">while</span></code> statements may execute the block of code multiple times if the condition is true</p></li>
@@ -4711,9 +4766,12 @@ Done</code></pre></li>
 <li>If <code class="sourceCode cs">number</code> is 2, both will also do the same thing: Display “Hello!” and “2”, then increment <code class="sourceCode cs">number</code> to 3 and print “Done”.</li>
 <li>If <code class="sourceCode cs">number</code> is 1, there is a difference: The <code class="sourceCode cs"><span class="kw">if</span></code> statement will only display “Hello!” once, but the <code class="sourceCode cs"><span class="kw">while</span></code> statement will display “Hello! 2” and “Hello! 3” before displaying “Done”</li>
 </ul></li>
-</ul></li>
-<li><p>Since the <code class="sourceCode cs"><span class="kw">while</span></code> loop evaluates the condition before executing the code in the body (like an <code class="sourceCode cs"><span class="kw">if</span></code> statement), you sometimes end up duplicating code</p>
+</ul>
+</section>
+<section id="code-duplication-in-while-loops" class="level4">
+<h4>Code duplication in <code class="sourceCode cs"><span class="kw">while</span></code> loops</h4>
 <ul>
+<li><p>Since the <code class="sourceCode cs"><span class="kw">while</span></code> loop evaluates the condition before executing the code in the body (like an <code class="sourceCode cs"><span class="kw">if</span></code> statement), you sometimes end up duplicating code</p></li>
 <li><p>For example, consider an input-validation loop like the one we wrote for Item prices:</p>
 <div class="sourceCode" id="cb175"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter the item&#39;s price.&quot;</span><span class="op">);</span></span>
 <span id="cb175-2"><a href="#cb175-2" aria-hidden="true" tabindex="-1"></a><span class="dt">decimal</span> price <span class="op">=</span> <span class="dt">decimal</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
@@ -4727,9 +4785,12 @@ Done</code></pre></li>
 <li><p>In the body of the <code class="sourceCode cs"><span class="kw">while</span></code> loop, we also wrote two lines of code to prompt the user for input, read the user’s input, convert it to <code class="sourceCode cs"><span class="dt">decimal</span></code>, and store it in <code class="sourceCode cs">price</code></p></li>
 <li><p>The code before the <code class="sourceCode cs"><span class="kw">while</span></code> loop is necessary to give <code class="sourceCode cs">price</code> an initial value, so that we can check it for validity in the <code class="sourceCode cs"><span class="kw">while</span></code> statement</p></li>
 <li><p>It would be nice if we could tell the <code class="sourceCode cs"><span class="kw">while</span></code> loop to execute the body first, and then check the condition</p></li>
-</ul></li>
-<li><p>The <code class="sourceCode cs"><span class="kw">do</span><span class="op">-</span><span class="kw">while</span></code> loop executes the loop body <strong>before</strong> evaluating the condition</p>
+</ul>
+</section>
+<section id="introduction-to-do-while" class="level4">
+<h4>Introduction to <code class="sourceCode cs"><span class="kw">do</span><span class="op">-</span><span class="kw">while</span></code></h4>
 <ul>
+<li><p>The <code class="sourceCode cs"><span class="kw">do</span><span class="op">-</span><span class="kw">while</span></code> loop executes the loop body <strong>before</strong> evaluating the condition</p></li>
 <li><p>Otherwise works the same as a <code class="sourceCode cs"><span class="kw">while</span></code> loop: If the condition is true, execute the loop body again; if the condition is false, stop the loop</p></li>
 <li><p>This can reduce repeated code, since the loop body is executed <em>at least once</em></p></li>
 <li><p>Example:</p>
@@ -4749,8 +4810,10 @@ Done</code></pre></li>
 <li><p>This has the same effect as the <code class="sourceCode cs"><span class="kw">while</span></code> loop: the user is prompted repeatedly until he/she enters a valid price, and the program can only reach the line <code class="sourceCode cs">Item myItem <span class="op">=</span> <span class="kw">new</span> <span class="fu">Item</span><span class="op">(</span>desc<span class="op">,</span> price<span class="op">)</span></code> when <code class="sourceCode cs">price <span class="op">&lt;</span> <span class="dv">0</span></code> is false</p></li>
 <li><p>Note that the variable <code class="sourceCode cs">price</code> must be declared before the <code class="sourceCode cs"><span class="kw">do</span><span class="op">-</span><span class="kw">while</span></code> loop so that it is in scope after the loop. It would not be valid to declare <code class="sourceCode cs">price</code> inside the body of the loop (e.g. on the line with <code class="sourceCode cs"><span class="dt">decimal</span><span class="op">.</span><span class="fu">Parse</span></code>) because then its scope would be limited to inside that code block.</p></li>
 </ul></li>
-</ul></li>
-<li><p>Formal syntax and details</p>
+</ul>
+</section>
+<section id="formal-syntax-and-details-of-do-while" class="level4">
+<h4>Formal syntax and details of <code class="sourceCode cs"><span class="kw">do</span><span class="op">-</span><span class="kw">while</span></code></h4>
 <ul>
 <li><p>A <code class="sourceCode cs"><span class="kw">do</span><span class="op">-</span><span class="kw">while</span></code> loop is written like this:</p>
 <div class="sourceCode" id="cb177"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb177-1"><a href="#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="kw">do</span></span>
@@ -4767,8 +4830,10 @@ Done</code></pre></li>
 <div class="sourceCode" id="cb178"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb178-1"><a href="#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="kw">do</span></span>
 <span id="cb178-2"><a href="#cb178-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>statement<span class="op">&gt;</span></span>
 <span id="cb178-3"><a href="#cb178-3" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(&lt;</span>condition<span class="op">&gt;);</span></span></code></pre></div></li>
-</ul></li>
-<li><p>A <code class="sourceCode cs"><span class="kw">do</span><span class="op">-</span><span class="kw">while</span></code> loop with multiple conditions</p>
+</ul>
+</section>
+<section id="do-while-loops-with-multiple-conditions" class="level4">
+<h4><code class="sourceCode cs"><span class="kw">do</span><span class="op">-</span><span class="kw">while</span></code> loops with multiple conditions</h4>
 <ul>
 <li><p>We can combine both types of user-input validation in one loop: Ensuring the user entered a number (not some other string), and ensuring the number is valid. This is easier to do with a <code class="sourceCode cs"><span class="kw">do</span><span class="op">-</span><span class="kw">while</span></code> loop:</p>
 <div class="sourceCode" id="cb179"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb179-1"><a href="#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="dt">decimal</span> price<span class="op">;</span></span>
@@ -4782,8 +4847,8 @@ Done</code></pre></li>
 <li><p>There are two parts to the loop condition: (1) it should be true if the user did not enter a number, and (2) it should be true if the user entered a negative number.</p></li>
 <li><p>We combine these two conditions with <code class="sourceCode cs"><span class="op">||</span></code> because either one, by itself, represents invalid input. Even if the user entered a valid number (which means <code class="sourceCode cs"><span class="op">!</span>parseSuccess</code> is false), the loop should not stop unless <code class="sourceCode cs">price <span class="op">&lt;</span> <span class="dv">0</span></code> is also false.</p></li>
 <li><p>Note that both variables must be declared before the loop begins, so that they are in scope both inside and outside the loop body</p></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="vocabulary" class="level2">
 <h2>Vocabulary</h2>
@@ -5168,8 +5233,8 @@ Done</code></pre></li>
 </section>
 <section id="for-loops" class="level1">
 <h1>For Loops</h1>
-<ul>
-<li><p>Counter-controlled loops</p>
+<section id="counter-controlled-loops" class="level4">
+<h4>Counter-controlled loops</h4>
 <ul>
 <li><p>Previously, when we learned about loop vocabulary, we looked at counter-controlled <code class="sourceCode cs"><span class="kw">while</span></code> loops</p></li>
 <li><p>Although counter-controlled loops can perform many different kinds of actions in the body of the loop, they all use very similar code for managing the counter variable</p></li>
@@ -5194,8 +5259,10 @@ Done</code></pre></li>
 <li>Write a loop condition that will become false when the counter reaches a certain value (<code class="sourceCode cs">i <span class="op">&lt;</span> <span class="dv">10</span></code> or <code class="sourceCode cs">num <span class="op">&lt;=</span> <span class="dv">25</span></code>)</li>
 <li>Increment the counter variable at the end of each loop iteration, as the last line of the body</li>
 </ul></li>
-</ul></li>
-<li><p><code class="sourceCode cs"><span class="kw">for</span></code> loop example and syntax</p>
+</ul>
+</section>
+<section id="for-loop-example-and-syntax" class="level4">
+<h4><code class="sourceCode cs"><span class="kw">for</span></code> loop example and syntax</h4>
 <ul>
 <li><p>This <code class="sourceCode cs"><span class="kw">for</span></code> loop does the same thing as the first of the two <code class="sourceCode cs"><span class="kw">while</span></code> loops above:</p>
 <div class="sourceCode" id="cb206"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb206-1"><a href="#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span></span>
@@ -5219,7 +5286,6 @@ Done</code></pre></li>
 <li>The condition statement works exactly the same as a <code class="sourceCode cs"><span class="kw">while</span></code> loop’s condition statement: Before executing the loop’s body, the computer checks the condition, and skips the body (ending the loop) if it is false.</li>
 <li>The update statement is code that will be executed each time the loop’s body <em>ends</em>, before checking the condition again. You can imagine that it gets inserted right before the closing <code class="sourceCode cs"><span class="op">}</span></code> of the loop body. This is where you increment the counter variable.</li>
 </ul></li>
-</ul></li>
 <li><p>Examining the example in detail</p>
 <ul>
 <li>When the computer executes our example <code class="sourceCode cs"><span class="kw">for</span></code> loop, it first creates the variable <code class="sourceCode cs">i</code> and initializes it to 0</li>
@@ -5230,10 +5296,11 @@ Done</code></pre></li>
 <li>The computer returns to the <code class="sourceCode cs"><span class="kw">for</span></code> statement and evaluates the condition, but <code class="sourceCode cs">i <span class="op">&lt;</span> <span class="dv">10</span></code> is false, so it skips the loop body and proceeds to the next line of code. It displays “Done” in the console.</li>
 </ul></li>
 </ul>
+</section>
 <section id="limitations-and-pitfalls-of-using-for-loops" class="level2">
 <h2>Limitations and Pitfalls of Using <code class="sourceCode cs"><span class="kw">for</span></code> Loops</h2>
-<ul>
-<li><p>Scope of the <code class="sourceCode cs"><span class="kw">for</span></code> loop’s variable</p>
+<section id="scope-of-the-for-loops-variable" class="level4">
+<h4>Scope of the <code class="sourceCode cs"><span class="kw">for</span></code> loop’s variable</h4>
 <ul>
 <li><p>When you declare a counter variable in the <code class="sourceCode cs"><span class="kw">for</span></code> statement, its scope is limited to <em>inside</em> the loop</p></li>
 <li><p>Just like method parameters, it’s as if the variable declaration happened just inside the opening <code class="sourceCode cs"><span class="op">{</span></code>, so it can only be accessed inside that code block</p></li>
@@ -5254,8 +5321,10 @@ Done</code></pre></li>
 <span id="cb209-5"><a href="#cb209-5" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> count<span class="op">;</span></span>
 <span id="cb209-6"><a href="#cb209-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb209-7"><a href="#cb209-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The average is {(double) total / count}&quot;</span><span class="op">);</span></span></code></pre></div></li>
-</ul></li>
-<li><p>Be sure not to re-declare a variable</p>
+</ul>
+</section>
+<section id="accidentally-re-declaring-a-variable" class="level4">
+<h4>Accidentally re-declaring a variable</h4>
 <ul>
 <li><p>If your <code class="sourceCode cs"><span class="kw">for</span></code> loop declares a new variable in its initialization statement, it can’t have the same name as a variable already in scope</p></li>
 <li><p>If you want your counter variable to still be in scope after the end of the loop, you can’t also declare it in the <code class="sourceCode cs"><span class="kw">for</span></code> loop. This is why we had to write <code class="sourceCode cs"><span class="kw">for</span><span class="op">(</span>count <span class="op">=</span> <span class="dv">0</span><span class="op">...</span></code> instead of <code class="sourceCode cs"><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> count <span class="op">=</span> <span class="dv">0</span><span class="op">...</span></code> in the previous example: the name <code class="sourceCode cs">count</code> was already being used.</p></li>
@@ -5288,8 +5357,10 @@ Done</code></pre></li>
 <span id="cb211-9"><a href="#cb211-9" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb211-10"><a href="#cb211-10" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{i}&quot;</span><span class="op">);</span></span>
 <span id="cb211-11"><a href="#cb211-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
-</ul></li>
-<li><p>Be sure not to double-increment the counter</p>
+</ul>
+</section>
+<section id="accidentally-double-incrementing-the-counter" class="level4">
+<h4>Accidentally double-incrementing the counter</h4>
 <ul>
 <li><p>Now that you know about <code class="sourceCode cs"><span class="kw">for</span></code> loops, you may want to convert some of your counter-controlled <code class="sourceCode cs"><span class="kw">while</span></code> loops to <code class="sourceCode cs"><span class="kw">for</span></code> loops</p></li>
 <li><p>Remember that in a <code class="sourceCode cs"><span class="kw">while</span></code> loop the counter must be incremented in the loop body, but in a <code class="sourceCode cs"><span class="kw">for</span></code> loop the increment is part of the loop’s header</p></li>
@@ -5309,14 +5380,15 @@ Done</code></pre></li>
 <span id="cb213-5"><a href="#cb213-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb213-6"><a href="#cb213-6" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Done&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>it will not work correctly, because <code class="sourceCode cs">i</code> will be incremented by both the loop body and the loop’s update statement. The loop will seem to “skip” every other value of <code class="sourceCode cs">i</code>.</p></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="more-ways-to-use-for-loops" class="level2">
 <h2>More Ways to use <code class="sourceCode cs"><span class="kw">for</span></code> Loops</h2>
+<section id="complex-condition-statements" class="level4">
+<h4>Complex condition statements</h4>
 <ul>
-<li><p>The condition in a <code class="sourceCode cs"><span class="kw">for</span></code> loop can be any expression that results in a <code class="sourceCode cs"><span class="dt">bool</span></code> value</p>
-<ul>
+<li><p>The condition in a <code class="sourceCode cs"><span class="kw">for</span></code> loop can be any expression that results in a <code class="sourceCode cs"><span class="dt">bool</span></code> value</p></li>
 <li><p>If the condition compares the counter to a variable, the number of iterations depends on the variable. If the variable comes from user input, the loop is also user-controlled, like in this example:</p>
 <div class="sourceCode" id="cb214"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb214-1"><a href="#cb214-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a positive number.&quot;</span><span class="op">);</span></span>
 <span id="cb214-2"><a href="#cb214-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> numTimes <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
@@ -5330,9 +5402,12 @@ Done</code></pre></li>
 <span id="cb215-3"><a href="#cb215-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;${i}&quot;</span><span class="op">);</span></span>
 <span id="cb215-4"><a href="#cb215-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>the <code class="sourceCode cs"><span class="fu">GetPrice</span><span class="op">()</span></code> method of <code class="sourceCode cs">myItem</code> will be called every time the condition is evaluated.</p></li>
-</ul></li>
-<li><p>The update statement can be anything, not just an increment operation</p>
+</ul>
+</section>
+<section id="complex-update-statements" class="level4">
+<h4>Complex update statements</h4>
 <ul>
+<li><p>The update statement can be anything, not just an increment operation</p></li>
 <li><p>For example, you can write a loop that only processes the even numbers like this:</p>
 <div class="sourceCode" id="cb216"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb216-1"><a href="#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">19</span><span class="op">;</span> i <span class="op">+=</span> <span class="dv">2</span><span class="op">)</span></span>
 <span id="cb216-2"><a href="#cb216-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -5344,9 +5419,12 @@ Done</code></pre></li>
 <span id="cb217-3"><a href="#cb217-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>$<span class="st">&quot;{t}...&quot;</span><span class="op">);</span></span>
 <span id="cb217-4"><a href="#cb217-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb217-5"><a href="#cb217-5" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Liftoff!&quot;</span><span class="op">);</span></span></code></pre></div></li>
-</ul></li>
-<li><p>The loop body can contain more complex statements</p>
+</ul>
+</section>
+<section id="complex-loop-bodies" class="level4">
+<h4>Complex loop bodies</h4>
 <ul>
+<li><p>The loop body can contain more complex statements, including other decision structures</p></li>
 <li><p><code class="sourceCode cs"><span class="kw">if</span></code> statements can be nested inside <code class="sourceCode cs"><span class="kw">for</span></code> loops, and they will be evaluated again on every iteration</p></li>
 <li><p>For example, in this program:</p>
 <div class="sourceCode" id="cb218"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb218-1"><a href="#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">8</span><span class="op">;</span> i<span class="op">++)</span></span>
@@ -5373,8 +5451,10 @@ Done</code></pre></li>
 <span id="cb219-7"><a href="#cb219-7" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
 <span id="cb219-8"><a href="#cb219-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The outer loop prints the rows of the table, while the inner loop prints the columns. On a single iteration of the outer <code class="sourceCode cs"><span class="kw">for</span></code> loop (i.e. when <code class="sourceCode cs">r <span class="op">=</span> <span class="dv">2</span></code>), the inner <code class="sourceCode cs"><span class="kw">for</span></code> loop executes its body 11 times, using values of <code class="sourceCode cs">c</code> from 0 to 10. Then the computer executes the <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">)</span></code> to print a newline before the next “row” iteration.</p></li>
-</ul></li>
-<li><p><code class="sourceCode cs"><span class="kw">for</span></code> loops can be combined with <code class="sourceCode cs"><span class="kw">while</span></code> loops</p>
+</ul>
+</section>
+<section id="combining-for-and-while-loops" class="level4">
+<h4>Combining <code class="sourceCode cs"><span class="kw">for</span></code> and <code class="sourceCode cs"><span class="kw">while</span></code> loops</h4>
 <ul>
 <li><p><code class="sourceCode cs"><span class="kw">while</span></code> loops are good for sentinel-controlled loops or user-input validation, and <code class="sourceCode cs"><span class="kw">for</span></code> loops are good for counter-controlled loops</p></li>
 <li><p>This program asks the user to enter a number, then uses a <code class="sourceCode cs"><span class="kw">for</span></code> loop to print that number of lines of asterisks:</p>
@@ -5399,13 +5479,11 @@ Done</code></pre></li>
 <li><p>Since the user could enter either a letter or a number, we need to use <code class="sourceCode cs">TryParse</code> to convert the user’s input to a number</p></li>
 <li><p>If <code class="sourceCode cs">TryParse</code> fails (because the user entered a non-number), <code class="sourceCode cs">inputNum</code> will be assigned the value 0. This is also an invalid value for the loop counter, so we don’t need to check whether <code class="sourceCode cs">TryParse</code> returned <code class="sourceCode cs"><span class="kw">true</span></code> or <code class="sourceCode cs"><span class="kw">false</span></code>. Instead, we simply check whether <code class="sourceCode cs">inputNum</code> is valid (greater than 0) before executing the <code class="sourceCode cs"><span class="kw">for</span></code> loop, and skip the <code class="sourceCode cs"><span class="kw">for</span></code> loop entirely if <code class="sourceCode cs">inputNum</code> is negative or 0.</p></li>
 </ul></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="for-loops-with-arrays" class="level2">
 <h2>For Loops With Arrays</h2>
-<ul>
-<li><p>Using <code class="sourceCode cs"><span class="kw">for</span></code> loops to access array elements</p>
 <ul>
 <li><p>Previously, we learned that you can access a single array element using the <code class="sourceCode cs"><span class="op">&lt;</span>array<span class="op">&gt;[&lt;</span>index<span class="op">&gt;]</span></code> syntax. However, it can be tedious to access each element of an array one at a time.</p></li>
 <li><p>For example, consider this code that finds the average of all the elements in an array:</p>
@@ -5447,7 +5525,6 @@ Done</code></pre></li>
 <span id="cb224-5"><a href="#cb224-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb224-6"><a href="#cb224-6" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> average <span class="op">=</span> <span class="op">(</span><span class="dt">double</span><span class="op">)</span> sum <span class="op">/</span> homeworkGrades<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span></code></pre></div></li>
 <li><p>In general, as long as the loop condition is in the format <code class="sourceCode cs">i <span class="op">&lt;</span> <span class="op">&lt;</span>arrayName<span class="op">&gt;.</span><span class="fu">Length</span></code> (or, equivalently, <code class="sourceCode cs">i <span class="op">&lt;=</span> <span class="op">&lt;</span>arrayName<span class="op">&gt;.</span><span class="fu">Length</span> <span class="op">-</span> <span class="dv">1</span></code>), the loop will access each element of the array.</p></li>
-</ul></li>
 </ul>
 </section>
 </section>
@@ -5489,8 +5566,8 @@ Done</code></pre></li>
 </ul>
 <section id="break-and-continue" class="level2">
 <h2><code class="sourceCode cs"><span class="kw">break</span></code> and <code class="sourceCode cs"><span class="kw">continue</span></code></h2>
-<ul>
-<li><p>Conditional loop control</p>
+<section id="conditional-iteration" class="level4">
+<h4>Conditional iteration</h4>
 <ul>
 <li><p>Sometimes, you want to write a loop that will skip some iterations if a certain condition is met</p></li>
 <li><p>For example, you may be writing a <code class="sourceCode cs"><span class="kw">for</span></code> loop that iterates through an array of numbers, but you only want to use <em>even</em> numbers from the array</p></li>
@@ -5505,8 +5582,10 @@ Done</code></pre></li>
 <span id="cb229-8"><a href="#cb229-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb229-9"><a href="#cb229-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Since the entire body of the <code class="sourceCode cs"><span class="kw">for</span></code> loop is contained within an <code class="sourceCode cs"><span class="kw">if</span></code> statement, the iterations where <code class="sourceCode cs">myArray<span class="op">[</span>i<span class="op">]</span></code> is odd will skip the body and do nothing.</p></li>
-</ul></li>
-<li><p>Skipping iterations with <code class="sourceCode cs"><span class="kw">continue</span></code></p>
+</ul>
+</section>
+<section id="skipping-iterations-with-continue" class="level4">
+<h4>Skipping iterations with <code class="sourceCode cs"><span class="kw">continue</span></code></h4>
 <ul>
 <li><p>The <code class="sourceCode cs"><span class="kw">continue</span></code> keyword provides another way to conditionally skip an iteration of a loop</p></li>
 <li><p>When the computer encounters a <code class="sourceCode cs"><span class="kw">continue</span><span class="op">;</span></code> statement, it immediately returns to the beginning of the current loop, skipping the rest of the loop body</p>
@@ -5525,8 +5604,10 @@ Done</code></pre></li>
 <span id="cb230-8"><a href="#cb230-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>If <code class="sourceCode cs">myArray<span class="op">[</span>i<span class="op">]</span></code> is odd, the computer will execute the <code class="sourceCode cs"><span class="kw">continue</span></code> statement and immediately start the next iteration of the loop. This means that the rest of the loop body (the other two statements) only gets executed if <code class="sourceCode cs">myArray<span class="op">[</span>i<span class="op">]</span></code> is even.</p></li>
 <li><p>Using a <code class="sourceCode cs"><span class="kw">continue</span></code> statement instead of putting the entire body within an <code class="sourceCode cs"><span class="kw">if</span></code> statement can reduce the amount of indentation in your code, and it can sometimes make your code’s logic clearer.</p></li>
-</ul></li>
-<li><p>Loops with multiple end conditions</p>
+</ul>
+</section>
+<section id="loops-with-multiple-end-conditions" class="level4">
+<h4>Loops with multiple end conditions</h4>
 <ul>
 <li><p>More advanced loops may have multiple conditions that affect whether the loop should continue</p></li>
 <li><p>Attempting to combine all of these conditions in the loop condition (i.e. the expression after <code class="sourceCode cs"><span class="kw">while</span></code>) can make the loop more complicated</p></li>
@@ -5546,8 +5627,10 @@ Done</code></pre></li>
 <li>In order to write this condition, we needed to declare the extra variable <code class="sourceCode cs">success</code> to keep track of the result of <code class="sourceCode cs"><span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span></code></li>
 <li>We can’t use the condition <code class="sourceCode cs">userNum <span class="op">&gt;</span> <span class="dv">0</span></code>, hoping to take advantage of the fact that if <code class="sourceCode cs">TryParse</code> fails it assigns its <code class="sourceCode cs"><span class="kw">out</span></code> parameter the value 0, because 0 is a valid input the user could give</li>
 </ul></li>
-</ul></li>
-<li><p>Ending the loop with <code class="sourceCode cs"><span class="kw">break</span></code></p>
+</ul>
+</section>
+<section id="ending-the-loop-with-break" class="level4">
+<h4>Ending the loop with <code class="sourceCode cs"><span class="kw">break</span></code></h4>
 <ul>
 <li><p>The <code class="sourceCode cs"><span class="kw">break</span></code> keyword provides another way to write an additional end condition</p></li>
 <li><p>When the computer encounters a <code class="sourceCode cs"><span class="kw">break</span><span class="op">;</span></code> statement, it immediately ends the loop and proceeds to the next statement after the loop body</p>
@@ -5591,16 +5674,16 @@ Done</code></pre></li>
 <span id="cb234-5"><a href="#cb234-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
 <span id="cb234-6"><a href="#cb234-6" aria-hidden="true" tabindex="-1"></a>    product <span class="op">*=</span> number<span class="op">;</span></span>
 <span id="cb234-7"><a href="#cb234-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
-</ul></li>
 </ul>
+</section>
 </section>
 </section>
 <section id="the-static-keyword" class="level1">
 <h1>The <code class="sourceCode cs"><span class="kw">static</span></code> Keyword</h1>
 <section id="static-methods" class="level2">
 <h2>Static Methods</h2>
-<ul>
-<li><p>Different ways of calling methods</p>
+<section id="different-ways-of-calling-methods" class="level4">
+<h4>Different ways of calling methods</h4>
 <ul>
 <li><p>Usually you call a method by using the “dot operator” (member access operator) on an object, like this:</p>
 <div class="sourceCode" id="cb235"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb235-1"><a href="#cb235-1" aria-hidden="true" tabindex="-1"></a>Rectangle rect <span class="op">=</span> <span class="kw">new</span> <span class="fu">Rectangle</span><span class="op">();</span></span>
@@ -5613,8 +5696,10 @@ Done</code></pre></li>
 <div class="sourceCode" id="cb237"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb237-1"><a href="#cb237-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="op">{</span><span class="dv">10</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">30</span><span class="op">};</span></span>
 <span id="cb237-2"><a href="#cb237-2" aria-hidden="true" tabindex="-1"></a>Array<span class="op">.</span><span class="fu">Resize</span><span class="op">(</span><span class="kw">ref</span> myArray<span class="op">,</span> <span class="dv">6</span><span class="op">);</span></span></code></pre></div></li>
 <li><p>Methods that are called using the name of the class rather than an instance of that class are <strong>static methods</strong></p></li>
-</ul></li>
-<li><p>Declaring <code class="sourceCode cs"><span class="kw">static</span></code> methods</p>
+</ul>
+</section>
+<section id="declaring-static-methods" class="level4">
+<h4>Declaring <code class="sourceCode cs"><span class="kw">static</span></code> methods</h4>
 <ul>
 <li><p>Static methods are declared by adding the <code class="sourceCode cs"><span class="kw">static</span></code> keyword to the header, like this:</p>
 <div class="sourceCode" id="cb238"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb238-1"><a href="#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Console</span>
@@ -5626,8 +5711,10 @@ Done</code></pre></li>
 <span id="cb238-7"><a href="#cb238-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 <li><p>The <code class="sourceCode cs"><span class="kw">static</span></code> keyword means that this method belongs to the class “in general,” rather than an instance of the class</p></li>
 <li><p>Thus, you do not need an object (instance of the class) to call a static method; you only need the name of the class</p></li>
-</ul></li>
-<li><p><code class="sourceCode cs"><span class="kw">static</span></code> methods and instances</p>
+</ul>
+</section>
+<section id="static-methods-and-instances" class="level4">
+<h4><code class="sourceCode cs"><span class="kw">static</span></code> methods and instances</h4>
 <ul>
 <li><p>Normal, non-static methods are always associated with a particular instance (object)</p></li>
 <li><p>When a normal method modifies an instance variable, it always “knows” which object to modify, because you need to specify the object when calling it</p>
@@ -5663,8 +5750,10 @@ Done</code></pre></li>
 <li>To call this static method, you would write <code class="sourceCode cs">Rectangle<span class="op">.</span><span class="fu">ComputeArea</span><span class="op">();</span></code></li>
 <li>Since no <code class="sourceCode cs">Rectangle</code> object is specified, which object’s length and width should be used in the computation?</li>
 </ul></li>
-</ul></li>
-<li><p>Uses for <code class="sourceCode cs"><span class="kw">static</span></code> methods</p>
+</ul>
+</section>
+<section id="uses-for-static-methods" class="level4">
+<h4>Uses for <code class="sourceCode cs"><span class="kw">static</span></code> methods</h4>
 <ul>
 <li><p>Since static methods can’t access instance variables, they don’t seem very useful</p></li>
 <li><p>One reason to use them: when writing a function that doesn’t need to “save” any state, and just computes an output (its return value) based on some input (its parameters)</p></li>
@@ -5750,13 +5839,13 @@ Done</code></pre></li>
 <span id="cb244-29"><a href="#cb244-29" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>In this example, our program needs to read two different numbers from the user, so we put the input-validation loop into the <code class="sourceCode cs">InputPositiveNumber</code> method instead of writing it twice in the Main method. It then has two separate “parts” (computing some result with the two user-input numbers, and combining that computed number with a string to display some output), which we write in the two methods <code class="sourceCode cs">DoPart1</code> and <code class="sourceCode cs">DoPart2</code>. This makes our actual <code class="sourceCode cs">Main</code> method only 4 lines long.</p></li>
 </ul></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="static-variables" class="level2">
 <h2>Static Variables</h2>
-<ul>
-<li><p>Defining <code class="sourceCode cs"><span class="kw">static</span></code> variables</p>
+<section id="defining-static-variables" class="level4">
+<h4>Defining <code class="sourceCode cs"><span class="kw">static</span></code> variables</h4>
 <ul>
 <li><p>The <code class="sourceCode cs"><span class="kw">static</span></code> keyword can be used in something that looks like an instance variable declaration:</p>
 <div class="sourceCode" id="cb245"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb245-1"><a href="#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle</span>
@@ -5781,8 +5870,10 @@ Done</code></pre></li>
 <span id="cb247-3"><a href="#cb247-3" aria-hidden="true" tabindex="-1"></a>Rectangle myOtherRect <span class="op">=</span> <span class="kw">new</span> <span class="fu">Rectangle</span><span class="op">();</span></span>
 <span id="cb247-4"><a href="#cb247-4" aria-hidden="true" tabindex="-1"></a>Rectangle<span class="op">.</span><span class="fu">NumRectangles</span><span class="op">++;</span></span></code></pre></div></li>
 </ul></li>
-</ul></li>
-<li><p>Using <code class="sourceCode cs"><span class="kw">static</span></code> variables</p>
+</ul>
+</section>
+<section id="using-static-variables" class="level4">
+<h4>Using <code class="sourceCode cs"><span class="kw">static</span></code> variables</h4>
 <ul>
 <li><p>Since all instances of a class share the same static variables, you can use them to keep track of information about “the class as a whole” or “all the objects of this type”</p></li>
 <li><p>A common use for static variables is to count the number of instances of an object that have been created so far in the program</p>
@@ -5814,8 +5905,10 @@ Done</code></pre></li>
 <li>A <code class="sourceCode cs"><span class="dt">const</span></code> variable is just a <code class="sourceCode cs"><span class="kw">static</span></code> variable that can’t be modified</li>
 <li>Like a <code class="sourceCode cs"><span class="kw">static</span></code> variable, it can be accessed using the name of the class where it is defined (e.g. <code class="sourceCode cs">Math<span class="op">.</span><span class="fu">PI</span></code>), and there is only one copy for the entire program</li>
 </ul></li>
-</ul></li>
-<li><p>Static methods and variables</p>
+</ul>
+</section>
+<section id="static-methods-and-variables" class="level4">
+<h4>Static methods and variables</h4>
 <ul>
 <li><p>Static methods cannot access instance variables, but they <em>can</em> access static variables</p></li>
 <li><p>There’s no ambiguity when accessing a static variable: you don’t need to know which object’s variable to access, because there is only one copy of the static variable shared by all objects</p></li>
@@ -5845,8 +5938,10 @@ Done</code></pre></li>
 <span id="cb251-3"><a href="#cb251-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Rectangle<span class="op">.</span><span class="fu">GetNumRectangles</span><span class="op">()</span></span>
 <span id="cb251-4"><a href="#cb251-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="st">&quot; rectangle objects have been created&quot;</span><span class="op">);</span></span></code></pre></div></li>
 </ul></li>
-</ul></li>
-<li><p>Summary of <code class="sourceCode cs"><span class="kw">static</span></code> access rules</p>
+</ul>
+</section>
+<section id="summary-of-static-access-rules" class="level4">
+<h4>Summary of <code class="sourceCode cs"><span class="kw">static</span></code> access rules</h4>
 <ul>
 <li><p>Static variables and instance variables are both <strong>fields</strong> of a class; they can also be called “static fields” and “non-static fields”</p></li>
 <li><p>This table summarizes how methods are allowed to access them:</p>
@@ -5871,8 +5966,8 @@ Done</code></pre></li>
 </tr>
 </tbody>
 </table></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="static-classes" class="level2">
 <h2>Static Classes</h2>
