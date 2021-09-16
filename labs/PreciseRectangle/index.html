@@ -249,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">Precise Rectangle and Circle Class</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">September 14, 2021 (12:23:28 AM)</p>
+<p class="date">September 15, 2021 (08:33:37 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -282,30 +282,29 @@
 <li><p>Re-download <a href="../Rectangle/Rectangle.zip">the “Rectangle” project</a>, extract it in a folder, and open it with your IDE.</p></li>
 <li><p>Within your IDE, re-name the project to “PreciseRectangle”, and rename the “Rectangle.cs” file to “PreciseRectangle.cs”</p>
 <p>It is important that you re-name the files within your IDE. If you try to rename your files, or their folders, outside of the IDE then it will break your solution. The solution will still be looking for the original file/folder names, and will not recognize the changed names. If such an error occurs, restore the previous names and then rename your files through the IDE as instructed.</p></li>
-<li><p>In the “PreciseRectangle.cs” file, replace <code class="sourceCode cs"><span class="kw">class</span> Rectangle</code> with <code class="sourceCode cs"><span class="kw">class</span> PreciseRectangle</code>.<br />
-</p></li>
+<li><p>In the “PreciseRectangle.cs” file, replace <code class="sourceCode cs"><span class="kw">class</span> Rectangle</code> with <code class="sourceCode cs"><span class="kw">class</span> PreciseRectangle</code>.</p></li>
 <li><p>Comment out the body of the <code class="sourceCode cs">Main</code> method in “Program.cs”.</p></li>
 <li><p>Your program should compile as it is, but you have to edit <code class="sourceCode cs">PreciseRectangle<span class="op">.</span><span class="fu">cs</span></code> to now store the <code class="sourceCode cs">width</code> and the <code class="sourceCode cs">length</code> with <code class="sourceCode cs"><span class="dt">double</span></code>, and to propagate this change accordingly. What should be the return type of <code class="sourceCode cs">GetWidth</code>, for instance?</p></li>
 <li><p>Declare and manipulate precise rectangles (i.e., with floating-point values for the width and the length) in the <code class="sourceCode cs">Main</code> method, and make sure they behave as expected (can you compute the area, for instance?).</p></li>
-<li><p>Add the missing methods (<code class="sourceCode cs">ComputePerimeter</code>, <code class="sourceCode cs">Swap</code>, <code class="sourceCode cs">MultiplyRectangle</code>).</p></li>
+<li><p>Add the missing methods <code class="sourceCode cs">ComputePerimeter</code>, <code class="sourceCode cs">Swap</code>, <code class="sourceCode cs">MultiplyRectangle</code>, described in the section below.</p></li>
 </ol>
 </section>
 <section id="starting-from-scratch" class="level3">
 <h3>Starting From Scratch</h3>
 <ol>
 <li><p>Create a new project in your IDE, name it “PreciseRectangle”.</p></li>
-<li><p>In the Solution Explorer, right-click on “PreciseRectangle”, then on “Add…” and select “Class”. Then, select “Class”, write “PreciseRectangle.cs” as the name of the file, and click on “Add”.</p></li>
-<li><p>You are now supposed to have two “.cs” files opened and displayed in the Solution Explorer: “Program.cs” and “PreciseRectangle.cs”.</p></li>
+<li><p>In the Solution Explorer, right-click on “PreciseRectangle”, then on “Add…” and select “Class”. Then, select “Class” in the dialog box, write “PreciseRectangle.cs” as the name of the file, and click on “Add”.</p></li>
+<li><p>You should now have two “.cs” files opened and displayed in the Solution Explorer: “Program.cs” and “PreciseRectangle.cs”.</p></li>
 <li><p>Implement the <code class="sourceCode cs">PreciseRectangle</code> class according to the following specification:</p>
 <ul>
 <li>it should have two attributes, <code class="sourceCode cs">width</code> and <code class="sourceCode cs">length</code>, of type <code class="sourceCode cs"><span class="dt">double</span></code></li>
-<li>it should have and eight methods:
+<li>it should have eight methods:
 <ul>
 <li>two setters, two getters (i.e., one for each attribute),</li>
 <li>one method to compute the area of a precise rectangle,</li>
 <li>one method <code class="sourceCode cs">ComputePerimeter</code> to compute the perimeter of a precise rectangle,</li>
 <li>one method <code class="sourceCode cs">Swap</code> to swap the length and the width of a precise rectangle,</li>
-<li>one method <code class="sourceCode cs">MultiplyRectangle</code> to multiply the length and width of a precise rectangle by an ratio given in argument as an integer.</li>
+<li>one method <code class="sourceCode cs">MultiplyRectangle</code> to multiply the length and width of a precise rectangle by a factor given in the argument as an integer.</li>
 </ul></li>
 </ul></li>
 <li><p>Declare and manipulate rectangles with floating-point values for the width and the length in the <code class="sourceCode cs">Main</code> method, and make sure they behave as expected (can you compute the area, for instance?).</p></li>
@@ -321,8 +320,8 @@
 <ol>
 <li>Create a new project in your IDE, name it “Circle”.</li>
 <li>In the Solution Explorer, right-click on “Circle”, then on “Add…” and select “Class”. Then, select “Class”, write “Circle.cs” as the name of the file, and click on “Add”.</li>
-<li>You are now supposed to have two <code class="sourceCode cs"><span class="op">.</span><span class="fu">cs</span></code> files opened and displayed in the Solution Explorer: <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code> and <code class="sourceCode cs">Circle<span class="op">.</span><span class="fu">cs</span></code>.</li>
-<li>Declare one single instance variable in <code class="sourceCode cs">Circle<span class="op">.</span><span class="fu">cs</span></code>, of type <code class="sourceCode cs"><span class="dt">double</span></code> and named <code class="sourceCode cs">radius</code>. Write a <code class="sourceCode cs">set</code> and a <code class="sourceCode cs">get</code> method for this instance variable.</li>
+<li>You should now have two <code class="sourceCode cs"><span class="op">.</span><span class="fu">cs</span></code> files opened and displayed in the Solution Explorer: <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code> and <code class="sourceCode cs">Circle<span class="op">.</span><span class="fu">cs</span></code>.</li>
+<li>Declare a single instance variable in <code class="sourceCode cs">Circle<span class="op">.</span><span class="fu">cs</span></code>, of type <code class="sourceCode cs"><span class="dt">double</span></code> and named <code class="sourceCode cs">radius</code>. Write a <code class="sourceCode cs">set</code> and a <code class="sourceCode cs">get</code> method for this instance variable.</li>
 <li>In <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code>, write statements that create a new <code class="sourceCode cs">Circle</code> object and set its radius to <span class="math inline">2.3</span>. Display its radius on the screen using the method you defined previously.</li>
 </ol>
 </section>
@@ -338,12 +337,12 @@
 </ol></li>
 <li>Test those two methods in your <code class="sourceCode cs">Main</code> program, by displaying on the screen the area and the circumference of the object you created in the previous exercise.</li>
 <li>Use the format specifier <code class="sourceCode cs">N</code> to round the circumference.</li>
-<li>Add two contructors:
+<li>Add two constructors:
 <ol>
 <li>a default, parameterless constructor: it does nothing</li>
-<li>a constructor with 1 parameter for radius: it initializes radius attribute</li>
+<li>a constructor with 1 parameter for radius: it initializes the radius attribute</li>
 </ol></li>
-<li>Add a <code class="sourceCode cs">ToString</code> method that returns values or radius, circumference and area or the circle</li>
+<li>Add a <code class="sourceCode cs">ToString</code> method that returns the values of the radius, circumference and area of the circle</li>
 </ol>
 <p>You can find a possible solution to this problem <a href="Circle_Solution.zip">in this archive</a>.</p>
 </section>
@@ -352,7 +351,7 @@
 <h1>Pushing Further (Optional)</h1>
 <p>The following is an independent task, to widen your understanding of this class, and to prepare you for the next labs.</p>
 <ol>
-<li>Now that you know more about naming conventions, have a look at <a href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines">microsoft’s naming guideline</a>, and particularly at</li>
+<li>Now that you know more about naming conventions, have a look at <a href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines">Microsoft’s naming guideline</a>, and particularly at</li>
 </ol>
 <ul>
 <li><a href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/general-naming-conventions">the documentation on general naming conventions</a>,</li>
