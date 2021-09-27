@@ -249,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">If Statements</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">September 26, 2021 (11:12:14 PM)</p>
+<p class="date">September 26, 2021 (11:28:52 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -261,8 +261,8 @@
 </ul></li>
 <li><a href="#pushing-further-optional">Pushing Further (Optional)</a>
 <ul>
-<li><a href="#conditional-operator">Conditional Operator</a></li>
 <li><a href="#computing-entry-price">Computing Entry Price</a></li>
+<li><a href="#conditional-operator">Conditional Operator</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -335,7 +335,7 @@
 <li>Ask the user for an integer, and display on the screen “Negative” if the integer is negative, “Positive” if the integer in positive, and nothing if the integer is <span class="math inline">0</span>.</li>
 <li>Ask the user for an integer, and display on the screen “positive and odd” if the number is positive and odd, “positive and even” if the number is positive and even, “negative and odd” if the number is negative and odd, “negative and even” if the number is negative and even, and “You picked <span class="math inline">0</span>” if the number is <span class="math inline">0</span>.</li>
 </ol>
-<p>For each of those questions, write on paper whenever you should use if, if-else, if-else-if or nested conditional structures, and what the condition(s) should be. Once you feel confident, write the code in your IDE, and then test it intensively: enter all kinds of values (positive and odd, negative and even, <span class="math inline">0</span>, and remember that <span class="math inline">0</span> is even, etc.) and make sure that what is displayed on the screen is always correct.</p>
+<p>For each of those questions, write on paper whenever you should use <code class="sourceCode cs"><span class="kw">if</span></code>, <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code>, <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span><span class="op">-</span><span class="kw">if</span></code>, and what the condition(s) should be. Once you feel confident, write the code in your IDE, and then test it intensively: enter all kinds of values (positive and odd, negative and even, <span class="math inline">0</span>, and remember that <span class="math inline">0</span> is even, etc.) and make sure that what is displayed on the screen is always correct.</p>
 </section>
 <section id="observation-how-to-construct-a-value-progressively" class="level2">
 <h2>Observation: How to Construct a Value Progressively</h2>
@@ -347,52 +347,46 @@
 <div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a<span class="op">;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter an integer&quot;</span><span class="op">);</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>a <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span> <span class="op">(</span>a <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Positive and even&quot;</span><span class="op">);</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">else</span> <span class="co">// if (a % 2 != 0)</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Positive and odd&quot;</span><span class="op">);</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>a <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> a <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">){</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Positive and even&quot;</span><span class="op">);</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>a <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> a <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Positive and odd&quot;</span><span class="op">);</span>  </span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span> <span class="op">(</span>a <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Negative and even&quot;</span><span class="op">);</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">else</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Negative and odd&quot;</span><span class="op">);</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>That is a lot of repetition! And, as you know, programmers <em>hate</em> having to copy-and-paste the very same code, as it requires twice the editing every time you make an update!</p>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>a <span class="op">&lt;</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> a <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">){</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Negative and even&quot;</span><span class="op">);</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>a <span class="op">&lt;</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> a <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">0</span><span class="op">){</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Negative and odd&quot;</span><span class="op">);</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>That is a lot of repetition! And, as you know, it is not good practice to copy-and-paste the very same code, as it requires twice the editing every time you make an update!</p>
 <p>We could actually “progressively” construct the message we will be displaying:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> msg<span class="op">;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>a <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    msg <span class="op">=</span> <span class="st">&quot;Positive&quot;</span><span class="op">;</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    msg <span class="op">=</span> <span class="st">&quot;Negative&quot;</span><span class="op">;</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>a <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    msg <span class="op">+=</span> <span class="st">&quot; and even&quot;</span><span class="op">;</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="co">// if (a % 2 != 0)</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    msg <span class="op">+=</span> <span class="st">&quot; and odd&quot;</span><span class="op">;</span></span></code></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>a <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    msg <span class="op">=</span> <span class="st">&quot;Positive&quot;</span><span class="op">;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    msg <span class="op">=</span> <span class="st">&quot;Negative&quot;</span><span class="op">;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>a <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span> </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    msg <span class="op">+=</span> <span class="st">&quot; and even&quot;</span><span class="op">;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span>    </span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="co">// if (a % 2 != 0)</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    msg <span class="op">+=</span> <span class="st">&quot; and odd&quot;</span><span class="op">;</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>msg<span class="op">);</span></span></code></pre></div>
 <p>Much better! Since the two conditions are actually independent, we can test them in two different <code class="sourceCode cs"><span class="kw">if</span></code> statements!</p>
 </section>
 </section>
 <section id="pushing-further-optional" class="level1">
 <h1>Pushing Further (Optional)</h1>
-<section id="conditional-operator" class="level2">
-<h2>Conditional Operator</h2>
-<p>You were introduced to the conditional operator, which can be used to replace <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statements in particular cases (assignment, call, increment, decrement, and new object expressions). Its structure is:</p>
-<p><code class="sourceCode cs">condition <span class="op">?</span> first_expression <span class="op">:</span> second_expression<span class="op">;</span></code></p>
-<p>You can read more about it <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator">in the documentation</a>.</p>
-<p>If you have time, practice using the conditional operator by adding these statements to your program:</p>
-<ol>
-<li>Write a statement that sets <code class="sourceCode cs">myVar</code> to <code class="sourceCode cs"><span class="dv">0</span></code> if <code class="sourceCode cs">initial</code> is an upper-case letter, and to <code class="sourceCode cs"><span class="dv">1</span></code> otherwise. You already wrote an <code class="sourceCode cs"><span class="kw">if</span></code> statement that accomplishes this in the previous exercise, so you just need to rewrite it using the conditional operator.</li>
-<li>Write a statement that sets <code class="sourceCode cs">initial</code> to <code class="sourceCode cs"><span class="ch">&#39;B&#39;</span></code> if <code class="sourceCode cs">myVar</code> is greater than 500 and to <code class="sourceCode cs"><span class="ch">&#39;S&#39;</span></code> if <code class="sourceCode cs">myVar</code> is less than or equal to 500.</li>
-<li>Write a statement that doubles the value of <code class="sourceCode cs">myVar</code> if <code class="sourceCode cs">day</code> is <code class="sourceCode cs"><span class="st">&quot;Sat.&quot;</span></code> or <code class="sourceCode cs"><span class="st">&quot;Sun.&quot;</span></code> and adds 1 to the value of <code class="sourceCode cs">myVar</code> otherwise.</li>
-</ol>
-</section>
 <section id="computing-entry-price" class="level2">
 <h2>Computing Entry Price</h2>
 <p>You are asked to write a simple program that computes the total price for a group of people to enter a park.</p>
@@ -412,6 +406,18 @@
 <li>When asking “yes” / “no” questions, treat “y” and “Y” as a “Yes”, and any other string as a “No”.</li>
 <li>Note that we will sell the pass even if the user is not gaining money by doing so (for instance, if 6 children want to enter, <span class="math inline">$4 × 6 = $24 &lt; $30</span>, but we would still sell them the pass).</li>
 </ul>
+</section>
+<section id="conditional-operator" class="level2">
+<h2>Conditional Operator</h2>
+<p>Here we introduced a conditional operator, which can be used to replace <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statements in particular cases (assignment, call, increment, decrement, and new object expressions). Its structure is:</p>
+<p><code class="sourceCode cs">condition <span class="op">?</span> first_expression <span class="op">:</span> second_expression<span class="op">;</span></code></p>
+<p>You can read more about it <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator">in the documentation</a>.</p>
+<p>If you have time, practice using the conditional operator by adding these statements to your program:</p>
+<ol>
+<li>Write a statement that sets <code class="sourceCode cs">myVar</code> to <code class="sourceCode cs"><span class="dv">0</span></code> if <code class="sourceCode cs">initial</code> is an upper-case letter, and to <code class="sourceCode cs"><span class="dv">1</span></code> otherwise. You already wrote an <code class="sourceCode cs"><span class="kw">if</span></code> statement that accomplishes this in the previous exercise, so you just need to rewrite it using the conditional operator.</li>
+<li>Write a statement that sets <code class="sourceCode cs">initial</code> to <code class="sourceCode cs"><span class="ch">&#39;B&#39;</span></code> if <code class="sourceCode cs">myVar</code> is greater than 500 and to <code class="sourceCode cs"><span class="ch">&#39;S&#39;</span></code> if <code class="sourceCode cs">myVar</code> is less than or equal to 500.</li>
+<li>Write a statement that doubles the value of <code class="sourceCode cs">myVar</code> if <code class="sourceCode cs">day</code> is <code class="sourceCode cs"><span class="st">&quot;Sat&quot;</span></code> or <code class="sourceCode cs"><span class="st">&quot;Sun&quot;</span></code> and adds 1 to the value of <code class="sourceCode cs">myVar</code> otherwise.</li>
+</ol>
 </section>
 </section>
 </main>
