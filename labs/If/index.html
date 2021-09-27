@@ -249,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">If Statements</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">September 20, 2021 (10:47:37 AM)</p>
+<p class="date">September 26, 2021 (11:12:14 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -291,26 +291,23 @@
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;I believe you made a mistake, nobody can live that long!&quot;</span><span class="op">);</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>yourAge <span class="op">&gt;=</span> <span class="dv">18</span><span class="op">)</span></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>yourAge <span class="op">&gt;=</span> <span class="dv">18</span><span class="op">)</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>                Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;In all States but Alabama, Nebraska, Mississippi and Puerto Rico, you have reached the age of majority.&quot;</span><span class="op">);</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>            <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>yourAge <span class="op">&gt;=</span> <span class="dv">19</span><span class="op">)</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;In all States but Mississippi and Puerto Rico, you have reached the age of majority.&quot;</span><span class="op">);</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>            <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>yourAge <span class="op">&gt;=</span> <span class="dv">21</span><span class="op">)</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>                Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;You have reached the age of majority in all US states.&quot;</span><span class="op">);</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>            Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;In all States but Alabama, Nebraska, Mississippi and Puerto Rico, you have reached the age of majority.&quot;</span><span class="op">);</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>yourAge <span class="op">&gt;=</span> <span class="dv">19</span><span class="op">)</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>            Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;In all States but Mississippi and Puerto Rico, you have reached the age of majority.&quot;</span><span class="op">);</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>yourAge <span class="op">&gt;=</span> <span class="dv">21</span><span class="op">)</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>            Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;You have reached the age of majority in all US states.&quot;</span><span class="op">);</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The information about the age of majority <a href="https://en.wikipedia.org/wiki/Age_of_majority">comes from wikipedia</a>.</p>
 <ol>
 <li><em>Without executing it</em>, write down what you expect to be displayed if the user enters
