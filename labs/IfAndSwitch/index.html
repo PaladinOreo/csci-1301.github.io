@@ -249,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">Practising if and switch</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">September 26, 2021 (11:28:52 PM)</p>
+<p class="date">September 26, 2021 (11:39:12 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -260,6 +260,10 @@
 <li><a href="#from-if-else-to-switch">From <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> to <code class="sourceCode cs"><span class="kw">switch</span></code></a></li>
 <li><a href="#deciding-between-condition-types">Deciding Between Condition Types</a></li>
 <li><a href="#complex-conditions">Complex Conditions</a></li>
+</ul></li>
+<li><a href="#pushing-further-optional">Pushing Further (Optional)</a>
+<ul>
+<li><a href="#conditional-operator">Conditional Operator</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -311,21 +315,27 @@
 <p>This exercise will ask you to write a rather abstract program that performs simple manipulations on a few variables. The main goal is to have you practise “transforming” <code class="sourceCode cs"><span class="kw">if</span></code> statements into <code class="sourceCode cs"><span class="kw">switch</span></code> statements, and reciprocally. This will help you in memorizing both, and in chosing the most convenient to perform certain task.</p>
 <p>Create a new project and do the following in <code class="sourceCode cs">Main</code>.</p>
 <ol>
-<li>Initialize a <code class="sourceCode cs"><span class="dt">string</span></code> variable named “day,” an <code class="sourceCode cs"><span class="dt">int</span></code> variable named “myVar,” a <code class="sourceCode cs"><span class="dt">char</span></code> variable named “initial,” and a Boolean variable named “flag.”</li>
+<li>Declare and initialize following variables:
+<ul>
+<li>a <code class="sourceCode cs"><span class="dt">string</span></code> variable named <code class="sourceCode cs">day</code></li>
+<li>an <code class="sourceCode cs"><span class="dt">int</span></code> variable named <code class="sourceCode cs">myVar</code></li>
+<li>a <code class="sourceCode cs"><span class="dt">char</span></code> variable named <code class="sourceCode cs">initial</code>, and</li>
+<li>a <code class="sourceCode cs"><span class="dt">bool</span></code> variable named <code class="sourceCode cs">flag</code></li>
+</ul></li>
 <li>Set and change the value of these variables to make good tests as you progress through this problem.</li>
 <li>You can also display them on the screen to help you in making sure that your statements behave as they are supposed to.</li>
 </ol>
 <section id="from-switch-to-if-else" class="level2">
 <h2>From <code class="sourceCode cs"><span class="kw">switch</span></code> to <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code></h2>
 <ol>
-<li>Write a <code class="sourceCode cs"><span class="kw">switch</span></code> statement that sets <code class="sourceCode cs">flag</code> to <code class="sourceCode cs"><span class="kw">true</span></code> if the value of <code class="sourceCode cs">day</code> is <code class="sourceCode cs"><span class="st">&quot;Mon.&quot;</span></code>, <code class="sourceCode cs"><span class="st">&quot;Tue.&quot;</span></code>, <code class="sourceCode cs"><span class="st">&quot;Wed.&quot;</span></code>, <code class="sourceCode cs"><span class="st">&quot;Thu.&quot;</span></code> or <code class="sourceCode cs"><span class="st">&quot;Fri.&quot;</span></code>, and to <code class="sourceCode cs"><span class="kw">false</span></code> otherwise.</li>
+<li>Write a <code class="sourceCode cs"><span class="kw">switch</span></code> statement that sets <code class="sourceCode cs">flag</code> to <code class="sourceCode cs"><span class="kw">true</span></code> if the value of <code class="sourceCode cs">day</code> is <code class="sourceCode cs"><span class="st">&quot;Mon&quot;</span></code>, <code class="sourceCode cs"><span class="st">&quot;Tue&quot;</span></code>, <code class="sourceCode cs"><span class="st">&quot;Wed&quot;</span></code>, <code class="sourceCode cs"><span class="st">&quot;Thu&quot;</span></code> or <code class="sourceCode cs"><span class="st">&quot;Fri&quot;</span></code>, and to <code class="sourceCode cs"><span class="kw">false</span></code> otherwise.</li>
 <li>Rewrite the previous statement as an <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statement.</li>
 </ol>
 </section>
 <section id="from-if-else-to-switch" class="level2">
 <h2>From <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> to <code class="sourceCode cs"><span class="kw">switch</span></code></h2>
 <ol>
-<li>Write a <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statement that doubles the value of <code class="sourceCode cs">myVar</code> if <code class="sourceCode cs">myVar</code> is <code class="sourceCode cs"><span class="dv">3</span></code>, <code class="sourceCode cs"><span class="dv">5</span></code> or <code class="sourceCode cs"><span class="dv">7</span></code>.</li>
+<li>Write a <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statement that doubles the value of <code class="sourceCode cs">myVar</code> if <code class="sourceCode cs">myVar</code> is: <code class="sourceCode cs"><span class="dv">3</span></code>, <code class="sourceCode cs"><span class="dv">5</span></code> or <code class="sourceCode cs"><span class="dv">7</span></code>.</li>
 <li>Can you rewrite the previous statement as a <code class="sourceCode cs"><span class="kw">switch</span></code> statement? If so, do it. If not, explain why not.</li>
 </ol>
 </section>
@@ -339,8 +349,23 @@
 <section id="complex-conditions" class="level2">
 <h2>Complex Conditions</h2>
 <ol>
-<li>Write a statement that doubles the value of <code class="sourceCode cs">myVar</code> if <code class="sourceCode cs">day</code> is <code class="sourceCode cs"><span class="st">&quot;Sun.&quot;</span></code>, triples the value of <code class="sourceCode cs">myVar</code> if <code class="sourceCode cs">day</code> is not <code class="sourceCode cs"><span class="st">&quot;Sun.&quot;</span></code> and <code class="sourceCode cs">initial</code> is <code class="sourceCode cs"><span class="ch">&#39;a&#39;</span></code>, and sets <code class="sourceCode cs">myVar</code> to <code class="sourceCode cs"><span class="dv">0</span></code> otherwise.</li>
+<li>Write a statement that doubles the value of <code class="sourceCode cs">myVar</code> if <code class="sourceCode cs">day</code> is <code class="sourceCode cs"><span class="st">&quot;Sun&quot;</span></code>, triples the value of <code class="sourceCode cs">myVar</code> if <code class="sourceCode cs">day</code> is not <code class="sourceCode cs"><span class="st">&quot;Sun&quot;</span></code> and <code class="sourceCode cs">initial</code> is <code class="sourceCode cs"><span class="ch">&#39;a&#39;</span></code>, and sets <code class="sourceCode cs">myVar</code> to <code class="sourceCode cs"><span class="dv">0</span></code> otherwise.</li>
 <li>Write a statement that sets <code class="sourceCode cs">myVar</code> to <code class="sourceCode cs"><span class="dv">0</span></code> if <code class="sourceCode cs">initial</code> is an upper-case letter, and to <code class="sourceCode cs"><span class="dv">1</span></code> otherwise. You will need to understand how to use the <code class="sourceCode cs">IsUpper</code> method, and the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.char.isupper?view=net-5.0">documentation</a> can help you with that.</li>
+</ol>
+</section>
+</section>
+<section id="pushing-further-optional" class="level1">
+<h1>Pushing Further (Optional)</h1>
+<section id="conditional-operator" class="level2">
+<h2>Conditional Operator</h2>
+<p>Here we introduced a conditional operator, which can be used to replace <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statements in particular cases (assignment, call, increment, decrement, and new object expressions). Its structure is:</p>
+<p><code class="sourceCode cs">condition <span class="op">?</span> first_expression <span class="op">:</span> second_expression<span class="op">;</span></code></p>
+<p>You can read more about it <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator">in the documentation</a>.</p>
+<p>If you have time, practice using the conditional operator by adding these statements to your program:</p>
+<ol>
+<li>Write a statement that sets <code class="sourceCode cs">myVar</code> to <code class="sourceCode cs"><span class="dv">0</span></code> if <code class="sourceCode cs">initial</code> is an upper-case letter, and to <code class="sourceCode cs"><span class="dv">1</span></code> otherwise. You already wrote an <code class="sourceCode cs"><span class="kw">if</span></code> statement that accomplishes this in the previous exercise, so you just need to rewrite it using the conditional operator.</li>
+<li>Write a statement that sets <code class="sourceCode cs">initial</code> to <code class="sourceCode cs"><span class="ch">&#39;B&#39;</span></code> if <code class="sourceCode cs">myVar</code> is greater than 500 and to <code class="sourceCode cs"><span class="ch">&#39;S&#39;</span></code> if <code class="sourceCode cs">myVar</code> is less than or equal to 500.</li>
+<li>Write a statement that doubles the value of <code class="sourceCode cs">myVar</code> if <code class="sourceCode cs">day</code> is <code class="sourceCode cs"><span class="st">&quot;Sat&quot;</span></code> or <code class="sourceCode cs"><span class="st">&quot;Sun&quot;</span></code> and adds 1 to the value of <code class="sourceCode cs">myVar</code> otherwise.</li>
 </ol>
 </section>
 </section>
