@@ -249,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">Precise Rectangle and Circle Class</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">September 29, 2021 (01:28:40 PM)</p>
+<p class="date">September 29, 2021 (02:12:51 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -285,7 +285,7 @@
 <li><p>In the “PreciseRectangle.cs” file, replace <code class="sourceCode cs"><span class="kw">class</span> Rectangle</code> with <code class="sourceCode cs"><span class="kw">class</span> PreciseRectangle</code>.</p></li>
 <li><p>Comment out the body of the <code class="sourceCode cs">Main</code> method in “Program.cs”.</p></li>
 <li><p>Your program should compile as it is, but you have to edit <code class="sourceCode cs">PreciseRectangle<span class="op">.</span><span class="fu">cs</span></code> to now store the <code class="sourceCode cs">width</code> and the <code class="sourceCode cs">length</code> with <code class="sourceCode cs"><span class="dt">double</span></code>, and to propagate this change accordingly. What should be the return type of <code class="sourceCode cs">GetWidth</code>, for instance?</p></li>
-<li><p>Declare and manipulate precise rectangles (i.e., with floating-point values for the width and the length) in the <code class="sourceCode cs">Main</code> method, and make sure they behave as expected (can you compute the area, for instance?).</p></li>
+<li><p>Declare and manipulate precise rectangles (with non-integer values for the width and the length) in the <code class="sourceCode cs">Main</code> method, and make sure they behave as expected (can you compute the area, for instance?).</p></li>
 <li><p>Add the missing methods <code class="sourceCode cs">ComputePerimeter</code>, <code class="sourceCode cs">Swap</code>, <code class="sourceCode cs">MultiplyRectangle</code>, described in the section below.</p></li>
 </ol>
 </section>
@@ -307,7 +307,7 @@
 <li>one method <code class="sourceCode cs">MultiplyRectangle</code> to multiply the length and width of a precise rectangle by a factor given in the argument as an integer.</li>
 </ul></li>
 </ul></li>
-<li><p>Declare and manipulate rectangles with floating-point values for the width and the length in the <code class="sourceCode cs">Main</code> method, and make sure they behave as expected (can you compute the area, for instance?).</p></li>
+<li><p>Declare and manipulate rectangles with floating-point (i.e. <code class="sourceCode cs"><span class="dt">double</span></code>) values for the width and the length in the <code class="sourceCode cs">Main</code> method, and make sure they behave as expected (can you compute the area, for instance?).</p></li>
 </ol>
 </section>
 </section>
@@ -328,7 +328,7 @@
 <section id="extending-the-class" class="level2">
 <h2>Extending the Class</h2>
 <ol>
-<li>In C#, <code class="sourceCode cs">Math<span class="op">.</span><span class="fu">PI</span></code> is a <code class="sourceCode cs"><span class="dt">double</span></code> holding an approximation of <span class="math inline"><em>π</em></span>. In the <code class="sourceCode cs">Main</code> method of <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code>, write a statement that displays its value on the screen. It should be <span class="math inline">3.14159265358979</span>.</li>
+<li>In C#, the constant <code class="sourceCode cs">Math<span class="op">.</span><span class="fu">PI</span></code> is a <code class="sourceCode cs"><span class="dt">double</span></code> holding an approximation of <span class="math inline"><em>π</em></span>. In the <code class="sourceCode cs">Main</code> method of <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code>, write a statement that displays its value on the screen. It should be <span class="math inline">3.14159265358979</span>.</li>
 <li>Now, edit this statement and use the format specifier <code class="sourceCode cs">N</code>, to display the value of <span class="math inline"><em>π</em></span> rounded to <span class="math inline">3.14</span>.</li>
 <li>In the <code class="sourceCode cs">Circle<span class="op">.</span><span class="fu">cs</span></code> file, add two methods:
 <ol>
@@ -337,12 +337,6 @@
 </ol></li>
 <li>Test those two methods in your <code class="sourceCode cs">Main</code> program, by displaying on the screen the area and the circumference of the object you created in the previous exercise.</li>
 <li>Use the format specifier <code class="sourceCode cs">N</code> to round the circumference.</li>
-<li>Add two constructors:
-<ol>
-<li>a default, parameterless constructor: it does nothing</li>
-<li>a constructor with 1 parameter for radius: it initializes the radius attribute</li>
-</ol></li>
-<li>Add a <code class="sourceCode cs">ToString</code> method that returns the values of the radius, circumference and area of the circle</li>
 </ol>
 <p>You can find a possible solution to this problem <a href="Circle_Solution.zip">in this archive</a>.</p>
 </section>
