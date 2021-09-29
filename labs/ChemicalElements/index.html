@@ -249,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">Static Class Members</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">September 29, 2021 (10:51:35 AM)</p>
+<p class="date">September 29, 2021 (01:28:38 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -263,7 +263,7 @@
 </nav>
 <section id="a-class-for-chemical-elements" class="level1">
 <h1>A Class for Chemical Elements</h1>
-<p>I this lab you will study and modify a class for <a href="https://en.wikipedia.org/wiki/Chemical_element">chemical elements</a>. Consult <a href="https://en.wikipedia.org/wiki/List_of_chemical_elements#List" class="uri">https://en.wikipedia.org/wiki/List_of_chemical_elements#List</a> for a complete list of all elements.</p>
+<p>In this lab you will study and modify a class for <a href="https://en.wikipedia.org/wiki/Chemical_element">chemical elements</a>. Consult <a href="https://en.wikipedia.org/wiki/List_of_chemical_elements#List" class="uri">https://en.wikipedia.org/wiki/List_of_chemical_elements#List</a> for a complete list of all elements.</p>
 <section id="reading" class="level2">
 <h2>Reading</h2>
 <p>Download <a href="ChemicalElements.zip">ChemElemProject</a> and extract the project. Open it in in your IDE, compile and execute it. Now read the code in “ChemElem.cs” and “Program.cs”.</p>
@@ -272,10 +272,10 @@
 <li>Three attributes,</li>
 <li>One constructor,</li>
 <li>One static method,</li>
-<li>One methods that returns the melting point in Celsius,</li>
+<li>One method that returns the melting point in Celsius,</li>
 <li>One <code class="sourceCode cs">ToString</code> method.</li>
 </ul>
-<p>The application program “Program.cs” performs one simple conversion from Kelvin to Celsius. It uses data given by the user, create and display a ChemElem object (implicitly calling the <code class="sourceCode cs">ToString</code> method).</p>
+<p>The application program “Program.cs” performs one simple conversion from Kelvin to Celsius. It uses data given by the user to create and display a ChemElem object (implicitly calling the <code class="sourceCode cs">ToString</code> method).</p>
 </section>
 <section id="modifying" class="level2">
 <h2>Modifying</h2>
@@ -285,8 +285,8 @@
 <li>In “ChemElem.cs”, write a constructor that requires no arguments.</li>
 <li>In “Program.cs”, create a second object using the custom constructor that takes 3 arguments, then display the value of its attributes using the getters you previously defined.</li>
 <li>In “Program.cs”, create an object using the no-args constructor, and set its values using the setters your previously defined.</li>
-<li>In “Program.cs”, display on the screen the string returned by the <code class="sourceCode cs">ToString</code> method when it is called by the object you created at the previous step.</li>
-<li>In “Program.cs”, try calling the <code class="sourceCode cs">FromKelvinToCelsius</code> method with one of your object, for instance using <code class="sourceCode cs">hydrogen<span class="op">.</span><span class="fu">FromKelvinToCelsius</span><span class="op">(</span><span class="dv">34</span><span class="op">)</span></code>. What happens?</li>
+<li>In “Program.cs”, display on the screen the string returned by the <code class="sourceCode cs">ToString</code> method when it is called by the object you created in the previous step.</li>
+<li>In “Program.cs”, try calling the <code class="sourceCode cs">FromKelvinToCelsius</code> method with one of your objects, for instance using <code class="sourceCode cs">hydrogen<span class="op">.</span><span class="fu">FromKelvinToCelsius</span><span class="op">(</span><span class="dv">34</span><span class="op">)</span></code>. What happens?</li>
 <li>Still in “Program.cs”, try calling the <code class="sourceCode cs">MeltingInCelsius</code> method with the class, for instance using <code class="sourceCode cs">ChemElem<span class="op">.</span><span class="fu">MeltingInCelsius</span><span class="op">();</span></code>. What happens?</li>
 </ol>
 </section>
@@ -295,9 +295,9 @@
 <p>We now want to significantly improve this class, by adding:</p>
 <ol>
 <li>An attribute for the boiling point,</li>
-<li>All the tools needed to display the information in Fahrenheit degree, in addition to Celsius and Kelvin.</li>
+<li>All the tools needed to display the information in Fahrenheit degrees, in addition to Celsius and Kelvin.</li>
 </ol>
-<p>You may want to comment part, or all of your “Program.cs” file, before starting to change your class.</p>
+<p>You may want to comment out part or all of your “Program.cs” file, before starting to change your class.</p>
 <ul>
 <li>Add an attribute for the boiling point (in Kelvin).</li>
 <li>Modify the constructor, so that it takes a 4th argument, and sets its value to be the value of the boiling point attribute.</li>
@@ -311,7 +311,7 @@
 <li>The <em>boiling point</em> in Kelvin and in Fahrenheit.</li>
 </ul></li>
 </ul>
-<p>You should test all of those modifications in your “Program.cs” file as you implement them. Use relevant data, test your program, and make sure the behaviour is the expected behaviour.</p>
+<p>You should test all of those modifications in your “Program.cs” file as you implement them. Use relevant data, test your program, and make sure the behavior is the expected behavior.</p>
 </section>
 </section>
 </main>
