@@ -249,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">while and do while</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">October 4, 2021 (12:11:04 PM)</p>
+<p class="date">October 4, 2021 (01:03:26 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -262,13 +262,6 @@
 <li><a href="#problem-5">Problem 5</a></li>
 <li><a href="#problem-6">Problem 6</a></li>
 </ul></li>
-<li><a href="#do-while-loops">Do while Loops</a>
-<ul>
-<li><a href="#problem-1-1">Problem 1</a></li>
-<li><a href="#problem-2-1">Problem 2</a></li>
-<li><a href="#problem-3-1">Problem 3</a></li>
-</ul></li>
-<li><a href="#while-vs-do-while"><code class="sourceCode cs"><span class="kw">while</span></code> vs <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code></a></li>
 <li><a href="#infinite-loops">Infinite Loops</a></li>
 </ul>
 </nav>
@@ -277,45 +270,40 @@
 <section id="problem-1" class="level2">
 <h2>Problem 1</h2>
 <ul>
-<li>Create a new project, and replace the content of the <em>main</em> method with the following code</li>
+<li>Create a new project, and replace the content of the <code class="sourceCode cs">Main</code> method with the following code:</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>i<span class="op">&lt;</span><span class="dv">100</span><span class="op">)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>i <span class="op">&lt;</span> <span class="dv">100</span><span class="op">)</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>i<span class="op">);</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<ul>
-<li><p>Execute the code. You should see the numbers 0 to 99 in the console.</p></li>
-<li><p>Without changing the numbers, modify the code such that it prints 0 to 100 in the console. Note the diffrence between <code class="sourceCode cs"><span class="op">&lt;</span></code> and <code class="sourceCode cs"><span class="op">&lt;=</span></code> operators.</p></li>
-<li><p>Modify the code such that it prints the numbers from 100 to 300. Note that the counter can start from any number you wish.</p></li>
-<li><p>Modify the code such that it prints all integers between 0 and 100 that are divisible by 3.</p></li>
-<li><p>To implement the above problem, you may code one of the following:</p></li>
-</ul>
+<ol>
+<li>Execute the code. You should see the numbers 0 to 99 in the console.</li>
+<li>Without changing the numbers, modify the code such that it prints 0 to 100 in the console. Note the diffrence between <code class="sourceCode cs"><span class="op">&lt;</span></code> and <code class="sourceCode cs"><span class="op">&lt;=</span></code> operators.</li>
+<li>Modify the code such that it prints the numbers from 100 to 300. Note that the counter can start from any number you wish.</li>
+<li>Modify the code such that it prints all integers between 0 and 100 that are divisible by 3.</li>
+<li>To implement the above problem, you may code one of the following:</li>
+</ol>
 <div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>i<span class="op">&lt;</span><span class="dv">100</span><span class="op">)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>i <span class="op">&lt;</span> <span class="dv">100</span><span class="op">)</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>i<span class="op">%</span><span class="dv">3</span> <span class="op">==</span><span class="dv">0</span><span class="op">)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>i<span class="op">);</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>or</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>i<span class="op">&lt;</span><span class="dv">100</span><span class="op">)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>i <span class="op">&lt;</span> <span class="dv">100</span><span class="op">)</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>i<span class="op">);</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    i<span class="op">+=</span><span class="dv">3</span><span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">3</span><span class="op">;</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<ul>
-<li>Which one of the above codes is more efficient? Why?</li>
-<li>Note that you do not have to increment the counter only by one each time. You should update the counter wisely and try to use it more efficiently.</li>
-</ul>
+<p>Which one of the above codes is more efficient? Why? Note that you do not have to increment the counter only by one each time. You should update the counter wisely and try to use it more efficiently.</p>
 </section>
 <section id="problem-2" class="level2">
 <h2>Problem 2</h2>
-<ul>
-<li>Create a new project and replace the content of the <em>main</em> method with the following code:</li>
-</ul>
+<p>Create a new project and replace the content of the <code class="sourceCode cs">Main</code> method with the following code:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n<span class="op">;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Enter a natural number greater than 2: &quot;</span><span class="op">);</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
@@ -328,25 +316,21 @@
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{n} is a ... number&quot;</span><span class="op">);</span></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{n} is not a ... number&quot;</span><span class="op">);</span></span></code></pre></div>
-<ul>
+<ol>
 <li>What does the code do? Explain the boolean expession of the looop</li>
 <li>Replace <code class="sourceCode cs"><span class="op">...</span></code> with a meaningful word.</li>
-</ul>
+</ol>
 </section>
 <section id="problem-3" class="level2">
 <h2>Problem 3</h2>
-<ul>
-<li>Create a new project and replace the content of the <em>main</em> method with the following code:</li>
-</ul>
+<p>Create a new project and replace the content of the <code class="sourceCode cs">Main</code> method with the following code:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> <span class="dv">100</span><span class="op">;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>n <span class="op">&gt;</span> <span class="dv">0</span> <span class="op">)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>n <span class="op">&gt;</span> <span class="dv">0</span><span class="op">)</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>n<span class="op">);</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    n<span class="op">--;</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<ul>
-<li>Execute the code, and explain what you see in the console. Note that the counter is incremental.</li>
-</ul>
+<p>Execute the code, and explain what you see in the console. Note that the counter is incremental.</p>
 </section>
 <section id="problem-4" class="level2">
 <h2>Problem 4</h2>
@@ -361,90 +345,39 @@
 <p>Ask user to enter integers. Keep track of the smallest value user enters. After user indicates they are done, display the smallest value user entered. If user did not enter any integers display <code class="sourceCode cs">You did not enter anything<span class="op">.</span></code></p>
 </section>
 </section>
-<section id="do-while-loops" class="level1">
-<h1>Do while Loops</h1>
-<p>Before writing code, think through the following problems:</p>
-<ul>
-<li>In your own words, what is the difference between <code class="sourceCode cs"><span class="kw">while</span></code> and <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> loops?</li>
-<li>Can you think of a problem using <code class="sourceCode cs"><span class="kw">while</span></code> preferred over the <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> loop? In all the problems in this section, use <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> loop.</li>
-</ul>
-<section id="problem-1-1" class="level2">
-<h2>Problem 1</h2>
-<p>Write a program that display numbers 0 to 50.</p>
-</section>
-<section id="problem-2-1" class="level2">
-<h2>Problem 2</h2>
-<p>Write a program that display numbers 30 to -20.</p>
-</section>
-<section id="problem-3-1" class="level2">
-<h2>Problem 3</h2>
-<p>Write a <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> loop that generates this output: <code class="sourceCode cs"><span class="dv">1</span> <span class="dv">10</span> <span class="dv">100</span> <span class="dv">1000</span> <span class="dv">10000</span> <span class="dv">100000</span> <span class="dv">1000000</span></code></p>
-</section>
-</section>
-<section id="while-vs-do-while" class="level1">
-<h1><code class="sourceCode cs"><span class="kw">while</span></code> vs <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code></h1>
-<p>Both of the following programs keep getting inputs from the user until the user enters a valid integer. Which one is better? Explain your answer.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n<span class="op">;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> flag <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">do</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Enter an integer:&quot;</span><span class="op">);</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    flag <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">(),</span> <span class="kw">out</span> n<span class="op">);</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span> <span class="op">(!</span>flag<span class="op">)</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The value you entered is not a valid integer. Try one more time.&quot;</span><span class="op">);</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="kw">while</span> <span class="op">(!</span>flag<span class="op">);</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The number you entered is {n}&quot;</span><span class="op">);</span></span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n<span class="op">;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> flag <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Enter an integer:&quot;</span><span class="op">);</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>flag <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">(),</span> <span class="kw">out</span> n<span class="op">);</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(!</span> flag<span class="op">)</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>   Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The value you entered is not a valid integer. Try one more time.&quot;</span><span class="op">);</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>   Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Enter an integer:&quot;</span><span class="op">);</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>   flag <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">(),</span> <span class="kw">out</span> n<span class="op">);</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> </span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The number you entered is {n}&quot;</span><span class="op">);</span></span></code></pre></div>
-</section>
 <section id="infinite-loops" class="level1">
 <h1>Infinite Loops</h1>
 <p>All of the following are examples of infinite loops. Can you spot the problem? How would you change the code to fix it?</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hi!&quot;</span><span class="op">);</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>number<span class="op">);</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number1 <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hi!&quot;</span><span class="op">);</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>number<span class="op">);</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    number1<span class="op">++;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <div class="sourceCode" id="cb8"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hi!&quot;</span><span class="op">);</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>number<span class="op">);</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number1 <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hi!&quot;</span><span class="op">);</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>number<span class="op">);</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    number1<span class="op">++;</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">);</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hi!&quot;</span><span class="op">);</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>number<span class="op">);</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    number<span class="op">++;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hi!&quot;</span><span class="op">);</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>number<span class="op">);</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>number<span class="op">++;</span></span></code></pre></div>
 <div class="sourceCode" id="cb10"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">);</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span> <span class="dv">5</span><span class="op">)</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hi!&quot;</span><span class="op">);</span></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>number<span class="op">);</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    number<span class="op">++;</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span><span class="dv">5</span><span class="op">)</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hi!&quot;</span><span class="op">);</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>number<span class="op">);</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>number<span class="op">++;</span></span></code></pre></div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span> <span class="dv">5</span><span class="op">)</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hi!&quot;</span><span class="op">);</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>number<span class="op">);</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>number<span class="op">++;</span></span></code></pre></div>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>number<span class="op">++;</span></span></code></pre></div>
 </section>
 </main>
 <footer id="footer">
