@@ -239,9 +239,7 @@
 <ul>
 <li><a href="#do-while-loops">Do while Loops</a>
 <ul>
-<li><a href="#problem-1">Problem 1</a></li>
-<li><a href="#problem-2">Problem 2</a></li>
-<li><a href="#problem-3">Problem 3</a></li>
+<li><a href="#implementing-do-while-loops">Implementing do while Loops</a></li>
 </ul></li>
 <li><a href="#while-vs-do-while"><code class="sourceCode cs"><span class="kw">while</span></code> vs <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code></a></li>
 </ul>
@@ -251,45 +249,47 @@
 <p>Before writing code, think through the following problems:</p>
 <ul>
 <li>In your own words, what is the difference between <code class="sourceCode cs"><span class="kw">while</span></code> and <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> loops?</li>
-<li>Can you think of a problem using <code class="sourceCode cs"><span class="kw">while</span></code> preferred over the <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> loop?</li>
+<li>Can you think of a problem where
+<ul>
+<li>using <code class="sourceCode cs"><span class="kw">while</span></code> is preferable over <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> loop?</li>
+<li>using <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> is preferable over <code class="sourceCode cs"><span class="kw">while</span></code> loop?</li>
+</ul></li>
 </ul>
-<p>In all the problems in this section, use <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> loop.</p>
-<section id="problem-1" class="level2">
-<h2>Problem 1</h2>
-<p>Write a program that display numbers 0 to 50.</p>
-</section>
-<section id="problem-2" class="level2">
-<h2>Problem 2</h2>
-<p>Write a program that display numbers 30 to -20.</p>
-</section>
-<section id="problem-3" class="level2">
-<h2>Problem 3</h2>
-<p>Write a <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> loop that generates this output: <code class="sourceCode cs"><span class="dv">1</span> <span class="dv">10</span> <span class="dv">100</span> <span class="dv">1000</span> <span class="dv">10000</span> <span class="dv">100000</span> <span class="dv">1000000</span></code></p>
+<section id="implementing-do-while-loops" class="level2">
+<h2>Implementing do while Loops</h2>
+<p>In all the problems in this section, use a <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> loop.</p>
+<ol>
+<li>Write a program that display numbers 0 to 50.</li>
+<li>Write a program that display numbers 30 to -20.</li>
+<li>Write a <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> loop that generates this output: <code class="sourceCode cs"><span class="dv">1</span> <span class="dv">10</span> <span class="dv">100</span> <span class="dv">1000</span> <span class="dv">10000</span> <span class="dv">100000</span> <span class="dv">1000000</span></code></li>
+</ol>
+<p>In the next problem, implement a program combining <code class="sourceCode cs"><span class="kw">do</span><span class="op">-</span><span class="kw">while</span></code> loop with user input to achieve the following behavior:</p>
+<ol>
+<li>Ask user to enter an integer in the range 0 - 100 (including 0 and 100).</li>
+<li>If the value provided by user is not in this range, the program should repeat the question.</li>
+<li>After use provides an integer within the range, display that number.</li>
+</ol>
+<p>Here is an example of possible program output:</p>
+<pre class="text"><code>Enter an integer between 0 and 100:  NO
+Sorry, that is not a valid input.
+
+Enter an integer between 0 and 100:  -20
+Sorry, that is not a valid input.
+
+Enter an integer between 0 and 100:  42
+You entered 42.</code></pre>
 </section>
 </section>
 <section id="while-vs-do-while" class="level1">
 <h1><code class="sourceCode cs"><span class="kw">while</span></code> vs <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code></h1>
-<p>Both of the following programs keep getting inputs from the user until the user enters a valid integer. Which one is better? Explain your answer.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n<span class="op">;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> flag <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">do</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Enter an integer:&quot;</span><span class="op">);</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    flag <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">(),</span> <span class="kw">out</span> n<span class="op">);</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span> <span class="op">(!</span>flag<span class="op">)</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The value you entered is not a valid integer. Try one more time.&quot;</span><span class="op">);</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="kw">while</span> <span class="op">(!</span>flag<span class="op">);</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The number you entered is {n}&quot;</span><span class="op">);</span></span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a> <span class="dt">int</span> n<span class="op">;</span></span>
+<p>Consider the program given below implemented using a <code class="sourceCode cs"><span class="kw">while</span></code> loop:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n<span class="op">;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> flag <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Enter an integer:&quot;</span><span class="op">);</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>flag <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">(),</span> <span class="kw">out</span> n<span class="op">);</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(!</span> flag<span class="op">)</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(!</span>flag<span class="op">)</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The value you entered is not a valid integer. Try one more time.&quot;</span><span class="op">);</span></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Enter an integer:&quot;</span><span class="op">);</span></span>
@@ -297,6 +297,18 @@
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> </span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The number you entered is {n}&quot;</span><span class="op">);</span></span></code></pre></div>
+<ol>
+<li>Convert the program to an equivalent version that uses a <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> loop</li>
+<li>Test the <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> version with different inputs to ensure the behavior is the same and that the program does not crash with error. For example, you should try:
+<ul>
+<li>alphabetic input (invalid)</li>
+<li>floating point input (invalid)</li>
+<li>negative integer (valid)</li>
+<li>positive integer (valid)</li>
+<li>0 (valid)</li>
+</ul></li>
+<li>Compare the <code class="sourceCode cs"><span class="kw">while</span></code> and <code class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code> implementations: which one is better, in your opinion, and why?</li>
+</ol>
 </section>
 </main>
 <footer id="footer">
