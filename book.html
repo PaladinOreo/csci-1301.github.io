@@ -249,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">October 25, 2021 (09:37:42 AM)</p>
+<p class="date">October 27, 2021 (11:49:13 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -2028,7 +2028,6 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <li>Only the object’s own methods can access the instance variables</li>
 <li>Other code must “ask permission” from the object in order to read or write the variables</li>
 </ul></li>
-<li><strong>Accessor</strong> method: a method written specifically to allow other code to access instance variables (i.e. attributes)</li>
 </ul></li>
 </ul>
 </section>
@@ -2051,7 +2050,7 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <li>Set width</li>
 <li>Compute the rectangle’s area</li>
 </ul></li>
-<li>Note that the first four are <strong>accessor</strong> methods because they allow other code to read (get) or write (set) the rectangle’s instance variables</li>
+<li>Note that the first four are a specific type of method called “getters” and “setters” because they allow other code to read (get) or write (set) the rectangle’s instance variables while respecting encapsulation</li>
 </ul></li>
 </ul>
 <p>The Rectangle class:</p>
@@ -2088,11 +2087,11 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <li>Each attribute (length and width) is stored in an instance variable</li>
 <li>Instance variables are declared similarly to “regular” variables, but with one additional feature: the <strong>access modifier</strong></li>
 <li>Syntax: <code class="sourceCode cs"><span class="op">[</span>access modifier<span class="op">]</span> <span class="op">[</span>type<span class="op">]</span> <span class="op">[</span>variable name<span class="op">]</span></code></li>
-<li>The access modifier can be either <code class="sourceCode cs"><span class="kw">public</span></code> or <code class="sourceCode cs"><span class="kw">private</span></code></li>
+<li>The access modifier can have several values, the most common of which are <code class="sourceCode cs"><span class="kw">public</span></code> and <code class="sourceCode cs"><span class="kw">private</span></code>. (There are other access modifiers, such as <code class="sourceCode cs"><span class="kw">protected</span></code> and <code class="sourceCode cs"><span class="kw">internal</span></code>, but in this class we will only be using <code class="sourceCode cs"><span class="kw">public</span></code> and <code class="sourceCode cs"><span class="kw">private</span></code>).</li>
 <li>An access modifier of <code class="sourceCode cs"><span class="kw">private</span></code> is what enforces encapsulation: when you use this access modifier, it means the instance variable cannot be accessed by any code outside the <code class="sourceCode cs">Rectangle</code> class</li>
 <li>The C# compiler will give you an error if you write code that attempts to use a <code class="sourceCode cs"><span class="kw">private</span></code> instance variable anywhere other than a method of that variable’s class</li>
 </ul></li>
-<li>SetLength method - our first accessor method
+<li>SetLength method, an example of a “setter” method
 <ul>
 <li>This method will allow code outside the <code class="sourceCode cs">Rectangle</code> class to modify a <code class="sourceCode cs">Rectangle</code> object’s “length” attribute</li>
 <li>Note that the header of this method has an access modifier, just like the instance variable</li>
@@ -2108,7 +2107,7 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 <li>The body of the <code class="sourceCode cs">SetLength</code> method has one statement, which assigns the instance variable <code class="sourceCode cs">length</code> to the value contained in the parameter <code class="sourceCode cs">lengthParameter</code>. In other words, whatever argument <code class="sourceCode cs">SetLength</code> is called with will get assigned to <code class="sourceCode cs">length</code></li>
 <li>This is why it’s called a “setter”: <code class="sourceCode cs"><span class="fu">SetLength</span><span class="op">(</span><span class="dv">15</span><span class="op">)</span></code> will set <code class="sourceCode cs">length</code> to 15.</li>
 </ul></li>
-<li>GetLength method
+<li>GetLength method, an example of a “getter” method
 <ul>
 <li>This method will allow code outside the <code class="sourceCode cs">Rectangle</code> class to read the current value of a <code class="sourceCode cs">Rectangle</code> object’s “length” attribute</li>
 <li>The <strong>return type</strong> of this method is <code class="sourceCode cs"><span class="dt">int</span></code>, which means that the value it returns to the calling code is an <code class="sourceCode cs"><span class="dt">int</span></code> value</li>
@@ -2131,7 +2130,7 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 </ul></li>
 <li>The ComputeArea method
 <ul>
-<li>This is <em>not</em> an accessor method: its goal is not to read or write a single instance variable</li>
+<li>This is <em>not</em> a getter or setter: its goal is not to read or write a single instance variable</li>
 <li>The goal of this method is to compute and return the rectangle’s area</li>
 <li>Since the area of the rectangle will be an <code class="sourceCode cs"><span class="dt">int</span></code> (it’s the product of two <code class="sourceCode cs"><span class="dt">int</span></code>s), we declare the return type of the method to be <code class="sourceCode cs"><span class="dt">int</span></code></li>
 <li>This method has no parameters, because it doesn’t need any arguments. Its only “input” is the instance variables, and it will always do the same thing every time you call it.</li>
@@ -3238,8 +3237,8 @@ Room number is 356</code></pre></li>
 <li><p>A <strong>property declaration</strong> has 3 parts:</p>
 <ul>
 <li>Header, which gives the property a name and type (very similar to variable declaration)</li>
-<li><code class="sourceCode cs">get</code> section, which declares the “getter” method for the property</li>
-<li><code class="sourceCode cs">set</code> section, which declares the “setter” method for the property</li>
+<li><code class="sourceCode cs">get</code> accessor, which declares the “getter” method for the property</li>
+<li><code class="sourceCode cs">set</code> accessor, which declares the “setter” method for the property</li>
 </ul></li>
 <li><p>Example code, implementing the “width” attribute for Rectangle (this replaces the code in the previous example):</p>
 <div class="sourceCode" id="cb106"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle</span>
@@ -3259,14 +3258,14 @@ Room number is 356</code></pre></li>
 <span id="cb106-15"><a href="#cb106-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 <li><p>Header syntax: <code class="sourceCode cs"><span class="op">[</span><span class="kw">public</span><span class="op">/</span><span class="kw">private</span><span class="op">]</span> <span class="op">[</span>type<span class="op">]</span> <span class="op">[</span>name<span class="op">]</span></code></p></li>
 <li><p><em>Convention</em> (not rule) is to give the property the same name as the instance variable, but capitalized – C# is case sensitive</p></li>
-<li><p><code class="sourceCode cs">get</code> section: Starts with the keyword <code class="sourceCode cs">get</code>, then a method body inside a code block (between braces)</p>
+<li><p><code class="sourceCode cs">get</code> accessor: Starts with the keyword <code class="sourceCode cs">get</code>, then a method body inside a code block (between braces)</p>
 <ul>
 <li><code class="sourceCode cs">get</code> is like a method header that always has the same name, and its other features are implied by the property’s header</li>
 <li>Access modifier: Same as the property header’s, i.e. <code class="sourceCode cs"><span class="kw">public</span></code> in this example</li>
 <li>Return type: Same as the property header’s type, i.e. <code class="sourceCode cs"><span class="dt">int</span></code> in this example (so imagine it says <code class="sourceCode cs"><span class="kw">public</span> <span class="dt">int</span> <span class="fu">get</span><span class="op">()</span></code>)</li>
 <li>Body of <code class="sourceCode cs">get</code> section is exactly the same as body of a “getter”: return the instance variable</li>
 </ul></li>
-<li><p><code class="sourceCode cs">set</code> section: Starts with the keyword <code class="sourceCode cs">set</code>, then a method body inside a code block</p>
+<li><p><code class="sourceCode cs">set</code> accessor: Starts with the keyword <code class="sourceCode cs">set</code>, then a method body inside a code block</p>
 <ul>
 <li>Also a method header with a fixed name, access modifier, return type, and parameter</li>
 <li>Access modifier: Same as the property header’s, i.e. <code class="sourceCode cs"><span class="kw">public</span></code> in this example</li>
@@ -3300,14 +3299,14 @@ Room number is 356</code></pre></li>
 <span id="cb107-13"><a href="#cb107-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb107-14"><a href="#cb107-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 <li><p>Properties “act like” variables: you can assign to them and read from them</p></li>
-<li><p>Reading from a property will <em>automatically</em> call the <code class="sourceCode cs">get</code> method for that property</p>
+<li><p>Reading from a property will <em>automatically</em> call the <code class="sourceCode cs">get</code> accessor for that property</p>
 <ul>
-<li>For example, <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The width is {myRectangle.Width}&quot;</span><span class="op">);</span></code> will call the <code class="sourceCode cs">get</code> section inside the <code class="sourceCode cs">Width</code> property, which in turn executes <code class="sourceCode cs"><span class="kw">return</span> width</code> and returns the current value of the instance variable</li>
+<li>For example, <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The width is {myRectangle.Width}&quot;</span><span class="op">);</span></code> will call the <code class="sourceCode cs">get</code> accessor inside the <code class="sourceCode cs">Width</code> property, which in turn executes <code class="sourceCode cs"><span class="kw">return</span> width</code> and returns the current value of the instance variable</li>
 <li>This is equivalent to <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The width is {myRectangle.GetWidth()}&quot;</span><span class="op">);</span></code> using the “old” Rectangle code</li>
 </ul></li>
-<li><p>Assigning to (writing) a property will <em>automatically</em> call the <code class="sourceCode cs">set</code> method for that property, with an argument equal to the right side of the <code class="sourceCode cs"><span class="op">=</span></code> operator</p>
+<li><p>Assigning to (writing) a property will <em>automatically</em> call the <code class="sourceCode cs">set</code> accessor for that property, with an argument equal to the right side of the <code class="sourceCode cs"><span class="op">=</span></code> operator</p>
 <ul>
-<li>For example, <code class="sourceCode cs">myRectangle<span class="op">.</span><span class="fu">Width</span> <span class="op">=</span> <span class="dv">15</span><span class="op">;</span></code> will call the <code class="sourceCode cs">set</code> section inside the <code class="sourceCode cs">Width</code> property, with <code class="sourceCode cs">value</code> equal to 15</li>
+<li>For example, <code class="sourceCode cs">myRectangle<span class="op">.</span><span class="fu">Width</span> <span class="op">=</span> <span class="dv">15</span><span class="op">;</span></code> will call the <code class="sourceCode cs">set</code> accessor inside the <code class="sourceCode cs">Width</code> property, with <code class="sourceCode cs">value</code> equal to 15</li>
 <li>This is equivalent to <code class="sourceCode cs">myRectangle<span class="op">.</span><span class="fu">SetWidth</span><span class="op">(</span><span class="dv">15</span><span class="op">);</span></code> using the “old” Rectangle code</li>
 </ul></li>
 </ul>
