@@ -249,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">Validating Inputs</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">October 29, 2021 (07:13:07 PM)</p>
+<p class="date">November 1, 2021 (05:06:37 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -266,7 +266,7 @@
 <li>in returns column, write whether the TryParse operation succeeded (<code class="sourceCode cs"><span class="kw">true</span></code> or <code class="sourceCode cs"><span class="kw">false</span></code>).</li>
 <li>in value column, write the obtained numeric value after <code class="sourceCode cs">TryParse</code> operation.</li>
 </ol>
-<p>First few lines are given as examples, your task is to complete the rest of the table.</p>
+<p>The first few lines are given as examples, your task is to complete the rest of the table.</p>
 <table>
 <thead>
 <tr class="header">
@@ -364,21 +364,21 @@
 <li>then check that the input is valid according to the specific problem</li>
 <li><em>only then</em> perform the subsequent action.</li>
 </ul>
-<p>If the provided input is not valid, request new input from user until user provides valid input.</p>
+<p>If the provided input is not valid, request new input from the user until the user provides valid input.</p>
 <ol>
-<li><p>Write a loop that displays: <code class="sourceCode cs">Enter yes to quit<span class="op">:</span></code> then check the user’s input. Consider any of these variations to mean yes: “yes”, “YES”, “y”, “Y”. Once user enters yes, exit the loop.</p></li>
-<li><p>Ask the user to enter a positive integer, between 2 and 100 (including these boundary values 2 and 100). Make sure the value user enters is between these bounds. Then compute the sum of integers starting from 1 up to the integer user entered, and finally display that sum. Here are examples:</p>
+<li><p>Write a loop that displays: <code class="sourceCode cs">Enter yes to quit<span class="op">:</span></code> then checks the user’s input. Consider any of these variations to mean yes: “yes”, “YES”, “y”, “Y”. Once the user enters yes, exit the loop.</p></li>
+<li><p>Ask the user to enter a positive integer, between 2 and 100 (including the boundary values 2 and 100). Make sure the value the user enters is between these bounds. Then compute the sum of integers starting from 1 up to the integer user entered, and finally display that sum. Here are examples:</p>
 <ul>
-<li>if user enters 5, compute: 1 + 2 + 3 + 4 + 5, then display 15 at the screen</li>
-<li>if user enters 8, compute: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8, then display 36 at the screen</li>
+<li>if the user enters 5, compute: 1 + 2 + 3 + 4 + 5, then display 15 on the screen</li>
+<li>if the user enters 8, compute: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8, then display 36 on the screen</li>
 </ul></li>
-<li><p>Do this next problem using <code class="sourceCode cs"><span class="dt">decimal</span></code> type. Ask the user to enter any numbers (can be positive, negative, or zero). Ignore all non-numeric inputs. Choose an appropriate sentinel value to enable user to indicate when they are done. Compute and display the average of all numbers user entered. If user entered no numbers, display “You did not enter any numbers”.</p></li>
+<li><p>Do this next problem using the <code class="sourceCode cs"><span class="dt">decimal</span></code> type. Ask the user to enter any numbers (can be positive, negative, or zero). Ignore all non-numeric inputs. Choose an appropriate sentinel value to enable the user to indicate when they are done. Compute and display the average of all the numbers the user entered. If the user entered no numbers, display “You did not enter any numbers”.</p></li>
 </ol>
 </section>
 <section id="input-validation-with-classes" class="level1">
 <h1>Input validation with classes</h1>
-<p>Start by downloading the <a href="LoanCalculator.zip">LoanCalculator</a> solution, that mixes classes and decision structures. Spend some time studying the implementation to understand <em>what</em> the program is doing and <em>how</em> it is doing it.</p>
-<p>Next edit the <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code> file of the <code class="sourceCode cs">LoanCalculator</code> to add the following validation features:</p>
+<p>Start by downloading the <a href="LoanCalculator.zip">LoanCalculator</a> solution, which mixes classes and decision structures. Spend some time studying the implementation to understand <em>what</em> the program is doing and <em>how</em> it is doing it.</p>
+<p>Next edit the <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code> file of the <code class="sourceCode cs">LoanCalculator</code> solution to add the following validation features:</p>
 <ol>
 <li>Users entering a value other than <code class="sourceCode cs">A</code>, <code class="sourceCode cs">a</code>, <code class="sourceCode cs">H</code>, <code class="sourceCode cs">h</code>, <code class="sourceCode cs">O</code> and <code class="sourceCode cs">o</code> for the loan type will be asked again, and asked as long as they do not give a valid answer.</li>
 <li>Users entering a credit score not between 300 and 850, or that is not an integer, will be asked again, and asked as long as they do not give a valid answer.</li>
