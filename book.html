@@ -249,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">November 3, 2021 (11:34:26 PM)</p>
+<p class="date">November 4, 2021 (11:45:31 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -352,10 +352,7 @@
 </ul></li>
 <li><a href="#combining-classes-and-decision-structures">Combining Classes and Decision Structures</a>
 <ul>
-<li><a href="#using-if-statements-with-methods">Using <code class="sourceCode cs"><span class="kw">if</span></code> Statements with Methods</a>
-<ul>
-<li><a href="#boolean-parameters">Boolean Parameters</a></li>
-</ul></li>
+<li><a href="#using-if-statements-with-methods">Using <code class="sourceCode cs"><span class="kw">if</span></code> Statements with Methods</a></li>
 <li><a href="#using-while-loops-with-classes">Using <code class="sourceCode cs"><span class="kw">while</span></code> Loops with Classes</a></li>
 </ul></li>
 <li><a href="#the-loan-class">The Loan Class</a></li>
@@ -5278,8 +5275,8 @@ Done</code></pre></li>
 </ul></li>
 </ul>
 </section>
-<section id="boolean-parameters" class="level3">
-<h3>Boolean Parameters</h3>
+<section id="boolean-parameters" class="level4">
+<h4>Boolean Parameters</h4>
 <ul>
 <li><p>When writing a method, we might want a single method to take one of two different actions depending on some condition, instead of doing the same thing every time. In this case we can declare the method with a <code class="sourceCode cs"><span class="dt">bool</span></code> parameter, whose value represents whether the method should (true) or should not (false) have a certain behavior.</p></li>
 <li><p>For example, in the <code class="sourceCode cs">Room</code> class we wrote in lab, we wrote two separate methods to compute the area of the room: <code class="sourceCode cs"><span class="fu">ComputeArea</span><span class="op">()</span></code> would compute and return the area in meters, while <code class="sourceCode cs"><span class="fu">ComputeAreaFeet</span><span class="op">()</span></code> would compute and return the area in feet. Instead, we could write a single method that computes the area in either feet or meters depending on a parameter:</p>
@@ -5342,6 +5339,7 @@ Done</code></pre></li>
 <li><p>If the parameter <code class="sourceCode cs">meters</code> is true, this constructor interprets the length and width parameters as meters (acting like the previous “meters constructor”), but if <code class="sourceCode cs">meters</code> is false, this constructor interprets the length and width parameters as feet (acting like the previous “feet constructor”).</p></li>
 </ul></li>
 </ul>
+</section>
 <section id="ordinary-methods-using-if" class="level4">
 <h4>Ordinary Methods Using <code class="sourceCode cs"><span class="kw">if</span></code></h4>
 <ul>
@@ -5484,7 +5482,6 @@ Done</code></pre></li>
 <span id="cb211-7"><a href="#cb211-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Now, <code class="sourceCode cs">myItem<span class="op">.</span><span class="fu">GetPrice</span><span class="op">()</span></code> will return the price with tax if the item is taxable, so our <code class="sourceCode cs">Main</code> method can simply use <code class="sourceCode cs">myItem<span class="op">.</span><span class="fu">GetPrice</span><span class="op">()</span></code> as the total price without needing to check <code class="sourceCode cs">myItem<span class="op">.</span><span class="fu">isTaxable</span><span class="op">()</span></code>.</p></li>
 </ul>
-</section>
 </section>
 </section>
 <section id="using-while-loops-with-classes" class="level2">
