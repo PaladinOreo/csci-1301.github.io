@@ -249,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">November 4, 2021 (11:45:31 AM)</p>
+<p class="date">November 8, 2021 (10:39:24 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -5805,17 +5805,17 @@ Done</code></pre></li>
 <li><code class="sourceCode cs"><span class="op">&lt;</span>type<span class="op">&gt;</span></code> can be any data-type and specifies the data-type of the array elements.</li>
 <li><code class="sourceCode cs">arrayName</code> is an identifier that you will use to access and modify the array elements.</li>
 </ul>
-<p>Before using an array, you must specify the number of elements of the array as follow:</p>
+<p>Before using an array, you must specify the number of elements in the array as follows:</p>
 <div class="sourceCode" id="cb225"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb225-1"><a href="#cb225-1" aria-hidden="true" tabindex="-1"></a>arrayName <span class="op">=</span> <span class="kw">new</span> <span class="op">&lt;</span>type<span class="op">&gt;[&lt;</span>number of elements<span class="op">&gt;];</span></span></code></pre></div>
-<p>where <code class="sourceCode cs"><span class="op">&lt;</span>type<span class="op">&gt;</span></code> is as previously, and <code class="sourceCode cs"><span class="op">&lt;</span>number of elements<span class="op">&gt;</span></code>, called the <em>size declarator</em>, needs to be a strictly positive integer which will correspond to the size of the array.</p>
+<p>where <code class="sourceCode cs"><span class="op">&lt;</span>type<span class="op">&gt;</span></code> is a type as before, and <code class="sourceCode cs"><span class="op">&lt;</span>number of elements<span class="op">&gt;</span></code>, called the <em>size declarator</em>, is a strictly positive integer which will correspond to the size of the array.</p>
 <ul>
-<li><p>An element of a single-dimensional array can be accessed and modified by using the name of the array and the index of the element as follow:</p>
+<li><p>An element of a single-dimensional array can be accessed and modified by using the name of the array and the index of the element as follows:</p>
 <div class="sourceCode" id="cb226"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb226-1"><a href="#cb226-1" aria-hidden="true" tabindex="-1"></a>arrayName<span class="op">[&lt;</span>index<span class="op">&gt;]</span> <span class="op">=</span> <span class="op">&lt;</span>value<span class="op">&gt;;</span>  <span class="co">// Assigns &lt;value&gt; to the &lt;index&gt; element of the array arrayName.</span></span>
 <span id="cb226-2"><a href="#cb226-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb226-3"><a href="#cb226-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>arrayName<span class="op">[&lt;</span>index<span class="op">&gt;]);</span> <span class="co">// Display the &lt;index&gt; element of the array arrayName.</span></span></code></pre></div></li>
 </ul>
 <p>The index of the first element in an array is always <em>zero</em>; the index of the second element is one, and the index of the last element is the size of the array minus one. As a consequence, if you specify an index greater or equal to the number of elements, a run time error will happen.</p>
-<p>Indexing starting from 0 may seem surprizing and counter-intuitive, but this is a largely respected convention accross programing languages and computer-scientists. Some insights on the reasons behind this (collective) choice can be found <a href="https://cseducators.stackexchange.com/a/5026">in this answer on Computer Science Educators</a>.</p>
+<p>Indexing starting from 0 may seem surprising and counter-intuitive, but this is a largely respected convention across programing languages and computer scientists. Some insights on the reasons behind this (collective) choice can be found <a href="https://cseducators.stackexchange.com/a/5026">in this answer on Computer Science Educators</a>.</p>
 <section id="example" class="level3">
 <h3>Example</h3>
 <p>In the following example, we define an array named <em>myArray</em> with three elements of type integer, and assign 10 to the first element, 20 to the second element, and 30 to the last element.</p>
@@ -5829,12 +5829,12 @@ Done</code></pre></li>
 <span id="cb227-8"><a href="#cb227-8" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">2</span><span class="op">]</span> <span class="op">=</span> <span class="dv">30</span><span class="op">;</span></span></code></pre></div>
 <p>If we were to try to store a fourth value in our array, at index 3, using e.g.</p>
 <div class="sourceCode" id="cb228"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb228-1"><a href="#cb228-1" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">3</span><span class="op">]</span> <span class="op">=</span> <span class="dv">40</span><span class="op">;</span></span></code></pre></div>
-<p>our program would compile just fine, which may seems surprizing. However, when executing this program, the <em>array bound checking</em> would be performed and detect that there is a mismatch between the size of the array and the index we are trying to use, resulting in a quite explicit error message:</p>
+<p>our program would compile just fine, which may seems surprising. However, when executing this program, <em>array bounds checking</em> would be performed and detect that there is a mismatch between the size of the array and the index we are trying to use, resulting in a quite explicit error message:</p>
 <pre class="text"><code>Unhandled Exception: System.IndexOutOfRangeException: Index was outside the bounds of the array at Program.Main()</code></pre>
 </section>
 <section id="abridged-syntaxes" class="level3">
 <h3>Abridged Syntaxes</h3>
-<p>If you know the number of elements when you are defining an array, you can combine declaration and assignment on one line as follow:</p>
+<p>If you know the number of elements when you are defining an array, you can combine declaration and assignment on one line as follows:</p>
 <div class="sourceCode" id="cb230"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb230-1"><a href="#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>type<span class="op">&gt;[]</span> arrayName <span class="op">=</span> <span class="kw">new</span> <span class="op">&lt;</span>type<span class="op">&gt;[&lt;</span>number of elements<span class="op">&gt;];</span></span></code></pre></div>
 <p>So, we can combine the first two lines of the previous example and write:</p>
 <div class="sourceCode" id="cb231"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb231-1"><a href="#cb231-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">3</span><span class="op">];</span></span></code></pre></div>
@@ -5847,7 +5847,7 @@ Done</code></pre></li>
 <p>But, we should be careful, the following would cause an error:</p>
 <div class="sourceCode" id="cb234"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb234-1"><a href="#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">5</span><span class="op">];</span></span>
 <span id="cb234-2"><a href="#cb234-2" aria-hidden="true" tabindex="-1"></a>myArray <span class="op">=</span> <span class="op">{</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span> <span class="op">,</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">};</span> <span class="co">// ERROR</span></span></code></pre></div>
-<p>If we use the shorter notation, we <em>have to</em> give the values at initialization, we cannot re-use this notation once the array was created.</p>
+<p>If we use the shorter notation, we <em>have to</em> give the values at initialization, we cannot re-use this notation once the array has been created.</p>
 <p>Other datatype, and even objects, can be stored in arrays in a perfectly similar way:</p>
 <div class="sourceCode" id="cb235"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb235-1"><a href="#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="op">{</span> <span class="st">&quot;Bob&quot;</span><span class="op">,</span> <span class="st">&quot;Mom&quot;</span><span class="op">,</span> <span class="st">&quot;Train&quot;</span><span class="op">,</span> <span class="st">&quot;Console&quot;</span> <span class="op">};</span></span>
 <span id="cb235-2"><a href="#cb235-2" aria-hidden="true" tabindex="-1"></a>Rectangle<span class="op">[]</span> arrayOfRectangle <span class="op">=</span> <span class="kw">new</span> Rectangle<span class="op">[</span><span class="dv">5</span><span class="op">];</span>  <span class="co">// Assume there is a class called Rectangle</span></span></code></pre></div>
@@ -5855,7 +5855,7 @@ Done</code></pre></li>
 </section>
 <section id="custom-size-and-values" class="level2">
 <h2>Custom Size and Values</h2>
-<p>One of the benefits of arrays is that they allow you to specify the number of their elements at run-time. Hence, depending on the run-time conditions, we can have enough space to store and process values.</p>
+<p>One of the benefits of arrays is that they allow you to specify the number of their elements at run-time. Hence, depending on run-time conditions such as user input, we can have enough space to store and process any number of values.</p>
 <section id="example-1" class="level3">
 <h3>Example</h3>
 <p>In the following example, we get the number of elements at run-time from the user, create an array with the appropriate size, and fill the array.</p>
@@ -5873,14 +5873,14 @@ Done</code></pre></li>
 <p>Observe that:</p>
 <ul>
 <li>If the user enters a negative value or a string that does not correspond to an integer for the <code class="sourceCode cs">size</code> value, our program will crash: we are not performing any user-input validation here, to keep our example compact.</li>
-<li>We are asking for the <code class="sourceCode cs"><span class="op">{</span>counter <span class="op">+</span><span class="dv">1</span><span class="op">}</span>th</code> value because we prefer not to confuse the user by asking for the “0th” value. Note that a more elaborated program would decline “th” in “st”, “nd” and “rd” for the first three values.</li>
+<li>We are asking for the <code class="sourceCode cs"><span class="op">{</span>counter <span class="op">+</span><span class="dv">1</span><span class="op">}</span>th</code> value because we prefer not to confuse the user by asking for the “0th” value. Note that a more sophisticated program would replace “th” with “st”, “nd” and “rd” for the first three values.</li>
 </ul>
 </section>
 </section>
 <section id="array-size" class="level2">
 <h2>Array Size</h2>
 <p>Every single-dimensional array has a property called <code class="sourceCode cs">Length</code> that returns the number of the elements in the array (or size of the array).</p>
-<p>To process an array that its size is not fixed, we can use this property to find out the number of elements in the array</p>
+<p>To process an array whose size is not fixed, we can use this property to find out the number of elements in the array</p>
 <section id="example-2" class="level3">
 <h3>Example</h3>
 <div class="sourceCode" id="cb237"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb237-1"><a href="#cb237-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> counter2 <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
@@ -5896,10 +5896,10 @@ Done</code></pre></li>
 <p>There is a class named <code class="sourceCode cs">Array</code> that can be used to resize an array. Upon expanding an array, the additional indices will be filled with the default value of the corresponding type. Shrinking an array will cause the data in the removed indices (those beyond the new length) to be lost.</p>
 <section id="example-3" class="level3">
 <h3>Example</h3>
-<div class="sourceCode" id="cb238"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb238-1"><a href="#cb238-1" aria-hidden="true" tabindex="-1"></a>Array<span class="op">.</span><span class="fu">Resize</span><span class="op">(</span><span class="kw">ref</span> myArray<span class="op">,</span> <span class="dv">4</span><span class="op">);</span></span>
+<div class="sourceCode" id="cb238"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb238-1"><a href="#cb238-1" aria-hidden="true" tabindex="-1"></a>Array<span class="op">.</span><span class="fu">Resize</span><span class="op">(</span><span class="kw">ref</span> myArray<span class="op">,</span> <span class="dv">4</span><span class="op">);</span> <span class="co">//myArray[3] now contains 0</span></span>
 <span id="cb238-2"><a href="#cb238-2" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">3</span><span class="op">]</span> <span class="op">=</span> <span class="dv">40</span><span class="op">;</span></span>
 <span id="cb238-3"><a href="#cb238-3" aria-hidden="true" tabindex="-1"></a>Array<span class="op">.</span><span class="fu">Resize</span><span class="op">(</span><span class="kw">ref</span> myArray<span class="op">,</span> <span class="dv">2</span><span class="op">);</span></span></code></pre></div>
-<p>In the above example, all data statring index 2 is lost.</p>
+<p>In the above example, all data starting at index 2 is lost.</p>
 </section>
 </section>
 </section>
