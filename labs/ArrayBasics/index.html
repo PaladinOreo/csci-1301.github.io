@@ -249,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">First Arrays Manipulations</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">November 8, 2021 (10:39:42 AM)</p>
+<p class="date">November 8, 2021 (07:04:47 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -280,7 +280,7 @@
 <dd>There are a few different ways you can declare and initialize array of size <span class="math inline">5</span> holding values <span class="math inline">1</span>, <span class="math inline">2</span>, <span class="math inline">3</span>, <span class="math inline">4</span> and <span class="math inline">5</span>. Can you think of two different ways of doing this?
 </dd>
 </dl></li>
-<li><p>displays the content of <code class="sourceCode cs">myArray</code> at the screen.</p></li>
+<li><p>displays the content of <code class="sourceCode cs">myArray</code> on the screen.</p></li>
 </ol>
 </section>
 <section id="going-wrong" class="level2">
@@ -291,10 +291,10 @@
 <p>Remove the previous line. Then add this statement in its place:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myArray<span class="op">[</span><span class="dv">5</span><span class="op">]);</span></span></code></pre></div>
 <p>try to compile and execute the program.</p>
-<p>Then, remove previous line, and now add this:</p>
+<p>Then, remove the previous line, and now add this:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>myArray<span class="op">[</span><span class="dv">5</span><span class="op">]</span> <span class="op">=</span> <span class="dv">12</span><span class="op">;</span></span></code></pre></div>
 <p>try to compile and execute the program again.</p>
-<p>Remove previous line. Add this line and execute the program:</p>
+<p>Remove the previous line. Add this line and execute the program:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myArray<span class="op">);</span></span></code></pre></div>
 <p>Now answer the following questions.</p>
 <ol>
@@ -319,23 +319,23 @@
 <p>For this part, create a new array:</p>
 <ul>
 <li>declare a <code class="sourceCode cs"><span class="dt">char</span></code> array of length <span class="math inline">6</span>, name it <code class="sourceCode cs">letters</code></li>
-<li>initialize the first 4 indices of <code class="sourceCode cs">letters</code> with following values: <code class="sourceCode cs"><span class="ch">&#39;a&#39;</span><span class="op">,</span> <span class="ch">&#39;b&#39;</span><span class="op">,</span> <span class="ch">&#39;c&#39;</span><span class="op">,</span> <span class="ch">&#39;d&#39;</span></code></li>
-<li>initialize index 5 of <code class="sourceCode cs">letters</code> with value <code class="sourceCode cs"><span class="ch">&#39;f&#39;</span></code></li>
+<li>initialize the first 4 indices of <code class="sourceCode cs">letters</code> with the following values: <code class="sourceCode cs"><span class="ch">&#39;a&#39;</span><span class="op">,</span> <span class="ch">&#39;b&#39;</span><span class="op">,</span> <span class="ch">&#39;c&#39;</span><span class="op">,</span> <span class="ch">&#39;d&#39;</span></code></li>
+<li>initialize index 5 of <code class="sourceCode cs">letters</code> with the value <code class="sourceCode cs"><span class="ch">&#39;f&#39;</span></code></li>
 </ul>
 <p>Now, write the following statements:</p>
 <ol>
 <li>Write a statement to display the last <code class="sourceCode cs"><span class="dt">char</span></code> value in <code class="sourceCode cs">letters</code> (should display <code class="sourceCode cs">f</code>).</li>
-<li>Write a statement to display value stored at index 4. What is that value? Why?</li>
-<li>Write a statement to display characters in the <em>first half</em> of the array (<code class="sourceCode cs"><span class="ch">&#39;a&#39;</span><span class="op">,</span> <span class="ch">&#39;b&#39;</span><span class="op">,</span> <span class="ch">&#39;c&#39;</span></code> but no others).</li>
+<li>Write a statement to display the value stored at index 4. What is that value? Why?</li>
+<li>Write a statement to display the characters in the <em>first half</em> of the array (<code class="sourceCode cs"><span class="ch">&#39;a&#39;</span><span class="op">,</span> <span class="ch">&#39;b&#39;</span><span class="op">,</span> <span class="ch">&#39;c&#39;</span></code> but no others).</li>
 </ol>
 <p>Execute your program to ensure you are seeing the expected output before proceeding.</p>
-<p>Next, update the part of the program where <code class="sourceCode cs">letters</code> is declared and change <code class="sourceCode cs">letters</code> length to <span class="math inline">8</span>. Do not modify any other parts of the program. Then execute the program again.</p>
+<p>Next, update the part of the program where <code class="sourceCode cs">letters</code> is declared and change the length of <code class="sourceCode cs">letters</code> to <span class="math inline">8</span>. Do not modify any other parts of the program. Then execute the program again.</p>
 <p>Answer the following questions:</p>
 <ol>
 <li>What is the last <code class="sourceCode cs"><span class="dt">char</span></code> of the <code class="sourceCode cs">letters</code> array now, after changing its length?</li>
 <li>Does your program still output <em>the last</em> <code class="sourceCode cs"><span class="dt">char</span></code> value in <code class="sourceCode cs">letters</code> array?</li>
-<li>When displaying the first half of the array, does your program still display <em>the first half</em>? (After changing length the first half contains values <code class="sourceCode cs"><span class="ch">&#39;a&#39;</span><span class="op">,</span> <span class="ch">&#39;b&#39;</span><span class="op">,</span> <span class="ch">&#39;c&#39;</span><span class="op">,</span> <span class="ch">&#39;d&#39;</span></code>)</li>
-<li>If you did not get the last value or the first half you should have, can you think of a way to perform these array operations in a way that can accomodate arrays of different lengths?</li>
+<li>When displaying the first half of the array, does your program still display <em>the first half</em>? (After changing the length, the first half contains the values <code class="sourceCode cs"><span class="ch">&#39;a&#39;</span><span class="op">,</span> <span class="ch">&#39;b&#39;</span><span class="op">,</span> <span class="ch">&#39;c&#39;</span><span class="op">,</span> <span class="ch">&#39;d&#39;</span></code>)</li>
+<li>If you did not get the last value or the first half you expected, can you think of a way to perform these array operations in a way that can accommodate arrays of different lengths?</li>
 </ol>
 </section>
 </main>
