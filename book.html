@@ -249,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">November 8, 2021 (07:04:32 PM)</p>
+<p class="date">November 15, 2021 (09:14:20 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -6180,7 +6180,7 @@ Done</code></pre></li>
 <h4>Combining <code class="sourceCode cs"><span class="kw">for</span></code> and <code class="sourceCode cs"><span class="kw">while</span></code> loops</h4>
 <ul>
 <li><p><code class="sourceCode cs"><span class="kw">while</span></code> loops are good for sentinel-controlled loops or user-input validation, and <code class="sourceCode cs"><span class="kw">for</span></code> loops are good for counter-controlled loops</p></li>
-<li><p>This program asks the user to enter a number, then uses a <code class="sourceCode cs"><span class="kw">for</span></code> loop to print that number of lines of asterisks:</p>
+<li><p>This program asks the user to enter a number, then uses a <code class="sourceCode cs"><span class="kw">for</span></code> loop to print that number of asterisks on a single line:</p>
 <div class="sourceCode" id="cb261"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb261-1"><a href="#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> userInput<span class="op">;</span></span>
 <span id="cb261-2"><a href="#cb261-2" aria-hidden="true" tabindex="-1"></a><span class="kw">do</span></span>
 <span id="cb261-3"><a href="#cb261-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -6192,13 +6192,14 @@ Done</code></pre></li>
 <span id="cb261-9"><a href="#cb261-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
 <span id="cb261-10"><a href="#cb261-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span><span class="op">(</span><span class="dt">int</span> c <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> c <span class="op">&lt;</span> inputNum<span class="op">;</span> c<span class="op">++)</span></span>
 <span id="cb261-11"><a href="#cb261-11" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
-<span id="cb261-12"><a href="#cb261-12" aria-hidden="true" tabindex="-1"></a>            Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;**********&quot;</span><span class="op">);</span></span>
+<span id="cb261-12"><a href="#cb261-12" aria-hidden="true" tabindex="-1"></a>            Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;*&quot;</span><span class="op">);</span></span>
 <span id="cb261-13"><a href="#cb261-13" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb261-14"><a href="#cb261-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb261-15"><a href="#cb261-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="kw">while</span><span class="op">(</span>userInput <span class="op">!=</span> <span class="st">&quot;Q&quot;</span><span class="op">);</span></span></code></pre></div>
+<span id="cb261-14"><a href="#cb261-14" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">();</span></span>
+<span id="cb261-15"><a href="#cb261-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb261-16"><a href="#cb261-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="kw">while</span><span class="op">(</span>userInput <span class="op">!=</span> <span class="st">&quot;Q&quot;</span><span class="op">);</span></span></code></pre></div>
 <ul>
 <li><p>The sentinel value “Q” is used to end the program, so the outer <code class="sourceCode cs"><span class="kw">while</span></code> loop repeats until the user enters this value</p></li>
-<li><p>Once the user enters a number, that number is used in the condition for a <code class="sourceCode cs"><span class="kw">for</span></code> loop that prints lines of asterisks</p></li>
+<li><p>Once the user enters a number, that number is used in the condition for a <code class="sourceCode cs"><span class="kw">for</span></code> loop that prints asterisks using <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">Write</span><span class="op">()</span></code>. After the <code class="sourceCode cs"><span class="kw">for</span></code> loop ends, we use <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">()</span></code> with no argument to end the line (print a newline).</p></li>
 <li><p>Since the user could enter either a letter or a number, we need to use <code class="sourceCode cs">TryParse</code> to convert the user’s input to a number</p></li>
 <li><p>If <code class="sourceCode cs">TryParse</code> fails (because the user entered a non-number), <code class="sourceCode cs">inputNum</code> will be assigned the value 0. This is also an invalid value for the loop counter, so we don’t need to check whether <code class="sourceCode cs">TryParse</code> returned <code class="sourceCode cs"><span class="kw">true</span></code> or <code class="sourceCode cs"><span class="kw">false</span></code>. Instead, we simply check whether <code class="sourceCode cs">inputNum</code> is valid (greater than 0) before executing the <code class="sourceCode cs"><span class="kw">for</span></code> loop, and skip the <code class="sourceCode cs"><span class="kw">for</span></code> loop entirely if <code class="sourceCode cs">inputNum</code> is negative or 0.</p></li>
 </ul></li>
