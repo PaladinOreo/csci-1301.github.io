@@ -249,11 +249,11 @@
 <header id="title-block-header">
 <h1 class="title">foreach</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">November 15, 2021 (09:14:36 PM)</p>
+<p class="date">November 17, 2021 (06:55:51 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#practicing-foreach-loop">Practicing <code class="sourceCode cs"><span class="kw">foreach</span></code> Loop</a>
+<li><a href="#practicing-foreach-loops">Practicing <code class="sourceCode cs"><span class="kw">foreach</span></code> Loops</a>
 <ul>
 <li><a href="#problem-1">Problem 1</a></li>
 <li><a href="#problem-2">Problem 2</a></li>
@@ -263,13 +263,13 @@
 </ul></li>
 </ul>
 </nav>
-<section id="practicing-foreach-loop" class="level1">
-<h1>Practicing <code class="sourceCode cs"><span class="kw">foreach</span></code> Loop</h1>
+<section id="practicing-foreach-loops" class="level1">
+<h1>Practicing <code class="sourceCode cs"><span class="kw">foreach</span></code> Loops</h1>
 <section id="problem-1" class="level2">
 <h2>Problem 1</h2>
 <p>Create a new project, and replace the content of the <code class="sourceCode cs">Main</code> method with the following code:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> primes <span class="op">=</span> <span class="op">{</span><span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="dv">13</span><span class="op">,</span> <span class="dv">17</span><span class="op">,</span> <span class="dv">19</span><span class="op">};</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span> primes<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> primes<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>primes<span class="op">[</span>i<span class="op">]);</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
@@ -283,10 +283,10 @@
 </section>
 <section id="problem-2" class="level2">
 <h2>Problem 2</h2>
-<p>Can you rewrite the following code with <code class="sourceCode cs"><span class="kw">foreach</span></code> statement? Why?</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> <span class="op">[]</span> numbers <span class="op">=</span> <span class="op">{</span><span class="fl">1.2</span><span class="op">,</span> <span class="fl">4.3</span><span class="op">,</span> <span class="fl">5.7</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="op">-</span><span class="fl">3.13</span><span class="op">,</span> <span class="fl">1.7</span><span class="op">};</span></span>
+<p>Can you rewrite the following code with a <code class="sourceCode cs"><span class="kw">foreach</span></code> statement? Why?</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span><span class="op">[]</span> numbers <span class="op">=</span> <span class="op">{</span><span class="fl">1.2</span><span class="op">,</span> <span class="fl">4.3</span><span class="op">,</span> <span class="fl">5.7</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="op">-</span><span class="fl">3.13</span><span class="op">,</span> <span class="fl">1.7</span><span class="op">};</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span> numbers<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> numbers<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    numbers<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> numbers<span class="op">[</span>i<span class="op">]</span> <span class="op">*</span> <span class="fl">1.1</span><span class="op">;</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>numbers<span class="op">[</span>i<span class="op">]);</span></span>
@@ -294,19 +294,19 @@
 </section>
 <section id="problem-3" class="level2">
 <h2>Problem 3</h2>
-<p>Can you rewrite the following code with <code class="sourceCode cs"><span class="kw">foreach</span></code> statement? Why?</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> <span class="op">[]</span> numbers <span class="op">=</span> <span class="op">{</span><span class="fl">1.2</span><span class="op">,</span> <span class="fl">4.3</span><span class="op">,</span> <span class="fl">5.7</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="op">-</span><span class="fl">3.13</span><span class="op">,</span> <span class="fl">1.7</span><span class="op">};</span></span>
+<p>Can you rewrite the following code with a <code class="sourceCode cs"><span class="kw">foreach</span></code> statement? Why?</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span><span class="op">[]</span> numbers <span class="op">=</span> <span class="op">{</span><span class="fl">1.2</span><span class="op">,</span> <span class="fl">4.3</span><span class="op">,</span> <span class="fl">5.7</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="op">-</span><span class="fl">3.13</span><span class="op">,</span> <span class="fl">1.7</span><span class="op">};</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span> numbers<span class="op">.</span><span class="fu">Length</span> <span class="op">-</span> <span class="dv">1</span><span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span>   </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">((</span>numbers<span class="op">[</span>i<span class="op">]</span> <span class="op">+</span> numbers<span class="op">[</span>i<span class="op">+</span><span class="dv">1</span><span class="op">]</span> <span class="op">)/</span><span class="dv">2</span><span class="op">);</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> numbers<span class="op">.</span><span class="fu">Length</span> <span class="op">-</span> <span class="dv">1</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">((</span>numbers<span class="op">[</span>i<span class="op">]</span> <span class="op">+</span> numbers<span class="op">[</span>i<span class="op">+</span><span class="dv">1</span><span class="op">])</span> <span class="op">/</span> <span class="dv">2</span><span class="op">);</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="problem-4" class="level2">
 <h2>Problem 4</h2>
 <ol>
-<li>Can you think of any loops that can be implemented with <em>foreach</em> but not with <em>for</em>?</li>
-<li>Can you think of any loops that can be implemented with <em>for</em> but not with <em>foreach</em>?</li>
+<li>Can you think of any loops that can be implemented with <em>foreach</em> but not with <em>for</em>? If so, write an example.</li>
+<li>Can you think of any loops that can be implemented with <em>for</em> but not with <em>foreach</em>? If so, write an example.</li>
 </ol>
 </section>
 <section id="problem-5" class="level2">
@@ -314,13 +314,13 @@
 <p>Download <a href="Library.zip">Library project</a>, extract it, and open it with your IDE.</p>
 <p>Observe the program and its two classes:</p>
 <ul>
-<li><code class="sourceCode cs">Book</code> class represents a single book.</li>
+<li>The <code class="sourceCode cs">Book</code> class represents a single book.</li>
 <li><code class="sourceCode cs">Program</code> creates an array of 10 books.</li>
 </ul>
-<p>Next modify the code in the <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code> to perform the following steps:</p>
+<p>Next modify the code in <code class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code> to perform the following steps:</p>
 <ol>
-<li>Write a foreach loop that displays all books.</li>
-<li>Add statements where you ask the user to enter a year, then modify the foreach loop to display only books published on or after the year user entered.</li>
+<li>Write a <code class="sourceCode cs"><span class="kw">foreach</span></code> loop that displays all the books.</li>
+<li>Add statements where you ask the user to enter a year, then modify the <code class="sourceCode cs"><span class="kw">foreach</span></code> loop to display only books published on or after the year user entered.</li>
 <li>Write a <code class="sourceCode cs"><span class="kw">for</span></code> loop implementation that performs the same task of displaying books published on or after the year user entered.</li>
 </ol>
 <p>Which one do you prefer to implement the above search? Explain your answer.</p>
