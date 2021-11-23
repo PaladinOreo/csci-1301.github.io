@@ -249,7 +249,7 @@
 <header id="title-block-header">
 <h1 class="title">Using static keyword</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">November 17, 2021 (06:55:52 PM)</p>
+<p class="date">November 23, 2021 (02:24:16 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -262,11 +262,11 @@
 </nav>
 <section id="static-classes" class="level1">
 <h1>Static classes</h1>
-<p>One use case for static classes is creating utility classes (or “helper class”) that contain related and frequently-used methods; making those methods easily callable anywhere in the program. Some examples of static classes in C# are <code class="sourceCode cs">Math</code> and <code class="sourceCode cs">Console</code> class.</p>
+<p>One use case for static classes is creating utility classes (or “helper classes”) that contain related and frequently-used methods; making those methods easily callable anywhere in the program. Some examples of static classes in C# are the <code class="sourceCode cs">Math</code> and <code class="sourceCode cs">Console</code> classes.</p>
 <p>Pay attention to how these classes are used:</p>
 <ul>
-<li><code class="sourceCode cs">Console</code> object is never instantiated before use</li>
-<li><code class="sourceCode cs">WriteLine</code> method is called referring to the <em>name of the class</em> (not object identifier)</li>
+<li>A <code class="sourceCode cs">Console</code> object is never instantiated before use</li>
+<li>The <code class="sourceCode cs">WriteLine</code> method is called referring to the <em>name of the class</em> (not an object identifier)</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -280,7 +280,7 @@
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Program <span class="op">{</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">()</span> <span class="op">{</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        Console test <span class="op">=</span> <span class="kw">new</span> <span class="fu">Console</span><span class="op">();</span>       </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        Console test <span class="op">=</span> <span class="kw">new</span> <span class="fu">Console</span><span class="op">();</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Indeed, it is <em>not possible</em> to instantiate an object when a class is declared <code class="sourceCode cs"><span class="kw">static</span></code>. Further, if a class is declared static, all its members (attributes, methods, constructors, etc.) must also be declared <code class="sourceCode cs"><span class="kw">static</span></code>.</p>
@@ -290,18 +290,18 @@
 <p>In Calculator.cs:</p>
 <ol>
 <li>Declare a <code class="sourceCode cs"><span class="kw">static</span></code> class and name it <code class="sourceCode cs">Calculator</code>.</li>
-<li>Add 5 <code class="sourceCode cs"><span class="kw">public</span></code> methods to <code class="sourceCode cs">Calculator</code> class. Each method takes 2 arguments <code class="sourceCode cs">x</code> and <code class="sourceCode cs">y</code> of type <code class="sourceCode cs"><span class="dt">double</span></code>:
+<li>Add 5 <code class="sourceCode cs"><span class="kw">public</span></code> methods to the <code class="sourceCode cs">Calculator</code> class. Each method takes 2 arguments <code class="sourceCode cs">x</code> and <code class="sourceCode cs">y</code> of type <code class="sourceCode cs"><span class="dt">double</span></code>:
 <ol>
-<li><code class="sourceCode cs">Add</code> method that returns result of <code class="sourceCode cs">x <span class="op">+</span> y</code>.</li>
-<li><code class="sourceCode cs">Subtract</code> method that returns result of <code class="sourceCode cs">x <span class="op">-</span> y</code>.</li>
-<li><code class="sourceCode cs">Multiply</code> method that returns result of <code class="sourceCode cs">x <span class="op">*</span> y</code>.</li>
-<li><code class="sourceCode cs">Divide</code> method that returns result of <code class="sourceCode cs">x <span class="op">/</span> y</code>.</li>
-<li><code class="sourceCode cs">Modulo</code> method that returns result of <code class="sourceCode cs">x <span class="op">%</span> y</code>.</li>
+<li><code class="sourceCode cs">Add</code> method that returns the result of <code class="sourceCode cs">x <span class="op">+</span> y</code>.</li>
+<li><code class="sourceCode cs">Subtract</code> method that returns the result of <code class="sourceCode cs">x <span class="op">-</span> y</code>.</li>
+<li><code class="sourceCode cs">Multiply</code> method that returns the result of <code class="sourceCode cs">x <span class="op">*</span> y</code>.</li>
+<li><code class="sourceCode cs">Divide</code> method that returns the result of <code class="sourceCode cs">x <span class="op">/</span> y</code>.</li>
+<li><code class="sourceCode cs">Modulo</code> method that returns the result of <code class="sourceCode cs">x <span class="op">%</span> y</code>.</li>
 </ol></li>
 </ol>
 <p>After implementing <code class="sourceCode cs">Calculator</code>,</p>
 <ol>
-<li><p>Open the file that contains program’s <code class="sourceCode cs">Main</code> method</p></li>
+<li><p>Open the file that contains the program’s <code class="sourceCode cs">Main</code> method</p></li>
 <li><p>Paste the following code inside <code class="sourceCode cs">Main</code> method:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> x <span class="op">=</span> 10d<span class="op">,</span> y <span class="op">=</span> 2d<span class="op">;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -309,7 +309,7 @@
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{x} - {y} = {Calculator.Subtract(x, y)}&quot;</span><span class="op">);</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{x} * {y} = {Calculator.Multiply(x, y)}&quot;</span><span class="op">);</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{x} / {y} = {Calculator.Divide(x, y)}&quot;</span><span class="op">);</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{x} % {y} = {Calculator.Modulo(x, y)}&quot;</span><span class="op">);</span>      </span></code></pre></div>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{x} % {y} = {Calculator.Modulo(x, y)}&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>Again, notice how</p>
 <ul>
 <li>no instance of <code class="sourceCode cs">Calculator</code> is created before use, and</li>
@@ -333,7 +333,7 @@
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student <span class="op">{</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> id<span class="op">;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">string</span> name<span class="op">;</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">string</span> name<span class="op">;</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="kw">static</span> <span class="dt">string</span> universityName <span class="op">=</span> <span class="st">&quot;Augusta University&quot;</span><span class="op">;</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="kw">static</span> <span class="dt">int</span> studentCount<span class="op">;</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
@@ -341,12 +341,12 @@
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">id</span> <span class="op">=</span> id<span class="op">;</span></span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">name</span> <span class="op">=</span> name<span class="op">;</span></span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        studentCount<span class="op">++;</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">void</span> <span class="fu">DisplayStudentCount</span><span class="op">(){</span></span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">// does this work? uncomment to check</span></span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Console.WriteLine(name);</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Number of students: {studentCount}&quot;</span><span class="op">);</span></span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
@@ -354,7 +354,7 @@
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> $<span class="st">&quot;id: {id}</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">+</span></span>
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>               $<span class="st">&quot;name: {name}</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">+</span></span>
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>               $<span class="st">&quot;university: {universityName}&quot;</span><span class="op">;</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span>  </span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Program.cs</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
@@ -368,17 +368,17 @@
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        Student<span class="op">.</span><span class="fu">DisplayStudentCount</span><span class="op">();</span> <span class="co">// first time</span></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        Student bob <span class="op">=</span> <span class="kw">new</span> <span class="fu">Student</span><span class="op">(</span><span class="dv">1112</span><span class="op">,</span> <span class="st">&quot;Bob&quot;</span><span class="op">);</span>        </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        Student bob <span class="op">=</span> <span class="kw">new</span> <span class="fu">Student</span><span class="op">(</span><span class="dv">1112</span><span class="op">,</span> <span class="st">&quot;Bob&quot;</span><span class="op">);</span></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>bob<span class="op">);</span></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        Student<span class="op">.</span><span class="fu">DisplayStudentCount</span><span class="op">();</span> <span class="co">// second time</span></span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <ol>
-<li><p>How many non-static attributes does <code class="sourceCode cs">Student</code> class have?</p></li>
-<li><p>How many static attributes does <code class="sourceCode cs">Student</code> class have?</p></li>
-<li><p>How many non-static methods does <code class="sourceCode cs">Student</code> class have?</p></li>
-<li><p>How many static methods does <code class="sourceCode cs">Student</code> class have?</p></li>
+<li><p>How many non-static attributes does the <code class="sourceCode cs">Student</code> class have?</p></li>
+<li><p>How many static attributes does the <code class="sourceCode cs">Student</code> class have?</p></li>
+<li><p>How many non-static methods does the <code class="sourceCode cs">Student</code> class have?</p></li>
+<li><p>How many static methods does the <code class="sourceCode cs">Student</code> class have?</p></li>
 <li><p>What is the output of each of the following lines in “Program.cs”:</p>
 <ol>
 <li><code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>alice<span class="op">);</span></code></li>
@@ -386,12 +386,12 @@
 <li><code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>bob<span class="op">);</span></code></li>
 <li><code class="sourceCode cs">Student<span class="op">.</span><span class="fu">DisplayStudentCount</span><span class="op">();</span> <span class="co">// second time</span></code></li>
 </ol></li>
-<li><p>if the <code class="sourceCode cs">studentCount</code> attribute was *not* <code class="sourceCode cs"><span class="kw">static</span></code>, what would be the output of:</p>
+<li><p>If the <code class="sourceCode cs">studentCount</code> attribute was *not* <code class="sourceCode cs"><span class="kw">static</span></code>, what would be the output of:</p>
 <ol>
 <li><code class="sourceCode cs">Student<span class="op">.</span><span class="fu">DisplayStudentCount</span><span class="op">();</span> <span class="co">// first time</span></code></li>
 <li><code class="sourceCode cs">Student<span class="op">.</span><span class="fu">DisplayStudentCount</span><span class="op">();</span> <span class="co">// second time</span></code></li>
 </ol></li>
-<li><p>When a class contains both static and non-static members, is it possible to refer to non-static members inside a static method? For example, if we try to refer to <code class="sourceCode cs">name</code> attribute inside <code class="sourceCode cs">DisplayStudentCount</code>, will it work? Why or why not?</p></li>
+<li><p>When a class contains both static and non-static members, is it possible to refer to non-static members inside a static method? For example, if we try to refer to the <code class="sourceCode cs">name</code> attribute inside <code class="sourceCode cs">DisplayStudentCount</code>, will it work? Why or why not?</p></li>
 </ol>
 <p>Check your answers by creating a matching program in your IDE and executing it.</p>
 <p>To check the last question, in Student.cs, uncomment the following line and verify its behavior matches your answer:</p>
