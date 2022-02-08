@@ -186,7 +186,7 @@
 <header id="title-block-header">
 <h1 class="title">Installing Software</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">February 7, 2022 (09:02:47 PM)</p>
+<p class="date">February 8, 2022 (04:07:46 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -199,6 +199,7 @@
 <li><a href="#installing-visual-studio-on-your-own-computer">Installing Visual Studio On Your Own Computer</a></li>
 <li><a href="#installing-monodevelop-on-your-own-computer">Installing MonoDevelop On Your Own Computer</a></li>
 <li><a href="#installing-rider-on-your-own-computer">Installing Rider On Your Own Computer</a></li>
+<li><a href="#installing-geany-on-your-own-computer">Installing Geany On Your Own Computer</a></li>
 <li><a href="#installing-anything-anywhere">Installing Anything Anywhere</a></li>
 </ul></li>
 <li><a href="#accessing-one-of-the-computers-in-a-computer-lab">Accessing One of the Computers in a Computer Lab</a></li>
@@ -269,6 +270,17 @@
 <h3>Installing Rider On Your Own Computer</h3>
 <p>You can download Rider <a href="https://www.jetbrains.com/rider/download/">from their website</a>, for any operating system. Note that, as a student, you can <a href="https://www.jetbrains.com/community/education/#students">obtain a licence for free</a>: simply <a href="https://www.jetbrains.com/shop/eform/students">fill out this form</a>, making sure you use your <span class="citation" data-cites="augusta.edu">@augusta.edu</span> email account, and you should receive a free licence instantaneously!</p>
 <p>Note that Jetbrains offers to use a SHA-256 checksum (for instance, <a href="https://download.jetbrains.com/rider/JetBrains.Rider-2021.1.2.tar.gz.sha256">for the linux version</a>) for you to check that your download has not been tampered with. In any case, you can <a href="https://www.jetbrains.com/help/rider/Installation_guide.html#standalone">consult their detailled instructions</a> to install and execute Rider on any operating system.</p>
+<!-- GEANY DOCUMENTATION IN NEED OF REVIEW -->
+</section>
+<section id="installing-geany-on-your-own-computer" class="level3">
+<h3>Installing Geany On Your Own Computer</h3>
+<p><strong>Note:</strong> This method will only allow you edit and compile individual .cs files, and will not compile C# Solution Projects (which will be required by the fifth week of lab). We would recommend learning another one of the IDEs listed above. If you still seek to use Geany throughout this course, you will be on your own to find a way to configure Geany to work with C# Solution Projects.</p>
+<p>You can download Geany <a href="https://www.geany.org/">from their website</a>, for any operating system.</p>
+<p>Unfortunately, Geany does not natively build and compile C# code. To use Geany as a text editor for C#, we must download the Mono C# compiler <a href="https://www.mono-project.com/download/stable/">from their website</a>. Make sure to download the most recent version to assure your compiler has the most up-to-date version of “.NET”. Once you download Mono, locate the “csc.bat” file in Mono’s “bin” folder and copy the file path. Now open a .cs file using Geany. Click the arrow next to the “Build” Button and click “Set Build Commands” from the dropdown menu.</p>
+<p>In the “Set Build Commands” window, erase the entry next to the “Compile” button and paste the file path to the “csc.bat” in qutotation marks. After the file path, create a single space followed by “%f” with the quotaion marks. Confirm the change by clicking OK and now you will be able to compile, build, and execute <strong>standalone</strong> .cs files.</p>
+<figure>
+<img src="./img/setBuildCommand.svg" alt="Set Build Commands Example" /><figcaption aria-hidden="true">Set Build Commands Example</figcaption>
+</figure>
 </section>
 <section id="installing-anything-anywhere" class="level3">
 <h3>Installing Anything Anywhere</h3>
