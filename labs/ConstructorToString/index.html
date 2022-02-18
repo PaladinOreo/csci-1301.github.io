@@ -249,13 +249,13 @@
 <header id="title-block-header">
 <h1 class="title">Constructors and ToString</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">February 8, 2022 (05:58:41 PM)</p>
+<p class="date">February 18, 2022 (01:32:28 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
 <li><a href="#adding-constructors-and-tostring-to-an-existing-class">Adding Constructors and ToString to An Existing Class</a>
 <ul>
-<li><a href="#a-constructor-for-preciserectangle">A Constructor for PreciseRectangle</a></li>
+<li><a href="#a-constructor-for-rectangle">A Constructor for Rectangle</a></li>
 <li><a href="#a-tostring-method">A ToString Method</a></li>
 </ul></li>
 <li><a href="#a-room-class">A Room Class</a>
@@ -270,29 +270,29 @@
 <section id="adding-constructors-and-tostring-to-an-existing-class" class="level1">
 <h1>Adding Constructors and ToString to An Existing Class</h1>
 <p>As a warm-up, you will practice writing constructors and ToString methods by adding them to a class you have already written.</p>
-<section id="a-constructor-for-preciserectangle" class="level2">
-<h2>A Constructor for PreciseRectangle</h2>
+<section id="a-constructor-for-rectangle" class="level2">
+<h2>A Constructor for Rectangle</h2>
 <ol>
-<li>Open the “PreciseRectangle” project you created in the “PreciseRectangle and Circle” lab.</li>
-<li>In “PreciseRectangle.cs”, add a constructor to <code class="sourceCode cs">PreciseRectangle</code> that takes two arguments, a length and a width, and uses them to initialize the <code class="sourceCode cs">length</code> and <code class="sourceCode cs">width</code> attributes.</li>
-<li>Within your <code class="sourceCode cs">Main</code> method, you will notice that your <code class="sourceCode cs"><span class="kw">new</span> <span class="fu">PreciseRectangle</span><span class="op">()</span></code> instantiation statements are now highlighted as errors, because <code class="sourceCode cs">PreciseRectangle</code> no longer has a zero-argument constructor. Change each instantiation statement to call your new two-argument constructor, using the initial length and width values that you previously used in <code class="sourceCode cs"><span class="fu">SetLength</span><span class="op">()</span></code> and <code class="sourceCode cs"><span class="fu">SetWidth</span><span class="op">()</span></code>.</li>
-<li>Compile and run your program and make sure your PreciseRectangles still behave as expected.</li>
+<li>Open the “Rectangle” project you created in the “Rectangle Class” lab.</li>
+<li>In “Rectangle.cs”, add a constructor to <code class="sourceCode cs">Rectangle</code> that takes two arguments, a length and a width, and uses them to initialize the <code class="sourceCode cs">length</code> and <code class="sourceCode cs">width</code> attributes.</li>
+<li>Within your <code class="sourceCode cs">Main</code> method, you will notice that your <code class="sourceCode cs"><span class="kw">new</span> <span class="fu">Rectangle</span><span class="op">()</span></code> instantiation statements are now highlighted as errors, because <code class="sourceCode cs">Rectangle</code> no longer has a zero-argument constructor. Change each instantiation statement to call your new two-argument constructor, using the initial length and width values that you previously used in <code class="sourceCode cs"><span class="fu">SetLength</span><span class="op">()</span></code> and <code class="sourceCode cs"><span class="fu">SetWidth</span><span class="op">()</span></code>.</li>
+<li>Compile and run your program and make sure your Rectangles still behave as expected.</li>
 </ol>
 </section>
 <section id="a-tostring-method" class="level2">
 <h2>A ToString Method</h2>
-<p>In the <code class="sourceCode cs">Main</code> method of your program, you should have one or more statements that display the length and width of a PreciseRectangle, e.g. to test the result of your <code class="sourceCode cs">Swap</code> method, like this:</p>
+<p>In the <code class="sourceCode cs">Main</code> method of your program, you should have one or more statements that display the length and width of a Rectangle, e.g. to test the result of your <code class="sourceCode cs">Swap</code> method, like this:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;My rectangle has length {myRectangle.GetLength()} and width {myRectangle.GetWidth()}&quot;</span><span class="op">);</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>myRectangle<span class="op">.</span><span class="fu">Swap</span><span class="op">();</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;My rectangle has length {myRectangle.GetLength()} and width {myRectangle.GetWidth()}&quot;</span><span class="op">);</span></span></code></pre></div>
-<p>We will add a <code class="sourceCode cs">ToString</code> method to <code class="sourceCode cs">PreciseRectangle</code> to make it easier to write these statements.</p>
+<p>We will add a <code class="sourceCode cs">ToString</code> method to <code class="sourceCode cs">Rectangle</code> to make it easier to write these statements.</p>
 <ol>
-<li><p>In “PreciseRectangle.cs”, add the following method to <code class="sourceCode cs">PreciseRectangle</code>:</p>
+<li><p>In “Rectangle.cs”, add the following method to <code class="sourceCode cs">Rectangle</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">override</span> <span class="dt">string</span> <span class="fu">ToString</span><span class="op">()</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> $<span class="st">&quot;Rectangle with length {length} and width {width}&quot;</span><span class="op">;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
-<li><p>Within your <code class="sourceCode cs">Main</code> method, find a <code class="sourceCode cs">WriteLine</code> statement that displays the length and width of a <code class="sourceCode cs">PreciseRectangle</code>, and replace the calls to <code class="sourceCode cs">GetLength</code> and <code class="sourceCode cs">GetWidth</code> with a single call to <code class="sourceCode cs">ToString</code>. For example, you can replace the statement</p>
+<li><p>Within your <code class="sourceCode cs">Main</code> method, find a <code class="sourceCode cs">WriteLine</code> statement that displays the length and width of a <code class="sourceCode cs">Rectangle</code>, and replace the calls to <code class="sourceCode cs">GetLength</code> and <code class="sourceCode cs">GetWidth</code> with a single call to <code class="sourceCode cs">ToString</code>. For example, you can replace the statement</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;My rectangle has length {myRectangle.GetLength()} and width {myRectangle.GetWidth()}&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>with</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;My rectangle: {myRectangle.ToString()}&quot;</span><span class="op">);</span></span></code></pre></div></li>
