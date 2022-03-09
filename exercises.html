@@ -250,7 +250,7 @@
 <header id="title-block-header">
 <h1 class="title">Exercises</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">March 9, 2022 (10:16:51 AM)</p>
+<p class="date">March 9, 2022 (02:01:55 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -283,6 +283,11 @@
 <ul>
 <li><a href="#part-i-questions-5">Part I — Questions</a></li>
 </ul></li>
+<li><a href="#quizzes">Quizzes</a>
+<ul>
+<li><a href="#quiz-1">Quiz 1</a></li>
+<li><a href="#quiz-2">Quiz 2</a></li>
+</ul></li>
 </ul>
 </nav>
 <!--
@@ -304,16 +309,16 @@
 <li><p>Give a specific characteristic of C# compared to other programming languages.</p></li>
 <li><p>Is the C# compiler case-sensitive?</p></li>
 <li><p>Give three keywords.</p></li>
-<li><p>Write a statement that would display, “Hi Mom!” (without the quotes) followed by a new line on the screen, once inserted in a proper method, compiled, and executed.</p></li>
 <li><p>Write a statement that would display, “Hello!” (without the quotes) followed by a new line on the screen, once inserted in a proper method, compiled, and executed.</p></li>
 <li><p>What is the limitation, if any, to the number of methods you can have per class? Why is the method called <code class="sourceCode cs">Main</code> special?</p></li>
 <li><p>What is a namespace?</p></li>
 <li><p>Which of the following, if any, are keywords? <code class="sourceCode cs">Welcome1 <span class="kw">public</span> apples <span class="dt">int</span> <span class="st">&quot;I’m a string&quot;</span></code></p></li>
 <li><p>Why are variables called “variables”?</p></li>
-<li><p>What is the difference, if any, between <code class="sourceCode cs"><span class="dv">3</span></code> and <code class="sourceCode cs"><span class="st">&quot;3&quot;</span></code>?</p></li>
-<li><p>What is the difference, if any, between the <code class="sourceCode cs">WriteLine</code> and <code class="sourceCode cs">Write</code> methods?</p></li>
+<li><p>What is the difference, if any, between <code class="sourceCode cs"><span class="dv">12</span></code>, and <code class="sourceCode cs"><span class="st">&quot;12&quot;</span></code>?</p></li>
+<li><p>Write a statement that would display the following on the screen: <code class="sourceCode cs">Hi Mom<span class="op">!</span>↵     How are you doing<span class="op">?</span></code></p></li>
 <li><p>Assume we have a variable whose name is <code class="sourceCode cs">myVariable</code>, type is <code class="sourceCode cs"><span class="dt">string</span></code>, and value is <code class="sourceCode cs"><span class="st">&quot;My message&quot;</span></code>. What would be displayed on the screen by the following statement? <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Here is my variable: {myVariable}&quot;</span><span class="op">);</span></code></p></li>
-<li><p>Which of the following are correct identifier names? <code class="sourceCode cs">`$myHome3 <span class="kw">class</span> my<span class="op">%</span>variable ANewHope _train _ThisIsAVariable statement `</code> Is the name <code class="sourceCode cs">myVariable</code> the same as <code class="sourceCode cs">myvariable</code>? If not, why?</p></li>
+<li><p>Assume we have a variable whose name is <code class="sourceCode cs">level</code>, whose type is <code class="sourceCode cs"><span class="dt">string</span></code>, and whose value is <code class="sourceCode cs"><span class="st">&quot;Easy&quot;</span></code>. What would be displayed at the screen by the following statement? <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;You set the difficulty to {level}.&quot;</span><span class="op">);</span></code></p></li>
+<li><p>Which of the following are correct identifier names? <code class="sourceCode cs">$myHome3 <span class="kw">class</span> my<span class="op">%</span>variable ANewHope _train _ThisIsAVariable statement</code> Is the name <code class="sourceCode cs">myVariable</code> the same as <code class="sourceCode cs">myvariable</code>? If not, why?</p></li>
 <li><p>Which of the following are keywords?</p>
 <p><code class="sourceCode cs">myClass <span class="kw">static</span> Lab3<span class="op">-</span>Exo1 “Hello World” <span class="kw">using</span> Lab3_Part1</code></p></li>
 <li><p>Which one(s) of the following, if any, is a correct assignment (assuming that <code class="sourceCode cs">variable</code>, <code class="sourceCode cs">x</code> and <code class="sourceCode cs">apples</code> have been declared as <code class="sourceCode cs"><span class="dt">int</span></code> variables)?</p>
@@ -483,7 +488,7 @@
 </tr>
 </tbody>
 </table>
-<p>? Certainly, the result is not the same and there are other possibile ways this calculation may be performed!</p>
+<p>Certainly, the result is not the same and there are other possibile ways this calculation may be performed!</p>
 <p>Actually, C# uses the following three rules:</p>
 <ol>
 <li><p><code class="sourceCode cs"><span class="op">*</span></code>, <code class="sourceCode cs"><span class="op">/</span></code>, and <code class="sourceCode cs"><span class="op">%</span></code>, called the “multiplicative operations,” are always evaluated before <code class="sourceCode cs"><span class="op">+</span></code> and <code class="sourceCode cs"><span class="op">-</span></code>, called the “additive operations.” So that, for instance,</p>
@@ -565,6 +570,7 @@ Press any key to continue . . .</code></pre></li>
 <li><p>Write the complete implementation of a class that contains two attributes (with different data types), a setter for one attribute, a getter for the other attribute, a custom constructor, and a <code class="sourceCode cs">ToString</code> method. You can re-use an example from a lecture or a lab, as long as it satisfies those conditions, or you can invent one. No need to write an application program.</p></li>
 <li><p>What does the keyword <code class="sourceCode cs"><span class="kw">return</span></code> do?</p></li>
 <li><p>Write a getter for an attribute of type <code class="sourceCode cs"><span class="dt">string</span></code> named <code class="sourceCode cs">myName</code>.</p></li>
+<li><p>Write a setter for an attribute of type <code class="sourceCode cs"><span class="dt">int</span></code> named <code class="sourceCode cs">myAge</code>.</p></li>
 <li><p>Assuming <code class="sourceCode cs">name</code> is a <code class="sourceCode cs"><span class="dt">string</span></code> instance variable, there is problem with the following setter. Fix it.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">int</span> <span class="fu">SetName</span><span class="op">(</span><span class="dt">string</span> val<span class="op">){</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> val<span class="op">;</span></span>
@@ -598,6 +604,7 @@ Press any key to continue . . .</code></pre></li>
 <p>What is the name of the class, what are the methods and attributes of the class?</p></li>
 <li><p>Is it possible to have more than one constructor defined for a class? If yes, how can C# know which one is called?</p></li>
 <li><p>Write a constructor for a <code class="sourceCode cs">Soda</code> class with one <code class="sourceCode cs"><span class="dt">string</span></code> attribute called <code class="sourceCode cs">name</code>.</p></li>
+<li><p>Assume we have a <code class="sourceCode cs">Polygon</code> class, that have only one attribute, an <code class="sourceCode cs"><span class="dt">int</span></code> called <code class="sourceCode cs">numberOfSides</code>. Write a constructor for that class.</p></li>
 <li><p>What is the “default” constructor? Do we always have the possibility of using it?</p></li>
 <li><p>Consider the following partial class definition:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Book</span>
@@ -675,19 +682,19 @@ Press any key to continue . . .</code></pre></li>
 <ol>
 <li><p>What is sequential processing?</p></li>
 <li><p>Decide if the following boolean expressions will evaluate to <code class="sourceCode cs"><span class="kw">true</span></code> or <code class="sourceCode cs"><span class="kw">false</span></code>:</p>
-<ul>
+<ol>
 <li><code class="sourceCode cs"><span class="dv">3</span> <span class="op">&gt;</span> <span class="fl">2.0</span> <span class="op">&amp;&amp;</span> <span class="kw">false</span></code></li>
 <li><code class="sourceCode cs"><span class="op">(</span><span class="dv">4</span> <span class="op">!=</span> <span class="dv">3</span><span class="op">)</span> <span class="op">||</span>  <span class="kw">false</span></code></li>
 <li><code class="sourceCode cs"><span class="ch">&#39;A&#39;</span> <span class="op">==</span> <span class="ch">&#39;b&#39;</span> <span class="op">&amp;&amp;</span> <span class="op">!</span> <span class="kw">false</span></code></li>
 <li><code class="sourceCode cs"><span class="op">(!</span> <span class="kw">false</span><span class="op">)</span> <span class="op">==</span> <span class="op">(</span><span class="kw">true</span> <span class="op">||</span>  <span class="dv">4</span> <span class="op">==</span> <span class="dv">3</span><span class="op">)</span></code></li>
-</ul></li>
+</ol></li>
 <li><p>Decide if the following Boolean expressions will evaluate to <code class="sourceCode cs"><span class="kw">true</span></code> or <code class="sourceCode cs"><span class="kw">false</span></code>:</p>
-<ul>
+<ol>
 <li><code class="sourceCode cs"><span class="dv">3</span> <span class="op">&gt;</span> <span class="fl">2.0</span> <span class="op">||</span> <span class="kw">true</span></code></li>
 <li><code class="sourceCode cs"><span class="op">(</span><span class="dv">4</span> <span class="op">!=</span> <span class="dv">3</span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="kw">false</span></code></li>
-<li><code class="sourceCode cs"><span class="ch">&#39;A&#39;</span> <span class="op">==</span> <span class="ch">&#39;b&#39;</span> <span class="op">&amp;&amp;</span> <span class="op">!</span> <span class="kw">false</span></code></li>
+<li><code class="sourceCode cs"><span class="ch">&#39;A&#39;</span> <span class="op">==</span> <span class="ch">&#39;b&#39;</span> <span class="op">||</span> <span class="op">!</span> <span class="kw">false</span></code></li>
 <li><code class="sourceCode cs"><span class="op">(!</span> <span class="kw">true</span><span class="op">)</span> <span class="op">==</span> <span class="op">(</span><span class="kw">true</span> <span class="op">||</span>  <span class="dv">4</span> <span class="op">!=</span> <span class="dv">3</span><span class="op">)</span></code></li>
-</ul></li>
+</ol></li>
 <li><p>For each of the following Boolean expressions, decide if it will evaluate to <code class="sourceCode cs"><span class="kw">true</span></code> or <code class="sourceCode cs"><span class="kw">false</span></code>:</p>
 <ol>
 <li><code class="sourceCode cs"><span class="op">(</span><span class="ch">&#39;y&#39;</span> <span class="op">==</span> <span class="ch">&#39;Y&#39;</span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="kw">true</span></code></li>
@@ -700,7 +707,7 @@ Press any key to continue . . .</code></pre></li>
 <li><code class="sourceCode cs"><span class="op">(</span><span class="ch">&#39;y&#39;</span> <span class="op">!=</span> <span class="ch">&#39;Y&#39;</span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="kw">true</span></code></li>
 <li><code class="sourceCode cs"><span class="dv">6</span> <span class="op">+</span> <span class="dv">2</span> <span class="op">&lt;</span> <span class="dv">12</span> <span class="op">||</span>  <span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">4</span></code></li>
 <li><code class="sourceCode cs"><span class="op">(</span><span class="kw">true</span> <span class="op">&amp;&amp;</span> <span class="dv">4</span> <span class="op">&gt;=</span> <span class="dv">3</span><span class="op">)</span> <span class="op">==</span> <span class="kw">false</span></code></li>
-<li><code class="sourceCode cs"><span class="dv">13</span> <span class="op">&lt;=</span> <span class="dv">4</span> \<span class="op">*</span> <span class="dv">3</span> <span class="op">||</span>  <span class="op">!</span><span class="kw">false</span></code></li>
+<li><code class="sourceCode cs"><span class="dv">13</span> <span class="op">&lt;=</span> <span class="dv">4</span> <span class="op">*</span> <span class="dv">3</span> <span class="op">||</span>  <span class="op">!</span><span class="kw">false</span></code></li>
 </ol></li>
 <li><p>What is the relational operator used to determine whenever two values are different?</p></li>
 <li><p>Give three relational operators, and then two logical operators.</p></li>
@@ -712,8 +719,17 @@ Press any key to continue . . .</code></pre></li>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    myFlag <span class="op">=</span> <span class="kw">true</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div></li>
 <li><p>Write an <code class="sourceCode cs"><span class="kw">if</span></code> statement that prints “Bonjour !” if the value of the <code class="sourceCode cs"><span class="dt">char</span></code> variable <code class="sourceCode cs">lang</code> is <code class="sourceCode cs"><span class="ch">&#39;f&#39;</span></code>.</p></li>
+<li><p>For each of the following boolean expressions, decide if it will evaluate to <code class="sourceCode cs"><span class="kw">true</span></code> or <code class="sourceCode cs"><span class="kw">false</span></code> when the boolean variables <code class="sourceCode cs">x</code>, <code class="sourceCode cs">y</code> and <code class="sourceCode cs">z</code> are all set to <code class="sourceCode cs"><span class="kw">true</span></code>:</p>
+<ul>
+<li><code class="sourceCode cs">x <span class="op">||</span>  y <span class="op">&amp;&amp;</span> z</code></li>
+<li><code class="sourceCode cs"><span class="op">!</span>x <span class="op">||</span>  y <span class="op">&amp;&amp;</span> z</code></li>
+<li><code class="sourceCode cs"><span class="op">!(</span>x <span class="op">||</span>  y<span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="op">(</span>z <span class="op">&amp;&amp;</span> y<span class="op">)</span></code></li>
+<li><code class="sourceCode cs"><span class="op">(!</span>x <span class="op">&amp;&amp;</span> x<span class="op">)</span> <span class="op">||</span>  <span class="op">(!</span>x <span class="op">||</span>  x<span class="op">)</span></code></li>
+</ul>
+<p>Do the same when they are all set to <code class="sourceCode cs"><span class="kw">false</span></code>.</p></li>
 <li><p>Write a <code class="sourceCode cs">boolean</code> expression that evaluates to <code class="sourceCode cs"><span class="kw">true</span></code> if a variable <code class="sourceCode cs">x</code> is between 3 (excluded) and 5 (included).</p></li>
-<li><p>Write an <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statement that assigns <code class="sourceCode cs"><span class="st">&quot;Minor&quot;</span>\</code> to an already declared <code class="sourceCode cs"><span class="dt">string</span></code> variable <code class="sourceCode cs">legalStatus</code> if <code class="sourceCode cs">age</code> is strictly less than 18, and that assigns <code class="sourceCode cs"><span class="st">&quot;Major&quot;</span></code> to <code class="sourceCode cs">legalStatus</code> otherwise.</p></li>
+<li><p>Write an <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statement that assigns <code class="sourceCode cs"><span class="st">&quot;Minor&quot;</span></code> to an already declared <code class="sourceCode cs"><span class="dt">string</span></code> variable <code class="sourceCode cs">legalStatus</code> if <code class="sourceCode cs">age</code> is strictly less than 18, and that assigns <code class="sourceCode cs"><span class="st">&quot;Major&quot;</span></code> to <code class="sourceCode cs">legalStatus</code> otherwise.</p></li>
+<li><p>Write an <code class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code> statement that displays “It’s free for you!” if an <code class="sourceCode cs"><span class="dt">int</span></code> variable <code class="sourceCode cs">age</code> is between 0 and 18, and “It’s $5.00.” otherwise.</p></li>
 <li><p>Assume we initialized an <code class="sourceCode cs"><span class="dt">int</span></code> variable called <code class="sourceCode cs">courseNumber</code> and a <code class="sourceCode cs"><span class="dt">string</span></code> variable called <code class="sourceCode cs">courseCode</code>. Write a series of statements that will display:</p>
 <ol>
 <li>“I’m taking this class!” if <code class="sourceCode cs">courseNumber</code> is <code class="sourceCode cs"><span class="dv">1301</span></code> and <code class="sourceCode cs">courseCode</code> is <code class="sourceCode cs">CSCI</code>;</li>
@@ -730,6 +746,14 @@ Press any key to continue . . .</code></pre></li>
 <li>“I hope you’ll have an in-person ceremony!” otherwise.</li>
 </ol>
 <p>Your program should display exactly one message.</p></li>
+<li><p>Assume we previously initialized a <code class="sourceCode cs"><span class="dt">char</span></code> variable called <code class="sourceCode cs">myChar</code>. Write a series of statements that will display if the character is…</p>
+<ol>
+<li>Uppercase</li>
+<li>Lowercase</li>
+<li>A number</li>
+<li>or none of those.</li>
+</ol>
+<p>Your program should display exactly one message. Bonus: Make your message also display the ASCII value of the character.</p></li>
 <li><p>What will be displayed on the screen by the following program?</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">3</span><span class="op">,</span> y <span class="op">=</span> <span class="dv">2</span><span class="op">,</span> z <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>x <span class="op">&gt;</span> y<span class="op">)</span> <span class="op">{</span>z <span class="op">+=</span> y<span class="op">;}</span></span>
@@ -741,7 +765,7 @@ Press any key to continue . . .</code></pre></li>
 <div class="sourceCode" id="cb21"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">3</span><span class="op">,</span> y <span class="op">=</span> <span class="dv">2</span><span class="op">,</span> z <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>y <span class="op">&gt;=</span> z<span class="op">)</span> <span class="op">{</span>z <span class="op">+=</span> y<span class="op">;}</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>x <span class="op">!=</span> y<span class="op">)</span> <span class="op">{</span> <span class="kw">if</span> <span class="op">(</span><span class="kw">false</span><span class="op">)</span> <span class="op">{</span>z <span class="op">-=</span> <span class="dv">3</span><span class="op">;}</span> <span class="kw">else</span> <span class="op">{</span>z <span class="op">+=</span> x<span class="op">;}}</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLinef</span><span class="op">(</span>$<span class="st">&quot;x is {x}, y is {y}, and z is {z}.&quot;</span><span class="op">);</span></span></code></pre></div></li>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;x is {x}, y is {y}, and z is {z}.&quot;</span><span class="op">);</span></span></code></pre></div></li>
 <li><p>Give an example of an <code class="sourceCode cs"><span class="kw">if</span></code> statement that could not be rewritten as a <code class="sourceCode cs"><span class="kw">switch</span></code>.</p></li>
 </ol>
 </section>
@@ -836,48 +860,138 @@ Your total is $27.00. You had a 10% discount!</code></pre></li>
 <h2>Part I — Questions</h2>
 <ol>
 <li><p>Write a statement that creates a 10-element <code class="sourceCode cs"><span class="dt">int</span></code> array named <code class="sourceCode cs">numbers</code>.</p></li>
-<li><p>What is wrong with the following array declaration?</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> books <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[-</span><span class="dv">1</span><span class="op">];</span></span></code></pre></div></li>
+<li><p>In the following, what is the value of the size declarator? What is the value of the index?</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> numbers<span class="op">;</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">8</span><span class="op">];</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>numbers<span class="op">[</span><span class="dv">4</span><span class="op">]</span> <span class="op">=</span> <span class="dv">9</span><span class="op">;</span></span></code></pre></div></li>
+<li><p>Draw the content of the <code class="sourceCode cs">scores</code> array once those statements have been executed.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> scores <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">3</span><span class="op">];</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>scores<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">=</span> <span class="dv">13</span><span class="op">;</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>scores<span class="op">[</span><span class="dv">2</span><span class="op">]</span> <span class="op">=</span> <span class="dv">25</span><span class="op">;</span></span></code></pre></div></li>
 <li><p>What will be displayed on the screen by the following program?</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> num <span class="op">=</span> <span class="dv">3</span> <span class="op">;</span> num <span class="op">&lt;=</span> <span class="dv">5</span> <span class="op">;</span> num<span class="op">++)</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>num <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb30"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> num <span class="op">=</span> <span class="dv">3</span> <span class="op">;</span> num <span class="op">&lt;=</span> <span class="dv">5</span> <span class="op">;</span> num<span class="op">++)</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>num <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span></code></pre></div></li>
 <li><p>Write a ‘for’ loop that displays on the screen the sequence “1,  2,  3,  4,  5,  6,  7,  8,  9,  10, ”.</p></li>
 <li><p>Write a ‘for’ loop that displays on the screen the sequence “1,  2,  3,  4,  5,  6,  7,  8,  9,  10”, (note that there is no comma after 10).</p></li>
 <li><p>Write a ‘for’ loop that displays on the screen the sequence “1 3 5 7 9 ”.</p></li>
 <li><p>Given an <code class="sourceCode cs"><span class="dt">int</span></code> variable <code class="sourceCode cs">myVar</code> initialized with a positive value, write a loop that sums the integers between 0 and <code class="sourceCode cs">myVar</code> (i.e., <span class="math inline">0 + 1 + ⋯ + (myVar−1) + myVar</span>).</p></li>
 <li><p>Consider the following code:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> y <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> y <span class="op">&lt;=</span> <span class="dv">3</span><span class="op">;</span> y<span class="op">++)</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> z <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> z <span class="op">&lt;</span> <span class="dv">5</span><span class="op">;</span> z<span class="op">++)</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Scene &quot;</span> <span class="op">+</span> y <span class="op">+</span> <span class="st">&quot;, take &quot;</span> <span class="op">+</span> z <span class="op">+</span> <span class="st">&quot;. &quot;</span> <span class="op">);</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">();</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> y <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> y <span class="op">&lt;=</span> <span class="dv">3</span><span class="op">;</span> y<span class="op">++)</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> z <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> z <span class="op">&lt;</span> <span class="dv">5</span><span class="op">;</span> z<span class="op">++)</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;Scene &quot;</span> <span class="op">+</span> y <span class="op">+</span> <span class="st">&quot;, take &quot;</span> <span class="op">+</span> z <span class="op">+</span> <span class="st">&quot;. &quot;</span> <span class="op">);</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">();</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>How many times does the outer loop iterate (i.e., how many scenes are shot)? How many times does the inner loop iterate (i.e., how many takes for each scene)? Finally, what is the total number of iterations of the nested loops (i.e., how many takes are made, total)?</p></li>
 <li><p>What will be displayed on the screen by the following code?</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> values <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">6</span><span class="op">];</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span> <span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">6</span> <span class="op">;</span> i<span class="op">++)</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    values<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> <span class="op">(</span>i<span class="op">*</span><span class="dv">2</span><span class="op">);</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">int</span> j <span class="kw">in</span> values<span class="op">)</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>j<span class="op">);</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb32"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> values <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">6</span><span class="op">];</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span> <span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">6</span> <span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    values<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> <span class="op">(</span>i<span class="op">*</span><span class="dv">2</span><span class="op">);</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">int</span> j <span class="kw">in</span> values<span class="op">)</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>j<span class="op">);</span></span></code></pre></div></li>
 <li><p>Suppose we are given an <code class="sourceCode cs"><span class="dt">int</span></code> array <code class="sourceCode cs">dailyPushUp</code> with 7 elements. Write a piece of code that display the value of the elements stored in the array <code class="sourceCode cs">dailyPushUp</code>.</p></li>
 <li><p>What is “array bounds checking”? When does it happen?</p></li>
 <li><p>What would be the size of the <code class="sourceCode cs">test</code> array after the following statement has been executed?</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> test <span class="op">=</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">9</span><span class="op">};</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb33"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> test <span class="op">=</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">9</span><span class="op">};</span></span></code></pre></div></li>
 <li><p>Write a statement that creates and initializes a <code class="sourceCode cs"><span class="dt">double</span></code> array with the values 12.5, 89.0 and 3.24.</p></li>
 <li><p>What is the value of <code class="sourceCode cs">count</code> and the content of <code class="sourceCode cs">number</code> once the following has been executed?</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> count<span class="op">=</span><span class="dv">2</span><span class="op">;</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> number<span class="op">={</span><span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">7</span><span class="op">};</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>number<span class="op">[</span>count<span class="op">--]</span> <span class="op">=</span> <span class="dv">8</span><span class="op">;</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>number<span class="op">[</span>count<span class="op">]--;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb34"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> count<span class="op">=</span><span class="dv">2</span><span class="op">;</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> number<span class="op">={</span><span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">7</span><span class="op">};</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>number<span class="op">[</span>count<span class="op">--]</span> <span class="op">=</span> <span class="dv">8</span><span class="op">;</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>number<span class="op">[</span>count<span class="op">]--;</span></span></code></pre></div></li>
 <li><p>Describe what the following code would do.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> record <span class="op">=</span> <span class="op">{</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">8</span><span class="op">,</span> <span class="dv">11</span> <span class="op">};</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> accumulator <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">int</span> i <span class="kw">in</span> record<span class="op">)</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    accumulator <span class="op">+=</span> i<span class="op">;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb35"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> record <span class="op">=</span> <span class="op">{</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">8</span><span class="op">,</span> <span class="dv">11</span> <span class="op">};</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> accumulator <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">int</span> i <span class="kw">in</span> record<span class="op">)</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    accumulator <span class="op">+=</span> i<span class="op">;</span></span></code></pre></div></li>
 <li><p>Assuming we are given an <code class="sourceCode cs"><span class="dt">int</span></code> array named <code class="sourceCode cs">arrayF</code>, write a program that adds one to each of its elements. That is, if <code class="sourceCode cs">arrayF</code> contains 3, 5, 7 and -2 before your program is executed, it should then contain 4, 6, 8 and -1 after your program was executed.</p></li>
 <li><p>Assuming we are given an <code class="sourceCode cs"><span class="dt">int</span></code> array named <code class="sourceCode cs">arrayF</code>, write a program that displays the product of its elements. That is, if <code class="sourceCode cs">arrayF</code> contains 2, 3 and -1, then your program should display -6.</p></li>
 <li><p>Write a static method (header included) that takes as argument an <code class="sourceCode cs"><span class="dt">int</span></code> array, and display on the screen the value of each element of that array.</p></li>
 <li><p>Write a static method (header included) that takes as argument an <code class="sourceCode cs"><span class="dt">int</span></code> array, and stores the value 10 in each element of that array.</p></li>
+</ol>
+</section>
+</section>
+<section id="quizzes" class="level1">
+<h1>Quizzes</h1>
+<p>Those quizzes are given as <em>examples</em>, to help you practise. They were given at week 4 and 7.</p>
+<section id="quiz-1" class="level2">
+<h2>Quiz 1</h2>
+<ol>
+<li><p>(3 pts) Give three keywords.</p></li>
+<li><p>(4pts) Circle the correct identifiers:</p>
+<ul>
+<li><code class="text">%Rate</code></li>
+<li><code class="text">static</code></li>
+<li><code class="text">my-variable</code></li>
+<li><code class="text">User.Input</code></li>
+<li><code class="text">YoUrNaMe21</code></li>
+<li><code class="text">test_train</code></li>
+<li><code class="text">_myIdentifier</code></li>
+</ul></li>
+<li><p>(4 pts) For each of the following, indicate if they are a “rule” of C# or a “convention” between programers by ticking the appropriate column. The first answer is given as an example.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Statement</th>
+<th>Rule</th>
+<th>Convention</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Code should be commented.</td>
+<td>             </td>
+<td>      ✓       </td>
+</tr>
+<tr class="even">
+<td>Case matters.</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Variable names should be descriptive.</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Keywords cannot be used as identifiers.</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Each “.cs” file should contain exactly one class.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></li>
+<li><p>(4 pts) Write a statement that would display, “Hi Mom!” (<em>with</em> the quotes) followed by a new line on the screen.</p></li>
+<li><p>(5 pts) Write a series of statements that would</p>
+<ol>
+<li>declare an <code class="sourceCode cs"><span class="dt">int</span></code> variable called “myAge”,</li>
+<li>assign your age to that variable,</li>
+<li>display “My age is”, the value of the “myAge” variable, a period, and finally a new line.</li>
+</ol></li>
+<li><p>(Bonus) Give examples of situations where the adage “<em>Spaces and new lines don’t matter in programs</em>” is actually erroneous.</p></li>
+</ol>
+</section>
+<section id="quiz-2" class="level2">
+<h2>Quiz 2</h2>
+<ol>
+<li><p>(2 pts) What is the relational operator used to determine whenever two values are equal?</p></li>
+<li><p>(5pts) Write a <code class="sourceCode cs">boolean</code> expression that evaluates to <code class="sourceCode cs"><span class="kw">true</span></code> if a variable <code class="sourceCode cs">x</code> is between -10 (excluded) and 10 (included).</p></li>
+<li><p>(3 pts) What will be displayed on the screen by the following program?</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">,</span> y <span class="op">=</span> <span class="dv">1</span><span class="op">,</span> z <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>x <span class="op">!=</span> z <span class="op">||</span> y <span class="op">&lt;</span> z <span class="op">)</span> <span class="op">{</span>x <span class="op">+=</span> y<span class="op">;}</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>z <span class="op">&gt;</span> y<span class="op">)</span> <span class="op">{</span><span class="kw">if</span> <span class="op">(</span>z <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span>z <span class="op">-=</span> <span class="dv">3</span><span class="op">;}</span> <span class="kw">else</span> <span class="op">{</span>z <span class="op">+=</span> x<span class="op">;}}</span> <span class="kw">else</span> <span class="op">{</span>x <span class="op">=</span> y <span class="op">+</span> z<span class="op">;}</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;x is {x}, y is {y}, and z is {z}.&quot;</span><span class="op">);</span></span></code></pre></div></li>
+<li><p>(8 pts) Assume we initialized a <code class="sourceCode cs"><span class="dt">string</span></code> variable named <code class="sourceCode cs">month</code> and a <code class="sourceCode cs"><span class="dt">double</span></code> variable named <code class="sourceCode cs">temperature</code>. Write a series of statements that will display <em>exactly</em> one of the following messages: “What a nice summer day!” if <code class="sourceCode cs">month</code> is “July” and <code class="sourceCode cs">temperature</code> is less than 90 (included); “Better wear a jacket” if <code class="sourceCode cs">temperature</code> is between 45 and 60 (both included); “Happy holidays!” if <code class="sourceCode cs">month</code> is “December”; or “Have a nice day” otherwise.</p></li>
+<li><p>(Bonus) Give a program that displays “Leap year” if a <code class="sourceCode cs">year</code> variable is</p>
+<ol>
+<li>divisible by 4; and</li>
+<li>not divisible by 100, unless it is also divisible by 400.</li>
+</ol>
+<p>Your program should correctly identify 2000 and 2400 as leap years, and 1800, 1900, 2100, 2200, 2300, or 2500 as <em>not</em> leap years.</p></li>
 </ol>
 </section>
 </section>
