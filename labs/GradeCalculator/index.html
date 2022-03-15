@@ -187,7 +187,7 @@
 <header id="title-block-header">
 <h1 class="title">Grade Calculator</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">March 9, 2022 (02:02:21 PM)</p>
+<p class="date">March 15, 2022 (09:23:29 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -202,7 +202,7 @@
 </nav>
 <section id="presentation" class="level1">
 <h1>Presentation</h1>
-<p>This project will help you in designing and implementing a “grade calculator” for (a variation) of this class.</p>
+<p>This project will help you design and implement a “grade calculator” for (a variation) of this class.</p>
 <p>We will assume that your grade for this class will be computed as follows:</p>
 <table>
 <thead>
@@ -240,8 +240,8 @@
 </tr>
 </tbody>
 </table>
-<p>Our goal is to write a program that asks the user for their grades obtained <em>so far</em> (it is possible that some quizzes, projects, tests are still to be taken, or that the final did not happened yet) and compute their average <em>so far</em>.</p>
-<p>Your program can either ask the user for the number of quizzes, projects, test and exam taken so far, and then ask for the values, or use a sentinel value (as shown in the example below) to know when to “stop”. Note that if the quiz number n, for n &lt; 5, was not taken yet, then you should not ask the grade for quiz n+1, and similarly for projects and in-class tests. It is fine to assume that the user will only enter “correct” numerical values and not to perform any user-input validation, but your program should be flexible enough so that changing the number of quizzes, for instance, would require to change only a variable or a couple of values.</p>
+<p>Our goal is to write a program that asks the user for their grades obtained <em>so far</em> (it is possible that some quizzes, projects, tests are still to be taken, or that the final did not happened yet) and compute their <em>current</em> class average.</p>
+<p>Your program can either ask the user for the number of quizzes, projects, test and exam taken so far, and then ask for the values, or use a sentinel value (as shown in the example below) to know when to “stop”. This means if they say that they’ve taken only 2 quizzes (or put the sentinal value for quiz 3), then the program shouldn’t ask for the later quiz grades (this is also true for the projects and exams). It is fine to assume that the user will only enter “correct” numerical values and not to perform any user-input validation, but your program should be flexible enough so that changing the number of quizzes, for instance, would require to change only a variable or a couple of values.</p>
 <p>An example of execution could be:</p>
 <pre class="text"><code>For all the questions below, enter 
     - your grade, or 
@@ -273,7 +273,7 @@ Press any key to continue . . .</code></pre>
 </section>
 <section id="how-to-get-started" class="level1">
 <h1>How to Get Started?</h1>
-<p>This problem involves a bit of Mathematics that can be tricky to get correctly, and involve cleverly getting the information from the user.</p>
+<p>This problem involves some tricky arithmetic, as well as cleverly getting the information from the user. Below are some hints to help push you in the right direction.</p>
 <section id="hint-1---do-the-math" class="level3">
 <h3>Hint 1 - Do The Math!</h3>
 <p>The first thing you need to do for this problem is to understand the equation needed to compute the grade. Start by trying to reproduce the example given in the project description on paper. Can you get the same result? Can you find a way that seems simple and flexible to compute the current grade so far in all generality?</p>
@@ -290,7 +290,7 @@ Press any key to continue . . .</code></pre>
 </section>
 <section id="a-possible-solution" class="level1">
 <h1>A Possible Solution</h1>
-<p>You can find a possible solution to this problem <a href="Grade_Calculator.zip">in this archive</a>. Note that our solution <em>does not</em> use arrays, but that using arrays would make this program overall simpler. However, the solution is flexible enough (and, hopefully, commented enough) so that you can easily fine-tune it to your particular needs.</p>
+<p>You can find a possible solution to this problem <a href="https://github.com/jweeks2023/csci-1301.github.io/files/8249198/GradeCalculator.zip">GradeCalculator.zip</a> . Note that our solution <em>does not</em> use arrays, but that using arrays would make this program overall simpler. However, the solution is flexible enough (and, hopefully, commented enough) so that you can easily fine-tune it to your particular needs.</p>
 </section>
 </main>
 <footer id="footer">
