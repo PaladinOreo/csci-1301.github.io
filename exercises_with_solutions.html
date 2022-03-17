@@ -250,7 +250,7 @@
 <header id="title-block-header">
 <h1 class="title">Exercises with solutions</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">March 16, 2022 (09:08:50 PM)</p>
+<p class="date">March 17, 2022 (03:59:21 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -2649,7 +2649,15 @@ Solution
 <section id="quiz-1" class="level2">
 <h2>Quiz 1</h2>
 <ol>
-<li><p>(3 pts) Give three keywords.</p></li>
+<li>(3 pts) List three keywords.</li>
+</ol>
+<details>
+<summary>
+Solution
+</summary>
+Keywords are words that have special meanings and cannot be used as identifiers in your program. Examples of C# Keywords include <code class="sourceCode cs"><span class="dt">int</span><span class="op">,</span> <span class="dt">string</span><span class="op">,</span> <span class="kw">if</span><span class="op">,</span> <span class="kw">while</span><span class="op">,</span> <span class="dt">void</span><span class="op">,</span> <span class="kw">else</span><span class="op">,</span> <span class="dt">bool</span></code> etc.
+</details>
+<ol>
 <li><p>(4pts) Circle the correct identifiers:</p>
 <ul>
 <li><code class="text">%Rate</code></li>
@@ -2660,6 +2668,20 @@ Solution
 <li><code class="text">test_train</code></li>
 <li><code class="text">_myIdentifier</code></li>
 </ul></li>
+</ol>
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb112"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a>Valid identifiers can not include reserved words<span class="op">,</span> can not start with a number<span class="op">,</span> and must contain only numbers<span class="op">,</span> letters<span class="op">,</span> and<span class="op">/</span>or the underscore character<span class="op">.</span> The identifiers below follow these rules<span class="op">.</span></span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a>```</span>
+<span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a>my<span class="op">-</span>variable</span>
+<span id="cb112-4"><a href="#cb112-4" aria-hidden="true" tabindex="-1"></a>YoUrNaMe21</span>
+<span id="cb112-5"><a href="#cb112-5" aria-hidden="true" tabindex="-1"></a>test_train</span>
+<span id="cb112-6"><a href="#cb112-6" aria-hidden="true" tabindex="-1"></a>_myIdentifier</span>
+<span id="cb112-7"><a href="#cb112-7" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div>
+</details>
+<ol>
 <li><p>(4 pts) For each of the following, indicate if they are a “rule” of C# or a “convention” between programers by ticking the appropriate column. The first answer is given as an example.</p>
 <table>
 <thead>
@@ -2697,15 +2719,54 @@ Solution
 </tr>
 </tbody>
 </table></li>
-<li><p>(4 pts) Write a statement that would display, “Hi Mom!” (<em>with</em> the quotes) followed by a new line on the screen.</p></li>
-<li><p>(5 pts) Write a series of statements that would</p>
+</ol>
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb113"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a>    Statement <span class="op">|</span> Rule <span class="op">|</span> Convention</span>
+<span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="op">-----------|</span> <span class="op">-----</span> <span class="op">|</span> <span class="op">-----</span> <span class="op">|</span>  </span>
+<span id="cb113-3"><a href="#cb113-3" aria-hidden="true" tabindex="-1"></a>Case matters<span class="op">.</span> <span class="op">|</span>         ✓           <span class="op">|</span>                   </span>
+<span id="cb113-4"><a href="#cb113-4" aria-hidden="true" tabindex="-1"></a>Variable names should be descriptive<span class="op">.</span> <span class="op">|</span>                 <span class="op">|</span>           ✓       </span>
+<span id="cb113-5"><a href="#cb113-5" aria-hidden="true" tabindex="-1"></a>Keywords cannot be used <span class="kw">as</span> identifiers<span class="op">.</span> <span class="op">|</span>           ✓           <span class="op">|</span>           </span>
+<span id="cb113-6"><a href="#cb113-6" aria-hidden="true" tabindex="-1"></a>Each <span class="st">&quot;.cs&quot;</span> file should contain exactly one <span class="kw">class</span><span class="op">.</span> <span class="op">|</span>                 <span class="op">|</span>           ✓</span></code></pre></div>
+</details>
+<ol>
+<li>(4 pts) Write a statement that would display, “Hi Mom!” (<em>with</em> the quotes) followed by a new line on the screen.</li>
+</ol>
+<details>
+<summary>
+Solution
+</summary>
+<code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">Hi Mom!</span><span class="sc">\&quot;\n</span><span class="st">&quot;</span><span class="op">)</span></code>
+</details>
+<ol>
+<li>(5 pts) Write a series of statements that would
 <ol>
 <li>declare an <code class="sourceCode cs"><span class="dt">int</span></code> variable called “myAge”,</li>
 <li>assign your age to that variable,</li>
 <li>display “My age is”, the value of the “myAge” variable, a period, and finally a new line.</li>
-</ol></li>
-<li><p>(Bonus) Give examples of situations where the adage “<em>Spaces and new lines don’t matter in programs</em>” is actually erroneous.</p></li>
 </ol>
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb114"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> myAge<span class="op">;</span></span>
+<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>myAge <span class="op">=</span> <span class="dv">21</span><span class="op">;</span></span>
+<span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;My age is &quot;</span> <span class="op">+</span> myAge <span class="op">+</span> <span class="st">&quot;.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span></code></pre></div>
+</details></li>
+<li>(Bonus) Give examples of situations where the adage “<em>Spaces and new lines don’t matter in programs</em>” is actually erroneous.</li>
+</ol>
+<details>
+<summary>
+Solution
+</summary>
+<p>Spaces and newlines matter when they are used in string data, as whitespace in strings is formatted exactly how it’s typed. Whitespace also matters inbetween words: words in C# must have at least one space between them in order to be compiled correctly (e.g. ‘static void Main()’ and ‘int days = 7’). If there were no spaces in either of the examples, neither of them would compile. They also matter for in-line comments.</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co">// My comment</span></span>
+<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x<span class="op">;</span></span>
+<span id="cb115-3"><a href="#cb115-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span></code></pre></div>
+If you remove the first newline, the program would not compile.
+</details>
 </section>
 <section id="quiz-2" class="level2">
 <h2>Quiz 2</h2>
@@ -2733,10 +2794,10 @@ Solution
 <p>Note that there was no need to write an <code class="sourceCode cs"><span class="kw">if</span></code> statement or a complete statement: onyl the expression was required.</p>
 </details></li>
 <li><p>(3 pts) What will be displayed on the screen by the following program?</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">,</span> y <span class="op">=</span> <span class="dv">1</span><span class="op">,</span> z <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>x <span class="op">!=</span> z <span class="op">||</span> y <span class="op">&lt;</span> z <span class="op">)</span> <span class="op">{</span>x <span class="op">+=</span> y<span class="op">;}</span></span>
-<span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>z <span class="op">&gt;</span> y<span class="op">)</span> <span class="op">{</span><span class="kw">if</span> <span class="op">(</span>z <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span>z <span class="op">-=</span> <span class="dv">3</span><span class="op">;}</span> <span class="kw">else</span> <span class="op">{</span>z <span class="op">+=</span> x<span class="op">;}}</span> <span class="kw">else</span> <span class="op">{</span>x <span class="op">=</span> y <span class="op">+</span> z<span class="op">;}</span></span>
-<span id="cb112-4"><a href="#cb112-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;x is {x}, y is {y}, and z is {z}.&quot;</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">,</span> y <span class="op">=</span> <span class="dv">1</span><span class="op">,</span> z <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>x <span class="op">!=</span> z <span class="op">||</span> y <span class="op">&lt;</span> z <span class="op">)</span> <span class="op">{</span>x <span class="op">+=</span> y<span class="op">;}</span></span>
+<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>z <span class="op">&gt;</span> y<span class="op">)</span> <span class="op">{</span><span class="kw">if</span> <span class="op">(</span>z <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span>z <span class="op">-=</span> <span class="dv">3</span><span class="op">;}</span> <span class="kw">else</span> <span class="op">{</span>z <span class="op">+=</span> x<span class="op">;}}</span> <span class="kw">else</span> <span class="op">{</span>x <span class="op">=</span> y <span class="op">+</span> z<span class="op">;}</span></span>
+<span id="cb116-4"><a href="#cb116-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;x is {x}, y is {y}, and z is {z}.&quot;</span><span class="op">);</span></span></code></pre></div>
 <details>
 <summary>
 <p>Solution</p>
@@ -2751,14 +2812,14 @@ Press any key to continue...</code></pre>
 <summary>
 <p>Solution</p>
 </summary>
-<div class="sourceCode" id="cb114"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span><span class="op">(</span>month<span class="op">==</span><span class="st">&quot;July&quot;</span> <span class="op">&amp;&amp;</span> temperature<span class="op">&lt;=</span><span class="dv">90</span><span class="op">)</span></span>
-<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;What a nice summer day!&quot;</span><span class="op">);</span></span>
-<span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>temperature <span class="op">&gt;=</span> <span class="dv">45</span> <span class="op">&amp;&amp;</span> temperature <span class="op">&lt;=</span> <span class="dv">60</span><span class="op">)</span></span>
-<span id="cb114-4"><a href="#cb114-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Better wear a jacket!&quot;</span><span class="op">);</span></span>
-<span id="cb114-5"><a href="#cb114-5" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>month <span class="op">==</span> <span class="st">&quot;December&quot;</span><span class="op">)</span></span>
-<span id="cb114-6"><a href="#cb114-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Happy Holidays!&quot;</span><span class="op">);</span></span>
-<span id="cb114-7"><a href="#cb114-7" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
-<span id="cb114-8"><a href="#cb114-8" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Have a nice day!&quot;</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span><span class="op">(</span>month<span class="op">==</span><span class="st">&quot;July&quot;</span> <span class="op">&amp;&amp;</span> temperature<span class="op">&lt;=</span><span class="dv">90</span><span class="op">)</span></span>
+<span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;What a nice summer day!&quot;</span><span class="op">);</span></span>
+<span id="cb118-3"><a href="#cb118-3" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>temperature <span class="op">&gt;=</span> <span class="dv">45</span> <span class="op">&amp;&amp;</span> temperature <span class="op">&lt;=</span> <span class="dv">60</span><span class="op">)</span></span>
+<span id="cb118-4"><a href="#cb118-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Better wear a jacket!&quot;</span><span class="op">);</span></span>
+<span id="cb118-5"><a href="#cb118-5" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>month <span class="op">==</span> <span class="st">&quot;December&quot;</span><span class="op">)</span></span>
+<span id="cb118-6"><a href="#cb118-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Happy Holidays!&quot;</span><span class="op">);</span></span>
+<span id="cb118-7"><a href="#cb118-7" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
+<span id="cb118-8"><a href="#cb118-8" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Have a nice day!&quot;</span><span class="op">)</span></span></code></pre></div>
 </details></li>
 <li><p>(Bonus) Give a program that displays “Leap year” if a <code class="sourceCode cs">year</code> variable is</p>
 <ol>
@@ -2770,14 +2831,14 @@ Press any key to continue...</code></pre>
 <summary>
 <p>Solution</p>
 </summary>
-<div class="sourceCode" id="cb115"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>year <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> <span class="op">(</span>year <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span> <span class="op">||</span> year <span class="op">%</span> <span class="dv">400</span> <span class="op">==</span> <span class="dv">0</span><span class="op">))</span></span>
-<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb115-3"><a href="#cb115-3" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The year &quot;</span> <span class="op">+</span> year <span class="op">+</span> <span class="st">&quot; is a leap year.&quot;</span><span class="op">);</span></span>
-<span id="cb115-4"><a href="#cb115-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb115-5"><a href="#cb115-5" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
-<span id="cb115-6"><a href="#cb115-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb115-7"><a href="#cb115-7" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The year &quot;</span> <span class="op">+</span> year <span class="op">+</span> <span class="st">&quot; is not a leap year.&quot;</span><span class="op">);</span></span>
-<span id="cb115-8"><a href="#cb115-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>year <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> <span class="op">(</span>year <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span> <span class="op">||</span> year <span class="op">%</span> <span class="dv">400</span> <span class="op">==</span> <span class="dv">0</span><span class="op">))</span></span>
+<span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb119-3"><a href="#cb119-3" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The year &quot;</span> <span class="op">+</span> year <span class="op">+</span> <span class="st">&quot; is a leap year.&quot;</span><span class="op">);</span></span>
+<span id="cb119-4"><a href="#cb119-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb119-5"><a href="#cb119-5" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
+<span id="cb119-6"><a href="#cb119-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb119-7"><a href="#cb119-7" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The year &quot;</span> <span class="op">+</span> year <span class="op">+</span> <span class="st">&quot; is not a leap year.&quot;</span><span class="op">);</span></span>
+<span id="cb119-8"><a href="#cb119-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
 </details></li>
 </ol>
 </section>
