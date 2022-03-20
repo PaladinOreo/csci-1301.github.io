@@ -250,7 +250,7 @@
 <header id="title-block-header">
 <h1 class="title">Exercises with solutions</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">March 20, 2022 (12:57:31 PM)</p>
+<p class="date">March 20, 2022 (02:04:05 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -2650,15 +2650,13 @@ Solution
 <section id="quiz-1" class="level2">
 <h2>Quiz 1</h2>
 <ol>
-<li>(3 pts) List three keywords.</li>
-</ol>
+<li><p>(3 pts) List three keywords.</p>
 <details>
 <summary>
-Solution
+<p>Solution</p>
 </summary>
-Keywords are words that have special meanings and cannot be used as identifiers in your program. Examples of C# Keywords include <code class="sourceCode cs"><span class="dt">int</span><span class="op">,</span> <span class="dt">string</span><span class="op">,</span> <span class="kw">if</span><span class="op">,</span> <span class="kw">while</span><span class="op">,</span> <span class="dt">void</span><span class="op">,</span> <span class="kw">else</span><span class="op">,</span> <span class="dt">bool</span></code> etc.
-</details>
-<ol>
+<p>Keywords are words that have special meanings and cannot be used as identifiers in your program. Examples of C# Keywords include <code class="sourceCode cs"><span class="dt">int</span><span class="op">,</span> <span class="dt">string</span><span class="op">,</span> <span class="kw">if</span><span class="op">,</span> <span class="kw">while</span><span class="op">,</span> <span class="dt">void</span><span class="op">,</span> <span class="kw">else</span><span class="op">,</span> <span class="dt">bool</span></code> etc.</p>
+</details></li>
 <li><p>(4pts) Circle the correct identifiers:</p>
 <ul>
 <li><code class="text">%Rate</code></li>
@@ -2668,21 +2666,13 @@ Keywords are words that have special meanings and cannot be used as identifiers 
 <li><code class="text">YoUrNaMe21</code></li>
 <li><code class="text">test_train</code></li>
 <li><code class="text">_myIdentifier</code></li>
-</ul></li>
-</ol>
+</ul>
 <details>
 <summary>
-Solution
+<p>Solution</p>
 </summary>
-<div class="sourceCode" id="cb112"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a>Valid identifiers can not include reserved words<span class="op">,</span> can not start with a number<span class="op">,</span> and must contain only numbers<span class="op">,</span> letters<span class="op">,</span> and<span class="op">/</span>or the underscore character<span class="op">.</span> The identifiers below follow these rules<span class="op">.</span></span>
-<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a>```</span>
-<span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a>my<span class="op">-</span>variable</span>
-<span id="cb112-4"><a href="#cb112-4" aria-hidden="true" tabindex="-1"></a>YoUrNaMe21</span>
-<span id="cb112-5"><a href="#cb112-5" aria-hidden="true" tabindex="-1"></a>test_train</span>
-<span id="cb112-6"><a href="#cb112-6" aria-hidden="true" tabindex="-1"></a>_myIdentifier</span>
-<span id="cb112-7"><a href="#cb112-7" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div>
-</details>
-<ol>
+<p>Valid identifiers can not include reserved words, can not start with a number, and must contain only numbers, letters, and/or the underscore character. The identifiers below follow these rules. <code class="sourceCode cs">my<span class="op">-</span>variable  YoUrNaMe21  test_train  _myIdentifier</code></p>
+</details></li>
 <li><p>(4 pts) For each of the following, indicate if they are a “rule” of C# or a “convention” between programers by ticking the appropriate column. The first answer is given as an example.</p>
 <table>
 <thead>
@@ -2719,30 +2709,51 @@ Solution
 <td></td>
 </tr>
 </tbody>
-</table></li>
-</ol>
+</table>
 <details>
 <summary>
-Solution
+<p>Solution</p>
 </summary>
-<div class="sourceCode" id="cb113"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a>    Statement <span class="op">|</span> Rule <span class="op">|</span> Convention</span>
-<span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="op">-----------|</span> <span class="op">-----</span> <span class="op">|</span> <span class="op">-----</span> <span class="op">|</span>  </span>
-<span id="cb113-3"><a href="#cb113-3" aria-hidden="true" tabindex="-1"></a>Case matters<span class="op">.</span> <span class="op">|</span>         ✓           <span class="op">|</span>                   </span>
-<span id="cb113-4"><a href="#cb113-4" aria-hidden="true" tabindex="-1"></a>Variable names should be descriptive<span class="op">.</span> <span class="op">|</span>                 <span class="op">|</span>           ✓       </span>
-<span id="cb113-5"><a href="#cb113-5" aria-hidden="true" tabindex="-1"></a>Keywords cannot be used <span class="kw">as</span> identifiers<span class="op">.</span> <span class="op">|</span>           ✓           <span class="op">|</span>           </span>
-<span id="cb113-6"><a href="#cb113-6" aria-hidden="true" tabindex="-1"></a>Each <span class="st">&quot;.cs&quot;</span> file should contain exactly one <span class="kw">class</span><span class="op">.</span> <span class="op">|</span>                 <span class="op">|</span>           ✓</span></code></pre></div>
-</details>
-<ol>
-<li>(4 pts) Write a statement that would display, “Hi Mom!” (<em>with</em> the quotes) followed by a new line on the screen.</li>
-</ol>
+<table>
+<thead>
+<tr class="header">
+<th>Statement</th>
+<th>Rule</th>
+<th>Convention</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Case matters.</td>
+<td>✓</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Variable names should be descriptive.</td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr class="odd">
+<td>Keywords cannot be used as identifiers.</td>
+<td>✓</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Each “.cs” file should contain exactly one class.</td>
+<td></td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+</details></li>
+<li><p>(4 pts) Write a statement that would display, “Hi Mom!” (<em>with</em> the quotes) followed by a new line on the screen.</p>
 <details>
 <summary>
-Solution
+<p>Solution</p>
 </summary>
-<code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">Hi Mom!</span><span class="sc">\&quot;\n</span><span class="st">&quot;</span><span class="op">)</span></code>
-</details>
-<ol>
-<li>(5 pts) Write a series of statements that would
+<p>The key is to escpae the <code class="sourceCode cs"><span class="st">&quot;</span></code> character: <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">Hi Mom!</span><span class="sc">\&quot;\n</span><span class="st">&quot;</span><span class="op">)</span></code></p>
+</details></li>
+<li><p>(5 pts) Write a series of statements that would</p>
 <ol>
 <li>declare an <code class="sourceCode cs"><span class="dt">int</span></code> variable called “myAge”,</li>
 <li>assign your age to that variable,</li>
@@ -2750,24 +2761,24 @@ Solution
 </ol>
 <details>
 <summary>
-Solution
+<p>Solution</p>
 </summary>
-<div class="sourceCode" id="cb114"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> myAge<span class="op">;</span></span>
-<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>myAge <span class="op">=</span> <span class="dv">21</span><span class="op">;</span></span>
-<span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;My age is &quot;</span> <span class="op">+</span> myAge <span class="op">+</span> <span class="st">&quot;.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> myAge<span class="op">;</span></span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a>myAge <span class="op">=</span> <span class="dv">21</span><span class="op">;</span></span>
+<span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;My age is &quot;</span> <span class="op">+</span> myAge <span class="op">+</span> <span class="st">&quot;.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span></code></pre></div>
 </details></li>
-<li>(Bonus) Give examples of situations where the adage “<em>Spaces and new lines don’t matter in programs</em>” is actually erroneous.</li>
-</ol>
+<li><p>(Bonus) Give examples of situations where the adage “<em>Spaces and new lines don’t matter in programs</em>” is actually erroneous.</p>
 <details>
 <summary>
-Solution
+<p>Solution</p>
 </summary>
-<p>Spaces and newlines matter when they are used in string data, as whitespace in strings is formatted exactly how it’s typed. Whitespace also matters inbetween words: words in C# must have at least one space between them in order to be compiled correctly (e.g. ‘static void Main()’ and ‘int days = 7’). If there were no spaces in either of the examples, neither of them would compile. They also matter for in-line comments.</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co">// My comment</span></span>
-<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x<span class="op">;</span></span>
-<span id="cb115-3"><a href="#cb115-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span></code></pre></div>
-If you remove the first newline, the program would not compile.
-</details>
+<p>Spaces and newlines matter when they are used in string data, as whitespace in strings is formatted exactly how it’s typed. Whitespace also matters inbetween words: words in C# must have at least one space between them in order to be compiled correctly (e.g. <code class="sourceCode cs"><span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">()</span></code> and <code class="sourceCode cs"><span class="dt">int</span> days <span class="op">=</span> <span class="dv">7</span><span class="op">;</span></code>). If there were no spaces in either of the examples, neither of them would compile. They also matter for in-line comments.</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="co">// My comment</span></span>
+<span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x<span class="op">;</span></span>
+<span id="cb113-3"><a href="#cb113-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span></code></pre></div>
+<p>If you remove the first newline, the program would not compile.</p>
+</details></li>
+</ol>
 </section>
 <section id="quiz-2" class="level2">
 <h2>Quiz 2</h2>
@@ -2795,10 +2806,10 @@ If you remove the first newline, the program would not compile.
 <p>Note that there was no need to write an <code class="sourceCode cs"><span class="kw">if</span></code> statement or a complete statement: onyl the expression was required.</p>
 </details></li>
 <li><p>(3 pts) What will be displayed on the screen by the following program?</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">,</span> y <span class="op">=</span> <span class="dv">1</span><span class="op">,</span> z <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>x <span class="op">!=</span> z <span class="op">||</span> y <span class="op">&lt;</span> z <span class="op">)</span> <span class="op">{</span>x <span class="op">+=</span> y<span class="op">;}</span></span>
-<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>z <span class="op">&gt;</span> y<span class="op">)</span> <span class="op">{</span><span class="kw">if</span> <span class="op">(</span>z <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span>z <span class="op">-=</span> <span class="dv">3</span><span class="op">;}</span> <span class="kw">else</span> <span class="op">{</span>z <span class="op">+=</span> x<span class="op">;}}</span> <span class="kw">else</span> <span class="op">{</span>x <span class="op">=</span> y <span class="op">+</span> z<span class="op">;}</span></span>
-<span id="cb116-4"><a href="#cb116-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;x is {x}, y is {y}, and z is {z}.&quot;</span><span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">,</span> y <span class="op">=</span> <span class="dv">1</span><span class="op">,</span> z <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>x <span class="op">!=</span> z <span class="op">||</span> y <span class="op">&lt;</span> z <span class="op">)</span> <span class="op">{</span>x <span class="op">+=</span> y<span class="op">;}</span></span>
+<span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>z <span class="op">&gt;</span> y<span class="op">)</span> <span class="op">{</span><span class="kw">if</span> <span class="op">(</span>z <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span>z <span class="op">-=</span> <span class="dv">3</span><span class="op">;}</span> <span class="kw">else</span> <span class="op">{</span>z <span class="op">+=</span> x<span class="op">;}}</span> <span class="kw">else</span> <span class="op">{</span>x <span class="op">=</span> y <span class="op">+</span> z<span class="op">;}</span></span>
+<span id="cb114-4"><a href="#cb114-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;x is {x}, y is {y}, and z is {z}.&quot;</span><span class="op">);</span></span></code></pre></div>
 <details>
 <summary>
 <p>Solution</p>
@@ -2813,14 +2824,14 @@ Press any key to continue...</code></pre>
 <summary>
 <p>Solution</p>
 </summary>
-<div class="sourceCode" id="cb118"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span><span class="op">(</span>month<span class="op">==</span><span class="st">&quot;July&quot;</span> <span class="op">&amp;&amp;</span> temperature<span class="op">&lt;=</span><span class="dv">90</span><span class="op">)</span></span>
-<span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;What a nice summer day!&quot;</span><span class="op">);</span></span>
-<span id="cb118-3"><a href="#cb118-3" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>temperature <span class="op">&gt;=</span> <span class="dv">45</span> <span class="op">&amp;&amp;</span> temperature <span class="op">&lt;=</span> <span class="dv">60</span><span class="op">)</span></span>
-<span id="cb118-4"><a href="#cb118-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Better wear a jacket!&quot;</span><span class="op">);</span></span>
-<span id="cb118-5"><a href="#cb118-5" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>month <span class="op">==</span> <span class="st">&quot;December&quot;</span><span class="op">)</span></span>
-<span id="cb118-6"><a href="#cb118-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Happy Holidays!&quot;</span><span class="op">);</span></span>
-<span id="cb118-7"><a href="#cb118-7" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
-<span id="cb118-8"><a href="#cb118-8" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Have a nice day!&quot;</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span><span class="op">(</span>month<span class="op">==</span><span class="st">&quot;July&quot;</span> <span class="op">&amp;&amp;</span> temperature<span class="op">&lt;=</span><span class="dv">90</span><span class="op">)</span></span>
+<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;What a nice summer day!&quot;</span><span class="op">);</span></span>
+<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>temperature <span class="op">&gt;=</span> <span class="dv">45</span> <span class="op">&amp;&amp;</span> temperature <span class="op">&lt;=</span> <span class="dv">60</span><span class="op">)</span></span>
+<span id="cb116-4"><a href="#cb116-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Better wear a jacket!&quot;</span><span class="op">);</span></span>
+<span id="cb116-5"><a href="#cb116-5" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span>month <span class="op">==</span> <span class="st">&quot;December&quot;</span><span class="op">)</span></span>
+<span id="cb116-6"><a href="#cb116-6" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Happy Holidays!&quot;</span><span class="op">);</span></span>
+<span id="cb116-7"><a href="#cb116-7" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
+<span id="cb116-8"><a href="#cb116-8" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Have a nice day!&quot;</span><span class="op">)</span></span></code></pre></div>
 </details></li>
 <li><p>(Bonus) Give a program that displays “Leap year” if a <code class="sourceCode cs">year</code> variable is</p>
 <ol>
@@ -2832,14 +2843,14 @@ Press any key to continue...</code></pre>
 <summary>
 <p>Solution</p>
 </summary>
-<div class="sourceCode" id="cb119"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>year <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> <span class="op">(</span>year <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span> <span class="op">||</span> year <span class="op">%</span> <span class="dv">400</span> <span class="op">==</span> <span class="dv">0</span><span class="op">))</span></span>
-<span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb119-3"><a href="#cb119-3" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The year &quot;</span> <span class="op">+</span> year <span class="op">+</span> <span class="st">&quot; is a leap year.&quot;</span><span class="op">);</span></span>
-<span id="cb119-4"><a href="#cb119-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb119-5"><a href="#cb119-5" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
-<span id="cb119-6"><a href="#cb119-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb119-7"><a href="#cb119-7" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The year &quot;</span> <span class="op">+</span> year <span class="op">+</span> <span class="st">&quot; is not a leap year.&quot;</span><span class="op">);</span></span>
-<span id="cb119-8"><a href="#cb119-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>year <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> <span class="op">(</span>year <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span> <span class="op">||</span> year <span class="op">%</span> <span class="dv">400</span> <span class="op">==</span> <span class="dv">0</span><span class="op">))</span></span>
+<span id="cb117-2"><a href="#cb117-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb117-3"><a href="#cb117-3" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The year &quot;</span> <span class="op">+</span> year <span class="op">+</span> <span class="st">&quot; is a leap year.&quot;</span><span class="op">);</span></span>
+<span id="cb117-4"><a href="#cb117-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb117-5"><a href="#cb117-5" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
+<span id="cb117-6"><a href="#cb117-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb117-7"><a href="#cb117-7" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The year &quot;</span> <span class="op">+</span> year <span class="op">+</span> <span class="st">&quot; is not a leap year.&quot;</span><span class="op">);</span></span>
+<span id="cb117-8"><a href="#cb117-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
 </details></li>
 </ol>
 </section>
@@ -2851,62 +2862,85 @@ Press any key to continue...</code></pre>
 <summary>
 <p>Solution</p>
 </summary>
-<div class="sourceCode" id="cb120"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="kw">switch</span><span class="op">(</span>iceCreamFlavor<span class="op">)</span></span>
-<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="st">&quot;vanilla&quot;</span><span class="op">:</span></span>
-<span id="cb120-4"><a href="#cb120-4" aria-hidden="true" tabindex="-1"></a>        price <span class="op">=</span> <span class="fl">1.50m</span><span class="op">;</span></span>
-<span id="cb120-5"><a href="#cb120-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb120-6"><a href="#cb120-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="st">&quot;chocolate&quot;</span><span class="op">:</span></span>
-<span id="cb120-7"><a href="#cb120-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="st">&quot;mint&quot;</span><span class="op">:</span></span>
-<span id="cb120-8"><a href="#cb120-8" aria-hidden="true" tabindex="-1"></a>        price <span class="op">=</span> <span class="fl">1.75m</span><span class="op">;</span></span>
-<span id="cb120-9"><a href="#cb120-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb120-10"><a href="#cb120-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">default</span><span class="op">:</span></span>
-<span id="cb120-11"><a href="#cb120-11" aria-hidden="true" tabindex="-1"></a>        price <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
-<span id="cb120-12"><a href="#cb120-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
-<span id="cb120-13"><a href="#cb120-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="kw">switch</span><span class="op">(</span>iceCreamFlavor<span class="op">)</span></span>
+<span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb118-3"><a href="#cb118-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="st">&quot;vanilla&quot;</span><span class="op">:</span></span>
+<span id="cb118-4"><a href="#cb118-4" aria-hidden="true" tabindex="-1"></a>        price <span class="op">=</span> <span class="fl">1.50m</span><span class="op">;</span></span>
+<span id="cb118-5"><a href="#cb118-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb118-6"><a href="#cb118-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="st">&quot;chocolate&quot;</span><span class="op">:</span></span>
+<span id="cb118-7"><a href="#cb118-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="st">&quot;mint&quot;</span><span class="op">:</span></span>
+<span id="cb118-8"><a href="#cb118-8" aria-hidden="true" tabindex="-1"></a>        price <span class="op">=</span> <span class="fl">1.75m</span><span class="op">;</span></span>
+<span id="cb118-9"><a href="#cb118-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb118-10"><a href="#cb118-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">default</span><span class="op">:</span></span>
+<span id="cb118-11"><a href="#cb118-11" aria-hidden="true" tabindex="-1"></a>        price <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb118-12"><a href="#cb118-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb118-13"><a href="#cb118-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </details></li>
 <li><p>(2 pts) Write a statement that applies the increment operator in prefix position to a variable <code class="sourceCode cs">test</code>.</p>
 <details>
 <summary>
 <p>Solution</p>
 </summary>
-<p><code class="sourceCode cs"><span class="op">--</span>test<span class="op">;</span></code></p>
+<p>The increment operator (<code class="sourceCode cs"><span class="op">++</span></code>) in <strong>pre</strong>fix position (that is, applied <em>before</em> anything else) applied to the variable <code class="sourceCode cs">test</code> gives: <code class="sourceCode cs"><span class="op">++</span>test<span class="op">;</span></code>.</p>
 </details></li>
 <li><p>(3 pts) What will be displayed on the screen by the following program?</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
-<span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a>x<span class="op">--;</span></span>
-<span id="cb121-3"><a href="#cb121-3" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>x <span class="op">&gt;</span> <span class="dv">0</span><span class="op">){</span></span>
-<span id="cb121-4"><a href="#cb121-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>x<span class="op">);</span></span>
-<span id="cb121-5"><a href="#cb121-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a>x<span class="op">--;</span></span>
+<span id="cb119-3"><a href="#cb119-3" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>x <span class="op">&gt;</span> <span class="dv">0</span><span class="op">){</span></span>
+<span id="cb119-4"><a href="#cb119-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>x<span class="op">);</span></span>
+<span id="cb119-5"><a href="#cb119-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <details>
 <summary>
 <p>Solution</p>
 </summary>
-<p><code class="sourceCode cs"><span class="dv">9</span></code> repeating forever</p>
+<p>This could would display <code class="sourceCode cs"><span class="dv">9</span></code> (without new line or space) forever.</p>
 </details></li>
 <li><p>(8 pts) Write a <code class="sourceCode cs"><span class="kw">while</span></code> loop that displays “1 2 3 4 5 6 7 8 9 10 11 12 13” (spaces included!) at the screen.</p>
 <details>
 <summary>
 <p>Solution</p>
 </summary>
-<div class="sourceCode" id="cb122"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> num <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>num <span class="op">&lt;=</span> <span class="dv">13</span><span class="op">)</span></span>
-<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>$<span class="st">&quot;{num++} &quot;</span><span class="op">);</span></span></code></pre></div>
+<p>There are numerous different ways of writing such a program. A compact one could be:</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> num <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>num <span class="op">&lt;=</span> <span class="dv">13</span><span class="op">)</span>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>$<span class="st">&quot;{num++} &quot;</span><span class="op">);</span></span></code></pre></div>
+<p>while a more verbose could be:</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> num <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>num <span class="op">&lt;=</span> <span class="dv">13</span><span class="op">){</span></span>
+<span id="cb121-3"><a href="#cb121-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>$<span class="st">&quot;{num} &quot;</span><span class="op">);</span></span>
+<span id="cb121-4"><a href="#cb121-4" aria-hidden="true" tabindex="-1"></a>    num<span class="op">++;</span></span>
+<span id="cb121-5"><a href="#cb121-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </details></li>
-<li><p>(+3+2 pt, bonus) Give (on the back of this sheet) a program that displays every multiple of 3 between 0 and 10,000 (that is, “0 3 6 9 12 … 9999”). Bonus (again!): display how many such numbers there are in total.</p>
+<li><p>(+3+2 pt, bonus) Give a program that displays every multiple of 3 between 0 and 10,000 (that is, “0 3 6 9 12 … 9999”). Bonus (again!): display how many such numbers there are in total.</p>
 <details>
 <summary>
 <p>Solution</p>
 </summary>
-<div class="sourceCode" id="cb123"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> threeCtr <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> multipleCtr <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>threeCtr <span class="op">&lt;</span> <span class="dv">10000</span><span class="op">)</span></span>
-<span id="cb123-3"><a href="#cb123-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb123-4"><a href="#cb123-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>$<span class="st">&quot;{threeCtr} &quot;</span><span class="op">);</span></span>
-<span id="cb123-5"><a href="#cb123-5" aria-hidden="true" tabindex="-1"></a>    threeCtr <span class="op">+=</span> <span class="dv">3</span><span class="op">;</span></span>
-<span id="cb123-6"><a href="#cb123-6" aria-hidden="true" tabindex="-1"></a>    multipleCtr<span class="op">++;</span></span>
-<span id="cb123-7"><a href="#cb123-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb123-8"><a href="#cb123-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb123-9"><a href="#cb123-9" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;</span><span class="sc">\n</span><span class="st">There are {multipleCtr} multiples of 3 from 0 to 10,000.&quot;</span><span class="op">);</span></span></code></pre></div>
+<p>We can either</p>
+<ol>
+<li><p>Display the counter only if it is a multiple of three:</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> counter <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>counter <span class="op">&lt;=</span> <span class="dv">1000</span><span class="op">){</span></span>
+<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span> <span class="op">(</span>counter <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span><span class="op">){</span>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>counter <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);}</span></span>
+<span id="cb122-4"><a href="#cb122-4" aria-hidden="true" tabindex="-1"></a>    counter<span class="op">++;</span></span>
+<span id="cb122-5"><a href="#cb122-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>Increment the counter 3 by 3:</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> counter <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>counter <span class="op">&lt;=</span> <span class="dv">1000</span><span class="op">){</span></span>
+<span id="cb123-3"><a href="#cb123-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>counter <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
+<span id="cb123-4"><a href="#cb123-4" aria-hidden="true" tabindex="-1"></a>    counter<span class="op">+=</span><span class="dv">3</span><span class="op">;</span></span>
+<span id="cb123-5"><a href="#cb123-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>To answer the “bonus within the bonus”, we need two counters:</p></li>
+</ol>
+<div class="sourceCode" id="cb124"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> threeCtr <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> <span class="co">// Counter for the multiple of 3.</span></span>
+<span id="cb124-2"><a href="#cb124-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> multipleCtr <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> <span class="co">// Counter that sum the number of values displayed</span></span>
+<span id="cb124-3"><a href="#cb124-3" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>threeCtr <span class="op">&lt;</span> <span class="dv">10000</span><span class="op">)</span></span>
+<span id="cb124-4"><a href="#cb124-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb124-5"><a href="#cb124-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>$<span class="st">&quot;{threeCtr} &quot;</span><span class="op">);</span></span>
+<span id="cb124-6"><a href="#cb124-6" aria-hidden="true" tabindex="-1"></a>    threeCtr <span class="op">+=</span> <span class="dv">3</span><span class="op">;</span> <span class="co">// We move to the next multiple of 3.</span></span>
+<span id="cb124-7"><a href="#cb124-7" aria-hidden="true" tabindex="-1"></a>    multipleCtr<span class="op">++;</span> <span class="co">// We increment the number of values displayed.</span></span>
+<span id="cb124-8"><a href="#cb124-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb124-9"><a href="#cb124-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb124-10"><a href="#cb124-10" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;</span><span class="sc">\n</span><span class="st">There are {multipleCtr} multiples of 3 from 0 to 10,000.&quot;</span><span class="op">);</span></span></code></pre></div>
 </details></li>
 </ol>
 </section>
