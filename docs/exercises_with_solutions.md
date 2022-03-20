@@ -2035,7 +2035,7 @@ They were given at week 4 and 7.
 
 #. (3 pts) List three keywords.
 
-    <details><summary>Solution</summary>Keywords are words that have special meanings and cannot be used as identifiers in your program. Examples of C# Keywords include ```int, string, if, while, void, else, bool``` etc.</details>
+    <details><summary>Solution</summary>Keywords are words that have special meanings and cannot be used as identifiers in your program. Examples of C# Keywords include `int`, `string`, `if`, `while`, `void`, `else`, `bool`, etc.</details>
 
 #. (4pts) Circle the correct identifiers:
 
